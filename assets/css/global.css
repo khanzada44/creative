@@ -1,0 +1,30 @@
+/* Reset + base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* White (#ffffff) hata kar dark background aur text white karein */
+  background: var(--cc-bg, #060d0d);
+  color: var(--cc-text, #ffffff);
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
