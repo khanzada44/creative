@@ -9,7 +9,48 @@ html, body {
   max-width: 100%;
   overflow-x: clip;
 }
+/* ===== Creative Converge — website scrollbar ===== */
 
+/* Chrome, Edge, Safari, Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #00211B;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background:
+    radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%),
+    linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+  border-radius: 999px;
+  border: 2px solid #00211B;          /* thumb ke charon taraf halka gap */
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background:
+    radial-gradient(70% 90% at 12% 10%, rgba(95, 240, 200, 0.6) 0%, rgba(28, 197, 169, 0) 60%),
+    linear-gradient(160deg, rgb(0, 212, 163) 0%, rgb(3, 134, 111) 48%, rgb(0, 67, 55) 100%);
+}
+
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner {
+  background: #00211B;
+}
+
+/* Firefox: gradient support nahi karta, isliye solid rang */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: rgb(3, 134, 111) #00211B;
+    scrollbar-width: thin;
+  }
+}
 body {
   min-height: 100vh;
   display: flex;

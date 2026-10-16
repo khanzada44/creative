@@ -16,7 +16,7 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
 
   /* watermark */
   .abt-watermark{
-    position:absolute;top:-32px;left:0;z-index:0;pointer-events:none;user-select:none;
+    position:absolute;top: -88px !important;left:0;z-index:0;pointer-events:none;user-select:none;
     font-size:72px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
     color:rgba(255,255,255,.05);line-height:1;
   }

@@ -224,7 +224,6 @@
   margin: 4px 0 0;
   padding: 0 28px;
   border: 0;
-  border-radius: 999px;
   background: var(--cvg-mint);
   color: var(--cvg-ink);
   font-family: 'Poppins', sans-serif;

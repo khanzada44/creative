@@ -174,7 +174,7 @@
 
 /* ---------- big outlined word ---------- */
 .wcu-bgword {
-  position: absolute; top: 16px; left: 0; z-index: 0;   /* -top-6 + mt-10 */
+  position: absolute; top: -16px !important; left: 0; z-index: 0;   /* -top-6 + mt-10 */
   font-size: 72px; line-height: 1; font-weight: 800;
   text-transform: uppercase; letter-spacing: .1em;
   color: rgba(255,255,255,.04);

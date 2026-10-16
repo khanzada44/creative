@@ -199,11 +199,11 @@ ul {
 }
 
 .email-link:hover {
-  color: #00A8A8;
+  color: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
 }
 
 .quote-btn {
-  border: 2px solid #00A8A8;
+  border: 2px solid #033315;
   border-radius: 9999px;
   padding: 12px 36px;
   font-size: 15px;
@@ -212,7 +212,7 @@ ul {
 }
 
 .quote-btn:hover {
-  background: #00A8A8;
+  background: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
 }
 
 /* ===== Overlay ===== */

@@ -150,9 +150,25 @@
         --hover-green: #4fc07f;
     }
 
-    .brand-green {
-        color: var(--brand-green);
-    }
+.brand-green {
+    background: 
+        radial-gradient(
+            70% 90% at 12% 10%,
+            rgba(28, 197, 169, 0.45) 0%,
+            rgba(28, 197, 169, 0) 60%
+        ),
+        linear-gradient(
+            160deg,
+            rgb(3, 134, 111) 0%,
+            rgb(0, 67, 55) 48%,
+            rgb(0, 33, 27) 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
 
     /* ===== World Section ===== */
     .world-section {

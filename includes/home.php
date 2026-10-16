@@ -1,10 +1,8 @@
-<!-- ============ HERO ============ -->
 <section class="hero" id="hero">
 
   <div class="hero-inner">
-    <!-- Right side image (container ke andar) -->
     <img class="hero-media"
-         src="assets/img/home-about-section.jpg"
+         src="assets/img/hero-3d.png"
          alt="" aria-hidden="true">
 
     <div class="hero-content">

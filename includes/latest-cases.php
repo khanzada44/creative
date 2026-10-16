@@ -3,13 +3,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- CSS: latest-cases.css apne main css mein paste karo ya link karo -->
+
 <link rel="stylesheet" href="assets/css/latest-cases.css">
 
-<!-- JS-enabled flag (flash se bachne ke liye section se pehle) -->
+
 <script>document.documentElement.classList.add('olc-js');</script>
 
-<!-- ============ OUR LATEST CASES ============ -->
+
 <section class="olc" id="olc">
   <div class="olc-container">
 
