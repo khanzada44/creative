@@ -126,106 +126,21 @@ $firstTab = array_key_first($portfolioTabs);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<main class="cvg-cs" id="cvg-cases-page">
 
-  <!-- ================= 1. BANNER ================= -->
-  <section class="cvg-cs-hero">
-    <div class="cvg-cs-hero-grid" aria-hidden="true"></div>
-    <div class="cvg-cs-hero-word" aria-hidden="true"><?= cvg_e($casesHero['title']) ?></div>
-    <div class="cvg-cs-wrap cvg-cs-hero-inner">
-      <p class="cvg-cs-eyebrow cvg-cs-light"><?= cvg_e($casesHero['eyebrow']) ?></p>
-      <h1 class="cvg-cs-hero-title"><?= cvg_e($casesHero['title']) ?><span>.</span></h1>
-      <p class="cvg-cs-hero-lead"><?= cvg_e($casesHero['lead']) ?></p>
-    </div>
-  </section>
+<!-- Scroll-reveal flag: set BEFORE the page renders (no flash). Skipped if reduced motion / no IntersectionObserver. -->
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  document.documentElement.className += ' cvg-js';
+  /* Safety net: if the main script never starts, show everything */
+  setTimeout(function () {
+    if (!window.cvgCasesReady) document.documentElement.className = document.documentElement.className.replace(/\bcvg-js\b/, '');
+  }, 4000);
+})();
+</script>
 
-  <!-- ================= 2. OUR LATEST CASES ================= -->
-  <section class="cvg-cs-latest" id="cvg-cs-latest">
-    <div class="cvg-cs-wrap">
-      <div class="cvg-cs-head cvg-cs-reveal">
-        <div>
-          <p class="cvg-cs-eyebrow">Portfolio</p>
-          <h2 class="cvg-cs-h2">Our latest <span class="cvg-cs-mint">cases.</span></h2>
-        </div>
-        <p class="cvg-cs-head-lead">We always try to implement our creative ideas at the highest level. You can see it by looking at our portfolio.</p>
-      </div>
-
-      <div class="cvg-cs-cases">
-        <?php foreach ($latestCases as $i => $c):
-          if (empty($c[0])) continue;
-          $url  = cvg_img_url($c[0], $uploads, $siteUrl);
-          $more = ($casesFirstBatch > 0 && $i >= $casesFirstBatch) ? ' cvg-cs-more-item' : '';
-        ?>
-        <a href="<?= cvg_e($url) ?>" class="cvg-cs-case cvg-cs-reveal<?= $more ?>" data-lb="cases" style="--d:<?= ($i % 4) * 0.07 ?>s" aria-label="<?= cvg_e($c[1]) ?>: open large image">
-          <span class="cvg-cs-case-media"><img src="<?= cvg_e($url) ?>" alt="<?= cvg_e($c[1]) ?>" loading="lazy" class="cvg-cs-case-img"></span>
-          <span class="cvg-cs-case-meta">
-            <span><strong><?= cvg_e($c[1]) ?></strong><small><?= cvg_e($c[2] ?? '') ?></small></span>
-            <span class="cvg-cs-go"><?= $cvgArrow ?></span>
-          </span>
-        </a>
-        <?php endforeach; ?>
-      </div>
-
-      <?php if ($casesFirstBatch > 0 && count($latestCases) > $casesFirstBatch): ?>
-      <div class="cvg-cs-center">
-        <button type="button" class="cvg-cs-btn cvg-cs-btn--ghost cvg-cs-loadmore" aria-expanded="false">Load more cases</button>
-      </div>
-      <?php endif; ?>
-    </div>
-  </section>
-
-  <!-- ================= 3. OUR PORTFOLIO (tabs) ================= -->
-  <section class="cvg-cs-port" id="cvg-cs-portfolio">
-    <div class="cvg-cs-wrap">
-      <div class="cvg-cs-head cvg-cs-head--center cvg-cs-reveal">
-        <p class="cvg-cs-eyebrow cvg-cs-light">Selected work</p>
-        <h2 class="cvg-cs-h2">Our <span class="cvg-cs-mint-l">Portfolio</span></h2>
-      </div>
-
-      <div class="cvg-cs-tabs cvg-cs-reveal" role="group" aria-label="Filter portfolio">
-        <?php foreach ($portfolioTabs as $key => $name): $on = ($key === $firstTab); ?>
-          <button type="button" class="cvg-cs-tab<?= $on ? ' cvg-cs-tab--on' : '' ?>" data-filter="<?= cvg_e($key) ?>" aria-pressed="<?= $on ? 'true' : 'false' ?>"><?= cvg_e($name) ?></button>
-        <?php endforeach; ?>
-      </div>
-
-      <div class="cvg-cs-frame">
-        <div class="cvg-cs-grid">
-          <?php foreach ($portfolioItems as $cat => $source):
-            if (!isset($portfolioTabs[$cat])) continue;
-            $label = $portfolioLabels[$cat] ?? $portfolioTabs[$cat];
-            foreach (cvg_port_images($source, $cvgRoot) as $img):
-              $url  = cvg_img_url($img, $uploads, $siteUrl);
-              $show = ($firstTab === 'all' || $firstTab === $cat);
-          ?>
-          <a href="<?= cvg_e($url) ?>" class="cvg-cs-item cvg-cs-item--<?= cvg_e($cat) ?><?= $show ? ' cvg-cs-in' : ' cvg-cs-hide' ?>" data-cat="<?= cvg_e($cat) ?>" data-lb="port" aria-label="<?= cvg_e($label) ?>: open large image">
-            <span class="cvg-cs-item-media"><img src="<?= cvg_e($url) ?>" alt="<?= cvg_e($label) ?> project" loading="lazy" class="cvg-cs-item-img"></span>
-            <?php if ($cat === 'video'): ?><span class="cvg-cs-play"><?= $cvgPlay ?></span><?php endif; ?>
-            <span class="cvg-cs-overlay" aria-hidden="true"><span class="cvg-cs-tag"><?= cvg_e($label) ?></span><span class="cvg-cs-go"><?= $cvgArrow ?></span></span>
-          </a>
-          <?php endforeach; endforeach; ?>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 4. CTA ================= -->
-  <section class="cvg-cs-cta">
-    <div class="cvg-cs-wrap cvg-cs-cta-inner cvg-cs-reveal">
-      <h2 class="cvg-cs-h2">Like what you see?<br><span class="cvg-cs-mint">Let's build yours next.</span></h2>
-      <a href="<?= cvg_e(preg_match('~^(https?:)?//~i', $casesCtaLink) ? $casesCtaLink : $siteUrl . ltrim($casesCtaLink, '/')) ?>" class="cvg-cs-btn cvg-cs-btn--mint">Start a project <?= $cvgArrow ?></a>
-    </div>
-  </section>
-
-  <!-- Lightbox -->
-  <div class="cvg-cs-lb" role="dialog" aria-modal="true" aria-label="Project image" hidden>
-    <button type="button" class="cvg-cs-lb-close" aria-label="Close">&times;</button>
-    <button type="button" class="cvg-cs-lb-nav cvg-cs-lb-prev" aria-label="Previous image">&#8249;</button>
-    <div class="cvg-cs-lb-stage"><img class="cvg-cs-lb-img" src="" alt=""></div>
-    <button type="button" class="cvg-cs-lb-nav cvg-cs-lb-next" aria-label="Next image">&#8250;</button>
-    <p class="cvg-cs-lb-count" aria-live="polite"></p>
-  </div>
-</main>
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+<!-- ================= STYLES (placed before <main> so the page is styled on first paint) ================= -->
 <style>
 /* Remove the browser's default 8px page margin (the side gap) */
 html, body { margin: 0; padding: 0; }
@@ -333,10 +248,10 @@ body { overflow-x: hidden; }
 .cvg-cs .cvg-cs-cta{padding:110px 0}
 .cvg-cs .cvg-cs-cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:30px}
 
-/* ===== Scroll reveal (only when JS runs) ===== */
-.cvg-cs.cvg-cs--js .cvg-cs-reveal{opacity:0;transform:translateY(36px);transition:opacity .9s var(--cs-ease) var(--d,0s),transform .9s var(--cs-ease) var(--d,0s),border-color .4s,box-shadow .5s}
-.cvg-cs.cvg-cs--js .cvg-cs-reveal.cvg-cs-shown{opacity:1;transform:none}
-.cvg-cs.cvg-cs--js .cvg-cs-case.cvg-cs-shown:hover{transform:translateY(-6px);transition-delay:0s}
+/* ===== Scroll reveal (flag .cvg-js is set on <html> before first paint) ===== */
+.cvg-js .cvg-cs .cvg-cs-reveal{opacity:0;transform:translateY(36px);transition:opacity .9s var(--cs-ease) var(--d,0s),transform .9s var(--cs-ease) var(--d,0s),border-color .4s,box-shadow .5s}
+.cvg-js .cvg-cs .cvg-cs-reveal.cvg-cs-shown{opacity:1;transform:none}
+.cvg-js .cvg-cs .cvg-cs-case.cvg-cs-shown:hover{transform:translateY(-6px);transition-delay:0s}
 
 /* ===== Lightbox ===== */
 .cvg-cs-lb{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;gap:16px;padding:40px 20px;box-sizing:border-box;background:rgba(5,8,7,.93);backdrop-filter:blur(6px);opacity:0;transition:opacity .25s;font-family:'Poppins',sans-serif}
@@ -379,14 +294,116 @@ body { overflow-x: hidden; }
 }
 @media (prefers-reduced-motion:reduce){
   .cvg-cs *,.cvg-cs *::before,.cvg-cs *::after,.cvg-cs-lb{animation:none!important;transition:none!important}
-  .cvg-cs .cvg-cs-item,.cvg-cs.cvg-cs--js .cvg-cs-reveal{opacity:1;transform:none}
+  .cvg-cs .cvg-cs-item,.cvg-js .cvg-cs .cvg-cs-reveal{opacity:1;transform:none}
 }
 </style>
+
+<main class="cvg-cs" id="cvg-cases-page">
+
+  <!-- ================= 1. BANNER ================= -->
+  <section class="cvg-cs-hero">
+    <div class="cvg-cs-hero-grid" aria-hidden="true"></div>
+    <div class="cvg-cs-hero-word" aria-hidden="true"><?= cvg_e($casesHero['title']) ?></div>
+    <div class="cvg-cs-wrap cvg-cs-hero-inner">
+      <p class="cvg-cs-eyebrow cvg-cs-light"><?= cvg_e($casesHero['eyebrow']) ?></p>
+      <h1 class="cvg-cs-hero-title"><?= cvg_e($casesHero['title']) ?><span>.</span></h1>
+      <p class="cvg-cs-hero-lead"><?= cvg_e($casesHero['lead']) ?></p>
+    </div>
+  </section>
+
+  <!-- ================= 2. OUR LATEST CASES ================= -->
+  <section class="cvg-cs-latest" id="cvg-cs-latest">
+    <div class="cvg-cs-wrap">
+      <div class="cvg-cs-head cvg-cs-reveal">
+        <div>
+          <p class="cvg-cs-eyebrow">Portfolio</p>
+          <h2 class="cvg-cs-h2">Our latest <span class="cvg-cs-mint">cases.</span></h2>
+        </div>
+        <p class="cvg-cs-head-lead">We always try to implement our creative ideas at the highest level. You can see it by looking at our portfolio.</p>
+      </div>
+
+      <div class="cvg-cs-cases">
+        <?php foreach ($latestCases as $i => $c):
+          if (empty($c[0])) continue;
+          $url  = cvg_img_url($c[0], $uploads, $siteUrl);
+          $more = ($casesFirstBatch > 0 && $i >= $casesFirstBatch) ? ' cvg-cs-more-item' : '';
+        ?>
+        <a href="<?= cvg_e($url) ?>" class="cvg-cs-case cvg-cs-reveal<?= $more ?>" data-lb="cases" style="--d:<?= ($i % 4) * 0.07 ?>s" aria-label="<?= cvg_e($c[1]) ?>: open large image">
+          <span class="cvg-cs-case-media"><img src="<?= cvg_e($url) ?>" alt="<?= cvg_e($c[1]) ?>" loading="lazy" class="cvg-cs-case-img"></span>
+          <span class="cvg-cs-case-meta">
+            <span><strong><?= cvg_e($c[1]) ?></strong><small><?= cvg_e($c[2] ?? '') ?></small></span>
+            <span class="cvg-cs-go"><?= $cvgArrow ?></span>
+          </span>
+        </a>
+        <?php endforeach; ?>
+      </div>
+
+      <?php if ($casesFirstBatch > 0 && count($latestCases) > $casesFirstBatch): ?>
+      <div class="cvg-cs-center">
+        <button type="button" class="cvg-cs-btn cvg-cs-btn--ghost cvg-cs-loadmore" aria-expanded="false">Load more cases</button>
+      </div>
+      <?php endif; ?>
+    </div>
+  </section>
+
+  <!-- ================= 3. OUR PORTFOLIO (tabs) ================= -->
+  <section class="cvg-cs-port" id="cvg-cs-portfolio">
+    <div class="cvg-cs-wrap">
+      <div class="cvg-cs-head cvg-cs-head--center cvg-cs-reveal">
+        <p class="cvg-cs-eyebrow cvg-cs-light">Selected work</p>
+        <h2 class="cvg-cs-h2">Our <span class="cvg-cs-mint-l">Portfolio</span></h2>
+      </div>
+
+      <div class="cvg-cs-tabs cvg-cs-reveal" role="group" aria-label="Filter portfolio">
+        <?php foreach ($portfolioTabs as $key => $name): $on = ($key === $firstTab); ?>
+          <button type="button" class="cvg-cs-tab<?= $on ? ' cvg-cs-tab--on' : '' ?>" data-filter="<?= cvg_e($key) ?>" aria-pressed="<?= $on ? 'true' : 'false' ?>"><?= cvg_e($name) ?></button>
+        <?php endforeach; ?>
+      </div>
+
+      <div class="cvg-cs-frame">
+        <div class="cvg-cs-grid">
+          <?php foreach ($portfolioItems as $cat => $source):
+            if (!isset($portfolioTabs[$cat])) continue;
+            $label = $portfolioLabels[$cat] ?? $portfolioTabs[$cat];
+            foreach (cvg_port_images($source, $cvgRoot) as $img):
+              $url  = cvg_img_url($img, $uploads, $siteUrl);
+              $show = ($firstTab === 'all' || $firstTab === $cat);
+          ?>
+          <a href="<?= cvg_e($url) ?>" class="cvg-cs-item cvg-cs-item--<?= cvg_e($cat) ?><?= $show ? ' cvg-cs-in' : ' cvg-cs-hide' ?>" data-cat="<?= cvg_e($cat) ?>" data-lb="port" aria-label="<?= cvg_e($label) ?>: open large image">
+            <span class="cvg-cs-item-media"><img src="<?= cvg_e($url) ?>" alt="<?= cvg_e($label) ?> project" loading="lazy" class="cvg-cs-item-img"></span>
+            <?php if ($cat === 'video'): ?><span class="cvg-cs-play"><?= $cvgPlay ?></span><?php endif; ?>
+            <span class="cvg-cs-overlay" aria-hidden="true"><span class="cvg-cs-tag"><?= cvg_e($label) ?></span><span class="cvg-cs-go"><?= $cvgArrow ?></span></span>
+          </a>
+          <?php endforeach; endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. CTA ================= -->
+  <section class="cvg-cs-cta">
+    <div class="cvg-cs-wrap cvg-cs-cta-inner cvg-cs-reveal">
+      <h2 class="cvg-cs-h2">Like what you see?<br><span class="cvg-cs-mint">Let's build yours next.</span></h2>
+      <a href="<?= cvg_e(preg_match('~^(https?:)?//~i', $casesCtaLink) ? $casesCtaLink : $siteUrl . ltrim($casesCtaLink, '/')) ?>" class="cvg-cs-btn cvg-cs-btn--mint">Start a project <?= $cvgArrow ?></a>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="cvg-cs-lb" role="dialog" aria-modal="true" aria-label="Project image" hidden>
+    <button type="button" class="cvg-cs-lb-close" aria-label="Close">&times;</button>
+    <button type="button" class="cvg-cs-lb-nav cvg-cs-lb-prev" aria-label="Previous image">&#8249;</button>
+    <div class="cvg-cs-lb-stage"><img class="cvg-cs-lb-img" src="" alt=""></div>
+    <button type="button" class="cvg-cs-lb-nav cvg-cs-lb-next" aria-label="Next image">&#8250;</button>
+    <p class="cvg-cs-lb-count" aria-live="polite"></p>
+  </div>
+</main>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 
 <script>
 (function () {
   var root = document.getElementById('cvg-cases-page');
   if (!root) return;
+  window.cvgCasesReady = true;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $$ = function (s, c) { return Array.prototype.slice.call((c || root).querySelectorAll(s)); };
 
@@ -492,9 +509,8 @@ body { overflow-x: hidden; }
     if (e.key === 'ArrowLeft') step(-1);
   });
 
-  /* ---------- Scroll reveal ---------- */
-  if (reduce || !('IntersectionObserver' in window)) return;
-  root.classList.add('cvg-cs--js');
+  /* ---------- Scroll reveal (the .cvg-js flag was already set in <head> area) ---------- */
+  if (!document.documentElement.classList.contains('cvg-js')) return;
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('cvg-cs-shown'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });

@@ -14,8 +14,8 @@
         </svg>
       </button>
 
-      <!-- Logo -->
-      <a href="/creative" class="logo">
+      <!-- Logo (outer <a> changed to <div>: an <a> inside an <a> is invalid HTML) -->
+      <div class="logo">
         <a href="/creative/index.php" class="cvg-alogo" aria-label="Creative Converge home">
           <svg class="cvg-alogo-mark" viewBox="-70 -70 140 140" aria-hidden="true">
             <defs>
@@ -51,8 +51,6 @@
           .cvg-alogo {
             --cvg-alogo-size: 22px;
           }
-
-          /* text size; the whole logo scales with it */
 
           .cvg-alogo {
             display: inline-flex;
@@ -153,97 +151,47 @@
 
           /* ---------- Keyframes ---------- */
           @keyframes cvgAlogoDraw {
-            from {
-              stroke-dashoffset: 1;
-            }
-
-            to {
-              stroke-dashoffset: 0;
-            }
+            from { stroke-dashoffset: 1; }
+            to { stroke-dashoffset: 0; }
           }
 
           @keyframes cvgAlogoDrawRev {
-            from {
-              stroke-dashoffset: -1;
-            }
-
-            to {
-              stroke-dashoffset: 0;
-            }
+            from { stroke-dashoffset: -1; }
+            to { stroke-dashoffset: 0; }
           }
 
           @keyframes cvgAlogoPop {
-            from {
-              transform: scale(0);
-            }
-
-            to {
-              transform: scale(1);
-            }
+            from { transform: scale(0); }
+            to { transform: scale(1); }
           }
 
           @keyframes cvgAlogoPulse {
-
-            0%,
-            100% {
-              transform: scale(1);
-            }
-
-            50% {
-              transform: scale(1.18);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.18); }
           }
 
           @keyframes cvgAlogoHalo {
-            0% {
-              transform: scale(1);
-              opacity: .55;
-            }
-
-            100% {
-              transform: scale(2.6);
-              opacity: 0;
-            }
+            0% { transform: scale(1); opacity: .55; }
+            100% { transform: scale(2.6); opacity: 0; }
           }
 
           @keyframes cvgAlogoRise {
-            from {
-              transform: translateY(110%);
-            }
-
-            to {
-              transform: none;
-            }
+            from { transform: translateY(110%); }
+            to { transform: none; }
           }
 
           @keyframes cvgAlogoSlide {
-            from {
-              transform: translateX(-0.8em);
-              opacity: 0;
-            }
-
-            to {
-              transform: none;
-              opacity: 1;
-            }
+            from { transform: translateX(-0.8em); opacity: 0; }
+            to { transform: none; opacity: 1; }
           }
 
           @keyframes cvgAlogoShine {
-
-            0%,
-            24%,
-            100% {
-              filter: brightness(1) drop-shadow(0 0 0 rgba(95, 240, 200, 0));
-            }
-
-            10% {
-              filter: brightness(1.5) drop-shadow(0 0 6px rgba(95, 240, 200, .9));
-            }
+            0%, 24%, 100% { filter: brightness(1) drop-shadow(0 0 0 rgba(95, 240, 200, 0)); }
+            10% { filter: brightness(1.5) drop-shadow(0 0 6px rgba(95, 240, 200, .9)); }
           }
 
           /* Visitors who turned off motion see the finished logo, still */
           @media (prefers-reduced-motion: reduce) {
-
             .cvg-alogo .cvg-alogo-ring,
             .cvg-alogo .cvg-alogo-ring2,
             .cvg-alogo .cvg-alogo-dot,
@@ -254,7 +202,128 @@
             }
           }
         </style>
-      </a>
+
+        <!-- ===== Services flyout submenu (Web Developer Solutions) ===== -->
+        <style>
+          /* header.css has ".services-menu ul { overflow:hidden; width:360px; background:... }"
+             which clipped the flyout. Selectors below are stronger so they win. */
+
+          /* ===== Main dropdown: let the flyout stick out ===== */
+          .services-dropdown .services-menu > ul { overflow: visible !important; }
+
+          .services-dropdown .services-menu li.has-sub { position: relative; }
+
+          .services-dropdown .services-menu .sub-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+          }
+
+          .services-dropdown .services-menu .sub-trigger .sub-arrow {
+            flex: none;
+            width: 14px;
+            height: 14px;
+            opacity: .85;
+          }
+
+          /* Parent row stays highlighted while the flyout is open */
+          .services-dropdown .services-menu li.has-sub:hover > a,
+          .services-dropdown .services-menu li.has-sub:focus-within > a,
+          .services-dropdown .services-menu li.has-sub.open > a {
+            background: rgba(4, 120, 87, 0.8);
+            color: #fff;
+          }
+
+          /* ===== Flyout (slate panel, like the reference) ===== */
+          .services-dropdown .services-menu ul.services-submenu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            z-index: 20;
+            width: auto;
+            min-width: 280px;
+            margin: 0 0 0 12px;
+            padding: 0;
+            overflow: visible;
+            background: #3a4a53;
+            border-radius: 6px;
+            box-shadow: 0 14px 38px rgba(0, 0, 0, .45);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: opacity .25s ease, transform .25s ease, visibility .25s;
+          }
+
+          /* invisible bridge so the pointer can cross the gap without closing it */
+          .services-dropdown .services-menu ul.services-submenu::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -16px;
+            width: 16px;
+          }
+
+          .services-dropdown .services-menu li.has-sub:hover > ul.services-submenu,
+          .services-dropdown .services-menu li.has-sub:focus-within > ul.services-submenu,
+          .services-dropdown .services-menu li.has-sub.open > ul.services-submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+          }
+
+          .services-dropdown .services-menu ul.services-submenu li {
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+          }
+
+          .services-dropdown .services-menu ul.services-submenu li:last-child { border-bottom: 0; }
+
+          .services-dropdown .services-menu ul.services-submenu li a {
+            color: #d3dce0;
+            background: transparent;
+          }
+
+          .services-dropdown .services-menu ul.services-submenu li a:hover,
+          .services-dropdown .services-menu ul.services-submenu li a:focus-visible {
+            background: rgba(4, 120, 87, 0.8);
+            color: #fff;
+          }
+
+          .services-dropdown .services-menu ul.services-submenu li:first-child a { border-radius: 6px 6px 0 0; }
+          .services-dropdown .services-menu ul.services-submenu li:last-child a { border-radius: 0 0 6px 6px; }
+
+          /* ===== Mobile side panel: nested accordion ===== */
+          .side-panel .panel-services-list.open { max-height: 1400px !important; }
+
+          .side-panel .panel-services-list .panel-sub-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            text-align: left;
+            color: #fff;
+          }
+
+          .side-panel .panel-sub-btn .chevron-icon { width: 12px; height: 12px; transition: transform .25s ease; }
+          .side-panel .panel-sub-btn.open .chevron-icon { transform: rotate(180deg); }
+
+          .side-panel .panel-sub-list {
+            max-height: 0;
+            margin: 0;
+            padding: 0 0 0 16px;
+            overflow: hidden;
+            transition: max-height .35s ease;
+          }
+
+          .side-panel .panel-sub-list.open { max-height: 600px; }
+          .side-panel .panel-sub-list a { display: block; padding: 9px 12px; font-size: 12px; opacity: .85; }
+          .side-panel .panel-sub-list a:hover { opacity: 1; background: #022c22; }
+        </style>
+      </div>
 
       <!-- Desktop nav -->
       <nav class="desktop-nav">
@@ -272,6 +341,29 @@
               <li><a href="/services/logo-design">Logo Design Solutions</a></li>
               <li><a href="/services/illustration-design">Illustration Design</a></li>
               <li><a href="/services/web-design">Web Design Solutions</a></li>
+
+              <!-- NEW: Web Developer Solutions + flyout -->
+              <li class="has-sub">
+                <a href="/services/web-development" class="sub-trigger" aria-haspopup="true">
+                  Web Developer Solutions
+                  <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="9 6 15 12 9 18"></polyline>
+                  </svg>
+                </a>
+                <ul class="services-submenu">
+                  <li><a href="/services/laravel">Laravel</a></li>
+                  <li><a href="/services/nodejs">Node Js</a></li>
+                  <li><a href="/services/custom-php-development">Custom PHP Development</a></li>
+                  <li><a href="/services/nextjs">Next.js</a></li>
+                  <li><a href="/services/wordpress-development">WordPress Development</a></li>
+                  <li><a href="/services/shopify">Shopify</a></li>
+                  <li><a href="/services/magento">Magento</a></li>
+                  <li><a href="/services/woocommerce">WooCommerce</a></li>
+                  <li><a href="/services/cms-development">CMS Development</a></li>
+                  <li><a href="/services/website-maintenance">Website Maintenance</a></li>
+                </ul>
+              </li>
+
               <li><a href="/services/branding">Branding</a></li>
               <li><a href="/services/ecommerce">Ecommerce Website Solutions</a></li>
               <li><a href="/services/video-animation">Stunning Video Animation Services</a></li>
@@ -331,6 +423,29 @@
         <li><a href="/services/logo-design" class="panel-sub-link">Logo Design Solutions</a></li>
         <li><a href="/services/illustration-design" class="panel-sub-link">Illustration Design</a></li>
         <li><a href="/services/web-design" class="panel-sub-link">Web Design Solutions</a></li>
+
+        <!-- NEW: Web Developer Solutions (nested accordion) -->
+        <li>
+          <button type="button" class="panel-sub-btn panel-sub-link" id="panelDevBtn" aria-expanded="false">
+            Web Developer Solutions
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="panel-sub-list" id="panelDevList">
+            <li><a href="/services/laravel">Laravel</a></li>
+            <li><a href="/services/nodejs">Node Js</a></li>
+            <li><a href="/services/custom-php-development">Custom PHP Development</a></li>
+            <li><a href="/services/nextjs">Next.js</a></li>
+            <li><a href="/services/wordpress-development">WordPress Development</a></li>
+            <li><a href="/services/shopify">Shopify</a></li>
+            <li><a href="/services/magento">Magento</a></li>
+            <li><a href="/services/woocommerce">WooCommerce</a></li>
+            <li><a href="/services/cms-development">CMS Development</a></li>
+            <li><a href="/services/website-maintenance">Website Maintenance</a></li>
+          </ul>
+        </li>
+
         <li><a href="/services/branding" class="panel-sub-link">Branding</a></li>
         <li><a href="/services/ecommerce" class="panel-sub-link">Ecommerce Website Solutions</a></li>
         <li><a href="/services/video-animation" class="panel-sub-link">Stunning Video Animation Services</a></li>
@@ -378,6 +493,9 @@
     const panelServicesBtn = document.getElementById("panelServicesBtn");
     const panelServicesList = document.getElementById("panelServicesList");
 
+    const panelDevBtn = document.getElementById("panelDevBtn");
+    const panelDevList = document.getElementById("panelDevList");
+
     // ===== State =====
     let closeTimer = null;
 
@@ -392,9 +510,12 @@
       sidePanel.classList.remove("open");
       overlay.classList.remove("active");
       sidePanel.setAttribute("aria-hidden", "true");
-      // close accordion as well
+      // close accordions as well
       panelServicesList.classList.remove("open");
       panelServicesBtn.classList.remove("open");
+      panelDevList.classList.remove("open");
+      panelDevBtn.classList.remove("open");
+      panelDevBtn.setAttribute("aria-expanded", "false");
     }
 
     menuBtn.addEventListener("click", openPanel);
@@ -424,16 +545,39 @@
         servicesMenu.classList.remove("open");
         servicesBtn.classList.remove("open");
         servicesBtn.setAttribute("aria-expanded", "false");
+        // also close the flyout (touch devices)
+        servicesMenu.querySelectorAll("li.has-sub.open").forEach(function(li) {
+          li.classList.remove("open");
+        });
       }, 120);
     }
 
     servicesDropdown.addEventListener("mouseenter", openServices);
     servicesDropdown.addEventListener("mouseleave", closeServices);
 
+    // ===== Touch devices: first tap opens the flyout, second tap follows the link =====
+    servicesMenu.querySelectorAll("li.has-sub > a.sub-trigger").forEach(function(trigger) {
+      trigger.addEventListener("click", function(e) {
+        if (!window.matchMedia("(hover: none)").matches) return;
+        var li = trigger.parentElement;
+        if (!li.classList.contains("open")) {
+          e.preventDefault();
+          li.classList.add("open");
+        }
+      });
+    });
+
     // ===== Side panel Services accordion =====
     panelServicesBtn.addEventListener("click", function() {
       const isOpen = panelServicesList.classList.toggle("open");
       panelServicesBtn.classList.toggle("open", isOpen);
+    });
+
+    // ===== Side panel: Web Developer Solutions nested accordion =====
+    panelDevBtn.addEventListener("click", function() {
+      const isOpen = panelDevList.classList.toggle("open");
+      panelDevBtn.classList.toggle("open", isOpen);
+      panelDevBtn.setAttribute("aria-expanded", String(isOpen));
     });
   })();
 </script>
