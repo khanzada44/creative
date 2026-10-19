@@ -1,0 +1,5 @@
+
+RewriteEngine On
+RewriteBase /creative/services/
+
+RewriteRule ^service-detail/([a-zA-Z0-9-]+)/?$ service-detail.php?slug=$1 [L,QSA]

@@ -1,6 +1,4 @@
 <section class="cvg-consult" id="cvg-consult">
-
-  <!-- Left: text + form -->
   <div class="cvg-consult-left">
     <div class="cvg-consult-glow" aria-hidden="true"></div>
 
@@ -11,8 +9,6 @@
         We always try to implement our creative ideas at the highest level.
         Tell us about your project and we will make it work.
       </p>
-
-      <!-- Set "action" to your form handler (e.g. a Formspree URL or your PHP mail script) -->
       <form class="cvg-consult-form" action="#" method="post">
         <div class="cvg-consult-row">
           <div class="cvg-consult-field">
@@ -42,17 +38,14 @@
       </form>
     </div>
   </div>
-
-  <!-- Right: photo -->
   <div class="cvg-consult-right">
-    <!-- Replace with your photo's URL from the Media Library -->
-	 ../wp-content/uploads/2024/07/consultation-photo.jpg
-    <img src="../creative-converge-new/wp-content/uploads/2024/07/conbg-1.jpg" alt="Team discussing a project around a table" class="cvg-consult-photo" loading="lazy">
+    <img src="assets/img/conbg-1.jpg" alt="Team discussing a project around a table" class="cvg-consult-photo" loading="lazy" draggable="false">
   </div>
 
 </section>
+
 <style>
-    .cvg-consult {
+.cvg-consult {
   --cvg-bg: #0A0A0A;
   --cvg-field: #0D1211;
   --cvg-field-line: #22302C;
@@ -60,11 +53,11 @@
   --cvg-mint-light: #5FF0C8;
   --cvg-ink: #04342C;
   --cvg-text: #F2F5F4;
-  --cvg-text-2: #C9D6D2;
   --cvg-muted: #8FA39E;
 
   position: relative;
-  overflow: hidden;
+  overflow: hidden;   /* fallback for old browsers */
+  overflow: clip;     /* does NOT create a scroll container, so scroll never gets stuck */
   box-sizing: border-box;
   width: 100%;
   min-height: 640px;
@@ -204,7 +197,8 @@
   height: 130px;
   min-height: 130px;
   padding-top: 16px;
-  resize: vertical;
+  resize: none;                 
+  overscroll-behavior: auto;   
 }
 
 .cvg-consult .cvg-consult-input:hover { border-color: #2E403B; }
@@ -264,6 +258,9 @@
   position: relative;
   min-height: 640px;
   overflow: hidden;
+  overflow: clip;
+  pointer-events: none;   /* photo side scroll/touch ko nahi pakdegi */
+  touch-action: pan-y;
 }
 
 .cvg-consult .cvg-consult-photo {
@@ -275,6 +272,9 @@
   max-width: none;
   object-fit: cover;
   border-radius: 0;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 /* Fades the photo into the black on the left, plus a soft green tint at the bottom */
@@ -286,35 +286,6 @@
     linear-gradient(90deg, #0A0A0A 0%, rgba(10, 10, 10, 0) 30%),
     linear-gradient(0deg, rgba(0, 33, 27, 0.55) 0%, rgba(0, 33, 27, 0) 50%);
   pointer-events: none;
-}
-
-.cvg-consult .cvg-consult-badge {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
-  border-radius: 16px;
-  background: rgba(10, 10, 10, 0.78);
-  border: 1px solid rgba(95, 240, 200, 0.25);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-}
-
-.cvg-consult .cvg-consult-badge-num {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--cvg-mint);
-}
-
-.cvg-consult .cvg-consult-badge-text {
-  font-size: 13px;
-  line-height: 1.35;
-  color: var(--cvg-text-2);
 }
 
 /* ---------- Responsive ---------- */
@@ -330,7 +301,6 @@
   .cvg-consult .cvg-consult-right::after {
     background: linear-gradient(0deg, #0A0A0A 0%, rgba(10, 10, 10, 0) 45%);
   }
-  .cvg-consult .cvg-consult-badge { right: 16px; bottom: 16px; }
   .cvg-consult .cvg-consult-left { padding: 40px 20px 70px; justify-content: flex-start; }
   .cvg-consult .cvg-consult-title { font-size: 36px; }
   .cvg-consult .cvg-consult-lead { font-size: 16px; }

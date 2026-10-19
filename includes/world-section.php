@@ -198,21 +198,19 @@
         }
     }
 
-    /* ===== Background Image (fixed / parallax) ===== */
     .world-bg {
         position: absolute;
         inset: 0;
         z-index: -20;
         width: 100%;
         height: 100%;
-        background-image: url('https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/tabs-bg.png');
+        background-image: url('assets/img/tabs-bg.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
 
-    /* ===== Dark Overlays ===== */
     .world-overlay {
         position: absolute;
         inset: 0;
@@ -227,7 +225,6 @@
         background: rgba(13, 17, 23, 0.65);
     }
 
-    /* ===== Main Container (Grid) ===== */
     .world-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -245,7 +242,6 @@
         }
     }
 
-    /* ===== Left Side ===== */
     .world-left {
         display: flex;
         flex-direction: column;
@@ -394,7 +390,6 @@
         }
     }
 
-    /* ===== Reveal Animation (scroll-in) ===== */
     .reveal>* {
         opacity: 0;
         transform: scale(0.85);
@@ -411,8 +406,6 @@
 <script>
     (function () {
         "use strict";
-
-        // ===== Accordion =====
         const accordionItems = document.querySelectorAll(".accordion-item");
 
         accordionItems.forEach(function (item) {

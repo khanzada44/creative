@@ -8,8 +8,7 @@ if (!function_exists('cvg_pp_e')) {
     }
 }
 
-$cvgPPVisible = 8;   /* features shown before "+ more" */
-$cvgPPFirst   = array_key_first($cvgPricing);
+$cvgPPFirst = array_key_first($cvgPricing);
 ?>
 <main class="cvg-pp" id="cvg-pricing-page">
 
@@ -18,7 +17,7 @@ $cvgPPFirst   = array_key_first($cvgPricing);
         <span class="cvg-pp-glow cvg-pp-glow--a" aria-hidden="true"></span>
         <span class="cvg-pp-glow cvg-pp-glow--b" aria-hidden="true"></span>
         <span class="cvg-pp-gridbg" aria-hidden="true"></span>
-        
+
 
         <div class="cvg-pp-wrap cvg-pp-banner-inner">
             <div class="cvg-pp-banner-copy">
@@ -167,14 +166,7 @@ $cvgPPFirst   = array_key_first($cvgPricing);
                 <div class="cvg-pp-panel<?= $on ? ' is-active' : '' ?>" role="tabpanel" id="cvg-pp-panel-<?= cvg_pp_e($key) ?>"
                     aria-labelledby="cvg-pp-tab-<?= cvg_pp_e($key) ?>" <?= $on ? '' : 'hidden' ?>>
                     <div class="cvg-pp-cards">
-                        <?php foreach ($tab['packages'] as $i => $p):
-                            $feats = $p['features'];
-                            $count = 0;
-                            $extra = 0;
-                            foreach ($feats as $f) {
-                                if (strpos($f, '## ') !== 0) $count++;
-                            }
-                        ?>
+                        <?php foreach ($tab['packages'] as $i => $p): ?>
                             <article class="cvg-pp-card<?= !empty($p['popular']) ? ' cvg-pp-card--featured' : '' ?>" style="--i:<?= (int) $i ?>">
                                 <?php if (!empty($p['popular'])): ?><span class="cvg-pp-shine" aria-hidden="true"></span><?php endif; ?>
                                 <div class="cvg-pp-card-top">
@@ -184,21 +176,15 @@ $cvgPPFirst   = array_key_first($cvgPricing);
                                 <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span><?= cvg_pp_e($p['price']) ?><span class="cvg-pp-cents">.<?= cvg_pp_e($p['cents']) ?></span></p>
                                 <?php if ($p['note'] !== ''): ?><p class="cvg-pp-note"><?= cvg_pp_e($p['note']) ?></p><?php endif; ?>
 
-                                <ul class="cvg-pp-list">
-                                    <?php $n = 0;
-                                    foreach ($feats as $f):
+                                <!-- saari features ek scrollable list mein (ab "+ more" button nahi) -->
+                                <ul class="cvg-pp-list" tabindex="0" aria-label="<?= cvg_pp_e($p['name']) ?> features">
+                                    <?php foreach ($p['features'] as $f):
                                         $isGroup = (strpos($f, '## ') === 0);
-                                        if (!$isGroup) $n++;
-                                        $hidden = $n > $cvgPPVisible || ($isGroup && $n >= $cvgPPVisible);
-                                        if ($hidden && !$isGroup) $extra++;
                                         $cls = $isGroup ? 'cvg-pp-group' : ('cvg-pp-li' . (stripos($f, 'additional') !== false ? ' cvg-pp-addon' : ''));
                                     ?>
-                                        <li class="<?= $cls ?><?= $hidden ? ' cvg-pp-extra' : '' ?>"><?= cvg_pp_e($isGroup ? substr($f, 3) : $f) ?></li>
+                                        <li class="<?= $cls ?>"><?= cvg_pp_e($isGroup ? substr($f, 3) : $f) ?></li>
                                     <?php endforeach; ?>
                                 </ul>
-                                <?php if ($extra > 0): ?>
-                                    <button type="button" class="cvg-pp-more" aria-expanded="false" data-more="+ <?= $extra ?> more features">+ <?= $extra ?> more features</button>
-                                <?php endif; ?>
 
                                 <a href="<?= cvg_pp_e($p['link']) ?>" class="cvg-pp-btn <?= !empty($p['popular']) ? 'cvg-pp-btn--dark' : 'cvg-pp-btn--ghost' ?> cvg-pp-btn--block cvg-pp-buy">Buy now</a>
                             </article>
@@ -209,7 +195,170 @@ $cvgPPFirst   = array_key_first($cvgPricing);
         </div>
     </section>
 
+    <style>
+        /* ===== TABS: center + wrap (jo fit na hon neeche aa kar center mein) + underline ===== */
+        .cvg-pp .cvg-pp-tabs-wrap {
+            overflow: visible;
+        }
 
+        .cvg-pp .cvg-pp-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px 36px;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: visible;
+        }
+
+        .cvg-pp .cvg-pp-tab {
+            position: relative;
+            flex: 0 0 auto;
+            padding: 10px 4px 12px;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            color: #c9d6d2;
+            font: inherit;
+            font-size: 17px;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: color .25s ease;
+        }
+
+        /* underline */
+        .cvg-pp .cvg-pp-tab::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: #00D4A3;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s cubic-bezier(.2, .9, .2, 1);
+        }
+
+        .cvg-pp .cvg-pp-tab:hover {
+            color: #fff;
+        }
+
+        .cvg-pp .cvg-pp-tab:hover::after {
+            transform: scaleX(.5);
+        }
+
+        .cvg-pp .cvg-pp-tab.is-active {
+            color: #00D4A3;
+        }
+
+        .cvg-pp .cvg-pp-tab.is-active::after {
+            transform: scaleX(1);
+        }
+
+        .cvg-pp .cvg-pp-tab:focus-visible {
+            outline: 2px solid #00D4A3;
+            outline-offset: 4px;
+        }
+
+        /* ===== CARDS: features list ke andar scroll ===== */
+        .cvg-pp .cvg-pp-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cvg-pp .cvg-pp-list {
+            flex: 1 1 auto;
+            height: 300px;
+            max-height: 300px;
+            min-height: 0;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            padding-right: 10px;
+            margin-bottom: 28px;
+            scrollbar-width: thin;
+            scrollbar-color: #00D4A3 transparent;
+        }
+
+        .cvg-pp .cvg-pp-list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .cvg-pp .cvg-pp-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .cvg-pp .cvg-pp-list::-webkit-scrollbar-thumb {
+            background: #00D4A3;
+            border-radius: 10px;
+        }
+
+        .cvg-pp .cvg-pp-buy {
+            margin-top: auto;
+        }
+
+        @media (max-width: 640px) {
+            .cvg-pp .cvg-pp-tabs {
+                gap: 4px 22px;
+            }
+
+            .cvg-pp .cvg-pp-tab {
+                font-size: 15px;
+            }
+
+            .cvg-pp .cvg-pp-list {
+                height: 260px;
+                max-height: 260px;
+            }
+        }
+        /* tab click par page ka scroll anchor na ho */
+        .cvg-pp,
+        .cvg-pp .cvg-pp-panel {
+            overflow-anchor: none;
+        }
+
+        .cvg-pp .cvg-pp-tab {
+            scroll-margin: 0;
+        }
+    </style>
+
+    <script>
+        /* ===== Tab click par page idhar-udhar jump na kare =====
+           Purani tabs script tab ko scrollIntoView / focus se "center" karti hai,
+           jis se poora page side/upar-neeche chala jata hai. Yahan us ko tab buttons
+           ke liye band kar diya hai (tabs ab wrap ho kar already center mein hain). */
+        (function () {
+            var root = document.getElementById('cvg-pricing-page');
+            if (!root) return;
+
+            var tabs = root.querySelectorAll('.cvg-pp-tab');
+            var nativeFocus = HTMLElement.prototype.focus;
+
+            tabs.forEach(function (tab) {
+                tab.scrollIntoView = function () { };                       // no-op
+                tab.focus = function (opts) {                               // focus bina scroll ke
+                    nativeFocus.call(this, Object.assign({}, opts, { preventScroll: true }));
+                };
+            });
+
+            /* Safety: panel badalne se height change ho to scroll position wapas wahi rakho */
+            root.addEventListener('click', function (e) {
+                if (!e.target.closest('.cvg-pp-tab')) return;
+                var x = window.pageXOffset, y = window.pageYOffset;
+                var restore = function () {
+                    if (window.pageXOffset !== x || Math.abs(window.pageYOffset - y) > 2) {
+                        window.scrollTo(x, y);
+                    }
+                };
+                requestAnimationFrame(restore);
+                setTimeout(restore, 60);
+                setTimeout(restore, 250);
+            }, true);
+        })();
+    </script>
 
 </main>
 <?php include __DIR__ . '/world-section.php'; ?>

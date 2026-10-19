@@ -246,8 +246,7 @@
             margin: 0 0 0 12px;
             padding: 0;
             overflow: visible;
-            background: #3a4a53;
-            border-radius: 6px;
+            background: #0b0d0e;
             box-shadow: 0 14px 38px rgba(0, 0, 0, .45);
             opacity: 0;
             visibility: hidden;
@@ -331,16 +330,16 @@
         <!-- Services dropdown -->
         <div class="services-dropdown" id="servicesDropdown">
           <button class="services-btn" id="servicesBtn" aria-haspopup="true" aria-expanded="false">
-            Services
+             <a href="/creative/services/services.php" class="panel-link">Services</a>
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="services-menu" id="servicesMenu">
             <ul>
-              <li><a href="/services/logo-design">Logo Design Solutions</a></li>
-              <li><a href="/services/illustration-design">Illustration Design</a></li>
-              <li><a href="/services/web-design">Web Design Solutions</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=logo-design-solutions">Logo Design Solutions</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=illustration-design">Illustration Design</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=web-design-solutions">Web Design Solutions</a></li>
 
               <!-- NEW: Web Developer Solutions + flyout -->
               <li class="has-sub">
@@ -351,25 +350,25 @@
                   </svg>
                 </a>
                 <ul class="services-submenu">
-                  <li><a href="/services/laravel">Laravel</a></li>
-                  <li><a href="/services/nodejs">Node Js</a></li>
-                  <li><a href="/services/custom-php-development">Custom PHP Development</a></li>
-                  <li><a href="/services/nextjs">Next.js</a></li>
-                  <li><a href="/services/wordpress-development">WordPress Development</a></li>
-                  <li><a href="/services/shopify">Shopify</a></li>
-                  <li><a href="/services/magento">Magento</a></li>
-                  <li><a href="/services/woocommerce">WooCommerce</a></li>
-                  <li><a href="/services/cms-development">CMS Development</a></li>
-                  <li><a href="/services/website-maintenance">Website Maintenance</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=laravel">Laravel</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=node-js">Node Js</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=custom-php-development">Custom PHP Development</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=next-js">Next.js</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=wordpress-development">WordPress Development</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=shopify">Shopify</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=magento">Magento</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=woocommerce">WooCommerce</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=cms-development">CMS Development</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=website-maintenance">Website Maintenance</a></li>
                 </ul>
               </li>
 
-              <li><a href="/services/branding">Branding</a></li>
-              <li><a href="/services/ecommerce">Ecommerce Website Solutions</a></li>
-              <li><a href="/services/video-animation">Stunning Video Animation Services</a></li>
-              <li><a href="/services/video-animation">MOBILES APPS</a></li>
-              <li><a href="/services/video-animation">DIGITAL MARKETING</a></li>
-              <li><a href="/services/video-animation">ADVANCE COMBO PACKAGES</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=branding">Branding</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=ecommerce-website-solutions">Ecommerce Website Solutions</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=video-animation-services">Stunning Video Animation Services</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=mobile-apps">MOBILES APPS</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=digital-marketing">DIGITAL MARKETING</a></li>
+              <li><a href="/creative/services/service-detail.php?slug=advance-combo-packages">ADVANCE COMBO PACKAGES</a></li>
             </ul>
           </div>
         </div>
@@ -413,7 +412,7 @@
     <!-- Services accordion -->
     <li>
       <button class="panel-services-btn" id="panelServicesBtn">
-        Services
+         <a href="/creative/services/services.php" class="panel-link">Services</a>
         <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
