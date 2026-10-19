@@ -1,21 +1,4 @@
 <?php
-/* =========================================================
-   our-portfolio.php — Creative Converge portfolio (dynamic)
-   File ki jagah:  includes/our-portfolio.php
-   Use:            <?php include __DIR__ . '/includes/our-portfolio.php'; ?>
-
-   IMAGES KAHAN SE AATI HAIN
-   Har category ke liye do tareeqe hain:
-   1) Folder pattern (string):  'assets/img/portfolio-img-*.webp'
-      -> folder mein jitni bhi milti-julti files hongi sab khud aa jayengi.
-         Nayi image add karni ho to bas folder mein daal dein.
-   2) List (array): har image ka path likhein.
-      -> 'assets/img/kuch-bhi.webp'  (aapka assets folder)
-      -> '2024/11/37.png'            (wp-content/uploads folder)
-      -> 'https://...'               (poora URL)
-   ========================================================= */
-
-/* Tabs: key => tab ka naam. Pehla tab page khulte waqt active hoga. */
 $tabs = [
   'web'      => 'Web',
   'logo'     => 'Logo',

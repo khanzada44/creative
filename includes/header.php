@@ -343,7 +343,7 @@
 
               <!-- NEW: Web Developer Solutions + flyout -->
               <li class="has-sub">
-                <a href="/services/web-development" class="sub-trigger" aria-haspopup="true">
+                <a href="/creative/services/service-detail.php?slug=web-developer-solutions" class="sub-trigger" aria-haspopup="true">
                   Web Developer Solutions
                   <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="9 6 15 12 9 18"></polyline>

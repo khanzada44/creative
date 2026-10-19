@@ -222,6 +222,7 @@
     }
 
     .world-overlay-dark {
+        background-image: url(assets/img/tabs-bg.png);
         background: rgba(13, 17, 23, 0.65);
     }
 

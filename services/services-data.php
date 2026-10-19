@@ -55,6 +55,173 @@ function placeholderFaqs()
     return $items;
 }
 
+function serviceFaqs($slug)
+{
+    $faqs = [
+        'logo-design-solutions' => [
+            ["question" => 'How long does a logo design take?', "answer" => 'Most logos are delivered in 24 to 48 hours. Starter Logo is delivered within 48 hours, and Professional Logo within 24 to 48 hours. Revisions are usually turned around within a day.'],
+            ["question" => 'How many logo concepts will I get?', "answer" => 'Starter Logo includes 3 original concepts, Professional Logo includes 6, and Premium Brand Logo includes 10. You pick your favourite and we refine it with you.'],
+            ["question" => 'What files will I receive?', "answer" => 'You get JPG and PNG files on every plan. Professional and Premium plans also include vector files (AI, EPS, PDF) that can be resized to any size for print, signs or merchandise without losing quality.'],
+            ["question" => 'Do I own the logo once it\'s finished?', "answer" => 'Yes. Once the project is paid, you get full ownership rights to the final logo. Professional and Premium plans clearly include 100% ownership rights for commercial use.'],
+            ["question" => 'What if I don\'t like the first concepts?', "answer" => 'We revise until you are happy. Starter includes 3 revisions, while Professional and Premium include unlimited revisions. Tell us what to change and our designers will rework the concepts.'],
+            ["question" => 'Can you redesign my existing logo?', "answer" => 'Yes. We can refresh an old logo while keeping the recognition you have built, or create a completely new mark if your brand has outgrown it.'],
+        ],
+        'illustration-design' => [
+            ["question" => 'What kind of illustrations do you create?', "answer" => 'We create custom illustrations for websites, apps, books, packaging, social media and marketing: characters, scenes, icons, infographics and storybook artwork.'],
+            ["question" => 'How long does an illustration take?', "answer" => 'A Basic illustration is delivered in about 72 hours, and Standard illustrations in 48 to 72 hours. Larger sets, such as a full character sheet or storybook, are scheduled based on the number of pieces.'],
+            ["question" => 'Can I use the illustrations commercially?', "answer" => 'Yes. Standard includes commercial usage rights, and Premium includes 100% ownership rights plus the source files.'],
+            ["question" => 'Which file formats do I get?', "answer" => 'Every plan includes JPG and PNG. Standard adds vector files (AI, EPS, SVG), and Premium includes print-ready and web-ready files along with the source files.'],
+            ["question" => 'Can you match my brand\'s existing style?', "answer" => 'Yes. Send us your brand colours, guidelines or examples you like, and we will create illustrations that fit your existing look.'],
+            ["question" => 'How many revisions are included?', "answer" => 'Basic includes 2 revisions. Standard and Premium include unlimited revisions until the artwork is right.'],
+        ],
+        'web-design-solutions' => [
+            ["question" => 'How long does it take to design a website?', "answer" => 'A Basic 3-page design is delivered in 48 to 72 hours. Business and Enterprise designs depend on the number of pages and features, and we share a clear timeline in your quote.'],
+            ["question" => 'Will my website work on mobile devices?', "answer" => 'Yes. Every design is fully responsive, so it looks and works great on mobile phones, tablets and desktops.'],
+            ["question" => 'Is the website SEO friendly?', "answer" => 'Yes. The Business plan includes an SEO-friendly structure and a Google-friendly sitemap. Every design uses clean, fast-loading layouts that search engines like.'],
+            ["question" => 'Can you redesign my current website?', "answer" => 'Yes. We can give your existing site a modern new look while keeping your content, or rebuild it completely with a better structure and user experience.'],
+            ["question" => 'Do I need to provide the content and images?', "answer" => 'You can send your own text and images, or we can use stock images: 2 on Basic, 5 on Business, and as many as needed on Enterprise. We can also help structure your content.'],
+            ["question" => 'Do you offer support after the website goes live?', "answer" => 'Yes. The Business plan includes 1 month of free support, and Enterprise includes 3 months. After that, you can continue with one of our website maintenance plans.'],
+        ],
+        'web-developer-solutions' => [
+            ["question" => 'What technologies do you work with?', "answer" => 'We develop with Laravel, Node.js, custom PHP, Next.js, WordPress, Shopify, Magento, WooCommerce and custom CMS platforms, and we pick the right technology for your project.'],
+            ["question" => 'How long does website development take?', "answer" => 'A Starter website with up to 5 pages usually takes 1 to 2 weeks. Business and Enterprise projects depend on features and integrations, and we share a detailed timeline before work starts.'],
+            ["question" => 'Will I be able to update the website myself?', "answer" => 'Yes. Every plan includes an admin panel or CMS, so you can edit text, images and pages without any coding.'],
+            ["question" => 'Can you integrate payment gateways and third-party tools?', "answer" => 'Yes. The Business and Enterprise plans include payment gateway and third-party API integrations, such as CRMs, booking systems, email tools and shipping services.'],
+            ["question" => 'Do I get the source code?', "answer" => 'Yes. Enterprise includes full source code access, and on every plan the final code belongs to you once the project is paid.'],
+            ["question" => 'What happens after launch?', "answer" => 'Business includes 1 month of free maintenance, and Enterprise includes 3 months. After that, our website maintenance plans keep your site updated, secure and backed up.'],
+        ],
+        'laravel' => [
+            ["question" => 'Why choose Laravel for my web application?', "answer" => 'Laravel is a secure and well-structured PHP framework. It is ideal for custom applications such as portals, dashboards, CRMs and SaaS products that need to grow over time.'],
+            ["question" => 'Can you build a custom CRM or ERP in Laravel?', "answer" => 'Yes. Laravel Enterprise includes custom CRM or ERP systems with multi-role access control, advanced reports and analytics built around your workflow.'],
+            ["question" => 'Can you upgrade my old Laravel project?', "answer" => 'Yes. We migrate older Laravel applications to the latest version, fix outdated packages and improve performance and security along the way.'],
+            ["question" => 'Do you build APIs for mobile apps?', "answer" => 'Yes. The Business and Enterprise plans include REST API development, so your Laravel backend can power mobile apps, frontends and third-party integrations.'],
+            ["question" => 'How do you keep the application secure?', "answer" => 'We use Laravel\'s built-in protection against SQL injection, CSRF and XSS, role-based access and secure authentication. Enterprise also includes a security audit and hardening.'],
+            ["question" => 'How long does a Laravel project take?', "answer" => 'A Starter project with up to 5 modules usually takes 2 to 4 weeks. Larger systems are planned in phases with a clear timeline before we begin.'],
+        ],
+        'node-js' => [
+            ["question" => 'What is Node.js best used for?', "answer" => 'Node.js is great for fast APIs, real-time features (such as chat, live updates and notifications) and applications that handle many users at the same time.'],
+            ["question" => 'Can you build real-time chat or live features?', "answer" => 'Yes. Node Business includes real-time features with Socket.io, and Node Enterprise supports full real-time chat and streaming applications.'],
+            ["question" => 'Which databases do you use with Node.js?', "answer" => 'We work with MongoDB and MySQL on every plan, and use Redis for caching and message queues in Enterprise projects.'],
+            ["question" => 'Do you provide API documentation?', "answer" => 'Yes. Every Node.js API comes with clear documentation so your frontend or mobile team can integrate quickly.'],
+            ["question" => 'Can my app scale as my users grow?', "answer" => 'Yes. Node Enterprise includes microservices architecture, Docker and CI/CD setup, caching and load testing, so your app is ready for heavy traffic.'],
+            ["question" => 'Do you offer support after deployment?', "answer" => 'Yes. Node Business includes 1 month of free maintenance, and Enterprise includes 3 months plus 24/7 priority support.'],
+        ],
+        'custom-php-development' => [
+            ["question" => 'Why choose custom PHP instead of a CMS?', "answer" => 'Custom PHP gives you complete control. Your website or portal is built exactly around your business process, without extra plugins or features you don\'t need.'],
+            ["question" => 'Can you maintain or fix my existing PHP website?', "answer" => 'Yes. We support legacy PHP applications: fixing bugs, updating old code to newer PHP versions, and improving speed and security.'],
+            ["question" => 'Will I get an admin panel?', "answer" => 'Yes. PHP Starter includes an admin login panel, and PHP Business includes a custom admin panel with full add, edit and delete control over your data.'],
+            ["question" => 'Can you connect my website to other systems?', "answer" => 'Yes. We integrate payment gateways, CRMs, shipping services and other third-party APIs on the Business and Enterprise plans.'],
+            ["question" => 'Is a custom PHP website secure?', "answer" => 'Yes. We follow secure coding practices such as prepared queries, input validation and protected logins. PHP Enterprise also includes a full security audit and hardening.'],
+            ["question" => 'Do I own the source code?', "answer" => 'Yes. Once the project is paid, the code is yours. PHP Enterprise clearly includes full source code access.'],
+        ],
+        'next-js' => [
+            ["question" => 'Why choose Next.js for my website?', "answer" => 'Next.js websites load extremely fast and are excellent for SEO, because pages can be pre-built (SSG) or rendered on the server (SSR) before they reach the visitor.'],
+            ["question" => 'Is Next.js good for SEO?', "answer" => 'Yes. Search engines receive fully rendered pages. Every plan includes technical SEO and meta setup, and Business includes Core Web Vitals optimization.'],
+            ["question" => 'Can I edit content without a developer?', "answer" => 'Yes. Next.js Business includes headless CMS integration, so your team can update pages, blogs and images from an easy dashboard.'],
+            ["question" => 'Where will my website be hosted?', "answer" => 'We deploy to Vercel by default because it is built for Next.js, but we can also deploy to your preferred hosting or cloud provider.'],
+            ["question" => 'Can you build a full web application with Next.js?', "answer" => 'Yes. Next.js Enterprise includes full-stack applications with a database, authentication, payments and multi-language support.'],
+            ["question" => 'Can you convert my existing React site to Next.js?', "answer" => 'Yes. We can migrate a React app to Next.js to improve speed and SEO while keeping your existing design and features.'],
+        ],
+        'wordpress-development' => [
+            ["question" => 'Will I be able to update my WordPress site myself?', "answer" => 'Yes. WordPress is very easy to manage. We set up Elementor or Gutenberg so you can edit pages, blogs and images without coding.'],
+            ["question" => 'Do you use ready-made themes or custom themes?', "answer" => 'WordPress Starter customizes a premium theme. Business includes a custom theme design, and Enterprise is a fully custom theme built from scratch.'],
+            ["question" => 'Can you develop a custom WordPress plugin?', "answer" => 'Yes. WordPress Enterprise includes bespoke plugin development for features such as memberships, bookings or custom integrations.'],
+            ["question" => 'Is WordPress secure?', "answer" => 'Yes, when it is set up correctly. We apply security hardening, keep plugins to a minimum and recommend a maintenance plan for regular updates and backups.'],
+            ["question" => 'Will my WordPress website be fast?', "answer" => 'Yes. The Business and Enterprise plans include speed optimization: caching, image compression and clean code for fast loading times.'],
+            ["question" => 'Can you move my existing site to WordPress?', "answer" => 'Yes. We can migrate your content, pages and blog posts from another platform to WordPress, with redirects so you keep your search rankings.'],
+        ],
+        'shopify' => [
+            ["question" => 'How long does it take to set up a Shopify store?', "answer" => 'A Shopify Starter store is usually ready in 5 to 7 days after we receive your products and content. Custom theme stores take longer, depending on the design.'],
+            ["question" => 'Can you upload my products?', "answer" => 'Yes. Starter includes up to 25 product uploads, Business up to 100, and Enterprise unlimited products.'],
+            ["question" => 'Can you move my store from another platform to Shopify?', "answer" => 'Yes. Shopify Enterprise includes store migration of your products, customers and orders from platforms such as WooCommerce, Wix or Magento.'],
+            ["question" => 'Which payment methods can my store accept?', "answer" => 'We set up Shopify Payments, PayPal, Stripe and other gateways available in your country, plus shipping and tax settings on the Business plan.'],
+            ["question" => 'Do I need to pay for Shopify separately?', "answer" => 'Yes. Your Shopify subscription and any paid apps are billed by Shopify directly. Our price covers the design, setup and development work.'],
+            ["question" => 'Can you help increase my store\'s sales?', "answer" => 'Yes. Business includes abandoned cart recovery and basic SEO, and Enterprise includes conversion rate and checkout optimization to turn more visitors into buyers.'],
+        ],
+        'magento' => [
+            ["question" => 'Is Magento right for my business?', "answer" => 'Magento (Adobe Commerce) is best for larger stores with big catalogs, multiple stores or B2B needs. For smaller stores, Shopify or WooCommerce is usually a better fit, and we will advise honestly.'],
+            ["question" => 'Can Magento handle thousands of products?', "answer" => 'Yes. Magento is built for large catalogs. Magento Business includes up to 500 product uploads, and Enterprise includes advanced catalog and inventory setup.'],
+            ["question" => 'Do you support B2B features?', "answer" => 'Yes. Magento Enterprise includes B2B and B2C features, such as customer groups, custom pricing, quotes and bulk ordering.'],
+            ["question" => 'Can you connect Magento to my ERP or CRM?', "answer" => 'Yes. Magento Enterprise includes ERP and CRM integration so your orders, stock and customers stay in sync.'],
+            ["question" => 'Why is my Magento store slow, and can you fix it?', "answer" => 'Magento needs the right server and caching setup. Magento Business includes speed and server optimization to make your store load faster.'],
+            ["question" => 'Can you build custom Magento extensions?', "answer" => 'Yes. Business includes custom extension setup, and Enterprise includes custom module development for features your store needs.'],
+        ],
+        'woocommerce' => [
+            ["question" => 'Can you add WooCommerce to my existing WordPress site?', "answer" => 'Yes. We can turn your current WordPress website into a full online store without rebuilding the whole site.'],
+            ["question" => 'Are there monthly fees for WooCommerce?', "answer" => 'WooCommerce itself is free. You only pay for hosting, your domain and any premium plugins you choose, with no platform subscription.'],
+            ["question" => 'Can I sell subscriptions or memberships?', "answer" => 'Yes. WooCommerce Enterprise includes subscriptions and memberships, as well as an optional multi-vendor marketplace.'],
+            ["question" => 'How many products can you upload?', "answer" => 'Starter includes up to 25 products, Business up to 100, and Enterprise unlimited product uploads.'],
+            ["question" => 'Can you set up coupons, shipping and taxes?', "answer" => 'Yes. WooCommerce Business includes shipping and tax configuration, a coupon and discount setup, and checkout optimization.'],
+            ["question" => 'Will my WooCommerce store be fast and secure?', "answer" => 'Yes. Enterprise includes speed and security optimization, and our maintenance plans keep WordPress and WooCommerce updated and backed up.'],
+        ],
+        'cms-development' => [
+            ["question" => 'What is a custom CMS?', "answer" => 'A CMS (Content Management System) is the dashboard where you manage your website content. A custom CMS is built around your exact workflow, with no unnecessary features.'],
+            ["question" => 'Why not just use WordPress?', "answer" => 'WordPress is great for many sites. A custom CMS is better when you need special workflows, strict user permissions, high security or a system that fits a unique business process.'],
+            ["question" => 'Can multiple team members use the CMS?', "answer" => 'Yes. CMS Business includes multi-user access control and a content approval workflow, and Enterprise includes an advanced role and permission system.'],
+            ["question" => 'What is a headless CMS?', "answer" => 'A headless CMS stores your content and delivers it to any website, app or screen through an API. CMS Enterprise includes fully custom or headless CMS development.'],
+            ["question" => 'Can you move my content from my old platform?', "answer" => 'Yes. CMS Enterprise includes migration of your pages, posts, media and users from your old CMS into the new system.'],
+            ["question" => 'Is the CMS easy to use?', "answer" => 'Yes. We design the admin panel for non-technical users, and every plan includes a mobile responsive admin so you can manage content anywhere.'],
+        ],
+        'website-maintenance' => [
+            ["question" => 'What is included in website maintenance?', "answer" => 'Core, theme and plugin updates, off-site backups, uptime monitoring, security checks and content edits. The frequency and hours depend on your plan.'],
+            ["question" => 'How often are backups taken?', "answer" => 'Basic Care takes weekly backups, Business Care daily backups, and Premium Care real-time daily backups, all stored off-site.'],
+            ["question" => 'What if my website gets hacked?', "answer" => 'Business Care includes security monitoring and malware scans, and Premium Care includes advanced security and malware removal to clean and restore your site.'],
+            ["question" => 'Can I cancel my maintenance plan anytime?', "answer" => 'Yes. Plans are billed monthly in advance, and you can cancel before your next billing date.'],
+            ["question" => 'Do you maintain websites you didn\'t build?', "answer" => 'Yes. We maintain websites built by other developers. We start with a quick health check so we know the site before taking it over.'],
+            ["question" => 'What if I need more edit hours than my plan includes?', "answer" => 'Extra work is billed at our hourly rate, or you can move up to a higher plan with more included hours.'],
+        ],
+        'branding' => [
+            ["question" => 'What is included in a branding package?', "answer" => 'Depending on the plan: logo design, brand colours and fonts, stationery, a social media kit, and in higher plans a full brand style guide, marketing collateral and packaging design.'],
+            ["question" => 'What is a brand style guide?', "answer" => 'It is a document that explains how to use your logo, colours, fonts and imagery, so your brand looks the same everywhere. It is included in the Professional and Premium plans.'],
+            ["question" => 'Can you rebrand my existing business?', "answer" => 'Yes. We can refresh your current identity or create a completely new brand while respecting the recognition you have already built.'],
+            ["question" => 'Do you help with brand messaging?', "answer" => 'Yes. Brand Premium includes brand messaging and a tagline, so your words match your visuals.'],
+            ["question" => 'How long does a branding project take?', "answer" => 'Brand Starter usually takes about 1 week. Professional and Premium packages take 2 to 4 weeks because they include more designs and the brand guidelines.'],
+            ["question" => 'Do I own all the brand files?', "answer" => 'Yes. Once the project is paid, all final logos, brand files and designs belong to you.'],
+        ],
+        'ecommerce-website-solutions' => [
+            ["question" => 'Which platform will my online store use?', "answer" => 'We build on Shopify, WooCommerce, Magento or a custom platform, based on your products, budget and growth plans, and recommend the best fit.'],
+            ["question" => 'How many products can I sell?', "answer" => 'Ecommerce Starter includes up to 25 product uploads, Business up to 100, and Enterprise unlimited products.'],
+            ["question" => 'Which payment gateways can you integrate?', "answer" => 'Starter includes 1 payment gateway, and Business includes multiple gateways such as Stripe, PayPal, Square and Authorize.net.'],
+            ["question" => 'Can I manage orders and stock myself?', "answer" => 'Yes. Business includes an admin panel with order management, and Enterprise adds full inventory and stock management with advanced reports.'],
+            ["question" => 'Can you build a multi-vendor marketplace?', "answer" => 'Yes. Ecommerce Enterprise includes a multi-vendor or marketplace option where multiple sellers can list and sell products.'],
+            ["question" => 'Will my store be mobile friendly and SEO ready?', "answer" => 'Yes. Every store is mobile responsive, and the Business plan includes SEO optimization to help customers find your products.'],
+        ],
+        'video-animation-services' => [
+            ["question" => 'How long does an animated video take?', "answer" => 'A 30-second video usually takes 1 to 2 weeks, and longer videos take 2 to 4 weeks. This includes script, storyboard, voice-over and animation.'],
+            ["question" => 'Do you write the script?', "answer" => 'Yes. Every plan includes script writing. Standard and Premium include a custom script and storyboard written around your message and audience.'],
+            ["question" => 'Can I choose the voice-over artist?', "answer" => 'Yes. We share voice samples so you can pick the voice, accent and tone. Premium includes studio-quality voice-over.'],
+            ["question" => 'What styles of animation do you offer?', "answer" => 'We create 2D explainer videos, motion graphics, character animation, and in the Premium plan 3D motion graphics.'],
+            ["question" => 'Can I get versions for social media?', "answer" => 'Yes. Premium Animation includes social media cut-downs, short versions sized for Instagram, TikTok, YouTube Shorts and Facebook.'],
+            ["question" => 'What resolution will the video be delivered in?', "answer" => 'Basic and Standard are delivered in HD 1080p. Premium is delivered in Full HD and 4K, with source files included.'],
+        ],
+        'mobile-apps' => [
+            ["question" => 'Do you build apps for both Android and iOS?', "answer" => 'Yes. App Starter covers one platform (Android or iOS). App Business is a cross-platform app for both Android and iOS from one codebase.'],
+            ["question" => 'How long does it take to build a mobile app?', "answer" => 'A Starter app usually takes 4 to 6 weeks, a Business app 8 to 12 weeks, and Enterprise apps are planned in phases based on features.'],
+            ["question" => 'Will you publish the app to the App Store and Play Store?', "answer" => 'Yes. We handle the submission process. You will need your own Apple Developer and Google Play developer accounts, and we help you set them up.'],
+            ["question" => 'Can I manage the app content myself?', "answer" => 'Yes. App Business includes an admin panel, and Enterprise includes an advanced admin dashboard to manage users, content and orders.'],
+            ["question" => 'Can the app include payments, chat or maps?', "answer" => 'Yes. Business includes payment gateway integration and push notifications. Enterprise supports real-time chat, location tracking and streaming features.'],
+            ["question" => 'Do I own the app source code?', "answer" => 'Yes. Once the project is paid, the app is yours, and App Enterprise includes full source code access.'],
+        ],
+        'digital-marketing' => [
+            ["question" => 'How soon will I see results?', "answer" => 'Paid ads can bring traffic within days. SEO usually shows clear improvement in 3 to 6 months, because search engines take time to trust and rank a website.'],
+            ["question" => 'Which social media platforms do you manage?', "answer" => 'Starter covers 2 platforms, Growth covers 4, and Premium covers all major platforms, such as Facebook, Instagram, LinkedIn, TikTok and X.'],
+            ["question" => 'Is ad spend included in the monthly price?', "answer" => 'No. Our price covers management, strategy and content. Your ad budget is paid directly to Google, Meta or LinkedIn, and we help you choose the right amount.'],
+            ["question" => 'How will I know if the marketing is working?', "answer" => 'You receive regular performance reports showing traffic, rankings, leads and ad results: monthly on Starter, bi-weekly on Growth and weekly with strategy calls on Premium.'],
+            ["question" => 'Is there a long-term contract?', "answer" => 'Plans are billed monthly. We recommend at least 3 months, especially for SEO, so there is enough time to see real results.'],
+            ["question" => 'Do you create the social media posts?', "answer" => 'Yes. We design and write your posts: 12 per month on Starter, 20 on Growth, and 30 posts plus reels and stories on Premium.'],
+        ],
+        'advance-combo-packages' => [
+            ["question" => 'What is a combo package?', "answer" => 'A combo package bundles several services, such as logo, website, branding, video and marketing, into one plan so you get everything you need at a lower total price.'],
+            ["question" => 'Which combo is best for a new business?', "answer" => 'The Startup Combo is ideal for new businesses. It includes a professional logo, a 5-page responsive website, stationery and a social media kit.'],
+            ["question" => 'Can I customize a combo package?', "answer" => 'Yes. Tell us what you need, and we can swap or add services to create a package that fits your business and budget.'],
+            ["question" => 'How long does a combo package take?', "answer" => 'It depends on the services included. We work on them in parallel, and a Startup Combo is usually complete in 2 to 3 weeks. You get a clear timeline with your quote.'],
+            ["question" => 'Is support included?', "answer" => 'Yes. Startup includes 1 month of free support, Business 3 months of free maintenance, and Enterprise 6 months of free maintenance plus 24/7 priority support.'],
+            ["question" => 'Do I get one point of contact for everything?', "answer" => 'Yes. The Business and Enterprise combos include a dedicated account manager who coordinates every service for you.'],
+        ],
+    ];
+    return $faqs[$slug] ?? placeholderFaqs();
+}
+
 $services = [
 
     [
@@ -66,6 +233,16 @@ $services = [
         "subtitle" => "Professional logo design solutions for your business.",
         "image" => "logo-design.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
 
         "introTitle" => "Serving Millions of Brands Worldwide",
         "introText" => "A logo is the first impression of your brand. We specialize in designing custom logos that reflect your business's identity and connect with your target audience. Whether you're launching a new company or rebranding, our logo design solutions create symbols that leave a lasting impact.",
@@ -117,7 +294,7 @@ $services = [
         ],
         "faqTitle" => "Logo Design FAQs",
         "faqSubtitle" => "Learn about our logo design process.",
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('logo-design-solutions'),
     ],
 
     [
@@ -128,6 +305,16 @@ $services = [
         "description" => "Creative illustration design for brands and businesses.",
         "image" => "illustration.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('illustration'),
         "plans" => [
             plan("Basic Illustration", 149, [
@@ -158,7 +345,7 @@ $services = [
                 "Priority Support",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('illustration-design'),
     ],
 
     [
@@ -166,9 +353,19 @@ $services = [
         "mata-title" => "title",
         "mata-description" => "Discription",
         "slug" => "web-design-solutions",
-        "description" => "Modern, responsive and user-friendly web design.",
+        "description" => "Your website is your digital storefront. We offer professional web design solutions that ensure your website is visually appealing, user-friendly, and optimized for all devices. From concept to launch, our designs focus on delivering seamless navigation and a positive user experience.",
         "image" => "web-design.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('webdesign'),
         "plans" => [
             plan("Basic Web Design", 299, [
@@ -203,7 +400,7 @@ $services = [
                 "100% Ownership Rights",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('web-design-solutions'),
     ],
     [
         "title" => "Web Developer Solutions",
@@ -212,6 +409,16 @@ $services = [
         "slug" => "web-developer-solutions",
         "description" => "Custom website development using modern technologies.",
         "image" => "web-development.jpg",
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('webdeveloper'),
         "plans" => [
             plan("Starter Development", 499, [
@@ -243,7 +450,9 @@ $services = [
                 "Full Source Code Access",
                 "24/7 Priority Support",
             ]),
+            
         ],
+        "faqItems" => serviceFaqs('web-developer-solutions'),
 
         "sub_services" => [
 
@@ -299,7 +508,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('laravel'),
             ],
 
             [
@@ -354,7 +563,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('node-js'),
             ],
 
             [
@@ -409,7 +618,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('custom-php-development'),
             ],
 
             [
@@ -464,7 +673,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('next-js'),
             ],
 
             [
@@ -519,7 +728,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('wordpress-development'),
             ],
 
             [
@@ -573,7 +782,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('shopify'),
             ],
 
             [
@@ -627,7 +836,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('magento'),
             ],
 
             [
@@ -681,7 +890,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('woocommerce'),
             ],
 
             [
@@ -735,7 +944,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('cms-development'),
             ],
 
             [
@@ -786,7 +995,7 @@ $services = [
                         "24/7 Priority Support",
                     ]),
                 ],
-                "faqItems" => placeholderFaqs(),
+                "faqItems" => serviceFaqs('website-maintenance'),
             ],
 
         ], // end sub_services
@@ -799,6 +1008,16 @@ $services = [
         "description" => "Build a consistent and recognizable brand identity.",
         "image" => "branding.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('branding'),
         "plans" => [
             plan("Brand Starter", 399, [
@@ -830,7 +1049,7 @@ $services = [
                 "Priority 24/7 Support",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('branding'),
     ],
     [
         "title" => "Ecommerce Website Solutions",
@@ -840,6 +1059,16 @@ $services = [
         "description" => "Ecommerce website development for online businesses.",
         "image" => "ecommerce.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('ecommercewebsite'),
         "plans" => [
             plan("Ecommerce Starter", 599, [
@@ -871,7 +1100,7 @@ $services = [
                 "24/7 Priority Support",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('ecommerce-website-solutions'),
     ],
 
     /* ================= 7. Video Animation ================= */
@@ -883,6 +1112,16 @@ $services = [
         "description" => "Engaging video animation for brands and businesses.",
         "image" => "animation.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('stunningvideo'),
         "plans" => [
             plan("Basic Animation", 199, [
@@ -915,7 +1154,7 @@ $services = [
                 "Priority 24/7 Support",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('video-animation-services'),
     ],
 
     [
@@ -926,6 +1165,16 @@ $services = [
         "description" => "Mobile application development solutions.",
         "image" => "mobile-apps.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('mobilesapps'),
         "plans" => [
             plan("App Starter", 1499, [
@@ -958,10 +1207,9 @@ $services = [
                 "24/7 Priority Support",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('mobile-apps'),
     ],
 
-    /* ================= 9. Digital Marketing ================= */
     [
         "title" => "Digital Marketing",
         "mata-title" => "title",
@@ -970,6 +1218,16 @@ $services = [
         "description" => "Digital marketing solutions to grow your business.",
         "image" => "digital-marketing.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('digitalmarketing'),
         "plans" => [
             plan("Marketing Starter (Monthly)", 299, [
@@ -1002,7 +1260,7 @@ $services = [
                 "24/7 Priority Support",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('digital-marketing'),
     ],
 
     [
@@ -1013,6 +1271,16 @@ $services = [
         "description" => "Combined services for your business needs.",
         "image" => "combo-packages.jpg",
         "sub_services" => [],
+        "listTitle" => "Our Logo Design Services include:",
+        "list" => [
+            "Custom Logo Design",
+            "Logo Redesign & Refresh",
+            "Brand Identity Development",
+            "Vector-Based Designs",
+        ],
+        "introImages" => [
+           "/creative/assets/img/logo-design-solutions-service-image.png",
+        ],
         "portfolio" => portfolioImgs('advancecombo'),
         "plans" => [
             plan("Startup Combo", 999, [
@@ -1044,6 +1312,6 @@ $services = [
                 "24/7 Priority Support",
             ]),
         ],
-        "faqItems" => placeholderFaqs(),
+        "faqItems" => serviceFaqs('advance-combo-packages'),
     ],
 ];

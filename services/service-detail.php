@@ -383,7 +383,7 @@ $faqSchema = [
         </section>
 
         <!-- ============ PORTFOLIO ============ -->
-        <?php if (!empty($portfolio)): ?>
+<?php if (!empty($portfolio)): ?>
             <section class="cvg-svc-sec cvg-svc-sec-alt" id="svc-portfolio-sec">
                 <div class="cvg-svc-wrap">
                     <div class="reveal">
@@ -397,14 +397,272 @@ $faqSchema = [
                     <div class="cvg-svc-portfolio">
                         <?php foreach ($portfolio as $index => $image): ?>
                             <button type="button" class="cvg-svc-work reveal" style="transition-delay: <?= min($index, 7) * 70 ?>ms"
-                                data-src="<?= h($image) ?>" aria-label="View portfolio image <?= (int) $index + 1 ?>">
+                                data-src="<?= h($image) ?>" data-index="<?= (int) $index ?>" aria-label="View portfolio image <?= (int) $index + 1 ?>">
                                 <img src="<?= h($image) ?>" alt="<?= h($title) ?> portfolio <?= (int) $index + 1 ?>" loading="lazy">
+                               
                                 <span class="cvg-svc-work-overlay">View Larger</span>
                             </button>
                         <?php endforeach; ?>
                     </div>
                 </div>
+
+                <!-- Large view (moved to <body> by the script) -->
+                <div class="cvg-svcx-lb" role="dialog" aria-modal="true" aria-label="Portfolio image" hidden>
+                    <button type="button" class="cvg-svcx-lb-close" aria-label="Close">&times;</button>
+                    <button type="button" class="cvg-svcx-lb-nav cvg-svcx-lb-prev" aria-label="Previous image">&#8249;</button>
+                    <div class="cvg-svcx-lb-stage"><img class="cvg-svcx-lb-img" src="" alt=""></div>
+                    <button type="button" class="cvg-svcx-lb-nav cvg-svcx-lb-next" aria-label="Next image">&#8250;</button>
+                    <span class="cvg-svcx-lb-count" aria-live="polite"></span>
+                </div>
             </section>
+
+            <style>
+                /* ===== Tall images (website screenshots): fixed card + scroll on hover ===== */
+                #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall {
+                    position: relative;
+                    display: block;
+                    height: 440px;
+                    aspect-ratio: auto;
+                    overflow: hidden;
+                    padding: 0;
+                }
+                #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto !important;
+                    max-width: none;
+                    max-height: none;
+                    margin: 0;
+                    object-fit: initial;
+                    border-radius: 0;
+                    transform: translateY(0);
+                    transition: transform var(--svcx-dur, 3s) ease-in-out;
+                    will-change: transform;
+                }
+                #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall:hover img,
+                #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall:focus-visible img {
+                    transform: translateY(var(--svcx-move, 0px));
+                }
+
+                /* "Hover to scroll" hint (only on tall cards) */
+                #svc-portfolio-sec .cvg-svc-work-scroll { display: none; }
+                #svc-portfolio-sec .cvg-svc-work--tall .cvg-svc-work-scroll {
+                    position: absolute;
+                    left: 12px;
+                    top: 12px;
+                    z-index: 2;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 6px 12px 6px 9px;
+                    border-radius: 999px;
+                    background: rgba(10, 10, 10, .72);
+                    border: 1px solid rgba(95, 240, 200, .3);
+                    color: #F2F5F4;
+                    font: 500 12px/1 'Poppins', sans-serif;
+                    pointer-events: none;
+                    transition: opacity .35s ease;
+                }
+                #svc-portfolio-sec .cvg-svc-work--tall .cvg-svc-work-scroll svg {
+                    width: 14px;
+                    height: 14px;
+                    fill: none;
+                    stroke: #00D4A3;
+                    stroke-width: 2.4;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    animation: svcxBob 1.6s ease-in-out infinite;
+                }
+                #svc-portfolio-sec .cvg-svc-work--tall:hover .cvg-svc-work-scroll { opacity: 0; }
+                @keyframes svcxBob { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(2px); } }
+
+                @media (max-width: 1024px) {
+                    #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall { height: 400px; }
+                }
+                @media (max-width: 767px) {
+                    #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall { height: 320px; }
+                }
+
+                /* ===== Large view ===== */
+                .cvg-svcx-lb {
+                    position: fixed;
+                    inset: 0;
+                    z-index: 99999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 16px;
+                    padding: 40px 20px;
+                    box-sizing: border-box;
+                    background: rgba(5, 8, 7, .92);
+                    -webkit-backdrop-filter: blur(6px);
+                    backdrop-filter: blur(6px);
+                    opacity: 0;
+                    transition: opacity .25s ease;
+                    font-family: 'Poppins', sans-serif;
+                }
+                .cvg-svcx-lb[hidden] { display: none; }
+                .cvg-svcx-lb.cvg-svcx-lb--open { opacity: 1; }
+                .cvg-svcx-lb .cvg-svcx-lb-stage {
+                    max-width: min(1100px, 100%);
+                    max-height: calc(100vh - 80px);
+                    overflow: auto;
+                    border-radius: 14px;
+                    box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+                    overscroll-behavior: contain;
+                }
+                .cvg-svcx-lb .cvg-svcx-lb-img {
+                    display: block;
+                    max-width: 100%;
+                    max-height: calc(100vh - 80px);
+                    margin: 0 auto;
+                    border-radius: 14px;
+                    box-shadow: none;
+                }
+                /* Tall images: full width, scroll inside */
+                .cvg-svcx-lb.cvg-svcx-lb--tall .cvg-svcx-lb-stage { width: min(900px, 100%); }
+                .cvg-svcx-lb.cvg-svcx-lb--tall .cvg-svcx-lb-img { width: 100%; max-height: none; border-radius: 0; }
+                .cvg-svcx-lb .cvg-svcx-lb-close,
+                .cvg-svcx-lb .cvg-svcx-lb-nav {
+                    flex: none;
+                    width: 48px;
+                    height: 48px;
+                    margin: 0;
+                    padding: 0;
+                    border: 1px solid rgba(95, 240, 200, .35);
+                    border-radius: 50%;
+                    background: rgba(17, 22, 20, .85);
+                    color: #F2F5F4;
+                    font: 400 28px/1 'Poppins', sans-serif;
+                    cursor: pointer;
+                    display: grid;
+                    place-items: center;
+                    box-shadow: none;
+                    transition: background .3s ease, color .3s ease;
+                }
+                .cvg-svcx-lb .cvg-svcx-lb-close { position: absolute; top: 18px; right: 18px; }
+                .cvg-svcx-lb .cvg-svcx-lb-close:hover,
+                .cvg-svcx-lb .cvg-svcx-lb-nav:hover { background: #00D4A3; color: #04342C; }
+                .cvg-svcx-lb button:focus-visible { outline: 2px solid #5FF0C8; outline-offset: 3px; }
+                .cvg-svcx-lb .cvg-svcx-lb-count {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 16px;
+                    transform: translateX(-50%);
+                    color: #C9D6D2;
+                    font-size: 13px;
+                    letter-spacing: .08em;
+                }
+                .cvg-svcx-lb.cvg-svcx-lb--single .cvg-svcx-lb-nav,
+                .cvg-svcx-lb.cvg-svcx-lb--single .cvg-svcx-lb-count { display: none; }
+                @media (max-width: 767px) {
+                    .cvg-svcx-lb { padding: 70px 10px 76px; }
+                    .cvg-svcx-lb .cvg-svcx-lb-nav { position: absolute; bottom: 14px; }
+                    .cvg-svcx-lb .cvg-svcx-lb-prev { left: 16px; }
+                    .cvg-svcx-lb .cvg-svcx-lb-next { right: 16px; }
+                    .cvg-svcx-lb .cvg-svcx-lb-count { bottom: 30px; }
+                    .cvg-svcx-lb .cvg-svcx-lb-stage { max-height: calc(100vh - 150px); }
+                    .cvg-svcx-lb .cvg-svcx-lb-img { max-height: calc(100vh - 150px); }
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall img,
+                    .cvg-svcx-lb { transition: none; }
+                    #svc-portfolio-sec .cvg-svc-work--tall .cvg-svc-work-scroll svg { animation: none; }
+                }
+            </style>
+
+            <script>
+                (function () {
+                    var sec = document.getElementById('svc-portfolio-sec');
+                    if (!sec) return;
+                    var TALL_RATIO = 1.5;   /* image height ÷ width above this = "tall" (website screenshot) */
+                    var SPEED = 260;        /* scroll speed on hover, in pixels per second */
+
+                    var items = Array.prototype.slice.call(sec.querySelectorAll('.cvg-svc-work'));
+                    if (!items.length) return;
+
+                    /* ---------- 1. Find tall images and set up hover scroll ---------- */
+                    function measure(btn) {
+                        var img = btn.querySelector('img');
+                        if (!img || !img.naturalWidth) return;
+                        var tall = img.naturalHeight / img.naturalWidth > TALL_RATIO;
+                        btn.classList.toggle('cvg-svc-work--tall', tall);
+                        btn.dataset.tall = tall ? '1' : '';
+                        if (!tall) return;
+                        var move = Math.max(0, img.offsetHeight - btn.clientHeight);
+                        btn.style.setProperty('--svcx-move', -move + 'px');
+                        btn.style.setProperty('--svcx-dur', Math.min(8, Math.max(1.2, move / SPEED)).toFixed(2) + 's');
+                    }
+                    items.forEach(function (btn) {
+                        var img = btn.querySelector('img');
+                        if (!img) return;
+                        if (img.complete && img.naturalWidth) measure(btn);
+                        else img.addEventListener('load', function () { measure(btn); });
+                    });
+                    var rt;
+                    window.addEventListener('resize', function () {
+                        clearTimeout(rt);
+                        rt = setTimeout(function () { items.forEach(measure); }, 150);
+                    });
+
+                    /* ---------- 2. Large view with next/prev, keyboard and scroll for tall images ---------- */
+                    var lb = sec.querySelector('.cvg-svcx-lb');
+                    document.body.appendChild(lb);   /* so no parent style can clip it */
+                    var stage = lb.querySelector('.cvg-svcx-lb-stage');
+                    var big = lb.querySelector('.cvg-svcx-lb-img');
+                    var count = lb.querySelector('.cvg-svcx-lb-count');
+                    var current = 0, lastFocus = null;
+                    if (items.length < 2) lb.classList.add('cvg-svcx-lb--single');
+
+                    function show(i) {
+                        current = (i + items.length) % items.length;
+                        var btn = items[current], thumb = btn.querySelector('img');
+                        var tall = btn.dataset.tall === '1';
+                        if (!btn.dataset.tall && thumb && thumb.naturalWidth) tall = thumb.naturalHeight / thumb.naturalWidth > TALL_RATIO;
+                        lb.classList.toggle('cvg-svcx-lb--tall', tall);
+                        big.src = btn.getAttribute('data-src');
+                        big.alt = thumb ? thumb.alt : '';
+                        stage.scrollTop = 0;
+                        count.textContent = (current + 1) + ' / ' + items.length;
+                    }
+                    function open(i) {
+                        lastFocus = document.activeElement;
+                        show(i);
+                        lb.hidden = false;
+                        document.documentElement.style.overflow = 'hidden';
+                        requestAnimationFrame(function () { lb.classList.add('cvg-svcx-lb--open'); });
+                        lb.querySelector('.cvg-svcx-lb-close').focus();
+                    }
+                    function close() {
+                        lb.classList.remove('cvg-svcx-lb--open');
+                        document.documentElement.style.overflow = '';
+                        setTimeout(function () { lb.hidden = true; big.src = ''; }, 250);
+                        if (lastFocus) lastFocus.focus();
+                    }
+
+                    /* Capture the click first, so an older lightbox script on the page doesn't open a second one */
+                    sec.addEventListener('click', function (e) {
+                        var btn = e.target.closest('.cvg-svc-work');
+                        if (!btn || !sec.contains(btn)) return;
+                        e.preventDefault();
+                        e.stopPropagation();
+                        open(items.indexOf(btn));
+                    }, true);
+
+                    lb.querySelector('.cvg-svcx-lb-close').addEventListener('click', close);
+                    lb.querySelector('.cvg-svcx-lb-prev').addEventListener('click', function () { show(current - 1); });
+                    lb.querySelector('.cvg-svcx-lb-next').addEventListener('click', function () { show(current + 1); });
+                    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+                    document.addEventListener('keydown', function (e) {
+                        if (lb.hidden) return;
+                        if (e.key === 'Escape') close();
+                        else if (e.key === 'ArrowLeft') show(current - 1);
+                        else if (e.key === 'ArrowRight') show(current + 1);
+                    });
+                })();
+            </script>
         <?php endif; ?>
 
         <!-- ============ PRICING (service-specific plans) ============ -->
