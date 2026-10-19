@@ -11,8 +11,6 @@ if (!function_exists('cvg_pp_e')) {
 $cvgPPFirst = array_key_first($cvgPricing);
 ?>
 <main class="cvg-pp" id="cvg-pricing-page">
-
-    <!-- ================= 1. BANNER ================= -->
     <section class="cvg-pp-banner">
         <span class="cvg-pp-glow cvg-pp-glow--a" aria-hidden="true"></span>
         <span class="cvg-pp-glow cvg-pp-glow--b" aria-hidden="true"></span>

@@ -168,15 +168,12 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
 
 <script>
 (function(){
-  /* ---- Settings (tweak kar sakte ho) ---- */
-  var SKATER_X = 0.18;   // scroll ke saath skater kitna right/left khisakta hai
-  var SKATER_Y = 0.09;   // scroll ke saath skater kitna upar/neeche khisakta hai
-  var COUNT_MS = 1600;   // counter ka time
-
+ 
+  var SKATER_X = 0.18;  
+  var SKATER_Y = 0.09; 
+  var COUNT_MS = 1600;
   var sec = document.getElementById('about');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- Reveal + circles: screen ma aaye to .is-in, bahar jaye to hat jaye (repeat) ---- */
   var rvs = sec.querySelectorAll('.abt-rv');
   var circles = sec.querySelectorAll('.abt-circle-wrap');
   var rafs = new WeakMap();

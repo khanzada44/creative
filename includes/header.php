@@ -378,11 +378,9 @@
         <a href="/creative/contact-us/index.php" class="nav-link">Contact us</a>
       </nav>
     </div>
-
-    <!-- RIGHT: email + Get a quote -->
     <div class="header-right">
       <a href="mailto:info@websdesignusa.com" class="email-link">info@websdesignusa.com</a>
-      <a href="/quote" class="quote-btn">Get a quote</a>
+      <a href="/creative/contact-us/index.php" class="quote-btn">Get a quote</a>
     </div>
   </div>
 </header>
@@ -419,9 +417,9 @@
       </button>
 
       <ul class="panel-services-list" id="panelServicesList">
-        <li><a href="/services/logo-design" class="panel-sub-link">Logo Design Solutions</a></li>
-        <li><a href="/services/illustration-design" class="panel-sub-link">Illustration Design</a></li>
-        <li><a href="/services/web-design" class="panel-sub-link">Web Design Solutions</a></li>
+        <li><a href="/creative/services/service-detail.php?slug=logo-design-solutions" class="panel-sub-link">Logo Design Solutions</a></li>
+        <li><a href="/creative/services/service-detail.php?slug=illustration-design" class="panel-sub-link">Illustration Design</a></li>
+        <li><a href="/creative/services/service-detail.php?slug=web-design-solutions" class="panel-sub-link">Web Design Solutions</a></li>
 
         <!-- NEW: Web Developer Solutions (nested accordion) -->
         <li>
@@ -432,27 +430,27 @@
             </svg>
           </button>
           <ul class="panel-sub-list" id="panelDevList">
-            <li><a href="/services/laravel">Laravel</a></li>
-            <li><a href="/services/nodejs">Node Js</a></li>
-            <li><a href="/services/custom-php-development">Custom PHP Development</a></li>
-            <li><a href="/services/nextjs">Next.js</a></li>
-            <li><a href="/services/wordpress-development">WordPress Development</a></li>
-            <li><a href="/services/shopify">Shopify</a></li>
-            <li><a href="/services/magento">Magento</a></li>
-            <li><a href="/services/woocommerce">WooCommerce</a></li>
-            <li><a href="/services/cms-development">CMS Development</a></li>
-            <li><a href="/services/website-maintenance">Website Maintenance</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=laravel">Laravel</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=node-js">Node Js</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=custom-php-development">Custom PHP Development</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=next-js">Next.js</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=wordpress-development">WordPress Development</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=shopify">Shopify</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=magento">Magento</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=woocommerce">WooCommerce</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=cms-development">CMS Development</a></li>
+                  <li><a href="/creative/services/service-detail.php?slug=website-maintenance">Website Maintenance</a></li>
           </ul>
         </li>
 
-        <li><a href="/services/branding" class="panel-sub-link">Branding</a></li>
-        <li><a href="/services/ecommerce" class="panel-sub-link">Ecommerce Website Solutions</a></li>
-        <li><a href="/services/video-animation" class="panel-sub-link">Stunning Video Animation Services</a></li>
-        <li><a href="/services/mobile-apps" class="panel-sub-link">Mobile Apps</a></li>
+        <li><a href="/creative/services/service-detail.php?slug=branding" class="panel-sub-link">Branding</a></li>
+        <li><a href="/creative/services/service-detail.php?slug=ecommerce-website-solutions" class="panel-sub-link">Ecommerce Website Solutions</a></li>
+        <li><a href="/creative/services/service-detail.php?slug=video-animation-services" class="panel-sub-link">Stunning Video Animation Services</a></li>
+        <li><a href="/creative/services/service-detail.php?slug=mobile-apps" class="panel-sub-link">Mobile Apps</a></li>
       </ul>
     </li>
 
-    <li><a href="/pricing" class="panel-link">Pricing</a></li>
+    <li><a href="/creative/pricing/index.php" class="panel-link">Pricing</a></li>
     <li><a href="/creative/cases/index.php" class="panel-link">Cases</a></li>
     <li><a href="/creative/contact-us/index.php" class="panel-link">Contact us</a></li>
   </ul>

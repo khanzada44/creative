@@ -1,7 +1,3 @@
-<!-- ============ CREATIVE CONVERGE — PRICING SECTION ============ -->
-<!-- Needs the Poppins font. If your site doesn't load it yet, add this line inside <head>:
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
-
 <section class="cvg-price" id="cvg-pricing">
   <div class="cvg-price-inner">
 
@@ -12,7 +8,8 @@
         <h3 class="cvg-price-name">Bronze Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
-        <ul class="cvg-price-list">
+        <div class="cvg-price-scroll">
+        <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
           <li class="cvg-price-li">2 Stock Images</li>
           <li class="cvg-price-li">3 Page Website</li>
           <li class="cvg-price-li">1 jQuery Slider Banner</li>
@@ -24,11 +21,10 @@
           <li class="cvg-price-li cvg-price-extra">100% Unique Design Guarantee</li>
           <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee</li>
         </ul>
-        <button type="button" class="cvg-price-toggle" aria-expanded="false">+ 4 more features</button>
+        </div>
         <a href="contact-us/" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
 
-      <!-- ===== Silver (featured) ===== -->
       <article class="cvg-price-card cvg-price-card--featured">
         <span class="cvg-price-shine" aria-hidden="true"></span>
         <div class="cvg-price-name-row">
@@ -37,7 +33,8 @@
         </div>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>799<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
-        <ul class="cvg-price-list">
+        <div class="cvg-price-scroll">
+        <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
           <li class="cvg-price-li">5 Stock Photos</li>
           <li class="cvg-price-li">5 Page Website</li>
           <li class="cvg-price-li">3 Banner Design</li>
@@ -51,7 +48,7 @@
           <li class="cvg-price-li cvg-price-addon cvg-price-extra">Mobile Responsive: additional $200 *</li>
           <li class="cvg-price-li cvg-price-addon cvg-price-extra">CMS: additional $250 *</li>
         </ul>
-        <button type="button" class="cvg-price-toggle" aria-expanded="false">+ 6 more features</button>
+        </div>
         <a href="contact-us/" class="cvg-price-btn cvg-price-btn-dark">Buy now</a>
       </article>
 
@@ -60,7 +57,8 @@
         <h3 class="cvg-price-name">Gold Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>1199<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
-        <ul class="cvg-price-list">
+        <div class="cvg-price-scroll">
+        <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
           <li class="cvg-price-li">10 Unique Pages Website</li>
           <li class="cvg-price-li">CMS / Admin Panel Support</li>
           <li class="cvg-price-li">8 Stock Images</li>
@@ -76,14 +74,14 @@
           <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee *</li>
           <li class="cvg-price-li cvg-price-addon cvg-price-extra">Mobile Responsive: additional $200 *</li>
         </ul>
-        <button type="button" class="cvg-price-toggle" aria-expanded="false">+ 7 more features</button>
+        </div>
         <a href="contact-us/" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
 
     </div>
 
     <div class="cvg-price-more">
-      <a href="pricing/" class="cvg-price-more-link">
+      <a href="/creative/pricing/index.php" class="cvg-price-more-link">
         <span class="cvg-price-more-ic" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
@@ -93,11 +91,6 @@
   </div>
 </section>
 <style>
-    /* =========================================================
-   CREATIVE CONVERGE — Pricing section
-   Every rule is scoped to .cvg-price, so nothing here
-   touches the rest of your site (no :root, body or * rules).
-   ========================================================= */
 
 .cvg-price {
   --cvg-bg: #0A0A0A;
@@ -321,29 +314,55 @@
   box-shadow: inset 0 0 0 1px rgba(217, 245, 238, 0.4);
 }
 
-/* Extra features: hidden until "+ more features" is clicked */
-.cvg-price .cvg-price-extra { display: none; }
-.cvg-price .cvg-price-card--open .cvg-price-li.cvg-price-extra { display: flex; }
-.cvg-price .cvg-price-card--open .cvg-price-group.cvg-price-extra { display: block; }
-
-.cvg-price .cvg-price-toggle {
-  align-self: flex-start;
-  margin: 16px 0 0;
-  padding: 4px 0;
-  border: 0;
-  background: none;
-  box-shadow: none;
-  color: var(--cvg-mint);
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4;
-  text-transform: none;
-  cursor: pointer;
+/* ---------- Feature list scrolls inside the card ---------- */
+.cvg-price .cvg-price-scroll {
+  position: relative;
+  margin: 30px 0 0;
 }
 
-.cvg-price .cvg-price-toggle:hover { background: none; color: var(--cvg-mint-light); text-decoration: underline; }
-.cvg-price .cvg-price-card--featured .cvg-price-toggle { color: #F2F5F4; }
+.cvg-price .cvg-price-scroll .cvg-price-list {
+  margin: 0;
+  height: 250px;               /* about 6 features visible, the rest scroll */
+  padding: 2px 14px 18px 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  outline: none;
+}
+
+/* Soft fade at the bottom while there is more to scroll (works on any card colour) */
+.cvg-price .cvg-price-scroll .cvg-price-list {
+  -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 50px), transparent), linear-gradient(#000, #000);
+  -webkit-mask-size: calc(100% - 14px) 100%, 14px 100%;
+  -webkit-mask-position: left top, right top;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: linear-gradient(180deg, #000 calc(100% - 50px), transparent), linear-gradient(#000, #000);
+  mask-size: calc(100% - 14px) 100%, 14px 100%;
+  mask-position: left top, right top;
+  mask-repeat: no-repeat;
+}
+.cvg-price .cvg-price-scroll.cvg-price-scroll--end .cvg-price-list {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* Slim mint scrollbar (Chrome, Edge, Safari) */
+.cvg-price .cvg-price-list::-webkit-scrollbar { width: 5px; }
+.cvg-price .cvg-price-list::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.06); border-radius: 999px; }
+.cvg-price .cvg-price-list::-webkit-scrollbar-thumb { background: var(--cvg-mint); border-radius: 999px; }
+.cvg-price .cvg-price-list::-webkit-scrollbar-thumb:hover { background: var(--cvg-mint-light); }
+.cvg-price .cvg-price-card--featured .cvg-price-list::-webkit-scrollbar-track { background: rgba(10, 10, 10, 0.35); }
+.cvg-price .cvg-price-card--featured .cvg-price-list::-webkit-scrollbar-thumb { background: var(--cvg-mint-light); }
+
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+  .cvg-price .cvg-price-list { scrollbar-width: thin; scrollbar-color: var(--cvg-mint) rgba(255, 255, 255, 0.06); }
+}
+
+.cvg-price .cvg-price-list:focus-visible {
+  outline: 2px solid var(--cvg-mint-light);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
 
 /* ---------- Buttons ---------- */
 .cvg-price .cvg-price-btn {
@@ -388,7 +407,6 @@
 }
 
 .cvg-price .cvg-price-btn:focus-visible,
-.cvg-price .cvg-price-toggle:focus-visible,
 .cvg-price .cvg-price-more-link:focus-visible {
   outline: 2px solid var(--cvg-mint-light);
   outline-offset: 3px;
@@ -478,6 +496,7 @@
 @media (max-width: 480px) {
   .cvg-price { padding: 56px 16px 70px; }
   .cvg-price .cvg-price-amount { font-size: 56px; }
+  .cvg-price .cvg-price-scroll .cvg-price-list { height: 230px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -492,16 +511,16 @@
   var root = document.getElementById('cvg-pricing');
   if (!root) return;
 
-  /* Show / hide the extra features in each card */
-  root.querySelectorAll('.cvg-price-card').forEach(function (card) {
-    var btn = card.querySelector('.cvg-price-toggle');
-    if (!btn) return;
-    var label = btn.textContent;
-    btn.addEventListener('click', function () {
-      var open = card.classList.toggle('cvg-price-card--open');
-      btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? '− Show less' : label;
-    });
+  /* Hide the bottom fade when a list has nothing more to scroll */
+  root.querySelectorAll('.cvg-price-scroll').forEach(function (box) {
+    var list = box.querySelector('.cvg-price-list');
+    if (!list) return;
+    function update() {
+      box.classList.toggle('cvg-price-scroll--end', list.scrollTop + list.clientHeight >= list.scrollHeight - 4);
+    }
+    list.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
   });
 
   /* Cards rise in one after another when the section scrolls into view */

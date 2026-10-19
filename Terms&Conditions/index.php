@@ -1,10 +1,4 @@
 <?php
-/* =========================================================
-   terms-and-conditions/index.php — Creative Converge "Terms & Conditions"
-   Header and footer are included in this file.
-   All text is in the settings below — edit freely.
-   In the text: a string = paragraph, an array = bullet list.
-   ========================================================= */
 
 $termsTitle   = 'Terms & Conditions';
 $termsUpdated = 'October 16, 2026';
