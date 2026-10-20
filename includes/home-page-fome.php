@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="cvg-consult-right">
-    <img src="assets/img/conbg-1.jpg" alt="Team discussing a project around a table" class="cvg-consult-photo" loading="lazy" draggable="false">
+    <img src="assets/img/contect-fome-image.webp" alt="Team discussing a project around a table" class="cvg-consult-photo" loading="lazy" draggable="false">
   </div>
 
 </section>
@@ -180,7 +180,7 @@
   border: 1px solid var(--cvg-field-line);
   border-radius: 14px;
   background: var(--cvg-field);
-  box-shadow: none;
+   
   color: var(--cvg-text);
   font-family: 'Poppins', sans-serif;
   font-size: 15px;

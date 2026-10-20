@@ -50,7 +50,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             background: none;
             border: 0;
             border-radius: 0;
-            box-shadow: none;
+             
             -webkit-backdrop-filter: none;
             backdrop-filter: none;
         }
@@ -71,7 +71,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             border-bottom: 1.5px solid rgba(242, 245, 244, .35);
             border-radius: 0;
             background: transparent;
-            box-shadow: none;
+             
             font-size: 17px;
             color: #F2F5F4;
         }
@@ -108,7 +108,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
         .cvg-pp .cvg-pp-form--line .cvg-pp-field input:focus,
         .cvg-pp .cvg-pp-form--line .cvg-pp-field textarea:focus {
             border-bottom-color: transparent;
-            box-shadow: none;
+             
         }
 
         /* Outline "Send" button */
@@ -122,7 +122,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             color: #00D4A3;
             font-size: 16px;
             font-weight: 500;
-            box-shadow: none;
+             
         }
 
         .cvg-pp .cvg-pp-btn--outline:hover {
@@ -184,7 +184,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
                                     <?php endforeach; ?>
                                 </ul>
 
-                                <a href="<?= cvg_pp_e($p['link']) ?>" class="cvg-pp-btn <?= !empty($p['popular']) ? 'cvg-pp-btn--dark' : 'cvg-pp-btn--ghost' ?> cvg-pp-btn--block cvg-pp-buy">Buy now</a>
+                                <a href="<?= cvg_url($p['link']) ?>" class="cvg-pp-btn <?= !empty($p['popular']) ? 'cvg-pp-btn--dark' : 'cvg-pp-btn--ghost' ?> cvg-pp-btn--block cvg-pp-buy">Buy now</a>
                             </article>
                         <?php endforeach; ?>
                     </div>
@@ -217,7 +217,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             border: 0;
             border-radius: 0;
             background: transparent;
-            box-shadow: none;
+             
             color: #c9d6d2;
             font: inherit;
             font-size: 17px;

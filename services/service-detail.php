@@ -1,4 +1,5 @@
 <?php
+require_once dirname(__DIR__) . '/includes/init.php';
 require_once __DIR__ . '/services-data.php';
 
 $slug = $_GET['slug'] ?? '';
@@ -47,7 +48,7 @@ $faqSubtitle   = $service['faqSubtitle'] ?? '';
 $faqItems      = $service['faqItems'] ?? [];
 $faqCtaText    = $service['faqCtaText'] ?? 'Still have a question?';
 $faqButtonText = $service['faqButtonText'] ?? 'Get a quote';
-$faqButtonUrl  = $service['faqButtonUrl'] ?? '/creative/contact-us/index.php';
+$faqButtonUrl  = $service['faqButtonUrl'] ?? cvg_url('contact-us/index.php');
 
 /* FAQ schema (is service ke FAQs se automatically banta hai) */
 $faqSchema = [
@@ -73,9 +74,11 @@ $faqSchema = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= h($matatitle) ?></title>
     <meta name="description" content="<?= h($matadescription) ?>">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
+    <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
     <style>
         .cvg-svc {
             --wcu-grad: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, .45) 0%, transparent 60%), linear-gradient(160deg, #03866f 0%, #004337 48%, #00211b 100%);
@@ -100,85 +103,293 @@ $faqSchema = [
         .cvg-svc,
         .cvg-svc *,
         .cvg-svc *::before,
-        .cvg-svc *::after { box-sizing: border-box }
+        .cvg-svc *::after {
+            box-sizing: border-box
+        }
 
-        .cvg-svc h1, .cvg-svc h2, .cvg-svc h3, .cvg-svc p, .cvg-svc ul { margin: 0; padding: 0 }
-        .cvg-svc ul { list-style: none }
+        .cvg-svc h1,
+        .cvg-svc h2,
+        .cvg-svc h3,
+        .cvg-svc p,
+        .cvg-svc ul {
+            margin: 0;
+            padding: 0
+        }
 
-        .cvg-svc-wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px }
-        .cvg-center { text-align: center; justify-content: center }
+        .cvg-svc ul {
+            list-style: none
+        }
+
+        .cvg-svc-wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .cvg-center {
+            text-align: center;
+            justify-content: center
+        }
 
         /* ---------- Hero ---------- */
-        .cvg-svc-hero { background: var(--wcu-grad); padding: 110px 0 120px; text-align: center }
-        .cvg-svc-h1 { font-size: 58px; font-weight: 700; line-height: 1.08; letter-spacing: -.025em; text-transform: uppercase; color: #fff }
-        .cvg-svc-sub { margin: 16px auto 0; max-width: 700px; font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, .88) }
+        .cvg-svc-hero {
+            background: var(--wcu-grad);
+            padding: 110px 0 120px;
+            text-align: center
+        }
 
-        .cvg-svc-sec { padding: 90px 0 }
-        .cvg-svc-sec-alt { background: var(--cvg-bg-2) }
+        .cvg-svc-h1 {
+            font-size: 58px;
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -.025em;
+            text-transform: uppercase;
+            color: #fff
+        }
+
+        .cvg-svc-sub {
+            margin: 11px auto 0 !important;
+            max-width: 900px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, .88);
+        }
+
+        .cvg-svc-sec {
+            padding: 90px 0
+        }
+
+        .cvg-svc-sec-alt {
+            background: var(--cvg-bg-2)
+        }
 
         .cvg-svc-eyebrow {
-            display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
-            font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--cvg-mint)
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--cvg-mint)
         }
-        .cvg-svc-hero .cvg-svc-eyebrow { justify-content: center; color: var(--cvg-mint-light) }
-        .cvg-svc-eyebrow::before { content: ""; width: 36px; height: 2px; background: currentColor; flex-shrink: 0 }
-        .cvg-svc-eyebrow.cvg-center { justify-content: center }
 
-        .cvg-svc-h2 { font-size: 40px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; color: var(--cvg-text) }
-        .cvg-svc-h3 { margin: 28px 0 14px; font-size: 18px; font-weight: 600; color: var(--cvg-text) }
-        .cvg-svc-text { margin-top: 18px; font-size: 16px; line-height: 1.75; color: var(--cvg-muted); max-width: 540px }
+        .cvg-svc-hero .cvg-svc-eyebrow {
+            justify-content: center;
+            color: var(--cvg-mint-light)
+        }
+
+        .cvg-svc-eyebrow::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: currentColor;
+            flex-shrink: 0
+        }
+
+        .cvg-svc-eyebrow.cvg-center {
+            justify-content: center
+        }
+
+        .cvg-svc-h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -.02em;
+            color: var(--cvg-text)
+        }
+
+        .cvg-svc-h3 {
+            margin: 28px 0 14px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cvg-text)
+        }
+
+        .cvg-svc-text {
+            margin-top: 18px;
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--cvg-muted);
+            max-width: 540px
+        }
 
         /* ---------- Intro ---------- */
-        .cvg-svc-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: center }
-        .cvg-svc-intro.no-media { grid-template-columns: minmax(0, 1fr) }
-        .cvg-svc-list { margin-top: 20px !important }
-        .cvg-svc-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-size: 15px; color: var(--cvg-text-2) }
+        .cvg-svc-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 60px;
+            align-items: center
+        }
+
+        .cvg-svc-intro.no-media {
+            grid-template-columns: minmax(0, 1fr)
+        }
+
+        .cvg-svc-list {
+            margin-top: 20px !important
+        }
+
+        .cvg-svc-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: var(--cvg-text-2)
+        }
+
         .cvg-svc-list li::before {
-            content: ""; position: absolute; left: 0; top: 7px; width: 10px; height: 10px; border-radius: 50%;
-            background: var(--cvg-mint); box-shadow: 0 0 0 4px rgba(0, 212, 163, .15)
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--cvg-mint);
+            box-shadow: 0 0 0 4px rgba(0, 212, 163, .15)
         }
+
         .cvg-svc-intro-media {
-            position: relative; display: flex; align-items: center; justify-content: center; gap: 24px;
-            min-height: 360px; border-radius: 24px; padding: 32px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            min-height: 360px;
+            border-radius: 24px;
+            padding: 32px;
         }
-        .cvg-svc-intro-media img { max-width: 48%; max-height: 320px; height: auto; object-fit: contain }
-        .cvg-svc-intro-media img:only-child { max-width: 80% }
+
+        .cvg-svc-intro-media img {
+            max-width: 48%;
+            max-height: 320px;
+            height: auto;
+            object-fit: contain
+        }
+
+        .cvg-svc-intro-media img:only-child {
+            max-width: 80%
+        }
 
         /* ---------- Portfolio ---------- */
-        .cvg-svc-portfolio { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 48px }
-        .cvg-svc-portfolio-tag {
-            display: table; margin: 14px auto 0; padding-bottom: 4px;
-            border-bottom: 2px solid var(--cvg-mint); color: var(--cvg-mint); font-weight: 500
+        .cvg-svc-portfolio {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 48px
         }
+
+        .cvg-svc-portfolio-tag {
+            display: table;
+            margin: 14px auto 0;
+            padding-bottom: 4px;
+            border-bottom: 2px solid var(--cvg-mint);
+            color: var(--cvg-mint);
+            font-weight: 500
+        }
+
         .cvg-svc-work {
-            position: relative; display: block; width: 100%; aspect-ratio: 4/3; padding: 0;
-            border: 2px solid rgba(0, 212, 163, .5); border-radius: 14px; overflow: hidden; cursor: pointer; background: #fff;
+            position: relative;
+            display: block;
+            width: 100%;
+            aspect-ratio: 4/3;
+            padding: 0;
+            border: 2px solid rgba(0, 212, 163, .5);
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #fff;
             transition: transform .3s, box-shadow .3s, border-color .3s
         }
-        .cvg-svc-work img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s }
-        .cvg-svc-work-overlay {
-            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-            background: var(--wcu-grad); opacity: 0; transition: opacity .3s; font-size: 14px; font-weight: 600; color: #fff
+
+        .cvg-svc-work img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s
         }
-        .cvg-svc-work:hover { transform: translateY(-4px); border-color: var(--cvg-mint); box-shadow: 0 18px 48px rgba(0, 212, 163, .25) }
-        .cvg-svc-work:hover .cvg-svc-work-overlay { opacity: .88 }
-        .cvg-svc-work:hover img { transform: scale(1.05) }
+
+        .cvg-svc-work-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--wcu-grad);
+            opacity: 0;
+            transition: opacity .3s;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff
+        }
+
+        .cvg-svc-work:hover {
+            transform: translateY(-4px);
+            border-color: var(--cvg-mint);
+            box-shadow: 0 18px 48px rgba(0, 212, 163, .25)
+        }
+
+        .cvg-svc-work:hover .cvg-svc-work-overlay {
+            opacity: .88
+        }
+
+        .cvg-svc-work:hover img {
+            transform: scale(1.05)
+        }
 
         /* ---------- Lightbox ---------- */
         .cvg-svc-lightbox {
-            position: fixed; inset: 0; z-index: 999999; display: flex; align-items: center; justify-content: center;
-            padding: 40px 20px; background: rgba(0, 0, 0, .88)
+            position: fixed;
+            inset: 0;
+            z-index: 999999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, .88)
         }
-        .cvg-svc-lightbox[hidden] { display: none }
-        .cvg-svc-lightbox img { max-width: min(900px, 100%); max-height: 100%; border-radius: 12px; background: #fff }
+
+        .cvg-svc-lightbox[hidden] {
+            display: none
+        }
+
+        .cvg-svc-lightbox img {
+            max-width: min(900px, 100%);
+            max-height: 100%;
+            border-radius: 12px;
+            background: #fff
+        }
+
         .cvg-svc-lightbox-close {
-            position: absolute; top: 18px; right: 22px; width: 44px; height: 44px; border: 0; border-radius: 50%;
-            background: var(--cvg-mint); color: var(--cvg-ink); font-size: 28px; line-height: 1; cursor: pointer
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            width: 44px;
+            height: 44px;
+            border: 0;
+            border-radius: 50%;
+            background: var(--cvg-mint);
+            color: var(--cvg-ink);
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer
         }
 
         /* ---------- Scroll reveal ---------- */
-        .js .reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .8, .2, 1) }
-        .js .reveal.is-visible { opacity: 1; transform: none }
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .8s ease, transform .8s cubic-bezier(.2, .8, .2, 1)
+        }
+
+        .js .reveal.is-visible {
+            opacity: 1;
+            transform: none
+        }
 
         /* ================= PRICING ================= */
         .pricing-section {
@@ -192,30 +403,57 @@ $faqSchema = [
             padding: 90px 20px 110px;
         }
 
-        .pricing-head { max-width: 1200px; margin: 0 auto 56px }
+        .pricing-head {
+            max-width: 1200px;
+            margin: 0 auto 56px
+        }
 
         .pricing-container {
-            max-width: 1200px; margin: 0 auto; display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: stretch
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            align-items: stretch
         }
 
         .pricing-card {
-            position: relative; display: flex; flex-direction: column;
-            padding: 34px 40px 40px; border: 1px solid var(--p-line); border-radius: 28px;
-            background: var(--p-card); color: var(--p-text); overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 34px 40px 40px;
+            border: 1px solid var(--p-line);
+            border-radius: 28px;
+            background: var(--p-card);
+            color: var(--p-text);
+            overflow: hidden;
             transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease
         }
 
-        .js .pricing-container:not(.is-visible) .pricing-card { opacity: 0 }
+        .js .pricing-container:not(.is-visible) .pricing-card {
+            opacity: 0
+        }
 
         .pricing-container.is-visible .pricing-card {
             animation: pCardIn .9s cubic-bezier(.2, .8, .2, 1) backwards, pFloat 6s ease-in-out infinite
         }
-        .pricing-container.is-visible .pricing-card:nth-child(1) { animation-delay: 0s, 0s }
-        .pricing-container.is-visible .pricing-card:nth-child(2) { animation-delay: .15s, -2s }
-        .pricing-container.is-visible .pricing-card:nth-child(3) { animation-delay: .3s, -4s }
 
-        .pricing-card:hover { transform: translateY(-10px); border-color: var(--p-mint); }
+        .pricing-container.is-visible .pricing-card:nth-child(1) {
+            animation-delay: 0s, 0s
+        }
+
+        .pricing-container.is-visible .pricing-card:nth-child(2) {
+            animation-delay: .15s, -2s
+        }
+
+        .pricing-container.is-visible .pricing-card:nth-child(3) {
+            animation-delay: .3s, -4s
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--p-mint);
+        }
 
         .pricing-card.featured-card {
             background:
@@ -224,122 +462,399 @@ $faqSchema = [
             border-color: rgba(95, 240, 200, .5);
             box-shadow: 0 25px 70px rgba(0, 212, 163, .18)
         }
-        .pricing-card.featured-card:hover { box-shadow: 0 30px 80px rgba(0, 212, 163, .35) }
+
+        .pricing-card.featured-card:hover {
+            box-shadow: 0 30px 80px rgba(0, 212, 163, .35)
+        }
 
         .badge-popular {
-            position: absolute; top: 28px; right: 28px; padding: 7px 14px; border-radius: 999px;
-            background: #050807; color: var(--p-mint); font-size: 13px; font-weight: 600; line-height: 1; white-space: nowrap;
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: #050807;
+            color: var(--p-mint);
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1;
+            white-space: nowrap;
             animation: pBadgePulse 2.4s ease-in-out infinite
         }
 
-        .pricing-card .card-title { font-size: 21px; font-weight: 600; color: var(--p-text); text-align: left; margin-bottom: 18px; padding-right: 120px }
+        .pricing-card .card-title {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--p-text);
+            text-align: left;
+            margin-bottom: 18px;
+            padding-right: 120px
+        }
 
-        .pricing-card .price-tag { display: flex; align-items: flex-start; gap: 4px; line-height: 1; margin-bottom: 18px }
-        .pricing-card .currency { margin-top: 14px; font-size: 30px; font-weight: 700; color: var(--p-mint) }
-        .pricing-card .amount { font-size: 84px; font-weight: 700; letter-spacing: -.04em; color: #fff; transition: transform .4s ease }
-        .pricing-card:hover .amount { transform: scale(1.04) }
-        .pricing-card .decimals { margin-top: 30px; font-size: 26px; font-weight: 600; color: #fff }
+        .pricing-card .price-tag {
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+            line-height: 1;
+            margin-bottom: 18px
+        }
 
-        .pricing-card .package-includes { font-size: 16px; color: var(--p-muted); margin-bottom: 18px }
-        .pricing-card.featured-card .package-includes { color: rgba(255, 255, 255, .8) }
+        .pricing-card .currency {
+            margin-top: 14px;
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--p-mint)
+        }
+
+        .pricing-card .amount {
+            font-size: 84px;
+            font-weight: 700;
+            letter-spacing: -.04em;
+            color: #fff;
+            transition: transform .4s ease
+        }
+
+        .pricing-card:hover .amount {
+            transform: scale(1.04)
+        }
+
+        .pricing-card .decimals {
+            margin-top: 30px;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff
+        }
+
+        .pricing-card .package-includes {
+            font-size: 16px;
+            color: var(--p-muted);
+            margin-bottom: 18px
+        }
+
+        .pricing-card.featured-card .package-includes {
+            color: rgba(255, 255, 255, .8)
+        }
 
         /* scrollable feature list */
         .pricing-card .feature-list {
-            list-style: none; flex: 1; height: 285px; max-height: 285px; overflow-y: auto;
-            padding-right: 10px; margin-bottom: 28px; scrollbar-width: thin; scrollbar-color: var(--p-mint) transparent
+            list-style: none;
+            flex: 1;
+            height: 285px;
+            max-height: 285px;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 28px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--p-mint) transparent
         }
-        .pricing-card .feature-list::-webkit-scrollbar { width: 5px }
-        .pricing-card .feature-list::-webkit-scrollbar-track { background: transparent }
-        .pricing-card .feature-list::-webkit-scrollbar-thumb { background: var(--p-mint); border-radius: 10px }
+
+        .pricing-card .feature-list::-webkit-scrollbar {
+            width: 5px
+        }
+
+        .pricing-card .feature-list::-webkit-scrollbar-track {
+            background: transparent
+        }
+
+        .pricing-card .feature-list::-webkit-scrollbar-thumb {
+            background: var(--p-mint);
+            border-radius: 10px
+        }
 
         .pricing-card .feature-list li {
-            display: flex; align-items: center; gap: 14px; padding: 0; margin-bottom: 15px;
-            font-size: 16px; line-height: 1.4; color: #dbe5e2
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #dbe5e2
         }
-        .pricing-card .feature-list li::before { display: none }
-        .js .pricing-card .feature-list li { opacity: 0 }
-        .pricing-container.is-visible .feature-list li { animation: pItemIn .5s ease forwards }
-        .pricing-container.is-visible .feature-list li:nth-child(1) { animation-delay: .35s }
-        .pricing-container.is-visible .feature-list li:nth-child(2) { animation-delay: .42s }
-        .pricing-container.is-visible .feature-list li:nth-child(3) { animation-delay: .49s }
-        .pricing-container.is-visible .feature-list li:nth-child(4) { animation-delay: .56s }
-        .pricing-container.is-visible .feature-list li:nth-child(5) { animation-delay: .63s }
-        .pricing-container.is-visible .feature-list li:nth-child(6) { animation-delay: .70s }
-        .pricing-container.is-visible .feature-list li:nth-child(n+7) { animation-delay: .75s }
+
+        .pricing-card .feature-list li::before {
+            display: none
+        }
+
+        .js .pricing-card .feature-list li {
+            opacity: 0
+        }
+
+        .pricing-container.is-visible .feature-list li {
+            animation: pItemIn .5s ease forwards
+        }
+
+        .pricing-container.is-visible .feature-list li:nth-child(1) {
+            animation-delay: .35s
+        }
+
+        .pricing-container.is-visible .feature-list li:nth-child(2) {
+            animation-delay: .42s
+        }
+
+        .pricing-container.is-visible .feature-list li:nth-child(3) {
+            animation-delay: .49s
+        }
+
+        .pricing-container.is-visible .feature-list li:nth-child(4) {
+            animation-delay: .56s
+        }
+
+        .pricing-container.is-visible .feature-list li:nth-child(5) {
+            animation-delay: .63s
+        }
+
+        .pricing-container.is-visible .feature-list li:nth-child(6) {
+            animation-delay: .70s
+        }
+
+        .pricing-container.is-visible .feature-list li:nth-child(n+7) {
+            animation-delay: .75s
+        }
 
         .pricing-card .check-icon {
-            flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
-            width: 26px; height: 26px; border-radius: 50%; background: var(--p-mint-soft); color: var(--p-mint);
-            font-size: 12px; font-weight: 700; transition: transform .3s ease, background .3s ease, color .3s ease
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--p-mint-soft);
+            color: var(--p-mint);
+            font-size: 12px;
+            font-weight: 700;
+            transition: transform .3s ease, background .3s ease, color .3s ease
         }
-        .pricing-card .feature-list li:hover .check-icon { transform: scale(1.2) rotate(360deg); background: var(--p-mint); color: #04342c }
-        .pricing-card.featured-card .check-icon { background: rgba(0, 0, 0, .35) }
+
+        .pricing-card .feature-list li:hover .check-icon {
+            transform: scale(1.2) rotate(360deg);
+            background: var(--p-mint);
+            color: #04342c
+        }
+
+        .pricing-card.featured-card .check-icon {
+            background: rgba(0, 0, 0, .35)
+        }
 
         .pricing-card .btn-buy {
-            position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
-            width: 100%; min-height: 66px; border: 1px solid var(--p-line); border-radius: 999px;
-            background: #0a0f0e; color: #fff; font-size: 17px; font-weight: 600; text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 66px;
+            border: 1px solid var(--p-line);
+            border-radius: 999px;
+            background: #0a0f0e;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
             transition: background .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease, transform .3s ease
         }
-        .pricing-card .btn-buy.featured-btn { background: #050807; border-color: #050807 }
-        .pricing-card .btn-buy::after {
-            content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .35), transparent); transform: skewX(-20deg)
-        }
-        .pricing-card .btn-buy:hover::after { animation: pShine .8s ease }
-        .pricing-card .btn-buy:hover {
-            background: var(--p-mint); border-color: var(--p-mint); color: #04342c;
-            box-shadow: 0 0 0 7px rgba(0, 212, 163, .15); transform: scale(1.02)
-        }
-        .pricing-card .btn-buy:active { transform: scale(.98) }
-        .pricing-card .btn-buy:focus-visible { outline: 2px solid var(--cvg-mint-light); outline-offset: 3px }
 
-        @keyframes pCardIn { from { opacity: 0; transform: translateY(50px) scale(.95) } to { opacity: 1; transform: translateY(0) scale(1) } }
-        @keyframes pFloat { 0%, 100% { translate: 0 0 } 50% { translate: 0 -14px } }
-        @keyframes pItemIn { from { opacity: 0; transform: translateX(-14px) } to { opacity: 1; transform: translateX(0) } }
-        @keyframes pBadgePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 163, .5) } 50% { box-shadow: 0 0 0 8px rgba(0, 212, 163, 0) } }
-        @keyframes pShine { from { left: -75% } to { left: 130% } }
+        .pricing-card .btn-buy.featured-btn {
+            background: #050807;
+            border-color: #050807
+        }
+
+        .pricing-card .btn-buy::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .35), transparent);
+            transform: skewX(-20deg)
+        }
+
+        .pricing-card .btn-buy:hover::after {
+            animation: pShine .8s ease
+        }
+
+        .pricing-card .btn-buy:hover {
+            background: var(--p-mint);
+            border-color: var(--p-mint);
+            color: #04342c;
+            box-shadow: 0 0 0 7px rgba(0, 212, 163, .15);
+            transform: scale(1.02)
+        }
+
+        .pricing-card .btn-buy:active {
+            transform: scale(.98)
+        }
+
+        .pricing-card .btn-buy:focus-visible {
+            outline: 2px solid var(--cvg-mint-light);
+            outline-offset: 3px
+        }
+
+        @keyframes pCardIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(.95)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1)
+            }
+        }
+
+        @keyframes pFloat {
+
+            0%,
+            100% {
+                translate: 0 0
+            }
+
+            50% {
+                translate: 0 -14px
+            }
+        }
+
+        @keyframes pItemIn {
+            from {
+                opacity: 0;
+                transform: translateX(-14px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0)
+            }
+        }
+
+        @keyframes pBadgePulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 212, 163, .5)
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(0, 212, 163, 0)
+            }
+        }
+
+        @keyframes pShine {
+            from {
+                left: -75%
+            }
+
+            to {
+                left: 130%
+            }
+        }
 
         /* ---------- Responsive ---------- */
         @media (max-width: 1100px) {
-            .pricing-card { padding: 30px 28px 34px }
-            .pricing-card .amount { font-size: 68px }
-            .pricing-card .card-title { padding-right: 100px; font-size: 19px }
+            .pricing-card {
+                padding: 30px 28px 34px
+            }
+
+            .pricing-card .amount {
+                font-size: 68px
+            }
+
+            .pricing-card .card-title {
+                padding-right: 100px;
+                font-size: 19px
+            }
         }
 
         @media (max-width: 1024px) {
-            .cvg-svc-h1 { font-size: 44px }
-            .cvg-svc-h2 { font-size: 34px }
-            .cvg-svc-portfolio { grid-template-columns: repeat(3, minmax(0, 1fr)) }
-            .cvg-svc-intro { gap: 36px }
+            .cvg-svc-h1 {
+                font-size: 44px
+            }
+
+            .cvg-svc-h2 {
+                font-size: 34px
+            }
+
+            .cvg-svc-portfolio {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .cvg-svc-intro {
+                gap: 36px
+            }
         }
 
         @media (max-width: 900px) {
-            .pricing-container { grid-template-columns: minmax(0, 1fr); max-width: 480px }
-            .pricing-container.is-visible .pricing-card { animation: pCardIn .9s cubic-bezier(.2, .8, .2, 1) backwards }
+            .pricing-container {
+                grid-template-columns: minmax(0, 1fr);
+                max-width: 480px
+            }
+
+            .pricing-container.is-visible .pricing-card {
+                animation: pCardIn .9s cubic-bezier(.2, .8, .2, 1) backwards
+            }
         }
 
         @media (max-width: 767px) {
-            .cvg-svc-hero { padding: 80px 0 90px }
-            .cvg-svc-h1 { font-size: 34px }
-            .cvg-svc-h2 { font-size: 28px }
-            .cvg-svc-sub { font-size: 16px }
-            .cvg-svc-sec { padding: 60px 0 }
-            .cvg-svc-intro { grid-template-columns: minmax(0, 1fr) }
-            .cvg-svc-intro-media { min-height: 280px }
-            .cvg-svc-portfolio { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px }
-            .pricing-section { padding: 60px 16px 80px }
+            .cvg-svc-hero {
+                padding: 80px 0 90px
+            }
+
+            .cvg-svc-h1 {
+                font-size: 34px
+            }
+
+            .cvg-svc-h2 {
+                font-size: 28px
+            }
+
+            .cvg-svc-sub {
+                font-size: 16px
+            }
+
+            .cvg-svc-sec {
+                padding: 60px 0
+            }
+
+            .cvg-svc-intro {
+                grid-template-columns: minmax(0, 1fr)
+            }
+
+            .cvg-svc-intro-media {
+                min-height: 280px
+            }
+
+            .cvg-svc-portfolio {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px
+            }
+
+            .pricing-section {
+                padding: 60px 16px 80px
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .cvg-svc *, .cvg-svc *::before, .cvg-svc *::after { animation: none !important; transition: none !important }
-            .js .reveal, .js .pricing-card, .js .pricing-card .feature-list li { opacity: 1 !important; transform: none !important }
+
+            .cvg-svc *,
+            .cvg-svc *::before,
+            .cvg-svc *::after {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .js .reveal,
+            .js .pricing-card,
+            .js .pricing-card .feature-list li {
+                opacity: 1 !important;
+                transform: none !important
+            }
         }
     </style>
 </head>
 
 <body>
-    <?php include __DIR__ . '../../includes/header.php'; ?>
+    <?php include dirname(__DIR__) . '/includes/header.php'; ?>
 
     <div class="cvg-svc" id="cvg-svc">
 
@@ -374,7 +889,7 @@ $faqSchema = [
                     <?php if (!empty($introImages)): ?>
                         <div class="cvg-svc-intro-media">
                             <?php foreach ($introImages as $i => $img): ?>
-                                <img src="<?= h($img) ?>" alt="<?= h($title) ?> <?= (int) $i + 1 ?>" loading="lazy">
+                                <img src="<?= h(cvg_url($img)) ?>" alt="<?= h($title) ?> <?= (int) $i + 1 ?>" loading="lazy">
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
@@ -383,7 +898,7 @@ $faqSchema = [
         </section>
 
         <!-- ============ PORTFOLIO ============ -->
-<?php if (!empty($portfolio)): ?>
+        <?php if (!empty($portfolio)): ?>
             <section class="cvg-svc-sec cvg-svc-sec-alt" id="svc-portfolio-sec">
                 <div class="cvg-svc-wrap">
                     <div class="reveal">
@@ -397,9 +912,9 @@ $faqSchema = [
                     <div class="cvg-svc-portfolio">
                         <?php foreach ($portfolio as $index => $image): ?>
                             <button type="button" class="cvg-svc-work reveal" style="transition-delay: <?= min($index, 7) * 70 ?>ms"
-                                data-src="<?= h($image) ?>" data-index="<?= (int) $index ?>" aria-label="View portfolio image <?= (int) $index + 1 ?>">
-                                <img src="<?= h($image) ?>" alt="<?= h($title) ?> portfolio <?= (int) $index + 1 ?>" loading="lazy">
-                               
+                                data-src="<?= h(cvg_url($image)) ?>" data-index="<?= (int) $index ?>" aria-label="View portfolio image <?= (int) $index + 1 ?>">
+                                <img src="<?= h(cvg_url($image)) ?>" alt="<?= h($title) ?> portfolio <?= (int) $index + 1 ?>" loading="lazy">
+
                                 <span class="cvg-svc-work-overlay">View Larger</span>
                             </button>
                         <?php endforeach; ?>
@@ -426,6 +941,7 @@ $faqSchema = [
                     overflow: hidden;
                     padding: 0;
                 }
+
                 #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall img {
                     position: absolute;
                     top: 0;
@@ -441,13 +957,17 @@ $faqSchema = [
                     transition: transform var(--svcx-dur, 3s) ease-in-out;
                     will-change: transform;
                 }
+
                 #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall:hover img,
                 #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall:focus-visible img {
                     transform: translateY(var(--svcx-move, 0px));
                 }
 
                 /* "Hover to scroll" hint (only on tall cards) */
-                #svc-portfolio-sec .cvg-svc-work-scroll { display: none; }
+                #svc-portfolio-sec .cvg-svc-work-scroll {
+                    display: none;
+                }
+
                 #svc-portfolio-sec .cvg-svc-work--tall .cvg-svc-work-scroll {
                     position: absolute;
                     left: 12px;
@@ -465,6 +985,7 @@ $faqSchema = [
                     pointer-events: none;
                     transition: opacity .35s ease;
                 }
+
                 #svc-portfolio-sec .cvg-svc-work--tall .cvg-svc-work-scroll svg {
                     width: 14px;
                     height: 14px;
@@ -475,14 +996,33 @@ $faqSchema = [
                     stroke-linejoin: round;
                     animation: svcxBob 1.6s ease-in-out infinite;
                 }
-                #svc-portfolio-sec .cvg-svc-work--tall:hover .cvg-svc-work-scroll { opacity: 0; }
-                @keyframes svcxBob { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(2px); } }
+
+                #svc-portfolio-sec .cvg-svc-work--tall:hover .cvg-svc-work-scroll {
+                    opacity: 0;
+                }
+
+                @keyframes svcxBob {
+
+                    0%,
+                    100% {
+                        transform: translateY(-2px);
+                    }
+
+                    50% {
+                        transform: translateY(2px);
+                    }
+                }
 
                 @media (max-width: 1024px) {
-                    #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall { height: 400px; }
+                    #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall {
+                        height: 400px;
+                    }
                 }
+
                 @media (max-width: 767px) {
-                    #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall { height: 320px; }
+                    #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall {
+                        height: 320px;
+                    }
                 }
 
                 /* ===== Large view ===== */
@@ -503,8 +1043,15 @@ $faqSchema = [
                     transition: opacity .25s ease;
                     font-family: 'Poppins', sans-serif;
                 }
-                .cvg-svcx-lb[hidden] { display: none; }
-                .cvg-svcx-lb.cvg-svcx-lb--open { opacity: 1; }
+
+                .cvg-svcx-lb[hidden] {
+                    display: none;
+                }
+
+                .cvg-svcx-lb.cvg-svcx-lb--open {
+                    opacity: 1;
+                }
+
                 .cvg-svcx-lb .cvg-svcx-lb-stage {
                     max-width: min(1100px, 100%);
                     max-height: calc(100vh - 80px);
@@ -513,17 +1060,27 @@ $faqSchema = [
                     box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
                     overscroll-behavior: contain;
                 }
+
                 .cvg-svcx-lb .cvg-svcx-lb-img {
                     display: block;
                     max-width: 100%;
                     max-height: calc(100vh - 80px);
                     margin: 0 auto;
                     border-radius: 14px;
-                    box-shadow: none;
+
                 }
+
                 /* Tall images: full width, scroll inside */
-                .cvg-svcx-lb.cvg-svcx-lb--tall .cvg-svcx-lb-stage { width: min(900px, 100%); }
-                .cvg-svcx-lb.cvg-svcx-lb--tall .cvg-svcx-lb-img { width: 100%; max-height: none; border-radius: 0; }
+                .cvg-svcx-lb.cvg-svcx-lb--tall .cvg-svcx-lb-stage {
+                    width: min(900px, 100%);
+                }
+
+                .cvg-svcx-lb.cvg-svcx-lb--tall .cvg-svcx-lb-img {
+                    width: 100%;
+                    max-height: none;
+                    border-radius: 0;
+                }
+
                 .cvg-svcx-lb .cvg-svcx-lb-close,
                 .cvg-svcx-lb .cvg-svcx-lb-nav {
                     flex: none;
@@ -539,13 +1096,27 @@ $faqSchema = [
                     cursor: pointer;
                     display: grid;
                     place-items: center;
-                    box-shadow: none;
+
                     transition: background .3s ease, color .3s ease;
                 }
-                .cvg-svcx-lb .cvg-svcx-lb-close { position: absolute; top: 18px; right: 18px; }
+
+                .cvg-svcx-lb .cvg-svcx-lb-close {
+                    position: absolute;
+                    top: 18px;
+                    right: 18px;
+                }
+
                 .cvg-svcx-lb .cvg-svcx-lb-close:hover,
-                .cvg-svcx-lb .cvg-svcx-lb-nav:hover { background: #00D4A3; color: #04342C; }
-                .cvg-svcx-lb button:focus-visible { outline: 2px solid #5FF0C8; outline-offset: 3px; }
+                .cvg-svcx-lb .cvg-svcx-lb-nav:hover {
+                    background: #00D4A3;
+                    color: #04342C;
+                }
+
+                .cvg-svcx-lb button:focus-visible {
+                    outline: 2px solid #5FF0C8;
+                    outline-offset: 3px;
+                }
+
                 .cvg-svcx-lb .cvg-svcx-lb-count {
                     position: absolute;
                     left: 50%;
@@ -555,30 +1126,62 @@ $faqSchema = [
                     font-size: 13px;
                     letter-spacing: .08em;
                 }
+
                 .cvg-svcx-lb.cvg-svcx-lb--single .cvg-svcx-lb-nav,
-                .cvg-svcx-lb.cvg-svcx-lb--single .cvg-svcx-lb-count { display: none; }
-                @media (max-width: 767px) {
-                    .cvg-svcx-lb { padding: 70px 10px 76px; }
-                    .cvg-svcx-lb .cvg-svcx-lb-nav { position: absolute; bottom: 14px; }
-                    .cvg-svcx-lb .cvg-svcx-lb-prev { left: 16px; }
-                    .cvg-svcx-lb .cvg-svcx-lb-next { right: 16px; }
-                    .cvg-svcx-lb .cvg-svcx-lb-count { bottom: 30px; }
-                    .cvg-svcx-lb .cvg-svcx-lb-stage { max-height: calc(100vh - 150px); }
-                    .cvg-svcx-lb .cvg-svcx-lb-img { max-height: calc(100vh - 150px); }
+                .cvg-svcx-lb.cvg-svcx-lb--single .cvg-svcx-lb-count {
+                    display: none;
                 }
+
+                @media (max-width: 767px) {
+                    .cvg-svcx-lb {
+                        padding: 70px 10px 76px;
+                    }
+
+                    .cvg-svcx-lb .cvg-svcx-lb-nav {
+                        position: absolute;
+                        bottom: 14px;
+                    }
+
+                    .cvg-svcx-lb .cvg-svcx-lb-prev {
+                        left: 16px;
+                    }
+
+                    .cvg-svcx-lb .cvg-svcx-lb-next {
+                        right: 16px;
+                    }
+
+                    .cvg-svcx-lb .cvg-svcx-lb-count {
+                        bottom: 30px;
+                    }
+
+                    .cvg-svcx-lb .cvg-svcx-lb-stage {
+                        max-height: calc(100vh - 150px);
+                    }
+
+                    .cvg-svcx-lb .cvg-svcx-lb-img {
+                        max-height: calc(100vh - 150px);
+                    }
+                }
+
                 @media (prefers-reduced-motion: reduce) {
+
                     #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall img,
-                    .cvg-svcx-lb { transition: none; }
-                    #svc-portfolio-sec .cvg-svc-work--tall .cvg-svc-work-scroll svg { animation: none; }
+                    .cvg-svcx-lb {
+                        transition: none;
+                    }
+
+                    #svc-portfolio-sec .cvg-svc-work--tall .cvg-svc-work-scroll svg {
+                        animation: none;
+                    }
                 }
             </style>
 
             <script>
-                (function () {
+                (function() {
                     var sec = document.getElementById('svc-portfolio-sec');
                     if (!sec) return;
-                    var TALL_RATIO = 1.5;   /* image height ÷ width above this = "tall" (website screenshot) */
-                    var SPEED = 260;        /* scroll speed on hover, in pixels per second */
+                    var TALL_RATIO = 1.5; /* image height ÷ width above this = "tall" (website screenshot) */
+                    var SPEED = 260; /* scroll speed on hover, in pixels per second */
 
                     var items = Array.prototype.slice.call(sec.querySelectorAll('.cvg-svc-work'));
                     if (!items.length) return;
@@ -595,30 +1198,36 @@ $faqSchema = [
                         btn.style.setProperty('--svcx-move', -move + 'px');
                         btn.style.setProperty('--svcx-dur', Math.min(8, Math.max(1.2, move / SPEED)).toFixed(2) + 's');
                     }
-                    items.forEach(function (btn) {
+                    items.forEach(function(btn) {
                         var img = btn.querySelector('img');
                         if (!img) return;
                         if (img.complete && img.naturalWidth) measure(btn);
-                        else img.addEventListener('load', function () { measure(btn); });
+                        else img.addEventListener('load', function() {
+                            measure(btn);
+                        });
                     });
                     var rt;
-                    window.addEventListener('resize', function () {
+                    window.addEventListener('resize', function() {
                         clearTimeout(rt);
-                        rt = setTimeout(function () { items.forEach(measure); }, 150);
+                        rt = setTimeout(function() {
+                            items.forEach(measure);
+                        }, 150);
                     });
 
                     /* ---------- 2. Large view with next/prev, keyboard and scroll for tall images ---------- */
                     var lb = sec.querySelector('.cvg-svcx-lb');
-                    document.body.appendChild(lb);   /* so no parent style can clip it */
+                    document.body.appendChild(lb); /* so no parent style can clip it */
                     var stage = lb.querySelector('.cvg-svcx-lb-stage');
                     var big = lb.querySelector('.cvg-svcx-lb-img');
                     var count = lb.querySelector('.cvg-svcx-lb-count');
-                    var current = 0, lastFocus = null;
+                    var current = 0,
+                        lastFocus = null;
                     if (items.length < 2) lb.classList.add('cvg-svcx-lb--single');
 
                     function show(i) {
                         current = (i + items.length) % items.length;
-                        var btn = items[current], thumb = btn.querySelector('img');
+                        var btn = items[current],
+                            thumb = btn.querySelector('img');
                         var tall = btn.dataset.tall === '1';
                         if (!btn.dataset.tall && thumb && thumb.naturalWidth) tall = thumb.naturalHeight / thumb.naturalWidth > TALL_RATIO;
                         lb.classList.toggle('cvg-svcx-lb--tall', tall);
@@ -627,23 +1236,30 @@ $faqSchema = [
                         stage.scrollTop = 0;
                         count.textContent = (current + 1) + ' / ' + items.length;
                     }
+
                     function open(i) {
                         lastFocus = document.activeElement;
                         show(i);
                         lb.hidden = false;
                         document.documentElement.style.overflow = 'hidden';
-                        requestAnimationFrame(function () { lb.classList.add('cvg-svcx-lb--open'); });
+                        requestAnimationFrame(function() {
+                            lb.classList.add('cvg-svcx-lb--open');
+                        });
                         lb.querySelector('.cvg-svcx-lb-close').focus();
                     }
+
                     function close() {
                         lb.classList.remove('cvg-svcx-lb--open');
                         document.documentElement.style.overflow = '';
-                        setTimeout(function () { lb.hidden = true; big.src = ''; }, 250);
+                        setTimeout(function() {
+                            lb.hidden = true;
+                            big.src = '';
+                        }, 250);
                         if (lastFocus) lastFocus.focus();
                     }
 
                     /* Capture the click first, so an older lightbox script on the page doesn't open a second one */
-                    sec.addEventListener('click', function (e) {
+                    sec.addEventListener('click', function(e) {
                         var btn = e.target.closest('.cvg-svc-work');
                         if (!btn || !sec.contains(btn)) return;
                         e.preventDefault();
@@ -652,10 +1268,16 @@ $faqSchema = [
                     }, true);
 
                     lb.querySelector('.cvg-svcx-lb-close').addEventListener('click', close);
-                    lb.querySelector('.cvg-svcx-lb-prev').addEventListener('click', function () { show(current - 1); });
-                    lb.querySelector('.cvg-svcx-lb-next').addEventListener('click', function () { show(current + 1); });
-                    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
-                    document.addEventListener('keydown', function (e) {
+                    lb.querySelector('.cvg-svcx-lb-prev').addEventListener('click', function() {
+                        show(current - 1);
+                    });
+                    lb.querySelector('.cvg-svcx-lb-next').addEventListener('click', function() {
+                        show(current + 1);
+                    });
+                    lb.addEventListener('click', function(e) {
+                        if (e.target === lb) close();
+                    });
+                    document.addEventListener('keydown', function(e) {
                         if (lb.hidden) return;
                         if (e.key === 'Escape') close();
                         else if (e.key === 'ArrowLeft') show(current - 1);
@@ -705,7 +1327,7 @@ $faqSchema = [
                                 <?php endforeach; ?>
                             </ul>
 
-                            <a href="<?= h($plan['link'] ?? '/contact-us/') ?>"
+                            <a href="<?= h(cvg_url($plan['link'] ?? 'contact-us/index.php')) ?>"
                                 class="btn-buy <?= $featured ? 'featured-btn' : '' ?>">Buy now</a>
                         </div>
                     <?php endforeach; ?>
@@ -720,149 +1342,470 @@ $faqSchema = [
         </div>
     </div>
 
-<?php if (!empty($faqItems)): ?>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0d0e; --card:#111517; --line:#1f2a28; --text:#f2f5f4; --muted:#9aa7a3;
-    --green:#14d4a0; --green-deep:#0a7f63;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,sans-serif}
+    <?php if (!empty($faqItems)): ?>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <style>
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
 
-  /* ===== FAQ SECTION ===== */
-  .faq{padding:90px 20px;background:var(--bg)}
-  .faq-inner{max-width:860px;margin:0 auto}
-  .faq-eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--green);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
-  .faq-eyebrow::before{content:"";width:34px;height:2px;background:var(--green)}
-  .faq h2{margin:10px 0 8px;text-align:center;font-size:clamp(28px,4vw,40px);font-weight:600}
-  .faq-sub{text-align:center;color:var(--muted);margin:0 auto 44px;max-width:520px;font-size:15px;line-height:1.6}
+            /* Scrollbar ki background track */
+            ::-webkit-scrollbar-track {
+                background: #0b2b26;
+                /* Apne dark theme ke hisab se change karein */
+            }
 
-  .faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:14px;transition:border-color .2s, background .2s}
-  .faq details[open]{border-color:var(--green-deep);background:linear-gradient(135deg,#0c2a24 0%,#111517 70%)}
-  .faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;font-size:16px;font-weight:500}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:16px}
-  .faq .icon{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--green-deep);position:relative}
-  .faq .icon::before,.faq .icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--green);transform:translate(-50%,-50%);transition:transform .25s}
-  .faq .icon::after{transform:translate(-50%,-50%) rotate(90deg)}
-  .faq details[open] .icon::after{transform:translate(-50%,-50%) rotate(0)}
-  .faq .answer{padding:0 24px 22px;color:var(--muted);font-size:14.5px;line-height:1.75}
-  .faq .answer ul{margin:10px 0 0;padding-left:20px}
-  .faq .answer li{margin-bottom:4px}
-  .faq .answer a{color:var(--green)}
+            ::-webkit-scrollbar-thumb {
+                background: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+                border-radius: 5px;
+            }
 
-  .faq-cta{margin-top:40px;text-align:center;color:var(--muted);font-size:15px}
-  .faq-cta a.btn{display:inline-block;margin-top:14px;padding:12px 30px;border:1px solid var(--green-deep);border-radius:999px;color:var(--text);text-decoration:none;font-weight:500;background:#06130f;transition:background .2s}
-  .faq-cta a.btn:hover{background:var(--green-deep)}
-  @media (max-width:560px){.faq{padding:60px 16px}.faq summary{padding:16px 18px;font-size:15px}.faq .answer{padding:0 18px 18px}}
-  @media (prefers-reduced-motion:reduce){.faq *{transition:none!important}}
+            /* Hover karne par thumb ka color */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #00a8a8;
+            }
 
-  /* ===== Animations ===== */
-  :root{interpolate-size:allow-keywords}
+            :root {
+                --bg: #0b0d0e;
+                --card: #111517;
+                --line: #1f2a28;
+                --text: #f2f5f4;
+                --muted: #9aa7a3;
+                --green: #14d4a0;
+                --green-deep: #0a7f63;
+            }
 
-  .faq details::details-content{block-size:0;overflow:hidden;transition:block-size .4s ease, content-visibility .4s allow-discrete}
-  .faq details[open]::details-content{block-size:auto}
-  .faq details[open] .answer{animation:faqFade .5s ease .08s both}
-  @keyframes faqFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+            * {
+                box-sizing: border-box
+            }
 
-  .faq details{transition:border-color .25s, background .25s, transform .25s, box-shadow .25s}
-  .faq details:hover{transform:translateX(6px);border-color:var(--green-deep)}
-  .faq summary{transition:color .2s}
-  .faq summary:hover{color:var(--green)}
-  .faq .icon{transition:background .25s, transform .4s, border-color .25s}
-  .faq details:hover .icon{background:rgba(20,212,160,.12)}
-  .faq details[open] .icon{transform:rotate(180deg);background:var(--green-deep);border-color:var(--green)}
-  .faq details[open] .icon::before,.faq details[open] .icon::after{background:#fff}
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--text);
+                font-family: Poppins, system-ui, sans-serif
+            }
 
-  .faq details[open]{animation:faqGlow 1.2s ease-out}
-  @keyframes faqGlow{0%{box-shadow:0 0 0 0 rgba(20,212,160,.45)}100%{box-shadow:0 0 0 14px rgba(20,212,160,0)}}
+            /* ===== FAQ SECTION ===== */
+            .faq {
+                padding: 90px 20px;
+                background: var(--bg)
+            }
 
-  .faq.js .reveal{opacity:0;transform:translateY(28px)}
-  .faq.js .reveal.in{opacity:1;transform:none;transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
-  .faq.js details.reveal.in{transition:opacity .7s ease var(--d,0s), transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0s), border-color .25s, background .25s}
-  .faq.js .faq-eyebrow::before{width:0;transition:width .8s ease .2s}
-  .faq.js .faq-eyebrow.in::before{width:34px}
+            .faq-inner {
+                max-width: 860px;
+                margin: 0 auto
+            }
 
-  .faq-cta a.btn{position:relative;overflow:hidden}
-  .faq-cta a.btn::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(20,212,160,.35),transparent);transform:skewX(-20deg);animation:faqShine 3.2s ease-in-out infinite}
-  @keyframes faqShine{0%,55%{left:-70%}100%{left:130%}}
-  .faq-cta a.btn:hover{transform:translateY(-2px)}
-  @media (prefers-reduced-motion:reduce){.faq *,.faq *::after{animation:none!important;transition:none!important}.faq.js .reveal{opacity:1!important;transform:none!important}}
-  /* ===== END FAQ SECTION ===== */
-</style>
+            .faq-eyebrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                color: var(--green);
+                font-size: 13px;
+                letter-spacing: .18em;
+                text-transform: uppercase
+            }
 
-<section class="faq" id="faq">
-    <div class="faq-inner">
+            .faq-eyebrow::before {
+                content: "";
+                width: 34px;
+                height: 2px;
+                background: var(--green)
+            }
 
-        <div class="faq-eyebrow">FAQ</div>
+            .faq h2 {
+                margin: 10px 0 8px;
+                text-align: center;
+                font-size: clamp(28px, 4vw, 40px);
+                font-weight: 600
+            }
 
-        <h2><?= h($faqTitle) ?></h2>
+            .faq-sub {
+                text-align: center;
+                color: var(--muted);
+                margin: 0 auto 44px;
+                max-width: 520px;
+                font-size: 15px;
+                line-height: 1.6
+            }
 
-        <?php if (!empty($faqSubtitle)): ?>
-            <p class="faq-sub"><?= h($faqSubtitle) ?></p>
-        <?php endif; ?>
+            .faq details {
+                background: var(--card);
+                border: 1px solid var(--line);
+                border-radius: 16px;
+                margin-bottom: 14px;
+                transition: border-color .2s, background .2s
+            }
 
-        <?php foreach ($faqItems as $index => $faq): ?>
-            <details name="faq">
-                <summary>
-                    <?= h($faq['question'] ?? '') ?>
-                    <span class="icon"></span>
-                </summary>
+            .faq details[open] {
+                border-color: var(--green-deep);
+                background: linear-gradient(135deg, #0c2a24 0%, #111517 70%)
+            }
 
-                <div class="answer">
-                    <?= nl2br(h($faq['answer'] ?? '')) ?>
+            .faq summary {
+                list-style: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                padding: 20px 24px;
+                font-size: 16px;
+                font-weight: 500
+            }
 
-                    <?php if (!empty($faq['list'])): ?>
-                        <ul>
-                            <?php foreach ($faq['list'] as $item): ?>
-                                <li><?= h($item) ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endif; ?>
+            .faq summary::-webkit-details-marker {
+                display: none
+            }
 
-                    <?php if (!empty($faq['linkText']) && !empty($faq['linkUrl'])): ?>
-                        <a href="<?= h($faq['linkUrl']) ?>">
-                            <?= h($faq['linkText']) ?>
-                        </a>
-                    <?php endif; ?>
+            .faq summary:focus-visible {
+                outline: 2px solid var(--green);
+                outline-offset: 2px;
+                border-radius: 16px
+            }
+
+            .faq .icon {
+                flex: none;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 1px solid var(--green-deep);
+                position: relative
+            }
+
+            .faq .icon::before,
+            .faq .icon::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 12px;
+                height: 2px;
+                background: var(--green);
+                transform: translate(-50%, -50%);
+                transition: transform .25s
+            }
+
+            .faq .icon::after {
+                transform: translate(-50%, -50%) rotate(90deg)
+            }
+
+            .faq details[open] .icon::after {
+                transform: translate(-50%, -50%) rotate(0)
+            }
+
+            .faq .answer {
+                padding: 0 24px 22px;
+                color: var(--muted);
+                font-size: 14.5px;
+                line-height: 1.75
+            }
+
+            .faq .answer ul {
+                margin: 10px 0 0;
+                padding-left: 20px
+            }
+
+            .faq .answer li {
+                margin-bottom: 4px
+            }
+
+            .faq .answer a {
+                color: var(--green)
+            }
+
+            .faq-cta {
+                margin-top: 40px;
+                text-align: center;
+                color: var(--muted);
+                font-size: 15px
+            }
+
+            .faq-cta a.btn {
+                display: inline-block;
+                margin-top: 14px;
+                padding: 12px 30px;
+                border: 1px solid var(--green-deep);
+                border-radius: 999px;
+                color: var(--text);
+                text-decoration: none;
+                font-weight: 500;
+                background: #06130f;
+                transition: background .2s
+            }
+
+            .faq-cta a.btn:hover {
+                background: var(--green-deep)
+            }
+
+            @media (max-width:560px) {
+                .faq {
+                    padding: 60px 16px
+                }
+
+                .faq summary {
+                    padding: 16px 18px;
+                    font-size: 15px
+                }
+
+                .faq .answer {
+                    padding: 0 18px 18px
+                }
+            }
+
+            @media (prefers-reduced-motion:reduce) {
+                .faq * {
+                    transition: none !important
+                }
+            }
+
+            /* ===== Animations ===== */
+            :root {
+                interpolate-size: allow-keywords
+            }
+
+            .faq details::details-content {
+                block-size: 0;
+                overflow: hidden;
+                transition: block-size .4s ease, content-visibility .4s allow-discrete
+            }
+
+            .faq details[open]::details-content {
+                block-size: auto
+            }
+
+            .faq details[open] .answer {
+                animation: faqFade .5s ease .08s both
+            }
+
+            @keyframes faqFade {
+                from {
+                    opacity: 0;
+                    transform: translateY(-8px)
+                }
+
+                to {
+                    opacity: 1;
+                    transform: none
+                }
+            }
+
+            .faq details {
+                transition: border-color .25s, background .25s, transform .25s, box-shadow .25s
+            }
+
+            .faq details:hover {
+                transform: translateX(6px);
+                border-color: var(--green-deep)
+            }
+
+            .faq summary {
+                transition: color .2s
+            }
+
+            .faq summary:hover {
+                color: var(--green)
+            }
+
+            .faq .icon {
+                transition: background .25s, transform .4s, border-color .25s
+            }
+
+            .faq details:hover .icon {
+                background: rgba(20, 212, 160, .12)
+            }
+
+            .faq details[open] .icon {
+                transform: rotate(180deg);
+                background: var(--green-deep);
+                border-color: var(--green)
+            }
+
+            .faq details[open] .icon::before,
+            .faq details[open] .icon::after {
+                background: #fff
+            }
+
+            .faq details[open] {
+                animation: faqGlow 1.2s ease-out
+            }
+
+            @keyframes faqGlow {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(20, 212, 160, .45)
+                }
+
+                100% {
+                    box-shadow: 0 0 0 14px rgba(20, 212, 160, 0)
+                }
+            }
+
+            .faq.js .reveal {
+                opacity: 0;
+                transform: translateY(28px)
+            }
+
+            .faq.js .reveal.in {
+                opacity: 1;
+                transform: none;
+                transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+                transition-delay: var(--d, 0s)
+            }
+
+            .faq.js details.reveal.in {
+                transition: opacity .7s ease var(--d, 0s), transform .7s cubic-bezier(.2, .7, .2, 1) var(--d, 0s), border-color .25s, background .25s
+            }
+
+            .faq.js .faq-eyebrow::before {
+                width: 0;
+                transition: width .8s ease .2s
+            }
+
+            .faq.js .faq-eyebrow.in::before {
+                width: 34px
+            }
+
+            .faq-cta a.btn {
+                position: relative;
+                overflow: hidden
+            }
+
+            .faq-cta a.btn::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -70%;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(100deg, transparent, rgba(20, 212, 160, .35), transparent);
+                transform: skewX(-20deg);
+                animation: faqShine 3.2s ease-in-out infinite
+            }
+
+            @keyframes faqShine {
+
+                0%,
+                55% {
+                    left: -70%
+                }
+
+                100% {
+                    left: 130%
+                }
+            }
+
+            .faq-cta a.btn:hover {
+                transform: translateY(-2px)
+            }
+
+            @media (prefers-reduced-motion:reduce) {
+
+                .faq *,
+                .faq *::after {
+                    animation: none !important;
+                    transition: none !important
+                }
+
+                .faq.js .reveal {
+                    opacity: 1 !important;
+                    transform: none !important
+                }
+            }
+
+            /* ===== END FAQ SECTION ===== */
+        </style>
+
+        <section class="faq" id="faq">
+            <div class="faq-inner">
+
+                <div class="faq-eyebrow">FAQ</div>
+
+                <h2><?= h($faqTitle) ?></h2>
+
+                <?php if (!empty($faqSubtitle)): ?>
+                    <p class="faq-sub"><?= h($faqSubtitle) ?></p>
+                <?php endif; ?>
+
+                <?php foreach ($faqItems as $index => $faq): ?>
+                    <details name="faq">
+                        <summary>
+                            <?= h($faq['question'] ?? '') ?>
+                            <span class="icon"></span>
+                        </summary>
+
+                        <div class="answer">
+                            <?= nl2br(h($faq['answer'] ?? '')) ?>
+
+                            <?php if (!empty($faq['list'])): ?>
+                                <ul>
+                                    <?php foreach ($faq['list'] as $item): ?>
+                                        <li><?= h($item) ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+
+                            <?php if (!empty($faq['linkText']) && !empty($faq['linkUrl'])): ?>
+                                <a href="<?= h($faq['linkUrl']) ?>">
+                                    <?= h($faq['linkText']) ?>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </details>
+                <?php endforeach; ?>
+
+                <div class="faq-cta">
+                    <?= h($faqCtaText) ?>
+                    <br>
+                    <a class="btn" href="<?= h($faqButtonUrl) ?>">
+                        <?= h($faqButtonText) ?>
+                    </a>
                 </div>
-            </details>
-        <?php endforeach; ?>
 
-        <div class="faq-cta">
-            <?= h($faqCtaText) ?>
-            <br>
-            <a class="btn" href="<?= h($faqButtonUrl) ?>">
-                <?= h($faqButtonText) ?>
-            </a>
-        </div>
+            </div>
+        </section>
 
-    </div>
-</section>
+        <script>
+            (function() {
+                var sec = document.getElementById('faq');
+                if (!sec) return;
+                var items = sec.querySelectorAll('.faq-eyebrow, h2, .faq-sub, details, .faq-cta');
+                items.forEach(function(el, i) {
+                    el.classList.add('reveal');
+                    el.style.setProperty('--d', (i * 0.07) + 's');
+                });
+                sec.classList.add('js');
+                if (!('IntersectionObserver' in window)) {
+                    items.forEach(function(el) {
+                        el.classList.add('in')
+                    });
+                    return;
+                }
+                var io = new IntersectionObserver(function(es) {
+                    es.forEach(function(e) {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('in');
+                            io.unobserve(e.target);
+                        }
+                    });
+                }, {
+                    threshold: .15
+                });
+                items.forEach(function(el) {
+                    io.observe(el)
+                });
+            })();
+        </script>
+        <script type="application/ld+json">
+            <?= json_encode($faqSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) ?>
+        </script>
+    <?php endif; ?>
 
-<script>
-(function(){
-  var sec=document.getElementById('faq'); if(!sec) return;
-  var items=sec.querySelectorAll('.faq-eyebrow, h2, .faq-sub, details, .faq-cta');
-  items.forEach(function(el,i){el.classList.add('reveal'); el.style.setProperty('--d',(i*0.07)+'s');});
-  sec.classList.add('js');
-  if(!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('in')});return;}
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  },{threshold:.15});
-  items.forEach(function(el){io.observe(el)});
-})();
-</script>
-<script type="application/ld+json">
-<?= json_encode($faqSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) ?>
-</script>
-<?php endif; ?>
-
-    <?php include __DIR__ . '../../includes/footer.php'; ?>
+    <?php include dirname(__DIR__) . '/includes/footer.php'; ?>
 
     <script>
-        (function () {
+        (function() {
             var root = document.getElementById('cvg-svc');
             if (!root) return;
 
@@ -870,9 +1813,12 @@ $faqSchema = [
             var lightbox = root.querySelector('#svc-lightbox');
             var preview = lightbox.querySelector('img');
 
-            function closeBox() { lightbox.hidden = true; preview.src = ''; }
+            function closeBox() {
+                lightbox.hidden = true;
+                preview.src = '';
+            }
 
-            root.addEventListener('click', function (event) {
+            root.addEventListener('click', function(event) {
                 var work = event.target.closest('.cvg-svc-work');
                 if (work && root.contains(work)) {
                     preview.src = work.getAttribute('data-src');
@@ -882,26 +1828,34 @@ $faqSchema = [
                 if (event.target === lightbox || event.target.closest('.cvg-svc-lightbox-close')) closeBox();
             });
 
-            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeBox();
+            });
 
             /* ---- Scroll reveal (sections + pricing cards) ---- */
             var targets = root.querySelectorAll('.reveal, #pricing-container');
 
             if (!('IntersectionObserver' in window)) {
-                targets.forEach(function (el) { el.classList.add('is-visible'); });
+                targets.forEach(function(el) {
+                    el.classList.add('is-visible');
+                });
                 return;
             }
 
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
+            var io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                         io.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.15 });
+            }, {
+                threshold: 0.15
+            });
 
-            targets.forEach(function (el) { io.observe(el); });
+            targets.forEach(function(el) {
+                io.observe(el);
+            });
         })();
     </script>
 </body>

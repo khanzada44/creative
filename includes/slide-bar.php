@@ -10,25 +10,25 @@
 
       <!-- Set 1 -->
       <div class="cvg-logos-set">
-        <img src="assets/img/car1.png" alt="Brand Name logo" class="cvg-logos-img">
-        <img src="assets/img/2.png" alt="Interior Academia Design logo" class="cvg-logos-img">
-        <img src="assets/img/car3.png" alt="Design Studio logo" class="cvg-logos-img">
-        <img src="assets/img/car4.png" alt="Harrison Design Studio logo" class="cvg-logos-img">
-        <img src="assets/img/car5.png" alt="Handcrafted Studio logo" class="cvg-logos-img">
-        <img src="assets/img/car1.png" alt="Brand Name logo" class="cvg-logos-img">
-        <img src="assets/img/2.png" alt="Interior Academia Design logo" class="cvg-logos-img">
-        <img src="assets/img/car3.png" alt="Design Studio logo" class="cvg-logos-img">
-        <img src="assets/img/car4.png" alt="Harrison Design Studio logo" class="cvg-logos-img">
-        <img src="assets/img/car5.png" alt="Handcrafted Studio logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car1.png') ?>" alt="Brand Name logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/2.png') ?>" alt="Interior Academia Design logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car3.png') ?>" alt="Design Studio logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car4.png') ?>" alt="Harrison Design Studio logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car5.png') ?>" alt="Handcrafted Studio logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car1.png') ?>" alt="Brand Name logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/2.png') ?>" alt="Interior Academia Design logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car3.png') ?>" alt="Design Studio logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car4.png') ?>" alt="Harrison Design Studio logo" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car5.png') ?>" alt="Handcrafted Studio logo" class="cvg-logos-img">
       </div>
 
       <!-- Set 2: exact copy so the loop never shows a gap (hidden from screen readers) -->
       <div class="cvg-logos-set" aria-hidden="true">
-        <img src="wp-content/uploads/2024/07/car1.png" alt="" class="cvg-logos-img">
-        <img src="wp-content/uploads/2024/07/2.png" alt="" class="cvg-logos-img">
-        <img src="wp-content/uploads/2024/07/car4.png" alt="" class="cvg-logos-img">
-        <img src="wp-content/uploads/2024/07/car3.png" alt="" class="cvg-logos-img">
-        <img src="wp-content/uploads/2024/07/car5.png" alt="" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car1.png') ?>" alt="" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/2.png') ?>" alt="" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car4.png') ?>" alt="" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car3.png') ?>" alt="" class="cvg-logos-img">
+        <img src="<?= cvg_url('assets/img/car5.png') ?>" alt="" class="cvg-logos-img">
       </div>
 
     </div>

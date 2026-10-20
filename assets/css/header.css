@@ -66,8 +66,11 @@ ul {
   }
 }
 
-/* Menu (hamburger) button */
+/* Menu (hamburger) button - sirf mobile par */
 .menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity 0.2s;
 }
 
@@ -96,6 +99,9 @@ ul {
 @media (min-width: 768px) {
   .desktop-nav {
     display: flex;
+  }
+  .menu-btn {
+    display: none !important;
   }
 }
 
@@ -199,7 +205,7 @@ ul {
 }
 
 .email-link:hover {
-  color: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+  color: #1CC5A9;
 }
 
 .quote-btn {
@@ -395,4 +401,12 @@ ul {
 
 .panel-socials a:hover {
   color: #00A8A8;
+}
+
+/* ===== Desktop par mobile panel/overlay band ===== */
+@media (min-width: 768px) {
+  .side-panel,
+  .overlay {
+    display: none !important;
+  }
 }

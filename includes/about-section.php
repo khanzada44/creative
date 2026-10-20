@@ -46,7 +46,7 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
   /* stat circle */
   .abt-circle-wrap{flex-shrink:0}
   .abt-circle{
-    width:256px;height:256px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
+    width:256px;height:256px;border-radius:50%;border:1px solid #00D4A3;
     display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;
     opacity:0;transform:translate3d(var(--hx,0px),0,0);
   }
@@ -54,6 +54,28 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
     opacity:1;transform:translate3d(0,0,0);
     transition:opacity .8s ease-out,transform .8s cubic-bezier(.22,.61,.36,1);
   }
+  /* ---- rotating ring: mint arc + glowing dot go round; number stays still ---- */
+  .abt-circle{position:relative}
+  .abt-circle::before{
+    content:"";position:absolute;inset:-2px;border-radius:50%;padding:3px;pointer-events:none;
+    background:conic-gradient(from 0deg, rgba(95,240,200,0) 0deg, rgba(95,240,200,0) 200deg, rgba(95,240,200,.35) 290deg, #5FF0C8 356deg, rgba(95,240,200,0) 360deg);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+    mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+    animation:abtSpin var(--spin-speed,6s) linear infinite;animation-direction:var(--spin-dir,normal);
+  }
+  .abt-orbit{position:absolute;inset:-2px;border-radius:50%;pointer-events:none;
+    animation:abtSpin var(--spin-speed,6s) linear infinite;animation-direction:var(--spin-dir,normal)}
+  .abt-orbit i{position:absolute;left:50%;top:0;width:12px;height:12px;margin:-5px 0 0 -6px;border-radius:50%;
+    background:#5FF0C8;box-shadow:0 0 0 4px rgba(95,240,200,.18),0 0 18px 4px rgba(0,212,163,.75)}
+  /* the inner text never turns */
+  .abt-num,.abt-cap{position:relative;z-index:1}
+  /* a little faster on hover */
+  .abt-circle-wrap:hover{--spin-speed:2.5s}
+  @keyframes abtSpin{to{transform:rotate(360deg)}}
+  .abt-circle-wrap[style*="reverse"] .abt-circle::before{transform:scaleX(-1)}
+  .abt-circle-wrap[style*="reverse"] .abt-circle::before{animation-name:abtSpinFlip;animation-direction:normal}
+  @keyframes abtSpinFlip{from{transform:scaleX(-1) rotate(0deg)}to{transform:scaleX(-1) rotate(360deg)}}
+
   .abt-num{font-size:60px;font-weight:300;letter-spacing:-.025em;line-height:1;margin-bottom:8px}
   .abt-cap{font-size:14px;color:#fff}
 
@@ -83,6 +105,7 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
 
   @media (prefers-reduced-motion:reduce){
     .abt-rv > .abt-rv-in,.abt-circle{opacity:1!important;transform:none!important;transition:none!important}
+    .abt-circle::before,.abt-orbit{animation:none!important}
     .abt-skater{transform:none!important}
   }
 </style>
@@ -92,16 +115,16 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
 
     <!-- ROW 1: text left, 15 Awards circle right -->
     <div class="abt-row is-top">
-      <span class="abt-watermark" aria-hidden="true">ABOUT US</span>
+      <span class="abt-watermark" aria-hidden="true">OUR STORY</span>
 
       <div class="abt-col">
         <div class="abt-rv" style="--from:.9"><div class="abt-rv-in">
-          <div class="abt-label"><span>About us</span></div>
+          <div class="abt-label"><span>OUR STORY</span></div>
           <h2>We are creative &amp; strong team</h2>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:150ms"><div class="abt-rv-in">
-          <p>Our creative and professional agency has been developing products for 15 years. We are special.</p>
+          <p>Our creative and professional agency has been developing products for 9 years. We are special.</p>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:300ms"><div class="abt-rv-in">
@@ -111,7 +134,7 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
 
       <div class="abt-circle-col">
         <div class="abt-circle-wrap" data-count="15">
-          <div class="abt-circle"><span class="abt-num">0</span><span class="abt-cap">Awards Winning</span></div>
+          <div class="abt-circle"><span class="abt-orbit" aria-hidden="true"><i></i></span><span class="abt-num">0</span><span class="abt-cap">Awards Winning</span></div>
         </div>
       </div>
     </div>
@@ -119,8 +142,8 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
     <!-- ROW 2: 9 Years circle + skater left, working day text right -->
     <div class="abt-row" id="abtRow2">
       <div class="abt-circle-skater">
-        <div class="abt-circle-wrap" data-count="9" style="--hx:-160px">
-          <div class="abt-circle"><span class="abt-num">0</span><span class="abt-cap">Years Experience</span></div>
+        <div class="abt-circle-wrap" data-count="9" style="--hx:-160px;--spin-dir:reverse">
+          <div class="abt-circle"><span class="abt-orbit" aria-hidden="true"><i></i></span><span class="abt-num">0</span><span class="abt-cap">Years Experience</span></div>
         </div>
         <img class="abt-skater" id="abtSkater" src="<?= htmlspecialchars($skater) ?>" alt="" aria-hidden="true">
       </div>
@@ -158,7 +181,7 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
 
       <div class="abt-circle-col" style="z-index:auto">
         <div class="abt-circle-wrap" data-count="354">
-          <div class="abt-circle"><span class="abt-num">0</span><span class="abt-cap">Successful Projects</span></div>
+          <div class="abt-circle"><span class="abt-orbit" aria-hidden="true"><i></i></span><span class="abt-num">0</span><span class="abt-cap">Successful Projects</span></div>
         </div>
       </div>
     </div>

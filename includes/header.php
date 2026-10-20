@@ -1,3 +1,5 @@
+<?php include __DIR__ . '/topbar.php'; ?>
+<?php require_once __DIR__ . '/init.php'; ?>
 <!-- ===== Header ===== -->
 <header class="header">
   <div class="header-inner">
@@ -6,17 +8,22 @@
     <div class="header-left">
 
       <!-- Hamburger / menu icon -->
-      <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-          <path d="M0.711397 17.6359C-0.0696518 18.417 -0.0696518 19.6833 0.711397 20.4644C1.49245 21.2454 2.75878 21.2454 3.53982 20.4644L20.5104 3.4938C21.2914 2.71276 21.2914 1.44642 20.5104 0.665376C19.7293 -0.115673 18.463 -0.115672 17.682 0.665376L0.711397 17.6359Z" fill="white" />
-          <path d="M2.12558 31.7781C1.34453 30.997 1.34453 29.7307 2.12558 28.9496L19.0961 11.9791C19.8772 11.198 21.1435 11.198 21.9246 11.9791C22.7056 12.7601 22.7056 14.0264 21.9246 14.8075L4.95401 31.7781C4.17296 32.5591 2.90663 32.5591 2.12558 31.7781Z" fill="white" />
-          <path d="M13.4393 33.1923C12.6583 32.4112 12.6583 31.1449 13.4393 30.3638L30.4099 13.3933C31.1909 12.6122 32.4572 12.6122 33.2383 13.3933C34.0193 14.1743 34.0193 15.4407 33.2383 16.2217L16.2677 33.1923C15.4867 33.9733 14.2204 33.9733 13.4393 33.1923Z" fill="white" />
-        </svg>
-      </button>
+    <style>
+  #menuBtn.menu-btn{display:flex !important;align-items:center;justify-content:center}
+  @media (min-width:768px){
+    #menuBtn.menu-btn{display:none !important}
+  }
+</style>
 
-      <!-- Logo (outer <a> changed to <div>: an <a> inside an <a> is invalid HTML) -->
+<button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+    <path d="M0.711397 17.6359C-0.0696518 18.417 -0.0696518 19.6833 0.711397 20.4644C1.49245 21.2454 2.75878 21.2454 3.53982 20.4644L20.5104 3.4938C21.2914 2.71276 21.2914 1.44642 20.5104 0.665376C19.7293 -0.115673 18.463 -0.115672 17.682 0.665376L0.711397 17.6359Z" fill="white" />
+    <path d="M2.12558 31.7781C1.34453 30.997 1.34453 29.7307 2.12558 28.9496L19.0961 11.9791C19.8772 11.198 21.1435 11.198 21.9246 11.9791C22.7056 12.7601 22.7056 14.0264 21.9246 14.8075L4.95401 31.7781C4.17296 32.5591 2.90663 32.5591 2.12558 31.7781Z" fill="white" />
+    <path d="M13.4393 33.1923C12.6583 32.4112 12.6583 31.1449 13.4393 30.3638L30.4099 13.3933C31.1909 12.6122 32.4572 12.6122 33.2383 13.3933C34.0193 14.1743 34.0193 15.4407 33.2383 16.2217L16.2677 33.1923C15.4867 33.9733 14.2204 33.9733 13.4393 33.1923Z" fill="white" />
+  </svg>
+</button>
       <div class="logo">
-        <a href="/creative/index.php" class="cvg-alogo" aria-label="Creative Converge home">
+        <a href="<?= cvg_url('index.php') ?>" class="cvg-alogo" aria-label="Creative Converge home">
           <svg class="cvg-alogo-mark" viewBox="-70 -70 140 140" aria-hidden="true">
             <defs>
               <linearGradient id="cvgAlogoGrad" x1="0" y1="0" x2="1" y2="1">
@@ -47,7 +54,6 @@
         </a>
 
         <style>
-          /* ---------- Size: change only this one number ---------- */
           .cvg-alogo {
             --cvg-alogo-size: 22px;
           }
@@ -330,57 +336,58 @@
         <!-- Services dropdown -->
         <div class="services-dropdown" id="servicesDropdown">
           <button class="services-btn" id="servicesBtn" aria-haspopup="true" aria-expanded="false">
-             <a href="/creative/services/services.php" class="panel-link">Services</a>
+             <a href="<?= cvg_url('services/services.php') ?>" class="panel-link">Services</a>
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <div class="services-menu" id="servicesMenu">
             <ul>
-              <li><a href="/creative/services/service-detail.php?slug=logo-design-solutions">Logo Design Solutions</a></li>
-              <li><a href="/creative/services/service-detail.php?slug=illustration-design">Illustration Design</a></li>
-              <li><a href="/creative/services/service-detail.php?slug=web-design-solutions">Web Design Solutions</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>">Logo Design Solutions</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>">Illustration Design</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>">Web Design Solutions</a></li>
 
               <!-- NEW: Web Developer Solutions + flyout -->
               <li class="has-sub">
-                <a href="/creative/services/service-detail.php?slug=web-developer-solutions" class="sub-trigger" aria-haspopup="true">
+                <a href="<?= cvg_url('services/service-detail.php?slug=web-developer-solutions') ?>" class="sub-trigger" aria-haspopup="true">
                   Web Developer Solutions
                   <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="9 6 15 12 9 18"></polyline>
                   </svg>
                 </a>
                 <ul class="services-submenu">
-                  <li><a href="/creative/services/service-detail.php?slug=laravel">Laravel</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=node-js">Node Js</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=custom-php-development">Custom PHP Development</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=next-js">Next.js</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=wordpress-development">WordPress Development</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=shopify">Shopify</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=magento">Magento</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=woocommerce">WooCommerce</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=cms-development">CMS Development</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=website-maintenance">Website Maintenance</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=laravel') ?>">Laravel</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=node-js') ?>">Node Js</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=custom-php-development') ?>">Custom PHP Development</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=next-js') ?>">Next.js</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=wordpress-development') ?>">WordPress Development</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=shopify') ?>">Shopify</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=magento') ?>">Magento</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=woocommerce') ?>">WooCommerce</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=cms-development') ?>">CMS Development</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=website-maintenance') ?>">Website Maintenance</a></li>
                 </ul>
               </li>
 
-              <li><a href="/creative/services/service-detail.php?slug=branding">Branding</a></li>
-              <li><a href="/creative/services/service-detail.php?slug=ecommerce-website-solutions">Ecommerce Website Solutions</a></li>
-              <li><a href="/creative/services/service-detail.php?slug=video-animation-services">Stunning Video Animation Services</a></li>
-              <li><a href="/creative/services/service-detail.php?slug=mobile-apps">MOBILES APPS</a></li>
-              <li><a href="/creative/services/service-detail.php?slug=digital-marketing">DIGITAL MARKETING</a></li>
-              <li><a href="/creative/services/service-detail.php?slug=advance-combo-packages">ADVANCE COMBO PACKAGES</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>">Branding</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>">Ecommerce Website Solutions</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>">Stunning Video Animation Services</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps') ?>">MOBILES APPS</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">DIGITAL MARKETING</a></li>
+              <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>">ADVANCE COMBO PACKAGES</a></li>
             </ul>
           </div>
         </div>
 
-        <a href="/creative/pricing/index.php" class="nav-link">Pricing</a>
-        <a href="/creative/cases/index.php" class="nav-link">Cases</a>
-        <a href="/creative/contact-us/index.php" class="nav-link">Contact us</a>
+        <a href="<?= cvg_url('pricing/index.php') ?>" class="nav-link">Pricing</a>
+        <a href="<?= cvg_url('cases/index.php') ?>" class="nav-link">Cases</a>
+        <a href="<?= cvg_url('/about/index.php') ?>" class="nav-link">About</a>
+        <a href="<?= cvg_url('contact-us/index.php') ?>" class="nav-link">Contact us</a>
       </nav>
     </div>
     <div class="header-right">
-      <a href="mailto:info@websdesignusa.com" class="email-link">info@websdesignusa.com</a>
-      <a href="/creative/contact-us/index.php" class="quote-btn">Get a quote</a>
+      <a href="mailto:info@creativeconverge.com" class="email-link">info@creativeconverge.com</a>
+      <a href="<?= cvg_url('contact-us/index.php') ?>" class="quote-btn">Get a quote</a>
     </div>
   </div>
 </header>
@@ -404,22 +411,22 @@
   <!-- Menu list -->
   <ul class="panel-menu">
     <li>
-      <a href="/creative/about/index.php" class="panel-link">About us</a>
+      <a href="<?= cvg_url('about/index.php') ?>" class="panel-link">About us</a>
     </li>
 
     <!-- Services accordion -->
     <li>
       <button class="panel-services-btn" id="panelServicesBtn">
-         <a href="/creative/services/services.php" class="panel-link">Services</a>
+         <a href="<?= cvg_url('services/services.php') ?>" class="panel-link">Services</a>
         <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </button>
 
       <ul class="panel-services-list" id="panelServicesList">
-        <li><a href="/creative/services/service-detail.php?slug=logo-design-solutions" class="panel-sub-link">Logo Design Solutions</a></li>
-        <li><a href="/creative/services/service-detail.php?slug=illustration-design" class="panel-sub-link">Illustration Design</a></li>
-        <li><a href="/creative/services/service-detail.php?slug=web-design-solutions" class="panel-sub-link">Web Design Solutions</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>" class="panel-sub-link">Logo Design Solutions</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>" class="panel-sub-link">Illustration Design</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>" class="panel-sub-link">Web Design Solutions</a></li>
 
         <!-- NEW: Web Developer Solutions (nested accordion) -->
         <li>
@@ -430,29 +437,29 @@
             </svg>
           </button>
           <ul class="panel-sub-list" id="panelDevList">
-                  <li><a href="/creative/services/service-detail.php?slug=laravel">Laravel</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=node-js">Node Js</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=custom-php-development">Custom PHP Development</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=next-js">Next.js</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=wordpress-development">WordPress Development</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=shopify">Shopify</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=magento">Magento</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=woocommerce">WooCommerce</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=cms-development">CMS Development</a></li>
-                  <li><a href="/creative/services/service-detail.php?slug=website-maintenance">Website Maintenance</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=laravel') ?>">Laravel</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=node-js') ?>">Node Js</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=custom-php-development') ?>">Custom PHP Development</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=next-js') ?>">Next.js</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=wordpress-development') ?>">WordPress Development</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=shopify') ?>">Shopify</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=magento') ?>">Magento</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=woocommerce') ?>">WooCommerce</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=cms-development') ?>">CMS Development</a></li>
+                  <li><a href="<?= cvg_url('services/service-detail.php?slug=website-maintenance') ?>">Website Maintenance</a></li>
           </ul>
         </li>
 
-        <li><a href="/creative/services/service-detail.php?slug=branding" class="panel-sub-link">Branding</a></li>
-        <li><a href="/creative/services/service-detail.php?slug=ecommerce-website-solutions" class="panel-sub-link">Ecommerce Website Solutions</a></li>
-        <li><a href="/creative/services/service-detail.php?slug=video-animation-services" class="panel-sub-link">Stunning Video Animation Services</a></li>
-        <li><a href="/creative/services/service-detail.php?slug=mobile-apps" class="panel-sub-link">Mobile Apps</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>" class="panel-sub-link">Branding</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website Solutions</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>" class="panel-sub-link">Stunning Video Animation Services</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps') ?>" class="panel-sub-link">Mobile Apps</a></li>
       </ul>
     </li>
 
-    <li><a href="/creative/pricing/index.php" class="panel-link">Pricing</a></li>
-    <li><a href="/creative/cases/index.php" class="panel-link">Cases</a></li>
-    <li><a href="/creative/contact-us/index.php" class="panel-link">Contact us</a></li>
+    <li><a href="<?= cvg_url('pricing/index.php') ?>" class="panel-link">Pricing</a></li>
+    <li><a href="<?= cvg_url('cases/index.php') ?>" class="panel-link">Cases</a></li>
+    <li><a href="<?= cvg_url('contact-us/index.php') ?>" class="panel-link">Contact us</a></li>
   </ul>
 
   <!-- Search -->

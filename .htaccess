@@ -1,5 +1,7 @@
-
 RewriteEngine On
-RewriteBase /creative/services/
 
-RewriteRule ^service-detail/([a-zA-Z0-9-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+DirectoryIndex index.php services.php index.html
+
+# Service detail clean URL routing (works seamlessly anywhere without RewriteBase)
+RewriteRule ^services/service-detail/([a-zA-Z0-9-]+)/?$ services/service-detail.php?slug=$1 [L,QSA]
+RewriteRule ^service-detail/([a-zA-Z0-9-]+)/?$ services/service-detail.php?slug=$1 [L,QSA]

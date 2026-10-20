@@ -1,7 +1,7 @@
 <?php
 
 
-function plan($name, $price, $features, $featured = false, $link = '/contact-us/')
+function plan($name, $price, $features, $featured = false, $link = 'contact-us/index.php')
 {
     return [
         "name"     => $name,
@@ -15,7 +15,7 @@ function plan($name, $price, $features, $featured = false, $link = '/contact-us/
 
 function portfolioImgs($prefix)
 {
-    $webBase = '../assets/images/portfolio/';
+    $webBase = 'assets/images/portfolio/';
     $dir     = __DIR__ . '/../assets/images/portfolio/'; 
 
     if (!is_dir($dir)) {
@@ -241,7 +241,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
 
         "introTitle" => "Serving Millions of Brands Worldwide",
@@ -254,7 +254,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolioLabel" => "Logo",
         "portfolio" => portfolioImgs('logo'),
@@ -313,7 +313,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('illustration'),
         "plans" => [
@@ -364,7 +364,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('webdesign'),
         "plans" => [
@@ -417,7 +417,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('webdeveloper'),
         "plans" => [
@@ -1016,7 +1016,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('branding'),
         "plans" => [
@@ -1067,7 +1067,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('ecommercewebsite'),
         "plans" => [
@@ -1120,7 +1120,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('stunningvideo'),
         "plans" => [
@@ -1173,7 +1173,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('mobilesapps'),
         "plans" => [
@@ -1226,7 +1226,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('digitalmarketing'),
         "plans" => [
@@ -1279,7 +1279,7 @@ $services = [
             "Vector-Based Designs",
         ],
         "introImages" => [
-           "/creative/assets/img/logo-design-solutions-service-image.png",
+           "assets/img/logo-design-solutions-service-image.png",
         ],
         "portfolio" => portfolioImgs('advancecombo'),
         "plans" => [

@@ -8,15 +8,13 @@
 
 <!-- JS-enabled flag (flash se bachne ke liye section se pehle) -->
 <script>document.documentElement.classList.add('wcu-js');</script>
-
-<!-- ============ WHY CHOOSE US ============ -->
 <section class="wcu" id="wcu">
 
   <!-- Bottom marquee graphic -->
   <div class="wcu-marquee-wrap" aria-hidden="true">
     <div class="wcu-marquee">
-      <img src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/WEBS-DESIGN-USA.png" alt="">
-      <img src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/WEBS-DESIGN-USA.png" alt="">
+      <img src="assets/img/creative-converge-outline-white.png" alt="creative-converge-outline-white">
+      <img src="assets/img/creative-converge-outline-white.png" alt="creative-converge-outline-white">
     </div>
   </div>
 
@@ -72,8 +70,8 @@
 
       <!-- Diagonal line decoration -->
       <div class="wcu-deco" aria-hidden="true">
-        <img src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/choose.png"
-             alt="" width="500" height="500">
+        <img src="assets/img/choose-line.png"
+             alt="choose" width="500" height="500">
       </div>
     </div>
 
@@ -137,10 +135,6 @@
   </div>
 </section>
 <style>
-    /* =========================================================
-   WHY CHOOSE US  (Tailwind/React -> plain CSS)
-   Breakpoints: sm = 640px, lg = 1024px
-   ========================================================= */
 
 .wcu, .wcu *, .wcu *::before, .wcu *::after { box-sizing: border-box; }
 

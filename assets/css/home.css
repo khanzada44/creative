@@ -32,24 +32,6 @@
   mask-image: radial-gradient(ellipse 75% 65% at 55% 45%, #000 25%, transparent 80%);
   animation: cc-grid-drift 20s linear infinite;
 }
-/* floating image (right side) */
-.hero-media {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  top: 50%;
-  right: 40px;
-  width: min(48%, 600px);
-  aspect-ratio: 1 / 1;
-  height: auto;
-  object-fit: cover;
-  border-radius: 24px;
-  -webkit-mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
-  mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
-  filter: drop-shadow(0 0 40px rgba(0,212,163,.18));
-  transform: translateY(-50%);
-  animation: cc-float 7s ease-in-out infinite;
-}
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -119,33 +101,23 @@
   font-size: 24px; line-height: 1; cursor: pointer;
 }
 
-@keyframes cc-float {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  50%      { transform: translateY(calc(-50% - 22px)) rotate(-2deg); }
-}
 @keyframes cc-grid-drift {
   from { background-position: 0 0, 0 0; }
   to   { background-position: 72px 72px, 72px 72px; }
 }
 @media (max-width: 1024px) {
   .hero { --nav-h: 110px; }
-  .hero-media { width: 60%; right: 0; opacity: .55; }
 }
 @media (max-width: 767px) {
   .hero { --nav-h: 90px; min-height: 90vh; }
   .hero-inner { padding: 30px 20px 60px; }
   .hero::before { background-size: 48px 48px; }
-  .hero-media {
-    top: auto; bottom: -40px; right: -10%;
-    width: 85%; opacity: .35;
-    transform: none;
-    animation: cc-float-m 7s ease-in-out infinite;
-  }
-  @keyframes cc-float-m { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero::before, .hero-media { animation: none; }
+  .hero::before { animation: none; }
 }
+
+/* HERO 3D SHAPES ki CSS ab home-sections.php ke andar <style> mein hai */
 
 /* ---------- ABOUT ---------- */
 .cvg-about {

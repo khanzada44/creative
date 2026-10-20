@@ -46,7 +46,7 @@
       <div class="olc-head-right">
         <div class="olc-reveal" style="--from:.9;--delay:400ms">
           <div class="olc-reveal-in">
-            <a href="#all-cases" class="olc-viewall">VIEW ALL CASES</a>
+            <a href="<?= cvg_url('cases/index.php') ?>" class="olc-viewall">VIEW ALL CASES</a>
           </div>
         </div>
       </div>

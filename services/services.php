@@ -1,864 +1,331 @@
 <?php
+/* =========================================================
+   services/services.php — Creative Converge "Our services" page
+   Reads every service from services-data.php (titles, descriptions,
+   sub-services and plan prices), so new services appear automatically.
+   ========================================================= */
+require_once dirname(__DIR__) . '/includes/init.php';
 require_once __DIR__ . '/services-data.php';
 
-function cvg_h($value)
-{
-    return htmlspecialchars((string) ($value ?? ''), ENT_QUOTES, 'UTF-8');
-}
-
-$services = is_array($services ?? null) ? $services : [];
-
-$serviceIcons = [
-    'logo'   => 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/icon-branding.png',
-    'web'    => 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/icon-branding.png',
-    'social' => 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/icon-branding.png',
-    'globe'  => 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/icon-branding.png',
+/* ---------- Banner ---------- */
+$spHero = [
+  'eyebrow' => 'What we do',
+  'title'   => 'Our services',
+  'lead'    => 'Design, development, branding, video and marketing, delivered by one senior team in Texas. White-label for agencies, or under your own brand.',
 ];
 
-$defaultIcon = $serviceIcons['logo'];
+/* ---------- Icon for each service (by slug). Options:
+   logo, web, code, illustration, branding, cart, video, mobile, marketing, combo */
+$spIconFor = [
+  'logo-design-solutions'       => 'logo',
+  'illustration-design'         => 'illustration',
+  'web-design-solutions'        => 'web',
+  'web-developer-solutions'     => 'code',
+  'branding'                    => 'branding',
+  'ecommerce-website-solutions' => 'cart',
+  'video-animation-services'    => 'video',
+  'mobile-apps'                 => 'mobile',
+  'digital-marketing'           => 'marketing',
+  'advance-combo-packages'      => 'combo',
+];
+
+/* ---------- Bottom call-to-action ---------- */
+$spCta = [
+  'title' => 'Not sure which service <span>you need?</span>',
+  'text'  => 'Tell us about your project and we\'ll recommend the right package, with a clear quote, within one business day.',
+  'btn'   => 'Get a free consultation',
+  'link'  => 'contact-us/index.php',
+];
+
+/* ================= Nothing to change below this line ================= */
+
+if (!function_exists('cvg_h')) {
+  function cvg_h($value) { return htmlspecialchars((string) ($value ?? ''), ENT_QUOTES, 'UTF-8'); }
+}
+$services = is_array($services ?? null) ? $services : [];
+
+$spIcons = [
+  'logo'         => '<path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8 9.5 8z"/>',
+  'web'          => '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M7 21h10M12 18v3"/>',
+  'code'         => '<path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/>',
+  'illustration' => '<path d="M3 21l4-1 11-11-3-3L4 17z"/><path d="M14 5l3 3M3 21c5-2 9 1 14-2"/>',
+  'branding'     => '<circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="10" r="1.5"/><circle cx="12" cy="7.5" r="1.5"/><circle cx="15.5" cy="10" r="1.5"/><path d="M12 21c-1.5 0-2-1-2-2s1-2 2.5-2H15a3 3 0 003-3"/>',
+  'cart'         => '<path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.7a2 2 0 002-1.5L21 8H6"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/>',
+  'video'        => '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/>',
+  'mobile'       => '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>',
+  'marketing'    => '<path d="M3 11v3a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1z"/><path d="M15 9a4 4 0 010 6M18 6a8 8 0 010 12"/>',
+  'combo'        => '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5"/>',
+];
+$spArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>';
+
+/* lowest plan price of a service, for "From $X" */
+$spFrom = function ($svc) {
+  $min = null;
+  foreach (($svc['plans'] ?? []) as $p) {
+    $v = isset($p['price']) ? (float) $p['price'] : null;
+    if ($v !== null && $v > 0 && ($min === null || $v < $min)) $min = $v;
+  }
+  return $min;
+};
+$spDetail = function ($slug) {
+  return $slug !== '' ? cvg_url('services/service-detail.php?slug=' . rawurlencode($slug)) : '#';
+};
 ?>
+<link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
+<link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 
-<link rel="stylesheet" href="../assets/css/header.css">
-<link rel="stylesheet" href="../assets/css/footer.css">
+<?php include dirname(__DIR__) . '/includes/header.php'; ?>
 
-<?php include __DIR__ . '../../includes/header.php'; ?>
-<div class="services-container">
-  <h1 class="services-title">Our Services</h1>
-</div>
-<style>
-    .services-container {
-  width: 100%;
-  height: 60vh;
-  background: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.services-title {
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-</style>
-<section class="svc" id="services">
-
-    <img
-        class="svc-bg"
-        src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/bg-object.png"
-        alt=""
-        aria-hidden="true"
-    >
-
-    <div class="svc-wrap">
-
-        <!-- Heading -->
-        <div class="svc-head">
-            <div class="svc-eyebrow" data-io>Our Services</div>
-
-            <h1 class="svc-main-heading" data-io>
-                <span class="svc-line">
-                    <span class="svc-line-in">We do</span>
-                </span>
-                <span class="svc-line">
-                    <span class="svc-line-in">everything</span>
-                </span>
-            </h1>
-
-            <p data-reveal="up" style="--d:.3s">
-                Everything your brand needs to look great and grow online.
-                Explore our design, development, branding and digital marketing
-                services, delivered by one team.
-            </p>
-        </div>
-
-        <!-- Carousel -->
-        <div class="svc-carousel">
-
-            <div class="svc-arrows">
-                <button
-                    class="svc-arrow"
-                    type="button"
-                    data-svc-prev
-                    aria-label="Previous services"
-                >
-                    <svg viewBox="0 0 16 22" aria-hidden="true">
-                        <path d="M12 3L4 11l8 8"/>
-                    </svg>
-                </button>
-
-                <button
-                    class="svc-arrow"
-                    type="button"
-                    data-svc-next
-                    aria-label="Next services"
-                >
-                    <svg viewBox="0 0 16 22" aria-hidden="true">
-                        <path d="M4 3l8 8-8 8"/>
-                    </svg>
-                </button>
-            </div>
-
-            <div class="svc-viewport">
-                <div class="svc-track">
-
-                    <?php foreach ($services as $service): ?>
-
-                        <?php
-                        $title = trim((string) ($service['title'] ?? 'Service'));
-
-                        $slug = trim((string) ($service['slug'] ?? ''));
-
-                        $description = trim(
-                            (string) ($service['description'] ?? '')
-                        );
-
-                        $icon = $service['icon'] ?? $defaultIcon;
-
-                        if (!filter_var($icon, FILTER_VALIDATE_URL)) {
-                            $icon = $defaultIcon;
-                        }
-
-                        $detailUrl = $slug !== ''
-                            ? 'service-detail.php?slug=' . rawurlencode($slug)
-                            : '#services';
-
-                        $subServices = $service['sub_services'] ?? [];
-                        ?>
-
-                        <a
-                            class="svc-card"
-                            href="<?= cvg_h($detailUrl) ?>"
-                        >
-
-                            <span class="svc-icon">
-                                <img
-                                    src="<?= cvg_h($icon) ?>"
-                                    alt=""
-                                    loading="lazy"
-                                >
-                            </span>
-
-                            <h2 class="svc-card-title">
-                                <?= cvg_h($title) ?>
-                            </h2>
-
-                            <?php if ($description !== ''): ?>
-                                <p class="svc-description">
-                                    <?= cvg_h($description) ?>
-                                </p>
-                            <?php endif; ?>
-
-                            <?php if (is_array($subServices) && !empty($subServices)): ?>
-                                <span class="svc-sub-services">
-                                    <?php
-                                    $subTitles = [];
-
-                                    foreach ($subServices as $sub) {
-                                        $subTitle = is_array($sub)
-                                            ? ($sub['title'] ?? '')
-                                            : $sub;
-
-                                        if (trim((string) $subTitle) !== '') {
-                                            $subTitles[] = $subTitle;
-                                        }
-                                    }
-
-                                    echo cvg_h(implode(' · ', array_slice($subTitles, 0, 3)));
-                                    ?>
-                                </span>
-                            <?php endif; ?>
-
-                            <span class="svc-more">
-                                Read more
-                                <?php if (isset($service['price']) && $service['price'] !== ''): ?>
-                                    <span class="svc-price">
-                                        From $<?= cvg_h($service['price']) ?>
-                                    </span>
-                                <?php endif; ?>
-                            </span>
-
-                        </a>
-
-                    <?php endforeach; ?>
-
-                </div>
-            </div>
-        </div>
-
+<main class="cvg-sp" id="cvg-services-page">
+  <section class="cvg-sp-hero">
+    <div class="cvg-sp-grid-bg" aria-hidden="true"></div>
+    <div class="cvg-sp-word" aria-hidden="true">SERVICES</div>
+    <div class="cvg-sp-wrap cvg-sp-hero-inner">
+      <p class="cvg-sp-eyebrow cvg-sp-reveal"><?= cvg_h($spHero['eyebrow']) ?></p>
+      <h1 class="cvg-sp-title cvg-sp-reveal" style="--d:.06s"><?= cvg_h($spHero['title']) ?><span>.</span></h1>
+      <p class="cvg-sp-lead cvg-sp-reveal" style="--d:.12s"><?= cvg_h($spHero['lead']) ?></p>
+      <div class="cvg-sp-actions cvg-sp-reveal" style="--d:.18s">
+        <a class="cvg-sp-btn cvg-sp-btn--mint" href="<?= cvg_url('contact-us/index.php') ?>">Get a free quote <?= $spArrow ?></a>
+        <a class="cvg-sp-btn cvg-sp-btn--ghost" href="<?= cvg_url('pricing/index.php') ?>">View pricing</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Decorative marquee -->
-    <div class="svc-marquee" aria-hidden="true">
-        <span>
-            <img
-                src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/07/WEBS-DESIGN-USA.png"
-                alt=""
-            >
-        </span>
+  <!-- ================= 2. ALL SERVICES ================= -->
+  <section class="cvg-sp-list" id="services">
+    <div class="cvg-sp-wrap">
+      <div class="cvg-sp-cards">
+        <?php foreach ($services as $i => $svc):
+          $title = trim((string) ($svc['title'] ?? 'Service'));
+          $slug  = trim((string) ($svc['slug'] ?? ''));
+          $desc  = trim((string) ($svc['description'] ?? ''));
+          $subs  = is_array($svc['sub_services'] ?? null) ? $svc['sub_services'] : [];
+          $from  = $spFrom($svc);
+          $icon  = $spIcons[$spIconFor[$slug] ?? 'web'] ?? $spIcons['web'];
+          $wide  = count($subs) > 0;
+        ?>
+          <article class="cvg-sp-card<?= $wide ? ' cvg-sp-card--wide' : '' ?> cvg-sp-reveal" style="--d:<?= min($i % 3, 2) * 0.08 ?>s">
+            <a class="cvg-sp-cover" href="<?= cvg_h($spDetail($slug)) ?>" aria-label="<?= cvg_h($title) ?>"></a>
+            <div class="cvg-sp-card-top">
+              <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><?= $icon ?></svg></span>
+              <span class="cvg-sp-num"><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
+            </div>
+            <h2 class="cvg-sp-card-title"><?= cvg_h($title) ?></h2>
+            <?php if ($desc !== ''): ?><p class="cvg-sp-desc"><?= cvg_h($desc) ?></p><?php endif; ?>
+
+            <?php if ($wide): ?>
+              <ul class="cvg-sp-subs" aria-label="<?= cvg_h($title) ?> options">
+                <?php foreach ($subs as $sub):
+                  $st = is_array($sub) ? trim((string) ($sub['title'] ?? '')) : trim((string) $sub);
+                  $ss = is_array($sub) ? trim((string) ($sub['slug'] ?? '')) : '';
+                  if ($st === '') continue; ?>
+                  <li><a href="<?= cvg_h($spDetail($ss)) ?>"><?= cvg_h($st) ?></a></li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>
+
+            <div class="cvg-sp-card-foot">
+              <span class="cvg-sp-more"><i><?= $spArrow ?></i>Read more</span>
+              <?php if ($from !== null): ?>
+                <span class="cvg-sp-from">From <strong>$<?= cvg_h(number_format($from, $from == floor($from) ? 0 : 2)) ?></strong></span>
+              <?php endif; ?>
+            </div>
+          </article>
+        <?php endforeach; ?>
+
+        <!-- last tile: help choosing -->
+        <article class="cvg-sp-card cvg-sp-card--help cvg-sp-reveal">
+          <a class="cvg-sp-cover" href="<?= cvg_url('contact-us/index.php') ?>" aria-label="Talk to us"></a>
+          <div class="cvg-sp-card-top">
+            <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/><path d="M9.5 10a2.5 2.5 0 114 2c-.9.6-1.5 1-1.5 2M12 16.5v.01"/></svg></span>
+          </div>
+          <h2 class="cvg-sp-card-title">Need something custom?</h2>
+          <p class="cvg-sp-desc">Mix any services into one plan that fits your goals and budget.</p>
+          <div class="cvg-sp-card-foot"><span class="cvg-sp-more"><i><?= $spArrow ?></i>Talk to us</span></div>
+        </article>
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- ================= 3. HOW WE WORK ================= -->
+  <section class="cvg-sp-steps">
+    <div class="cvg-sp-wrap">
+      <div class="cvg-sp-head cvg-sp-reveal">
+        <p class="cvg-sp-eyebrow">How it works</p>
+        <h2 class="cvg-sp-h2">From brief to launch in <span>four steps.</span></h2>
+      </div>
+      <ol class="cvg-sp-step-list">
+        <li class="cvg-sp-reveal"><span>01</span><strong>Discover</strong><p>We learn your goals, audience and brand.</p></li>
+        <li class="cvg-sp-reveal" style="--d:.08s"><span>02</span><strong>Design</strong><p>Custom concepts you review and approve.</p></li>
+        <li class="cvg-sp-reveal" style="--d:.16s"><span>03</span><strong>Build</strong><p>Responsive, fast and SEO-ready development.</p></li>
+        <li class="cvg-sp-reveal" style="--d:.24s"><span>04</span><strong>Launch &amp; grow</strong><p>Deployment, then support whenever you need it.</p></li>
+      </ol>
+    </div>
+  </section>
 
-<?php include __DIR__ . '../../includes/footer.php'; ?>
+  <!-- ================= 4. CTA ================= -->
+  <section class="cvg-sp-cta">
+    <div class="cvg-sp-wrap">
+      <div class="cvg-sp-cta-box cvg-sp-reveal">
+        <div>
+          <h2 class="cvg-sp-h2"><?= strip_tags($spCta['title'], '<span><br>') ?></h2>
+          <p><?= cvg_h($spCta['text']) ?></p>
+        </div>
+        <a class="cvg-sp-btn cvg-sp-btn--mint cvg-sp-btn--lg" href="<?= cvg_url($spCta['link']) ?>"><?= cvg_h($spCta['btn']) ?> <?= $spArrow ?></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<?php include dirname(__DIR__) . '/includes/footer.php'; ?>
 
 <style>
-.svc {
-    --svc-green: #0a7454;
-    --svc-card: #074b39;
-    --svc-dark: #020a07;
-    --svc-accent: #1fa57f;
+html, body { margin: 0; padding: 0; }
+body { overflow-x: hidden; background: #0A0A0A; }
 
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    width: 100%;
-    padding: 70px 0 190px;
-    background: radial-gradient(45% 60% at 85% 85%, rgba(0, 212, 163, .10) 0%, rgba(0, 212, 163, 0) 70%), radial-gradient(40% 50% at 10% 20%, rgba(0, 67, 55, .45) 0%, rgba(0, 67, 55, 0) 70%);
-    color: var(--cvg-text);
-    color: #fff;
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+.cvg-sp{
+  --sp-bg:#0A0A0A; --sp-card:#111614; --sp-line:#1E2A27; --sp-mint:#00D4A3; --sp-mint-l:#5FF0C8; --sp-ink:#04342C;
+  --sp-text:#F2F5F4; --sp-text-2:#C9D6D2; --sp-muted:#8FA39E;
+  --sp-grad: radial-gradient(70% 90% at 12% 10%, rgba(28,197,169,.45) 0%, rgba(28,197,169,0) 60%), linear-gradient(160deg, rgb(3,134,111) 0%, rgb(0,67,55) 48%, rgb(0,33,27) 100%);
+  --sp-ease: cubic-bezier(.2,.9,.2,1);
+  display:block; overflow:hidden; background:var(--sp-bg); color:var(--sp-text);
+  font-family:'Poppins',sans-serif; font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
 }
+.cvg-sp *,.cvg-sp *::before,.cvg-sp *::after{box-sizing:border-box}
+.cvg-sp p{margin:0}
+.cvg-sp a{text-decoration:none;color:inherit}
+.cvg-sp .cvg-sp-wrap{position:relative;max-width:1200px;margin:0 auto;padding:0 32px}
+.cvg-sp a:focus-visible{outline:2px solid var(--sp-mint-l);outline-offset:3px}
 
-.svc,
-.svc * {
-    box-sizing: border-box;
+/* shared bits */
+.cvg-sp .cvg-sp-eyebrow{display:inline-flex;align-items:center;gap:12px;margin:0 0 16px;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sp-mint-l)}
+.cvg-sp .cvg-sp-eyebrow::before{content:"";width:36px;height:2px;background:currentColor}
+.cvg-sp .cvg-sp-h2{margin:0;font-family:'Poppins',sans-serif;font-size:clamp(30px,3.8vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:var(--sp-text);text-transform:none}
+.cvg-sp .cvg-sp-h2 span{color:var(--sp-mint)}
+.cvg-sp .cvg-sp-btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-size:15px;font-weight:600;line-height:1;transition:transform .3s,box-shadow .3s,background .3s,border-color .3s,color .3s}
+.cvg-sp .cvg-sp-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;transition:transform .3s}
+.cvg-sp .cvg-sp-btn:hover svg{transform:translate(3px,-3px)}
+.cvg-sp .cvg-sp-btn--mint{background:var(--sp-mint);color:var(--sp-ink)}
+.cvg-sp .cvg-sp-btn--mint:hover{color:var(--sp-ink);transform:translateY(-2px);box-shadow:0 0 0 6px rgba(0,212,163,.14),0 18px 40px rgba(0,0,0,.3)}
+.cvg-sp .cvg-sp-btn--ghost{border:1px solid rgba(242,245,244,.35);color:var(--sp-text)}
+.cvg-sp .cvg-sp-btn--ghost:hover{border-color:var(--sp-mint-l);color:var(--sp-mint-l)}
+.cvg-sp .cvg-sp-btn--lg{height:58px;padding:0 30px;font-size:16px}
+
+/* ===== 1. Banner ===== */
+.cvg-sp .cvg-sp-hero{position:relative;overflow:hidden;padding:170px 0 110px;background:var(--sp-grad)}
+.cvg-sp .cvg-sp-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(242,245,244,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(242,245,244,.06) 1px,transparent 1px);background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 75% 30%,#000 10%,transparent 72%);mask-image:radial-gradient(ellipse 70% 80% at 75% 30%,#000 10%,transparent 72%);animation:cvgSpGrid 20s linear infinite}
+@keyframes cvgSpGrid{to{background-position:72px 72px,72px 72px}}
+.cvg-sp .cvg-sp-word{position:absolute;right:-30px;bottom:-30px;font-size:210px;font-weight:700;letter-spacing:-.04em;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(242,245,244,.12);white-space:nowrap;pointer-events:none;user-select:none}
+.cvg-sp .cvg-sp-hero-inner{z-index:1}
+.cvg-sp .cvg-sp-crumbs{display:flex;gap:10px;margin-bottom:26px;font-size:14px;color:rgba(242,245,244,.7)}
+.cvg-sp .cvg-sp-crumbs a:hover,.cvg-sp .cvg-sp-crumbs [aria-current]{color:var(--sp-mint-l)}
+.cvg-sp .cvg-sp-title{margin:0;font-family:'Poppins',sans-serif;font-size:clamp(54px,8.4vw,116px);font-weight:700;line-height:.95;letter-spacing:-.045em;color:var(--sp-text);text-transform:none}
+.cvg-sp .cvg-sp-title span{color:var(--sp-mint-l)}
+.cvg-sp .cvg-sp-lead{max-width:600px;margin-top:24px;font-size:18px;color:#D9F5EE}
+.cvg-sp .cvg-sp-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.cvg-sp .cvg-sp-count{margin-top:34px;font-size:14px;color:rgba(242,245,244,.75)}
+.cvg-sp .cvg-sp-count strong{font-size:28px;color:var(--sp-mint-l);margin-right:6px}
+
+/* ===== 2. Services grid ===== */
+.cvg-sp .cvg-sp-list{padding:110px 0 90px}
+.cvg-sp .cvg-sp-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.cvg-sp .cvg-sp-card{position:relative;display:flex;flex-direction:column;min-height:330px;padding:30px 30px 26px;border-radius:24px;overflow:hidden;
+  background:linear-gradient(160deg,#141B19 0%,#0F1413 100%);border:1px solid var(--sp-line);
+  transition:transform .5s var(--sp-ease),background .4s,border-color .4s,box-shadow .5s}
+.cvg-sp .cvg-sp-card--wide{grid-column:span 2}
+.cvg-sp .cvg-sp-cover{position:absolute;inset:0;z-index:1;border-radius:inherit}
+.cvg-sp .cvg-sp-card-top{display:flex;justify-content:space-between;align-items:flex-start}
+.cvg-sp .cvg-sp-ic{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:rgba(0,212,163,.1);border:1px solid rgba(0,212,163,.3);transition:background .4s,border-color .4s,transform .5s var(--sp-ease)}
+.cvg-sp .cvg-sp-ic svg{width:30px;height:30px;fill:none;stroke:var(--sp-mint-l);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .4s}
+.cvg-sp .cvg-sp-num{font-size:14px;font-weight:600;color:rgba(242,245,244,.3);transition:color .4s}
+.cvg-sp .cvg-sp-card-title{margin:34px 0 10px;font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;line-height:1.25;letter-spacing:-.01em;color:var(--sp-text);text-transform:none}
+.cvg-sp .cvg-sp-desc{font-size:14.5px;line-height:1.65;color:var(--sp-muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.cvg-sp .cvg-sp-card--wide .cvg-sp-desc{max-width:640px}
+.cvg-sp .cvg-sp-subs{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.cvg-sp .cvg-sp-subs li{margin:0;padding:0}
+.cvg-sp .cvg-sp-subs li::before{content:none}
+.cvg-sp .cvg-sp-subs a{display:inline-flex;height:32px;align-items:center;padding:0 13px;border-radius:999px;border:1px solid rgba(95,240,200,.22);background:rgba(0,212,163,.06);font-size:12.5px;font-weight:500;color:var(--sp-text-2);transition:background .3s,color .3s,border-color .3s}
+.cvg-sp .cvg-sp-subs a:hover{background:var(--sp-mint);border-color:var(--sp-mint);color:var(--sp-ink)}
+.cvg-sp .cvg-sp-card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:24px}
+.cvg-sp .cvg-sp-more{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--sp-mint-l)}
+.cvg-sp .cvg-sp-more i{width:34px;height:34px;border-radius:50%;border:1px solid rgba(95,240,200,.45);display:grid;place-items:center;transition:background .4s,border-color .4s,color .4s,transform .4s}
+.cvg-sp .cvg-sp-more svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.cvg-sp .cvg-sp-from{font-size:13px;color:var(--sp-muted)}
+.cvg-sp .cvg-sp-from strong{font-size:18px;color:var(--sp-text);margin-left:3px}
+
+.cvg-sp .cvg-sp-card:hover,.cvg-sp .cvg-sp-card:focus-within{transform:translateY(-8px);border-color:var(--sp-mint);background:#0A0A0A;box-shadow:none}
+.cvg-sp .cvg-sp-card:hover .cvg-sp-ic{background:var(--sp-mint);border-color:var(--sp-mint);transform:rotate(-8deg)}
+.cvg-sp .cvg-sp-card:hover .cvg-sp-ic svg{stroke:var(--sp-ink)}
+.cvg-sp .cvg-sp-card:hover .cvg-sp-num{color:var(--sp-mint)}
+.cvg-sp .cvg-sp-card:hover .cvg-sp-more i{background:var(--sp-mint);border-color:var(--sp-mint);color:var(--sp-ink);transform:rotate(45deg)}
+
+/* help tile */
+.cvg-sp .cvg-sp-card--help{background:var(--sp-grad);border-color:rgba(95,240,200,.3)}
+.cvg-sp .cvg-sp-card--help .cvg-sp-desc{color:#D9F5EE}
+.cvg-sp .cvg-sp-card--help .cvg-sp-ic{background:rgba(10,10,10,.35)}
+
+/* ===== 3. Steps ===== */
+.cvg-sp .cvg-sp-steps{padding:40px 0 100px}
+.cvg-sp .cvg-sp-head{margin-bottom:44px}
+.cvg-sp .cvg-sp-step-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none;counter-reset:none}
+.cvg-sp .cvg-sp-step-list li{position:relative;margin:0;padding:28px 24px 26px;border-top:2px solid var(--sp-line);transition:border-color .4s}
+.cvg-sp .cvg-sp-step-list li::before{content:"";position:absolute;left:0;top:-2px;width:0;height:2px;background:var(--sp-mint);transition:width .8s var(--sp-ease)}
+.cvg-sp .cvg-sp-step-list li:hover::before{width:100%}
+.cvg-sp .cvg-sp-step-list span{display:block;font-size:13px;font-weight:600;color:var(--sp-mint)}
+.cvg-sp .cvg-sp-step-list strong{display:block;margin:12px 0 8px;font-size:20px;font-weight:600;color:var(--sp-text)}
+.cvg-sp .cvg-sp-step-list p{font-size:14.5px;color:var(--sp-muted)}
+
+/* ===== 4. CTA ===== */
+.cvg-sp .cvg-sp-cta{padding:0 0 110px}
+.cvg-sp .cvg-sp-cta-box{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:52px 56px;border-radius:30px;background:var(--sp-grad);border:1px solid rgba(95,240,200,.25)}
+.cvg-sp .cvg-sp-cta-box .cvg-sp-h2 span{color:var(--sp-mint-l)}
+.cvg-sp .cvg-sp-cta-box p{max-width:520px;margin-top:14px;color:#D9F5EE}
+.cvg-sp .cvg-sp-cta-box .cvg-sp-btn{flex:none}
+
+/* ===== Scroll reveal ===== */
+.cvg-sp.cvg-sp--js .cvg-sp-reveal{opacity:0;transform:translateY(32px);transition:opacity .9s var(--sp-ease) var(--d,0s),transform .9s var(--sp-ease) var(--d,0s),background .4s,border-color .4s,box-shadow .5s}
+.cvg-sp.cvg-sp--js .cvg-sp-reveal.cvg-sp-in{opacity:1;transform:none}
+.cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:hover,.cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:focus-within{transform:translateY(-8px);transition-delay:0s}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .cvg-sp .cvg-sp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cvg-sp .cvg-sp-step-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cvg-sp .cvg-sp-word{font-size:150px}
 }
-
-.svc h1,
-.svc h2,
-.svc p {
-    margin-top: 0;
+@media (max-width:760px){
+  .cvg-sp .cvg-sp-cta-box{flex-direction:column;align-items:flex-start;padding:36px 28px}
 }
-
-.svc-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    width: 560px;
-    max-width: 60%;
-    height: auto;
-    pointer-events: none;
-    user-select: none;
+@media (max-width:600px){
+  .cvg-sp .cvg-sp-wrap{padding:0 16px}
+  .cvg-sp .cvg-sp-hero{padding:130px 0 80px}
+  .cvg-sp .cvg-sp-lead{font-size:16px}
+  .cvg-sp .cvg-sp-word{font-size:90px;bottom:-14px}
+  .cvg-sp .cvg-sp-list{padding:70px 0 60px}
+  .cvg-sp .cvg-sp-cards{grid-template-columns:minmax(0,1fr);gap:16px}
+  .cvg-sp .cvg-sp-card--wide{grid-column:auto}
+  .cvg-sp .cvg-sp-card{min-height:0;padding:26px 22px 22px}
+  .cvg-sp .cvg-sp-step-list{grid-template-columns:minmax(0,1fr)}
+  .cvg-sp .cvg-sp-cta{padding-bottom:80px}
 }
-
-.svc-wrap {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1360px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Heading */
-
-.svc-head {
-    max-width: 760px;
-    padding: 0 20px;
-    margin-bottom: 45px;
-}
-
-.svc-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: lowercase;
-}
-
-.svc-eyebrow::before {
-    content: "";
-    width: 62px;
-    height: 2px;
-    flex-shrink: 0;
-    background: #fff;
-}
-
-.svc-main-heading {
-    margin-bottom: 18px;
-    font-size: clamp(40px, 5vw, 60px);
-    font-weight: 700;
-    line-height: 1.1;
-    color: #fff;
-}
-
-.svc-line {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: top;
-    padding-bottom: .12em;
-    margin-bottom: -.12em;
-}
-
-.svc-line-in {
-    display: inline-block;
-}
-
-.svc-head > p {
-    max-width: 650px;
-    margin-bottom: 0;
-    font-size: 18px;
-    line-height: 1.7;
-    color: rgba(255,255,255,.9);
-}
-
-/* Carousel */
-
-.svc-carousel {
-    position: relative;
-}
-
-.svc-viewport {
-    overflow: hidden;
-    width: 100%;
-    border-radius: 2px;
-}
-
-.svc-track {
-    --per: 4;
-    display: flex;
-    align-items: stretch;
-    gap: 8px;
-    transition: transform .5s ease;
-    will-change: transform;
-}
-
-/* Cards */
-
-.svc-card {
-    position: relative;
-    flex: 0 0 calc(
-        (100% - (var(--per) - 1) * 8px) / var(--per)
-    );
-    min-width: 0;
-    min-height: 390px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 48px 20px 25px;
-    background: #00D4A3;
-    color: inherit;
-    text-align: center;
-    text-decoration: none !important;
-    overflow: hidden;
-    transition: background .3s ease;
-}
-
-.svc-card:hover,
-.svc-card:focus-visible {
-    background: var(--svc-dark);
-    color: #fff;
-}
-
-.svc-card:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: -4px;
-}
-
-.svc-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 70px;
-    height: 70px;
-    margin-bottom: 27px;
-    transition: transform .3s ease;
-}
-
-.svc-icon img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.svc-card:hover .svc-icon {
-    transform: scale(1.12);
-}
-
-.svc-card-title {
-    width: 100%;
-    margin: 0 0 14px !important;
-    font-size: 19px;
-    font-weight: 600;
-    line-height: 1.35;
-    color: black;
-    text-transform: uppercase;
-    overflow-wrap: anywhere;
-    transition: color .3s ease;
-}
-
-.svc-card:hover .svc-card-title {
-    color: #fff;
-}
-
-.svc-description {
-    display: -webkit-box;
-    width: 100%;
-    margin: 0 0 14px !important;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    font-size: 13px;
-    line-height: 1.7;
-    color: rgba(255,255,255,.75);
-}
-
-.svc-sub-services {
-    display: -webkit-box;
-    width: 100%;
-    margin-bottom: 18px;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    font-size: 11px;
-    line-height: 1.7;
-    color: #b8d8cb;
-}
-
-.svc-more {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin-top: auto;
-    padding-top: 18px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #6de0b7;
-}
-
-.svc-price {
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: none;
-    color: #cfe3da;
-}
-
-.svc-card:hover .svc-more,
-.svc-card:hover .svc-price {
-    color: #fff;
-}
-
-/* Arrows */
-
-.svc-arrows {
-    position: absolute;
-    top: -62px;
-    right: 20px;
-    z-index: 3;
-    display: flex;
-    gap: 24px;
-}
-
-.svc-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 36px;
-    padding: 5px;
-    border: 0;
-    background: transparent;
-    color: rgba(255,255,255,.75);
-    cursor: pointer;
-}
-
-.svc-arrow:hover {
-    color: #fff;
-}
-
-.svc-arrow:focus-visible {
-    outline: 2px solid #fff;
-}
-
-.svc-arrow:disabled {
-    opacity: .35;
-    cursor: not-allowed;
-}
-
-.svc-arrow svg {
-    width: 16px;
-    height: 22px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-/* CTA */
-
-.svc-cta {
-    max-width: 760px;
-    margin: 65px auto 0;
-    padding: 35px 25px;
-    border: 1px solid rgba(255,255,255,.2);
-    background: rgba(2,10,7,.16);
-    text-align: center;
-}
-
-.svc-cta h2 {
-    margin-bottom: 12px !important;
-    font-size: clamp(25px, 3vw, 36px);
-    font-weight: 700;
-    line-height: 1.2;
-    color: #fff;
-}
-
-.svc-cta p {
-    margin-bottom: 0;
-    font-size: 15px;
-    line-height: 1.7;
-    color: rgba(255,255,255,.85);
-}
-
-.svc-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    min-height: 50px;
-    margin-top: 24px;
-    padding: 0 25px;
-    background: #fff;
-    color: #07523d !important;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none !important;
-    transition: transform .3s ease, background .3s ease;
-}
-
-.svc-cta-btn:hover {
-    transform: translateY(-3px);
-    background: #dff9ed;
-}
-
-/* Marquee */
-
-.svc-marquee {
-    position: absolute;
-    right: 0;
-    bottom: 10px;
-    left: 0;
-    z-index: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    pointer-events: none;
-}
-
-.svc-marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: svcMarquee 22s linear infinite;
-}
-
-.svc-marquee img {
-    display: block;
-    width: auto;
-    max-width: none;
-    height: 88px;
-}
-
-@keyframes svcMarquee {
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-/* Scroll reveal */
-
-.svc.svc-js .svc-eyebrow,
-.svc.svc-js [data-reveal="up"] {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .7s ease, transform .7s ease;
-}
-
-.svc.svc-js .svc-eyebrow {
-    transform: translateX(-24px);
-}
-
-.svc.svc-js .svc-eyebrow.is-in,
-.svc.svc-js [data-reveal="up"].is-in {
-    opacity: 1;
-    transform: none;
-}
-
-.svc.svc-js .svc-line-in {
-    transform: translateY(110%);
-    transition: transform .9s cubic-bezier(.2,.9,.2,1);
-}
-
-.svc.svc-js .svc-main-heading.is-in .svc-line-in {
-    transform: none;
-}
-
-.svc.svc-js .svc-main-heading.is-in .svc-line:nth-child(2) .svc-line-in {
-    transition-delay: .15s;
-}
-
-/* Responsive */
-
-@media (max-width: 1024px) {
-    .svc-track {
-        --per: 2;
-    }
-
-    .svc-card {
-        min-height: 370px;
-    }
-
-    .svc-arrows {
-        top: -57px;
-    }
-}
-
-@media (max-width: 640px) {
-    .svc {
-        padding: 55px 0 175px;
-    }
-
-    .svc-wrap {
-        padding: 0 16px;
-    }
-
-    .svc-head {
-        padding: 0 4px;
-        margin-bottom: 60px;
-    }
-
-    .svc-main-heading {
-        font-size: clamp(36px, 10vw, 46px);
-    }
-
-    .svc-head > p {
-        font-size: 15px;
-    }
-
-    .svc-track {
-        --per: 1;
-    }
-
-    .svc-card {
-        min-height: 350px;
-        padding: 42px 24px 25px;
-    }
-
-    .svc-card-title {
-        font-size: 20px;
-    }
-
-    .svc-description {
-        max-width: 340px;
-        font-size: 14px;
-    }
-
-    .svc-arrows {
-        top: -48px;
-        right: 4px;
-        gap: 15px;
-    }
-
-    .svc-cta {
-        margin-top: 55px;
-        padding: 28px 18px;
-    }
-
-    .svc-marquee img {
-        height: 70px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .svc *,
-    .svc *::before,
-    .svc *::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-    }
-
-    .svc.svc-js .svc-eyebrow,
-    .svc.svc-js [data-reveal="up"],
-    .svc.svc-js .svc-line-in {
-        opacity: 1 !important;
-        transform: none !important;
-    }
+@media (prefers-reduced-motion:reduce){
+  .cvg-sp *,.cvg-sp *::before,.cvg-sp *::after{animation:none!important;transition:none!important}
 }
 </style>
 
 <script>
 (function () {
-    const sections = document.querySelectorAll('.svc');
-
-    sections.forEach(function (section) {
-        if (section.dataset.svcInitialized === 'true') return;
-        section.dataset.svcInitialized = 'true';
-
-        const track = section.querySelector('.svc-track');
-        const viewport = section.querySelector('.svc-viewport');
-        const prev = section.querySelector('[data-svc-prev]');
-        const next = section.querySelector('[data-svc-next]');
-
-        if (!track || !viewport || !prev || !next) return;
-
-        const cards = Array.from(track.children);
-
-        if (!cards.length) {
-            prev.hidden = true;
-            next.hidden = true;
-            return;
-        }
-
-        let index = 0;
-        let timer = null;
-        let resizeTimer = null;
-
-        function perPage() {
-            return parseInt(
-                getComputedStyle(track).getPropertyValue('--per'),
-                10
-            ) || 4;
-        }
-
-        function maxIndex() {
-            return Math.max(0, cards.length - perPage());
-        }
-
-        function render() {
-            index = Math.max(0, Math.min(index, maxIndex()));
-
-            const cardWidth = cards[0].getBoundingClientRect().width;
-            const gap = parseFloat(getComputedStyle(track).gap) || 8;
-
-            track.style.transform =
-                'translateX(' + (-index * (cardWidth + gap)) + 'px)';
-
-            prev.disabled = index === 0;
-            next.disabled = index === maxIndex();
-
-            if (pagination) {
-                pagination.textContent =
-                    'Services ' + (index + 1) + '–' +
-                    Math.min(index + perPage(), cards.length) +
-                    ' of ' + cards.length;
-            }
-
-            const canSlide = cards.length > perPage();
-
-            prev.hidden = !canSlide;
-            next.hidden = !canSlide;
-            if (pagination) pagination.hidden = !canSlide;
-        }
-
-        function goTo(newIndex) {
-            if (newIndex > maxIndex()) {
-                index = 0;
-            } else if (newIndex < 0) {
-                index = maxIndex();
-            } else {
-                index = newIndex;
-            }
-
-            render();
-        }
-
-        function stopAuto() {
-            if (timer) {
-                clearInterval(timer);
-                timer = null;
-            }
-        }
-
-        function startAuto() {
-            stopAuto();
-
-            if (
-                window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-                cards.length <= perPage()
-            ) {
-                return;
-            }
-
-            timer = setInterval(function () {
-                goTo(index >= maxIndex() ? 0 : index + 1);
-            }, 5000);
-        }
-
-        next.addEventListener('click', function () {
-            goTo(index >= maxIndex() ? 0 : index + 1);
-            startAuto();
-        });
-
-        prev.addEventListener('click', function () {
-            goTo(index <= 0 ? maxIndex() : index - 1);
-            startAuto();
-        });
-
-        section.addEventListener('mouseenter', stopAuto);
-        section.addEventListener('mouseleave', startAuto);
-
-        section.addEventListener('focusin', stopAuto);
-        section.addEventListener('focusout', startAuto);
-
-        window.addEventListener('resize', function () {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function () {
-                render();
-                startAuto();
-            }, 120);
-        });
-
-        render();
-        startAuto();
-    });
-})();
-
-(function () {
-    const section = document.getElementById('services');
-
-    if (!section) return;
-
-    const reduceMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-    ).matches;
-
-    const revealElements = section.querySelectorAll(
-        '[data-io], [data-reveal="up"]'
-    );
-
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-        revealElements.forEach(function (element) {
-            element.classList.add('is-in');
-        });
-        return;
-    }
-
-    section.classList.add('svc-js');
-
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            entry.target.classList.toggle(
-                'is-in',
-                entry.isIntersecting
-            );
-        });
-    }, {
-        threshold: 0.15
-    });
-
-    revealElements.forEach(function (element) {
-        observer.observe(element);
-    });
+  var root = document.getElementById('cvg-services-page');
+  if (!root) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  root.classList.add('cvg-sp--js');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('cvg-sp-in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  Array.prototype.forEach.call(root.querySelectorAll('.cvg-sp-reveal'), function (el) { io.observe(el); });
 })();
 </script>

@@ -1,4 +1,5 @@
 
+<?php require_once dirname(__DIR__) . '/includes/init.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,10 +10,10 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/cvg-pricing-page.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="<?= cvg_url('assets/css/global.css') ?>">
+    <link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
+    <link rel="stylesheet" href="<?= cvg_url('assets/css/cvg-pricing-page.css') ?>">
+    <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
 </head>
 
 <body style="margin:0; background:#0A0A0A;">
@@ -23,7 +24,7 @@
 
     <?php include __DIR__ . '/../includes/footer.php'; ?>
 
-    <script src="../assets/js/cvg-pricing-page.js"></script>
+    <script src="<?= cvg_url('assets/js/cvg-pricing-page.js') ?>"></script>
 
 </body>
 </html>

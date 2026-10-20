@@ -48,10 +48,11 @@ $uploads = 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads
    Khali chhor dein to khud pata laga leta hai (localhost aur server dono par).
    Agar images na dikhein to yahan poora URL likh dein, jaise:
    'http://localhost/creative/'  ya  'https://creativeconverge.com/'          */
-$siteUrl = '';
+require_once __DIR__ . '/init.php';
+$siteUrl = cvg_url('');
 
 /* "View all work" button ka link */
-$viewAllLink = 'cases/';
+$viewAllLink = cvg_url('cases/index.php');
 
 /* ================= Neeche kuch badalne ki zaroorat nahi ================= */
 
@@ -253,7 +254,7 @@ $playSvg   = '<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" /></svg>';
     text-transform: none;
     letter-spacing: 0;
     cursor: pointer;
-    box-shadow: none;
+     
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
   }
 
