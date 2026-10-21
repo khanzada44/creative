@@ -38,7 +38,6 @@ $portfolioTabs = [
   'logo'     => 'Logo',
   'branding' => 'Branding',
   'video'    => 'Video Animations',
-  'apps'     => 'Mobile Apps',
 ];
 
 $portfolioItems = [
@@ -1299,3 +1298,4 @@ $firstTab = array_key_first($portfolioTabs);
     });
   })();
 </script>
+<script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>

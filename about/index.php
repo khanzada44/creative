@@ -403,3 +403,4 @@ $arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v
 </script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+<script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>

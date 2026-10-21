@@ -1,9 +1,4 @@
 <?php
-/* =========================================================
-   services/services.php — Creative Converge "Our services" page
-   Reads every service from services-data.php (titles, descriptions,
-   sub-services and plan prices), so new services appear automatically.
-   ========================================================= */
 require_once dirname(__DIR__) . '/includes/init.php';
 require_once __DIR__ . '/services-data.php';
 
@@ -29,7 +24,6 @@ $spIconFor = [
   'advance-combo-packages'      => 'combo',
 ];
 
-/* ---------- Bottom call-to-action ---------- */
 $spCta = [
   'title' => 'Not sure which service <span>you need?</span>',
   'text'  => 'Tell us about your project and we\'ll recommend the right package, with a clear quote, within one business day.',
@@ -37,10 +31,12 @@ $spCta = [
   'link'  => 'contact-us/index.php',
 ];
 
-/* ================= Nothing to change below this line ================= */
 
 if (!function_exists('cvg_h')) {
-  function cvg_h($value) { return htmlspecialchars((string) ($value ?? ''), ENT_QUOTES, 'UTF-8'); }
+  function cvg_h($value)
+  {
+    return htmlspecialchars((string) ($value ?? ''), ENT_QUOTES, 'UTF-8');
+  }
 }
 $services = is_array($services ?? null) ? $services : [];
 
@@ -94,7 +90,6 @@ $spDetail = function ($slug) {
     </div>
   </section>
 
-  <!-- ================= 2. ALL SERVICES ================= -->
   <section class="cvg-sp-list" id="services">
     <div class="cvg-sp-wrap">
       <div class="cvg-sp-cards">
@@ -140,7 +135,10 @@ $spDetail = function ($slug) {
         <article class="cvg-sp-card cvg-sp-card--help cvg-sp-reveal">
           <a class="cvg-sp-cover" href="<?= cvg_url('contact-us/index.php') ?>" aria-label="Talk to us"></a>
           <div class="cvg-sp-card-top">
-            <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/><path d="M9.5 10a2.5 2.5 0 114 2c-.9.6-1.5 1-1.5 2M12 16.5v.01"/></svg></span>
+            <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z" />
+                <path d="M9.5 10a2.5 2.5 0 114 2c-.9.6-1.5 1-1.5 2M12 16.5v.01" />
+              </svg></span>
           </div>
           <h2 class="cvg-sp-card-title">Need something custom?</h2>
           <p class="cvg-sp-desc">Mix any services into one plan that fits your goals and budget.</p>
@@ -149,8 +147,6 @@ $spDetail = function ($slug) {
       </div>
     </div>
   </section>
-
-  <!-- ================= 3. HOW WE WORK ================= -->
   <section class="cvg-sp-steps">
     <div class="cvg-sp-wrap">
       <div class="cvg-sp-head cvg-sp-reveal">
@@ -158,10 +154,18 @@ $spDetail = function ($slug) {
         <h2 class="cvg-sp-h2">From brief to launch in <span>four steps.</span></h2>
       </div>
       <ol class="cvg-sp-step-list">
-        <li class="cvg-sp-reveal"><span>01</span><strong>Discover</strong><p>We learn your goals, audience and brand.</p></li>
-        <li class="cvg-sp-reveal" style="--d:.08s"><span>02</span><strong>Design</strong><p>Custom concepts you review and approve.</p></li>
-        <li class="cvg-sp-reveal" style="--d:.16s"><span>03</span><strong>Build</strong><p>Responsive, fast and SEO-ready development.</p></li>
-        <li class="cvg-sp-reveal" style="--d:.24s"><span>04</span><strong>Launch &amp; grow</strong><p>Deployment, then support whenever you need it.</p></li>
+        <li class="cvg-sp-reveal"><span>01</span><strong>Discover</strong>
+          <p>We learn your goals, audience and brand.</p>
+        </li>
+        <li class="cvg-sp-reveal" style="--d:.08s"><span>02</span><strong>Design</strong>
+          <p>Custom concepts you review and approve.</p>
+        </li>
+        <li class="cvg-sp-reveal" style="--d:.16s"><span>03</span><strong>Build</strong>
+          <p>Responsive, fast and SEO-ready development.</p>
+        </li>
+        <li class="cvg-sp-reveal" style="--d:.24s"><span>04</span><strong>Launch &amp; grow</strong>
+          <p>Deployment, then support whenever you need it.</p>
+        </li>
       </ol>
     </div>
   </section>
@@ -183,149 +187,688 @@ $spDetail = function ($slug) {
 <?php include dirname(__DIR__) . '/includes/footer.php'; ?>
 
 <style>
-html, body { margin: 0; padding: 0; }
-body { overflow-x: hidden; background: #0A0A0A; }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-.cvg-sp{
-  --sp-bg:#0A0A0A; --sp-card:#111614; --sp-line:#1E2A27; --sp-mint:#00D4A3; --sp-mint-l:#5FF0C8; --sp-ink:#04342C;
-  --sp-text:#F2F5F4; --sp-text-2:#C9D6D2; --sp-muted:#8FA39E;
-  --sp-grad: radial-gradient(70% 90% at 12% 10%, rgba(28,197,169,.45) 0%, rgba(28,197,169,0) 60%), linear-gradient(160deg, rgb(3,134,111) 0%, rgb(0,67,55) 48%, rgb(0,33,27) 100%);
-  --sp-ease: cubic-bezier(.2,.9,.2,1);
-  display:block; overflow:hidden; background:var(--sp-bg); color:var(--sp-text);
-  font-family:'Poppins',sans-serif; font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
-}
-.cvg-sp *,.cvg-sp *::before,.cvg-sp *::after{box-sizing:border-box}
-.cvg-sp p{margin:0}
-.cvg-sp a{text-decoration:none;color:inherit}
-.cvg-sp .cvg-sp-wrap{position:relative;max-width:1200px;margin:0 auto;padding:0 32px}
-.cvg-sp a:focus-visible{outline:2px solid var(--sp-mint-l);outline-offset:3px}
+  body {
+    overflow-x: hidden;
+    background: #0A0A0A;
+  }
 
-/* shared bits */
-.cvg-sp .cvg-sp-eyebrow{display:inline-flex;align-items:center;gap:12px;margin:0 0 16px;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sp-mint-l)}
-.cvg-sp .cvg-sp-eyebrow::before{content:"";width:36px;height:2px;background:currentColor}
-.cvg-sp .cvg-sp-h2{margin:0;font-family:'Poppins',sans-serif;font-size:clamp(30px,3.8vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:var(--sp-text);text-transform:none}
-.cvg-sp .cvg-sp-h2 span{color:var(--sp-mint)}
-.cvg-sp .cvg-sp-btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-size:15px;font-weight:600;line-height:1;transition:transform .3s,box-shadow .3s,background .3s,border-color .3s,color .3s}
-.cvg-sp .cvg-sp-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;transition:transform .3s}
-.cvg-sp .cvg-sp-btn:hover svg{transform:translate(3px,-3px)}
-.cvg-sp .cvg-sp-btn--mint{background:var(--sp-mint);color:var(--sp-ink)}
-.cvg-sp .cvg-sp-btn--mint:hover{color:var(--sp-ink);transform:translateY(-2px);box-shadow:0 0 0 6px rgba(0,212,163,.14),0 18px 40px rgba(0,0,0,.3)}
-.cvg-sp .cvg-sp-btn--ghost{border:1px solid rgba(242,245,244,.35);color:var(--sp-text)}
-.cvg-sp .cvg-sp-btn--ghost:hover{border-color:var(--sp-mint-l);color:var(--sp-mint-l)}
-.cvg-sp .cvg-sp-btn--lg{height:58px;padding:0 30px;font-size:16px}
+  .cvg-sp {
+    --sp-bg: #0A0A0A;
+    --sp-card: #111614;
+    --sp-line: #1E2A27;
+    --sp-mint: #00D4A3;
+    --sp-mint-l: #5FF0C8;
+    --sp-ink: #04342C;
+    --sp-text: #F2F5F4;
+    --sp-text-2: #C9D6D2;
+    --sp-muted: #8FA39E;
+    --sp-grad: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, .45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+    --sp-ease: cubic-bezier(.2, .9, .2, 1);
+    display: block;
+    overflow: hidden;
+    background: var(--sp-bg);
+    color: var(--sp-text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-/* ===== 1. Banner ===== */
-.cvg-sp .cvg-sp-hero{position:relative;overflow:hidden;padding:170px 0 110px;background:var(--sp-grad)}
-.cvg-sp .cvg-sp-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(242,245,244,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(242,245,244,.06) 1px,transparent 1px);background-size:72px 72px;
-  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 75% 30%,#000 10%,transparent 72%);mask-image:radial-gradient(ellipse 70% 80% at 75% 30%,#000 10%,transparent 72%);animation:cvgSpGrid 20s linear infinite}
-@keyframes cvgSpGrid{to{background-position:72px 72px,72px 72px}}
-.cvg-sp .cvg-sp-word{position:absolute;right:-30px;bottom:-30px;font-size:210px;font-weight:700;letter-spacing:-.04em;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(242,245,244,.12);white-space:nowrap;pointer-events:none;user-select:none}
-.cvg-sp .cvg-sp-hero-inner{z-index:1}
-.cvg-sp .cvg-sp-crumbs{display:flex;gap:10px;margin-bottom:26px;font-size:14px;color:rgba(242,245,244,.7)}
-.cvg-sp .cvg-sp-crumbs a:hover,.cvg-sp .cvg-sp-crumbs [aria-current]{color:var(--sp-mint-l)}
-.cvg-sp .cvg-sp-title{margin:0;font-family:'Poppins',sans-serif;font-size:clamp(54px,8.4vw,116px);font-weight:700;line-height:.95;letter-spacing:-.045em;color:var(--sp-text);text-transform:none}
-.cvg-sp .cvg-sp-title span{color:var(--sp-mint-l)}
-.cvg-sp .cvg-sp-lead{max-width:600px;margin-top:24px;font-size:18px;color:#D9F5EE}
-.cvg-sp .cvg-sp-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.cvg-sp .cvg-sp-count{margin-top:34px;font-size:14px;color:rgba(242,245,244,.75)}
-.cvg-sp .cvg-sp-count strong{font-size:28px;color:var(--sp-mint-l);margin-right:6px}
+  .cvg-sp *,
+  .cvg-sp *::before,
+  .cvg-sp *::after {
+    box-sizing: border-box
+  }
 
-/* ===== 2. Services grid ===== */
-.cvg-sp .cvg-sp-list{padding:110px 0 90px}
-.cvg-sp .cvg-sp-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.cvg-sp .cvg-sp-card{position:relative;display:flex;flex-direction:column;min-height:330px;padding:30px 30px 26px;border-radius:24px;overflow:hidden;
-  background:linear-gradient(160deg,#141B19 0%,#0F1413 100%);border:1px solid var(--sp-line);
-  transition:transform .5s var(--sp-ease),background .4s,border-color .4s,box-shadow .5s}
-.cvg-sp .cvg-sp-card--wide{grid-column:span 2}
-.cvg-sp .cvg-sp-cover{position:absolute;inset:0;z-index:1;border-radius:inherit}
-.cvg-sp .cvg-sp-card-top{display:flex;justify-content:space-between;align-items:flex-start}
-.cvg-sp .cvg-sp-ic{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:rgba(0,212,163,.1);border:1px solid rgba(0,212,163,.3);transition:background .4s,border-color .4s,transform .5s var(--sp-ease)}
-.cvg-sp .cvg-sp-ic svg{width:30px;height:30px;fill:none;stroke:var(--sp-mint-l);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .4s}
-.cvg-sp .cvg-sp-num{font-size:14px;font-weight:600;color:rgba(242,245,244,.3);transition:color .4s}
-.cvg-sp .cvg-sp-card-title{margin:34px 0 10px;font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;line-height:1.25;letter-spacing:-.01em;color:var(--sp-text);text-transform:none}
-.cvg-sp .cvg-sp-desc{font-size:14.5px;line-height:1.65;color:var(--sp-muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
-.cvg-sp .cvg-sp-card--wide .cvg-sp-desc{max-width:640px}
-.cvg-sp .cvg-sp-subs{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
-.cvg-sp .cvg-sp-subs li{margin:0;padding:0}
-.cvg-sp .cvg-sp-subs li::before{content:none}
-.cvg-sp .cvg-sp-subs a{display:inline-flex;height:32px;align-items:center;padding:0 13px;border-radius:999px;border:1px solid rgba(95,240,200,.22);background:rgba(0,212,163,.06);font-size:12.5px;font-weight:500;color:var(--sp-text-2);transition:background .3s,color .3s,border-color .3s}
-.cvg-sp .cvg-sp-subs a:hover{background:var(--sp-mint);border-color:var(--sp-mint);color:var(--sp-ink)}
-.cvg-sp .cvg-sp-card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:24px}
-.cvg-sp .cvg-sp-more{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--sp-mint-l)}
-.cvg-sp .cvg-sp-more i{width:34px;height:34px;border-radius:50%;border:1px solid rgba(95,240,200,.45);display:grid;place-items:center;transition:background .4s,border-color .4s,color .4s,transform .4s}
-.cvg-sp .cvg-sp-more svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
-.cvg-sp .cvg-sp-from{font-size:13px;color:var(--sp-muted)}
-.cvg-sp .cvg-sp-from strong{font-size:18px;color:var(--sp-text);margin-left:3px}
+  .cvg-sp p {
+    margin: 0
+  }
 
-.cvg-sp .cvg-sp-card:hover,.cvg-sp .cvg-sp-card:focus-within{transform:translateY(-8px);border-color:var(--sp-mint);background:#0A0A0A;box-shadow:none}
-.cvg-sp .cvg-sp-card:hover .cvg-sp-ic{background:var(--sp-mint);border-color:var(--sp-mint);transform:rotate(-8deg)}
-.cvg-sp .cvg-sp-card:hover .cvg-sp-ic svg{stroke:var(--sp-ink)}
-.cvg-sp .cvg-sp-card:hover .cvg-sp-num{color:var(--sp-mint)}
-.cvg-sp .cvg-sp-card:hover .cvg-sp-more i{background:var(--sp-mint);border-color:var(--sp-mint);color:var(--sp-ink);transform:rotate(45deg)}
+  .cvg-sp a {
+    text-decoration: none;
+    color: inherit
+  }
 
-/* help tile */
-.cvg-sp .cvg-sp-card--help{background:var(--sp-grad);border-color:rgba(95,240,200,.3)}
-.cvg-sp .cvg-sp-card--help .cvg-sp-desc{color:#D9F5EE}
-.cvg-sp .cvg-sp-card--help .cvg-sp-ic{background:rgba(10,10,10,.35)}
+  .cvg-sp .cvg-sp-wrap {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px
+  }
 
-/* ===== 3. Steps ===== */
-.cvg-sp .cvg-sp-steps{padding:40px 0 100px}
-.cvg-sp .cvg-sp-head{margin-bottom:44px}
-.cvg-sp .cvg-sp-step-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none;counter-reset:none}
-.cvg-sp .cvg-sp-step-list li{position:relative;margin:0;padding:28px 24px 26px;border-top:2px solid var(--sp-line);transition:border-color .4s}
-.cvg-sp .cvg-sp-step-list li::before{content:"";position:absolute;left:0;top:-2px;width:0;height:2px;background:var(--sp-mint);transition:width .8s var(--sp-ease)}
-.cvg-sp .cvg-sp-step-list li:hover::before{width:100%}
-.cvg-sp .cvg-sp-step-list span{display:block;font-size:13px;font-weight:600;color:var(--sp-mint)}
-.cvg-sp .cvg-sp-step-list strong{display:block;margin:12px 0 8px;font-size:20px;font-weight:600;color:var(--sp-text)}
-.cvg-sp .cvg-sp-step-list p{font-size:14.5px;color:var(--sp-muted)}
+  .cvg-sp a:focus-visible {
+    outline: 2px solid var(--sp-mint-l);
+    outline-offset: 3px
+  }
 
-/* ===== 4. CTA ===== */
-.cvg-sp .cvg-sp-cta{padding:0 0 110px}
-.cvg-sp .cvg-sp-cta-box{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:52px 56px;border-radius:30px;background:var(--sp-grad);border:1px solid rgba(95,240,200,.25)}
-.cvg-sp .cvg-sp-cta-box .cvg-sp-h2 span{color:var(--sp-mint-l)}
-.cvg-sp .cvg-sp-cta-box p{max-width:520px;margin-top:14px;color:#D9F5EE}
-.cvg-sp .cvg-sp-cta-box .cvg-sp-btn{flex:none}
+  /* shared bits */
+  .cvg-sp .cvg-sp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 16px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--sp-mint-l)
+  }
 
-/* ===== Scroll reveal ===== */
-.cvg-sp.cvg-sp--js .cvg-sp-reveal{opacity:0;transform:translateY(32px);transition:opacity .9s var(--sp-ease) var(--d,0s),transform .9s var(--sp-ease) var(--d,0s),background .4s,border-color .4s,box-shadow .5s}
-.cvg-sp.cvg-sp--js .cvg-sp-reveal.cvg-sp-in{opacity:1;transform:none}
-.cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:hover,.cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:focus-within{transform:translateY(-8px);transition-delay:0s}
+  .cvg-sp .cvg-sp-eyebrow::before {
+    content: "";
+    width: 36px;
+    height: 2px;
+    background: currentColor
+  }
 
-/* ===== Responsive ===== */
-@media (max-width:1024px){
-  .cvg-sp .cvg-sp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cvg-sp .cvg-sp-step-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cvg-sp .cvg-sp-word{font-size:150px}
-}
-@media (max-width:760px){
-  .cvg-sp .cvg-sp-cta-box{flex-direction:column;align-items:flex-start;padding:36px 28px}
-}
-@media (max-width:600px){
-  .cvg-sp .cvg-sp-wrap{padding:0 16px}
-  .cvg-sp .cvg-sp-hero{padding:130px 0 80px}
-  .cvg-sp .cvg-sp-lead{font-size:16px}
-  .cvg-sp .cvg-sp-word{font-size:90px;bottom:-14px}
-  .cvg-sp .cvg-sp-list{padding:70px 0 60px}
-  .cvg-sp .cvg-sp-cards{grid-template-columns:minmax(0,1fr);gap:16px}
-  .cvg-sp .cvg-sp-card--wide{grid-column:auto}
-  .cvg-sp .cvg-sp-card{min-height:0;padding:26px 22px 22px}
-  .cvg-sp .cvg-sp-step-list{grid-template-columns:minmax(0,1fr)}
-  .cvg-sp .cvg-sp-cta{padding-bottom:80px}
-}
-@media (prefers-reduced-motion:reduce){
-  .cvg-sp *,.cvg-sp *::before,.cvg-sp *::after{animation:none!important;transition:none!important}
-}
+  .cvg-sp .cvg-sp-h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(30px, 3.8vw, 48px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.025em;
+    color: var(--sp-text);
+    text-transform: none
+  }
+
+  .cvg-sp .cvg-sp-h2 span {
+    color: var(--sp-mint)
+  }
+
+  .cvg-sp .cvg-sp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 52px;
+    padding: 0 26px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform .3s, box-shadow .3s, background .3s, border-color .3s, color .3s
+  }
+
+  .cvg-sp .cvg-sp-btn svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    transition: transform .3s
+  }
+
+  .cvg-sp .cvg-sp-btn:hover svg {
+    transform: translate(3px, -3px)
+  }
+
+  .cvg-sp .cvg-sp-btn--mint {
+    background: var(--sp-mint);
+    color: var(--sp-ink)
+  }
+
+  .cvg-sp .cvg-sp-btn--mint:hover {
+    color: var(--sp-ink);
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 6px rgba(0, 212, 163, .14), 0 18px 40px rgba(0, 0, 0, .3)
+  }
+
+  .cvg-sp .cvg-sp-btn--ghost {
+    border: 1px solid rgba(242, 245, 244, .35);
+    color: var(--sp-text)
+  }
+
+  .cvg-sp .cvg-sp-btn--ghost:hover {
+    border-color: var(--sp-mint-l);
+    color: var(--sp-mint-l)
+  }
+
+  .cvg-sp .cvg-sp-btn--lg {
+    height: 58px;
+    padding: 0 30px;
+    font-size: 16px
+  }
+
+  /* ===== 1. Banner ===== */
+  .cvg-sp .cvg-sp-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 170px 0 110px;
+    background: var(--sp-grad)
+  }
+
+  .cvg-sp .cvg-sp-grid-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(242, 245, 244, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 245, 244, .06) 1px, transparent 1px);
+    background-size: 72px 72px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 80% at 75% 30%, #000 10%, transparent 72%);
+    mask-image: radial-gradient(ellipse 70% 80% at 75% 30%, #000 10%, transparent 72%);
+    animation: cvgSpGrid 20s linear infinite
+  }
+
+  @keyframes cvgSpGrid {
+    to {
+      background-position: 72px 72px, 72px 72px
+    }
+  }
+
+  .cvg-sp .cvg-sp-word {
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    font-size: 210px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(242, 245, 244, .12);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none
+  }
+
+  .cvg-sp .cvg-sp-hero-inner {
+    z-index: 1
+  }
+
+  .cvg-sp .cvg-sp-crumbs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 26px;
+    font-size: 14px;
+    color: rgba(242, 245, 244, .7)
+  }
+
+  .cvg-sp .cvg-sp-crumbs a:hover,
+  .cvg-sp .cvg-sp-crumbs [aria-current] {
+    color: var(--sp-mint-l)
+  }
+
+  .cvg-sp .cvg-sp-title {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(54px, 8.4vw, 116px);
+    font-weight: 700;
+    line-height: .95;
+    letter-spacing: -.045em;
+    color: var(--sp-text);
+    text-transform: none
+  }
+
+  .cvg-sp .cvg-sp-title span {
+    color: var(--sp-mint-l)
+  }
+
+  .cvg-sp .cvg-sp-lead {
+    max-width: 600px;
+    margin-top: 24px;
+    font-size: 18px;
+    color: #D9F5EE
+  }
+
+  .cvg-sp .cvg-sp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px
+  }
+
+  .cvg-sp .cvg-sp-count {
+    margin-top: 34px;
+    font-size: 14px;
+    color: rgba(242, 245, 244, .75)
+  }
+
+  .cvg-sp .cvg-sp-count strong {
+    font-size: 28px;
+    color: var(--sp-mint-l);
+    margin-right: 6px
+  }
+
+  /* ===== 2. Services grid ===== */
+  .cvg-sp .cvg-sp-list {
+    padding: 110px 0 90px
+  }
+
+  .cvg-sp .cvg-sp-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px
+  }
+
+  .cvg-sp .cvg-sp-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 330px;
+    padding: 30px 30px 26px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #141B19 0%, #0F1413 100%);
+    border: 1px solid var(--sp-line);
+    transition: transform .5s var(--sp-ease), background .4s, border-color .4s, box-shadow .5s
+  }
+
+  .cvg-sp .cvg-sp-card--wide {
+    grid-column: span 2
+  }
+
+  .cvg-sp .cvg-sp-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit
+  }
+
+  .cvg-sp .cvg-sp-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start
+  }
+
+  .cvg-sp .cvg-sp-ic {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 212, 163, .1);
+    border: 1px solid rgba(0, 212, 163, .3);
+    transition: background .4s, border-color .4s, transform .5s var(--sp-ease)
+  }
+
+  .cvg-sp .cvg-sp-ic svg {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: var(--sp-mint-l);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .4s
+  }
+
+  .cvg-sp .cvg-sp-num {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(242, 245, 244, .3);
+    transition: color .4s
+  }
+
+  .cvg-sp .cvg-sp-card-title {
+    margin: 34px 0 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    color: var(--sp-text);
+    text-transform: none
+  }
+
+  .cvg-sp .cvg-sp-desc {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--sp-muted);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden
+  }
+
+  .cvg-sp .cvg-sp-card--wide .cvg-sp-desc {
+    max-width: 640px
+  }
+
+  .cvg-sp .cvg-sp-subs {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none
+  }
+
+  .cvg-sp .cvg-sp-subs li {
+    margin: 0;
+    padding: 0
+  }
+
+  .cvg-sp .cvg-sp-subs li::before {
+    content: none
+  }
+
+  .cvg-sp .cvg-sp-subs a {
+    display: inline-flex;
+    height: 32px;
+    align-items: center;
+    padding: 0 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(95, 240, 200, .22);
+    background: rgba(0, 212, 163, .06);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--sp-text-2);
+    transition: background .3s, color .3s, border-color .3s
+  }
+
+  .cvg-sp .cvg-sp-subs a:hover {
+    background: var(--sp-mint);
+    border-color: var(--sp-mint);
+    color: var(--sp-ink)
+  }
+
+  .cvg-sp .cvg-sp-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 24px
+  }
+
+  .cvg-sp .cvg-sp-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sp-mint-l)
+  }
+
+  .cvg-sp .cvg-sp-more i {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(95, 240, 200, .45);
+    display: grid;
+    place-items: center;
+    transition: background .4s, border-color .4s, color .4s, transform .4s
+  }
+
+  .cvg-sp .cvg-sp-more svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round
+  }
+
+  .cvg-sp .cvg-sp-from {
+    font-size: 13px;
+    color: var(--sp-muted)
+  }
+
+  .cvg-sp .cvg-sp-from strong {
+    font-size: 18px;
+    color: var(--sp-text);
+    margin-left: 3px
+  }
+
+  .cvg-sp .cvg-sp-card:hover,
+  .cvg-sp .cvg-sp-card:focus-within {
+    transform: translateY(-8px);
+    border-color: var(--sp-mint);
+    background: #0A0A0A;
+    box-shadow: none
+  }
+
+  .cvg-sp .cvg-sp-card:hover .cvg-sp-ic {
+    background: var(--sp-mint);
+    border-color: var(--sp-mint);
+    transform: rotate(-8deg)
+  }
+
+  .cvg-sp .cvg-sp-card:hover .cvg-sp-ic svg {
+    stroke: var(--sp-ink)
+  }
+
+  .cvg-sp .cvg-sp-card:hover .cvg-sp-num {
+    color: var(--sp-mint)
+  }
+
+  .cvg-sp .cvg-sp-card:hover .cvg-sp-more i {
+    background: var(--sp-mint);
+    border-color: var(--sp-mint);
+    color: var(--sp-ink);
+    transform: rotate(45deg)
+  }
+
+  /* help tile */
+  .cvg-sp .cvg-sp-card--help {
+    background: var(--sp-grad);
+    border-color: rgba(95, 240, 200, .3)
+  }
+
+  .cvg-sp .cvg-sp-card--help .cvg-sp-desc {
+    color: #D9F5EE
+  }
+
+  .cvg-sp .cvg-sp-card--help .cvg-sp-ic {
+    background: rgba(10, 10, 10, .35)
+  }
+
+  /* ===== 3. Steps ===== */
+  .cvg-sp .cvg-sp-steps {
+    padding: 40px 0 100px
+  }
+
+  .cvg-sp .cvg-sp-head {
+    margin-bottom: 44px
+  }
+
+  .cvg-sp .cvg-sp-step-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: none
+  }
+
+  .cvg-sp .cvg-sp-step-list li {
+    position: relative;
+    margin: 0;
+    padding: 28px 24px 26px;
+    border-top: 2px solid var(--sp-line);
+    transition: border-color .4s
+  }
+
+  .cvg-sp .cvg-sp-step-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--sp-mint);
+    transition: width .8s var(--sp-ease)
+  }
+
+  .cvg-sp .cvg-sp-step-list li:hover::before {
+    width: 100%
+  }
+
+  .cvg-sp .cvg-sp-step-list span {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sp-mint)
+  }
+
+  .cvg-sp .cvg-sp-step-list strong {
+    display: block;
+    margin: 12px 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--sp-text)
+  }
+
+  .cvg-sp .cvg-sp-step-list p {
+    font-size: 14.5px;
+    color: var(--sp-muted)
+  }
+
+  /* ===== 4. CTA ===== */
+  .cvg-sp .cvg-sp-cta {
+    padding: 0 0 110px
+  }
+
+  .cvg-sp .cvg-sp-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 52px 56px;
+    border-radius: 30px;
+    background: var(--sp-grad);
+    border: 1px solid rgba(95, 240, 200, .25)
+  }
+
+  .cvg-sp .cvg-sp-cta-box .cvg-sp-h2 span {
+    color: var(--sp-mint-l)
+  }
+
+  .cvg-sp .cvg-sp-cta-box p {
+    max-width: 520px;
+    margin-top: 14px;
+    color: #D9F5EE
+  }
+
+  .cvg-sp .cvg-sp-cta-box .cvg-sp-btn {
+    flex: none
+  }
+
+  /* ===== Scroll reveal ===== */
+  .cvg-sp.cvg-sp--js .cvg-sp-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .9s var(--sp-ease) var(--d, 0s), transform .9s var(--sp-ease) var(--d, 0s), background .4s, border-color .4s, box-shadow .5s
+  }
+
+  .cvg-sp.cvg-sp--js .cvg-sp-reveal.cvg-sp-in {
+    opacity: 1;
+    transform: none
+  }
+
+  .cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:hover,
+  .cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:focus-within {
+    transform: translateY(-8px);
+    transition-delay: 0s
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width:1024px) {
+    .cvg-sp .cvg-sp-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .cvg-sp .cvg-sp-step-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .cvg-sp .cvg-sp-word {
+      font-size: 150px
+    }
+  }
+
+  @media (max-width:760px) {
+    .cvg-sp .cvg-sp-cta-box {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 36px 28px
+    }
+  }
+
+  @media (max-width:600px) {
+    .cvg-sp .cvg-sp-wrap {
+      padding: 0 16px
+    }
+
+    .cvg-sp .cvg-sp-hero {
+      padding: 130px 0 80px
+    }
+
+    .cvg-sp .cvg-sp-lead {
+      font-size: 16px
+    }
+
+    .cvg-sp .cvg-sp-word {
+      font-size: 90px;
+      bottom: -14px
+    }
+
+    .cvg-sp .cvg-sp-list {
+      padding: 70px 0 60px
+    }
+
+    .cvg-sp .cvg-sp-cards {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px
+    }
+
+    .cvg-sp .cvg-sp-card--wide {
+      grid-column: auto
+    }
+
+    .cvg-sp .cvg-sp-card {
+      min-height: 0;
+      padding: 26px 22px 22px
+    }
+
+    .cvg-sp .cvg-sp-step-list {
+      grid-template-columns: minmax(0, 1fr)
+    }
+
+    .cvg-sp .cvg-sp-cta {
+      padding-bottom: 80px
+    }
+  }
+
+  @media (prefers-reduced-motion:reduce) {
+
+    .cvg-sp *,
+    .cvg-sp *::before,
+    .cvg-sp *::after {
+      animation: none !important;
+      transition: none !important
+    }
+  }
 </style>
 
 <script>
-(function () {
-  var root = document.getElementById('cvg-services-page');
-  if (!root) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-  root.classList.add('cvg-sp--js');
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('cvg-sp-in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  Array.prototype.forEach.call(root.querySelectorAll('.cvg-sp-reveal'), function (el) { io.observe(el); });
-})();
+  (function() {
+    var root = document.getElementById('cvg-services-page');
+    if (!root) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    root.classList.add('cvg-sp--js');
+    var io = new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('cvg-sp-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('.cvg-sp-reveal'), function(el) {
+      io.observe(el);
+    });
+  })();
 </script>
+<script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>

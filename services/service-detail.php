@@ -38,10 +38,20 @@ $introTitle       = $service['introTitle'] ?? $title;
 $introText        = $service['introText'] ?? $description;
 $listTitle        = $service['listTitle'] ?? 'Our Services Include';
 $list             = $service['list'] ?? [];
-$introImages      = $service['introImages'] ?? [];
+$introImages      = (array) ($service['introImages'] ?? []);
 $portfolio        = $service['portfolio'] ?? [];
 $portfolioLabel   = $service['portfolioLabel'] ?? '';
-$plans            = $service['plans'] ?? [];   // ab sirf isi service ke apne plans
+$plans            = $service['plans'] ?? [];
+$heroImage        = $service['bannerImage'] ?? '';
+
+$heroImageUrl = '';
+if ($heroImage !== '') {
+    if (preg_match('~^(https?:)?//~i', $heroImage)) {
+        $heroImageUrl = $heroImage;
+    } elseif (is_file(dirname(__DIR__) . '/' . ltrim($heroImage, '/'))) {
+        $heroImageUrl = cvg_url(ltrim($heroImage, '/'));
+    }
+}
 
 $faqTitle      = $service['faqTitle'] ?? 'Frequently Asked Questions';
 $faqSubtitle   = $service['faqSubtitle'] ?? '';
@@ -50,7 +60,6 @@ $faqCtaText    = $service['faqCtaText'] ?? 'Still have a question?';
 $faqButtonText = $service['faqButtonText'] ?? 'Get a quote';
 $faqButtonUrl  = $service['faqButtonUrl'] ?? cvg_url('contact-us/index.php');
 
-/* FAQ schema (is service ke FAQs se automatically banta hai) */
 $faqSchema = [
     "@context" => "https://schema.org",
     "@type" => "FAQPage",
@@ -132,11 +141,54 @@ $faqSchema = [
             justify-content: center
         }
 
-        /* ---------- Hero ---------- */
         .cvg-svc-hero {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
             background: var(--wcu-grad);
             padding: 110px 0 120px;
-            text-align: center
+            text-align: center;
+        }
+
+        .cvg-svc-hero .cvg-svc-wrap {
+            position: relative;
+            z-index: 1
+        }
+
+        .cvg-svc-hero--img::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background: var(--svc-hero-img) center 48% / cover no-repeat;
+            transform: scale(1.02);
+            animation: cvgSvcHeroZoom 18s ease-in-out infinite alternate;
+        }
+
+        .cvg-svc-hero--img::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(38% 60% at 50% 50%, rgba(0, 20, 16, .55) 0%, rgba(0, 20, 16, 0) 100%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, rgba(10, 10, 10, .85) 100%);
+        }
+
+        @keyframes cvgSvcHeroZoom {
+            from {
+                transform: scale(1.02)
+            }
+
+            to {
+                transform: scale(1.1)
+            }
+        }
+
+        @media (max-width: 767px) {
+            .cvg-svc-hero--img::before {
+                background-position: 16% 55%
+            }
         }
 
         .cvg-svc-h1 {
@@ -260,7 +312,7 @@ $faqSchema = [
             gap: 24px;
             min-height: 360px;
             border-radius: 24px;
-            padding: 32px;
+            padding: 10px;
         }
 
         .cvg-svc-intro-media img {
@@ -391,7 +443,6 @@ $faqSchema = [
             transform: none
         }
 
-        /* ================= PRICING ================= */
         .pricing-section {
             --p-mint: #00d4a3;
             --p-mint-soft: rgba(0, 212, 163, .15);
@@ -855,19 +906,14 @@ $faqSchema = [
 
 <body>
     <?php include dirname(__DIR__) . '/includes/header.php'; ?>
-
     <div class="cvg-svc" id="cvg-svc">
-
-        <!-- ============ HERO ============ -->
-        <section class="cvg-svc-hero">
+        <section class="cvg-svc-hero<?= $heroImageUrl !== '' ? ' cvg-svc-hero--img' : '' ?>" <?= $heroImageUrl !== '' ? ' style="--svc-hero-img:url(&quot;' . h($heroImageUrl) . '&quot;)"' : '' ?>>
             <div class="cvg-svc-wrap">
                 <p class="cvg-svc-eyebrow">Our Services</p>
                 <h1 class="cvg-svc-h1"><?= h($title) ?></h1>
                 <p class="cvg-svc-sub"><?= h($subtitle) ?></p>
             </div>
         </section>
-
-        <!-- ============ INTRO ============ -->
         <section class="cvg-svc-sec">
             <div class="cvg-svc-wrap">
                 <div class="cvg-svc-intro reveal <?= empty($introImages) ? 'no-media' : '' ?>">
@@ -875,7 +921,6 @@ $faqSchema = [
                         <p class="cvg-svc-eyebrow">Introduction</p>
                         <h2 class="cvg-svc-h2"><?= h($introTitle) ?></h2>
                         <p class="cvg-svc-text"><?= h($introText) ?></p>
-
                         <?php if (!empty($list)): ?>
                             <h3 class="cvg-svc-h3"><?= h($listTitle) ?></h3>
                             <ul class="cvg-svc-list">
@@ -885,7 +930,6 @@ $faqSchema = [
                             </ul>
                         <?php endif; ?>
                     </div>
-
                     <?php if (!empty($introImages)): ?>
                         <div class="cvg-svc-intro-media">
                             <?php foreach ($introImages as $i => $img): ?>
@@ -896,8 +940,6 @@ $faqSchema = [
                 </div>
             </div>
         </section>
-
-        <!-- ============ PORTFOLIO ============ -->
         <?php if (!empty($portfolio)): ?>
             <section class="cvg-svc-sec cvg-svc-sec-alt" id="svc-portfolio-sec">
                 <div class="cvg-svc-wrap">
@@ -920,8 +962,6 @@ $faqSchema = [
                         <?php endforeach; ?>
                     </div>
                 </div>
-
-                <!-- Large view (moved to <body> by the script) -->
                 <div class="cvg-svcx-lb" role="dialog" aria-modal="true" aria-label="Portfolio image" hidden>
                     <button type="button" class="cvg-svcx-lb-close" aria-label="Close">&times;</button>
                     <button type="button" class="cvg-svcx-lb-nav cvg-svcx-lb-prev" aria-label="Previous image">&#8249;</button>
@@ -932,7 +972,6 @@ $faqSchema = [
             </section>
 
             <style>
-                /* ===== Tall images (website screenshots): fixed card + scroll on hover ===== */
                 #svc-portfolio-sec .cvg-svc-work.cvg-svc-work--tall {
                     position: relative;
                     display: block;
@@ -1025,7 +1064,6 @@ $faqSchema = [
                     }
                 }
 
-                /* ===== Large view ===== */
                 .cvg-svcx-lb {
                     position: fixed;
                     inset: 0;
@@ -1859,5 +1897,6 @@ $faqSchema = [
         })();
     </script>
 </body>
+<script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>
 
 </html>

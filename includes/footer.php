@@ -45,8 +45,6 @@
             --cvg-alogo-size: 22px;
           }
 
-          /* text size; the whole logo scales with it */
-
           .cvg-alogo {
             display: inline-flex;
             align-items: center;
@@ -96,12 +94,10 @@
             display: inline-block;
           }
 
-          /* Logo on a white background? add class "cvg-alogo--dark" to the <a> */
           .cvg-alogo.cvg-alogo--dark .cvg-alogo-w1 {
             color: #0A0A0A;
           }
 
-          /* ---------- Intro (plays once) ---------- */
           .cvg-alogo .cvg-alogo-ring,
           .cvg-alogo .cvg-alogo-ring2 {
             stroke-dasharray: 1;
@@ -389,7 +385,8 @@
     display: inline-block;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: min(10.4vw, 200px);   /* always fits the screen width */
+    font-size: min(10.4vw, 200px);
+    /* always fits the screen width */
     letter-spacing: -.045em;
     color: transparent;
     -webkit-text-stroke: 1px rgba(95, 240, 200, .22);
@@ -403,16 +400,32 @@
   }
 
   @keyframes cvgFtShine {
-    0%, 15%   { background-position: 120% 0; }
-    70%, 100% { background-position: -20% 0; }
+
+    0%,
+    15% {
+      background-position: 120% 0;
+    }
+
+    70%,
+    100% {
+      background-position: -20% 0;
+    }
   }
 
   @media (max-width: 767px) {
-    #footer .cvg-ft-word { bottom: 52px; }
-    #footer .cvg-ft-word span { font-size: 10.4vw; -webkit-text-stroke-width: .8px; }
+    #footer .cvg-ft-word {
+      bottom: 52px;
+    }
+
+    #footer .cvg-ft-word span {
+      font-size: 10.4vw;
+      -webkit-text-stroke-width: .8px;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    #footer .cvg-ft-word span { animation: none; }
+    #footer .cvg-ft-word span {
+      animation: none;
+    }
   }
 </style>

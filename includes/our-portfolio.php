@@ -6,30 +6,25 @@ $tabs = [
   'video'    => 'Video Animations',
 ];
 
-/* Har category ki images */
 $portfolio = [
-  /* assets/img folder ki saari portfolio-img-*.webp files, naam ke hisaab se */
-  'web' => 'assets/img/portfolio-img-*.webp',
 
-  /* Baqi categories abhi uploads folder se. Jab yeh images bhi assets/img
-     mein aa jayein, to list ki jagah pattern likh dein, jaise:
-     'logo' => 'assets/img/logo-img-*.webp',                              */
+  'web' => 'assets/img/portfolio-img-*.webp',
+                         
   'logo' => [
-    '2024/11/37.png', '2024/11/37.jpg', '2024/11/38.png', '2024/11/36.png',
-    '2024/11/32.jpg', '2024/11/34.png', '2024/11/31.jpg', '2024/11/35.png',
-    '2024/11/29.jpg', '2024/11/30.jpg', '2024/11/28.jpg', '2024/11/26.jpg',
-    '2024/11/27.jpg', '2024/11/20.png', '2024/11/17.png', '2024/11/18.png',
-    '2024/11/19.png', '2024/11/15.png', '2024/11/16.png', '2024/11/25.jpg',
-    '2024/11/39.jpg',
+    'assets/img/portfolio/logo/37.png', 'assets/img/portfolio/logo/37.jpg', 'assets/img/portfolio/logo/38.png', 'assets/img/portfolio/logo/36.png',
+    'assets/img/portfolio/logo/32.jpg', 'assets/img/portfolio/logo/34.png', 'assets/img/portfolio/logo/31.jpg', 'assets/img/portfolio/logo/35.png',
+    'assets/img/portfolio/logo/29.jpg', 'assets/img/portfolio/logo/30.jpg', 'assets/img/portfolio/logo/28.jpg', 'assets/img/portfolio/logo/26.jpg',
+    'assets/img/portfolio/logo/27.jpg', 'assets/img/portfolio/logo/20.png', 'assets/img/portfolio/logo/17.png', 'assets/img/portfolio/logo/18.png',
+    'assets/img/portfolio/logo/19.png', 'assets/img/portfolio/logo/15.png', 'assets/img/portfolio/logo/16.png', 'assets/img/portfolio/logo/25.jpg',
   ],
   'branding' => [
-    '2024/11/branding-06.jpg', '2024/11/branding-08-1.jpg', '2024/11/branding-04.jpg',
-    '2024/11/branding-09.jpg', '2024/11/branding-05.jpg', '2024/11/branding-02.jpg',
-    '2024/11/branding-03.jpg', '2024/11/branding-01.jpg',
+    'assets/img/portfolio/branding/branding-06.jpg', 'assets/img/portfolio/branding/branding-08-1.jpg', 'assets/img/portfolio/branding/branding-04.jpg',
+    'assets/img/portfolio/branding/branding-09.jpg', 'assets/img/portfolio/branding/branding-05.jpg', 'assets/img/portfolio/branding/branding-02.jpg',
+    'assets/img/portfolio/branding/branding-03.jpg', 'assets/img/portfolio/branding/branding-01.jpg',
   ],
   'video' => [
-    '2024/11/1.jpg', '2024/11/img-8.png', '2024/11/2.png',
-    '2024/11/3.jpg', '2024/11/4.png', '2024/11/5.jpg',
+    'assets/img/portfolio/video/1.jpg', 'assets/img/portfolio/video/img-8.png', 'assets/img/portfolio/video/2.png',
+    'assets/img/portfolio/video/3.jpg', 'assets/img/portfolio/video/4.png', 'assets/img/portfolio/video/5.jpg',
   ],
 ];
 
@@ -41,22 +36,13 @@ $labels = [
   'video'    => 'Video animation',
 ];
 
-/* wp-content/uploads ka URL (sirf '2024/11/...' jaise paths ke liye) */
-$uploads = 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads/';
 
-/* Aapki site ka base URL (assets/... paths ke liye).
-   Khali chhor dein to khud pata laga leta hai (localhost aur server dono par).
-   Agar images na dikhein to yahan poora URL likh dein, jaise:
-   'http://localhost/creative/'  ya  'https://creativeconverge.com/'          */
 require_once __DIR__ . '/init.php';
 $siteUrl = cvg_url('');
 
-/* "View all work" button ka link */
 $viewAllLink = cvg_url('cases/index.php');
 
-/* ================= Neeche kuch badalne ki zaroorat nahi ================= */
-
-$cvgRoot = dirname(__DIR__);   /* project ka main folder (includes/ ke upar) */
+$cvgRoot = dirname(__DIR__);  
 
 if (!function_exists('cvg_e')) {
   function cvg_e($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
@@ -75,18 +61,22 @@ if ($siteUrl === '') {
   $siteUrl = ($host !== '' ? $scheme . '://' . $host : '') . rtrim($sub, '/') . '/';
 }
 
-/* Ek path ko poore image URL mein badalna */
-if (!function_exists('cvg_img_url')) {
-  function cvg_img_url($path, $uploads, $siteUrl) {
+if (!function_exists('cvg_port_url')) {
+  function cvg_port_url($path, $siteUrl) {
     $path = trim(str_replace('\\', '/', $path));
-    if (preg_match('~^(https?:)?//~i', $path)) return $path;                 /* poora URL */
-    if (preg_match('~^/?assets/~i', $path))                                   /* assets folder */
-      return rtrim($siteUrl, '/') . '/' . ltrim($path, '/');
-    return rtrim($uploads, '/') . '/' . ltrim($path, '/');                    /* uploads folder */
+    if (preg_match('~^(https?:)?//~i', $path)) return $path;
+    return rtrim($siteUrl, '/') . '/' . ltrim($path, '/');
   }
 }
-
-/* Category ki images: pattern ho to folder padho, list ho to wahi */
+/* File folder mein hai ya nahi */
+if (!function_exists('cvg_port_has')) {
+  function cvg_port_has($path, $root) {
+    $path = trim(str_replace('\\', '/', $path));
+    if ($path === '') return false;
+    if (preg_match('~^(https?:)?//~i', $path)) return true;
+    return is_file(rtrim($root, '/\\') . '/' . ltrim($path, '/'));
+  }
+}
 if (!function_exists('cvg_port_images')) {
   function cvg_port_images($source, $root) {
     if (is_array($source)) return array_values(array_filter($source, 'strlen'));
@@ -124,7 +114,8 @@ $playSvg   = '<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" /></svg>';
           if (!isset($tabs[$cat])) continue;
           $label = $labels[$cat] ?? $tabs[$cat];
           foreach (cvg_port_images($source, $cvgRoot) as $img):
-            $url = cvg_img_url($img, $uploads, $siteUrl);
+            if (!cvg_port_has($img, $cvgRoot)) continue;
+            $url = cvg_port_url($img, $siteUrl);
             $hide = ($cat === $activeTab) ? '' : ' cvg-port-hide';
         ?>
         <a href="<?= cvg_e($url) ?>" class="cvg-port-item cvg-port-item--<?= cvg_e($cat) ?><?= $hide ?>" data-cat="<?= cvg_e($cat) ?>" aria-label="<?= cvg_e($label) ?>: open large image">

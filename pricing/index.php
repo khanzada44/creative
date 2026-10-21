@@ -1,7 +1,7 @@
-
 <?php require_once dirname(__DIR__) . '/includes/init.php'; ?>
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +25,7 @@
     <?php include __DIR__ . '/../includes/footer.php'; ?>
 
     <script src="<?= cvg_url('assets/js/cvg-pricing-page.js') ?>"></script>
-
+    <script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>
 </body>
+
 </html>

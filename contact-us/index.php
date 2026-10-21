@@ -138,7 +138,7 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
       </div>
 
       <div class="cvg-ct-photo cvg-ct-reveal" style="--d:.08s">
-        <img src="../assets/img/conbg.png" alt="Creative Converge support specialist with a headset" loading="lazy">
+        <img src="../assets/img/contact-us-image.jpg" alt="Creative Converge support specialist with a headset" loading="lazy">
       </div>
 
       <form class="cvg-ct-form cvg-ct-reveal" method="post" action="#cvg-ct-form" novalidate style="--d:.16s">
@@ -218,24 +218,26 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
 </main>
 
 <style>
- ::-webkit-scrollbar {
-  width: 10px;
-}
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-/* Scrollbar ki background track */
-::-webkit-scrollbar-track {
-  background: #0b2b26; /* Apne dark theme ke hisab se change karein */
-}
+  /* Scrollbar ki background track */
+  ::-webkit-scrollbar-track {
+    background: #0b2b26;
+    /* Apne dark theme ke hisab se change karein */
+  }
 
-::-webkit-scrollbar-thumb {
-  background: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
-  border-radius: 5px;  
-}
+  ::-webkit-scrollbar-thumb {
+    background: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+    border-radius: 5px;
+  }
 
-/* Hover karne par thumb ka color */
-::-webkit-scrollbar-thumb:hover {
-  background: #00a8a8;
-}
+  /* Hover karne par thumb ka color */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00a8a8;
+  }
+
   html,
   body {
     margin: 0;
@@ -1403,3 +1405,4 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
 </script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+<script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>

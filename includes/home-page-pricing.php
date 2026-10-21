@@ -192,6 +192,8 @@
         </div>
         <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
+      <!-- ===== Side card: custom package ===== -->
+
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Business Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>3499<span class="cvg-price-cents">.00</span></p>
@@ -306,7 +308,7 @@
     padding-top: 16px;
   }
 
-  .cvg-price .cvg-price-grid > .cvg-price-card {
+  .cvg-price .cvg-price-grid>.cvg-price-card {
     flex: 0 0 calc((100% - 2 * var(--cvg-gap)) / 3);
     min-width: 0;
   }
@@ -750,7 +752,7 @@
       margin: 0 auto;
     }
 
-    .cvg-price .cvg-price-grid > .cvg-price-card {
+    .cvg-price .cvg-price-grid>.cvg-price-card {
       flex-basis: 100%;
     }
 
@@ -779,7 +781,288 @@
     }
   }
 
+
+  /* ---------- Side cards next to the last package ---------- */
+  .cvg-price .cvg-price-grid>.cvg-price-side {
+    flex: 0 0 calc((100% - 2 * var(--cvg-gap)) / 3);
+    min-width: 0;
+    align-self: stretch;
+  }
+
+  .cvg-price .cvg-price-side {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 34px;
+    border-radius: 26px;
+    color: var(--cvg-text);
+  }
+
+  .cvg-price .cvg-price-side--custom {
+    background: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, .45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+  }
+
+  .cvg-price .cvg-price-side--custom::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px dashed rgba(95, 240, 200, .35);
+    animation: cvgPriceSpin 30s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes cvgPriceSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .cvg-price .cvg-price-side--incl {
+    background: var(--cvg-surface);
+    border: 1px dashed rgba(0, 212, 163, .45);
+  }
+
+  .cvg-price .cvg-price-side-ic {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: rgba(10, 10, 10, .45);
+    border: 1px solid rgba(95, 240, 200, .35);
+  }
+
+  .cvg-price .cvg-price-side-ic svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: var(--cvg-mint-light);
+    stroke-width: 1.8;
+    stroke-linejoin: round;
+  }
+
+  .cvg-price .cvg-price-side-eyebrow {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--cvg-mint-light);
+  }
+
+  .cvg-price .cvg-price-side--incl .cvg-price-side-eyebrow {
+    color: var(--cvg-mint);
+  }
+
+  .cvg-price .cvg-price-side-title {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: var(--cvg-text);
+    text-transform: none;
+  }
+
+  .cvg-price .cvg-price-side-title span {
+    color: var(--cvg-mint);
+  }
+
+  .cvg-price .cvg-price-side-text {
+    margin: 16px 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #D9F5EE;
+  }
+
+  .cvg-price .cvg-price-side-points {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .cvg-price .cvg-price-side-points li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+    color: #F2F5F4;
+  }
+
+  .cvg-price .cvg-price-side-points li::before {
+    content: "";
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cvg-mint-light);
+    box-shadow: 0 0 0 4px rgba(95, 240, 200, .15);
+  }
+
+  .cvg-price .cvg-price-side .cvg-price-btn {
+    margin-top: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cvg-price .cvg-price-side-points+.cvg-price-btn {
+    margin-top: auto;
+  }
+
+  .cvg-price .cvg-price-side--custom .cvg-price-side-points {
+    margin-bottom: 30px;
+  }
+
+  .cvg-price .cvg-price-side-img {
+    display: block;
+    width: 200px;
+    max-width: 80%;
+    height: auto;
+    margin: -14px auto 6px;
+    border-radius: 0;
+    box-shadow: none;
+    filter: drop-shadow(0 24px 30px rgba(0, 0, 0, .35));
+    animation: cvgPriceFloat 6s ease-in-out infinite;
+  }
+
+  .cvg-price .cvg-price-side--incl .cvg-price-side-img {
+    animation-delay: -3s;
+  }
+
+  @keyframes cvgPriceFloat {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+
+    50% {
+      transform: translateY(-12px) rotate(-2deg);
+    }
+  }
+
+  .cvg-price .cvg-price-side-grid {
+    list-style: none;
+    margin: 22px 0 26px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .cvg-price .cvg-price-side-grid li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid var(--cvg-line);
+    transition: border-color .3s, transform .3s;
+  }
+
+  .cvg-price .cvg-price-side-grid li:hover {
+    border-color: rgba(0, 212, 163, .5);
+    transform: translateY(-3px);
+  }
+
+  .cvg-price .cvg-price-side-mi {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 212, 163, .15);
+  }
+
+  .cvg-price .cvg-price-side-mi svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--cvg-mint);
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .cvg-price .cvg-price-side-grid strong {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .cvg-price .cvg-price-side-grid small {
+    font-size: 12px;
+    color: var(--cvg-muted);
+  }
+
+  .cvg-price .cvg-price-side-link {
+    margin-top: auto;
+    font-size: 14px;
+    color: var(--cvg-muted);
+    text-decoration: none;
+  }
+
+  .cvg-price .cvg-price-side-link b {
+    color: var(--cvg-mint);
+    font-weight: 600;
+  }
+
+  .cvg-price .cvg-price-side-link:hover b {
+    color: var(--cvg-mint-light);
+  }
+
+  /* the package between the side cards: same height, longer feature list */
+  .cvg-price .cvg-price-side--custom+.cvg-price-card {
+    align-self: stretch;
+  }
+
+  .cvg-price .cvg-price-side--custom+.cvg-price-card .cvg-price-scroll {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+  }
+
+  .cvg-price .cvg-price-side--custom+.cvg-price-card .cvg-price-scroll .cvg-price-list {
+    flex: 1 1 0;
+    height: auto;
+    min-height: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .cvg-price .cvg-price-side {
+      padding: 34px 24px;
+    }
+
+    .cvg-price .cvg-price-side-title {
+      font-size: 26px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .cvg-price .cvg-price-grid>.cvg-price-side {
+      flex-basis: 100%;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
+
+    .cvg-price .cvg-price-side--custom::after,
+    .cvg-price .cvg-price-side-img {
+      animation: none;
+    }
+
     .cvg-price .cvg-price-shine {
       animation: none;
       display: none;

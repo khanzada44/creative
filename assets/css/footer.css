@@ -14,11 +14,10 @@
 }
 
 .site-footer::before {
-  /* dark overlay on background image */
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(30, 33, 38, .88);
+  background: rgb(30 33 38 / 43%);
 }
 
 .site-footer * {
@@ -198,4 +197,11 @@
   .footer-row {
     grid-template-columns: 1fr
   }
+}
+
+.site-footer {
+  background-image: url("../img/footer-baner-image.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
