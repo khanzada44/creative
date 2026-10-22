@@ -21,7 +21,7 @@ $tySteps = [
 /* ---------- Links on the page ---------- */
 $tyLinks = [
     'home'      => '',                 /* '' = home page */
-    'portfolio' => 'our-portfolio/',
+    'portfolio' => 'cases/',
     'services'  => 'services/',
 ];
 
