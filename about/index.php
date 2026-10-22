@@ -83,7 +83,22 @@ $L = function ($p) use ($siteUrl) {
 };
 $arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>';
 ?>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+/* Header + mobile viewport fix:
+   the viewport tag is added inside <head> if header.php does not already have one */
+ob_start();
+include __DIR__ . '/../includes/header.php';
+$cvgHead = ob_get_clean();
+$cvgViewport = '<meta name="viewport" content="width=device-width, initial-scale=1">';
+if (stripos($cvgHead, 'name="viewport"') === false && stripos($cvgHead, "name='viewport'") === false) {
+    if (stripos($cvgHead, '</head>') !== false) {
+        $cvgHead = preg_replace('~</head>~i', $cvgViewport . "\n</head>", $cvgHead, 1);
+    } else {
+        $cvgHead = $cvgViewport . "\n" . $cvgHead;
+    }
+}
+echo $cvgHead;
+?>
 <link rel="stylesheet" href="<?= $A('assets/css/header.css') ?>">
 <link rel="stylesheet" href="<?= $A('assets/css/footer.css') ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,6 +211,104 @@ $arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v
         .cvg-ab-pv-bar b { display: none; }
         .cvg-ab-pv-video { border-radius: 9px; }
         .cvg-ab-pv-steps { grid-template-columns: minmax(0,1fr); gap: 12px; }
+    }
+
+    /* ===================================================
+       MOBILE RESPONSIVE (tablet ≤ 860px, phone ≤ 600px, small ≤ 380px)
+       =================================================== */
+    .cvg-ab img, .cvg-ab video { max-width: 100%; }
+
+    @media (max-width: 860px) {
+        .cvg-ab .cvg-ab-hero { min-height: 88svh; padding: 120px 0 90px; }
+        .cvg-ab .cvg-ab-defines { padding: 90px 0 40px; }
+        .cvg-ab .cvg-ab-head { margin-bottom: 48px; }
+        .cvg-ab .cvg-ab-row { gap: 30px; margin-bottom: 72px; }
+        .cvg-ab .cvg-ab-row-media { aspect-ratio: 16 / 11; border-radius: 22px; }
+        .cvg-ab .cvg-ab-summary { padding: 80px 0; }
+        .cvg-ab .cvg-ab-stats { margin-top: 44px; border-radius: 22px; }
+        .cvg-ab .cvg-ab-careers, .cvg-ab .cvg-ab-quote { padding-bottom: 80px; }
+        .cvg-ab .cvg-ab-careers-card { border-radius: 24px; }
+        .cvg-ab .cvg-ab-quote-card { border-radius: 24px; }
+        .cvg-ab-pv { padding: 90px 20px 100px; }
+    }
+
+    @media (max-width: 600px) {
+        /* hero */
+        .cvg-ab .cvg-ab-hero { min-height: auto; padding: 110px 0 96px; align-items: flex-end; }
+        .cvg-ab .cvg-ab-hero-title { font-size: clamp(34px, 10vw, 44px); line-height: 1.06; letter-spacing: -.03em; }
+        .cvg-ab .cvg-ab-hero-lead { margin-top: 20px; font-size: 15.5px; line-height: 1.7; }
+        .cvg-ab .cvg-ab-hero-actions { margin-top: 28px; gap: 12px; }
+        .cvg-ab .cvg-ab-hero-actions .cvg-ab-btn { flex: 1 1 auto; justify-content: center; }
+        .cvg-ab .cvg-ab-video-toggle { width: 42px; height: 42px; bottom: 26px; }
+
+        /* headings */
+        .cvg-ab .cvg-ab-h2 { font-size: clamp(28px, 8vw, 34px); line-height: 1.18; }
+        .cvg-ab .cvg-ab-h3 { font-size: 24px; }
+        .cvg-ab .cvg-ab-eyebrow { font-size: 12px; letter-spacing: .16em; }
+        .cvg-ab .cvg-ab-btn { height: 52px; padding: 0 24px; font-size: 15px; }
+
+        /* what defines us */
+        .cvg-ab .cvg-ab-defines { padding: 72px 0 24px; }
+        .cvg-ab .cvg-ab-head { margin-bottom: 36px; }
+        .cvg-ab .cvg-ab-row { gap: 24px; margin-bottom: 60px; }
+        .cvg-ab .cvg-ab-row-media { aspect-ratio: 4 / 3; border-radius: 18px; box-shadow: 0 24px 50px rgba(0,0,0,.4); }
+        .cvg-ab .cvg-ab-row-text p { font-size: 15.5px; line-height: 1.7; }
+        .cvg-ab .cvg-ab-values { gap: 10px; }
+        .cvg-ab .cvg-ab-values li { padding: 16px 18px; border-radius: 14px; }
+        .cvg-ab .cvg-ab-steps li { padding: 16px 0 16px 52px; font-size: 14.5px; }
+        .cvg-ab .cvg-ab-steps li::before { font-size: 19px; top: 15px; }
+        .cvg-ab .cvg-ab-steps li span { font-size: 16px; }
+
+        /* summary + stats */
+        .cvg-ab .cvg-ab-summary { padding: 64px 0 72px; }
+        .cvg-ab .cvg-ab-statement { font-size: clamp(21px, 6.2vw, 26px); line-height: 1.35; }
+        .cvg-ab .cvg-ab-stats { margin-top: 34px; border-radius: 18px; }
+        .cvg-ab .cvg-ab-stat { padding: 22px 18px; }
+        .cvg-ab .cvg-ab-stat strong { font-size: 40px; }
+        .cvg-ab .cvg-ab-stat > span { margin-top: 8px; font-size: 13px; line-height: 1.45; }
+
+        /* process video */
+        .cvg-ab-pv { padding: 70px 16px 76px; }
+        .cvg-ab-pv-head { margin-bottom: 30px; }
+        .cvg-ab-pv-eyebrow { font-size: 12px; letter-spacing: .16em; }
+        .cvg-ab-pv-eyebrow::before, .cvg-ab-pv-eyebrow::after { width: 18px; }
+        .cvg-ab-pv-title { font-size: clamp(26px, 7.6vw, 32px); }
+        .cvg-ab-pv-text { font-size: 15px; }
+        .cvg-ab-pv-video { aspect-ratio: 16 / 9; }
+        .cvg-ab-pv-steps { margin-top: 22px; gap: 10px; }
+        .cvg-ab-pv-steps li { display: grid; grid-template-columns: 40px 1fr; column-gap: 8px; padding: 16px 16px 16px 14px; font-size: 13.5px; }
+        .cvg-ab-pv-steps em { grid-row: 1 / span 2; margin: 2px 0 0; font-size: 15px; }
+        .cvg-ab-pv-steps strong { margin-bottom: 3px; font-size: 15px; }
+
+        /* careers: photo on top, text below */
+        .cvg-ab .cvg-ab-careers { padding-bottom: 64px; }
+        .cvg-ab .cvg-ab-careers-card { min-height: 0; flex-direction: column; align-items: stretch; border-radius: 20px; background: #111614; }
+        .cvg-ab .cvg-ab-careers-img { position: relative; inset: auto; height: 210px; flex: none; }
+        .cvg-ab .cvg-ab-careers-card::before { inset: 0 0 auto 0; height: 210px; background: linear-gradient(0deg, #111614 0%, rgba(17,22,20,0) 55%); }
+        .cvg-ab .cvg-ab-careers-body { max-width: none; padding: 6px 22px 28px; }
+        .cvg-ab .cvg-ab-careers-body > p:not(.cvg-ab-eyebrow) { margin: 14px 0 24px; font-size: 15.5px; }
+
+        /* founder note */
+        .cvg-ab .cvg-ab-quote { padding-bottom: 64px; }
+        .cvg-ab .cvg-ab-quote-card { padding: 32px 22px 28px; border-radius: 20px; }
+        .cvg-ab .cvg-ab-quote-mark { width: 40px; height: 30px; margin-bottom: 18px; }
+        .cvg-ab .cvg-ab-quote-card blockquote { font-size: 18px; line-height: 1.6; }
+        .cvg-ab .cvg-ab-quote-card figcaption { margin-top: 24px; gap: 12px; }
+
+        /* final CTA */
+        .cvg-ab .cvg-ab-cta { padding: 72px 0 80px; }
+        .cvg-ab .cvg-ab-cta-title { font-size: clamp(28px, 8.4vw, 36px); line-height: 1.15; }
+        .cvg-ab .cvg-ab-cta-title .cvg-ab-mint { white-space: nowrap; }
+        .cvg-ab .cvg-ab-cta-inner > p { margin: 16px auto 28px; font-size: 15.5px; }
+        .cvg-ab .cvg-ab-btn--lg { width: 100%; height: 56px; padding: 0 20px; justify-content: center; font-size: 15px; }
+    }
+
+    @media (max-width: 380px) {
+        .cvg-ab .cvg-ab-wrap { padding: 0 16px; }
+        .cvg-ab .cvg-ab-hero-actions .cvg-ab-btn { flex-basis: 100%; }
+        .cvg-ab .cvg-ab-stat { padding: 20px 14px; }
+        .cvg-ab .cvg-ab-stat strong { font-size: 34px; }
+        .cvg-ab-pv-bar { display: none; }
     }
 </style>
 

@@ -67,124 +67,28 @@ $spDetail = function ($slug) {
   return $slug !== '' ? cvg_url('services/service-detail.php?slug=' . rawurlencode($slug)) : '#';
 };
 ?>
+<?php
+/* Header + mobile viewport fix:
+   the viewport tag is added inside <head> if header.php does not already have one.
+   (Stylesheets now load AFTER the header, so nothing prints before <!doctype html>.) */
+ob_start();
+include dirname(__DIR__) . '/includes/header.php';
+$cvgHead = ob_get_clean();
+$cvgViewport = '<meta name="viewport" content="width=device-width, initial-scale=1">';
+if (stripos($cvgHead, 'name="viewport"') === false && stripos($cvgHead, "name='viewport'") === false) {
+  if (stripos($cvgHead, '</head>') !== false) {
+    $cvgHead = preg_replace('~</head>~i', $cvgViewport . "\n</head>", $cvgHead, 1);
+  } else {
+    $cvgHead = $cvgViewport . "\n" . $cvgHead;
+  }
+}
+echo $cvgHead;
+?>
 <link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
 <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-
-<?php include dirname(__DIR__) . '/includes/header.php'; ?>
-
-<main class="cvg-sp" id="cvg-services-page">
-  <section class="cvg-sp-hero">
-    <div class="cvg-sp-grid-bg" aria-hidden="true"></div>
-    <div class="cvg-sp-word" aria-hidden="true">SERVICES</div>
-    <div class="cvg-sp-wrap cvg-sp-hero-inner">
-      <p class="cvg-sp-eyebrow cvg-sp-reveal"><?= cvg_h($spHero['eyebrow']) ?></p>
-      <h1 class="cvg-sp-title cvg-sp-reveal" style="--d:.06s"><?= cvg_h($spHero['title']) ?><span>.</span></h1>
-      <p class="cvg-sp-lead cvg-sp-reveal" style="--d:.12s"><?= cvg_h($spHero['lead']) ?></p>
-      <div class="cvg-sp-actions cvg-sp-reveal" style="--d:.18s">
-        <a class="cvg-sp-btn cvg-sp-btn--mint" href="<?= cvg_url('contact-us/index.php') ?>">Get a free quote <?= $spArrow ?></a>
-        <a class="cvg-sp-btn cvg-sp-btn--ghost" href="<?= cvg_url('pricing/index.php') ?>">View pricing</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="cvg-sp-list" id="services">
-    <div class="cvg-sp-wrap">
-      <div class="cvg-sp-cards">
-        <?php foreach ($services as $i => $svc):
-          $title = trim((string) ($svc['title'] ?? 'Service'));
-          $slug  = trim((string) ($svc['slug'] ?? ''));
-          $desc  = trim((string) ($svc['description'] ?? ''));
-          $subs  = is_array($svc['sub_services'] ?? null) ? $svc['sub_services'] : [];
-          $from  = $spFrom($svc);
-          $icon  = $spIcons[$spIconFor[$slug] ?? 'web'] ?? $spIcons['web'];
-          $wide  = count($subs) > 0;
-        ?>
-          <article class="cvg-sp-card<?= $wide ? ' cvg-sp-card--wide' : '' ?> cvg-sp-reveal" style="--d:<?= min($i % 3, 2) * 0.08 ?>s">
-            <a class="cvg-sp-cover" href="<?= cvg_h($spDetail($slug)) ?>" aria-label="<?= cvg_h($title) ?>"></a>
-            <div class="cvg-sp-card-top">
-              <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><?= $icon ?></svg></span>
-              <span class="cvg-sp-num"><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
-            </div>
-            <h2 class="cvg-sp-card-title"><?= cvg_h($title) ?></h2>
-            <?php if ($desc !== ''): ?><p class="cvg-sp-desc"><?= cvg_h($desc) ?></p><?php endif; ?>
-
-            <?php if ($wide): ?>
-              <ul class="cvg-sp-subs" aria-label="<?= cvg_h($title) ?> options">
-                <?php foreach ($subs as $sub):
-                  $st = is_array($sub) ? trim((string) ($sub['title'] ?? '')) : trim((string) $sub);
-                  $ss = is_array($sub) ? trim((string) ($sub['slug'] ?? '')) : '';
-                  if ($st === '') continue; ?>
-                  <li><a href="<?= cvg_h($spDetail($ss)) ?>"><?= cvg_h($st) ?></a></li>
-                <?php endforeach; ?>
-              </ul>
-            <?php endif; ?>
-
-            <div class="cvg-sp-card-foot">
-              <span class="cvg-sp-more"><i><?= $spArrow ?></i>Read more</span>
-              <?php if ($from !== null): ?>
-                <span class="cvg-sp-from">From <strong>$<?= cvg_h(number_format($from, $from == floor($from) ? 0 : 2)) ?></strong></span>
-              <?php endif; ?>
-            </div>
-          </article>
-        <?php endforeach; ?>
-
-        <!-- last tile: help choosing -->
-        <article class="cvg-sp-card cvg-sp-card--help cvg-sp-reveal">
-          <a class="cvg-sp-cover" href="<?= cvg_url('contact-us/index.php') ?>" aria-label="Talk to us"></a>
-          <div class="cvg-sp-card-top">
-            <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z" />
-                <path d="M9.5 10a2.5 2.5 0 114 2c-.9.6-1.5 1-1.5 2M12 16.5v.01" />
-              </svg></span>
-          </div>
-          <h2 class="cvg-sp-card-title">Need something custom?</h2>
-          <p class="cvg-sp-desc">Mix any services into one plan that fits your goals and budget.</p>
-          <div class="cvg-sp-card-foot"><span class="cvg-sp-more"><i><?= $spArrow ?></i>Talk to us</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="cvg-sp-steps">
-    <div class="cvg-sp-wrap">
-      <div class="cvg-sp-head cvg-sp-reveal">
-        <p class="cvg-sp-eyebrow">How it works</p>
-        <h2 class="cvg-sp-h2">From brief to launch in <span>four steps.</span></h2>
-      </div>
-      <ol class="cvg-sp-step-list">
-        <li class="cvg-sp-reveal"><span>01</span><strong>Discover</strong>
-          <p>We learn your goals, audience and brand.</p>
-        </li>
-        <li class="cvg-sp-reveal" style="--d:.08s"><span>02</span><strong>Design</strong>
-          <p>Custom concepts you review and approve.</p>
-        </li>
-        <li class="cvg-sp-reveal" style="--d:.16s"><span>03</span><strong>Build</strong>
-          <p>Responsive, fast and SEO-ready development.</p>
-        </li>
-        <li class="cvg-sp-reveal" style="--d:.24s"><span>04</span><strong>Launch &amp; grow</strong>
-          <p>Deployment, then support whenever you need it.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ================= 4. CTA ================= -->
-  <section class="cvg-sp-cta">
-    <div class="cvg-sp-wrap">
-      <div class="cvg-sp-cta-box cvg-sp-reveal">
-        <div>
-          <h2 class="cvg-sp-h2"><?= strip_tags($spCta['title'], '<span><br>') ?></h2>
-          <p><?= cvg_h($spCta['text']) ?></p>
-        </div>
-        <a class="cvg-sp-btn cvg-sp-btn--mint cvg-sp-btn--lg" href="<?= cvg_url($spCta['link']) ?>"><?= cvg_h($spCta['btn']) ?> <?= $spArrow ?></a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<?php include dirname(__DIR__) . '/includes/footer.php'; ?>
 
 <style>
   html,
@@ -838,6 +742,190 @@ $spDetail = function ($slug) {
     }
   }
 
+  /* ===== Phone (≤ 600px) ===== */
+  @media (max-width:600px) {
+    .cvg-sp .cvg-sp-hero {
+      padding: 116px 0 100px
+    }
+
+    .cvg-sp .cvg-sp-eyebrow {
+      font-size: 12px;
+      letter-spacing: .16em;
+      margin-bottom: 12px
+    }
+
+    .cvg-sp .cvg-sp-eyebrow::before {
+      width: 26px
+    }
+
+    .cvg-sp .cvg-sp-title {
+      font-size: clamp(42px, 13vw, 58px);
+      line-height: 1
+    }
+
+    .cvg-sp .cvg-sp-lead {
+      margin-top: 18px;
+      font-size: 15.5px;
+      line-height: 1.7
+    }
+
+    .cvg-sp .cvg-sp-actions {
+      margin-top: 26px;
+      gap: 10px
+    }
+
+    .cvg-sp .cvg-sp-actions .cvg-sp-btn {
+      flex: 1 1 auto;
+      justify-content: center;
+      height: 50px;
+      padding: 0 20px
+    }
+
+    .cvg-sp .cvg-sp-word {
+      font-size: 21vw;
+      right: -10px;
+      bottom: -.2em
+    }
+
+    .cvg-sp .cvg-sp-h2 {
+      font-size: clamp(26px, 8vw, 34px);
+      line-height: 1.15
+    }
+
+    /* service cards */
+    .cvg-sp .cvg-sp-list {
+      padding: 56px 0 48px
+    }
+
+    .cvg-sp .cvg-sp-cards {
+      gap: 14px
+    }
+
+    .cvg-sp .cvg-sp-card {
+      padding: 22px 20px 20px;
+      border-radius: 20px
+    }
+
+    .cvg-sp .cvg-sp-ic {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px
+    }
+
+    .cvg-sp .cvg-sp-ic svg {
+      width: 25px;
+      height: 25px
+    }
+
+    .cvg-sp .cvg-sp-card-title {
+      margin: 20px 0 8px;
+      font-size: 20px
+    }
+
+    .cvg-sp .cvg-sp-desc {
+      font-size: 14px
+    }
+
+    .cvg-sp .cvg-sp-subs {
+      gap: 6px;
+      margin-top: 16px
+    }
+
+    .cvg-sp .cvg-sp-subs a {
+      height: 34px;
+      padding: 0 12px;
+      font-size: 12.5px
+    }
+
+    .cvg-sp .cvg-sp-card-foot {
+      padding-top: 18px
+    }
+
+    .cvg-sp .cvg-sp-from strong {
+      font-size: 17px
+    }
+
+    /* no hover on phones: keep cards still when tapped */
+    .cvg-sp .cvg-sp-card:hover,
+    .cvg-sp .cvg-sp-card:focus-within,
+    .cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:hover,
+    .cvg-sp.cvg-sp--js .cvg-sp-card.cvg-sp-in:focus-within {
+      transform: none
+    }
+
+    /* steps: number left, text right */
+    .cvg-sp .cvg-sp-steps {
+      padding: 24px 0 64px
+    }
+
+    .cvg-sp .cvg-sp-head {
+      margin-bottom: 26px
+    }
+
+    .cvg-sp .cvg-sp-step-list {
+      gap: 0
+    }
+
+    .cvg-sp .cvg-sp-step-list li {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      column-gap: 10px;
+      padding: 18px 0 18px;
+      border-top: 1px solid var(--sp-line)
+    }
+
+    .cvg-sp .cvg-sp-step-list li:last-child {
+      border-bottom: 1px solid var(--sp-line)
+    }
+
+    .cvg-sp .cvg-sp-step-list span {
+      grid-row: 1 / span 2;
+      font-size: 15px;
+      padding-top: 2px
+    }
+
+    .cvg-sp .cvg-sp-step-list strong {
+      margin: 0 0 4px;
+      font-size: 17px
+    }
+
+    .cvg-sp .cvg-sp-step-list p {
+      font-size: 14px
+    }
+
+    /* CTA */
+    .cvg-sp .cvg-sp-cta {
+      padding-bottom: 64px
+    }
+
+    .cvg-sp .cvg-sp-cta-box {
+      gap: 24px;
+      padding: 30px 22px;
+      border-radius: 22px
+    }
+
+    .cvg-sp .cvg-sp-cta-box p {
+      font-size: 15px
+    }
+
+    .cvg-sp .cvg-sp-cta-box .cvg-sp-btn {
+      width: 100%;
+      justify-content: center
+    }
+
+    .cvg-sp .cvg-sp-btn--lg {
+      height: 54px;
+      padding: 0 20px;
+      font-size: 15px
+    }
+  }
+
+  @media (max-width:360px) {
+    .cvg-sp .cvg-sp-actions .cvg-sp-btn {
+      flex-basis: 100%
+    }
+  }
+
   @media (prefers-reduced-motion:reduce) {
 
     .cvg-sp *,
@@ -848,6 +936,119 @@ $spDetail = function ($slug) {
     }
   }
 </style>
+
+<main class="cvg-sp" id="cvg-services-page">
+  <section class="cvg-sp-hero">
+    <div class="cvg-sp-grid-bg" aria-hidden="true"></div>
+    <div class="cvg-sp-word" aria-hidden="true">SERVICES</div>
+    <div class="cvg-sp-wrap cvg-sp-hero-inner">
+      <p class="cvg-sp-eyebrow cvg-sp-reveal"><?= cvg_h($spHero['eyebrow']) ?></p>
+      <h1 class="cvg-sp-title cvg-sp-reveal" style="--d:.06s"><?= cvg_h($spHero['title']) ?><span>.</span></h1>
+      <p class="cvg-sp-lead cvg-sp-reveal" style="--d:.12s"><?= cvg_h($spHero['lead']) ?></p>
+      <div class="cvg-sp-actions cvg-sp-reveal" style="--d:.18s">
+        <a class="cvg-sp-btn cvg-sp-btn--mint" href="<?= cvg_url('contact-us/index.php') ?>">Get a free quote <?= $spArrow ?></a>
+        <a class="cvg-sp-btn cvg-sp-btn--ghost" href="<?= cvg_url('pricing/index.php') ?>">View pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cvg-sp-list" id="services">
+    <div class="cvg-sp-wrap">
+      <div class="cvg-sp-cards">
+        <?php foreach ($services as $i => $svc):
+          $title = trim((string) ($svc['title'] ?? 'Service'));
+          $slug  = trim((string) ($svc['slug'] ?? ''));
+          $desc  = trim((string) ($svc['description'] ?? ''));
+          $subs  = is_array($svc['sub_services'] ?? null) ? $svc['sub_services'] : [];
+          $from  = $spFrom($svc);
+          $icon  = $spIcons[$spIconFor[$slug] ?? 'web'] ?? $spIcons['web'];
+          $wide  = count($subs) > 0;
+        ?>
+          <article class="cvg-sp-card<?= $wide ? ' cvg-sp-card--wide' : '' ?> cvg-sp-reveal" style="--d:<?= min($i % 3, 2) * 0.08 ?>s">
+            <a class="cvg-sp-cover" href="<?= cvg_h($spDetail($slug)) ?>" aria-label="<?= cvg_h($title) ?>"></a>
+            <div class="cvg-sp-card-top">
+              <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><?= $icon ?></svg></span>
+              <span class="cvg-sp-num"><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
+            </div>
+            <h2 class="cvg-sp-card-title"><?= cvg_h($title) ?></h2>
+            <?php if ($desc !== ''): ?><p class="cvg-sp-desc"><?= cvg_h($desc) ?></p><?php endif; ?>
+
+            <?php if ($wide): ?>
+              <ul class="cvg-sp-subs" aria-label="<?= cvg_h($title) ?> options">
+                <?php foreach ($subs as $sub):
+                  $st = is_array($sub) ? trim((string) ($sub['title'] ?? '')) : trim((string) $sub);
+                  $ss = is_array($sub) ? trim((string) ($sub['slug'] ?? '')) : '';
+                  if ($st === '') continue; ?>
+                  <li><a href="<?= cvg_h($spDetail($ss)) ?>"><?= cvg_h($st) ?></a></li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>
+
+            <div class="cvg-sp-card-foot">
+              <span class="cvg-sp-more"><i><?= $spArrow ?></i>Read more</span>
+              <?php if ($from !== null): ?>
+                <span class="cvg-sp-from">From <strong>$<?= cvg_h(number_format($from, $from == floor($from) ? 0 : 2)) ?></strong></span>
+              <?php endif; ?>
+            </div>
+          </article>
+        <?php endforeach; ?>
+
+        <!-- last tile: help choosing -->
+        <article class="cvg-sp-card cvg-sp-card--help cvg-sp-reveal">
+          <a class="cvg-sp-cover" href="<?= cvg_url('contact-us/index.php') ?>" aria-label="Talk to us"></a>
+          <div class="cvg-sp-card-top">
+            <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z" />
+                <path d="M9.5 10a2.5 2.5 0 114 2c-.9.6-1.5 1-1.5 2M12 16.5v.01" />
+              </svg></span>
+          </div>
+          <h2 class="cvg-sp-card-title">Need something custom?</h2>
+          <p class="cvg-sp-desc">Mix any services into one plan that fits your goals and budget.</p>
+          <div class="cvg-sp-card-foot"><span class="cvg-sp-more"><i><?= $spArrow ?></i>Talk to us</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="cvg-sp-steps">
+    <div class="cvg-sp-wrap">
+      <div class="cvg-sp-head cvg-sp-reveal">
+        <p class="cvg-sp-eyebrow">How it works</p>
+        <h2 class="cvg-sp-h2">From brief to launch in <span>four steps.</span></h2>
+      </div>
+      <ol class="cvg-sp-step-list">
+        <li class="cvg-sp-reveal"><span>01</span><strong>Discover</strong>
+          <p>We learn your goals, audience and brand.</p>
+        </li>
+        <li class="cvg-sp-reveal" style="--d:.08s"><span>02</span><strong>Design</strong>
+          <p>Custom concepts you review and approve.</p>
+        </li>
+        <li class="cvg-sp-reveal" style="--d:.16s"><span>03</span><strong>Build</strong>
+          <p>Responsive, fast and SEO-ready development.</p>
+        </li>
+        <li class="cvg-sp-reveal" style="--d:.24s"><span>04</span><strong>Launch &amp; grow</strong>
+          <p>Deployment, then support whenever you need it.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= 4. CTA ================= -->
+  <section class="cvg-sp-cta">
+    <div class="cvg-sp-wrap">
+      <div class="cvg-sp-cta-box cvg-sp-reveal">
+        <div>
+          <h2 class="cvg-sp-h2"><?= strip_tags($spCta['title'], '<span><br>') ?></h2>
+          <p><?= cvg_h($spCta['text']) ?></p>
+        </div>
+        <a class="cvg-sp-btn cvg-sp-btn--mint cvg-sp-btn--lg" href="<?= cvg_url($spCta['link']) ?>"><?= cvg_h($spCta['btn']) ?> <?= $spArrow ?></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<?php include dirname(__DIR__) . '/includes/footer.php'; ?>
+
+
 
 <script>
   (function() {

@@ -95,7 +95,22 @@ $mapSrc = 'https://www.google.com/maps?q=' . rawurlencode($contact['address']) .
 $mapLink = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($contact['address']);
 $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>';
 ?>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+/* Header + mobile viewport fix:
+   the viewport tag is added inside <head> if header.php does not already have one */
+ob_start();
+include __DIR__ . '/../includes/header.php';
+$cvgHead = ob_get_clean();
+$cvgViewport = '<meta name="viewport" content="width=device-width, initial-scale=1">';
+if (stripos($cvgHead, 'name="viewport"') === false && stripos($cvgHead, "name='viewport'") === false) {
+  if (stripos($cvgHead, '</head>') !== false) {
+    $cvgHead = preg_replace('~</head>~i', $cvgViewport . "\n</head>", $cvgHead, 1);
+  } else {
+    $cvgHead = $cvgViewport . "\n" . $cvgHead;
+  }
+}
+echo $cvgHead;
+?>
 <link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
 <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,7 +132,7 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
           <a href="tel:<?= cvg_e($contact['phone_link']) ?>"><?= cvg_e($contact['phone']) ?></a>
         </div>
       </div>
-      <img src="../assets/img/hero-3d.png" alt="" class="cvg-ct-rocket" aria-hidden="true">
+      <img src="<?= cvg_url('assets/img/hero-3d.png') ?>" alt="" class="cvg-ct-rocket" aria-hidden="true">
     </div>
   </section>
 
@@ -138,7 +153,7 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
       </div>
 
       <div class="cvg-ct-photo cvg-ct-reveal" style="--d:.08s">
-        <img src="../assets/img/contact-us-image.jpg" alt="Creative Converge support specialist with a headset" loading="lazy">
+        <img src="<?= cvg_url('assets/img/contact-us-image.jpg') ?>" alt="Creative Converge support specialist with a headset" loading="lazy">
       </div>
 
       <form class="cvg-ct-form cvg-ct-reveal" method="post" action="#cvg-ct-form" novalidate style="--d:.16s">
@@ -181,7 +196,7 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
 
   <!-- ================= 3. CONTACT CARDS ================= -->
   <section class="cvg-ct-info">
-    <img src="../assets/img/contact-page-Illustration-Art.png" alt="" class="cvg-ct-illus" aria-hidden="true" loading="lazy">
+    <img src="<?= cvg_url('assets/img/contact-page-Illustration-Art.png') ?>" alt="" class="cvg-ct-illus" aria-hidden="true" loading="lazy">
     <div class="cvg-ct-wrap">
       <div class="cvg-ct-cards">
         <a class="cvg-ct-card cvg-ct-reveal" href="<?= cvg_e($mapLink) ?>" target="_blank" rel="noopener">
@@ -1292,6 +1307,163 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
     .cvg-ct .cvg-ct-news-msg {
       position: static;
       padding: 0 8px
+    }
+  }
+
+  /* ===== Phone (≤ 600px) ===== */
+  @media (max-width:600px) {
+    .cvg-ct .cvg-ct-hero {
+      padding: 116px 0 64px
+    }
+
+    .cvg-ct .cvg-ct-hero-inner {
+      gap: 0
+    }
+
+    .cvg-ct .cvg-ct-hero-title {
+      font-size: clamp(44px, 13.5vw, 60px)
+    }
+
+    .cvg-ct .cvg-ct-hero-lead {
+      margin-top: 16px;
+      font-size: 15.5px;
+      line-height: 1.7
+    }
+
+    .cvg-ct .cvg-ct-rocket {
+      right: -34px;
+      top: -86px;
+      width: 120px;
+      opacity: .45
+    }
+
+    .cvg-ct .cvg-ct-hero-quick {
+      margin-top: 24px;
+      gap: 10px
+    }
+
+    .cvg-ct .cvg-ct-hero-quick a {
+      padding: 9px 16px;
+      font-size: 13.5px;
+      max-width: 100%;
+      overflow-wrap: anywhere
+    }
+
+    .cvg-ct .cvg-ct-eyebrow {
+      font-size: 12px;
+      letter-spacing: .16em;
+      margin-bottom: 12px
+    }
+
+    .cvg-ct .cvg-ct-eyebrow::before {
+      width: 26px
+    }
+
+    /* form section */
+    .cvg-ct .cvg-ct-form-sec {
+      padding: 64px 0 72px
+    }
+
+    .cvg-ct .cvg-ct-form-text {
+      padding-bottom: 22px
+    }
+
+    .cvg-ct .cvg-ct-form-text .cvg-ct-h2 {
+      font-size: clamp(30px, 9vw, 38px)
+    }
+
+    .cvg-ct .cvg-ct-form-text .cvg-ct-lead {
+      font-size: 15px
+    }
+
+    .cvg-ct .cvg-ct-photo {
+      aspect-ratio: 4/3;
+      border-radius: 14px
+    }
+
+    .cvg-ct .cvg-ct-form {
+      margin: -44px 10px 0;
+      padding: 26px 20px 28px;
+      gap: 18px;
+      border-radius: 14px
+    }
+
+    .cvg-ct .cvg-ct-field input,
+    .cvg-ct .cvg-ct-field textarea {
+      font-size: 16px  /* 16px stops iPhone from zooming in on tap */
+    }
+
+    .cvg-ct .cvg-ct-send {
+      justify-self: stretch;
+      justify-content: center;
+      height: 50px;
+      margin-top: 6px;
+      font-size: 15px;
+      background: var(--ct-mint);
+      color: var(--ct-ink)
+    }
+
+    /* contact cards: icon left, text right */
+    .cvg-ct .cvg-ct-info {
+      padding: 104px 0 64px
+    }
+
+    .cvg-ct .cvg-ct-illus {
+      width: 170px;
+      top: -36px
+    }
+
+    .cvg-ct .cvg-ct-cards {
+      gap: 12px
+    }
+
+    .cvg-ct .cvg-ct-card {
+      display: grid;
+      grid-template-columns: 50px minmax(0, 1fr);
+      column-gap: 16px;
+      row-gap: 2px;
+      align-items: center;
+      text-align: left;
+      padding: 18px 18px;
+      border-radius: 18px
+    }
+
+    .cvg-ct .cvg-ct-ic {
+      grid-row: 1 / span 3;
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      box-shadow: 0 0 0 6px rgba(0, 212, 163, .15)
+    }
+
+    .cvg-ct .cvg-ct-ic svg {
+      width: 22px;
+      height: 22px
+    }
+
+    .cvg-ct .cvg-ct-card strong {
+      font-size: 16px;
+      line-height: 1.3
+    }
+
+    .cvg-ct .cvg-ct-card span {
+      font-size: 14px;
+      line-height: 1.5;
+      overflow-wrap: anywhere
+    }
+
+    .cvg-ct .cvg-ct-card em {
+      margin-top: 2px;
+      font-size: 12.5px
+    }
+
+    .cvg-ct .cvg-ct-world-grid {
+      gap: 28px
+    }
+
+    .cvg-ct .cvg-ct-acc-head {
+      padding: 18px 0;
+      font-size: 16.5px
     }
   }
 

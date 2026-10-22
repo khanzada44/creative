@@ -24,8 +24,6 @@ $srvAllLink = cvg_url('services/');
 
 /* Auto-slide every X seconds (0 = off) */
 $srvAutoplay = 5;
-
-/* ---------- Line icons (SVG) ---------- */
 $srvIcons = [
   'logo'         => '<path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8 9.5 8z"/>',
   'web'          => '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M7 21h10M12 18v3"/>',
@@ -54,7 +52,7 @@ $srvTotal = count($services);
     <div class="cvg-srv-head">
       <div>
         <p class="cvg-srv-eyebrow cvg-srv-reveal"><?= cvg_srv_e($srvEyebrow) ?></p>
-        <h2 class="cvg-srv-title cvg-srv-reveal" id="cvg-srv-title" style="--d:.08s"><?= strip_tags($srvTitle, '<br><span>') ?></h2>
+        <h2 class="cvg-srv-title cvg-srv-reveal" id="cvg-srv-title" style="--d:.08s"><?= str_ireplace(['<br>', '<br/>', '<br />'], '<br> ', strip_tags($srvTitle, '<br><span>')) ?></h2>
         <p class="cvg-srv-lead cvg-srv-reveal" style="--d:.16s"><?= cvg_srv_e($srvLead) ?></p>
       </div>
       <div class="cvg-srv-nav cvg-srv-reveal" style="--d:.24s">
@@ -68,6 +66,7 @@ $srvTotal = count($services);
     </div>
   </div>
 
+  <div class="cvg-srv-wrap cvg-srv-wrap--track">
   <div class="cvg-srv-track" tabindex="0" aria-label="Our services">
     <?php foreach ($services as $i => $s):
       $icon = $srvIcons[$s[2]] ?? $srvIcons['code']; ?>
@@ -79,6 +78,7 @@ $srvTotal = count($services);
         <span class="cvg-srv-more"><i><?= $srvArrow ?></i>Read more</span>
       </a>
     <?php endforeach; ?>
+  </div>
   </div>
 
   <div class="cvg-srv-wrap">
@@ -99,8 +99,7 @@ $srvTotal = count($services);
     --srv-text-2: #C9D6D2;
     --srv-grad: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, .45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
     --srv-ease: cubic-bezier(.2, .9, .2, 1);
-    --srv-side: max(32px, calc((100% - 1136px) / 2));
-    /* lines the cards up with the heading */
+    --srv-gap: 22px;
     position: relative;
     overflow: hidden;
     padding: 110px 0 100px;
@@ -136,7 +135,7 @@ $srvTotal = count($services);
 
   .cvg-srv .cvg-srv-word {
     position: absolute;
-    right: -20px;
+    right: max(-20px, calc((100% - 1200px) / 2));
     top: -27px;
     font-size: 190px;
     font-weight: 700;
@@ -271,11 +270,10 @@ $srvTotal = count($services);
   .cvg-srv .cvg-srv-track {
     position: relative;
     display: flex;
-    gap: 22px;
+    gap: var(--srv-gap);
     overflow-x: auto;
-    overflow-y: visible;
-    padding: 14px var(--srv-side) 24px;
-    scroll-padding: 0 var(--srv-side);
+    overflow-y: hidden;
+    padding: 14px 0 24px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -306,7 +304,8 @@ $srvTotal = count($services);
   /* Cards */
   .cvg-srv .cvg-srv-card {
     position: relative;
-    flex: 0 0 272px;
+    flex: 0 0 calc((100% - 3 * var(--srv-gap)) / 4);
+    min-width: 0;
     min-height: 360px;
     scroll-snap-align: start;
     padding: 30px 28px 28px;
@@ -347,6 +346,7 @@ $srvTotal = count($services);
   }
 
   .cvg-srv .cvg-srv-ic {
+    flex: none;
     width: 68px;
     height: 68px;
     border-radius: 10px;
@@ -366,9 +366,14 @@ $srvTotal = count($services);
     transition: stroke .4s
   }
 
+  /* Title always starts at the same height, and has room for 2 lines,
+     so titles, descriptions and "Read more" line up across all cards */
   .cvg-srv .cvg-srv-card h3 {
-    margin: auto 0 10px;
-    padding-top: 40px;
+    margin: 44px 0 10px;
+    padding-top: 0;
+    min-height: 2.5em;
+    display: flex;
+    align-items: flex-end;
     font-family: 'Poppins', sans-serif;
     font-size: 21px;
     font-weight: 600;
@@ -379,6 +384,7 @@ $srvTotal = count($services);
   }
 
   .cvg-srv .cvg-srv-card p {
+    flex: 1 0 auto;
     font-size: 14px;
     line-height: 1.6;
     color: var(--srv-text-2)
@@ -387,6 +393,7 @@ $srvTotal = count($services);
   .cvg-srv .cvg-srv-more {
     display: inline-flex;
     align-items: center;
+    align-self: flex-start;
     gap: 10px;
     margin-top: 22px;
     font-size: 14px;
@@ -548,6 +555,12 @@ $srvTotal = count($services);
   }
 
   /* Responsive */
+  @media (max-width:1100px) {
+    .cvg-srv .cvg-srv-card {
+      flex-basis: calc((100% - 2 * var(--srv-gap)) / 3)
+    }
+  }
+
   @media (max-width:860px) {
     .cvg-srv {
       padding: 84px 0 80px
@@ -564,12 +577,26 @@ $srvTotal = count($services);
       font-size: 120px;
       top: 20px
     }
+
+    .cvg-srv .cvg-srv-card {
+      flex-basis: calc((100% - var(--srv-gap)) / 2)
+    }
   }
 
   @media (max-width:600px) {
     .cvg-srv {
-      --srv-side: 16px;
+      --srv-gap: 14px;
       padding: 70px 0 70px
+    }
+
+    /* phone: cards may run to the screen edge so the next one peeks in */
+    .cvg-srv .cvg-srv-wrap.cvg-srv-wrap--track {
+      padding: 0
+    }
+
+    .cvg-srv .cvg-srv-track {
+      padding: 14px 16px 24px;
+      scroll-padding: 0 16px
     }
 
     .cvg-srv .cvg-srv-wrap {
@@ -589,8 +616,24 @@ $srvTotal = count($services);
     }
 
     .cvg-srv .cvg-srv-card {
-      flex-basis: 78%;
-      min-height: 330px
+      flex-basis: 80%;
+      min-height: 320px;
+      padding: 26px 24px 24px
+    }
+
+    .cvg-srv .cvg-srv-card h3 {
+      margin-top: 36px;
+      font-size: 20px
+    }
+
+    .cvg-srv .cvg-srv-ic {
+      width: 60px;
+      height: 60px
+    }
+
+    .cvg-srv .cvg-srv-num {
+      right: 20px;
+      top: 20px
     }
 
     .cvg-srv .cvg-srv-foot {

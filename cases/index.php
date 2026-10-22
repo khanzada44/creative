@@ -159,7 +159,22 @@ $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7
 $cvgPlay  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>';
 $firstTab = array_key_first($portfolioTabs);
 ?>
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+/* Header + mobile viewport fix:
+   the viewport tag is added inside <head> if header.php does not already have one */
+ob_start();
+include __DIR__ . '/../includes/header.php';
+$cvgHead = ob_get_clean();
+$cvgViewport = '<meta name="viewport" content="width=device-width, initial-scale=1">';
+if (stripos($cvgHead, 'name="viewport"') === false && stripos($cvgHead, "name='viewport'") === false) {
+  if (stripos($cvgHead, '</head>') !== false) {
+    $cvgHead = preg_replace('~</head>~i', $cvgViewport . "\n</head>", $cvgHead, 1);
+  } else {
+    $cvgHead = $cvgViewport . "\n" . $cvgHead;
+  }
+}
+echo $cvgHead;
+?>
 <link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
 <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -499,7 +514,7 @@ $firstTab = array_key_first($portfolioTabs);
     display: block;
     padding: 10px;
     color: var(--cs-text);
-    transition: border-color .4s, transform .5s var(--cs-ease),
+    transition: border-color .4s, transform .5s var(--cs-ease);
   }
 
   .cvg-cs .cvg-cs-case:hover {
@@ -602,7 +617,19 @@ $firstTab = array_key_first($portfolioTabs);
     line-height: 1;
     text-transform: none;
     cursor: pointer;
+    border: 1px solid rgba(242, 245, 244, .28);
+    border-radius: 999px;
+    background: rgba(0, 33, 27, .35);
+    white-space: nowrap;
     transition: background .3s, color .3s, border-color .3s
+  }
+
+  .cvg-cs .cvg-cs-tab.cvg-cs-tab--on,
+  .cvg-cs .cvg-cs-tab.cvg-cs-tab--on:hover {
+    background: var(--cs-mint);
+    border-color: var(--cs-mint);
+    color: var(--cs-ink);
+    font-weight: 600
   }
 
   .cvg-cs .cvg-cs-tab:hover {
@@ -977,6 +1004,194 @@ $firstTab = array_key_first($portfolioTabs);
     .cvg-cs-lb .cvg-cs-lb-count {
       bottom: auto;
       top: 30px
+    }
+  }
+
+  /* ===== Phone (≤ 600px) ===== */
+  @media (max-width:600px) {
+    .cvg-cs .cvg-cs-hero {
+      padding: 116px 0 76px
+    }
+
+    .cvg-cs .cvg-cs-hero-title {
+      font-size: clamp(52px, 17vw, 72px)
+    }
+
+    .cvg-cs .cvg-cs-hero-lead {
+      margin-top: 18px;
+      font-size: 15.5px;
+      line-height: 1.7
+    }
+
+    .cvg-cs .cvg-cs-hero-word {
+      font-size: 34vw;
+      bottom: -.22em
+    }
+
+    .cvg-cs .cvg-cs-eyebrow {
+      font-size: 12px;
+      letter-spacing: .16em;
+      margin-bottom: 12px
+    }
+
+    .cvg-cs .cvg-cs-eyebrow::before {
+      width: 26px
+    }
+
+    .cvg-cs .cvg-cs-h2 {
+      font-size: clamp(28px, 8.4vw, 36px);
+      line-height: 1.12
+    }
+
+    .cvg-cs .cvg-cs-head {
+      gap: 14px;
+      margin-bottom: 28px
+    }
+
+    .cvg-cs .cvg-cs-head-lead {
+      font-size: 15px
+    }
+
+    .cvg-cs .cvg-cs-latest,
+    .cvg-cs .cvg-cs-port {
+      padding: 64px 0
+    }
+
+    /* cases: 2 columns, compact cards */
+    .cvg-cs .cvg-cs-cases {
+      gap: 12px 10px
+    }
+
+    .cvg-cs .cvg-cs-case {
+      padding: 0
+    }
+
+    .cvg-cs .cvg-cs-case-media {
+      height: 230px;
+      border-radius: 12px
+    }
+
+    .cvg-cs .cvg-cs-case-meta {
+      padding: 10px 2px 2px;
+      gap: 8px;
+      align-items: flex-start
+    }
+
+    .cvg-cs .cvg-cs-case-meta strong {
+      font-size: 13.5px
+    }
+
+    .cvg-cs .cvg-cs-case-meta small {
+      font-size: 12px
+    }
+
+    .cvg-cs .cvg-cs-go {
+      width: 30px;
+      height: 30px
+    }
+
+    .cvg-cs .cvg-cs-go svg {
+      width: 14px;
+      height: 14px
+    }
+
+    .cvg-cs .cvg-cs-center {
+      margin-top: 32px
+    }
+
+    .cvg-cs .cvg-cs-center .cvg-cs-btn {
+      width: 100%
+    }
+
+    /* tabs: one row, swipe sideways */
+    .cvg-cs .cvg-cs-tabs {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 8px;
+      margin: 0 -16px 28px;
+      padding: 2px 16px 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .cvg-cs .cvg-cs-tabs::-webkit-scrollbar {
+      display: none
+    }
+
+    .cvg-cs .cvg-cs-tab {
+      flex: none;
+      height: 40px;
+      padding: 0 18px
+    }
+
+    .cvg-cs .cvg-cs-grid {
+      gap: 8px
+    }
+
+    .cvg-cs .cvg-cs-item {
+      border-radius: 8px
+    }
+
+    .cvg-cs .cvg-cs-item--web .cvg-cs-item-media {
+      height: 260px
+    }
+
+    .cvg-cs .cvg-cs-play {
+      width: 44px;
+      height: 44px;
+      margin: -22px 0 0 -22px
+    }
+
+    .cvg-cs .cvg-cs-play svg {
+      width: 16px;
+      height: 16px
+    }
+
+    /* on touch screens the hover overlay never shows, so show a small tag */
+    .cvg-cs .cvg-cs-overlay {
+      opacity: 1;
+      padding: 8px;
+      background: linear-gradient(180deg, rgba(0, 33, 27, 0) 60%, rgba(0, 33, 27, .75) 100%)
+    }
+
+    .cvg-cs .cvg-cs-overlay .cvg-cs-go {
+      display: none
+    }
+
+    .cvg-cs .cvg-cs-tag {
+      font-size: 10.5px;
+      padding: 4px 9px
+    }
+
+    /* CTA */
+    .cvg-cs .cvg-cs-cta {
+      padding: 64px 0 72px
+    }
+
+    .cvg-cs .cvg-cs-cta-inner {
+      gap: 24px
+    }
+
+    .cvg-cs .cvg-cs-cta-inner .cvg-cs-btn {
+      width: 100%
+    }
+
+    /* lightbox */
+    .cvg-cs-lb button {
+      width: 44px;
+      height: 44px;
+      font-size: 24px
+    }
+  }
+
+  @media (max-width:360px) {
+    .cvg-cs .cvg-cs-case-media {
+      height: 200px
+    }
+
+    .cvg-cs .cvg-cs-go {
+      display: none
     }
   }
 

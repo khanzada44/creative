@@ -141,9 +141,75 @@
   .cc-h3d::before, .cc-h3d-part img, .cc-h3d-ring { animation: none; }
   .cc-h3d-part { transition: none; opacity: 1; scale: 1; translate: none; }
 }
+/* ---------- HERO LAYOUT: text left, 3D right, both inside the same container ---------- */
+#hero .abt-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+  align-items: center;
+  gap: 40px;
+}
+#hero .hero-inner {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+#hero .hero-content {
+  max-width: 600px;
+  margin: 0;
+  text-align: left;
+}
+/* 3D sits in the right column (not stuck to the screen edge any more) */
+#hero .cc-h3d {
+  position: relative !important;
+  grid-column: 2;
+  grid-row: 1;
+  top: auto;
+  right: auto;
+  width: 100% !important;
+  max-width: 480px;
+  justify-self: end;
+  transform: none;
+}
+
+@media (max-width: 1024px) {
+  #hero .abt-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+    gap: 24px;
+  }
+  #hero .cc-h3d { width: 100% !important; opacity: 1; }
+}
+@media (max-width: 767px) {
+  #hero .abt-inner {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 20px;
+    gap: 8px;
+  }
+  /* phone: shapes on top, text below, everything centered */
+  #hero .cc-h3d {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    width: 78% !important;
+    max-width: 320px;
+    bottom: auto;
+    opacity: 1;
+  }
+  #hero .hero-inner { grid-row: 2; }
+  #hero .hero-content { max-width: none; text-align: center; }
+  #hero .hero-text { margin-left: auto; margin-right: auto; }
+}
 </style>
 
-  <!-- ===== 3D shapes (alag alag animate hote hain) ===== -->
+ <div class="abt-inner">
   <div class="cc-h3d" id="ccH3d" aria-hidden="true">
     <!-- ghoomte hue gol orbit rings -->
     <i class="cc-h3d-ring cc-h3d-ring--1"><b></b></i>
@@ -163,6 +229,8 @@
       <p class="hero-text">We create new technologies for your business thanks to our wonderful team of professionals.</p>
     </div>
   </div>
+ </div>
+
 </section>
 
 <!-- ============ HERO 3D: mouse parallax + scroll spread ============ -->
