@@ -3,12 +3,22 @@
     <div class="cvg-consult-glow" aria-hidden="true"></div>
 
     <div class="cvg-consult-content">
-      <p class="cvg-consult-eyebrow">Let's get started</p>
-      <h2 class="cvg-consult-title">Get a Free<br><span class="cvg-consult-title-mint">Consultation</span></h2>
+
+      <p class="cvg-consult-eyebrow">Let's Turn Your Next Big Idea Into Something Remarkable</p>
+
+      <h2 class="cvg-consult-title">
+        Let's Make Your
+        <span class="cvg-consult-title-mint">Next Idea Remarkable</span>
+      </h2>
+
       <p class="cvg-consult-lead">
-        We always try to implement our creative ideas at the highest level.
-        Tell us about your project and we will make it work.
+        Maybe you have a business to grow, a brand to build, a website
+        that needs a fresh start, or an idea that hasn't found its shape yet.
+        Whatever brings you here, we'd love to hear about it. Don't let a good
+        idea stay on the drawing board. Let's talk and book a call with the
+        best web design agency in Dallas, TX.
       </p>
+
 
       <form class="cvg-consult-form"
         action="contact-submit.php"

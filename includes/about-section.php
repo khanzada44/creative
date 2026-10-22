@@ -120,15 +120,15 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
       <div class="abt-col">
         <div class="abt-rv" style="--from:.9"><div class="abt-rv-in">
           <div class="abt-label"><span>OUR STORY</span></div>
-          <h2>We are creative &amp; strong team</h2>
+          <h2>Built Around the Power of &amp; Creative Convergence</h2>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:150ms"><div class="abt-rv-in">
-          <p>Our creative and professional agency has been developing products for 9 years. We are special.</p>
+          <p>The digital world brings together disciplines that were once treated separately. Design shapes perception. Technology creates possibilities. Content communicates value. Marketing connects businesses with audiences. When these elements work together, they can create a more coherent and effective digital experience. So that’s why, as a Dallas web development company, we bring these elements together to support a stronger digital presence.</p>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:300ms"><div class="abt-rv-in">
-          <p class="dim">We’ve got a lot of awards for our work and develop applications that became popular in the world. We try not to miss important details in each area.</p>
+          <p class="dim">That idea sits at the heart of Creative Converge. As a premium web development company in Dallas and more. Our approach brings creative thinking and digital execution into the same conversation. Instead of viewing a logo, website, or marketing campaign as an isolated deliverable, we consider how each contributes to the overall brand experience. </p>
         </div></div>
       </div>
 
@@ -150,15 +150,15 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
 
       <div class="abt-col" style="z-index:auto">
         <div class="abt-rv" style="--from:.9"><div class="abt-rv-in">
-          <h3>How our working day starts</h3>
+          <h3>Helping Businesses Make Better Use of Digital</h3>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:150ms"><div class="abt-rv-in">
-          <p>A typical day at a web design company begins with a team huddle to align on priorities and check emails or messages. The team then focuses on client communication, planning, and brainstorming for current projects.</p>
+          <p>Our mission is to help businesses build a stronger digital presence as a top-quality Dallas web development company through thoughtful design, practical technology, and purposeful marketing. We aim to make digital solutions more aligned with the people who use them and the goals businesses want to achieve.</p>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:300ms"><div class="abt-rv-in">
-          <p class="dim">Designers work on wireframes and visual designs, while developers focus on coding and website functionality. Throughout the day, there are client calls, feedback sessions, and internal reviews to ensure the project is on track. The day wraps up with a brief debrief meeting, preparing deliverables, and setting up tasks for the next day.</p>
+          <p class="dim">Whether the task involves developing a website, creating a brand identity or approaching the work with a focus on relevance, usability, and clear communication. We want every project to have a defined purpose and every solution to make sense for the business behind it. </p>
         </div></div>
       </div>
     </div>
@@ -167,15 +167,15 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
     <div class="abt-row">
       <div class="abt-col" style="z-index:auto">
         <div class="abt-rv" style="--from:.9"><div class="abt-rv-in">
-          <h3>Individual approach</h3>
+          <h3>A Digital Future Where Good Ideas Can Go Further</h3>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:150ms"><div class="abt-rv-in">
-          <p>As a web design company, our individual approach is centered around creativity, collaboration, and client satisfaction. We take the time to understand each client’s unique needs, goals, and brand identity, ensuring that our designs are tailored specifically for them.</p>
+          <p>Our vision is to contribute to a digital landscape where businesses can express their identities confidently, deliver better online experiences, and connect with their audiences more effectively. Also want to be recognized as an affordable website design company in the USA.</p>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:300ms"><div class="abt-rv-in">
-          <p class="dim">Our process is highly collaborative, involving regular communication with clients to gather feedback and refine our work. We prioritize user experience (UX) and responsive design to ensure that websites are not only visually appealing but also intuitive and accessible across all devices.</p>
+          <p class="dim">We believe creativity and technology are most valuable when they solve meaningful problems. By combining these disciplines with a thoughtful understanding of business needs, we aim to help brands adapt, improve, and pursue new opportunities in the digital space.</p>
         </div></div>
       </div>
 
@@ -184,7 +184,7 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
           <div class="abt-circle"><span class="abt-orbit" aria-hidden="true"><i></i></span><span class="abt-num">0</span><span class="abt-cap">Successful Projects</span></div>
         </div>
       </div>
-    </div>
+    </div>  
 
   </div>
 </section>

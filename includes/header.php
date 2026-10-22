@@ -1,34 +1,21 @@
-<?php include __DIR__ . '/topbar.php'; ?>
+<!-- <?php include __DIR__ . '/topbar.php'; ?> -->
 <?php require_once __DIR__ . '/init.php'; ?>
-<!-- ===== Header ===== -->
-<header class="header">
+<?php
+/* ---------- Which menu item is active (mint colour) ---------- */
+$cvgNavPath = strtolower(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: '');
+if (!function_exists('cvg_nav_on')) {
+  function cvg_nav_on($needle, $path)
+  {
+    return strpos($path, '/' . $needle) !== false ? ' is-on' : '';
+  }
+}
+?>
+<!-- ===== Header: floating glass pill ===== -->
+<header class="header cvg-glass" id="cvgHeader">
   <div class="header-inner">
 
-    <!-- LEFT: icon + logo + nav links -->
+    <!-- LEFT: logo -->
     <div class="header-left">
-
-      <!-- Hamburger / menu icon -->
-      <style>
-        #menuBtn.menu-btn {
-          display: flex !important;
-          align-items: center;
-          justify-content: center
-        }
-
-        @media (min-width:768px) {
-          #menuBtn.menu-btn {
-            display: none !important
-          }
-        }
-      </style>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-          <path d="M0.711397 17.6359C-0.0696518 18.417 -0.0696518 19.6833 0.711397 20.4644C1.49245 21.2454 2.75878 21.2454 3.53982 20.4644L20.5104 3.4938C21.2914 2.71276 21.2914 1.44642 20.5104 0.665376C19.7293 -0.115673 18.463 -0.115672 17.682 0.665376L0.711397 17.6359Z" fill="white" />
-          <path d="M2.12558 31.7781C1.34453 30.997 1.34453 29.7307 2.12558 28.9496L19.0961 11.9791C19.8772 11.198 21.1435 11.198 21.9246 11.9791C22.7056 12.7601 22.7056 14.0264 21.9246 14.8075L4.95401 31.7781C4.17296 32.5591 2.90663 32.5591 2.12558 31.7781Z" fill="white" />
-          <path d="M13.4393 33.1923C12.6583 32.4112 12.6583 31.1449 13.4393 30.3638L30.4099 13.3933C31.1909 12.6122 32.4572 12.6122 33.2383 13.3933C34.0193 14.1743 34.0193 15.4407 33.2383 16.2217L16.2677 33.1923C15.4867 33.9733 14.2204 33.9733 13.4393 33.1923Z" fill="white" />
-        </svg>
-      </button>
       <div class="logo">
         <a href="<?= cvg_url('index.php') ?>" class="cvg-alogo" aria-label="Creative Converge home">
           <svg class="cvg-alogo-mark" viewBox="-70 -70 140 140" aria-hidden="true">
@@ -59,420 +46,72 @@
             <span class="cvg-alogo-w2"><span style="--i:0">C</span><span style="--i:1">o</span><span style="--i:2">n</span><span style="--i:3">v</span><span style="--i:4">e</span><span style="--i:5">r</span><span style="--i:6">g</span><span style="--i:7">e</span><span style="--i:8" class="cvg-alogo-dotc">.</span></span>
           </span>
         </a>
+      </div>
+    </div>
 
-        <style>
-          .cvg-alogo {
-            --cvg-alogo-size: 22px;
-          }
+    <!-- CENTER: desktop nav -->
+    <nav class="desktop-nav" aria-label="Main">
 
-          .cvg-alogo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.42em;
-            font-size: var(--cvg-alogo-size);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1;
-            text-decoration: none;
-            -webkit-font-smoothing: antialiased;
-          }
+      <!-- Services dropdown -->
+      <div class="services-dropdown" id="servicesDropdown">
+        <button class="services-btn<?= cvg_nav_on('services', $cvgNavPath) ?>" id="servicesBtn" aria-haspopup="true" aria-expanded="false">
+          <a href="<?= cvg_url('services/services.php') ?>" class="panel-link">Services</a>
+          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="services-menu" id="servicesMenu">
+          <ul>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>">Logo Design</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>">Illustration Design</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>">Web Design</a></li>
 
-          .cvg-alogo:hover {
-            text-decoration: none;
-          }
+            <!-- Web Developer + flyout -->
+            <li class="has-sub">
+              <a href="<?= cvg_url('services/service-detail.php?slug=web-developer-solutions') ?>" class="sub-trigger" aria-haspopup="true">
+                Web Developer
+                <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+              </a>
+              <ul class="services-submenu">
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=laravel') ?>">Laravel</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=node-js') ?>">Node Js</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=custom-php-development') ?>">Custom PHP Development</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=next-js') ?>">Next.js</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=wordpress-development') ?>">WordPress Development</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=shopify') ?>">Shopify</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=magento') ?>">Magento</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=woocommerce') ?>">WooCommerce</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=cms-development') ?>">CMS Development</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=website-maintenance') ?>">Website Maintenance</a></li>
+              </ul>
+            </li>
 
-          .cvg-alogo .cvg-alogo-mark {
-            width: 2.6em;
-            height: 2.6em;
-            flex: none;
-            overflow: visible;
-          }
-
-          .cvg-alogo .cvg-alogo-text {
-            display: flex;
-            flex-direction: column;
-            letter-spacing: -0.02em;
-            line-height: 1;
-          }
-
-          .cvg-alogo .cvg-alogo-w1 {
-            color: #F2F5F4;
-            overflow: hidden;
-            padding-bottom: 0.08em;
-          }
-
-          .cvg-alogo .cvg-alogo-w2 {
-            color: #00D4A3;
-          }
-
-          .cvg-alogo .cvg-alogo-dotc {
-            color: #5FF0C8;
-          }
-
-          .cvg-alogo .cvg-alogo-w1 span,
-          .cvg-alogo .cvg-alogo-w2 span {
-            display: inline-block;
-          }
-
-          /* Logo on a white background? add class "cvg-alogo--dark" to the <a> */
-          .cvg-alogo.cvg-alogo--dark .cvg-alogo-w1 {
-            color: #0A0A0A;
-          }
-
-          /* ---------- Intro (plays once) ---------- */
-          .cvg-alogo .cvg-alogo-ring,
-          .cvg-alogo .cvg-alogo-ring2 {
-            stroke-dasharray: 1;
-          }
-
-          .cvg-alogo .cvg-alogo-ring {
-            animation: cvgAlogoDraw 1.3s ease-in-out both;
-          }
-
-          .cvg-alogo .cvg-alogo-ring2 {
-            animation: cvgAlogoDrawRev 1s ease-in-out 0.35s both;
-          }
-
-          .cvg-alogo .cvg-alogo-dot,
-          .cvg-alogo .cvg-alogo-halo {
-            transform-box: fill-box;
-            transform-origin: center;
-          }
-
-          .cvg-alogo .cvg-alogo-dot {
-            animation:
-              cvgAlogoPop 0.6s cubic-bezier(.3, 1.6, .5, 1) 1.2s both,
-              cvgAlogoPulse 2.4s ease-in-out 2s infinite;
-          }
-
-          .cvg-alogo .cvg-alogo-halo {
-            opacity: 0;
-            animation: cvgAlogoHalo 2.4s ease-out 2s infinite;
-          }
-
-          .cvg-alogo .cvg-alogo-w1 span {
-            animation:
-              cvgAlogoRise 0.6s cubic-bezier(.2, .9, .2, 1) calc(1.5s + var(--i) * 0.045s) both,
-              cvgAlogoShine 3.6s ease-in-out calc(3.4s + var(--i) * 0.07s) infinite;
-          }
-
-          .cvg-alogo .cvg-alogo-w2 span {
-            animation:
-              cvgAlogoSlide 0.6s cubic-bezier(.2, .9, .2, 1) calc(1.65s + var(--i) * 0.04s) both,
-              cvgAlogoShine 3.6s ease-in-out calc(3.4s + var(--i) * 0.07s) infinite;
-          }
-
-          /* ---------- Keyframes ---------- */
-          @keyframes cvgAlogoDraw {
-            from {
-              stroke-dashoffset: 1;
-            }
-
-            to {
-              stroke-dashoffset: 0;
-            }
-          }
-
-          @keyframes cvgAlogoDrawRev {
-            from {
-              stroke-dashoffset: -1;
-            }
-
-            to {
-              stroke-dashoffset: 0;
-            }
-          }
-
-          @keyframes cvgAlogoPop {
-            from {
-              transform: scale(0);
-            }
-
-            to {
-              transform: scale(1);
-            }
-          }
-
-          @keyframes cvgAlogoPulse {
-
-            0%,
-            100% {
-              transform: scale(1);
-            }
-
-            50% {
-              transform: scale(1.18);
-            }
-          }
-
-          @keyframes cvgAlogoHalo {
-            0% {
-              transform: scale(1);
-              opacity: .55;
-            }
-
-            100% {
-              transform: scale(2.6);
-              opacity: 0;
-            }
-          }
-
-          @keyframes cvgAlogoRise {
-            from {
-              transform: translateY(110%);
-            }
-
-            to {
-              transform: none;
-            }
-          }
-
-          @keyframes cvgAlogoSlide {
-            from {
-              transform: translateX(-0.8em);
-              opacity: 0;
-            }
-
-            to {
-              transform: none;
-              opacity: 1;
-            }
-          }
-
-          @keyframes cvgAlogoShine {
-
-            0%,
-            24%,
-            100% {
-              filter: brightness(1) drop-shadow(0 0 0 rgba(95, 240, 200, 0));
-            }
-
-            10% {
-              filter: brightness(1.5) drop-shadow(0 0 6px rgba(95, 240, 200, .9));
-            }
-          }
-
-          /* Visitors who turned off motion see the finished logo, still */
-          @media (prefers-reduced-motion: reduce) {
-
-            .cvg-alogo .cvg-alogo-ring,
-            .cvg-alogo .cvg-alogo-ring2,
-            .cvg-alogo .cvg-alogo-dot,
-            .cvg-alogo .cvg-alogo-halo,
-            .cvg-alogo .cvg-alogo-w1 span,
-            .cvg-alogo .cvg-alogo-w2 span {
-              animation: none;
-            }
-          }
-        </style>
-
-        <!-- ===== Services flyout submenu (Web Developer Solutions) ===== -->
-        <style>
-          .services-dropdown .services-menu>ul {
-            overflow: visible !important;
-          }
-
-          .services-dropdown .services-menu li.has-sub {
-            position: relative;
-          }
-
-          .services-dropdown .services-menu .sub-trigger {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-          }
-
-          .services-dropdown .services-menu .sub-trigger .sub-arrow {
-            flex: none;
-            width: 14px;
-            height: 14px;
-            opacity: .85;
-          }
-
-          /* Parent row stays highlighted while the flyout is open */
-          .services-dropdown .services-menu li.has-sub:hover>a,
-          .services-dropdown .services-menu li.has-sub:focus-within>a,
-          .services-dropdown .services-menu li.has-sub.open>a {
-            background: rgba(4, 120, 87, 0.8);
-            color: #fff;
-          }
-
-          /* ===== Flyout (slate panel, like the reference) ===== */
-          .services-dropdown .services-menu ul.services-submenu {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            z-index: 20;
-            width: auto;
-            min-width: 280px;
-            margin: 0 0 0 12px;
-            padding: 0;
-            overflow: visible;
-            background: #0b0d0e;
-            box-shadow: 0 14px 38px rgba(0, 0, 0, .45);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(10px);
-            transition: opacity .25s ease, transform .25s ease, visibility .25s;
-          }
-
-          /* invisible bridge so the pointer can cross the gap without closing it */
-          .services-dropdown .services-menu ul.services-submenu::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -16px;
-            width: 16px;
-          }
-
-          .services-dropdown .services-menu li.has-sub:hover>ul.services-submenu,
-          .services-dropdown .services-menu li.has-sub:focus-within>ul.services-submenu,
-          .services-dropdown .services-menu li.has-sub.open>ul.services-submenu {
-            opacity: 1;
-            visibility: visible;
-            transform: none;
-          }
-
-          .services-dropdown .services-menu ul.services-submenu li {
-            border-bottom: 1px solid rgba(255, 255, 255, .07);
-          }
-
-          .services-dropdown .services-menu ul.services-submenu li:last-child {
-            border-bottom: 0;
-          }
-
-          .services-dropdown .services-menu ul.services-submenu li a {
-            color: #d3dce0;
-            background: transparent;
-          }
-
-          .services-dropdown .services-menu ul.services-submenu li a:hover,
-          .services-dropdown .services-menu ul.services-submenu li a:focus-visible {
-            background: rgba(4, 120, 87, 0.8);
-            color: #fff;
-          }
-
-          .services-dropdown .services-menu ul.services-submenu li:first-child a {
-            border-radius: 6px 6px 0 0;
-          }
-
-          .services-dropdown .services-menu ul.services-submenu li:last-child a {
-            border-radius: 0 0 6px 6px;
-          }
-
-          /* ===== Mobile side panel: nested accordion ===== */
-          .side-panel .panel-services-list.open {
-            max-height: 1400px !important;
-          }
-
-          .side-panel .panel-services-list .panel-sub-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px 12px;
-            font-size: 12px;
-            line-height: 1.3;
-            text-align: left;
-            color: #fff;
-          }
-
-          .side-panel .panel-sub-btn .chevron-icon {
-            width: 12px;
-            height: 12px;
-            transition: transform .25s ease;
-          }
-
-          .side-panel .panel-sub-btn.open .chevron-icon {
-            transform: rotate(180deg);
-          }
-
-          .side-panel .panel-sub-list {
-            max-height: 0;
-            margin: 0;
-            padding: 0 0 0 16px;
-            overflow: hidden;
-            transition: max-height .35s ease;
-          }
-
-          .side-panel .panel-sub-list.open {
-            max-height: 600px;
-          }
-
-          .side-panel .panel-sub-list a {
-            display: block;
-            padding: 9px 12px;
-            font-size: 12px;
-            opacity: .85;
-          }
-
-          .side-panel .panel-sub-list a:hover {
-            opacity: 1;
-            background: #022c22;
-          }
-        </style>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>">Branding</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>">Ecommerce Website</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>">Video Animation</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">Digital Marketing</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>">Advance Combo Packages</a></li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Desktop nav -->
-      <nav class="desktop-nav">
+      <a href="<?= cvg_url('pricing/index.php') ?>" class="nav-link<?= cvg_nav_on('pricing', $cvgNavPath) ?>">Pricing</a>
+      <a href="<?= cvg_url('cases/index.php') ?>" class="nav-link<?= cvg_nav_on('cases', $cvgNavPath) ?>">Cases</a>
+      <a href="<?= cvg_url('about/index.php') ?>" class="nav-link<?= cvg_nav_on('about', $cvgNavPath) ?>">About</a>
+      <a href="<?= cvg_url('contact-us/index.php') ?>" class="nav-link<?= cvg_nav_on('contact-us', $cvgNavPath) ?>">Contact</a>
+    </nav>
 
-        <!-- Services dropdown -->
-        <div class="services-dropdown" id="servicesDropdown">
-          <button class="services-btn" id="servicesBtn" aria-haspopup="true" aria-expanded="false">
-            <a href="<?= cvg_url('services/services.php') ?>" class="panel-link">Services</a>
-            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="services-menu" id="servicesMenu">
-            <ul>
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>">Logo Design</a></li>
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>">Illustration Design</a></li>
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>">Web Design</a></li>
-
-              <!-- NEW: Web Developer Solutions + flyout -->
-              <li class="has-sub">
-                <a href="<?= cvg_url('services/service-detail.php?slug=web-developer-solutions') ?>" class="sub-trigger" aria-haspopup="true">
-                  Web Developer
-                  <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <polyline points="9 6 15 12 9 18"></polyline>
-                  </svg>
-                </a>
-                <ul class="services-submenu">
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=laravel') ?>">Laravel</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=node-js') ?>">Node Js</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=custom-php-development') ?>">Custom PHP Development</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=next-js') ?>">Next.js</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=wordpress-development') ?>">WordPress Development</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=shopify') ?>">Shopify</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=magento') ?>">Magento</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=woocommerce') ?>">WooCommerce</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=cms-development') ?>">CMS Development</a></li>
-                  <li><a href="<?= cvg_url('services/service-detail.php?slug=website-maintenance') ?>">Website Maintenance</a></li>
-                </ul>
-              </li>
-
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>">Branding</a></li>
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>">Ecommerce Website </a></li>
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>">Stunning Video Animation Services</a></li>
-              <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps') ?>">MOBILES APPS</a></li> -->
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">DIGITAL MARKETING</a></li>
-              <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>">ADVANCE COMBO PACKAGES</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <a href="<?= cvg_url('pricing/index.php') ?>" class="nav-link">Pricing</a>
-        <a href="<?= cvg_url('cases/index.php') ?>" class="nav-link">Cases</a>
-        <a href="<?= cvg_url('/about/index.php') ?>" class="nav-link">About</a>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="nav-link">Contact us</a>
-      </nav>
-    </div>
-    <div class="header-right">
-      <a href="mailto:info@creativeconverge.com" class="email-link">info@creativeconverge.com</a>
-      <a href="<?= cvg_url('contact-us/index.php') ?>" class="quote-btn">Get a quote</a>
+    <!-- RIGHT: quote button + mobile menu button -->
+    <div class="cvg-glass-right">
+      <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-glass-cta">
+        Get a quote
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="sidePanel" aria-expanded="false">
+        <span class="cvg-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
     </div>
   </div>
 </header>
@@ -480,12 +119,12 @@
 <!-- ===== Dark overlay ===== -->
 <div class="overlay" id="overlay"></div>
 
-<!-- ===== Left slide-in panel ===== -->
+<!-- ===== Mobile slide-in panel ===== -->
 <aside class="side-panel" id="sidePanel" aria-hidden="true">
 
-  <!-- Close button -->
   <div class="panel-close-wrap">
-    <button class="panel-close-btn" id="closePanelBtn" aria-label="Close Menu">
+    <span class="panel-title">Menu</span>
+    <button class="panel-close-btn" id="closePanelBtn" aria-label="Close menu">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -493,27 +132,25 @@
     </button>
   </div>
 
-  <!-- Menu list -->
   <ul class="panel-menu">
-    <li>
-      <a href="<?= cvg_url('about/index.php') ?>" class="panel-link">About us</a>
-    </li>
+    <li><a href="<?= cvg_url('index.php') ?>" class="panel-link">Home</a></li>
 
     <!-- Services accordion -->
     <li>
       <button class="panel-services-btn" id="panelServicesBtn">
-        <a href="<?= cvg_url('services/services.php') ?>" class="panel-link">Services</a>
+        <span>Services</span>
         <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </button>
 
       <ul class="panel-services-list" id="panelServicesList">
+        <li><a href="<?= cvg_url('services/services.php') ?>" class="panel-sub-link">All services</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>" class="panel-sub-link">Logo Design</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>" class="panel-sub-link">Illustration Design</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>" class="panel-sub-link">Web Design</a></li>
 
-        <!-- NEW: Web Developer Solutions (nested accordion) -->
+        <!-- Web Developer (nested accordion) -->
         <li>
           <button type="button" class="panel-sub-btn panel-sub-link" id="panelDevBtn" aria-expanded="false">
             Web Developer
@@ -537,69 +174,536 @@
 
         <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>" class="panel-sub-link">Branding</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website</a></li>
-        <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>" class="panel-sub-link">Stunning Video Animation Services</a></li>
-        <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps') ?>" class="panel-sub-link">Mobile Apps</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>" class="panel-sub-link">Video Animation</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>" class="panel-sub-link">Digital Marketing</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>" class="panel-sub-link">Advance Combo Packages</a></li>
       </ul>
     </li>
 
     <li><a href="<?= cvg_url('pricing/index.php') ?>" class="panel-link">Pricing</a></li>
     <li><a href="<?= cvg_url('cases/index.php') ?>" class="panel-link">Cases</a></li>
+    <li><a href="<?= cvg_url('about/index.php') ?>" class="panel-link">About us</a></li>
     <li><a href="<?= cvg_url('contact-us/index.php') ?>" class="panel-link">Contact us</a></li>
   </ul>
 
-  <!-- Search -->
-  <form class="panel-search" onsubmit="return false;">
-    <input type="text" placeholder="Search..." class="panel-search-input" />
-    <button type="submit" aria-label="Search" class="panel-search-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-    </button>
-  </form>
-
-  <!-- Social links -->
-  <div class="panel-socials">
-    <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-    <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+  <div class="panel-foot">
+    <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-glass-cta cvg-glass-cta--block">Get a quote
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
+    </a>
+    <a href="mailto:info@creativeconverge.com" class="panel-mail">info@creativeconverge.com</a>
+    <div class="panel-socials">
+      <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+    </div>
   </div>
 </aside>
+
+<style>
+  /* =========================================================
+     LOGO (animated)
+     ========================================================= */
+  .cvg-alogo {
+    --cvg-alogo-size: 19px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42em;
+    font-size: var(--cvg-alogo-size);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .cvg-alogo:hover { text-decoration: none; }
+  .cvg-alogo .cvg-alogo-mark { width: 2.4em; height: 2.4em; flex: none; overflow: visible; }
+  .cvg-alogo .cvg-alogo-text { display: flex; flex-direction: column; letter-spacing: -0.02em; line-height: 1; }
+  .cvg-alogo .cvg-alogo-w1 { color: #F2F5F4; overflow: hidden; padding-bottom: 0.08em; }
+  .cvg-alogo .cvg-alogo-w2 { color: #00D4A3; }
+  .cvg-alogo .cvg-alogo-dotc { color: #5FF0C8; }
+  .cvg-alogo .cvg-alogo-w1 span,
+  .cvg-alogo .cvg-alogo-w2 span { display: inline-block; }
+  .cvg-alogo.cvg-alogo--dark .cvg-alogo-w1 { color: #0A0A0A; }
+
+  .cvg-alogo .cvg-alogo-ring,
+  .cvg-alogo .cvg-alogo-ring2 { stroke-dasharray: 1; }
+  .cvg-alogo .cvg-alogo-ring { animation: cvgAlogoDraw 1.3s ease-in-out both; }
+  .cvg-alogo .cvg-alogo-ring2 { animation: cvgAlogoDrawRev 1s ease-in-out 0.35s both; }
+  .cvg-alogo .cvg-alogo-dot,
+  .cvg-alogo .cvg-alogo-halo { transform-box: fill-box; transform-origin: center; }
+  .cvg-alogo .cvg-alogo-dot {
+    animation: cvgAlogoPop 0.6s cubic-bezier(.3, 1.6, .5, 1) 1.2s both,
+               cvgAlogoPulse 2.4s ease-in-out 2s infinite;
+  }
+  .cvg-alogo .cvg-alogo-halo { opacity: 0; animation: cvgAlogoHalo 2.4s ease-out 2s infinite; }
+  .cvg-alogo .cvg-alogo-w1 span {
+    animation: cvgAlogoRise 0.6s cubic-bezier(.2, .9, .2, 1) calc(1.5s + var(--i) * 0.045s) both,
+               cvgAlogoShine 3.6s ease-in-out calc(3.4s + var(--i) * 0.07s) infinite;
+  }
+  .cvg-alogo .cvg-alogo-w2 span {
+    animation: cvgAlogoSlide 0.6s cubic-bezier(.2, .9, .2, 1) calc(1.65s + var(--i) * 0.04s) both,
+               cvgAlogoShine 3.6s ease-in-out calc(3.4s + var(--i) * 0.07s) infinite;
+  }
+
+  @keyframes cvgAlogoDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes cvgAlogoDrawRev { from { stroke-dashoffset: -1; } to { stroke-dashoffset: 0; } }
+  @keyframes cvgAlogoPop { from { transform: scale(0); } to { transform: scale(1); } }
+  @keyframes cvgAlogoPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+  @keyframes cvgAlogoHalo { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(2.6); opacity: 0; } }
+  @keyframes cvgAlogoRise { from { transform: translateY(110%); } to { transform: none; } }
+  @keyframes cvgAlogoSlide { from { transform: translateX(-0.8em); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes cvgAlogoShine {
+    0%, 24%, 100% { filter: brightness(1) drop-shadow(0 0 0 rgba(95, 240, 200, 0)); }
+    10% { filter: brightness(1.5) drop-shadow(0 0 6px rgba(95, 240, 200, .9)); }
+  }
+
+  /* =========================================================
+     HEADER: floating glass pill
+     (prefixed with .header.cvg-glass so it wins over header.css)
+     ========================================================= */
+  .header.cvg-glass {
+    --g-top: 46px;                 /* set by JS = topbar height + gap */
+    position: fixed;
+    z-index: 50;
+    top: var(--g-top);
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: 0 24px;
+    background: none;
+    pointer-events: none;          /* only the pill itself is clickable */
+    font-family: 'Poppins', sans-serif;
+    transition: top .35s ease;
+  }
+
+  .header.cvg-glass .header-inner {
+    pointer-events: auto;
+    position: relative;
+    max-width: 1360px;
+    height: 68px;
+    margin: 0 auto;
+    padding: 0 10px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 999px;
+    background: rgba(10, 14, 13, .45);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(95, 240, 200, .18);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+    transition: height .35s ease, background .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+
+  /* after scrolling: pill gets a bit smaller and darker */
+  .header.cvg-glass.is-scrolled .header-inner {
+    height: 60px;
+    background: rgba(8, 12, 11, .82);
+    border-color: rgba(95, 240, 200, .26);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .5);
+  }
+
+  .header.cvg-glass .header-left { display: flex; align-items: center; gap: 0; flex: none; }
+  .header.cvg-glass .logo img { height: auto; }
+
+  /* ---------- Center links ---------- */
+  .header.cvg-glass .desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+
+  .header.cvg-glass .desktop-nav .nav-link,
+  .header.cvg-glass .services-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+    color: rgba(242, 245, 244, .86);
+    transition: color .25s ease, background .25s ease;
+  }
+
+  .header.cvg-glass .services-btn { font: inherit; border: 0; cursor: pointer; }
+  .header.cvg-glass .services-btn .panel-link { display: inline; padding: 0; color: inherit; font: inherit; }
+  .header.cvg-glass .desktop-nav .nav-link:hover,
+  .header.cvg-glass .services-btn:hover,
+  .header.cvg-glass .services-btn.open {
+    color: #fff;
+    background: rgba(242, 245, 244, .08);
+  }
+
+  .header.cvg-glass .desktop-nav .nav-link.is-on,
+  .header.cvg-glass .services-btn.is-on { color: #5FF0C8; }
+
+  /* ---------- Services dropdown ---------- */
+  .header.cvg-glass .services-menu { padding-top: 14px; left: 50%; translate: -50% 0; }
+  .header.cvg-glass .services-menu > ul {
+    width: 300px;
+    padding: 8px;
+    border-radius: 18px;
+    background: rgba(10, 14, 13, .94);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(95, 240, 200, .16);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+    overflow: visible !important;
+  }
+
+  .header.cvg-glass .services-menu > ul > li > a {
+    display: flex;
+    padding: 11px 14px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #E3ECE9;
+    transition: background .2s ease, color .2s ease;
+  }
+
+  .header.cvg-glass .services-menu > ul > li > a:hover,
+  .header.cvg-glass .services-menu li.has-sub:hover > a,
+  .header.cvg-glass .services-menu li.has-sub:focus-within > a,
+  .header.cvg-glass .services-menu li.has-sub.open > a {
+    background: rgba(0, 212, 163, .14);
+    color: #5FF0C8;
+  }
+
+  .header.cvg-glass .services-menu li.has-sub { position: relative; }
+  .header.cvg-glass .services-menu .sub-trigger { align-items: center; justify-content: space-between; gap: 16px; }
+  .header.cvg-glass .services-menu .sub-trigger .sub-arrow { flex: none; width: 14px; height: 14px; opacity: .85; }
+
+  .header.cvg-glass .services-menu ul.services-submenu {
+    position: absolute;
+    top: -8px;
+    left: 100%;
+    z-index: 20;
+    min-width: 260px;
+    margin: 0 0 0 12px;
+    padding: 8px;
+    border-radius: 18px;
+    background: rgba(10, 14, 13, .96);
+    border: 1px solid rgba(95, 240, 200, .16);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  }
+
+  /* invisible bridge so the mouse can cross the gap */
+  .header.cvg-glass .services-menu ul.services-submenu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -16px;
+    width: 16px;
+  }
+
+  .header.cvg-glass .services-menu li.has-sub:hover > ul.services-submenu,
+  .header.cvg-glass .services-menu li.has-sub:focus-within > ul.services-submenu,
+  .header.cvg-glass .services-menu li.has-sub.open > ul.services-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .header.cvg-glass .services-menu ul.services-submenu li a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #D3DCE0;
+    background: transparent;
+  }
+
+  .header.cvg-glass .services-menu ul.services-submenu li a:hover,
+  .header.cvg-glass .services-menu ul.services-submenu li a:focus-visible {
+    background: rgba(0, 212, 163, .14);
+    color: #5FF0C8;
+  }
+
+  /* ---------- Right: CTA + burger ---------- */
+  .header.cvg-glass .cvg-glass-right { display: flex; align-items: center; gap: 8px; flex: none; }
+
+  .cvg-glass-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 22px;
+    border-radius: 999px;
+    background: #00D4A3;
+    color: #04342C !important;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+
+  .cvg-glass-cta svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; transition: transform .25s ease; }
+  .cvg-glass-cta:hover { background: #5FF0C8; transform: translateY(-1px); box-shadow: 0 0 0 5px rgba(0, 212, 163, .15); }
+  .cvg-glass-cta:hover svg { transform: translate(2px, -2px); }
+  .header.cvg-glass.is-scrolled .cvg-glass-cta { height: 44px; }
+
+  .header.cvg-glass .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(242, 245, 244, .08);
+    border: 1px solid rgba(95, 240, 200, .25);
+    cursor: pointer;
+  }
+
+  .cvg-burger { display: grid; gap: 5px; }
+  .cvg-burger i { display: block; width: 18px; height: 2px; border-radius: 2px; background: #F2F5F4; transition: transform .3s ease, opacity .3s ease, width .3s ease; }
+  .cvg-burger i:nth-child(2) { width: 12px; margin-left: 6px; background: #5FF0C8; }
+  .menu-btn[aria-expanded="true"] .cvg-burger i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] .cvg-burger i:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] .cvg-burger i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* desktop: show links, hide burger */
+  @media (min-width: 992px) {
+    .header.cvg-glass .desktop-nav { display: flex; }
+    .header.cvg-glass .menu-btn { display: none !important; }
+  }
+
+  /* tablet + phone */
+  @media (max-width: 991px) {
+    .header.cvg-glass .desktop-nav { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    .header.cvg-glass { padding: 0 12px; }
+    .header.cvg-glass .header-inner { height: 60px; padding: 0 7px 0 14px; gap: 10px; }
+    .header.cvg-glass.is-scrolled .header-inner { height: 56px; }
+    .header.cvg-glass .cvg-alogo { --cvg-alogo-size: 16px; }
+    .header.cvg-glass .cvg-glass-right .cvg-glass-cta { height: 40px; padding: 0 14px; font-size: 13px; }
+    .header.cvg-glass .cvg-glass-right .cvg-glass-cta svg { display: none; }
+    .header.cvg-glass .menu-btn { width: 42px; height: 42px; }
+  }
+
+  @media (max-width: 380px) {
+    .header.cvg-glass .cvg-glass-right .cvg-glass-cta { display: none; }
+  }
+
+  /* =========================================================
+     MOBILE PANEL (slides in from the right)
+     ========================================================= */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(0, 0, 0, .6);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+  }
+
+  .overlay.active { opacity: 1; pointer-events: auto; }
+
+  .side-panel {
+    position: fixed;
+    z-index: 70;
+    top: 12px;
+    bottom: 12px;
+    right: 12px;
+    left: auto;
+    width: min(360px, calc(100vw - 24px));
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0 0 20px;
+    border-radius: 24px;
+    background: rgba(10, 14, 13, .96);
+    border: 1px solid rgba(95, 240, 200, .16);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+    color: #F2F5F4;
+    font-family: 'Poppins', sans-serif;
+    transform: translateX(calc(100% + 24px));
+    transition: transform .45s cubic-bezier(.2, .9, .2, 1);
+  }
+
+  .side-panel.open { transform: none; }
+
+  .side-panel .panel-close-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 18px 10px 24px;
+  }
+
+  .side-panel .panel-title { font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #5FF0C8; }
+
+  .side-panel .panel-close-btn {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(242, 245, 244, .08);
+    color: #F2F5F4;
+    cursor: pointer;
+  }
+
+  .side-panel .panel-menu { margin: 0; padding: 4px 14px; list-style: none; font-size: 16px; }
+  .side-panel .panel-menu > li { border-bottom: 1px solid rgba(242, 245, 244, .07); }
+  .side-panel .panel-link,
+  .side-panel .panel-services-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 10px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: #F2F5F4;
+    text-align: left;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .side-panel .panel-link:hover,
+  .side-panel .panel-services-btn:hover { color: #5FF0C8; }
+  .side-panel .panel-services-btn .chevron-icon { width: 14px; height: 14px; transition: transform .25s ease; }
+  .side-panel .panel-services-btn.open .chevron-icon { transform: rotate(180deg); }
+
+  .side-panel .panel-services-list {
+    margin: 0;
+    padding: 0 0 0 8px;
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .35s ease, opacity .3s ease;
+  }
+
+  .side-panel .panel-services-list.open { max-height: 1400px !important; opacity: 1; padding-bottom: 10px; }
+  .side-panel .panel-sub-link,
+  .side-panel .panel-sub-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.3;
+    color: rgba(242, 245, 244, .82);
+    text-align: left;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .side-panel .panel-sub-link:hover,
+  .side-panel .panel-sub-btn:hover { background: rgba(0, 212, 163, .12); color: #5FF0C8; }
+  .side-panel .panel-sub-btn .chevron-icon { width: 12px; height: 12px; transition: transform .25s ease; }
+  .side-panel .panel-sub-btn.open .chevron-icon { transform: rotate(180deg); }
+
+  .side-panel .panel-sub-list { max-height: 0; margin: 0; padding: 0 0 0 14px; list-style: none; overflow: hidden; transition: max-height .35s ease; }
+  .side-panel .panel-sub-list.open { max-height: 600px; }
+  .side-panel .panel-sub-list a { display: block; padding: 9px 12px; border-radius: 10px; font-size: 13.5px; color: rgba(242, 245, 244, .72); }
+  .side-panel .panel-sub-list a:hover { background: rgba(0, 212, 163, .12); color: #5FF0C8; }
+
+  .side-panel .panel-foot { margin-top: auto; padding: 22px 24px 4px; display: grid; gap: 14px; }
+  .cvg-glass-cta--block { width: 100%; height: 52px; }
+  .side-panel .panel-mail { font-size: 14px; color: rgba(242, 245, 244, .75); text-align: center; }
+  .side-panel .panel-mail:hover { color: #5FF0C8; }
+  .side-panel .panel-socials { display: flex; justify-content: center; gap: 28px; margin: 0; padding: 0; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: rgba(242, 245, 244, .6); }
+  .side-panel .panel-socials a:hover { color: #5FF0C8; }
+
+  /* the panel is only for small screens */
+  @media (min-width: 992px) {
+    .side-panel,
+    .overlay { display: none !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cvg-alogo .cvg-alogo-ring,
+    .cvg-alogo .cvg-alogo-ring2,
+    .cvg-alogo .cvg-alogo-dot,
+    .cvg-alogo .cvg-alogo-halo,
+    .cvg-alogo .cvg-alogo-w1 span,
+    .cvg-alogo .cvg-alogo-w2 span { animation: none; }
+    .header.cvg-glass,
+    .header.cvg-glass .header-inner,
+    .side-panel { transition: none; }
+  }
+</style>
 
 <script>
   (function() {
     "use strict";
 
-    // ===== Elements =====
-    const menuBtn = document.getElementById("menuBtn");
-    const closePanelBtn = document.getElementById("closePanelBtn");
-    const overlay = document.getElementById("overlay");
-    const sidePanel = document.getElementById("sidePanel");
+    var header = document.getElementById("cvgHeader");
+    var menuBtn = document.getElementById("menuBtn");
+    var closePanelBtn = document.getElementById("closePanelBtn");
+    var overlay = document.getElementById("overlay");
+    var sidePanel = document.getElementById("sidePanel");
 
-    const servicesBtn = document.getElementById("servicesBtn");
-    const servicesMenu = document.getElementById("servicesMenu");
-    const servicesDropdown = document.getElementById("servicesDropdown");
+    var servicesBtn = document.getElementById("servicesBtn");
+    var servicesMenu = document.getElementById("servicesMenu");
+    var servicesDropdown = document.getElementById("servicesDropdown");
 
-    const panelServicesBtn = document.getElementById("panelServicesBtn");
-    const panelServicesList = document.getElementById("panelServicesList");
+    var panelServicesBtn = document.getElementById("panelServicesBtn");
+    var panelServicesList = document.getElementById("panelServicesList");
+    var panelDevBtn = document.getElementById("panelDevBtn");
+    var panelDevList = document.getElementById("panelDevList");
 
-    const panelDevBtn = document.getElementById("panelDevBtn");
-    const panelDevList = document.getElementById("panelDevList");
+    /* ===== Pill position: under the topbar, then sticks near the top on scroll ===== */
+    var topbar = header.previousElementSibling;
+    var GAP = 14, STUCK = 12;
 
-    // ===== State =====
-    let closeTimer = null;
+    function place() {
+      var tb = 0;
+      if (topbar && topbar !== header && getComputedStyle(topbar).position !== "fixed") {
+        var r = topbar.getBoundingClientRect();
+        tb = Math.max(0, r.bottom);
+      }
+      var top = Math.max(STUCK, tb + GAP);
+      header.style.setProperty("--g-top", top + "px");
+      header.classList.toggle("is-scrolled", window.scrollY > 40);
+    }
+    window.addEventListener("scroll", place, { passive: true });
+    window.addEventListener("resize", place);
+    window.addEventListener("load", place);
+    place();
 
-    // ===== Side Panel: open / close =====
+    /* ===== Mobile panel ===== */
     function openPanel() {
       sidePanel.classList.add("open");
       overlay.classList.add("active");
       sidePanel.setAttribute("aria-hidden", "false");
+      menuBtn.setAttribute("aria-expanded", "true");
+      document.documentElement.style.overflow = "hidden";
     }
 
     function closePanel() {
       sidePanel.classList.remove("open");
       overlay.classList.remove("active");
       sidePanel.setAttribute("aria-hidden", "true");
-      // close accordions as well
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.documentElement.style.overflow = "";
       panelServicesList.classList.remove("open");
       panelServicesBtn.classList.remove("open");
       panelDevList.classList.remove("open");
@@ -607,21 +711,21 @@
       panelDevBtn.setAttribute("aria-expanded", "false");
     }
 
-    menuBtn.addEventListener("click", openPanel);
+    menuBtn.addEventListener("click", function() {
+      sidePanel.classList.contains("open") ? closePanel() : openPanel();
+    });
     closePanelBtn.addEventListener("click", closePanel);
     overlay.addEventListener("click", closePanel);
-
-    // Escape key closes panel
     window.addEventListener("keydown", function(e) {
       if (e.key === "Escape") closePanel();
     });
-
-    // Close panel when any panel link is clicked
     sidePanel.querySelectorAll("a").forEach(function(link) {
       link.addEventListener("click", closePanel);
     });
 
-    // ===== Top navbar Services hover dropdown =====
+    /* ===== Desktop Services dropdown (hover) ===== */
+    var closeTimer = null;
+
     function openServices() {
       clearTimeout(closeTimer);
       servicesMenu.classList.add("open");
@@ -634,17 +738,20 @@
         servicesMenu.classList.remove("open");
         servicesBtn.classList.remove("open");
         servicesBtn.setAttribute("aria-expanded", "false");
-        // also close the flyout (touch devices)
         servicesMenu.querySelectorAll("li.has-sub.open").forEach(function(li) {
           li.classList.remove("open");
         });
-      }, 120);
+      }, 140);
     }
 
     servicesDropdown.addEventListener("mouseenter", openServices);
     servicesDropdown.addEventListener("mouseleave", closeServices);
+    servicesDropdown.addEventListener("focusin", openServices);
+    servicesDropdown.addEventListener("focusout", function(e) {
+      if (!servicesDropdown.contains(e.relatedTarget)) closeServices();
+    });
 
-    // ===== Touch devices: first tap opens the flyout, second tap follows the link =====
+    /* touch: first tap opens the flyout, second tap follows the link */
     servicesMenu.querySelectorAll("li.has-sub > a.sub-trigger").forEach(function(trigger) {
       trigger.addEventListener("click", function(e) {
         if (!window.matchMedia("(hover: none)").matches) return;
@@ -656,15 +763,14 @@
       });
     });
 
-    // ===== Side panel Services accordion =====
+    /* ===== Mobile accordions ===== */
     panelServicesBtn.addEventListener("click", function() {
-      const isOpen = panelServicesList.classList.toggle("open");
+      var isOpen = panelServicesList.classList.toggle("open");
       panelServicesBtn.classList.toggle("open", isOpen);
     });
 
-    // ===== Side panel: Web Developer Solutions nested accordion =====
     panelDevBtn.addEventListener("click", function() {
-      const isOpen = panelDevList.classList.toggle("open");
+      var isOpen = panelDevList.classList.toggle("open");
       panelDevBtn.classList.toggle("open", isOpen);
       panelDevBtn.setAttribute("aria-expanded", String(isOpen));
     });

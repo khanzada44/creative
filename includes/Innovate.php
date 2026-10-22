@@ -4,70 +4,117 @@
     <span class="cvg-unlock-glow cvg-unlock-glow--b" aria-hidden="true"></span>
     <span class="cvg-unlock-grid" aria-hidden="true"></span>
 
-    <div class="cvg-unlock-inner">
-        <div class="cvg-unlock-head">
-            <p class="cvg-unlock-eyebrow cvg-unlock-rv">Innovate</p>
-            <h2 class="cvg-unlock-title">
-                <span class="cvg-unlock-line"><span>Unlock Your Business's Full</span></span>
-                <span class="cvg-unlock-line"><span>Potential with Us</span></span>
-            </h2>
-        </div>
+   
+<div class="cvg-unlock-inner">
 
-        <div class="cvg-unlock-grid-cards">
+    <div class="cvg-unlock-head">
+        <p class="cvg-unlock-eyebrow cvg-unlock-rv">Who We Help</p>
 
-            <article class="cvg-unlock-card cvg-unlock-rv" style="--d:0s">
-                <span class="cvg-unlock-icon" aria-hidden="true">
-                   
-                   <img src="assets/img/play.png" alt="">
-                </span>
-                <h3 class="cvg-unlock-card-title">Reliability</h3>
-                <p class="cvg-unlock-card-text">We build on consistent delivery of high-quality work, meeting deadlines, and providing excellent customer support.</p>
-                <a href="#" class="cvg-unlock-more"><span class="cvg-unlock-more-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
-                            <path d="M5 12h14M13 6l6 6-6 6" />
-                        </svg></span>Learn More</a>
-            </article>
-
-            <article class="cvg-unlock-card cvg-unlock-rv" style="--d:.12s">
-                <span class="cvg-unlock-icon" aria-hidden="true">
-                    <img src="assets/img/Icon2.png" alt="">
-                </span>
-                <h3 class="cvg-unlock-card-title">Expertise</h3>
-                <p class="cvg-unlock-card-text">Our team is skilled in UI/UX design, frontend and backend development, and responsive design, so every project is appealing, functional and user-friendly.</p>
-                <a href="#" class="cvg-unlock-more"><span class="cvg-unlock-more-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
-                            <path d="M5 12h14M13 6l6 6-6 6" />
-                        </svg></span>Learn More</a>
-            </article>
-
-            <article class="cvg-unlock-card cvg-unlock-rv" style="--d:.24s">
-                <span class="cvg-unlock-icon" aria-hidden="true">
-                   <img src="assets/img/Icon3.png" alt="">
-                </span>
-                <h3 class="cvg-unlock-card-title">Fast Turnaround</h3>
-                <p class="cvg-unlock-card-text">Most website projects move from approved design to launch in 48 to 72 hours, with expedited delivery available on every plan.</p>
-                <a href="#" class="cvg-unlock-more"><span class="cvg-unlock-more-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
-                            <path d="M5 12h14M13 6l6 6-6 6" />
-                        </svg></span>Learn More</a>
-            </article>
-
-            <article class="cvg-unlock-card cvg-unlock-rv" style="--d:.36s">
-                <span class="cvg-unlock-icon" aria-hidden="true">
-                  <img src="assets/img/Icon4.png" alt="">
-                </span>
-                <h3 class="cvg-unlock-card-title">Dedicated Support</h3>
-                <p class="cvg-unlock-card-text">A dedicated account manager keeps your project organised, from the first brief to complete deployment and beyond.</p>
-                <a href="#" class="cvg-unlock-more"><span class="cvg-unlock-more-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
-                            <path d="M5 12h14M13 6l6 6-6 6" />
-                        </svg></span>Learn More</a>
-            </article>
-
-        </div>
+        <h2 class="cvg-unlock-title">
+            <span class="cvg-unlock-line">
+                <span>Solutions That Reflect</span>
+            </span>
+            <span class="cvg-unlock-line">
+                <span>Different Business Journeys</span>
+            </span>
+        </h2>
     </div>
+
+    <div class="cvg-unlock-grid-cards">
+
+        <article class="cvg-unlock-card cvg-unlock-rv" style="--d:0s">
+            <span class="cvg-unlock-icon" aria-hidden="true">
+                <img src="assets/img/play.png" alt="">
+            </span>
+
+            <h3 class="cvg-unlock-card-title">Startups &amp; New Businesses</h3>
+
+            <p class="cvg-unlock-card-text">
+                Build a credible starting point with a clear brand identity,
+                a professional website and a focused digital presence.
+            </p>
+
+            <a href="#" class="cvg-unlock-more">
+                <span class="cvg-unlock-more-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+                Learn More
+            </a>
+        </article>
+
+        <article class="cvg-unlock-card cvg-unlock-rv" style="--d:.12s">
+            <span class="cvg-unlock-icon" aria-hidden="true">
+                <img src="assets/img/Icon2.png" alt="">
+            </span>
+
+            <h3 class="cvg-unlock-card-title">eCommerce Brands</h3>
+
+            <p class="cvg-unlock-card-text">
+                Develop a more intuitive online store experience that helps
+                customers discover products and navigate the purchase journey.
+            </p>
+
+            <a href="#" class="cvg-unlock-more">
+                <span class="cvg-unlock-more-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+                Learn More
+            </a>
+        </article>
+
+        <article class="cvg-unlock-card cvg-unlock-rv" style="--d:.24s">
+            <span class="cvg-unlock-icon" aria-hidden="true">
+                <img src="assets/img/Icon3.png" alt="">
+            </span>
+
+            <h3 class="cvg-unlock-card-title">Service-Based Businesses</h3>
+
+            <p class="cvg-unlock-card-text">
+                Communicate your expertise clearly, present your services
+                effectively and make it easier for potential customers to contact you.
+            </p>
+
+            <a href="#" class="cvg-unlock-more">
+                <span class="cvg-unlock-more-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+                Learn More
+            </a>
+        </article>
+
+        <article class="cvg-unlock-card cvg-unlock-rv" style="--d:.36s">
+            <span class="cvg-unlock-icon" aria-hidden="true">
+                <img src="assets/img/Icon4.png" alt="">
+            </span>
+
+            <h3 class="cvg-unlock-card-title">Growing Organizations</h3>
+
+            <p class="cvg-unlock-card-text">
+                Bring different digital activities together through coordinated
+                branding, web development and marketing solutions.
+            </p>
+
+            <a href="#" class="cvg-unlock-more">
+                <span class="cvg-unlock-more-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+                Learn More
+            </a>
+        </article>
+
+    </div>
+</div>
+
 </section>
 <style>
-    /* =========================================================
-   CREATIVE CONVERGE — "Unlock your business" section
-   Every rule is scoped to .cvg-unlock (no :root, body or *).
-   ========================================================= */
 
     .cvg-unlock {
         --cvg-mint: #00D4A3;

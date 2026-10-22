@@ -58,118 +58,342 @@ function placeholderFaqs()
 function serviceFaqs($slug)
 {
     $faqs = [
+
         'logo-design-solutions' => [
-            ["question" => 'How long does a logo design take?', "answer" => 'Most logos are delivered in 24 to 48 hours. Starter Logo is delivered within 48 hours, and Professional Logo within 24 to 48 hours. Revisions are usually turned around within a day.'],
-            ["question" => 'How many logo concepts will I get?', "answer" => 'Starter Logo includes 3 original concepts, Professional Logo includes 6, and Premium Brand Logo includes 10. You pick your favourite and we refine it with you.'],
-            ["question" => 'What files will I receive?', "answer" => 'You get JPG and PNG files on every plan. Professional and Premium plans also include vector files (AI, EPS, PDF) that can be resized to any size for print, signs or merchandise without losing quality.'],
-            ["question" => 'Do I own the logo once it\'s finished?', "answer" => 'Yes. Once the project is paid, you get full ownership rights to the final logo. Professional and Premium plans clearly include 100% ownership rights for commercial use.'],
-            ["question" => 'What if I don\'t like the first concepts?', "answer" => 'We revise until you are happy. Starter includes 3 revisions, while Professional and Premium include unlimited revisions. Tell us what to change and our designers will rework the concepts.'],
-            ["question" => 'Can you redesign my existing logo?', "answer" => 'Yes. We can refresh an old logo while keeping the recognition you have built, or create a completely new mark if your brand has outgrown it.'],
+            [
+                "question" => 'How can Creative Converge help my business create a logo that stands out?',
+                "answer" => 'As a professional logo design company in Dallas, Creative Converge approaches logo design by considering your business, audience, competitors, and the impression you want to make. Our goal is to develop a visual identity that feels right for your brand rather than simply following popular design trends.'
+            ],
+            [
+                "question" => 'Can Creative Converge redesign my existing logo without losing brand recognition?',
+                "answer" => 'Yes. Creative Converge can refresh your existing logo while retaining recognizable elements and improving typography, proportions, colors, and overall clarity. The extent of the changes depends on what works in your current logo and what needs improvement.'
+            ],
+            [
+                "question" => 'What types of logos can I get designed by Creative Converge?',
+                "answer" => 'Creative Converge can create wordmarks, custom logos, lettermarks, symbols, combination marks, mascots, and emblems, depending on your project requirements. The right style depends on your business identity, target audience, and where the logo will be used.'
+            ],
+            [
+                "question" => 'Can Creative Converge design a logo that works across digital and print materials?',
+                "answer" => 'Yes. We can plan logo variations for websites, social profiles, business cards, packaging, and promotional materials. File formats and alternate versions should be agreed upon before the project begins to ensure your logo is practical across different platforms.'
+            ],
+            [
+                "question" => 'What should I share with Creative Converge before starting a logo design project?',
+                "answer" => 'Start with your business name, a description of what you do, your target audience, and any ideas or visual references you have. We use this information to understand your direction and establish a focused design brief.'
+            ],
         ],
+
+
         'illustration-design' => [
-            ["question" => 'What kind of illustrations do you create?', "answer" => 'We create custom illustrations for websites, apps, books, packaging, social media and marketing: characters, scenes, icons, infographics and storybook artwork.'],
-            ["question" => 'How long does an illustration take?', "answer" => 'A Basic illustration is delivered in about 72 hours, and Standard illustrations in 48 to 72 hours. Larger sets, such as a full character sheet or storybook, are scheduled based on the number of pieces.'],
-            ["question" => 'Can I use the illustrations commercially?', "answer" => 'Yes. Standard includes commercial usage rights, and Premium includes 100% ownership rights plus the source files.'],
-            ["question" => 'Which file formats do I get?', "answer" => 'Every plan includes JPG and PNG. Standard adds vector files (AI, EPS, SVG), and Premium includes print-ready and web-ready files along with the source files.'],
-            ["question" => 'Can you match my brand\'s existing style?', "answer" => 'Yes. Send us your brand colours, guidelines or examples you like, and we will create illustrations that fit your existing look.'],
-            ["question" => 'How many revisions are included?', "answer" => 'Basic includes 2 revisions. Standard and Premium include unlimited revisions until the artwork is right.'],
+            [
+                "question" => 'How can Creative Converge create illustrations that match my brand?',
+                "answer" => "Creative Converge can develop an illustration style around your brand's personality, audience, message, and intended use. Whether you need expressive characters or clean conceptual artwork, the aim is to make the visuals feel connected to your business rather than interchangeable with stock graphics."
+            ],
+            [
+                "question" => 'What kinds of custom illustrations can I request from Creative Converge?',
+                "answer" => "Depending on your needs, Creative Converge can work on character illustrations, mascots, editorial artwork, website graphics, product illustrations, explainer visuals, and marketing assets. Sharing where the illustrations will appear helps determine the right style and format."
+            ],
+            [
+                "question" => 'Can Creative Converge create illustrations for my website and social media?',
+                "answer" => "Yes. Creative Converge can plan illustrations for website sections, social posts, campaign graphics, and other digital materials. Defining the platforms and intended uses at the beginning helps establish suitable dimensions and a consistent visual style."
+            ],
+            [
+                "question" => 'Can Creative Converge illustrate an idea that is difficult to explain with words?',
+                "answer" => "That's one of the useful applications of custom illustration. Creative Converge can help translate abstract concepts, product features, processes, or stories into visuals that are easier for your audience to understand."
+            ],
+            [
+                "question" => 'What information does Creative Converge need to begin an illustration project?',
+                "answer" => "Creative Converge can get started with your concept, intended audience, key message, preferred visual references, and where the artwork will be used. If your idea is still taking shape, a discussion about the purpose of the illustrations can help establish the creative direction."
+            ],
         ],
+
+
         'web-design-solutions' => [
-            ["question" => 'How long does it take to design a website?', "answer" => 'A Basic 3-page design is delivered in 48 to 72 hours. Business and Enterprise designs depend on the number of pages and features, and we share a clear timeline in your quote.'],
-            ["question" => 'Will my website work on mobile devices?', "answer" => 'Yes. Every design is fully responsive, so it looks and works great on mobile phones, tablets and desktops.'],
-            ["question" => 'Is the website SEO friendly?', "answer" => 'Yes. The Business plan includes an SEO-friendly structure and a Google-friendly sitemap. Every design uses clean, fast-loading layouts that search engines like.'],
-            ["question" => 'Can you redesign my current website?', "answer" => 'Yes. We can give your existing site a modern new look while keeping your content, or rebuild it completely with a better structure and user experience.'],
-            ["question" => 'Do I need to provide the content and images?', "answer" => 'You can send your own text and images, or we can use stock images: 2 on Basic, 5 on Business, and as many as needed on Enterprise. We can also help structure your content.'],
-            ["question" => 'Do you offer support after the website goes live?', "answer" => 'Yes. The Business plan includes 1 month of free support, and Enterprise includes 3 months. After that, you can continue with one of our website maintenance plans.'],
+            [
+                "question" => 'How does Creative Converge approach website design for a new business?',
+                "answer" => "At Creative Converge, we start by understanding your business, your audience, and what you need your website to accomplish. That helps shape the page structure, visual direction, and user experience around your goals rather than relying on a one-size-fits-all design."
+            ],
+            [
+                "question" => 'Can Creative Converge redesign my existing website without changing my entire brand?',
+                "answer" => "Yes, a redesign doesn't always require starting from scratch. Creative Converge can help refresh your website's layout, usability, and visual presentation while retaining the brand elements that already work for your business. The right approach depends on the condition of your current site and what you want to improve."
+            ],
+            [
+                "question" => 'Can Creative Converge design a website that supports my marketing goals?',
+                "answer" => "Yes. Your website can be designed around the actions you want visitors to take, whether that's requesting a quote, booking a consultation, contacting your team, or purchasing a product. Creative Converge can align the page layouts, content hierarchy, and calls to action with those objectives."
+            ],
+            [
+                "question" => 'What does Creative Converge need from me before starting a website design project?',
+                "answer" => "It helps to share your business goals, target audience, existing website (if you have one), preferred design styles, and the features you need. If you don't have everything figured out yet, Creative Converge can use an initial project discussion to clarify the requirements and identify the next steps."
+            ],
+            [
+                "question" => 'Can Creative Converge design websites for businesses serving customers across the United States?',
+                "answer" => "Creative Converge can develop website design solutions for businesses targeting U.S. customers. The design can account for your audience, industry, content, and conversion goals, with details such as accessibility, mobile usability, and clear customer information considered throughout the project."
+            ],
         ],
+
+
         'web-developer-solutions' => [
-            ["question" => 'What technologies do you work with?', "answer" => 'We develop with Laravel, Node.js, custom PHP, Next.js, WordPress, Shopify, Magento, WooCommerce and custom CMS platforms, and we pick the right technology for your project.'],
-            ["question" => 'How long does website development take?', "answer" => 'A Starter website with up to 5 pages usually takes 1 to 2 weeks. Business and Enterprise projects depend on features and integrations, and we share a detailed timeline before work starts.'],
-            ["question" => 'Will I be able to update the website myself?', "answer" => 'Yes. Every plan includes an admin panel or CMS, so you can edit text, images and pages without any coding.'],
-            ["question" => 'Can you integrate payment gateways and third-party tools?', "answer" => 'Yes. The Business and Enterprise plans include payment gateway and third-party API integrations, such as CRMs, booking systems, email tools and shipping services.'],
-            ["question" => 'Do I get the source code?', "answer" => 'Yes. Enterprise includes full source code access, and on every plan the final code belongs to you once the project is paid.'],
-            ["question" => 'What happens after launch?', "answer" => 'Business includes 1 month of free maintenance, and Enterprise includes 3 months. After that, our website maintenance plans keep your site updated, secure and backed up.'],
+            [
+                "question" => 'How can Creative Converge help if my business needs more than a basic website?',
+                "answer" => "Creative Converge can help plan and develop more specialized digital solutions, such as custom functionality, customer portals, dashboards, and web applications, depending on the project requirements. The starting point is understanding what your business needs the website or application to accomplish."
+            ],
+            [
+                "question" => 'Can Creative Converge develop custom features for my existing website?',
+                "answer" => "Creative Converge can assess whether your existing platform and codebase can support the features you need. Depending on the setup, the solution may involve custom development, an integration, a plugin, or changes to the underlying architecture."
+            ],
+            [
+                "question" => 'How does Creative Converge determine the right technology for a website project?',
+                "answer" => "Creative Converge can evaluate your required features, expected traffic, integrations, budget, and plans for future growth before recommending a technical approach. Choosing technology around your actual needs helps avoid unnecessary complexity and limitations later."
+            ],
+            [
+                "question" => 'Can Creative Converge connect my website to third-party business tools?',
+                "answer" => "Potentially, yes. Creative Converge can assess integrations with services such as payment providers, CRM platforms, inventory systems, and external APIs. The available options depend on each provider's documentation, permissions, and technical requirements."
+            ],
+            [
+                "question" => 'What happens after Creative Converge completes my website development project?',
+                "answer" => "The handoff can cover agreed items such as testing, deployment, documentation, and guidance for managing the site. Creative Converge should also clarify whether ongoing maintenance, technical support, and future feature development are included or handled under a separate agreement."
+            ],
         ],
-        'laravel' => [
-            ["question" => 'Why choose Laravel for my web application?', "answer" => 'Laravel is a secure and well-structured PHP framework. It is ideal for custom applications such as portals, dashboards, CRMs and SaaS products that need to grow over time.'],
-            ["question" => 'Can you build a custom CRM or ERP in Laravel?', "answer" => 'Yes. Laravel Enterprise includes custom CRM or ERP systems with multi-role access control, advanced reports and analytics built around your workflow.'],
-            ["question" => 'Can you upgrade my old Laravel project?', "answer" => 'Yes. We migrate older Laravel applications to the latest version, fix outdated packages and improve performance and security along the way.'],
-            ["question" => 'Do you build APIs for mobile apps?', "answer" => 'Yes. The Business and Enterprise plans include REST API development, so your Laravel backend can power mobile apps, frontends and third-party integrations.'],
-            ["question" => 'How do you keep the application secure?', "answer" => 'We use Laravel\'s built-in protection against SQL injection, CSRF and XSS, role-based access and secure authentication. Enterprise also includes a security audit and hardening.'],
-            ["question" => 'How long does a Laravel project take?', "answer" => 'A Starter project with up to 5 modules usually takes 2 to 4 weeks. Larger systems are planned in phases with a clear timeline before we begin.'],
-        ],
-        'node-js' => [
-            ["question" => 'What is Node.js best used for?', "answer" => 'Node.js is great for fast APIs, real-time features (such as chat, live updates and notifications) and applications that handle many users at the same time.'],
-            ["question" => 'Can you build real-time chat or live features?', "answer" => 'Yes. Node Business includes real-time features with Socket.io, and Node Enterprise supports full real-time chat and streaming applications.'],
-            ["question" => 'Which databases do you use with Node.js?', "answer" => 'We work with MongoDB and MySQL on every plan, and use Redis for caching and message queues in Enterprise projects.'],
-            ["question" => 'Do you provide API documentation?', "answer" => 'Yes. Every Node.js API comes with clear documentation so your frontend or mobile team can integrate quickly.'],
-            ["question" => 'Can my app scale as my users grow?', "answer" => 'Yes. Node Enterprise includes microservices architecture, Docker and CI/CD setup, caching and load testing, so your app is ready for heavy traffic.'],
-            ["question" => 'Do you offer support after deployment?', "answer" => 'Yes. Node Business includes 1 month of free maintenance, and Enterprise includes 3 months plus 24/7 priority support.'],
-        ],
-        'custom-php-development' => [
-            ["question" => 'Why choose custom PHP instead of a CMS?', "answer" => 'Custom PHP gives you complete control. Your website or portal is built exactly around your business process, without extra plugins or features you don\'t need.'],
-            ["question" => 'Can you maintain or fix my existing PHP website?', "answer" => 'Yes. We support legacy PHP applications: fixing bugs, updating old code to newer PHP versions, and improving speed and security.'],
-            ["question" => 'Will I get an admin panel?', "answer" => 'Yes. PHP Starter includes an admin login panel, and PHP Business includes a custom admin panel with full add, edit and delete control over your data.'],
-            ["question" => 'Can you connect my website to other systems?', "answer" => 'Yes. We integrate payment gateways, CRMs, shipping services and other third-party APIs on the Business and Enterprise plans.'],
-            ["question" => 'Is a custom PHP website secure?', "answer" => 'Yes. We follow secure coding practices such as prepared queries, input validation and protected logins. PHP Enterprise also includes a full security audit and hardening.'],
-            ["question" => 'Do I own the source code?', "answer" => 'Yes. Once the project is paid, the code is yours. PHP Enterprise clearly includes full source code access.'],
-        ],
-        'next-js' => [
-            ["question" => 'Why choose Next.js for my website?', "answer" => 'Next.js websites load extremely fast and are excellent for SEO, because pages can be pre-built (SSG) or rendered on the server (SSR) before they reach the visitor.'],
-            ["question" => 'Is Next.js good for SEO?', "answer" => 'Yes. Search engines receive fully rendered pages. Every plan includes technical SEO and meta setup, and Business includes Core Web Vitals optimization.'],
-            ["question" => 'Can I edit content without a developer?', "answer" => 'Yes. Next.js Business includes headless CMS integration, so your team can update pages, blogs and images from an easy dashboard.'],
-            ["question" => 'Where will my website be hosted?', "answer" => 'We deploy to Vercel by default because it is built for Next.js, but we can also deploy to your preferred hosting or cloud provider.'],
-            ["question" => 'Can you build a full web application with Next.js?', "answer" => 'Yes. Next.js Enterprise includes full-stack applications with a database, authentication, payments and multi-language support.'],
-            ["question" => 'Can you convert my existing React site to Next.js?', "answer" => 'Yes. We can migrate a React app to Next.js to improve speed and SEO while keeping your existing design and features.'],
-        ],
-        'wordpress-development' => [
-            ["question" => 'Will I be able to update my WordPress site myself?', "answer" => 'Yes. WordPress is very easy to manage. We set up Elementor or Gutenberg so you can edit pages, blogs and images without coding.'],
-            ["question" => 'Do you use ready-made themes or custom themes?', "answer" => 'WordPress Starter customizes a premium theme. Business includes a custom theme design, and Enterprise is a fully custom theme built from scratch.'],
-            ["question" => 'Can you develop a custom WordPress plugin?', "answer" => 'Yes. WordPress Enterprise includes bespoke plugin development for features such as memberships, bookings or custom integrations.'],
-            ["question" => 'Is WordPress secure?', "answer" => 'Yes, when it is set up correctly. We apply security hardening, keep plugins to a minimum and recommend a maintenance plan for regular updates and backups.'],
-            ["question" => 'Will my WordPress website be fast?', "answer" => 'Yes. The Business and Enterprise plans include speed optimization: caching, image compression and clean code for fast loading times.'],
-            ["question" => 'Can you move my existing site to WordPress?', "answer" => 'Yes. We can migrate your content, pages and blog posts from another platform to WordPress, with redirects so you keep your search rankings.'],
-        ],
-        'shopify' => [
-            ["question" => 'How long does it take to set up a Shopify store?', "answer" => 'A Shopify Starter store is usually ready in 5 to 7 days after we receive your products and content. Custom theme stores take longer, depending on the design.'],
-            ["question" => 'Can you upload my products?', "answer" => 'Yes. Starter includes up to 25 product uploads, Business up to 100, and Enterprise unlimited products.'],
-            ["question" => 'Can you move my store from another platform to Shopify?', "answer" => 'Yes. Shopify Enterprise includes store migration of your products, customers and orders from platforms such as WooCommerce, Wix or Magento.'],
-            ["question" => 'Which payment methods can my store accept?', "answer" => 'We set up Shopify Payments, PayPal, Stripe and other gateways available in your country, plus shipping and tax settings on the Business plan.'],
-            ["question" => 'Do I need to pay for Shopify separately?', "answer" => 'Yes. Your Shopify subscription and any paid apps are billed by Shopify directly. Our price covers the design, setup and development work.'],
-            ["question" => 'Can you help increase my store\'s sales?', "answer" => 'Yes. Business includes abandoned cart recovery and basic SEO, and Enterprise includes conversion rate and checkout optimization to turn more visitors into buyers.'],
-        ],
-        'magento' => [
-            ["question" => 'Is Magento right for my business?', "answer" => 'Magento (Adobe Commerce) is best for larger stores with big catalogs, multiple stores or B2B needs. For smaller stores, Shopify or WooCommerce is usually a better fit, and we will advise honestly.'],
-            ["question" => 'Can Magento handle thousands of products?', "answer" => 'Yes. Magento is built for large catalogs. Magento Business includes up to 500 product uploads, and Enterprise includes advanced catalog and inventory setup.'],
-            ["question" => 'Do you support B2B features?', "answer" => 'Yes. Magento Enterprise includes B2B and B2C features, such as customer groups, custom pricing, quotes and bulk ordering.'],
-            ["question" => 'Can you connect Magento to my ERP or CRM?', "answer" => 'Yes. Magento Enterprise includes ERP and CRM integration so your orders, stock and customers stay in sync.'],
-            ["question" => 'Why is my Magento store slow, and can you fix it?', "answer" => 'Magento needs the right server and caching setup. Magento Business includes speed and server optimization to make your store load faster.'],
-            ["question" => 'Can you build custom Magento extensions?', "answer" => 'Yes. Business includes custom extension setup, and Enterprise includes custom module development for features your store needs.'],
-        ],
-        'woocommerce' => [
-            ["question" => 'Can you add WooCommerce to my existing WordPress site?', "answer" => 'Yes. We can turn your current WordPress website into a full online store without rebuilding the whole site.'],
-            ["question" => 'Are there monthly fees for WooCommerce?', "answer" => 'WooCommerce itself is free. You only pay for hosting, your domain and any premium plugins you choose, with no platform subscription.'],
-            ["question" => 'Can I sell subscriptions or memberships?', "answer" => 'Yes. WooCommerce Enterprise includes subscriptions and memberships, as well as an optional multi-vendor marketplace.'],
-            ["question" => 'How many products can you upload?', "answer" => 'Starter includes up to 25 products, Business up to 100, and Enterprise unlimited product uploads.'],
-            ["question" => 'Can you set up coupons, shipping and taxes?', "answer" => 'Yes. WooCommerce Business includes shipping and tax configuration, a coupon and discount setup, and checkout optimization.'],
-            ["question" => 'Will my WooCommerce store be fast and secure?', "answer" => 'Yes. Enterprise includes speed and security optimization, and our maintenance plans keep WordPress and WooCommerce updated and backed up.'],
-        ],
-        'cms-development' => [
-            ["question" => 'What is a custom CMS?', "answer" => 'A CMS (Content Management System) is the dashboard where you manage your website content. A custom CMS is built around your exact workflow, with no unnecessary features.'],
-            ["question" => 'Why not just use WordPress?', "answer" => 'WordPress is great for many sites. A custom CMS is better when you need special workflows, strict user permissions, high security or a system that fits a unique business process.'],
-            ["question" => 'Can multiple team members use the CMS?', "answer" => 'Yes. CMS Business includes multi-user access control and a content approval workflow, and Enterprise includes an advanced role and permission system.'],
-            ["question" => 'What is a headless CMS?', "answer" => 'A headless CMS stores your content and delivers it to any website, app or screen through an API. CMS Enterprise includes fully custom or headless CMS development.'],
-            ["question" => 'Can you move my content from my old platform?', "answer" => 'Yes. CMS Enterprise includes migration of your pages, posts, media and users from your old CMS into the new system.'],
-            ["question" => 'Is the CMS easy to use?', "answer" => 'Yes. We design the admin panel for non-technical users, and every plan includes a mobile responsive admin so you can manage content anywhere.'],
-        ],
-        'website-maintenance' => [
-            ["question" => 'What is included in website maintenance?', "answer" => 'Core, theme and plugin updates, off-site backups, uptime monitoring, security checks and content edits. The frequency and hours depend on your plan.'],
-            ["question" => 'How often are backups taken?', "answer" => 'Basic Care takes weekly backups, Business Care daily backups, and Premium Care real-time daily backups, all stored off-site.'],
-            ["question" => 'What if my website gets hacked?', "answer" => 'Business Care includes security monitoring and malware scans, and Premium Care includes advanced security and malware removal to clean and restore your site.'],
-            ["question" => 'Can I cancel my maintenance plan anytime?', "answer" => 'Yes. Plans are billed monthly in advance, and you can cancel before your next billing date.'],
-            ["question" => 'Do you maintain websites you didn\'t build?', "answer" => 'Yes. We maintain websites built by other developers. We start with a quick health check so we know the site before taking it over.'],
-            ["question" => 'What if I need more edit hours than my plan includes?', "answer" => 'Extra work is billed at our hourly rate, or you can move up to a higher plan with more included hours.'],
-        ],
+
+
+'laravel' => [
+    [
+        "question" => 'Can Creative Converge build a custom web application using Laravel?',
+        "answer" => "Creative Converge can assess Laravel for projects that need custom business logic, user accounts, dashboards, portals, or database-driven features. Whether it's the right framework depends on your requirements, existing systems, hosting environment, and long-term plans."
+    ],
+    [
+        "question" => 'Can Creative Converge add custom features to my existing Laravel application?',
+        "answer" => "Creative Converge can review your current application and determine how new functionality could be added. The work may involve extending existing features, creating API endpoints, connecting external services, or addressing issues in the current codebase."
+    ],
+    [
+        "question" => 'Can Creative Converge connect a Laravel application to third-party software?',
+        "answer" => "Creative Converge can evaluate integrations with compatible APIs, payment providers, CRM tools, and other business services. The implementation depends on the external platform's documentation, authentication requirements, and the data that needs to be exchanged."
+    ],
+    [
+        "question" => 'Can Creative Converge help upgrade or troubleshoot an older Laravel project?',
+        "answer" => "Creative Converge can assess the existing code, framework version, dependencies, and compatibility concerns before recommending a path forward. Depending on the condition of the application, that could mean fixing specific issues, upgrading components, or planning a larger refactor."
+    ],
+    [
+        "question" => 'What should I consider when planning a Laravel project with Creative Converge?',
+        "answer" => "Think about the core features, user roles, data requirements, integrations, security expectations, and future maintenance. Creative Converge can use these details to establish the project scope and identify technical decisions that need to be made before development."
+    ],
+],
+
+
+'node-js' => [
+    [
+        "question" => 'Can Creative Converge use Node.js to build the backend for my web application?',
+        "answer" => "Creative Converge can evaluate Node.js for backend services, APIs, data processing, and applications that need to communicate with other systems. The choice should depend on your application's workload, integrations, infrastructure, and development requirements."
+    ],
+    [
+        "question" => 'Can Creative Converge develop real-time features using Node.js?',
+        "answer" => "Node.js can support features such as live messaging, notifications, collaborative tools, and real-time updates when paired with suitable technologies. Creative Converge can assess the expected user load, data flow, and reliability requirements before planning the implementation."
+    ],
+    [
+        "question" => 'Can Creative Converge build an API using Node.js for my website or mobile app?',
+        "answer" => "Creative Converge can assess your data and functionality requirements and plan API endpoints that allow different applications to communicate. Authentication, access permissions, error handling, and data validation should all be considered as part of the design."
+    ],
+    [
+        "question" => 'Can Creative Converge integrate a Node.js application with my existing database or software?',
+        "answer" => "Creative Converge can review your current systems and determine whether compatible database connections, APIs, or other integration methods are available. The final approach depends on the systems involved and the security and performance requirements."
+    ],
+    [
+        "question" => 'How can Creative Converge help maintain a Node.js application after development?',
+        "answer" => "Ongoing work may include dependency updates, security reviews, automated testing, error monitoring, and performance checks. Creative Converge can help define a maintenance scope based on the application's complexity and how it supports your business operations."
+    ],
+],
+
+
+'custom-php-development' => [
+    [
+        "question" => 'Can Creative Converge build a custom PHP solution for my business?',
+        "answer" => "Creative Converge can assess PHP for websites, database-driven applications, business portals, and specialized functionality that doesn't fit your existing platform. The recommended approach depends on the features you need, your current systems, and how the application will be maintained."
+    ],
+    [
+        "question" => 'Can Creative Converge add new functionality to my existing PHP website?',
+        "answer" => "Creative Converge can review your current codebase and determine how new features could be introduced. Depending on the site's structure, that may involve adding functionality, connecting external services, improving existing workflows, or addressing technical issues."
+    ],
+    [
+        "question" => 'Is custom PHP development from Creative Converge different from building a WordPress website?',
+        "answer" => "Yes. WordPress provides a ready-made content management system built with PHP, while custom PHP development can be used to create more tailored application logic and workflows. Creative Converge can help determine which approach best fits your project instead of adding unnecessary complexity."
+    ],
+    [
+        "question" => 'Can Creative Converge connect a custom PHP application to my business software?',
+        "answer" => "Creative Converge can assess integrations with compatible APIs, databases, payment providers, and other business systems. Feasibility depends on the software involved, available access, security requirements, and the data that needs to be exchanged."
+    ],
+    [
+        "question" => 'Can Creative Converge modernize an older PHP website instead of rebuilding it?',
+        "answer" => "That depends on the code quality, PHP version, dependencies, security concerns, and required changes. Creative Converge can review the existing application and help compare an upgrade, targeted improvements, or a full rebuild before recommending a direction."
+    ],
+],
+
+
+'next-js' => [
+    [
+        "question" => 'Can Creative Converge build a custom website using Next.js?',
+        "answer" => "Creative Converge can assess Next.js for websites and web applications that need React-based interfaces, flexible rendering options, and structured routing. The framework should be selected based on your site's content, interactive features, integrations, and deployment requirements."
+    ],
+    [
+        "question" => 'Can Creative Converge use Next.js to improve my website\'s search visibility?',
+        "answer" => "Next.js offers rendering options that can help search engines access page content, but the framework alone doesn't guarantee higher rankings. Creative Converge can consider technical SEO, page structure, content quality, metadata, and performance as part of the website's overall approach."
+    ],
+    [
+        "question" => 'Can Creative Converge connect a Next.js website to a CMS or external API?',
+        "answer" => "Yes, provided the CMS or service supports a compatible integration method. Creative Converge can plan how content and data will move between systems, including authentication, update workflows, and how the website responds when a service is unavailable."
+    ],
+    [
+        "question" => 'Can Creative Converge use Next.js for an e-commerce website?',
+        "answer" => "Next.js can support custom storefronts and commerce experiences connected to a suitable commerce backend. Creative Converge can assess your product catalog, checkout requirements, payment integrations, and content needs to determine whether this approach fits your store."
+    ],
+    [
+        "question" => 'Is Next.js the right choice for every website project at Creative Converge?',
+        "answer" => "Not necessarily. A simpler website may be better served by a content management system or another platform, while a more interactive application may benefit from Next.js. Creative Converge can compare the options against your actual needs before settling on a technology."
+    ],
+],
+
+
+'wordpress-development' => [
+    [
+        "question" => 'Can Creative Converge build a custom WordPress website instead of using a standard theme?',
+        "answer" => "Creative Converge can assess a custom WordPress design and development approach based on your branding, page structure, and functionality needs. The goal is to create a site that fits your business while keeping content management practical for your team."
+    ],
+    [
+        "question" => 'Can Creative Converge redesign my current WordPress website?',
+        "answer" => "Yes, Creative Converge can review your current site's design, usability, plugins, and technical setup before proposing changes. Depending on the site's condition, the work might involve a redesign, theme customization, performance improvements, or a more extensive rebuild."
+    ],
+    [
+        "question" => 'Can Creative Converge add e-commerce or booking features to a WordPress website?',
+        "answer" => "WordPress can support features such as online stores, appointment booking, memberships, and forms through suitable plugins or custom development. Creative Converge can assess compatibility, required integrations, and ongoing maintenance needs before choosing an implementation."
+    ],
+    [
+        "question" => 'Will Creative Converge make it easy for me to manage my WordPress content?',
+        "answer" => "Creative Converge can configure the editing experience around your site's content and the tasks your team performs most often. The project handoff can cover how to update supported pages, publish content, and manage the relevant website features."
+    ],
+    [
+        "question" => 'Can Creative Converge help improve the speed and security of my WordPress site?',
+        "answer" => "Creative Converge can review factors such as hosting, image sizes, caching, plugins, software versions, and configuration. The appropriate improvements depend on the site's current condition, and performance or security results should be assessed rather than guaranteed in advance."
+    ],
+],
+
+
+'shopify' => [
+    [
+        "question" => 'Do you provide custom Shopify store development?',
+        "answer" => "Yes, we provide custom Shopify store development tailored to your brand identity, products, and business goals. From storefront design to specialized functionality, we help create a shopping experience that reflects your brand and serves your customers."
+    ],
+    [
+        "question" => 'Can you migrate my online store to Shopify?',
+        "answer" => "Yes, we can help migrate your existing online store from another eCommerce platform to Shopify. Depending on your current setup, migration may include products, customer records, order history, website content, and compatible store functionality."
+    ],
+    [
+        "question" => 'Can you integrate payment gateways and shipping options into Shopify?',
+        "answer" => "Yes, we can help configure compatible payment gateways, shipping methods, delivery rates, and other essential store features. Available options depend on your business location, Shopify plan, preferred providers, and regional availability."
+    ],
+    [
+        "question" => 'Can you improve my Shopify store\'s speed and performance?',
+        "answer" => "Yes, Shopify speed optimization can include image compression, theme improvements, app reviews, and code optimization. We identify potential performance issues and recommend changes to help your store load more efficiently."
+    ],
+    [
+        "question" => 'How much do Shopify development services cost?',
+        "answer" => "The cost depends on your store's design, required functionality, product catalog, third-party integrations, and customization needs. We review your project requirements to recommend a suitable scope and provide a tailored estimate."
+    ],
+],
+
+
+'magento' => [
+    [
+        "question" => 'What are Magento development services?',
+        "answer" => "Magento development services help businesses build, customize, and manage eCommerce websites using Magento, now known as Adobe Commerce. These services include store development, theme customization, extension integration, performance optimization, and ongoing maintenance."
+    ],
+    [
+        "question" => 'Why should I choose Magento for my eCommerce store?',
+        "answer" => "Magento is a flexible eCommerce platform that supports customizable storefronts, extensive product catalogs, and complex business requirements. It can be a good choice for businesses looking for greater control over their online store's functionality and customer experience."
+    ],
+    [
+        "question" => 'Do you provide custom Magento website development?',
+        "answer" => "Yes, we provide custom Magento website development tailored to your business goals, product range, and customer needs. From storefront design to specialized functionality, we help create an online store that reflects your brand and supports your operations."
+    ],
+    [
+        "question" => 'Can you redesign or upgrade my existing Magento store?',
+        "answer" => "Yes, we can help redesign your existing Magento store, improve its user experience, update its functionality, and address performance issues. The recommended approach depends on your current Magento version, store configuration, and business requirements."
+    ],
+    [
+        "question" => 'Can you migrate my online store to Magento?',
+        "answer" => "Yes, Magento migration services can help move your store from another eCommerce platform to Magento or Adobe Commerce. Depending on your existing setup, migration may include products, customer records, order history, website content, and selected functionality."
+    ],
+],
+
+
+'woocommerce' => [
+    [
+        "question" => 'Why should I choose WooCommerce for my online store?',
+        "answer" => "WooCommerce offers flexibility, extensive customization options, and integration with the WordPress ecosystem. It's a suitable option for businesses that want control over their store's design, products, content, and functionality."
+    ],
+    [
+        "question" => 'Can you redesign or improve my existing WooCommerce store?',
+        "answer" => "Yes, we can help redesign your WooCommerce store, improve its navigation, update its layout, and enhance its functionality. We assess your existing website to identify improvements that can make the shopping experience more intuitive."
+    ],
+    [
+        "question" => 'Can you migrate my existing online store to WooCommerce?',
+        "answer" => "Yes, we can help migrate your online store from another eCommerce platform to WooCommerce. Depending on your current setup, the process may include transferring products, customer information, order records, website content, and relevant store functionality."
+    ],
+    [
+        "question" => 'Can you integrate payment gateways into my WooCommerce store?',
+        "answer" => "Yes, we can integrate compatible payment gateways to help customers complete purchases securely and conveniently. Available options depend on your location, preferred payment provider, business requirements, and plugin compatibility."
+    ],
+    [
+        "question" => 'Is WooCommerce suitable for mobile shopping?',
+        "answer" => "Yes, we can develop or optimize your WooCommerce store for mobile phones, tablets, and desktops. Responsive design helps customers browse products, explore categories, and complete purchases across different screen sizes."
+    ],
+],
+
+
+'cms-development' => [
+    [
+        "question" => 'Can Creative Converge build a CMS website that my team can update without coding?',
+        "answer" => "Creative Converge can plan a content management system that lets authorized team members edit supported content through an administrative interface. The setup can be tailored around the types of pages, posts, images, and other information your business needs to manage."
+    ],
+    [
+        "question" => 'Which content management system should I choose with Creative Converge?',
+        "answer" => "The right CMS depends on your publishing needs, editing workflow, integrations, technical resources, and budget. Creative Converge can compare suitable options, including WordPress and headless CMS platforms, based on how your team will use the system."
+    ],
+    [
+        "question" => 'Can Creative Converge customize a CMS to match my website\'s design and features?',
+        "answer" => "Many CMS platforms support custom templates, content types, fields, and integrations. Creative Converge can assess which customizations are practical for your selected platform while keeping the content editing process manageable."
+    ],
+    [
+        "question" => 'Can Creative Converge migrate my existing website content into a new CMS?',
+        "answer" => "Creative Converge can evaluate the source website and plan the transfer of eligible pages, images, metadata, and other content. The scope depends on the current platform, data structure, and whether URLs or content formats need to change."
+    ],
+    [
+        "question" => 'Can Creative Converge help maintain my CMS after the website launches?',
+        "answer" => "A CMS may need platform updates, access-control reviews, backups, plugin or integration checks, and troubleshooting. Creative Converge can discuss ongoing maintenance options and define which responsibilities are included in your support arrangement."
+    ],
+],
+
+    
+'website-maintenance' => [
+    [
+        "question" => 'What website maintenance services can I discuss with Creative Converge?',
+        "answer" => "Depending on your website and agreed scope, Creative Converge can assess needs such as software updates, backups, security checks, bug fixes, performance reviews, and technical troubleshooting. The maintenance plan should reflect your platform and the importance of the site to your business."
+    ],
+    [
+        "question" => 'Can Creative Converge maintain a website that another developer built?',
+        "answer" => "Creative Converge can first review the existing website, its technology, hosting setup, and any available documentation. That assessment helps identify potential risks and determine what information or access is needed before maintenance work can begin."
+    ],
+    [
+        "question" => 'Can Creative Converge help fix website errors or broken functionality?',
+        "answer" => "Creative Converge can investigate issues such as broken forms, layout problems, malfunctioning features, and compatibility errors. The appropriate fix depends on the underlying cause, so some issues may require a technical review before an estimate can be provided."
+    ],
+    [
+        "question" => 'How can Creative Converge help keep my website secure and reliable?',
+        "answer" => "Creative Converge can help establish maintenance practices such as updates, backups, monitoring, and access reviews, depending on the support scope. These measures reduce certain risks, but no maintenance plan can guarantee complete protection against every security issue or outage."
+    ],
+    [
+        "question" => 'What should I confirm before choosing a website maintenance plan from Creative Converge?',
+        "answer" => "Ask which updates, fixes, backups, and monitoring tasks are covered, how requests are handled, and what happens when an issue falls outside the agreement. Creative Converge should clearly distinguish routine maintenance from new development and larger repair projects."
+    ],
+],
+
         'branding' => [
             ["question" => 'What is included in a branding package?', "answer" => 'Depending on the plan: logo design, brand colours and fonts, stationery, a social media kit, and in higher plans a full brand style guide, marketing collateral and packaging design.'],
             ["question" => 'What is a brand style guide?', "answer" => 'It is a document that explains how to use your logo, colours, fonts and imagery, so your brand looks the same everywhere. It is included in the Professional and Premium plans.'],
@@ -224,36 +448,38 @@ function serviceFaqs($slug)
 
 $services = [
 
+
     [
         "title" => "Logo Design",
-        "mata-title" => "Logo Design Solutions | Your Brand Name",
-        "mata-description" => "Professional logo design solutions for your business.",
+        "meta-title" => "Professional Logo Design Services | Creative Converge",
+        "meta-description" => "Build a memorable brand identity with professional logo design services, including custom logos, redesigns, typography, color selection, and brand-ready files.",
         "slug" => "logo-design-solutions",
-        "description" => "Professional logo design solutions for your business.",
-        "subtitle" => "Professional logo design solutions for your business.",
+        "description" => "Your logo is more than decoration. We create distinctive visual identities that reflect your business, connect with your audience, and grow with your brand.",
+        "subtitle" => "Your Logo Is Not a Decoration",
+
         "image" => "logo-design.jpg",
         "bannerImage" => "assets/img/banner-logo-design-baner.webp",
+
         "sub_services" => [],
-        "listTitle" => "Our Logo Design Services include:",
+
+        "listTitle" => "Our Logo Design Services Include:",
         "list" => [
             "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
+            "Wordmark & Lettermark Design",
+            "Symbol & Icon Design",
+            "Logo Redesign & Refinement",
+            "Color & Typography Selection",
+            "Logo Variations & Formats",
+            "Brand-Ready File Delivery",
         ],
+
         "introImages" => [
             "assets/img/logo-design-solutions-service-image.png",
         ],
 
-        "introTitle" => "Serving Millions of Brands Worldwide",
-        "introText" => "A logo is the first impression of your brand. We specialize in designing custom logos that reflect your business's identity and connect with your target audience. Whether you're launching a new company or rebranding, our logo design solutions create symbols that leave a lasting impact.",
-        "listTitle" => "Our Logo Design Services include:",
-        "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
-        ],
+        "introTitle" => "Looking Good Is Easy. Looking Like You Is the Challenge.",
+
+        "introText" => "Before a single word is read, your logo should convey who you are. Instead of creating pretty marks, our professional logo designers develop visual identities based on audience psychology, brand positioning, research, and long-term scalability. A logo can be stylish and still say nothing about the business behind it. We explore ideas, shapes, typography, and visual details to find the right balance between personality, purpose, and recognition. The result should work beautifully on your website, business cards, product labels, and even a small profile image. Looking for affordable logo design near you? Creative Converge delivers thoughtful, professional logo design solutions built around your brand.",
         "introImages" => [
             "assets/img/logo-design-solutions-service-image.png",
         ],
@@ -345,22 +571,29 @@ $services = [
         "faqItems" => serviceFaqs('logo-design-solutions'),
     ],
 
+
     [
         "title" => "Illustration Design",
-        "mata-title" => "title",
-        "mata-description" => "Discription",
+        "mata-title" => "Custom Illustration Design Services | Creative Converge",
+        "mata-description" => "Bring ideas to life with custom digital illustrations, character and mascot design, editorial artwork, product visuals, and marketing illustrations.",
         "slug" => "illustration-design",
-        "description" => "Creative illustration design for brands and businesses.",
+        "description" => "Creative illustration design that brings concepts, stories, and brand personalities to life through original visuals tailored to your audience and purpose.",
+        "subtitle" => "Give Your Ideas a Look, a Personality, and a Life of Their Own.",
         "image" => "illustration.jpg",
         "bannerImage" => "assets/img/banner-illustration-design.webp",
         "sub_services" => [],
-        "listTitle" => "Our Logo Design Services include:",
+        "listTitle" => "Our Illustration Design Services Include:",
         "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
+            "Custom Digital Illustrations",
+            "Brand & Commercial Illustrations",
+            "Character & Mascot Design",
+            "Editorial & Concept Illustrations",
+            "Product & Explainer Illustrations",
+            "Website & App Illustrations",
+            "Marketing & Social Media Illustrations",
         ],
+        "introTitle" => "Give Your Ideas a Look, a Personality, and a Life of Their Own.",
+        "introText" => "Some ideas are easier to understand when you can see them. Our illustration work brings concepts, stories, and brand personalities to life through original visuals created with your audience and purpose in mind. From expressive characters to detailed editorial artwork, every illustration is designed to communicate something worth remembering.",
         "introImages" => [
             "assets/gif/illustration-design-small.gif",
         ],
@@ -397,22 +630,28 @@ $services = [
         "faqItems" => serviceFaqs('illustration-design'),
     ],
 
+
     [
         "title" => "Web Design",
-        "mata-title" => "title",
-        "mata-description" => "Discription",
+        "mata-title" => "Professional Web Design | Creative Converge",
+        "mata-description" => "Creative Converge designs user-friendly, responsive websites with thoughtful UI/UX, custom layouts, landing pages, e-commerce experiences, and website redesign services.",
         "slug" => "web-design-solutions",
-        "description" => "Your website is your digital storefront. We offer professional web design solutions that ensure your website is visually appealing, user-friendly, and optimized for all devices. From concept to launch, our designs focus on delivering seamless navigation and a positive user experience.",
+        "description" => "Your website has a job to do. It needs to tell your story, earn attention, and make the next step feel natural. At Creative Converge, we bring brand thinking, visual direction, and user experience together to create websites with a clear point of view.",
+        "subtitle" => "From First Click to Lasting Impression, We Design for the Way People Think and Browse.",
         "image" => "web-design.jpg",
         "bannerImage" => "assets/img/banner-web-design.webp",
         "sub_services" => [],
-        "listTitle" => "Our Logo Design Services include:",
+        "listTitle" => "Our Web Design Services Include:",
         "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
+            "Custom Website Design",
+            "UI/UX Design & User Journey Planning",
+            "Responsive Web Design",
+            "Landing Page Design",
+            "E-commerce Website Design",
+            "Website Redesign & Visual Refresh",
         ],
+        "introTitle" => "From First Click to Lasting Impression, We Design for the Way People Think and Browse.",
+        "introText" => "A great website needs to do more than look good. It should make your business easy to understand, help visitors find what they need, and give them a reason to take the next step. We bring together visual design, user experience, and thoughtful layouts to create websites that feel right for your brand and work for your audience.",
         "introImages" => [
             "assets/img/web-design.jpg",
         ],
@@ -527,22 +766,25 @@ $services = [
                 "Content Management System (Custom)",
             ]),
         ],
-        "faqItems" => serviceFaqs('web-design-solutions'),
+        "faqItems" => serviceFaqs(''),
     ],
     [
         "title" => "Web Development ",
         "mata-title" => "Web Developer Solutions | Your Brand Name",
         "mata-description" => "Custom website development using modern technologies.",
         "slug" => "web-developer-solutions",
-        "description" => "Custom website development using modern technologies.",
+        "description" => "From business websites to more complex digital platforms, we turn designs and ideas into working digital experiences. We focus on clean implementation, practical functionality, responsive performance, and the features your business needs.",
         "image" => "web-development.jpg",
         "bannerImage" => "assets/img/banner-web-development.webp",
         "listTitle" => "Our Logo Design Services include:",
         "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
+            "Custom Website Development",
+            "eCommerce Development",
+            "CMS & WordPress Development",
+            "Custom Web Applications",
+            "Web Portal Development",
+            "API Integration & Third-Party Connectivity",
+            "Website Maintenance & Technical Support",
         ],
         "introImages" => [
             "assets/gif/web-development.gif",
@@ -662,25 +904,29 @@ $services = [
 
         "sub_services" => [
 
+
             [
                 "title" => "Laravel",
-                "mata-title" => "Laravel Web Development Services | Your Brand Name",
-                "mata-description" => "Custom Laravel web development solutions for scalable and secure web applications.",
+                "mata-title" => "Laravel Development Services in Dallas | Creative Converge",
+                "mata-description" => "Creative Converge provides custom Laravel development services, including web applications, API integrations, security, performance optimization, maintenance, and upgrades.",
                 "slug" => "laravel",
-                "description" => "Custom Laravel web development solutions for scalable and secure web applications.",
-                "subtitle" => "Custom Laravel web development solutions for scalable and secure web applications.",
+                "description" => "A Laravel development agency in Dallas should be built on a foundation your team can understand and extend. Our Laravel development services use the framework’s structured approach to help organize application logic and create tailored solutions for your business workflows.",
+                "subtitle" => "Laravel Development Services Built Around Your Business Needs",
                 "image" => "laravel.jpg",
                 "bannerImage" => "assets/img/banner-laravel.webp",
                 "sub_services" => [],
-                "introTitle" => "Scalable & Secure Laravel Web Development",
-                "introText" => "Laravel is a powerful PHP framework known for its elegant syntax and robust architecture. We build highly custom, secure, and scalable web applications tailored to your business workflow.",
-                "listTitle" => "Our Laravel Development Services include:",
+                "introTitle" => "Laravel Development Services Built Around Your Business Needs",
+                "introText" => "When your business outgrows basic website functionality, you need a solution that can handle more complex requirements without making everyday operations harder. Creative Converge offers custom Laravel web application development services for businesses that need custom web applications, reliable backend systems, and features built to the way they operate.",
+                "listTitle" => "Our Laravel Development Services Include:",
                 "list" => [
-                    "Custom Laravel Application Development",
-                    "Laravel API & RESTful Service Integration",
-                    "Laravel CRM & ERP System Building",
-                    "Migration & Upgrade to Latest Laravel Version",
+                    "Custom Laravel Development",
+                    "Laravel Web Application Development",
+                    "Laravel API Development & Integration",
+                    "Laravel Security & Authentication",
+                    "Laravel Performance Optimization",
+                    "Laravel Maintenance & Upgrades",
                 ],
+
                 "introImages" => "assets/gif/laravel-development.gif",
                 "portfolioLabel" => "Laravel",
                 "portfolio" => portfolioImgs('laravel'),
@@ -718,25 +964,29 @@ $services = [
                 "faqItems" => serviceFaqs('laravel'),
             ],
 
-            [
-                "title" => "Node JS",
-                "mata-title" => "Node JS Development Services | Your Brand Name",
-                "mata-description" => "High-performance Node JS backend development services for fast and scalable applications.",
-                "slug" => "node-js",
-                "description" => "High-performance Node JS backend development services for fast and scalable applications.",
-                "subtitle" => "High-performance Node JS backend development services for fast and scalable applications.",
-                "image" => "node-js.jpg",
-                "bannerImage" => "assets/img/banner-nodejs.webp",
-                "sub_services" => [],
-                "introTitle" => "Fast & Real-Time Node JS Web Solutions",
-                "introText" => "Node JS enables non-blocking, event-driven web applications designed for high performance. We create scalable backends, real-time chat applications, and lightning-fast APIs.",
-                "listTitle" => "Our Node JS Development Services include:",
-                "list" => [
-                    "Real-Time Web Application Development",
-                    "Node.js Microservices Architecture",
-                    "RESTful API & GraphQL Integration",
-                    "Backend Development & Optimization",
-                ],
+           
+[
+    "title" => "Node.js Development",
+    "mata-title" => "Node.js Development Services in Dallas | Creative Converge",
+    "mata-description" => "Creative Converge provides custom Node.js development services, including backend applications, API development, database integration, security, performance optimization, and maintenance.",
+    "slug" => "node-js",
+    "description" => "As a Node.js development agency in Dallas, we create server-side applications that support your business needs with a practical architecture and a clear plan for future changes.",
+    "subtitle" => "Node.js Development Services for Fast, Reliable Web Applications",
+    "image" => "node-js.jpg",
+    "bannerImage" => "assets/img/banner-node-js.webp",
+    "sub_services" => [],
+    "introTitle" => "Node.js Development Services for Fast, Reliable Web Applications",
+    "introText" => "When your application needs to handle frequent requests, exchange data in real time, or support growing user activity, the technology behind it matters. Creative Converge delivers custom Node.js application development services for businesses that need responsive applications, efficient server-side processing, and dependable integrations.",
+    "listTitle" => "Our Node.js Development Services Include:",
+    "list" => [
+        "Custom Node.js Development",
+        "Practical Application Development",
+        "Node.js API Development",
+        "Backend Architecture & Database Integration",
+        "Node.js Security & Authentication",
+        "Node.js Performance & Maintenance",
+    ],
+
                 "introImages" => "assets/gif/why-nodejs.gif",
                 "portfolioLabel" => "Node JS",
                 "portfolio" => portfolioImgs('nodejs'),
@@ -774,25 +1024,29 @@ $services = [
                 "faqItems" => serviceFaqs('node-js'),
             ],
 
-            [
-                "title" => "Custom PHP Development",
-                "mata-title" => "Custom PHP Development Services | Your Brand Name",
-                "mata-description" => "Tailor-made PHP development services to build custom dynamic websites and dynamic applications.",
-                "slug" => "custom-php-development",
-                "description" => "Tailor-made PHP development services to build custom dynamic websites and dynamic applications.",
-                "subtitle" => "Tailor-made PHP development services to build custom dynamic websites and dynamic applications.",
-                "image" => "custom-php.jpg",
-                "bannerImage" => "assets/img/banner-custom-php.webp",
-                "sub_services" => [],
-                "introTitle" => "Tailor-Made Dynamic PHP Solutions",
-                "introText" => "Get complete control over your web functionality with custom PHP development. We create tailor-made, database-driven web applications tailored precisely to your business needs.",
-                "listTitle" => "Our Custom PHP Services include:",
-                "list" => [
-                    "Custom PHP Web Portal Development",
-                    "Database Design & MySQL Integration",
-                    "Legacy PHP Application Maintenance",
-                    "Third-Party API Integration",
-                ],
+           
+[
+    "title" => "Custom PHP Development",
+    "mata-title" => "Custom PHP Development Services in Dallas | Creative Converge",
+    "mata-description" => "Creative Converge provides custom PHP development services, including web applications, API integrations, security, maintenance, upgrades, and code optimization.",
+    "slug" => "custom-php-development",
+    "description" => "As a top-class custom PHP development agency in Dallas, we shape website features and application logic around your requirements, with an emphasis on practical functionality and code your team can maintain.",
+    "subtitle" => "Custom PHP Development That Fits the Way Your Business Works",
+    "image" => "custom-php.jpg",
+    "bannerImage" => "assets/img/banner-custom-php.webp",
+    "sub_services" => [],
+    "introTitle" => "Custom PHP Development That Fits the Way Your Business Works",
+    "introText" => "When readily available software can't handle your requirements, a customized solution can make all the difference. Creative Converge provides custom PHP development services for businesses that need tailored functionality, smoother workflows, and greater control over their web applications.",
+    "listTitle" => "Our Custom PHP Development Services Include:",
+    "list" => [
+        "Custom PHP Web Development",
+        "PHP Application Development",
+        "PHP API Development & Integration",
+        "PHP Security & Maintenance",
+        "PHP Upgrades & Feature Enhancements",
+        "PHP Code Optimization & Troubleshooting",
+    ],
+
                 "introImages" => "assets/gif/laravel-development.gif",
 
                 "portfolioLabel" => "Custom PHP",
@@ -831,25 +1085,30 @@ $services = [
                 "faqItems" => serviceFaqs('custom-php-development'),
             ],
 
-            [
-                "title" => "Next.js",
-                "mata-title" => "Next.js Web Development Services | Your Brand Name",
-                "mata-description" => "Blazing-fast Next.js React frontend framework development for SEO-friendly websites.",
-                "slug" => "next-js",
-                "description" => "Blazing-fast Next.js React frontend framework development for SEO-friendly websites.",
-                "subtitle" => "Blazing-fast Next.js React frontend framework development for SEO-friendly websites.",
-                "image" => "next-js.jpg",
-                "bannerImage" => "assets/img/banner-nextjs.webp",
-                "sub_services" => [],
-                "introTitle" => "Lightning-Fast SEO-Optimized Next.js Websites",
-                "introText" => "Next.js delivers dynamic Server-Side Rendering (SSR) and Static Site Generation (SSG) for unmatched speed and search engine visibility. Experience modern web development with optimal frontend performance.",
-                "listTitle" => "Our Next.js Development Services include:",
-                "list" => [
-                    "Server-Side Rendered (SSR) Web Applications",
-                    "Static Site Generation (SSG) & Jamstack Development",
-                    "Headless CMS Integration with Next.js",
-                    "Full-Stack Next.js React Applications",
-                ],
+
+[
+    "title" => "Next.js Development",
+    "mata-title" => "Next.js Development Services | Creative Converge",
+    "mata-description" => "Creative Converge builds modern Next.js websites and web applications with efficient rendering, interactive experiences, API integrations, headless CMS connectivity, and ongoing maintenance.",
+    "slug" => "next-js",
+    "description" => "At Creative Converge, we use Next.js to build modern web experiences with thoughtful architecture, efficient rendering, and the flexibility to support evolving business needs.",
+    "subtitle" => "Built for the Experience You Want to Deliver.",
+    "image" => "next-js.jpg",
+    "bannerImage" => "assets/img/banner-nextjs.webp",
+    "sub_services" => [],
+    "introTitle" => "Built for the Experience You Want to Deliver.",
+    "introText" => "The challenge isn't simply getting a website online. It's making sure the right content reaches users efficiently, pages respond as expected, and new functionality doesn't turn into a technical headache down the road.",
+    "listTitle" => "What We Can Build With Next.js:",
+    "list" => [
+        "Custom Next.js Development",
+        "High-Performance Websites",
+        "Server-Side & Static Rendering",
+        "Interactive Web Applications",
+        "API & Backend Integration",
+        "Headless CMS Integration",
+        "Ongoing Improvements & Maintenance",
+    ],
+
                 "introImages" => "assets/gif/why-nextjs.gif",
                 "portfolioLabel" => "Next.js",
                 "portfolio" => portfolioImgs('nextjs'),
@@ -858,7 +1117,7 @@ $services = [
                 //         "Up to 5 Page Website",
                 //         "Static Site Generation (SSG)",
                 //         "Tailwind CSS UI",
-                //         "Technical SEO & Meta Setup",
+                //         "Technical SEO & Meta Setup",web-design-solutions
                 //         "Mobile Responsive",
                 //         "Vercel Deployment",
                 //     ]),
@@ -887,25 +1146,27 @@ $services = [
                 "faqItems" => serviceFaqs('next-js'),
             ],
 
-            [
-                "title" => "WordPress Development",
-                "mata-title" => "Custom WordPress Development Services | Your Brand Name",
-                "mata-description" => "Custom WordPress theme, plugin, and website development tailored for your brand.",
-                "slug" => "wordpress-development",
-                "description" => "Custom WordPress theme, plugin, and website development tailored for your brand.",
-                "subtitle" => "Custom WordPress theme, plugin, and website development tailored for your brand.",
-                "image" => "wordpress-development.jpg",
-                "bannerImage" => "assets/img/banner-wordpress.webp",
-                "sub_services" => [],
-                "introTitle" => "Powerful & User-Friendly WordPress Websites",
-                "introText" => "WordPress powers a massive portion of the web. We build custom themes, bespoke plugins, and flexible, easy-to-manage sites designed for fast loading times and great content management.",
-                "listTitle" => "Our WordPress Services include:",
-                "list" => [
-                    "Custom WordPress Theme Design & Coding",
-                    "Bespoke WordPress Plugin Development",
-                    "Elementor & Gutenberg Page Builder Setups",
-                    "WordPress Speed Optimization & Security",
-                ],
+          
+[
+    "title" => "WordPress Development",
+    "mata-title" => "Custom WordPress Development Services | Creative Converge",
+    "mata-description" => "Creative Converge builds custom WordPress websites with scalable themes, performance and SEO optimization, clean code, easy content management, and security best practices.",
+    "slug" => "wordpress-development",
+    "description" => "Your website should do more than look good; it should make running your business easier. Creative Converge is a WordPress development company that builds websites around your goals, your audience, and the way you work.",
+    "subtitle" => "WordPress Websites Built to Work as Hard as You Do.",
+    "image" => "wordpress-development.jpg",
+    "bannerImage" => "assets/img/banner-wordpress.webp",
+    "sub_services" => [],
+    "introTitle" => "Your Website Should Work as Hard as You Do.",
+    "introText" => "WordPress gives you flexibility, but flexibility without strategy can quickly become complicated. We build WordPress websites that are clean under the hood, easy to manage, and designed to grow with your business. No clunky themes, unnecessary plugins, or avoidable performance issues. Just a solid, scalable website built with speed, search visibility, and simple content updates in mind.",
+    "listTitle" => "Our WordPress Development Services Include:",
+    "list" => [
+        "Custom WordPress Theme Development",
+        "Website Speed & SEO Optimization",
+        "Clean, Scalable Code Structure",
+        "Easy Backend Content Management",
+        "Security & Performance Best Practices",
+    ],
                 "introImages" => "assets/gif/why-wordpress.gif",
                 "portfolioLabel" => "WordPress",
                 "portfolio" => portfolioImgs('wordpress'),
@@ -943,25 +1204,27 @@ $services = [
                 "faqItems" => serviceFaqs('wordpress-development'),
             ],
 
-            [
-                "title" => "Shopify",
-                "mata-title" => "Shopify Store Development & Customization | Your Brand Name",
-                "mata-description" => "Build high-converting Shopify e-commerce stores with custom theme setups and apps.",
-                "slug" => "shopify",
-                "description" => "Build high-converting Shopify e-commerce stores with custom theme setups and apps.",
-                "subtitle" => "Build high-converting Shopify e-commerce stores with custom theme setups and apps.",
-                "image" => "shopify.jpg",
-                "bannerImage" => "assets/img/banner-shopify.webp",
-                "sub_services" => [],
-                "introTitle" => "High-Converting Shopify E-Commerce Stores",
-                "introText" => "Turn visitors into buyers with custom Shopify store designs. We create tailored liquid themes, integrate essential apps, and design checkout experiences built for sales growth.",
-                "listTitle" => "Our Shopify Development Services include:",
-                "list" => [
-                    "Custom Shopify Theme Development",
-                    "Shopify Store Setup & Configuration",
-                    "App Integration & Payment Gateway Setup",
-                    "Shopify Migration & CRO Optimization",
-                ],
+            
+[
+    "title" => "Shopify",
+    "mata-title" => "Shopify Store Development & Customization | Creative Converge",
+    "mata-description" => "Creative Converge builds Shopify stores with custom theme customization, conversion-focused product pages, payment gateway setup, cart abandonment optimization, and mobile-first design.",
+    "slug" => "shopify",
+    "description" => "Selling online should feel like an opportunity, not a juggling act. Creative Converge delivers Shopify development services for businesses that want a distinctive storefront, practical selling tools, and a store that's easier to run day-to-day.",
+    "subtitle" => "Distinctive Shopify Stores Designed for Better Shopping Experiences.",
+    "image" => "shopify.jpg",
+    "bannerImage" => "assets/img/banner-shopify.webp",
+    "sub_services" => [],
+    "introTitle" => "If Your Store Looks Good but Doesn't Sell, It's Just Decor.",
+    "introText" => "A Shopify store isn't about aesthetics alone. It's about flow, trust, and momentum. We design stores that guide customers naturally from just browsing to checkout complete. Every product page, every scroll, and every click has a purpose. With clean layouts, persuasive visuals, and a smooth checkout experience, we help reduce friction and make shopping easier for your customers.",
+    "listTitle" => "Our Shopify Development Services Include:",
+    "list" => [
+        "Custom Shopify Theme Customization",
+        "Conversion-Focused Product Page Layouts",
+        "Payment Gateway Setup",
+        "Cart Abandonment Optimization",
+        "Mobile-First Store Design",
+    ],
                 "introImages" => "assets/gif/why-shopify.gif",
                 "portfolioLabel" => "Shopify",
                 "portfolio" => portfolioImgs('shopify'),
@@ -998,25 +1261,27 @@ $services = [
                 "faqItems" => serviceFaqs('shopify'),
             ],
 
-            [
-                "title" => "Magento",
-                "mata-title" => "Enterprise Magento E-Commerce Development | Your Brand Name",
-                "mata-description" => "Scalable and feature-rich Magento enterprise e-commerce solutions built for large catalogs.",
-                "slug" => "magento",
-                "description" => "Scalable and feature-rich Magento enterprise e-commerce solutions built for large catalogs.",
-                "subtitle" => "Scalable and feature-rich Magento enterprise e-commerce solutions built for large catalogs.",
-                "image" => "magento.jpg",
-                "bannerImage" => "assets/img/banner-magento.webp",
-                "sub_services" => [],
-                "introTitle" => "Enterprise E-Commerce Development with Magento",
-                "introText" => "For high-volume online businesses requiring complex inventory configurations, Magento (Adobe Commerce) provides unmatchable security, flexibility, and scalability.",
-                "listTitle" => "Our Magento Services include:",
-                "list" => [
-                    "Custom Magento Store Frontend & Extensions",
-                    "Magento B2B & B2C Store Solutions",
-                    "Third-Party ERP & CRM Systems Integration",
-                    "Magento Speed Tuning & Server Optimization",
-                ],
+           
+[
+    "title" => "Magento",
+    "mata-title" => "Magento Development Services | Creative Converge",
+    "mata-description" => "Creative Converge provides Magento development services, including custom store configuration, inventory management, secure checkout, API integrations, and performance optimization.",
+    "slug" => "magento",
+    "description" => "Creative Converge provides Magento development services for businesses looking for greater control over their eCommerce operations. We build tailored storefronts, configure essential features, and shape store functionality around the way your business sells.",
+    "subtitle" => "Tailored Magento Solutions for Growing Businesses.",
+    "image" => "magento.jpg",
+    "bannerImage" => "assets/img/banner-magento.webp",
+    "sub_services" => [],
+    "introTitle" => "Advanced E-Commerce for Growing Enterprises.",
+    "introText" => "Magento is powerful, but it works best when structured correctly. We build enterprise-level online stores designed to support complex catalogs and demanding traffic requirements. From backend product configuration to secure checkout architecture, we focus on performance, reliable functionality, and long-term scalability.",
+    "listTitle" => "Our Magento Development Services Include:",
+    "list" => [
+        "Custom Magento Configuration",
+        "Multi-Product Inventory Management",
+        "Secure Checkout & Transaction Systems",
+        "API & Third-Party Integrations",
+        "Performance Optimization",
+    ],
                 "introImages" => "assets/gif/why-magento.gif",
                 "portfolioLabel" => "Magento",
                 "portfolio" => portfolioImgs('magento'),
@@ -1053,25 +1318,28 @@ $services = [
                 "faqItems" => serviceFaqs('magento'),
             ],
 
-            [
-                "title" => "WooCommerce",
-                "mata-title" => "WooCommerce Online Store Development | Your Brand Name",
-                "mata-description" => "Transform your WordPress site into a feature-rich e-commerce store with WooCommerce.",
-                "slug" => "woocommerce",
-                "description" => "Transform your WordPress site into a feature-rich e-commerce store with WooCommerce.",
-                "subtitle" => "Transform your WordPress site into a feature-rich e-commerce store with WooCommerce.",
-                "image" => "woocommerce.jpg",
-                "bannerImage" => "assets/img/banner-woocommerce.webp",
-                "sub_services" => [],
-                "introTitle" => "Flexible E-Commerce Development with WooCommerce",
-                "introText" => "Seamlessly blend content with online sales. WooCommerce offers limitless customizability on top of WordPress, giving you complete autonomy over your digital shop.",
-                "listTitle" => "Our WooCommerce Services include:",
-                "list" => [
-                    "Custom WooCommerce Store Setup",
-                    "Payment Gateway & Shipping Integration",
-                    "WooCommerce Plugin Customization",
-                    "Checkout Experience Optimization",
-                ],
+           
+[
+    "title" => "WooCommerce",
+    "mata-title" => "WooCommerce Development Services | Creative Converge",
+    "mata-description" => "Creative Converge develops WooCommerce stores with custom design, store setup, speed optimization, troubleshooting, product catalog functionality, and ongoing maintenance.",
+    "slug" => "woocommerce",
+    "description" => "At Creative Converge, we develop WooCommerce stores that bring your products, customer experience, and day-to-day operations together, giving you more control over how your online business works.",
+    "subtitle" => "Flexible WooCommerce Stores Built Around Your Business.",
+    "image" => "woocommerce.jpg",
+    "bannerImage" => "assets/img/banner-woocommerce.webp",
+    "sub_services" => [],
+    "introTitle" => "What Could Your WordPress Site Become With WooCommerce?",
+    "introText" => "Already like WordPress but ready to start selling? Our WooCommerce development services can help turn your site into a store that feels like a natural extension of your brand. We focus on product discovery, useful store features, and manageable workflows from catalog to checkout.",
+    "listTitle" => "Our WooCommerce Development Services Include:",
+    "list" => [
+        "WooCommerce Store Setup",
+        "WooCommerce Website Design",
+        "WooCommerce Speed Optimization",
+        "WooCommerce Troubleshooting & Customization",
+        "Product Catalog & Store Functionality",
+        "WooCommerce Maintenance & Support",
+    ],
                 "introImages" => "assets/gif/why-woocommerce.gif",
                 "portfolioLabel" => "WooCommerce",
                 "portfolio" => portfolioImgs('woocommerce'),
@@ -1108,27 +1376,30 @@ $services = [
                 "faqItems" => serviceFaqs('woocommerce'),
             ],
 
-            [
-                "title" => "CMS Development",
-                "mata-title" => "Custom CMS Development Solutions | Your Brand Name",
-                "mata-description" => "User-friendly, bespoke CMS development solutions tailored to manage your web content easily.",
-                "slug" => "cms-development",
-                "description" => "User-friendly, bespoke CMS development solutions tailored to manage your web content easily.",
-                "subtitle" => "User-friendly, bespoke CMS development solutions tailored to manage your web content easily.",
-                "image" => "cms-development.jpg",
-                "bannerImage" => "assets/img/banner-cms.webp",
-                "sub_services" => [],
-                "introTitle" => "Empower Your Business with Custom CMS Solutions",
-                "introText" => "Take complete control of your digital media and articles without technical complexity. We craft secure, flexible, and custom-built Content Management Systems built around your team's exact workflow.",
-                "listTitle" => "Our CMS Development Services include:",
-                "list" => [
-                    "Custom Headless CMS Development",
-                    "Bespoke Admin Panel & Dashboard Design",
-                    "Multi-User Access Control & Workflows",
-                    "CMS Migration & Third-Party Integration",
-                ],
+           
+[
+    "title" => "CMS Development",
+    "mata-title" => "Custom CMS Development Services | Creative Converge",
+    "mata-description" => "Creative Converge provides CMS development services with custom configuration, intuitive admin interfaces, flexible content editing, media management, and secure database structures.",
+    "slug" => "cms-development",
+    "description" => "Creative Converge provides CMS development services that help businesses manage website content with less effort and greater control.",
+    "subtitle" => "Flexible CMS Solutions Designed Around Your Workflow.",
+    "image" => "cms-development.jpg",
+    "bannerImage" => "assets/img/banner-cms.webp",
+    "sub_services" => [],
+    "introTitle" => "Manage Your Content Without Technical Complexity.",
+    "introText" => "A Content Management System allows you to update text, images, blogs, or products without touching code. We customize CMS platforms to match your business model. Instead of overwhelming dashboards, we simplify your backend experience while maintaining the functionality your business needs.",
+    "listTitle" => "Our CMS Development Services Include:",
+    "list" => [
+        "Custom CMS Configuration",
+        "Intuitive Admin Interface",
+        "Flexible Content Editing",
+        "Media & Asset Management",
+        "Secure Database Structure",
+    ],
+
                 "introImages" => "assets/gif/why-cms.gif",
-                
+
                 "portfolioLabel" => "CMS",
                 "portfolio" => portfolioImgs('cms'),
                 // "plans" => [
@@ -1164,25 +1435,27 @@ $services = [
                 "faqItems" => serviceFaqs('cms-development'),
             ],
 
-            [
-                "title" => "Website Maintenance",
-                "mata-title" => "Professional Website Maintenance & Support | Your Brand Name",
-                "mata-description" => "Reliable web maintenance, security updates, bug fixes, and continuous technical support.",
-                "slug" => "website-maintenance",
-                "description" => "Reliable web maintenance, security updates, bug fixes, and continuous technical support.",
-                "subtitle" => "Reliable web maintenance, security updates, bug fixes, and continuous technical support.",
-                "image" => "website-maintenance.jpg",
-                "bannerImage" => "assets/img/banner-website-maintenance.webp",
-                "sub_services" => [],
-                "introTitle" => "Continuous Website Maintenance & Technical Support",
-                "introText" => "Keep your website secure, fast, and up to date. Our dedicated maintenance support ensures smooth performance, regular backups, security patch updates, and quick bug resolution.",
-                "listTitle" => "Our Website Maintenance Services include:",
-                "list" => [
-                    "Regular Core, Theme & Plugin Updates",
-                    "Speed Optimization & Database Cleanup",
-                    "Security Monitoring & Malware Removal",
-                    "Daily/Weekly Automated Off-site Backups",
-                ],
+          
+[
+    "title" => "Website Maintenance",
+    "mata-title" => "Website Maintenance Services | Creative Converge",
+    "mata-description" => "Creative Converge provides website maintenance services, including routine updates, security monitoring, backup scheduling, performance audits, and technical troubleshooting.",
+    "slug" => "website-maintenance",
+    "description" => "Our website maintenance services cover the practical tasks involved in maintaining your digital presence, from publishing fresh information to troubleshooting technical faults and managing essential website components.",
+    "subtitle" => "Reliable Website Care to Keep Your Business Running Smoothly.",
+    "image" => "website-maintenance.jpg",
+    "bannerImage" => "assets/img/banner-website-maintenance.webp",
+    "sub_services" => [],
+    "introTitle" => "Because 'Set It and Forget It' Doesn't Work Online.",
+    "introText" => "Websites aren't a one-and-done deal. They need regular updates, security checks, and performance tuning to keep running smoothly. At Creative Converge, our experts help keep your site secure, functional, and up to date so you're better prepared to handle technical issues before they disrupt your business.",
+    "listTitle" => "Our Website Maintenance Services Include:",
+    "list" => [
+        "Routine System Updates",
+        "Security Monitoring & Patching",
+        "Backup Scheduling",
+        "Performance Audits",
+        "Technical Troubleshooting",
+    ],
                 "introImages" => "assets/gif/why-website-maintenance.gif",
                 "portfolioLabel" => "Maintenance",
                 "portfolio" => portfolioImgs('maintenance'),

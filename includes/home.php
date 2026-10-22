@@ -225,8 +225,8 @@
   <div class="hero-inner">
     <div class="hero-content">
       <h1 class="hero-title"><span>Welcome to</span>creativeconverge</h1>
-      <h3 class="hero-sub">Custom Web Design | E-Commerce Solutions | SEO That Drives Results</h3>
-      <p class="hero-text">We create new technologies for your business thanks to our wonderful team of professionals.</p>
+      <h3 class="hero-sub">From Concept to Click, a premium web design company in Dallas!</h3>
+      <p class="hero-text">Every great vision needs professional prosecution. Let Creative Converge, one of the best web design companies in Dallas, bring your idea to life with perfection.</p>
     </div>
   </div>
  </div>
@@ -293,20 +293,21 @@
       <p class="cvg-about-eyebrow" data-reveal="eyebrow">About us</p>
 
       <h2 class="cvg-about-title" data-reveal="title">
-        <span class="cvg-line"><span class="cvg-line-in">We are Experts in</span></span>
-        <span class="cvg-line"><span class="cvg-line-in cvg-about-title-mint">Digital Solutions</span></span>
+        <span class="cvg-line"><span class="cvg-line-in">More Than a Website Design Agency.</span></span>
+        <span class="cvg-line"><span class="cvg-line-in cvg-about-title-mint">Your Partner in Making Things Happen.</span></span>
       </h2>
 
       <p class="cvg-about-text" data-reveal="up" style="--d:.35s">
-        At <strong class="cvg-about-strong">CREATIVE CONVERGE</strong>, we are passionate about crafting visually stunning and
-        high-performing websites that drive results. With a team of innovative designers, skilled
-        developers, and strategic marketers, we transform ideas into digital realities tailored to
-        your unique business goals.
+        With nearly a decade of experience in custom web <strong class="cvg-about-strong">DESIGN SERVICES</strong> . We’re more than just a digital agency. We’re problem solvers to help you stand out in the competitive digital world. 
       </p>
       <p class="cvg-about-text" data-reveal="up" style="--d:.5s">
-        Our expertise spans across responsive web design, e-commerce development, and user
-        experience (UX) optimization. We pride ourselves on creating websites that not only look
-        great but also rank higher on search engines, driving organic traffic and conversions.
+       At Creative Converge, we make sure that every business has a unique story, which is why we promise that your story connects and makes a memorable impact. We provoke ourselves 24/7 to face all the complications while dealing with clients or rather than projects. If you’re at the initial stage or have a big vision to be very honest you’re just one quick call away. 
+        <ul class="cvg-about-text">
+        <li>24/7 support </li>
+        <li>Meet deadlines every time </li>
+        <li>Quality Work Delivered</li>
+        <li>Authentic and Professional Experts </li>
+      </ul>
       </p>
 
       <div class="cvg-about-actions" data-reveal="up" style="--d:.65s">

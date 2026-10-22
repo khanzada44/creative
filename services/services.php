@@ -6,7 +6,7 @@ require_once __DIR__ . '/services-data.php';
 $spHero = [
   'eyebrow' => 'What we do',
   'title'   => 'Our services',
-  'lead'    => 'Design, development, branding, video and marketing, delivered by one senior team in Texas. White-label for agencies, or under your own brand.',
+  'lead'    => 'A brand that stands out. A website that works harder. A digital experience built around your business. We bring the right skills together to help make it happen.',
 ];
 
 /* ---------- Icon for each service (by slug). Options:
@@ -24,12 +24,14 @@ $spIconFor = [
   'advance-combo-packages'      => 'combo',
 ];
 
+
 $spCta = [
-  'title' => 'Not sure which service <span>you need?</span>',
-  'text'  => 'Tell us about your project and we\'ll recommend the right package, with a clear quote, within one business day.',
-  'btn'   => 'Get a free consultation',
-  'link'  => 'contact-us/index.php',
+    'title' => 'Got an idea but not a plan?',
+    'text'  => "That's a good place to start. Share what's on your mind, and we'll help you turn the possibilities into a clear direction for your project.",
+    'btn'   => 'Get a free consultation',
+    'link'  => 'contact-us/index.php',
 ];
+
 
 
 if (!function_exists('cvg_h')) {
@@ -1013,22 +1015,53 @@ echo $cvgHead;
     <div class="cvg-sp-wrap">
       <div class="cvg-sp-head cvg-sp-reveal">
         <p class="cvg-sp-eyebrow">How it works</p>
-        <h2 class="cvg-sp-h2">From brief to launch in <span>four steps.</span></h2>
+        <h2 class="cvg-sp-h2">Turn the Thinking Into a <span>Direction.</span></h2>
       </div>
-      <ol class="cvg-sp-step-list">
-        <li class="cvg-sp-reveal"><span>01</span><strong>Discover</strong>
-          <p>We learn your goals, audience and brand.</p>
-        </li>
-        <li class="cvg-sp-reveal" style="--d:.08s"><span>02</span><strong>Design</strong>
-          <p>Custom concepts you review and approve.</p>
-        </li>
-        <li class="cvg-sp-reveal" style="--d:.16s"><span>03</span><strong>Build</strong>
-          <p>Responsive, fast and SEO-ready development.</p>
-        </li>
-        <li class="cvg-sp-reveal" style="--d:.24s"><span>04</span><strong>Launch &amp; grow</strong>
-          <p>Deployment, then support whenever you need it.</p>
-        </li>
-      </ol>
+     
+<ol class="cvg-sp-step-list">
+
+    <li class="cvg-sp-reveal">
+        <span>01</span>
+        <strong>Start With the Right Questions.</strong>
+        <p>
+            Every good solution starts with understanding the problem.
+            We get to know your goals, your audience, and what you're
+            trying to change.
+        </p>
+    </li>
+
+    <li class="cvg-sp-reveal" style="--d:.08s">
+        <span>02</span>
+        <strong>Connect the Dots.</strong>
+        <p>
+            We turn scattered ideas into a clear direction, finding
+            the right mix of creativity, strategy, and technology
+            for your project.
+        </p>
+    </li>
+
+    <li class="cvg-sp-reveal" style="--d:.16s">
+        <span>03</span>
+        <strong>Make Things Happen.</strong>
+        <p>
+            Ideas leave the drawing board and take shape. We design,
+            build, and refine the details that turn a concept into
+            something real.
+        </p>
+    </li>
+
+    <li class="cvg-sp-reveal" style="--d:.24s">
+        <span>04</span>
+        <strong>Get It Ready for the World.</strong>
+        <p>
+            We polish the final details, check that everything works
+            as intended, and get your project ready to make its mark.
+        </p>
+    </li>
+
+</ol>
+
+
     </div>
   </section>
 

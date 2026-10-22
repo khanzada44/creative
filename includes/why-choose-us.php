@@ -75,63 +75,92 @@
       </div>
     </div>
 
-    <!-- RIGHT: content -->
-    <div class="wcu-right">
 
-      <div class="wcu-reveal" style="--from:.8;--delay:100ms">
-        <div class="wcu-reveal-in">
-          <div class="wcu-sub">
-            <span class="wcu-sub-line"></span>
-            <span class="wcu-sub-text">a few words</span>
-          </div>
-        </div>
+<div class="wcu-right">
+
+  <div class="wcu-reveal" style="--from:.8;--delay:100ms">
+    <div class="wcu-reveal-in">
+      <div class="wcu-sub">
+        <span class="wcu-sub-line"></span>
+        <span class="wcu-sub-text">a few words</span>
       </div>
-
-      <div class="wcu-reveal" style="--from:.185;--delay:200ms">
-        <div class="wcu-reveal-in">
-          <h2 class="wcu-title">Why choose us</h2>
-        </div>
-      </div>
-
-      <div class="wcu-reveal" style="--from:.129;--delay:300ms">
-        <div class="wcu-reveal-in">
-          <p class="wcu-desc">
-            We’ve got a lot of awards for our products and services that became
-            popular in the world.
-          </p>
-        </div>
-      </div>
-
-      <div class="wcu-reveal" style="--from:.119;--delay:400ms">
-        <div class="wcu-reveal-in">
-          <div class="wcu-feature wcu-feature-1">
-            <h3>Modern Technologies</h3>
-            <p>
-              As a web design company, we utilize a range of modern technologies
-              to create dynamic, responsive websites. We use design tools like
-              Figma, Adobe XD, and Sketch for collaborative, high-quality design
-              work. For frontend development, we rely on HTML5, CSS3,
-              JavaScript, and frameworks like React.js and Vue.js. On the
-              backend, we work with technologies such as Node.js, PHP, and
-              Python
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="wcu-reveal" style="--from:.110;--delay:800ms">
-        <div class="wcu-reveal-in">
-          <div class="wcu-feature wcu-feature-2">
-            <h3>Huge Digital Experience</h3>
-            <p>
-              Our company has been developing digital products for 15 years.
-              We’ve got a lot of awards for our work.
-            </p>
-          </div>
-        </div>
-      </div>
-
     </div>
+  </div>
+
+  <div class="wcu-reveal" style="--from:.185;--delay:200ms">
+    <div class="wcu-reveal-in">
+      <h2 class="wcu-title">WHY THE CREATIVE CONVERGE</h2>
+    </div>
+  </div>
+
+  <div class="wcu-reveal" style="--from:.129;--delay:300ms">
+    <div class="wcu-reveal-in">
+      <p class="wcu-desc">
+        A project can meet every requirement and still miss the point.
+        We look at what you're trying to accomplish, who you're trying
+        to reach, and what the final result needs to do. That perspective
+        shapes our decisions, from the first creative concept to the
+        technical details that make everything work. If you're searching
+        for the best web design company near you, you'll find the right
+        creative partner with us. Here's why:
+      </p>
+    </div>
+  </div>
+
+  <div class="wcu-reveal" style="--from:.119;--delay:400ms">
+    <div class="wcu-reveal-in">
+      <div class="wcu-feature wcu-feature-1">
+        <h3>Ideas With a Purpose</h3>
+        <p>
+          Every design and feature has a reason behind it.
+          We focus on creating meaningful experiences that
+          support your goals and connect with your audience.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wcu-reveal" style="--from:.110;--delay:500ms">
+    <div class="wcu-reveal-in">
+      <div class="wcu-feature wcu-feature-2">
+        <h3>Solutions That Fit</h3>
+        <p>
+          We shape our work around your business needs instead
+          of forcing your project into a standard template.
+          Every solution is designed with your unique goals in mind.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wcu-reveal" style="--from:.110;--delay:600ms">
+    <div class="wcu-reveal-in">
+      <div class="wcu-feature wcu-feature-3">
+        <h3>Creative Meets Technical</h3>
+        <p>
+          We bring design, development, and marketing together
+          when your project needs more than one discipline,
+          delivering a cohesive experience from start to finish.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wcu-reveal" style="--from:.110;--delay:700ms">
+    <div class="wcu-reveal-in">
+      <div class="wcu-feature wcu-feature-4">
+        <h3>Room to Evolve</h3>
+        <p>
+          We consider how your digital presence can adapt as
+          your business changes, helping your website and
+          digital solutions grow with your future needs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
   </div>
 </section>
 <style>

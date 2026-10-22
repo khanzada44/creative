@@ -16,16 +16,15 @@
 
             <div class="reveal" data-reveal data-from="0.8" data-delay="100">
                 <h2 class="world-heading">
-                    Create your own<br />
-                    <span class="brand-green">world</span> right now<span class="brand-green">.</span>
+                    The Principles <br />
+                    <span class="brand-green">Behind</span> Our Work<span class="brand-green">.</span>
                 </h2>
             </div>
 
             <div class="reveal" data-reveal data-from="0.9" data-delay="250">
                 <p class="world-desc">
-                    In our perspective, we prepare for responsible growth with something
-                    that we must always pursue and create a structured developed world
-                    to be better.
+                    We believe good solutions start with good questions. Understanding your audience, objectives, and challenges gives the work a clear direction. The following are:
+
                 </p>
             </div>
         </div>
@@ -40,7 +39,7 @@
                         <h3>
                             <button type="button" class="accordion-btn" aria-expanded="false"
                                 aria-controls="world-accordion-panel-1" id="world-accordion-button-1">
-                                <span class="accordion-title">Analyzing Research</span>
+                                <span class="accordion-title">Keep the Audience in Focus</span>
                                 <svg class="accordion-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"
                                     stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
                                     <path d="M2 8h12" />
@@ -52,9 +51,7 @@
                             class="accordion-panel">
                             <div class="accordion-panel-inner">
                                 <p class="accordion-text">
-                                    Analyzing research refers to the process of carefully examining and interpreting
-                                    the data or information gathered through research to draw meaningful conclusions,
-                                    identify patterns, and generate insights.
+                                    Digital experiences are created for people. We consider how users discover information, evaluate options and decide what to do next. 
                                 </p>
                             </div>
                         </div>
@@ -65,7 +62,7 @@
                         <h3>
                             <button type="button" class="accordion-btn" aria-expanded="false"
                                 aria-controls="world-accordion-panel-2" id="world-accordion-button-2">
-                                <span class="accordion-title">Integrated Learning</span>
+                                <span class="accordion-title">Work Toward Clear Objectives</span>
                                 <svg class="accordion-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"
                                     stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
                                     <path d="M2 8h12" />
@@ -77,9 +74,7 @@
                             class="accordion-panel">
                             <div class="accordion-panel-inner">
                                 <p class="accordion-text">
-                                    Integrated learning refers to an educational approach that connects different
-                                    subjects, disciplines, or areas of knowledge to provide a more holistic and
-                                    interconnected learning experience.
+                                   Every project should have a reason behind it. We aim to establish priorities and define what a successful delivery should accomplish.
                                 </p>
                             </div>
                         </div>
@@ -90,7 +85,7 @@
                         <h3>
                             <button type="button" class="accordion-btn" aria-expanded="true"
                                 aria-controls="world-accordion-panel-3" id="world-accordion-button-3">
-                                <span class="accordion-title">Considering Innovation</span>
+                                <span class="accordion-title">Value Collaboration</span>
                                 <svg class="accordion-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"
                                     stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
                                     <path d="M2 8h12" />
@@ -102,9 +97,7 @@
                             class="accordion-panel open">
                             <div class="accordion-panel-inner">
                                 <p class="accordion-text">
-                                    Considering innovation refers to the process of evaluating, thinking about,
-                                    or exploring new ideas, methods, technologies, or approaches that can lead to
-                                    improvements or advancements in a particular area or field.
+                                    Strong outcomes depend on shared understanding. We value clear communication, constructive feedback and alignment throughout the project.  
                                 </p>
                             </div>
                         </div>

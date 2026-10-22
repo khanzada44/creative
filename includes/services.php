@@ -3,11 +3,9 @@ require_once __DIR__ . '/init.php';
 
 /* ---------- Heading ---------- */
 $srvEyebrow = 'Our services';
-$srvTitle   = 'Everything your brand<br>needs, <span>under one roof.</span>';   /* <span> = mint colour */
-$srvLead    = 'From logo to launch, our team designs, builds and grows digital experiences at the highest level, under your brand or ours.';
+$srvTitle   = 'What We Do <br>Best, <span>All Under One Roof</span>';   /* <span> = mint colour */
+$srvLead    = 'From brand identity and custom website design services to development and digital marketing, check out all our services that help in raise your business ideas into something real. As a website design agency, we offer custom web design services tailored to different business needs';
 
-/* ---------- Services: [title, link, icon, short description] ----------
-   Icons: logo, web, illustration, branding, combo, marketing, mobile, video, code */
 $services = [
   ['Logo Design Solutions',   cvg_url('services/service-detail.php?slug=logo-design-solutions'),  'logo',         'Custom logos that make a lasting first impression.'],
   ['Web Design Solutions',    cvg_url('services/service-detail.php?slug=web-design-solutions'),   'web',          'Responsive websites built to look great and convert.'],
@@ -19,10 +17,10 @@ $services = [
   ['Video Animations',        cvg_url('services/service-detail.php?slug=video-animation-services'), 'video',      'Explainer videos and motion that tell your story.'],
 ];
 
-/* "All services" button ('' = hide) */
+
 $srvAllLink = cvg_url('services/');
 
-/* Auto-slide every X seconds (0 = off) */
+
 $srvAutoplay = 5;
 $srvIcons = [
   'logo'         => '<path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8 9.5 8z"/>',
