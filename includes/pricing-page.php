@@ -21,10 +21,10 @@ $cvgPPFirst = array_key_first($cvgPricing);
             <div class="cvg-pp-banner-copy">
                 <p class="cvg-pp-eyebrow cvg-pp-rv">Welcome to Creative Converge</p>
                 <h1 class="cvg-pp-h1">
-                    <span class="cvg-pp-line"><span>Our Best</span></span>
-                    <span class="cvg-pp-line"><span class="cvg-pp-mint">Prices</span></span>
+                    <span class="cvg-pp-line"><span>Have a Project in Mind? Let's</span></span>
+                    <span class="cvg-pp-line"><span class="cvg-pp-mint">Talk Numbers.</span></span>
                 </h1>
-                <p class="cvg-pp-lead cvg-pp-rv" style="--d:.35s">Our team welcomes your questions, comments and suggestions. It is our pleasure to hear from you.</p>
+                <p class="cvg-pp-lead cvg-pp-rv" style="--d:.35s">Not sure which web design package and pricing makes sense for your project? Tell us a little about what you're looking to create, and we'll help you explore your options. Whether you have a detailed brief or just the beginnings of an idea, this is a good place to start or get affordable web design packages.</p>
                 <a href="#cvg-pp-packages" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-rv" style="--d:.5s">View packages
                 </a>
             </div>
@@ -145,8 +145,8 @@ $cvgPPFirst = array_key_first($cvgPricing);
         <div class="cvg-pp-wrap">
             <div class="cvg-pp-head">
                 <p class="cvg-pp-eyebrow cvg-pp-rv">How much does it cost</p>
-                <h2 class="cvg-pp-h2 cvg-pp-rv" style="--d:.1s">Pricing <span class="cvg-pp-mint">packages.</span></h2>
-                <p class="cvg-pp-sub cvg-pp-rv" style="--d:.2s">Clear packages for every stage of your business. Add $50 to any plan for expedited delivery.</p>
+                <h2 class="cvg-pp-h2 cvg-pp-rv" style="--d:.1s">Find the Right Fit for <span class="cvg-pp-mint"> Your Next Move.</span></h2>
+                <p class="cvg-pp-sub cvg-pp-rv" style="--d:.2s">Every business is at a different stage, and every project comes with its own priorities. Our web design packages in Dallas give you a clear starting point, so you can explore the options for the small </p>
             </div>
 
             <div class="cvg-pp-tabs-wrap cvg-pp-rv" style="--d:.25s">

@@ -42,7 +42,7 @@
 
         <style>
           .cvg-alogo {
-            --cvg-alogo-size: 22px;
+            --cvg-alogo-size: 16px;
           }
 
           .cvg-alogo {

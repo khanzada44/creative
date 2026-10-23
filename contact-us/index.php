@@ -15,9 +15,9 @@ $contactShowMap = true;
 
 /* ---------- Banner ---------- */
 $contactHero = [
-  'eyebrow' => 'Get in touch',
+  'eyebrow' => 'So, What Are We Making Happen?',
   'title'   => 'Contact us',
-  'lead'    => 'Tell us about your project. We reply within one business day with a clear plan and a quote.',
+  'lead'    => "Maybe you've got a business to build, a brand that needs a fresh direction, a website that's no longer doing its job, or an idea you've been meaning to bring to life. Whatever brought you here, let's hear it out and get free web design consultation.",
 ];
 
 /* ---------- Images (uploads folder, assets folder or full URL) ---------- */
@@ -148,8 +148,8 @@ echo $cvgHead;
     <div class="cvg-ct-wrap cvg-ct-form-grid">
       <div class="cvg-ct-form-text cvg-ct-reveal">
         <p class="cvg-ct-eyebrow">Lets Get Started</p>
-        <h2 class="cvg-ct-h2">Get a Free<br>Consultation<span class="cvg-ct-mint">.</span></h2>
-        <p class="cvg-ct-lead">We always try to implement our creative ideas at the highest level. Tell us about your project and we will make it work.</p>
+        <h2 class="cvg-ct-h2">Every Good Project Starts<br>Somewhere<span class="cvg-ct-mint">.</span></h2>
+        <p class="cvg-ct-lead">Tell us what you're trying to achieve, what's getting in the way, or what you'd love to see happen. We'll get a feel for the bigger picture, ask the right questions, provide a website design quote near you, and explore how Creative Converge Dallas can bring your vision to life.</p>
       </div>
 
       <div class="cvg-ct-photo cvg-ct-reveal" style="--d:.08s">
@@ -366,7 +366,7 @@ echo $cvgHead;
   .cvg-ct .cvg-ct-h2 {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(34px, 4.4vw, 56px);
+    font-size: clamp(34px, 4.4vw, 43px);
     font-weight: 700;
     line-height: 1.06;
     letter-spacing: -.025em;
@@ -617,7 +617,7 @@ echo $cvgHead;
   }
 
   .cvg-ct .cvg-ct-form-text .cvg-ct-h2 {
-    font-size: clamp(38px, 4.6vw, 62px);
+    font-size: clamp(38px, 4.6vw, 42px);
     line-height: 1.04
   }
 

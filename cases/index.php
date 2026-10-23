@@ -2,7 +2,7 @@
 $casesHero = [
   'eyebrow' => 'Our work',
   'title'   => 'Cases',
-  'lead'    => 'Websites, brands and motion we have crafted for businesses across the US. Real projects, real results.',
+  'lead'    => 'No two businesses have the same starting point. So why should their solutions look alike? Some projects call for a complete rethink. Others need a sharper identity, a more intuitive digital experience, or technology that finally works the way the business needs it to.',
 ];
 
 $latestCases = [

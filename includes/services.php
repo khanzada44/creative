@@ -7,14 +7,14 @@ $srvTitle   = 'What We Do <br>Best, <span>All Under One Roof</span>';   /* <span
 $srvLead    = 'From brand identity and custom website design services to development and digital marketing, check out all our services that help in raise your business ideas into something real. As a website design agency, we offer custom web design services tailored to different business needs';
 
 $services = [
-  ['Logo Design Solutions',   cvg_url('services/service-detail.php?slug=logo-design-solutions'),  'logo',         'Custom logos that make a lasting first impression.'],
-  ['Web Design Solutions',    cvg_url('services/service-detail.php?slug=web-design-solutions'),   'web',          'Responsive websites built to look great and convert.'],
-  ['Illustration Design',     cvg_url('services/service-detail.php?slug=illustration-design'),    'illustration', 'Characters, scenes and artwork with personality.'],
-  ['Branding',                cvg_url('services/service-detail.php?slug=branding'),               'branding',     'Identity systems that keep your brand consistent.'],
-  ['Advance Combo Packages',  cvg_url('services/service-detail.php?slug=advance-combo-packages'), 'combo',        'Logo, website and more, bundled in one smart package.'],
-  ['Digital Marketing',       cvg_url('services/service-detail.php?slug=digital-marketing'),      'marketing',    'SEO, social media and ads that bring real growth.'],
-  ['Mobile Apps',             cvg_url('services/service-detail.php?slug=mobile-apps'),            'mobile',       'iOS and Android apps your users will love.'],
-  ['Video Animations',        cvg_url('services/service-detail.php?slug=video-animation-services'), 'video',      'Explainer videos and motion that tell your story.'],
+  ['Logo Design Solutions',   cvg_url('services/service-detail.php?slug=logo-design-solutions'),  'logo',         'Looking Like Every Other Business? Get your unique logo that captures your brand’s identity'],
+  ['Web Design Solutions',    cvg_url('services/service-detail.php?slug=web-design-solutions'),   'web',          'Getting Visitors but No Customers? Your website could be the problem. Let’s book a call and redesign your site.'],
+  ['Illustration Design',     cvg_url('services/service-detail.php?slug=illustration-design'),    'illustration', "When stock visuals all look alike, your message gets lost. Get our custom illustrations  which give your brand visuals competitors can't simply copy."],
+  ['Branding',                cvg_url('services/service-detail.php?slug=branding'),               'branding',     'Growing Your Business but Still Looking Small? Build a strong brand identity with us that earns trust and skyrockets your business growth.'],
+  ['Advance Combo Packages',  cvg_url('services/service-detail.php?slug=advance-combo-packages'), 'combo',        'Posting Regularly but Not Generating Leads? We help you reach your target audience, boost your brand’s visibility, and accelerate business growth by 3x.'],
+  ['Digital Marketing',       cvg_url('services/service-detail.php?slug=digital-marketing'),      'marketing',    'Losing Customers to Complicated Experiences? We design intuitive mobile apps that reduce friction, simplify everyday actions, and make repeat interactions easier.'],
+  // ['Mobile Apps',             cvg_url('services/service-detail.php?slug=mobile-apps'),            'mobile',       'iOS and Android apps your users will love.'],
+  ['Video Animations',        cvg_url('services/service-detail.php?slug=video-animation-services'), 'video',      "Great Products, but People Just Don't Get Them? Turn your product features  into easy-to-follow animations that demonstrate value and help people understand why they need what you offer."],
 ];
 
 

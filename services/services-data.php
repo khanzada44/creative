@@ -393,31 +393,76 @@ function serviceFaqs($slug)
         "answer" => "Ask which updates, fixes, backups, and monitoring tasks are covered, how requests are handled, and what happens when an issue falls outside the agreement. Creative Converge should clearly distinguish routine maintenance from new development and larger repair projects."
     ],
 ],
+'branding' => [
+    [
+        "question" => 'How can Creative Converge help establish a recognizable brand identity?',
+        "answer" => 'Creative Converge can help bring your brand\'s visual direction together through elements such as logo design, typography, color choices, and supporting graphics. The goal is to establish a consistent identity that reflects your business and helps customers recognize it across different touchpoints.'
+    ],
+    [
+        "question" => 'Can Creative Converge help rebrand an established business?',
+        "answer" => 'Yes. Creative Converge can help assess whether your business needs a visual refresh or a broader identity update. That may involve refining existing elements or developing a new direction based on changes in your audience, positioning, or business goals.'
+    ],
+    [
+        "question" => 'What\'s the difference between the branding and logo design services at Creative Converge?',
+        "answer" => 'Logo design focuses on creating the central visual mark for your business. Creative Converge\'s broader branding work can consider how that logo fits with colors, typography, supporting visuals, and the overall presentation of your brand.'
+    ],
+    [
+        "question" => 'Can Creative Converge create branding for a new business launching in the U.S.?',
+        "answer" => 'Creative Converge can help a new business establish a visual identity suited to its intended audience and market. Useful starting points include your business concept, competitors, customer profile, and the impression you want your brand to make.'
+    ],
+    [
+        "question" => 'What should I have ready before starting a branding project with Creative Converge?',
+        "answer" => 'Bring your business goals, audience information, existing brand assets, competitor examples, and any ideas about how you want the company to be perceived. Creative Converge can use this information to establish a direction before developing the visual identity.'
+    ],
+],
 
-        'branding' => [
-            ["question" => 'What is included in a branding package?', "answer" => 'Depending on the plan: logo design, brand colours and fonts, stationery, a social media kit, and in higher plans a full brand style guide, marketing collateral and packaging design.'],
-            ["question" => 'What is a brand style guide?', "answer" => 'It is a document that explains how to use your logo, colours, fonts and imagery, so your brand looks the same everywhere. It is included in the Professional and Premium plans.'],
-            ["question" => 'Can you rebrand my existing business?', "answer" => 'Yes. We can refresh your current identity or create a completely new brand while respecting the recognition you have already built.'],
-            ["question" => 'Do you help with brand messaging?', "answer" => 'Yes. Brand Premium includes brand messaging and a tagline, so your words match your visuals.'],
-            ["question" => 'How long does a branding project take?', "answer" => 'Brand Starter usually takes about 1 week. Professional and Premium packages take 2 to 4 weeks because they include more designs and the brand guidelines.'],
-            ["question" => 'Do I own all the brand files?', "answer" => 'Yes. Once the project is paid, all final logos, brand files and designs belong to you.'],
-        ],
-        'ecommerce-website-solutions' => [
-            ["question" => 'Which platform will my online store use?', "answer" => 'We build on Shopify, WooCommerce, Magento or a custom platform, based on your products, budget and growth plans, and recommend the best fit.'],
-            ["question" => 'How many products can I sell?', "answer" => 'Ecommerce Starter includes up to 25 product uploads, Business up to 100, and Enterprise unlimited products.'],
-            ["question" => 'Which payment gateways can you integrate?', "answer" => 'Starter includes 1 payment gateway, and Business includes multiple gateways such as Stripe, PayPal, Square and Authorize.net.'],
-            ["question" => 'Can I manage orders and stock myself?', "answer" => 'Yes. Business includes an admin panel with order management, and Enterprise adds full inventory and stock management with advanced reports.'],
-            ["question" => 'Can you build a multi-vendor marketplace?', "answer" => 'Yes. Ecommerce Enterprise includes a multi-vendor or marketplace option where multiple sellers can list and sell products.'],
-            ["question" => 'Will my store be mobile friendly and SEO ready?', "answer" => 'Yes. Every store is mobile responsive, and the Business plan includes SEO optimization to help customers find your products.'],
-        ],
-        'video-animation-services' => [
-            ["question" => 'How long does an animated video take?', "answer" => 'A 30-second video usually takes 1 to 2 weeks, and longer videos take 2 to 4 weeks. This includes script, storyboard, voice-over and animation.'],
-            ["question" => 'Do you write the script?', "answer" => 'Yes. Every plan includes script writing. Standard and Premium include a custom script and storyboard written around your message and audience.'],
-            ["question" => 'Can I choose the voice-over artist?', "answer" => 'Yes. We share voice samples so you can pick the voice, accent and tone. Premium includes studio-quality voice-over.'],
-            ["question" => 'What styles of animation do you offer?', "answer" => 'We create 2D explainer videos, motion graphics, character animation, and in the Premium plan 3D motion graphics.'],
-            ["question" => 'Can I get versions for social media?', "answer" => 'Yes. Premium Animation includes social media cut-downs, short versions sized for Instagram, TikTok, YouTube Shorts and Facebook.'],
-            ["question" => 'What resolution will the video be delivered in?', "answer" => 'Basic and Standard are delivered in HD 1080p. Premium is delivered in Full HD and 4K, with source files included.'],
-        ],
+'ecommerce-website-solutions' => [
+    [
+        "question" => 'Can Creative Converge build an online store for my products?',
+        "answer" => "Creative Converge can help plan an e-commerce website around your products, customers, and selling requirements. Depending on the project, this can involve product pages, category navigation, shopping cart functionality, checkout, and the integrations needed to manage orders."
+    ],
+    [
+        "question" => 'How can Creative Converge make my online store easier for customers to use?',
+        "answer" => "Creative Converge can focus on clear product information, intuitive navigation, useful filtering, mobile usability, and a straightforward shopping journey. The aim is to help customers find products, understand their options, and complete purchases without unnecessary confusion."
+    ],
+    [
+        "question" => 'Can Creative Converge integrate payment and shipping options into my store?',
+        "answer" => "Creative Converge can evaluate suitable payment gateways, shipping providers, tax tools, and other integrations for your chosen platform. Availability depends on your business location, provider requirements, platform compatibility, and the specific services you want to use."
+    ],
+    [
+        "question" => 'Can Creative Converge help move my existing online store to a new platform?',
+        "answer" => "Creative Converge can assess your current store and plan a migration based on your products, customer data, order history, URLs, and integrations. The exact migration process depends on the platforms involved and which information can be transferred."
+    ],
+    [
+        "question" => 'What should I consider before asking Creative Converge to build my online store?',
+        "answer" => "Think about your product catalog, shipping arrangements, payment preferences, return policies, inventory management, and the markets you plan to serve. Creative Converge can use those requirements to help define the store's functionality and project scope."
+    ],
+],
+
+
+'video-animation-services' => [
+    [
+        "question" => 'What types of video animation services does Creative Converge offer?',
+        "answer" => "Creative Converge offers video animation services that can include 2D and 3D animation, explainer videos, motion graphics, product animations, and brand-focused visual storytelling. The best approach depends on your message, audience, and project goals."
+    ],
+    [
+        "question" => 'Can Creative Converge create an animated explainer video for my business?',
+        "answer" => "Yes, Creative Converge can help develop an animated explainer video to communicate your product, service, or business idea. The process may involve shaping the concept, planning the story, designing visuals, and producing animation suited to your intended audience."
+    ],
+    [
+        "question" => 'Can you create animation for my products and services?',
+        "answer" => "Yes, animation can demonstrate how a product works, explain a service, or make complex ideas easier to understand. Creative Converge can tailor the visual style and storytelling to your product, brand identity, and communication goals."
+    ],
+    [
+        "question" => 'Can Creative Converge create animated videos for social media and websites?',
+        "answer" => "Yes, animated content can be created for websites, social media platforms, digital campaigns, and other marketing channels. Video dimensions, duration, and format can be planned around the intended platform and how viewers will watch the content."
+    ],
+    [
+        "question" => 'What information do you need to start an animation project?',
+        "answer" => "Helpful starting information includes your project goals, target audience, key message, brand guidelines, preferred animation style, and intended use. If you already have a script, reference images, or existing marketing materials, these can also help guide the creative direction."
+    ],
+],
+
         'mobile-apps' => [
             ["question" => 'Do you build apps for both Android and iOS?', "answer" => 'Yes. App Starter covers one platform (Android or iOS). App Business is a cross-platform app for both Android and iOS from one codebase.'],
             ["question" => 'How long does it take to build a mobile app?', "answer" => 'A Starter app usually takes 4 to 6 weeks, a Business app 8 to 12 weeks, and Enterprise apps are planned in phases based on features.'],
@@ -426,22 +471,30 @@ function serviceFaqs($slug)
             ["question" => 'Can the app include payments, chat or maps?', "answer" => 'Yes. Business includes payment gateway integration and push notifications. Enterprise supports real-time chat, location tracking and streaming features.'],
             ["question" => 'Do I own the app source code?', "answer" => 'Yes. Once the project is paid, the app is yours, and App Enterprise includes full source code access.'],
         ],
-        'digital-marketing' => [
-            ["question" => 'How soon will I see results?', "answer" => 'Paid ads can bring traffic within days. SEO usually shows clear improvement in 3 to 6 months, because search engines take time to trust and rank a website.'],
-            ["question" => 'Which social media platforms do you manage?', "answer" => 'Starter covers 2 platforms, Growth covers 4, and Premium covers all major platforms, such as Facebook, Instagram, LinkedIn, TikTok and X.'],
-            ["question" => 'Is ad spend included in the monthly price?', "answer" => 'No. Our price covers management, strategy and content. Your ad budget is paid directly to Google, Meta or LinkedIn, and we help you choose the right amount.'],
-            ["question" => 'How will I know if the marketing is working?', "answer" => 'You receive regular performance reports showing traffic, rankings, leads and ad results: monthly on Starter, bi-weekly on Growth and weekly with strategy calls on Premium.'],
-            ["question" => 'Is there a long-term contract?', "answer" => 'Plans are billed monthly. We recommend at least 3 months, especially for SEO, so there is enough time to see real results.'],
-            ["question" => 'Do you create the social media posts?', "answer" => 'Yes. We design and write your posts: 12 per month on Starter, 20 on Growth, and 30 posts plus reels and stories on Premium.'],
-        ],
-        'advance-combo-packages' => [
-            ["question" => 'What is a combo package?', "answer" => 'A combo package bundles several services, such as logo, website, branding, video and marketing, into one plan so you get everything you need at a lower total price.'],
-            ["question" => 'Which combo is best for a new business?', "answer" => 'The Startup Combo is ideal for new businesses. It includes a professional logo, a 5-page responsive website, stationery and a social media kit.'],
-            ["question" => 'Can I customize a combo package?', "answer" => 'Yes. Tell us what you need, and we can swap or add services to create a package that fits your business and budget.'],
-            ["question" => 'How long does a combo package take?', "answer" => 'It depends on the services included. We work on them in parallel, and a Startup Combo is usually complete in 2 to 3 weeks. You get a clear timeline with your quote.'],
-            ["question" => 'Is support included?', "answer" => 'Yes. Startup includes 1 month of free support, Business 3 months of free maintenance, and Enterprise 6 months of free maintenance plus 24/7 priority support.'],
-            ["question" => 'Do I get one point of contact for everything?', "answer" => 'Yes. The Business and Enterprise combos include a dedicated account manager who coordinates every service for you.'],
-        ],
+
+'digital-marketing' => [
+    [
+        "question" => 'How can Creative Converge help my business reach more customers online?',
+        "answer" => "Creative Converge can help identify suitable digital marketing channels based on your business goals, target audience, and current online presence. Depending on the agreed services, the strategy may involve SEO, paid advertising, social media marketing, content creation, or improvements to your website's conversion journey."
+    ],
+    [
+        "question" => 'Can Creative Converge help my business attract customers from across the United States?',
+        "answer" => "Creative Converge can help plan digital marketing campaigns around your target U.S. locations and customer segments. The right strategy depends on your industry, service area, competition, budget, and whether you want to generate local leads or reach a nationwide audience."
+    ],
+    [
+        "question" => 'How does Creative Converge determine which digital marketing channels are right for my business?',
+        "answer" => "Creative Converge considers your business goals, target audience, industry, competitors, and the actions that matter most to your company. This helps prioritize suitable marketing channels and allocate resources more strategically instead of spreading your budget across platforms without a clear plan."
+    ],
+    [
+        "question" => 'How can I measure the results of digital marketing with Creative Converge?',
+        "answer" => "Useful performance metrics depend on your goals and may include qualified leads, website conversions, purchases, customer acquisition costs, and organic search traffic. Creative Converge can help establish relevant tracking and reporting to evaluate campaign performance against meaningful business outcomes."
+    ],
+    [
+        "question" => 'How long should I give Creative Converge\'s digital marketing strategy to show results?',
+        "answer" => "The timeframe depends on the marketing channel, competition, starting point, budget, and quality of execution. Paid campaigns may generate traffic relatively quickly, while SEO generally requires sustained effort. Creative Converge can establish realistic milestones based on your business goals rather than promise specific rankings or guaranteed leads."
+    ],
+],
+
     ];
     return $faqs[$slug] ?? placeholderFaqs();
 }
@@ -1228,36 +1281,36 @@ $services = [
                 "introImages" => "assets/gif/why-shopify.gif",
                 "portfolioLabel" => "Shopify",
                 "portfolio" => portfolioImgs('shopify'),
-                // "plans" => [
-                //     plan("Shopify Starter", 499, [
-                //         "Complete Store Setup",
-                //         "Premium Theme Customization",
-                //         "Up to 25 Product Uploads",
-                //         "Payment Gateway Setup",
-                //         "Mobile Responsive",
-                //         "Complete Deployment",
-                //     ]),
-                //     plan("Shopify Business", 1199, [
-                //         "Custom Shopify Theme Design",
-                //         "Up to 100 Product Uploads",
-                //         "App Integration & Configuration",
-                //         "Shipping & Tax Setup",
-                //         "Abandoned Cart Recovery Setup",
-                //         "Basic SEO Optimization",
-                //         "1 Month Free Maintenance",
-                //         "Dedicated Support",
-                //     ], true),
-                //     plan("Shopify Enterprise", 2499, [
-                //         "Fully Custom Liquid Theme",
-                //         "Unlimited Product Uploads",
-                //         "Custom App / Script Development",
-                //         "Store Migration to Shopify",
-                //         "CRO & Checkout Optimization",
-                //         "Multi-Currency & Multi-Language",
-                //         "3 Months Free Maintenance",
-                //         "24/7 Priority Support",
-                //     ]),
-                // ],
+                "plans" => [
+                    plan("Shopify Starter", 499, [
+                        "Complete Store Setup",
+                        "Premium Theme Customization",
+                        "Up to 25 Product Uploads",
+                        "Payment Gateway Setup",
+                        "Mobile Responsive",
+                        "Complete Deployment",
+                    ]),
+                    plan("Shopify Business", 1199, [
+                        "Custom Shopify Theme Design",
+                        "Up to 100 Product Uploads",
+                        "App Integration & Configuration",
+                        "Shipping & Tax Setup",
+                        "Abandoned Cart Recovery Setup",
+                        "Basic SEO Optimization",
+                        "1 Month Free Maintenance",
+                        "Dedicated Support",
+                    ], true),
+                    plan("Shopify Enterprise", 2499, [
+                        "Fully Custom Liquid Theme",
+                        "Unlimited Product Uploads",
+                        "Custom App / Script Development",
+                        "Store Migration to Shopify",
+                        "CRO & Checkout Optimization",
+                        "Multi-Currency & Multi-Language",
+                        "3 Months Free Maintenance",
+                        "24/7 Priority Support",
+                    ]),
+                ],
                 "faqItems" => serviceFaqs('shopify'),
             ],
 
@@ -1567,19 +1620,21 @@ $services = [
     ],     // end Web Developer Solutions
     [
         "title" => "Branding",
-        "mata-title" => "title",
-        "mata-description" => "Discription",
+        "meta-title" => "Professional Branding Services | Creative Converge",
+        "meta-description" => "Build a memorable brand with Creative Converge. We offer brand strategy, logo design, visual identity, brand messaging, and rebranding services.",
         "slug" => "branding",
-        "description" => "Build a consistent and recognizable brand identity.",
+        "description" => "A brand is more than a fascinating logo. It’s the sentiments people take away. Our branding services bring strategy and design together to give your identity a clear point of view wherever customers encounter it.",
         "image" => "branding.jpg",
         "bannerImage" => "assets/img/banner-branding.webp",
         "sub_services" => [],
-        "listTitle" => "Our Logo Design Services include:",
+        "listTitle" => "Our Branding Services Include:",
         "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
+            "Brand Strategy & Positioning",
+            "Logo Design & Visual Identity",
+            "Brand Identity Design",
+            "Brand Messaging & Tone of Voice",
+            "Brand Refresh & Rebranding",
+            "Modern Brand Identity Systems",
         ],
         "introImages" => [
             "assets/img/branding-main.webp",
@@ -1622,17 +1677,20 @@ $services = [
         "mata-title" => "title",
         "mata-description" => "Discription",
         "slug" => "ecommerce-website-solutions",
-        "description" => "Ecommerce website development for online businesses.",
+        "description" => "Your online store should make buying feel like the natural next step. At Creative Converge, we build eCommerce experiences that bring your products, customer journey, and business goals together",
         "image" => "ecommerce.jpg",
         "sub_services" => [],
         "bannerImage" => "assets/img/banner-ecommerce-website.webp",
 
-        "listTitle" => "Our Logo Design Services include:",
+        "listTitle" => "Every Click Should Bring Customers Closer to Checkout.",
         "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
+            "Custom eCommerce Website Development ",
+            "Shopify & WooCommerce Development",
+            "Product Catalog & Inventory Management",
+            "Shopping Cart & Checkout Optimization ",
+            "Payment Gateway Integration ",
+            "Mobile-Friendly Shopping Experiences",
+            "Third-Party Integrations & Store Maintenance",
         ],
         "introImages" => [
             "assets/gif/ecommerce-gif.gif",
@@ -1744,23 +1802,29 @@ $services = [
         "faqItems" => serviceFaqs('ecommerce-website-solutions'),
     ],
 
-    /* ================= 7. Video Animation ================= */
-    [
-        "title" => "Stunning Video Animation Services",
-        "mata-title" => "title",
-        "mata-description" => "Discription",
-        "slug" => "video-animation-services",
-        "description" => "Engaging video animation for brands and businesses.",
-        "image" => "animation.jpg",
-        "bannerImage" => "assets/img/banner-video-animation.webp",
-        "sub_services" => [],
-        "listTitle" => "Our Logo Design Services include:",
-        "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
-        ],
+
+   
+[
+    "title" => "Stunning Video Animation Services",
+    "mata-title" => "Video Animation Services for Businesses | Creative Converge",
+    "mata-description" => "Creative Converge provides custom video animation services, including 2D and 3D animation, explainer videos, product animations, storyboarding, motion design, and social media video production.",
+    "slug" => "video-animation-services",
+    "description" => "Some ideas are easier to understand when people can see them in motion. Our custom explainer video production services for businesses turn concepts, products, and messages into visual stories that hold attention and make complex information easier to follow.",
+    "subtitle" => "Video Animation Services That Bring Your Brand Story to Life",
+    "image" => "animation.jpg",
+    "bannerImage" => "assets/img/banner-video-animation.webp",
+    "sub_services" => [],
+    "introTitle" => "Video Animation Services That Bring Your Brand Story to Life",
+    "introText" => "Some messages are difficult to explain with words alone. Whether you're introducing a product, showcasing a service, or building brand awareness, the right animation can turn a complicated idea into a visual story people can follow. Creative Converge provides explainer video production and animation services that combine thoughtful storytelling, engaging visuals, and brand-focused design to help businesses communicate clearly and make a stronger impression.",
+    "listTitle" => "Our Video Animation Services Include:",
+    "list" => [
+        "Custom Animated Video Production",
+        "2D & 3D Animation Design",
+        "Product & Service Animation",
+        "Storyboarding, Motion & Transitions",
+        "Social Media & Website Animation",
+        "Professional Animation Production",
+    ],
         "introImages" => [
             "assets/gif/animation-service-sideimg-gif.gif",
         ],
@@ -1858,22 +1922,29 @@ $services = [
     //     "faqItems" => serviceFaqs('mobile-apps'),
     // ],
 
-    [
-        "title" => "Digital Marketing",
-        "mata-title" => "title",
-        "mata-description" => "Discription",
-        "slug" => "digital-marketing",
-        "description" => "Digital marketing solutions to grow your business.",
-        "image" => "digital-marketing.jpg",
-        "bannerImage" => "assets/img/banner-digital-marketing.webp",
-        "sub_services" => [],
-        "listTitle" => "Our Logo Design Services include:",
-        "list" => [
-            "Custom Logo Design",
-            "Logo Redesign & Refresh",
-            "Brand Identity Development",
-            "Vector-Based Designs",
-        ],
+    
+[
+    "title" => "Digital Marketing",
+    "mata-title" => "Digital Marketing Services in Dallas | Creative Converge",
+    "mata-description" => "Creative Converge provides digital marketing services, including SEO, AI search optimization, PPC advertising, social media marketing, content strategy, and conversion rate optimization.",
+    "slug" => "digital-marketing",
+    "description" => "Being online is one thing, but reaching the right people with a message that sticks is another. As a digital marketing agency serving businesses in Dallas, Creative Converge helps brands strengthen their online presence, connect with their target audience, and work toward meaningful business growth.",
+    "subtitle" => "Digital Marketing Services That Turn Attention Into Business Growth",
+    "image" => "digital-marketing.jpg",
+    "bannerImage" => "assets/img/banner-digital-marketing.webp",
+    "sub_services" => [],
+    "introTitle" => "Digital Marketing Services That Turn Attention Into Business Growth",
+    "introText" => "Getting clicks is easy compared with turning them into customers. Creative Converge provides digital marketing services that help businesses reach the right audience, strengthen their online presence, and make better use of their marketing budget. From search visibility to paid campaigns and social media, we build strategies around your business goals, customer behavior, and measurable outcomes.",
+    "listTitle" => "Our Digital Marketing Services Include:",
+    "list" => [
+        "SEO & AI Search Optimization",
+        "Paid Search & PPC Advertising",
+        "Social Media Marketing",
+        "Conversion Rate Optimization",
+        "Content Marketing & Strategy",
+        "Marketing Analytics & Campaign Optimization",
+        "Cross-Channel Marketing Campaigns",
+    ],
         "introImages" => [
             "assets/gif/branding-creative-gif.gif",
         ],

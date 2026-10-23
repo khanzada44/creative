@@ -163,7 +163,7 @@
   color: var(--cvg-mint);
 }
 .cvg-about-eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--cvg-mint); }
-.cvg-about-title { margin: 0; font-size: 54px; font-weight: 700; line-height: 1.05; letter-spacing: -.025em; color: var(--cvg-text); }
+.cvg-about-title { margin: 0; font-size: 34px; font-weight: 700; line-height: 1.05; letter-spacing: -.025em; color: var(--cvg-text); }
 .cvg-about-title-mint { color: var(--cvg-mint); }
 .cvg-line { display: block; overflow: hidden; padding-bottom: .08em; }
 .cvg-line-in { display: block; }

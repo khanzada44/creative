@@ -97,7 +97,7 @@
 .cvg-pp .cvg-pp-h1 {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(52px, 7vw, 96px);
+  font-size: clamp(52px, 7vw, 56px);
   font-weight: 700;
   line-height: .98;
   letter-spacing: -.04em;
