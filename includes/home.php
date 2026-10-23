@@ -1,7 +1,6 @@
 <section class="hero" id="hero">
 
 <style>
-/* ---------- HERO 3D SHAPES ---------- */
 .cc-h3d {
   --mx: 0; --my: 0; --sp: 0;
   position: absolute !important;

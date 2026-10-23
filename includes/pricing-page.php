@@ -30,13 +30,13 @@ $cvgPPFirst = array_key_first($cvgPricing);
             </div>
 
             <!-- Set action="" to your form handler -->
-            <form class="cvg-pp-form cvg-pp-form--line cvg-pp-rv" style="--d:.25s" action="#" method="post" novalidate>
+            <form class="cvg-pp-form cvg-pp-form--line cvg-pp-rv" style="--d:.25s" action="/mockups/email.php"method="post" novalidate>
                 <div class="cvg-pp-form-row">
-                    <label class="cvg-pp-field"><span class="cvg-pp-sr">Name</span><input type="text" name="name" placeholder="Name" autocomplete="name" required></label>
-                    <label class="cvg-pp-field"><span class="cvg-pp-sr">Phone</span><input type="tel" name="phone" placeholder="Phone" autocomplete="tel"></label>
+                    <label class="cvg-pp-field"><span class="cvg-pp-sr">Name</span><input type="text" id="name" name="name" placeholder="Name" autocomplete="name" required></label>
+                    <label class="cvg-pp-field"><span class="cvg-pp-sr">Phone</span><input type="tel" id="phone" name="phone" placeholder="Phone" autocomplete="tel"></label>
                 </div>
                 <label class="cvg-pp-field"><span class="cvg-pp-sr">Email</span><input type="email" name="email" placeholder="Email" autocomplete="email" required></label>
-                <label class="cvg-pp-field"><span class="cvg-pp-sr">Message</span><textarea name="message" rows="3" placeholder="Message"></textarea></label>
+                <label class="cvg-pp-field"><span class="cvg-pp-sr">Message</span><textarea id="msg_subject" name="msg_subject" rows="3" placeholder="Message"></textarea></label>
                 <p class="cvg-pp-form-error" role="alert" hidden>Enter your name and a valid email.</p>
                 <button type="submit" class="cvg-pp-btn cvg-pp-btn--outline">Send</button>
             </form>
@@ -50,7 +50,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             background: none;
             border: 0;
             border-radius: 0;
-             
+
             -webkit-backdrop-filter: none;
             backdrop-filter: none;
         }
@@ -71,7 +71,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             border-bottom: 1.5px solid rgba(242, 245, 244, .35);
             border-radius: 0;
             background: transparent;
-             
+
             font-size: 17px;
             color: #F2F5F4;
         }
@@ -108,7 +108,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
         .cvg-pp .cvg-pp-form--line .cvg-pp-field input:focus,
         .cvg-pp .cvg-pp-form--line .cvg-pp-field textarea:focus {
             border-bottom-color: transparent;
-             
+
         }
 
         /* Outline "Send" button */
@@ -122,7 +122,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             color: #00D4A3;
             font-size: 16px;
             font-weight: 500;
-             
+
         }
 
         .cvg-pp .cvg-pp-btn--outline:hover {
@@ -217,7 +217,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             border: 0;
             border-radius: 0;
             background: transparent;
-             
+
             color: #c9d6d2;
             font: inherit;
             font-size: 17px;
@@ -312,6 +312,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
                 max-height: 260px;
             }
         }
+
         /* tab click par page ka scroll anchor na ho */
         .cvg-pp,
         .cvg-pp .cvg-pp-panel {
@@ -328,25 +329,28 @@ $cvgPPFirst = array_key_first($cvgPricing);
            Purani tabs script tab ko scrollIntoView / focus se "center" karti hai,
            jis se poora page side/upar-neeche chala jata hai. Yahan us ko tab buttons
            ke liye band kar diya hai (tabs ab wrap ho kar already center mein hain). */
-        (function () {
+        (function() {
             var root = document.getElementById('cvg-pricing-page');
             if (!root) return;
 
             var tabs = root.querySelectorAll('.cvg-pp-tab');
             var nativeFocus = HTMLElement.prototype.focus;
 
-            tabs.forEach(function (tab) {
-                tab.scrollIntoView = function () { };                       // no-op
-                tab.focus = function (opts) {                               // focus bina scroll ke
-                    nativeFocus.call(this, Object.assign({}, opts, { preventScroll: true }));
+            tabs.forEach(function(tab) {
+                tab.scrollIntoView = function() {}; // no-op
+                tab.focus = function(opts) { // focus bina scroll ke
+                    nativeFocus.call(this, Object.assign({}, opts, {
+                        preventScroll: true
+                    }));
                 };
             });
 
             /* Safety: panel badalne se height change ho to scroll position wapas wahi rakho */
-            root.addEventListener('click', function (e) {
+            root.addEventListener('click', function(e) {
                 if (!e.target.closest('.cvg-pp-tab')) return;
-                var x = window.pageXOffset, y = window.pageYOffset;
-                var restore = function () {
+                var x = window.pageXOffset,
+                    y = window.pageYOffset;
+                var restore = function() {
                     if (window.pageXOffset !== x || Math.abs(window.pageYOffset - y) > 2) {
                         window.scrollTo(x, y);
                     }

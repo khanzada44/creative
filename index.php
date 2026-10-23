@@ -7,7 +7,8 @@ require_once __DIR__ . '/includes/init.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Converge</title>
+    <title>Grow Your Brand with Creative Converge: Premier Dallas Digital Agency</title>
+    <meta name="description" content="Creative Converge is a premier digital agency in Dallas offering custom web design, development, branding, and digital marketing to grow your brand.">
     <base href="<?= htmlspecialchars(cvg_url('')) ?>">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">

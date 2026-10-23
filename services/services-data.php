@@ -504,8 +504,8 @@ $services = [
 
     [
         "title" => "Logo Design",
-        "meta-title" => "Professional Logo Design Services | Creative Converge",
-        "meta-description" => "Build a memorable brand identity with professional logo design services, including custom logos, redesigns, typography, color selection, and brand-ready files.",
+        "mata-title" => "Bold Logo Design Services That Make Your Business Stand Out – Creative Converge",
+        "mata-description" => "Turn your brand character into an unforgettable mark. Get custom logo design services that make your business stand out and build instant recognition.",
         "slug" => "logo-design-solutions",
         "description" => "Your logo is more than decoration. We create distinctive visual identities that reflect your business, connect with your audience, and grow with your brand.",
         "subtitle" => "Your Logo Is Not a Decoration",
@@ -686,8 +686,8 @@ $services = [
 
     [
         "title" => "Web Design",
-        "mata-title" => "Professional Web Design | Creative Converge",
-        "mata-description" => "Creative Converge designs user-friendly, responsive websites with thoughtful UI/UX, custom layouts, landing pages, e-commerce experiences, and website redesign services.",
+        "mata-title" => "Engage Your Audience with Distinctive Custom Web Design – Creative Converge",
+        "mata-description" => "Get custom website design services featuring distinctive visuals, intuitive navigation, and responsive layouts tailored to engage your target audience.",
         "slug" => "web-design-solutions",
         "description" => "Your website has a job to do. It needs to tell your story, earn attention, and make the next step feel natural. At Creative Converge, we bring brand thinking, visual direction, and user experience together to create websites with a clear point of view.",
         "subtitle" => "From First Click to Lasting Impression, We Design for the Way People Think and Browse.",
@@ -823,8 +823,8 @@ $services = [
     ],
     [
         "title" => "Web Development ",
-        "mata-title" => "Web Developer Solutions | Your Brand Name",
-        "mata-description" => "Custom website development using modern technologies.",
+        "mata-title" => "Web Development Services Behind the Experience",
+        "mata-description" => "Power your online presence with professional web development services. We build secure, scalable digital experiences tailored to your business workflow.",
         "slug" => "web-developer-solutions",
         "description" => "From business websites to more complex digital platforms, we turn designs and ideas into working digital experiences. We focus on clean implementation, practical functionality, responsive performance, and the features your business needs.",
         "image" => "web-development.jpg",
@@ -960,8 +960,8 @@ $services = [
 
             [
                 "title" => "Laravel",
-                "mata-title" => "Laravel Development Services in Dallas | Creative Converge",
-                "mata-description" => "Creative Converge provides custom Laravel development services, including web applications, API integrations, security, performance optimization, maintenance, and upgrades.",
+                "mata-title" => "Rock-Solid Foundations for Complex Web Apps – Creative Converge Laravel Experts",
+                "mata-description" => "Build robust web applications and APIs. Our Laravel development services deliver structured foundations and custom workflows tailored to your team.",
                 "slug" => "laravel",
                 "description" => "A Laravel development agency in Dallas should be built on a foundation your team can understand and extend. Our Laravel development services use the framework’s structured approach to help organize application logic and create tailored solutions for your business workflows.",
                 "subtitle" => "Laravel Development Services Built Around Your Business Needs",
@@ -1020,8 +1020,8 @@ $services = [
            
 [
     "title" => "Node.js Development",
-    "mata-title" => "Node.js Development Services in Dallas | Creative Converge",
-    "mata-description" => "Creative Converge provides custom Node.js development services, including backend applications, API development, database integration, security, performance optimization, and maintenance.",
+    "mata-title" => "Never Settle for Slow – High-Performance Node.js Engineering by Creative Converge",
+    "mata-description" => "Power real-time web applications. Get custom Node.js development services for APIs, server-side processing, and seamless digital product experiences.",
     "slug" => "node-js",
     "description" => "As a Node.js development agency in Dallas, we create server-side applications that support your business needs with a practical architecture and a clear plan for future changes.",
     "subtitle" => "Node.js Development Services for Fast, Reliable Web Applications",
@@ -1080,8 +1080,8 @@ $services = [
            
 [
     "title" => "Custom PHP Development",
-    "mata-title" => "Custom PHP Development Services in Dallas | Creative Converge",
-    "mata-description" => "Creative Converge provides custom PHP development services, including web applications, API integrations, security, maintenance, upgrades, and code optimization.",
+    "mata-title" => "Command Complex Systems with Precision Custom PHP – Creative Converge Dallas",
+    "mata-description" => "Get scalable solutions built around your business logic. Our custom PHP development services support specialized workflows and existing system integrations.",
     "slug" => "custom-php-development",
     "description" => "As a top-class custom PHP development agency in Dallas, we shape website features and application logic around your requirements, with an emphasis on practical functionality and code your team can maintain.",
     "subtitle" => "Custom PHP Development That Fits the Way Your Business Works",
@@ -1141,8 +1141,8 @@ $services = [
 
 [
     "title" => "Next.js Development",
-    "mata-title" => "Next.js Development Services | Creative Converge",
-    "mata-description" => "Creative Converge builds modern Next.js websites and web applications with efficient rendering, interactive experiences, API integrations, headless CMS connectivity, and ongoing maintenance.",
+    "mata-title" => "Instant Speed Meets Interactive UI – Next.js Development by Creative Converge",
+    "mata-description" => "Build lightning-fast websites and web apps. Our Next.js development services combine content-focused builds, interactive UI, and high performance.",
     "slug" => "next-js",
     "description" => "At Creative Converge, we use Next.js to build modern web experiences with thoughtful architecture, efficient rendering, and the flexibility to support evolving business needs.",
     "subtitle" => "Built for the Experience You Want to Deliver.",
@@ -1202,8 +1202,8 @@ $services = [
           
 [
     "title" => "WordPress Development",
-    "mata-title" => "Custom WordPress Development Services | Creative Converge",
-    "mata-description" => "Creative Converge builds custom WordPress websites with scalable themes, performance and SEO optimization, clean code, easy content management, and security best practices.",
+    "mata-title" => "Manageable, Fast, and Scalable WordPress Websites – Creative Converge Dallas",
+    "mata-description" => "WordPress development without unnecessary theme weight. Get a manageable custom site, carefully chosen plugins and clean structure with room to grow.",
     "slug" => "wordpress-development",
     "description" => "Your website should do more than look good; it should make running your business easier. Creative Converge is a WordPress development company that builds websites around your goals, your audience, and the way you work.",
     "subtitle" => "WordPress Websites Built to Work as Hard as You Do.",
@@ -1260,8 +1260,8 @@ $services = [
             
 [
     "title" => "Shopify",
-    "mata-title" => "Shopify Store Development & Customization | Creative Converge",
-    "mata-description" => "Creative Converge builds Shopify stores with custom theme customization, conversion-focused product pages, payment gateway setup, cart abandonment optimization, and mobile-first design.",
+    "mata-title" => "Built to Sell. Designed to Impress. – Custom Shopify Development by Creative Converge",
+    "mata-description" => "Shopify development for distinctive storefronts, considered product pages, smooth checkout and integrations that help your team manage day-to-day selling.",
     "slug" => "shopify",
     "description" => "Selling online should feel like an opportunity, not a juggling act. Creative Converge delivers Shopify development services for businesses that want a distinctive storefront, practical selling tools, and a store that's easier to run day-to-day.",
     "subtitle" => "Distinctive Shopify Stores Designed for Better Shopping Experiences.",
@@ -1317,8 +1317,8 @@ $services = [
            
 [
     "title" => "Magento",
-    "mata-title" => "Magento Development Services | Creative Converge",
-    "mata-description" => "Creative Converge provides Magento development services, including custom store configuration, inventory management, secure checkout, API integrations, and performance optimization.",
+    "mata-title" => "Conquer Complex Catalogs and High Traffic – Magento Development by Creative Converge Dallas",
+    "mata-description" => "Scale your ambitious store with Magento development. We specialize in complex catalogs, custom extensions, performance tuning, and seamless migrations.",
     "slug" => "magento",
     "description" => "Creative Converge provides Magento development services for businesses looking for greater control over their eCommerce operations. We build tailored storefronts, configure essential features, and shape store functionality around the way your business sells.",
     "subtitle" => "Tailored Magento Solutions for Growing Businesses.",
@@ -1374,8 +1374,8 @@ $services = [
            
 [
     "title" => "WooCommerce",
-    "mata-title" => "WooCommerce Development Services | Creative Converge",
-    "mata-description" => "Creative Converge develops WooCommerce stores with custom design, store setup, speed optimization, troubleshooting, product catalog functionality, and ongoing maintenance.",
+    "mata-title" => "Stop Settling for Clunky Carts, Get Custom WooCommerce Stores by Creative Converge Dallas",
+    "mata-description" => "WooCommerce development that turns WordPress into a store built for your brand, with custom design, product setup, payment options and a smoother checkout flow.",
     "slug" => "woocommerce",
     "description" => "At Creative Converge, we develop WooCommerce stores that bring your products, customer experience, and day-to-day operations together, giving you more control over how your online business works.",
     "subtitle" => "Flexible WooCommerce Stores Built Around Your Business.",
@@ -1432,8 +1432,8 @@ $services = [
            
 [
     "title" => "CMS Development",
-    "mata-title" => "Custom CMS Development Services | Creative Converge",
-    "mata-description" => "Creative Converge provides CMS development services with custom configuration, intuitive admin interfaces, flexible content editing, media management, and secure database structures.",
+    "mata-title" => "Stop Fighting Your Website: Intuitive Custom CMS Solutions by Creative Converge Dallas",
+    "mata-description" => "Take control of your content. Our CMS development services provide intuitive admin dashboards and asset management tailored to your team's workflow.",
     "slug" => "cms-development",
     "description" => "Creative Converge provides CMS development services that help businesses manage website content with less effort and greater control.",
     "subtitle" => "Flexible CMS Solutions Designed Around Your Workflow.",
@@ -1491,8 +1491,8 @@ $services = [
           
 [
     "title" => "Website Maintenance",
-    "mata-title" => "Website Maintenance Services | Creative Converge",
-    "mata-description" => "Creative Converge provides website maintenance services, including routine updates, security monitoring, backup scheduling, performance audits, and technical troubleshooting.",
+    "mata-title" => "Proactive Security, Backups, and Updates – Custom Website Maintenance by Creative Converge Dallas",
+    "mata-description" => "Keep your site secure, stable, and up to date. Our website maintenance services cover routine updates, security checks, and technical backups.",
     "slug" => "website-maintenance",
     "description" => "Our website maintenance services cover the practical tasks involved in maintaining your digital presence, from publishing fresh information to troubleshooting technical faults and managing essential website components.",
     "subtitle" => "Reliable Website Care to Keep Your Business Running Smoothly.",
@@ -1620,8 +1620,8 @@ $services = [
     ],     // end Web Developer Solutions
     [
         "title" => "Branding",
-        "meta-title" => "Professional Branding Services | Creative Converge",
-        "meta-description" => "Build a memorable brand with Creative Converge. We offer brand strategy, logo design, visual identity, brand messaging, and rebranding services.",
+        "mata-title" => "Branding Services Beyond the Logo",
+        "mata-description" => "Shape how people perceive your business. Our branding services unite positioning, voice, and visual identity for a consistent brand at every touchpoint.",
         "slug" => "branding",
         "description" => "A brand is more than a fascinating logo. It’s the sentiments people take away. Our branding services bring strategy and design together to give your identity a clear point of view wherever customers encounter it.",
         "image" => "branding.jpg",
@@ -1674,8 +1674,8 @@ $services = [
     ],
     [
         "title" => "Ecommerce Website",
-        "mata-title" => "title",
-        "mata-description" => "Discription",
+        "mata-title" => "Build an eCommerce Store That Sells: Creative Converge Dallas",
+        "mata-description" => "Build a store that turns browsers into buyers. Our eCommerce website solutions ensure smooth navigation, secure checkout, and a focus on your brand.",
         "slug" => "ecommerce-website-solutions",
         "description" => "Your online store should make buying feel like the natural next step. At Creative Converge, we build eCommerce experiences that bring your products, customer journey, and business goals together",
         "image" => "ecommerce.jpg",
@@ -1806,8 +1806,8 @@ $services = [
    
 [
     "title" => "Stunning Video Animation Services",
-    "mata-title" => "Video Animation Services for Businesses | Creative Converge",
-    "mata-description" => "Creative Converge provides custom video animation services, including 2D and 3D animation, explainer videos, product animations, storyboarding, motion design, and social media video production.",
+    "mata-title" => "Stop the Scroll with Bold Video Animation Services – Creative Converge Dallas",
+    "mata-description" => "Give your message a rhythm and a visual hook. Video animation services for explainers, product stories, branded motion and social content people can follow.",
     "slug" => "video-animation-services",
     "description" => "Some ideas are easier to understand when people can see them in motion. Our custom explainer video production services for businesses turn concepts, products, and messages into visual stories that hold attention and make complex information easier to follow.",
     "subtitle" => "Video Animation Services That Bring Your Brand Story to Life",
@@ -1925,8 +1925,8 @@ $services = [
     
 [
     "title" => "Digital Marketing",
-    "mata-title" => "Digital Marketing Services in Dallas | Creative Converge",
-    "mata-description" => "Creative Converge provides digital marketing services, including SEO, AI search optimization, PPC advertising, social media marketing, content strategy, and conversion rate optimization.",
+    "mata-title" => "Dallas Digital Marketing Agency – SEO, Social, and Paid Ads by Creative Converge",
+    "mata-description" => "Put your brand in front of the right audience. Our digital marketing services combine SEO, paid media, and social content to drive real business growth.",
     "slug" => "digital-marketing",
     "description" => "Being online is one thing, but reaching the right people with a message that sticks is another. As a digital marketing agency serving businesses in Dallas, Creative Converge helps brands strengthen their online presence, connect with their target audience, and work toward meaningful business growth.",
     "subtitle" => "Digital Marketing Services That Turn Attention Into Business Growth",

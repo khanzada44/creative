@@ -1,7 +1,7 @@
 <?php /* services.php - use: <?php include __DIR__ . '/includes/services.php'; ?> */
 require_once __DIR__ . '/init.php';
 
-/* ---------- Heading ---------- */
+
 $srvEyebrow = 'Our services';
 $srvTitle   = 'What We Do <br>Best, <span>All Under One Roof</span>';   /* <span> = mint colour */
 $srvLead    = 'From brand identity and custom website design services to development and digital marketing, check out all our services that help in raise your business ideas into something real. As a website design agency, we offer custom web design services tailored to different business needs';

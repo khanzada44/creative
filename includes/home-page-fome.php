@@ -21,7 +21,7 @@
 
 
       <form class="cvg-consult-form"
-        action="contact-submit.php"
+        action="email.php"
         method="post">
 
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"
@@ -30,22 +30,22 @@
         <div class="cvg-consult-row">
           <div class="cvg-consult-field">
             <label for="cvg-consult-name" class="cvg-consult-sr">Name</label>
-            <input type="text" id="cvg-consult-name" name="name" class="cvg-consult-input" placeholder="Name" autocomplete="name" required maxlength="100">
+            <input type="text" id="name" name="name" class="cvg-consult-input" placeholder="Name" autocomplete="name" required maxlength="100">
           </div>
           <div class="cvg-consult-field">
             <label for="cvg-consult-email" class="cvg-consult-sr">Email</label>
-            <input type="email" id="cvg-consult-email" name="email" class="cvg-consult-input" placeholder="Email" autocomplete="email" required>
+            <input type="email" id="email" name="email" class="cvg-consult-input" placeholder="Email" autocomplete="email" required>
           </div>
         </div>
 
         <div class="cvg-consult-field">
           <label for="cvg-consult-phone" class="cvg-consult-sr">Phone</label>
-          <input type="tel" id="cvg-consult-phone" name="phone" class="cvg-consult-input" placeholder="Phone" autocomplete="tel" maxlength="40">
+          <input type="tel" id="phone" name="phone" class="cvg-consult-input" placeholder="Phone" autocomplete="tel" maxlength="40">
         </div>
 
         <div class="cvg-consult-field">
           <label for="cvg-consult-message" class="cvg-consult-sr">Message</label>
-          <textarea id="cvg-consult-message" name="message" rows="4" class="cvg-consult-input cvg-consult-textarea" placeholder="Message" maxlength="5000"></textarea>
+          <textarea id="msg_subject" name="msg_subject" rows="4" class="cvg-consult-input cvg-consult-textarea" placeholder="Message" maxlength="5000"></textarea>
         </div>
 
         <button type="submit" class="cvg-consult-btn">

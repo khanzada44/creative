@@ -13,36 +13,30 @@ $contactSendTo = $contact['email'];
 
 $contactShowMap = true;
 
-/* ---------- Banner ---------- */
 $contactHero = [
   'eyebrow' => 'So, What Are We Making Happen?',
   'title'   => 'Contact us',
   'lead'    => "Maybe you've got a business to build, a brand that needs a fresh direction, a website that's no longer doing its job, or an idea you've been meaning to bring to life. Whatever brought you here, let's hear it out and get free web design consultation.",
 ];
 
-/* ---------- Images (uploads folder, assets folder or full URL) ---------- */
 $contactImages = [
   'rocket'       => '2024/08/rocket-no-bg.png',
   'photo'        => '2024/08/contact-page.png',
   'illustration' => '2024/08/contact-page-Illustration-Art.png',
 ];
 
-/* ---------- "Create your own world" accordion ---------- */
 $contactFaq = [
   ['Analyzing Research', 'Analyzing research refers to the process of carefully examining and interpreting the data or information gathered through research to draw meaningful conclusions, identify patterns, and generate insights.'],
   ['Integrated Learning', 'Integrated learning refers to an approach that connects different subjects, disciplines, or areas of knowledge to provide a more holistic and interconnected experience.'],
   ['Considering Innovation', 'Considering innovation refers to the process of evaluating and exploring new ideas, methods, technologies, or approaches that can lead to improvements in a particular area or field.'],
 ];
 
-/* ---------- Newsletter form action (e.g. your Mailchimp/Formspree URL; '#' = off) ---------- */
 $newsletterAction = '#';
 
-/* ---------- URLs ---------- */
 require_once dirname(__DIR__) . '/includes/init.php';
 $uploads = $uploads ?? 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads/';
 $siteUrl = cvg_url('');
 
-/* ================= Nothing to change below this line ================= */
 
 $cvgRoot = dirname(__DIR__);
 if (!is_dir($cvgRoot . '/assets')) $cvgRoot = __DIR__;
@@ -96,8 +90,7 @@ $mapLink = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($co
 $cvgArrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>';
 ?>
 <?php
-/* Header + mobile viewport fix:
-   the viewport tag is added inside <head> if header.php does not already have one */
+
 ob_start();
 include __DIR__ . '/../includes/header.php';
 $cvgHead = ob_get_clean();
@@ -115,11 +108,14 @@ echo $cvgHead;
 <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Tell Us Your Goals: Web Design and Digital Marketing at Creative Converge</title>
+<meta name="description" content="Looking for a website design quote near me? Contact Creative Converge Dallas to discuss your project, share your goals and find a scope that fits.">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 
 <main class="cvg-ct" id="cvg-contact-page">
 
-  <!-- ================= 1. BANNER ================= -->
+
   <section class="cvg-ct-hero">
     <div class="cvg-ct-hero-grid" aria-hidden="true"></div>
     <div class="cvg-ct-wrap cvg-ct-hero-inner">
@@ -156,7 +152,7 @@ echo $cvgHead;
         <img src="<?= cvg_url('assets/img/contact-us-image.jpg') ?>" alt="Creative Converge support specialist with a headset" loading="lazy">
       </div>
 
-      <form class="cvg-ct-form cvg-ct-reveal" method="post" action="#cvg-ct-form" novalidate style="--d:.16s">
+      <form class="cvg-ct-form cvg-ct-reveal" method="post" action="/mockups/email.php" novalidate style="--d:.16s">
         <input type="hidden" name="cvg_contact_form" value="1">
         <div class="cvg-ct-hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
@@ -167,25 +163,25 @@ echo $cvgHead;
         <?php endif; ?>
 
         <div class="cvg-ct-field<?= isset($cfErrors['name']) ? ' cvg-ct-field--err' : '' ?>">
-          <input id="cvg-ct-name" name="name" type="text" placeholder=" " required autocomplete="name" value="<?= cvg_e($cf['name']) ?>">
+          <input id="name" name="name" type="text" placeholder=" " required autocomplete="name" value="<?= cvg_e($cf['name']) ?>">
           <label for="cvg-ct-name">Name</label><i aria-hidden="true"></i>
           <small class="cvg-ct-err"><?= cvg_e($cfErrors['name'] ?? 'Enter your name') ?></small>
         </div>
         <div class="cvg-ct-field">
-          <input id="cvg-ct-phone" name="phone" type="tel" placeholder=" " autocomplete="tel" value="<?= cvg_e($cf['phone']) ?>">
+          <input id="phone" name="phone" type="tel" placeholder=" " autocomplete="tel" value="<?= cvg_e($cf['phone']) ?>">
           <label for="cvg-ct-phone">Phone</label><i aria-hidden="true"></i>
         </div>
         <div class="cvg-ct-field<?= isset($cfErrors['email']) ? ' cvg-ct-field--err' : '' ?>">
-          <input id="cvg-ct-email" name="email" type="email" placeholder=" " required autocomplete="email" value="<?= cvg_e($cf['email']) ?>">
+          <input id="email" name="email" type="email" placeholder=" " required autocomplete="email" value="<?= cvg_e($cf['email']) ?>">
           <label for="cvg-ct-email">Email</label><i aria-hidden="true"></i>
           <small class="cvg-ct-err"><?= cvg_e($cfErrors['email'] ?? 'Enter a valid email address') ?></small>
         </div>
         <div class="cvg-ct-field">
-          <textarea id="cvg-ct-subject" name="subject" rows="1" placeholder=" "><?= cvg_e($cf['subject']) ?></textarea>
+          <textarea id="msg_subject" name="msg_subject" rows="1" placeholder=" "><?= cvg_e($cf['subject']) ?></textarea>
           <label for="cvg-ct-subject">Subject</label><i aria-hidden="true"></i>
         </div>
         <div class="cvg-ct-field<?= isset($cfErrors['message']) ? ' cvg-ct-field--err' : '' ?>">
-          <textarea id="cvg-ct-message" name="message" rows="3" placeholder=" " required><?= cvg_e($cf['message']) ?></textarea>
+          <textarea id="msg_subject" name="msg_subject" rows="3" placeholder=" " required><?= cvg_e($cf['message']) ?></textarea>
           <label for="cvg-ct-message">Message</label><i aria-hidden="true"></i>
           <small class="cvg-ct-err"><?= cvg_e($cfErrors['message'] ?? 'Tell us a little about your project') ?></small>
         </div>
@@ -1390,7 +1386,8 @@ echo $cvgHead;
 
     .cvg-ct .cvg-ct-field input,
     .cvg-ct .cvg-ct-field textarea {
-      font-size: 16px  /* 16px stops iPhone from zooming in on tap */
+      font-size: 16px
+        /* 16px stops iPhone from zooming in on tap */
     }
 
     .cvg-ct .cvg-ct-send {

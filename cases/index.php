@@ -179,6 +179,9 @@ echo $cvgHead;
 <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <title>Grow Your Brand with Creative Converge: Premier Dallas Digital Agency</title>
+    <meta name="description" content="Creative Converge is a premier digital agency in Dallas offering custom web design, development, branding, and digital marketing to grow your brand.">
+ 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Scroll-reveal flag: set BEFORE the page renders (no flash). Skipped if reduced motion / no IntersectionObserver. -->
