@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7AF5D3"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6B4FF"/><stop offset="1" stop-color="#8A68FF"/></linearGradient>
+  <linearGradient id="gCoral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC94D"/><stop offset="1" stop-color="#FF7A57"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".45" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gSun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFC94D" stop-opacity=".55"/><stop offset="1" stop-color="#FFC94D" stop-opacity="0"/></radialGradient>
+  <clipPath id="cv"><rect x="90" y="100" width="380" height="380" rx="24"/></clipPath>
+  <clipPath id="art"><rect x="146" y="148" width="306" height="314" rx="14"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+  <path id="bodyP" d="M234 340 C234 268 264 240 300 240 C336 240 366 268 366 340 C366 380 338 398 300 398 C262 398 234 380 234 340 Z"/>
+</defs>
+<style>
+  .fill,.blink,.wave,.sprout,.pop,.spark{transform-box:fill-box}
+  .L{animation-duration:9s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.3,.6,.3,1)}
+  .ink{stroke-dasharray:1;stroke-dashoffset:1;animation-name:ink}
+  @keyframes ink{0%,4%{stroke-dashoffset:1;opacity:1}22%,92%{stroke-dashoffset:0;opacity:1}98%,100%{stroke-dashoffset:0;opacity:0}}
+  .i2{animation-delay:.6s}.i3{animation-delay:1.1s}.i4{animation-delay:1.5s}
+  .fill{animation-name:fill}
+  @keyframes fill{0%,26%{opacity:0}34%,92%{opacity:1}98%,100%{opacity:0}}
+  .f2{animation-delay:.25s}.f3{animation-delay:.5s}.f4{animation-delay:.75s}
+  .brush{offset-path:path("M234 340 C234 268 264 240 300 240 C336 240 366 268 366 340 C366 380 338 398 300 398 C262 398 234 380 234 340 Z");offset-rotate:0deg;animation-name:brush;animation-timing-function:linear}
+  @keyframes brush{0%,4%{offset-distance:0%;opacity:0}6%{opacity:1}22%{offset-distance:100%;opacity:1}26%,100%{offset-distance:100%;opacity:0}}
+  .blink{transform-origin:50% 50%;animation:blink 3.2s ease-in-out infinite}
+  @keyframes blink{0%,44%,52%,100%{transform:scaleY(1)}48%{transform:scaleY(.08)}}
+  .wave{transform-origin:0% 100%;animation:wave 1.4s ease-in-out infinite}
+  @keyframes wave{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(22deg)}}
+  .sprout{transform-origin:50% 100%;animation:sprout 3s ease-in-out infinite}
+  @keyframes sprout{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+  .hop{animation:hop 1.8s ease-in-out infinite}
+  @keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .spark{transform-origin:50% 50%;animation:spark 2s ease-in-out infinite}
+  @keyframes spark{0%,100%{transform:scale(.6) rotate(0);opacity:.4}50%{transform:scale(1.15) rotate(45deg);opacity:1}}
+  .pop{transform-origin:50% 50%;animation-name:pop}
+  @keyframes pop{0%,8%{transform:scale(0)}14%{transform:scale(1.15)}17%,92%{transform:scale(1)}98%,100%{transform:scale(0)}}
+  .p2{animation-delay:.2s}.p3{animation-delay:.4s}.p4{animation-delay:.6s}
+  .lay{animation-name:lay;animation-timing-function:steps(1,end)}
+  @keyframes lay{0%{opacity:.25}30%{opacity:1}96%{opacity:.25}}
+  .lay2{animation-name:lay2;animation-timing-function:steps(1,end)}
+  @keyframes lay2{0%{opacity:.25}34%{opacity:1}96%{opacity:.25}}
+  .lay3{animation-name:lay3;animation-timing-function:steps(1,end)}
+  @keyframes lay3{0%{opacity:.25}40%{opacity:1}96%{opacity:.25}}
+  .drop{animation:drop 9s cubic-bezier(.3,.6,.3,1) infinite}
+  @keyframes drop{0%,26%{transform:translate(0,0)}32%{transform:translate(-120px,150px)}36%{transform:translate(-120px,150px) scale(.85)}40%,100%{transform:translate(0,0)}}
+  .stroke{stroke-dasharray:1;stroke-dashoffset:1;animation:stroke 3s ease-in-out infinite}
+  @keyframes stroke{0%{stroke-dashoffset:1}60%,100%{stroke-dashoffset:0}}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.ink,.stroke{stroke-dashoffset:0}}
+</style>
+
+<circle cx="290" cy="300" r="300" fill="url(#gGlow)"/>
+
+<!-- canvas app -->
+<g filter="url(#soft)"><rect x="90" y="100" width="380" height="380" rx="24" fill="url(#gBoard)" stroke="#22302C"/></g>
+<g clip-path="url(#cv)">
+  <rect x="90" y="100" width="380" height="36" fill="#0A0F0E"/>
+  <circle cx="114" cy="118" r="5" fill="#FF8A6B"/><circle cx="132" cy="118" r="5" fill="#FFC94D"/><circle cx="150" cy="118" r="5" fill="#00D4A3"/>
+  <text x="300" y="122" text-anchor="middle" font-size="11" font-weight="500" fill="#8FA39E">mascot-final.png</text>
+  <!-- toolbar -->
+  <rect x="100" y="148" width="36" height="168" rx="12" fill="#151D1A"/>
+  <g fill="none" stroke="#8FA39E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="106" y="154" width="24" height="24" rx="7" fill="#00D4A3" stroke="none"/>
+    <path d="M113 172 l9 -9 3 3 -9 9 -4 1z" stroke="#04342C"/>
+    <path d="M112 196 q6 -10 12 0" /><circle cx="118" cy="200" r="2"/>
+    <path d="M111 226 h14 M118 219 v14"/>
+    <rect x="111" y="246" width="14" height="10" rx="2"/><path d="M111 252 l14 -6"/>
+    <circle cx="118" cy="282" r="7"/><path d="M118 275 v14 M111 282 h14"/>
+    <path d="M112 304 l6 -6 6 6"/>
+  </g>
+  <!-- art board -->
+  <rect x="146" y="148" width="306" height="314" rx="14" fill="#F6F1E7"/>
+  <g clip-path="url(#art)">
+    <circle cx="396" cy="196" r="56" fill="url(#gSun)"/>
+    <circle cx="396" cy="196" r="20" fill="#FFC94D"/>
+    <path d="M146 420 C 220 392 300 404 452 384 V462 H146 Z" fill="#C9F0E2"/>
+    <path d="M146 440 C 240 424 340 436 452 418 V462 H146 Z" fill="#9EE4CF"/>
+    <g class="spark" style="transform-origin:center"><path d="M190 200 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4z" fill="#9B7BFF"/></g>
+    <g class="spark" style="animation-delay:-1s"><path d="M420 300 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#FF8A6B"/></g>
+
+    <!-- the mascot -->
+    <g class="hop">
+      <!-- fills -->
+      <ellipse class="L fill f4" cx="300" cy="404" rx="58" ry="7" fill="#04342C" fill-opacity=".15"/>
+      <g class="sprout">
+        <path class="L fill f3" d="M300 240 C 300 226 302 214 306 204" fill="none" stroke="#2E7D5B" stroke-width="5" stroke-linecap="round"/>
+        <path class="L fill f3" d="M306 206 C 290 186 266 190 262 200 C 276 214 296 212 306 206 Z" fill="url(#gViolet)"/>
+        <path class="L fill f3" d="M306 206 C 318 184 342 184 348 194 C 336 212 316 214 306 206 Z" fill="url(#gCoral)"/>
+      </g>
+      <use class="L fill" href="#bodyP" fill="url(#gMint)"/>
+      <ellipse class="L fill f2" cx="300" cy="364" rx="36" ry="20" fill="#F6F1E7" fill-opacity=".45"/>
+      <g class="wave"><path class="L fill f2" d="M360 312 C 380 300 392 286 396 272 C 400 262 412 266 408 278 C 402 298 386 318 366 330 Z" fill="url(#gMint)"/></g>
+      <path class="L fill f2" d="M240 318 C 222 330 216 344 220 356 C 224 364 234 360 236 350 C 238 340 242 334 244 330 Z" fill="url(#gMint)"/>
+      <ellipse class="L fill f4" cx="276" cy="398" rx="16" ry="8" fill="#00A884"/>
+      <ellipse class="L fill f4" cx="324" cy="398" rx="16" ry="8" fill="#00A884"/>
+      <circle class="L fill f4" cx="262" cy="318" r="9" fill="#FF8A6B" fill-opacity=".6"/>
+      <circle class="L fill f4" cx="338" cy="318" r="9" fill="#FF8A6B" fill-opacity=".6"/>
+      <g class="L fill f3">
+        <g class="blink"><ellipse cx="280" cy="300" rx="11" ry="13" fill="#FFFFFF"/><circle cx="283" cy="302" r="6.5" fill="#0A0A0A"/><circle cx="285" cy="299" r="2" fill="#FFFFFF"/></g>
+        <g class="blink"><ellipse cx="320" cy="300" rx="11" ry="13" fill="#FFFFFF"/><circle cx="323" cy="302" r="6.5" fill="#0A0A0A"/><circle cx="325" cy="299" r="2" fill="#FFFFFF"/></g>
+        <path d="M290 326 Q300 336 310 326" fill="none" stroke="#04342C" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+      <!-- line art (draws first) -->
+      <g fill="none" stroke="#04342C" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+        <use class="L ink" href="#bodyP" pathLength="1"/>
+        <g class="wave"><path class="L ink i2" pathLength="1" d="M360 312 C 380 300 392 286 396 272 C 400 262 412 266 408 278 C 402 298 386 318 366 330 Z"/></g>
+        <path class="L ink i2" pathLength="1" d="M240 318 C 222 330 216 344 220 356 C 224 364 234 360 236 350 C 238 340 242 334 244 330"/>
+        <path class="L ink i3" pathLength="1" d="M306 206 C 290 186 266 190 262 200 C 276 214 296 212 306 206 C 318 184 342 184 348 194 C 336 212 316 214 306 206 M300 240 C 300 226 302 214 306 204"/>
+        <path class="L ink i4" pathLength="1" d="M290 326 Q300 336 310 326"/>
+      </g>
+    </g>
+  </g>
+</g>
+
+<!-- brush following the outline -->
+<g class="L brush"><g transform="translate(-2 -40)">
+  <path d="M0 40 l6 -8 22 -26 6 5 -24 24z" fill="#F2F5F4" stroke="#0A0A0A" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M0 40 l6 -8 4 4z" fill="#04342C"/>
+</g></g>
+
+<!-- card: palette with eyedropper -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="452" y="26" width="170" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="468" y="52" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">PALETTE</text>
+  <circle class="L pop" cx="484" cy="80" r="13" fill="url(#gMint)"/>
+  <circle class="L pop p2" cx="518" cy="80" r="13" fill="url(#gViolet)"/>
+  <circle class="L pop p3" cx="552" cy="80" r="13" fill="url(#gCoral)"/>
+  <circle class="L pop p4" cx="586" cy="80" r="13" fill="#F6F1E7"/>
+  <text x="468" y="116" font-size="9.5" fill="#8FA39E">Mint · Lilac · Sunset · Cream</text>
+</g>
+
+<!-- card: layers -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="482" y="190" width="140" height="150" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="498" y="216" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">LAYERS</text>
+  <g font-size="10" fill="#F2F5F4">
+    <g class="L lay3"><rect x="498" y="228" width="108" height="28" rx="8" fill="#151D1A"/><rect x="504" y="234" width="16" height="16" rx="4" fill="#FF8A6B"/><text x="528" y="246">Details</text></g>
+    <g class="L lay2"><rect x="498" y="262" width="108" height="28" rx="8" fill="#151D1A"/><rect x="504" y="268" width="16" height="16" rx="4" fill="#00D4A3"/><text x="528" y="280">Colour</text></g>
+    <g class="L lay"><rect x="498" y="296" width="108" height="28" rx="8" fill="#151D1A" stroke="#5FF0C8" stroke-opacity=".5"/><rect x="504" y="302" width="16" height="16" rx="4" fill="#F6F1E7"/><path d="M507 315 l5 -6 4 4" fill="none" stroke="#04342C" stroke-width="1.5"/><text x="528" y="314">Line art</text></g>
+  </g>
+</g>
+
+<!-- card: brush -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="20" y="500" width="200" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="36" y="526" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">BRUSH</text>
+  <text x="204" y="526" text-anchor="end" font-size="9.5" fill="#8FA39E">Ink · 12px</text>
+  <path class="stroke" pathLength="1" d="M40 572 C 70 540 100 600 130 566 S 180 548 196 572" fill="none" stroke="url(#gCoral)" stroke-width="8" stroke-linecap="round"/>
+  <rect x="36" y="588" width="168" height="4" rx="2" fill="#22302C"/><rect x="36" y="588" width="70" height="4" rx="2" fill="#5FF0C8"/><circle cx="106" cy="590" r="6" fill="#F2F5F4"/>
+</g>
+
+<!-- card: sketch to final -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="440" y="500" width="182" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="456" y="526" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">SKETCH → FINAL</text>
+  <rect x="456" y="536" width="60" height="56" rx="10" fill="#F6F1E7"/>
+  <g fill="none" stroke="#8FA39E" stroke-width="1.6" stroke-dasharray="3 3"><circle cx="486" cy="568" r="16"/><path d="M486 552 v-8"/></g>
+  <path d="M524 564 h18 m-6 -6 l6 6 -6 6" fill="none" stroke="#5FF0C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="548" y="536" width="60" height="56" rx="10" fill="#F6F1E7"/>
+  <circle cx="578" cy="570" r="16" fill="url(#gMint)"/><circle cx="572" cy="566" r="3" fill="#0A0A0A"/><circle cx="584" cy="566" r="3" fill="#0A0A0A"/>
+  <path d="M578 554 v-8" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="584" cy="545" rx="6" ry="3" fill="#9B7BFF"/>
+</g>
+
+<!-- badge -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="20" y="40" width="250" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <circle cx="42" cy="60" r="6" fill="#00D4A3"/>
+  <text x="56" y="64.5" font-size="12" font-weight="600" fill="#F2F5F4">Characters · Mascots · Editorial</text>
+</g>
+</svg>

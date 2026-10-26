@@ -40,8 +40,6 @@
     });
   });
   items.forEach(function (it) { if (!it.classList.contains('cvg-port-hide')) it.classList.add('cvg-port-in'); });
-
-  /* ---------- Website screenshots scroll on hover ---------- */
   items.forEach(function (it) {
     if (it.getAttribute('data-cat') !== 'web') return;
     var media = it.querySelector('.cvg-port-media');
@@ -61,8 +59,6 @@
     it.addEventListener('focus', start);
     it.addEventListener('blur', stop);
   });
-
-  /* ---------- Lightbox ---------- */
   var lb = root.querySelector('.cvg-port-lightbox');
   var lbImg = root.querySelector('.cvg-port-lb-img');
   var list = [], idx = 0, lastFocus = null;

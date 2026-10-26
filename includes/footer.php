@@ -275,8 +275,8 @@
         <h4>Support</h4>
         <ul>
           <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Terms &amp; Conditions</a></li>
-          <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Privacy Policy</a></li>
-          <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Payments</a></li>
+          <li><a href="<?= cvg_url('privacy-policy/index.php') ?>">Privacy Policy</a></li>
+          <li><a href="<?= cvg_url('pricing/index.php') ?>">Payments</a></li>
           <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Refund</a></li>
           <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Installation</a></li>
         </ul>
@@ -289,7 +289,7 @@
           <li><a href="<?= cvg_url('contact-us/index.php') ?>">Contact</a></li>
           <li><a href="<?= cvg_url('services/services.php') ?>">Services</a></li>
           <li><a href="<?= cvg_url('pricing/index.php') ?>">Pricing</a></li>
-          <li><a href="<?= cvg_url('cases/index.php') ?>">Cases</a></li>
+          <!-- <li><a href="<?= cvg_url('cases/index.php') ?>">Cases</a></li> -->
         </ul>
       </div>
     </div>

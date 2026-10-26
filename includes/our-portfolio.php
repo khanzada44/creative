@@ -8,23 +8,62 @@ $tabs = [
 
 $portfolio = [
 
-  'web' => 'assets/img/portfolio-img-*.webp',
-                         
+  'web' => [
+    'assets/images/portfolio/laravel-1.webp',
+    'assets/images/portfolio/ecommercewebsite-1.jpg',
+    'assets/images/portfolio/ecommercewebsite-1.webp',
+    'assets/images/portfolio/laravel-4.jpg',
+    'assets/images/portfolio/laravel-5.jpg',
+    'assets/images/portfolio/laravel-6.jpg',
+    'assets/images/portfolio/laravel-7.jpg',
+    'assets/images/portfolio/laravel-8.jpg',
+    'assets/images/portfolio/ecommercewebsite-6.jpg',
+    'assets/images/portfolio/ecommercewebsite-5.webp',
+    'assets/images/portfolio/ecommercewebsite-3.jpg',
+    'assets/images/portfolio/ecommercewebsite-2.webp',
+    'assets/images/portfolio/laravel-13.jpg',
+    'assets/images/portfolio/laravel-12.jpg',
+  ],
+
   'logo' => [
-    'assets/img/portfolio/logo/37.png', 'assets/img/portfolio/logo/37.jpg', 'assets/img/portfolio/logo/38.png', 'assets/img/portfolio/logo/36.png',
-    'assets/img/portfolio/logo/32.jpg', 'assets/img/portfolio/logo/34.png', 'assets/img/portfolio/logo/31.jpg', 'assets/img/portfolio/logo/35.png',
-    'assets/img/portfolio/logo/29.jpg', 'assets/img/portfolio/logo/30.jpg', 'assets/img/portfolio/logo/28.jpg', 'assets/img/portfolio/logo/26.jpg',
-    'assets/img/portfolio/logo/27.jpg', 'assets/img/portfolio/logo/20.png', 'assets/img/portfolio/logo/17.png', 'assets/img/portfolio/logo/18.png',
-    'assets/img/portfolio/logo/19.png', 'assets/img/portfolio/logo/15.png', 'assets/img/portfolio/logo/16.png', 'assets/img/portfolio/logo/25.jpg',
+    'assets/img/portfolio/logo/37.png',
+    'assets/img/portfolio/logo/37.jpg',
+    'assets/img/portfolio/logo/38.png',
+    'assets/img/portfolio/logo/36.png',
+    'assets/img/portfolio/logo/32.jpg',
+    'assets/img/portfolio/logo/34.png',
+    'assets/img/portfolio/logo/31.jpg',
+    'assets/img/portfolio/logo/35.png',
+    'assets/img/portfolio/logo/29.jpg',
+    'assets/img/portfolio/logo/30.jpg',
+    'assets/img/portfolio/logo/28.jpg',
+    'assets/img/portfolio/logo/26.jpg',
+    'assets/img/portfolio/logo/27.jpg',
+    'assets/img/portfolio/logo/20.png',
+    'assets/img/portfolio/logo/17.png',
+    'assets/img/portfolio/logo/18.png',
+    'assets/img/portfolio/logo/19.png',
+    'assets/img/portfolio/logo/15.png',
+    'assets/img/portfolio/logo/16.png',
+    'assets/img/portfolio/logo/25.jpg',
   ],
   'branding' => [
-    'assets/img/portfolio/branding/branding-06.jpg', 'assets/img/portfolio/branding/branding-08-1.jpg', 'assets/img/portfolio/branding/branding-04.jpg',
-    'assets/img/portfolio/branding/branding-09.jpg', 'assets/img/portfolio/branding/branding-05.jpg', 'assets/img/portfolio/branding/branding-02.jpg',
-    'assets/img/portfolio/branding/branding-03.jpg', 'assets/img/portfolio/branding/branding-01.jpg',
+    'assets/img/portfolio/branding/branding-06.jpg',
+    'assets/img/portfolio/branding/branding-08-1.jpg',
+    'assets/img/portfolio/branding/branding-04.jpg',
+    'assets/img/portfolio/branding/branding-09.jpg',
+    'assets/img/portfolio/branding/branding-05.jpg',
+    'assets/img/portfolio/branding/branding-02.jpg',
+    'assets/img/portfolio/branding/branding-03.jpg',
+    'assets/img/portfolio/branding/branding-01.jpg',
   ],
   'video' => [
-    'assets/img/portfolio/video/1.jpg', 'assets/img/portfolio/video/img-8.png', 'assets/img/portfolio/video/2.png',
-    'assets/img/portfolio/video/3.jpg', 'assets/img/portfolio/video/4.png', 'assets/img/portfolio/video/5.jpg',
+    'assets/img/portfolio/video/1.jpg',
+    'assets/img/portfolio/video/img-8.png',
+    'assets/img/portfolio/video/2.png',
+    'assets/img/portfolio/video/3.jpg',
+    'assets/img/portfolio/video/4.png',
+    'assets/img/portfolio/video/5.jpg',
   ],
 ];
 
@@ -42,10 +81,13 @@ $siteUrl = cvg_url('');
 
 $viewAllLink = cvg_url('cases/index.php');
 
-$cvgRoot = dirname(__DIR__);  
+$cvgRoot = dirname(__DIR__);
 
 if (!function_exists('cvg_e')) {
-  function cvg_e($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
+  function cvg_e($s)
+  {
+    return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
+  }
 }
 
 /* Site ka base URL khud nikalna */
@@ -62,7 +104,8 @@ if ($siteUrl === '') {
 }
 
 if (!function_exists('cvg_port_url')) {
-  function cvg_port_url($path, $siteUrl) {
+  function cvg_port_url($path, $siteUrl)
+  {
     $path = trim(str_replace('\\', '/', $path));
     if (preg_match('~^(https?:)?//~i', $path)) return $path;
     return rtrim($siteUrl, '/') . '/' . ltrim($path, '/');
@@ -70,17 +113,22 @@ if (!function_exists('cvg_port_url')) {
 }
 /* File folder mein hai ya nahi */
 if (!function_exists('cvg_port_has')) {
-  function cvg_port_has($path, $root) {
+  function cvg_port_has($path, $root)
+  {
     $path = trim(str_replace('\\', '/', $path));
     if ($path === '') return false;
     if (preg_match('~^(https?:)?//~i', $path)) return true;
     return is_file(rtrim($root, '/\\') . '/' . ltrim($path, '/'));
   }
 }
+/* Array ho to waisa hi, folder pattern ho to us folder ki saari images */
 if (!function_exists('cvg_port_images')) {
-  function cvg_port_images($source, $root) {
+  function cvg_port_images($source, $root)
+  {
     if (is_array($source)) return array_values(array_filter($source, 'strlen'));
-    $files = glob(rtrim($root, '/\\') . '/' . ltrim($source, '/'), GLOB_NOSORT) ?: [];
+    $flags = defined('GLOB_BRACE') ? GLOB_BRACE : 0;
+    $files = glob(rtrim($root, '/\\') . '/' . ltrim($source, '/'), $flags) ?: [];
+    $files = array_unique($files);                        /* Windows par .webp/.WEBP dobara na aaye */
     natcasesort($files);                                  /* 2 se pehle 10 na aaye */
     $rel = [];
     foreach ($files as $f) {
@@ -113,19 +161,25 @@ $playSvg   = '<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" /></svg>';
         <?php foreach ($portfolio as $cat => $source):
           if (!isset($tabs[$cat])) continue;
           $label = $labels[$cat] ?? $tabs[$cat];
-          foreach (cvg_port_images($source, $cvgRoot) as $img):
-            if (!cvg_port_has($img, $cvgRoot)) continue;
+          $catImages = cvg_port_images($source, $cvgRoot);
+          echo '<!-- ' . cvg_e($cat) . ': ' . count($catImages) . ' image(s) mili -->';
+          foreach ($catImages as $img):
+            if (!cvg_port_has($img, $cvgRoot)) {
+              echo '<!-- MISSING: ' . cvg_e($img) . ' -->';
+              continue;
+            }
             $url = cvg_port_url($img, $siteUrl);
             $hide = ($cat === $activeTab) ? '' : ' cvg-port-hide';
         ?>
-        <a href="<?= cvg_e($url) ?>" class="cvg-port-item cvg-port-item--<?= cvg_e($cat) ?><?= $hide ?>" data-cat="<?= cvg_e($cat) ?>" aria-label="<?= cvg_e($label) ?>: open large image">
-          <span class="cvg-port-media"><img src="<?= cvg_e($url) ?>" alt="<?= cvg_e($label) ?> project" loading="lazy" class="cvg-port-img"></span>
-          <?php if ($cat === 'video'): ?>
-          <span class="cvg-port-play" aria-hidden="true"><?= $playSvg ?></span>
-          <?php endif; ?>
-          <span class="cvg-port-overlay" aria-hidden="true"><span class="cvg-port-view"><?= $arrowSvg ?></span></span>
-        </a>
-        <?php endforeach; endforeach; ?>
+            <a href="<?= cvg_e($url) ?>" class="cvg-port-item cvg-port-item--<?= cvg_e($cat) ?><?= $hide ?>" data-cat="<?= cvg_e($cat) ?>" aria-label="<?= cvg_e($label) ?>: open large image">
+              <span class="cvg-port-media"><img src="<?= cvg_e($url) ?>" alt="<?= cvg_e($label) ?> project" loading="lazy" class="cvg-port-img"></span>
+              <?php if ($cat === 'video'): ?>
+                <span class="cvg-port-play" aria-hidden="true"><?= $playSvg ?></span>
+              <?php endif; ?>
+              <span class="cvg-port-overlay" aria-hidden="true"><span class="cvg-port-view"><?= $arrowSvg ?></span></span>
+            </a>
+        <?php endforeach;
+        endforeach; ?>
       </div>
     </div>
 
@@ -245,7 +299,7 @@ $playSvg   = '<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" /></svg>';
     text-transform: none;
     letter-spacing: 0;
     cursor: pointer;
-     
+
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
   }
 

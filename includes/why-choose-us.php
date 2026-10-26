@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="assets/css/why-choose-us.css">
 
 <!-- JS-enabled flag (flash se bachne ke liye section se pehle) -->
-<script>document.documentElement.classList.add('wcu-js');</script>
+<script>
+  document.documentElement.classList.add('wcu-js');
+</script>
 <section class="wcu" id="wcu">
 
   <!-- Bottom marquee graphic -->
@@ -29,9 +31,9 @@
         <div class="wcu-par" data-par="0">
           <div class="wcu-enter" style="--i:0">
             <div class="wcu-card">
-              <div class="wcu-num"><span class="wcu-count" data-to="235">0</span></div>
+              <div class="wcu-num"><span class="wcu-count" data-to="10">0</span>+</div>
               <span class="wcu-line"></span>
-              <div class="wcu-label">Satisfied Clients</div>
+              <div class="wcu-label">Years of experience</div>
             </div>
           </div>
         </div>
@@ -71,254 +73,504 @@
       <!-- Diagonal line decoration -->
       <div class="wcu-deco" aria-hidden="true">
         <img src="assets/img/choose-line.png"
-             alt="choose" width="500" height="500">
+          alt="choose" width="500" height="500">
       </div>
     </div>
 
 
-<div class="wcu-right">
+    <div class="wcu-right">
 
-  <div class="wcu-reveal" style="--from:.8;--delay:100ms">
-    <div class="wcu-reveal-in">
-      <div class="wcu-sub">
-        <span class="wcu-sub-line"></span>
-        <span class="wcu-sub-text">a few words</span>
+      <div class="wcu-reveal" style="--from:.8;--delay:100ms">
+        <div class="wcu-reveal-in">
+          <div class="wcu-sub">
+            <span class="wcu-sub-line"></span>
+            <span class="wcu-sub-text">a few words</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="wcu-reveal" style="--from:.185;--delay:200ms">
-    <div class="wcu-reveal-in">
-      <h2 class="wcu-title">WHY THE CREATIVE CONVERGE</h2>
-    </div>
-  </div>
-
-  <div class="wcu-reveal" style="--from:.129;--delay:300ms">
-    <div class="wcu-reveal-in">
-      <p class="wcu-desc">
-        A project can meet every requirement and still miss the point.
-        We look at what you're trying to accomplish, who you're trying
-        to reach, and what the final result needs to do. That perspective
-        shapes our decisions, from the first creative concept to the
-        technical details that make everything work. If you're searching
-        for the best web design company near you, you'll find the right
-        creative partner with us. Here's why:
-      </p>
-    </div>
-  </div>
-
-  <div class="wcu-reveal" style="--from:.119;--delay:400ms">
-    <div class="wcu-reveal-in">
-      <div class="wcu-feature wcu-feature-1">
-        <h3>Ideas With a Purpose</h3>
-        <p>
-          Every design and feature has a reason behind it.
-          We focus on creating meaningful experiences that
-          support your goals and connect with your audience.
-        </p>
+      <div class="wcu-reveal" style="--from:.185;--delay:200ms">
+        <div class="wcu-reveal-in">
+          <h2 class="wcu-title">WHY THE CREATIVE CONVERGE</h2>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="wcu-reveal" style="--from:.110;--delay:500ms">
-    <div class="wcu-reveal-in">
-      <div class="wcu-feature wcu-feature-2">
-        <h3>Solutions That Fit</h3>
-        <p>
-          We shape our work around your business needs instead
-          of forcing your project into a standard template.
-          Every solution is designed with your unique goals in mind.
-        </p>
+      <div class="wcu-reveal" style="--from:.129;--delay:300ms">
+        <div class="wcu-reveal-in">
+          <p class="wcu-desc">
+            A project can meet every requirement and still miss the point.
+            We look at what you're trying to accomplish, who you're trying
+            to reach, and what the final result needs to do. That perspective
+            shapes our decisions, from the first creative concept to the
+            technical details that make everything work. If you're searching
+            for the best web design company near you, you'll find the right
+            creative partner with us. Here's why:
+          </p>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="wcu-reveal" style="--from:.110;--delay:600ms">
-    <div class="wcu-reveal-in">
-      <div class="wcu-feature wcu-feature-3">
-        <h3>Creative Meets Technical</h3>
-        <p>
-          We bring design, development, and marketing together
-          when your project needs more than one discipline,
-          delivering a cohesive experience from start to finish.
-        </p>
+      <div class="wcu-reveal" style="--from:.119;--delay:400ms">
+        <div class="wcu-reveal-in">
+          <div class="wcu-feature wcu-feature-1">
+            <h3>Ideas With a Purpose</h3>
+            <p>
+              Every design and feature has a reason behind it.
+              We focus on creating meaningful experiences that
+              support your goals and connect with your audience.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="wcu-reveal" style="--from:.110;--delay:700ms">
-    <div class="wcu-reveal-in">
-      <div class="wcu-feature wcu-feature-4">
-        <h3>Room to Evolve</h3>
-        <p>
-          We consider how your digital presence can adapt as
-          your business changes, helping your website and
-          digital solutions grow with your future needs.
-        </p>
+      <div class="wcu-reveal" style="--from:.110;--delay:500ms">
+        <div class="wcu-reveal-in">
+          <div class="wcu-feature wcu-feature-2">
+            <h3>Solutions That Fit</h3>
+            <p>
+              We shape our work around your business needs instead
+              of forcing your project into a standard template.
+              Every solution is designed with your unique goals in mind.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-</div>
+      <div class="wcu-reveal" style="--from:.110;--delay:600ms">
+        <div class="wcu-reveal-in">
+          <div class="wcu-feature wcu-feature-2">
+            <h3>Creative Meets Technical</h3>
+            <p>
+              We bring design, development, and marketing together
+              when your project needs more than one discipline,
+              delivering a cohesive experience from start to finish.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wcu-reveal" style="--from:.110;--delay:700ms">
+        <div class="wcu-reveal-in">
+          <div class="wcu-feature wcu-feature-2">
+            <h3>Room to Evolve</h3>
+            <p>
+              We consider how your digital presence can adapt as
+              your business changes, helping your website and
+              digital solutions grow with your future needs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 </section>
 <style>
-
-.wcu, .wcu *, .wcu *::before, .wcu *::after { box-sizing: border-box; }
-
-.wcu {
-  --wcu-grad: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
-  position: relative;
-  overflow: hidden;
-  padding: 80px 24px;
-  background: var(--wcu-grad);
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-}
-.wcu h2, .wcu h3, .wcu p { margin: 0; font-weight: 400; }
-.wcu img { display: block; }
-
-/* ---------- bottom marquee ---------- */
-.wcu-marquee-wrap {
-  position: absolute; bottom: 0; left: 0; z-index: 0;
-  width: 100%; overflow: hidden; opacity: .25;
-  pointer-events: none; user-select: none;
-}
-.wcu-marquee {
-  display: flex; width: max-content;
-  animation: wcu-marquee 20s linear infinite;
-}
-.wcu-marquee img { flex-shrink: 0; height: 80px; margin: 0 16px; object-fit: contain; }
-@keyframes wcu-marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ---------- big outlined word ---------- */
-.wcu-bgword {
-  position: absolute; top: -16px !important; left: 0; z-index: 0;   /* -top-6 + mt-10 */
-  font-size: 72px; line-height: 1; font-weight: 800;
-  text-transform: uppercase; letter-spacing: .1em;
-  color: rgba(255,255,255,.04);
-  pointer-events: none; user-select: none;
-}
-
-/* ---------- main grid ---------- */
-.wcu-grid {
-  position: relative; z-index: 10;
-  display: grid; grid-template-columns: 1fr;
-  align-items: center; gap: 56px;
-  width: 100%; max-width: 1750px; margin: 0 auto;
-}
-
-/* ---------- LEFT ---------- */
-.wcu-left { position: relative; }
-.wcu-cards { display: grid; grid-template-columns: 1fr; gap: 20px; }
-
-.wcu-par { position: relative; z-index: 10; will-change: transform; }   /* JS parallax yahan lagta hai */
-
-/* entrance (fade + scale + up), stagger via --i */
-.wcu-enter { transition: none; }
-.wcu-js .wcu-enter { opacity: 0; transform: translateY(30px) scale(.92); }
-.wcu-js .wcu-enter.is-in {
-  opacity: 1; transform: none;
-  transition: opacity .8s cubic-bezier(.22,1,.36,1) calc(var(--i) * .12s),
-              transform .8s cubic-bezier(.22,1,.36,1) calc(var(--i) * .12s);
-}
-
-.wcu-card {
-  position: relative; overflow: hidden; cursor: default;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  width: 100%; height: 180px; text-align: center; color: #fff;
-  background: var(--wcu-grad);
-  border: 0; border-radius: 0;
-  box-shadow: 0 20px 50px rgba(0,0,0,.4);
-  transition: translate .4s cubic-bezier(.22,1,.36,1), scale .4s cubic-bezier(.22,1,.36,1), box-shadow .5s ease;
-}
-.wcu-card:hover { translate: 0 -8px; scale: 1.03; box-shadow: 0 30px 70px rgba(0,0,0,.6); }
-
-.wcu-num { position: relative; font-size: 48px; line-height: 1; letter-spacing: -.025em; }
-.wcu-line {
-  position: relative; display: block; margin-top: 12px;
-  width: 40px; height: 2px; border-radius: 999px;
-  background: rgba(255,255,255,.7);
-  transition: width .5s ease;
-}
-.wcu-card:hover .wcu-line { width: 80px; }
-.wcu-label { position: relative; margin-top: 12px; font-size: 16px; line-height: 24px; font-weight: 400; letter-spacing: .025em; color: rgba(255,255,255,.9); }
-
-/* diagonal decoration (mobile par hidden) */
-.wcu-deco {
-  display: none; position: absolute; top: -64px; left: 16px; z-index: 20;
-  opacity: .4; mix-blend-mode: overlay; pointer-events: none;
-}
-.wcu-deco img { width: 500px; height: auto; max-width: none; object-fit: contain; }
-
-/* ---------- RIGHT ---------- */
-.wcu-right { position: relative; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
-
-/* reveal (scale from --from -> 1) */
-.wcu-reveal-in { transform-origin: center; }
-.wcu-js .wcu-reveal-in { opacity: 0; transform: scale(var(--from, .85)); }
-.wcu-js .wcu-reveal.is-in .wcu-reveal-in {
-  opacity: 1; transform: scale(1);
-  transition: opacity .9s ease-out var(--delay, 0ms),
-              transform .9s cubic-bezier(.22,.61,.36,1) var(--delay, 0ms);
-}
-
-.wcu-sub { position: relative; z-index: 10; display: flex; align-items: center; gap: 12px; }
-.wcu-sub-line { display: inline-block; width: 48px; height: 2px; background: #fff; }
-.wcu-sub-text { font-size: 14px; line-height: 20px; font-weight: 400; }
-
-.wcu-title {
-  position: relative; z-index: 10; margin-top: 8px !important;
-  font-size: 48px; line-height: 1.25; letter-spacing: -.025em;
-}
-.wcu-desc {
-  position: relative; z-index: 10; margin-top: 12px !important;
-  max-width: 760px; font-size: 16px; line-height: 1.625; color: #fff;
-}
-.wcu-feature { position: relative; z-index: 10; padding-left: 0; }
-.wcu-feature-1 { margin-top: 40px; }
-.wcu-feature-2 { margin-top: 32px; }
-.wcu-feature h3 { font-size: 20px; line-height: 28px; font-weight: 500; }
-.wcu-feature p  { margin-top: 12px; font-size: 14px; line-height: 1.7; font-weight: 300; color: #fff; }
-
-/* ---------- sm >= 640px ---------- */
-@media (min-width: 640px) {
-  .wcu { padding-left: 40px; padding-right: 40px; }
-  .wcu-bgword { font-size: 96px; top: 0; }                 /* md: -top-10 + mt-10 */
-  .wcu-cards { grid-template-columns: 1fr 1fr; column-gap: 28px; row-gap: 36px; }
-  .wcu-card { height: 210px; }
-  .wcu-num { font-size: 60px; }
-  .wcu-label { font-size: 18px; line-height: 28px; }
-  .wcu-deco { display: block; }
-  .wcu-title { font-size: 60px; }
-  .wcu-desc { font-size: 18px; line-height: 1.625; }
-  .wcu-feature { padding-left: 48px; }
-  .wcu-feature h3 { font-size: 24px; line-height: 32px; }
-  .wcu-feature p { font-size: 15px; }
-}
-
-/* ---------- lg >= 1024px ---------- */
-@media (min-width: 1024px) {
-  .wcu { padding: 130px 100px; }
-  .wcu-bgword { font-size: 130px; }
-  .wcu-grid { grid-template-columns: 1.2fr 1fr; gap: 56px; }
-  .wcu-left { padding-right: 16px; }
-  .wcu-card { height: 240px; }
-  .wcu-marquee img { height: 128px; }
-  .wcu-title { font-size: 72px; }
-}
-
-/* ---------- reduced motion ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .wcu-marquee { animation: none; }
-  .wcu-js .wcu-enter, .wcu-js .wcu-reveal-in {
-    opacity: 1 !important; transform: none !important; transition: none !important;
+  .wcu,
+  .wcu *,
+  .wcu *::before,
+  .wcu *::after {
+    box-sizing: border-box;
   }
-}
+
+  .wcu {
+    --wcu-grad: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 24px;
+    background: var(--wcu-grad);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+  }
+
+  .wcu h2,
+  .wcu h3,
+  .wcu p {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .wcu img {
+    display: block;
+  }
+
+  /* ---------- bottom marquee ---------- */
+  .wcu-marquee-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+    opacity: .25;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .wcu-marquee {
+    display: flex;
+    width: max-content;
+    animation: wcu-marquee 20s linear infinite;
+  }
+
+  .wcu-marquee img {
+    flex-shrink: 0;
+    height: 80px;
+    margin: 0 16px;
+    object-fit: contain;
+  }
+
+  @keyframes wcu-marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ---------- big outlined word ---------- */
+  .wcu-bgword {
+    position: absolute;
+    top: -16px !important;
+    left: 0;
+    z-index: 0;
+    /* -top-6 + mt-10 */
+    font-size: 72px;
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: rgba(255, 255, 255, .04);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ---------- main grid ---------- */
+  .wcu-grid {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 56px;
+    width: 100%;
+    max-width: 1750px;
+    margin: 0 auto;
+  }
+
+  /* ---------- LEFT ---------- */
+  .wcu-left {
+    position: relative;
+  }
+
+  .wcu-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .wcu-par {
+    position: relative;
+    z-index: 10;
+    will-change: transform;
+  }
+
+  /* JS parallax yahan lagta hai */
+
+  /* entrance (fade + scale + up), stagger via --i */
+  .wcu-enter {
+    transition: none;
+  }
+
+  .wcu-js .wcu-enter {
+    opacity: 0;
+    transform: translateY(30px) scale(.92);
+  }
+
+  .wcu-js .wcu-enter.is-in {
+    opacity: 1;
+    transform: none;
+    transition: opacity .8s cubic-bezier(.22, 1, .36, 1) calc(var(--i) * .12s),
+      transform .8s cubic-bezier(.22, 1, .36, 1) calc(var(--i) * .12s);
+  }
+
+  .wcu-card {
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    color: #fff;
+    background: var(--wcu-grad);
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+    transition: translate .4s cubic-bezier(.22, 1, .36, 1), scale .4s cubic-bezier(.22, 1, .36, 1), box-shadow .5s ease;
+  }
+
+  .wcu-card:hover {
+    translate: 0 -8px;
+    scale: 1.03;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .6);
+  }
+
+  .wcu-num {
+    position: relative;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -.025em;
+  }
+
+  .wcu-line {
+    position: relative;
+    display: block;
+    margin-top: 12px;
+    width: 40px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .7);
+    transition: width .5s ease;
+  }
+
+  .wcu-card:hover .wcu-line {
+    width: 80px;
+  }
+
+  .wcu-label {
+    position: relative;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: .025em;
+    color: rgba(255, 255, 255, .9);
+  }
+
+  /* diagonal decoration (mobile par hidden) */
+  .wcu-deco {
+    display: none;
+    position: absolute;
+    top: -64px;
+    left: 16px;
+    z-index: 20;
+    opacity: .4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .wcu-deco img {
+    width: 500px;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+  }
+
+  /* ---------- RIGHT ---------- */
+  .wcu-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* reveal (scale from --from -> 1) */
+  .wcu-reveal-in {
+    transform-origin: center;
+  }
+
+  .wcu-js .wcu-reveal-in {
+    opacity: 0;
+    transform: scale(var(--from, .85));
+  }
+
+  .wcu-js .wcu-reveal.is-in .wcu-reveal-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity .9s ease-out var(--delay, 0ms),
+      transform .9s cubic-bezier(.22, .61, .36, 1) var(--delay, 0ms);
+  }
+
+  .wcu-sub {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .wcu-sub-line {
+    display: inline-block;
+    width: 48px;
+    height: 2px;
+    background: #fff;
+  }
+
+  .wcu-sub-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  .wcu-title {
+    position: relative;
+    z-index: 10;
+    margin-top: 8px !important;
+    font-size: 48px;
+    line-height: 1.25;
+    letter-spacing: -.025em;
+  }
+
+  .wcu-desc {
+    position: relative;
+    z-index: 10;
+    margin-top: 12px !important;
+    max-width: 760px;
+    font-size: 16px;
+    line-height: 1.625;
+    color: #fff;
+  }
+
+  .wcu-feature {
+    position: relative;
+    z-index: 10;
+    padding-left: 0;
+  }
+
+  .wcu-feature-1 {
+    margin-top: 40px;
+  }
+
+  .wcu-feature-2 {
+    margin-top: 32px;
+  }
+
+  .wcu-feature h3 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+
+  .wcu-feature p {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  /* ---------- sm >= 640px ---------- */
+  @media (min-width: 640px) {
+    .wcu {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .wcu-bgword {
+      font-size: 96px;
+      top: 0;
+    }
+
+    /* md: -top-10 + mt-10 */
+    .wcu-cards {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 28px;
+      row-gap: 36px;
+    }
+
+    .wcu-card {
+      height: 210px;
+    }
+
+    .wcu-num {
+      font-size: 60px;
+    }
+
+    .wcu-label {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .wcu-deco {
+      display: block;
+    }
+
+    .wcu-title {
+      font-size: 60px;
+    }
+
+    .wcu-desc {
+      font-size: 18px;
+      line-height: 1.625;
+    }
+
+    .wcu-feature {
+      padding-left: 48px;
+    }
+
+    .wcu-feature h3 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    .wcu-feature p {
+      font-size: 15px;
+    }
+  }
+
+  /* ---------- lg >= 1024px ---------- */
+  @media (min-width: 1024px) {
+    .wcu {
+      padding: 130px 100px;
+    }
+
+    .wcu-bgword {
+      font-size: 130px;
+      margin-left: 131px;
+    }
+
+    .wcu-grid {
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+    }
+
+    .wcu-left {
+      padding-right: 16px;
+    }
+
+    .wcu-card {
+      height: 240px;
+    }
+
+    .wcu-marquee img {
+      height: 128px;
+    }
+
+    .wcu-title {
+      font-size: 55px;
+    }
+  }
+
+  /* ---------- reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .wcu-marquee {
+      animation: none;
+    }
+
+    .wcu-js .wcu-enter,
+    .wcu-js .wcu-reveal-in {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
 </style>
 <!-- JS: why-choose-us.js -->
 <script src="assets/js/why-choose-us.js"></script>

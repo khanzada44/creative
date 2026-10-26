@@ -1,5 +1,13 @@
 <section class="cvg-price" id="cvg-pricing">
+  <div class="cvg-price-glow" aria-hidden="true"></div>
   <div class="cvg-price-inner">
+
+    <!-- ===== Heading ===== -->
+    <div class="cvg-price-head">
+      <p class="cvg-price-eyebrow">Pricing</p>
+      <h2 class="cvg-price-title">Simple plans, <span>clear prices.</span></h2>
+      <p class="cvg-price-lead">Pick the package that fits your project. No hidden fees, and every plan is backed by our money back guarantee.</p>
+    </div>
 
     <div class="cvg-price-grid">
 
@@ -194,7 +202,7 @@
       </article>
       <!-- ===== Side card: custom package ===== -->
 
-      <article class="cvg-price-card">
+      <!-- <article class="cvg-price-card">
         <h3 class="cvg-price-name">Business Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>3499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
@@ -245,7 +253,7 @@
 
         </div>
         <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
-      </article>
+      </article> -->
 
     </div>
 
@@ -294,6 +302,102 @@
   .cvg-price .cvg-price-inner {
     max-width: 1160px;
     margin: 0 auto;
+  }
+
+  /* ---------- Heading (same style as Testimonials) ---------- */
+  .cvg-price .cvg-price-glow {
+    position: absolute;
+    left: 50%;
+    top: -180px;
+    width: 760px;
+    height: 520px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(0, 212, 163, .22), rgba(0, 212, 163, 0));
+    pointer-events: none;
+  }
+
+  .cvg-price .cvg-price-inner {
+    position: relative;
+  }
+
+  .cvg-price .cvg-price-head {
+    max-width: 720px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+
+  .cvg-price .cvg-price-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 16px;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--cvg-mint);
+  }
+
+  .cvg-price .cvg-price-eyebrow::before,
+  .cvg-price .cvg-price-eyebrow::after {
+    content: "";
+    width: 36px;
+    height: 2px;
+    background: var(--cvg-mint);
+  }
+
+  .cvg-price .cvg-price-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(34px, 4.6vw, 56px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.03em;
+    text-transform: none;
+    color: var(--cvg-text);
+  }
+
+  .cvg-price .cvg-price-title span {
+    color: var(--cvg-mint);
+  }
+
+  .cvg-price .cvg-price-lead {
+    max-width: 560px;
+    margin: 16px auto 0;
+    padding: 0;
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--cvg-muted);
+  }
+
+  @media (max-width: 600px) {
+    .cvg-price .cvg-price-head {
+      margin-bottom: 36px;
+    }
+
+    .cvg-price .cvg-price-eyebrow {
+      font-size: 12px;
+      gap: 10px;
+    }
+
+    .cvg-price .cvg-price-eyebrow::before,
+    .cvg-price .cvg-price-eyebrow::after {
+      width: 24px;
+    }
+
+    .cvg-price .cvg-price-lead {
+      font-size: 15px;
+    }
+
+    .cvg-price .cvg-price-glow {
+      width: 420px;
+      height: 360px;
+      top: -120px;
+    }
   }
 
   /* ---------- Grid ---------- */

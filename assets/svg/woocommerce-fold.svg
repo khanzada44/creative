@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FF0C8"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6B4FF"/><stop offset="1" stop-color="#8A68FF"/></linearGradient>
+  <linearGradient id="gCoral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC94D"/><stop offset="1" stop-color="#FF7A57"/></linearGradient>
+  <linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#03866F"/><stop offset=".55" stop-color="#004337"/><stop offset="1" stop-color="#00211B"/></linearGradient>
+  <linearGradient id="gGauge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF7A57"/><stop offset=".5" stop-color="#FFC94D"/><stop offset="1" stop-color="#00D4A3"/></linearGradient>
+  <radialGradient id="gGlow" cx=".45" cy=".45" r=".5"><stop offset="0" stop-color="#9B7BFF" stop-opacity=".16"/><stop offset=".5" stop-color="#00D4A3" stop-opacity=".14"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <clipPath id="win"><rect x="40" y="70" width="380" height="330" rx="22"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .pc,.wbar{transform-box:fill-box}
+  .A{animation-duration:8s;animation-iteration-count:infinite;animation-fill-mode:backwards}
+  .S{animation-duration:8s;animation-iteration-count:infinite;animation-timing-function:steps(1,end)}
+  .blog{animation-name:blog;animation-timing-function:ease-in-out}
+  @keyframes blog{0%,23%{opacity:1;transform:none}28%,92%{opacity:0;transform:translateY(10px)}98%,100%{opacity:1;transform:none}}
+  .store{animation-name:store;animation-timing-function:ease-in-out}
+  @keyframes store{0%,29%{opacity:0}34%,92%{opacity:1}98%,100%{opacity:0}}
+  .pc{transform-origin:50% 100%;animation-name:pc;animation-timing-function:cubic-bezier(.3,1.5,.5,1)}
+  @keyframes pc{0%,30%{opacity:0;transform:translateY(16px) scale(.92)}40%,92%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(16px) scale(.92)}}
+  .pc2{animation-delay:.15s}.pc3{animation-delay:.3s}
+  .u1{animation-name:u1}.u2{animation-name:u2}
+  @keyframes u1{0%{opacity:1}32%{opacity:0}96%{opacity:1}}
+  @keyframes u2{0%{opacity:0}32%{opacity:1}96%{opacity:0}}
+  .cart{animation-name:u2}
+  .cn1{animation-name:cn1}.cn2{animation-name:cn2}
+  @keyframes cn1{0%{opacity:1}62%{opacity:0}96%{opacity:1}}
+  @keyframes cn2{0%{opacity:0}62%{opacity:1}96%{opacity:0}}
+  .btn{animation-name:btn}
+  @keyframes btn{0%,56%{fill:#04342C}58%,90%{fill:#00B892}96%,100%{fill:#04342C}}
+  .tap{animation-name:tap;animation-timing-function:ease-out}
+  @keyframes tap{0%,55%{opacity:0;r:2}57%{opacity:.6;r:4}64%,100%{opacity:0;r:22}}
+  .wand{animation-name:wand;animation-timing-function:ease-in-out}
+  @keyframes wand{0%,18%{opacity:0;transform:translate(0,0)}22%{opacity:1}34%{opacity:1;transform:translate(300px,0)}38%,100%{opacity:0;transform:translate(300px,0)}}
+  /* setup */
+  .ck{animation-name:ck}
+  @keyframes ck{0%,6%{opacity:0}10%,92%{opacity:1}98%,100%{opacity:0}}
+  .ck2{animation-delay:.6s}.ck3{animation-delay:1.2s}.ck4{animation-delay:1.8s}
+  .wbar{transform-origin:0 50%;animation-name:wbar;animation-timing-function:ease-in-out}
+  @keyframes wbar{0%,6%{transform:scaleX(0)}34%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+  /* discovery */
+  .typ{clip-path:inset(0 100% 0 0);animation:typ 8s steps(5,end) infinite}
+  @keyframes typ{0%,8%{clip-path:inset(0 100% 0 0)}20%,92%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 100% 0 0)}}
+  .ch1{animation-name:ch1}.ch2{animation-name:ch2}
+  @keyframes ch1{0%,26%{fill:#151D1A}30%,92%{fill:#00D4A3}96%,100%{fill:#151D1A}}
+  @keyframes ch2{0%,40%{fill:#151D1A}44%,92%{fill:#00D4A3}96%,100%{fill:#151D1A}}
+  .ct1{animation-name:ct1}.ct2{animation-name:ct2}
+  @keyframes ct1{0%,26%{fill:#C9D6D2}30%,92%{fill:#04342C}96%,100%{fill:#C9D6D2}}
+  @keyframes ct2{0%,40%{fill:#C9D6D2}44%,92%{fill:#04342C}96%,100%{fill:#C9D6D2}}
+  .r1{animation-name:r1}.r2{animation-name:r2}
+  @keyframes r1{0%{opacity:1}44%{opacity:0}96%{opacity:1}}
+  @keyframes r2{0%{opacity:0}44%{opacity:1}96%{opacity:0}}
+  /* fix */
+  .e1{animation-name:e1}.e2{animation-name:e2}
+  @keyframes e1{0%{opacity:1}48%{opacity:0}96%{opacity:1}}
+  @keyframes e2{0%{opacity:0}48%{opacity:1}96%{opacity:0}}
+  .tk{animation-name:tk;animation-timing-function:ease-in-out}
+  @keyframes tk{0%,56%{transform:translateX(0)}60%,92%{transform:translateX(10px)}96%,100%{transform:translateX(0)}}
+  .tt{animation-name:tt}
+  @keyframes tt{0%,56%{fill:#2A3632}60%,92%{fill:#00D4A3}96%,100%{fill:#2A3632}}
+  .scan{animation-name:scan;animation-timing-function:ease-in-out}
+  @keyframes scan{0%,10%{transform:translateY(0);opacity:0}14%{opacity:1}44%{transform:translateY(40px);opacity:1}48%,100%{transform:translateY(40px);opacity:0}}
+  /* speed */
+  .ndl{animation-name:ndl;animation-timing-function:cubic-bezier(.3,1.3,.5,1)}
+  @keyframes ndl{0%,30%{transform:rotate(-62deg)}50%,92%{transform:rotate(62deg)}100%{transform:rotate(-62deg)}}
+  .sp1{animation-name:e1}.sp2{animation-name:e2}
+  .live{animation:live 1.4s ease-in-out infinite}
+  @keyframes live{0%,100%{opacity:1}50%{opacity:.25}}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.blog,.u1,.cn1,.r1,.e1,.sp1,.wand,.tap{opacity:0}.typ{clip-path:none}.ndl{transform:rotate(62deg)}}
+</style>
+
+<circle cx="300" cy="300" r="310" fill="url(#gGlow)"/>
+
+<!-- ===== browser: site becomes store ===== -->
+<g filter="url(#soft)"><rect x="40" y="70" width="380" height="330" rx="22" fill="#F6F1E7"/></g>
+<g clip-path="url(#win)">
+  <rect x="40" y="70" width="380" height="36" fill="#0E1412"/>
+  <circle cx="60" cy="88" r="5" fill="#FF8A6B"/><circle cx="77" cy="88" r="5" fill="#FFC94D"/><circle cx="94" cy="88" r="5" fill="#00D4A3"/>
+  <rect x="116" y="78" width="200" height="20" rx="10" fill="#1A2320"/>
+  <text class="S u1" x="216" y="92" text-anchor="middle" font-size="9.5" fill="#8FA39E">yoursite.com</text>
+  <text class="S u2" x="216" y="92" text-anchor="middle" font-size="9.5" fill="#5FF0C8">yoursite.com/shop</text>
+  <!-- site header -->
+  <text x="56" y="132" font-size="14" font-weight="700" fill="#04342C">bloom.</text>
+  <g font-size="9" font-weight="600" fill="#5E6B67"><text x="196" y="131">Home</text><text x="232" y="131">About</text>
+    <text class="S u1" x="270" y="131">Journal</text><text class="S u2" x="270" y="131" fill="#00866F">Shop</text><text x="312" y="131">Contact</text></g>
+  <g class="S cart"><path d="M376 122h16l-2 13h-12z M380 122q0-7 4-7t4 7" fill="none" stroke="#04342C" stroke-width="1.8" stroke-linejoin="round"/>
+    <circle cx="396" cy="118" r="6.5" fill="#04342C"/>
+    <text class="S cn1" x="396" y="121" text-anchor="middle" font-size="7.5" font-weight="700" fill="#5FF0C8">0</text>
+    <text class="S cn2" x="396" y="121" text-anchor="middle" font-size="7.5" font-weight="700" fill="#5FF0C8">1</text></g>
+
+  <!-- BLOG version -->
+  <g class="A blog">
+    <rect x="56" y="148" width="348" height="84" rx="12" fill="#E3DBCB"/>
+    <text x="74" y="184" font-size="16" font-weight="700" fill="#04342C">Our Journal</text>
+    <rect x="74" y="196" width="150" height="7" rx="3.5" fill="#B8AE99"/><rect x="74" y="209" width="110" height="7" rx="3.5" fill="#B8AE99"/>
+    <g fill="#E3DBCB"><rect x="56" y="246" width="108" height="140" rx="12"/><rect x="176" y="246" width="108" height="140" rx="12"/><rect x="296" y="246" width="108" height="140" rx="12"/></g>
+    <g fill="#D3C9B5"><rect x="64" y="254" width="92" height="56" rx="8"/><rect x="184" y="254" width="92" height="56" rx="8"/><rect x="304" y="254" width="92" height="56" rx="8"/></g>
+    <g fill="#B8AE99"><rect x="64" y="322" width="80" height="7" rx="3.5"/><rect x="64" y="335" width="60" height="6" rx="3"/><rect x="64" y="347" width="70" height="6" rx="3"/>
+      <rect x="184" y="322" width="80" height="7" rx="3.5"/><rect x="184" y="335" width="60" height="6" rx="3"/><rect x="184" y="347" width="70" height="6" rx="3"/>
+      <rect x="304" y="322" width="80" height="7" rx="3.5"/><rect x="304" y="335" width="60" height="6" rx="3"/><rect x="304" y="347" width="70" height="6" rx="3"/></g>
+  </g>
+
+  <!-- STORE version -->
+  <g class="A store">
+    <rect x="56" y="148" width="348" height="84" rx="12" fill="url(#gHero)"/>
+    <text x="74" y="180" font-size="16" font-weight="700" fill="#F2F5F4">New season</text>
+    <text x="74" y="196" font-size="9" fill="#9FD9C9">Free shipping over $50</text>
+    <rect x="74" y="204" width="68" height="18" rx="9" fill="#5FF0C8"/><text x="108" y="216.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#04342C">Shop now</text>
+    <circle cx="350" cy="190" r="30" fill="url(#gViolet)"/><rect x="314" y="196" width="30" height="30" rx="8" fill="url(#gCoral)"/>
+  </g>
+  <g class="A pc">
+    <rect x="56" y="246" width="108" height="140" rx="12" fill="#FFFFFF"/>
+    <rect x="64" y="254" width="92" height="62" rx="8" fill="url(#gMint)"/><rect x="92" y="268" width="36" height="40" rx="6" fill="#F6F1E7"/>
+    <rect x="68" y="258" width="28" height="13" rx="6.5" fill="#FF8A6B"/><text x="82" y="267.5" text-anchor="middle" font-size="7" font-weight="700" fill="#FFFFFF">SALE</text>
+    <text x="64" y="332" font-size="9" font-weight="700" fill="#04342C">Linen Shirt</text>
+    <text x="64" y="346" font-size="9" font-weight="700" fill="#00866F">$42</text><text x="86" y="346" font-size="8" fill="#A39A88" text-decoration="line-through">$58</text>
+    <rect x="64" y="356" width="92" height="20" rx="10" fill="#04342C"/><text x="110" y="369.5" text-anchor="middle" font-size="8" font-weight="700" fill="#5FF0C8">Add to cart</text>
+  </g>
+  <g class="A pc pc2">
+    <rect x="176" y="246" width="108" height="140" rx="12" fill="#FFFFFF"/>
+    <rect x="184" y="254" width="92" height="62" rx="8" fill="url(#gViolet)"/><circle cx="230" cy="286" r="20" fill="#F6F1E7"/>
+    <text x="184" y="332" font-size="9" font-weight="700" fill="#04342C">Ceramic Vase</text>
+    <text x="184" y="346" font-size="9" font-weight="700" fill="#00866F">$36</text><text x="236" y="346" font-size="8" fill="#FFB020">★★★★★</text>
+    <rect class="A btn" x="184" y="356" width="92" height="20" rx="10" fill="#04342C"/><text x="230" y="369.5" text-anchor="middle" font-size="8" font-weight="700" fill="#5FF0C8">Add to cart</text>
+    <circle class="A tap" cx="230" cy="366" r="2" fill="#5FF0C8" opacity="0"/>
+  </g>
+  <g class="A pc pc3">
+    <rect x="296" y="246" width="108" height="140" rx="12" fill="#FFFFFF"/>
+    <rect x="304" y="254" width="92" height="62" rx="8" fill="url(#gCoral)"/><path d="M332 304 q18 -40 36 0z" fill="#F6F1E7"/>
+    <text x="304" y="332" font-size="9" font-weight="700" fill="#04342C">Candle Set</text>
+    <text x="304" y="346" font-size="9" font-weight="700" fill="#00866F">$24</text>
+    <rect x="304" y="356" width="92" height="20" rx="10" fill="#04342C"/><text x="350" y="369.5" text-anchor="middle" font-size="8" font-weight="700" fill="#5FF0C8">Add to cart</text>
+  </g>
+  <!-- transform sweep -->
+  <g class="A wand"><rect x="40" y="108" width="60" height="292" fill="#00D4A3" opacity=".22"/><rect x="98" y="108" width="3" height="292" fill="#5FF0C8"/></g>
+</g>
+
+<!-- ===== store setup ===== -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="440" y="40" width="184" height="186" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="456" y="66" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">STORE SETUP</text>
+  <rect x="456" y="76" width="152" height="5" rx="2.5" fill="#22302C"/><rect class="A wbar" x="456" y="76" width="152" height="5" rx="2.5" fill="#00D4A3"/>
+  <g font-size="10" fill="#C9D6D2">
+    <rect x="456" y="92" width="152" height="26" rx="9" fill="#151D1A"/><text x="468" y="109">Store details</text>
+    <rect x="456" y="124" width="152" height="26" rx="9" fill="#151D1A"/><text x="468" y="141">Payments</text>
+    <rect x="456" y="156" width="152" height="26" rx="9" fill="#151D1A"/><text x="468" y="173">Shipping zones</text>
+    <rect x="456" y="188" width="152" height="26" rx="9" fill="#151D1A"/><text x="468" y="205">Taxes</text>
+  </g>
+  <g fill="#00D4A3"><circle class="A ck" cx="594" cy="105" r="6"/><circle class="A ck ck2" cx="594" cy="137" r="6"/><circle class="A ck ck3" cx="594" cy="169" r="6"/><circle class="A ck ck4" cx="594" cy="201" r="6"/></g>
+</g>
+
+<!-- ===== care plan ===== -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="440" y="246" width="184" height="152" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="456" y="272" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FFC94D">CARE &amp; SUPPORT</text>
+  <g font-size="10" fill="#C9D6D2">
+    <circle cx="460" cy="294" r="4" fill="#00D4A3"/><text x="470" y="297.5">Plugins updated</text>
+    <circle cx="460" cy="316" r="4" fill="#00D4A3"/><text x="470" y="319.5">Daily backups</text>
+    <circle cx="460" cy="338" r="4" fill="#00D4A3"/><text x="470" y="341.5">Uptime 99.9%</text>
+  </g>
+  <rect x="456" y="356" width="152" height="28" rx="14" fill="#0F3D33"/>
+  <circle class="live" cx="472" cy="370" r="4" fill="#5FF0C8"/><text x="482" y="373.5" font-size="9.5" font-weight="700" fill="#5FF0C8">Support team online</text>
+</g>
+
+<!-- ===== discovery ===== -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="422" width="196" height="182" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="32" y="448" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">DISCOVERY</text>
+  <rect x="32" y="460" width="164" height="28" rx="10" fill="#151D1A" stroke="#22302C"/>
+  <circle cx="47" cy="474" r="4.5" fill="none" stroke="#8FA39E" stroke-width="1.6"/><path d="M50.5 477.5l3.5 3.5" stroke="#8FA39E" stroke-width="1.6" stroke-linecap="round"/>
+  <text class="typ" x="62" y="478" font-size="10.5" font-weight="600" fill="#F2F5F4">linen</text>
+  <g font-size="9" font-weight="600" text-anchor="middle">
+    <rect class="A ch1" x="32" y="500" width="54" height="24" rx="12" fill="#151D1A"/><text class="A ct1" x="59" y="515.5" fill="#C9D6D2">Shirts</text>
+    <rect class="A ch2" x="92" y="500" width="62" height="24" rx="12" fill="#151D1A"/><text class="A ct2" x="123" y="515.5" fill="#C9D6D2">Under $50</text>
+    <rect x="32" y="530" width="62" height="24" rx="12" fill="#151D1A"/><text x="63" y="545.5" fill="#C9D6D2">In stock</text>
+    <rect x="100" y="530" width="48" height="24" rx="12" fill="#151D1A"/><text x="124" y="545.5" fill="#C9D6D2">Blue</text>
+  </g>
+  <text class="S r1" x="32" y="586" font-size="11" font-weight="700" fill="#8FA39E">248 products</text>
+  <text class="S r2" x="32" y="586" font-size="11" font-weight="700" fill="#5FF0C8">12 results ✓</text>
+</g>
+
+<!-- ===== fix & customize ===== -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="224" y="422" width="200" height="182" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="240" y="448" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FF8A6B">FIX &amp; CUSTOMIZE</text>
+  <rect x="240" y="460" width="168" height="54" rx="10" fill="#0A0F0E"/>
+  <g font-family="'JetBrains Mono', Consolas, monospace" font-size="8.5">
+    <text x="250" y="476" fill="#B39BFF">add_action<tspan fill="#C9D6D2">(</tspan></text>
+    <text x="258" y="490" fill="#FFC94D">'woocommerce_checkout'</text>
+    <text x="250" y="504" fill="#C9D6D2">);</text>
+  </g>
+  <rect class="A scan" x="244" y="466" width="160" height="10" rx="3" fill="#00D4A3" fill-opacity=".14"/>
+  <g class="S e1"><rect x="240" y="522" width="168" height="26" rx="13" fill="#2A1B18"/><circle cx="256" cy="535" r="4" fill="#FF8A6B"/><text x="266" y="538.5" font-size="9.5" font-weight="700" fill="#FF8A6B">Checkout error 500</text></g>
+  <g class="S e2"><rect x="240" y="522" width="168" height="26" rx="13" fill="#0F3D33"/><circle cx="256" cy="535" r="4" fill="#5FF0C8"/><text x="266" y="538.5" font-size="9.5" font-weight="700" fill="#5FF0C8">Bug fixed ✓</text></g>
+  <text x="240" y="580" font-size="10" fill="#C9D6D2">Gift wrap option</text>
+  <rect class="A tt" x="384" y="570" width="24" height="14" rx="7" fill="#2A3632"/><circle class="A tk" cx="391" cy="577" r="5" fill="#FFFFFF"/>
+</g>
+
+<!-- ===== speed ===== -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="436" y="422" width="188" height="182" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="452" y="448" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">STORE SPEED</text>
+  <g transform="translate(530 528)">
+    <path d="M-52 0 A52 52 0 0 1 52 0" fill="none" stroke="#22302C" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-52 0 A52 52 0 0 1 52 0" fill="none" stroke="url(#gGauge)" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+    <g class="A ndl"><path d="M-3 0 L0 -42 L3 0 Z" fill="#F2F5F4"/></g>
+    <circle r="7" fill="#F2F5F4"/><circle r="3" fill="#111614"/>
+  </g>
+  <text class="S sp1" x="530" y="566" text-anchor="middle" font-size="18" font-weight="700" fill="#FF8A6B">4.1s</text>
+  <text class="S sp2" x="530" y="566" text-anchor="middle" font-size="18" font-weight="700" fill="#5FF0C8">1.2s</text>
+  <text x="530" y="586" text-anchor="middle" font-size="8.5" fill="#8FA39E">Page load time</text>
+</g>
+
+<!-- ===== badge ===== -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="14" width="262" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <rect x="28" y="24" width="98" height="20" rx="10" fill="#7F54B3"/><text x="77" y="38" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">WooCommerce</text>
+  <text x="136" y="38.5" font-size="12" font-weight="600" fill="#F2F5F4">Site → Store</text>
+</g>
+</svg>

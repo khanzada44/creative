@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FF0C8"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6B4FF"/><stop offset="1" stop-color="#8A68FF"/></linearGradient>
+  <linearGradient id="gCoral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC94D"/><stop offset="1" stop-color="#FF7A57"/></linearGradient>
+  <linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#03866F"/><stop offset=".55" stop-color="#004337"/><stop offset="1" stop-color="#00211B"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".45" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <clipPath id="win"><rect x="70" y="110" width="400" height="380" rx="24"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .pulse,.bump,.ripple,.okpop,.pdt{transform-box:fill-box}
+  .L{animation-duration:9s;animation-iteration-count:infinite}
+  /* cursor: click product 1, then product 3 */
+  .cur{animation-name:cur;animation-timing-function:ease-in-out}
+  @keyframes cur{0%,4%{transform:translate(300px,470px);opacity:0}8%{opacity:1}
+    16%{transform:translate(214px,302px)}18%{transform:translate(214px,302px) scale(.85)}20%{transform:translate(214px,302px) scale(1)}
+    34%{transform:translate(214px,446px)}36%{transform:translate(214px,446px) scale(.85)}38%{transform:translate(214px,446px) scale(1)}
+    50%{transform:translate(432px,164px)}52%{transform:translate(432px,164px) scale(.85)}54%,62%{transform:translate(432px,164px) scale(1);opacity:1}70%,100%{transform:translate(432px,164px);opacity:0}}
+  .rp1,.rp2,.rp3{transform-origin:50% 50%;animation-timing-function:ease-out}
+  .rp1{animation-name:rp1}.rp2{animation-name:rp2}.rp3{animation-name:rp3}
+  @keyframes rp1{0%,17%{transform:scale(.3);opacity:0}18%{opacity:.8}26%,100%{transform:scale(2.2);opacity:0}}
+  @keyframes rp2{0%,35%{transform:scale(.3);opacity:0}36%{opacity:.8}44%,100%{transform:scale(2.2);opacity:0}}
+  @keyframes rp3{0%,51%{transform:scale(.3);opacity:0}52%{opacity:.8}60%,100%{transform:scale(2.2);opacity:0}}
+  /* products fly to cart */
+  .fly1{offset-path:path("M130 270 C 180 150 340 120 430 140");offset-rotate:0deg;animation-name:fly1;animation-timing-function:cubic-bezier(.5,0,.6,1)}
+  .fly2{offset-path:path("M130 398 C 200 230 360 140 430 140");offset-rotate:0deg;animation-name:fly2;animation-timing-function:cubic-bezier(.5,0,.6,1)}
+  @keyframes fly1{0%,18%{offset-distance:0%;opacity:0;transform:scale(1)}19%{opacity:1}27%{offset-distance:100%;opacity:1;transform:scale(.35)}28%,100%{offset-distance:100%;opacity:0}}
+  @keyframes fly2{0%,36%{offset-distance:0%;opacity:0;transform:scale(1)}37%{opacity:1}45%{offset-distance:100%;opacity:1;transform:scale(.35)}46%,100%{offset-distance:100%;opacity:0}}
+  .n0{animation-name:n0;animation-timing-function:steps(1,end)}.n1{animation-name:n1;animation-timing-function:steps(1,end)}.n2{animation-name:n2;animation-timing-function:steps(1,end)}
+  @keyframes n0{0%{opacity:1}27%{opacity:0}95%{opacity:1}}
+  @keyframes n1{0%{opacity:0}27%{opacity:1}45%{opacity:0}}
+  @keyframes n2{0%{opacity:0}45%{opacity:1}95%{opacity:0}}
+  .bump{transform-origin:50% 50%;animation-name:bump}
+  @keyframes bump{0%,26%{transform:scale(1)}28%{transform:scale(1.35)}31%,44%{transform:scale(1)}46%{transform:scale(1.35)}49%,100%{transform:scale(1)}}
+  .added1{animation-name:ad1;animation-timing-function:steps(1,end)}.added2{animation-name:ad2;animation-timing-function:steps(1,end)}
+  @keyframes ad1{0%{opacity:0}19%{opacity:1}95%{opacity:0}}
+  @keyframes ad2{0%{opacity:0}37%{opacity:1}95%{opacity:0}}
+  /* checkout steps */
+  .prog{transform-box:fill-box;transform-origin:0 50%;animation-name:prog;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes prog{0%,52%{transform:scaleX(0)}60%{transform:scaleX(.5)}70%,94%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+  .st2{animation-name:st2;animation-timing-function:steps(1,end)}.st3{animation-name:st3;animation-timing-function:steps(1,end)}
+  @keyframes st2{0%{opacity:0}60%{opacity:1}96%{opacity:0}}
+  @keyframes st3{0%{opacity:0}70%{opacity:1}96%{opacity:0}}
+  .okpop{transform-origin:50% 50%;animation-name:okpop;animation-timing-function:cubic-bezier(.3,1.6,.5,1)}
+  @keyframes okpop{0%,70%{transform:scale(0);opacity:0}76%,93%{transform:scale(1);opacity:1}98%,100%{transform:scale(0);opacity:0}}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .pdt{transform-origin:50% 50%;animation:pdt 5s ease-in-out infinite}
+  @keyframes pdt{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-4deg)}}
+  .stock{transform-box:fill-box;transform-origin:0 50%;animation:stock 9s cubic-bezier(.2,.8,.2,1) infinite}
+  @keyframes stock{0%,10%{transform:scaleX(0)}22%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+  .sk2{animation-delay:.2s}.sk3{animation-delay:.4s}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.n1,.n2,.added1,.added2,.fly1,.fly2,.ripple{opacity:0}}
+</style>
+
+<circle cx="290" cy="300" r="300" fill="url(#gGlow)"/>
+
+<!-- store window -->
+<g filter="url(#soft)"><rect x="70" y="110" width="400" height="380" rx="24" fill="url(#gBoard)" stroke="#22302C"/></g>
+<g clip-path="url(#win)">
+  <rect x="70" y="110" width="400" height="34" fill="#0A0F0E"/>
+  <circle cx="94" cy="127" r="5" fill="#FF8A6B"/><circle cx="112" cy="127" r="5" fill="#FFC94D"/><circle cx="130" cy="127" r="5" fill="#00D4A3"/>
+  <rect x="192" y="118" width="160" height="18" rx="9" fill="#151D1A"/><circle cx="204" cy="127" r="3" fill="#00D4A3"/>
+  <text x="212" y="131" font-size="9.5" fill="#8FA39E">yourstore.com/shop</text>
+  <!-- store header -->
+  <rect x="86" y="152" width="368" height="30" rx="10" fill="#151D1A"/>
+  <circle cx="102" cy="167" r="7" fill="url(#gMint)"/><text x="114" y="171" font-size="10.5" font-weight="700" fill="#F2F5F4">shop.</text>
+  <rect x="190" y="160" width="140" height="14" rx="7" fill="#0A0F0E"/>
+  <circle cx="200" cy="167" r="3.5" fill="none" stroke="#5D6E69" stroke-width="1.4"/><text x="210" y="170.5" font-size="8.5" fill="#5D6E69">Search products</text>
+  <!-- cart icon -->
+  <g transform="translate(430 167)">
+    <path d="M-10 -6 h3 l3 11 h12 l3 -8 h-16" fill="none" stroke="#F2F5F4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-2" cy="9" r="1.8" fill="#F2F5F4"/><circle cx="8" cy="9" r="1.8" fill="#F2F5F4"/>
+    <g transform="translate(12 -9)"><g class="L bump">
+      <circle r="8" fill="#FF8A6B"/>
+      <text class="L n0" y="3.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0A0A0A">0</text>
+      <text class="L n1" y="3.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0A0A0A">1</text>
+      <text class="L n2" y="3.5" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0A0A0A">2</text>
+    </g></g>
+  </g>
+
+  <!-- product grid 2x2 -->
+  <!-- p1 -->
+  <rect x="86" y="194" width="178" height="132" rx="14" fill="#151D1A"/>
+  <rect x="96" y="204" width="68" height="112" rx="10" fill="url(#gHero)"/>
+  <g class="pdt"><rect x="112" y="236" width="36" height="48" rx="10" fill="url(#gViolet)"/><rect x="122" y="228" width="16" height="10" rx="3" fill="#C6B4FF"/></g>
+  <text x="174" y="224" font-size="10.5" font-weight="600" fill="#F2F5F4">Glow Serum</text>
+  <text x="174" y="242" font-size="12" font-weight="700" fill="#5FF0C8">$49</text>
+  <g fill="#FFC94D"><path d="M175 254 l2 4 4 .5 -3 3 .8 4 -3.8 -2 -3.8 2 .8 -4 -3 -3 4 -.5z"/><path d="M187 254 l2 4 4 .5 -3 3 .8 4 -3.8 -2 -3.8 2 .8 -4 -3 -3 4 -.5z"/><path d="M199 254 l2 4 4 .5 -3 3 .8 4 -3.8 -2 -3.8 2 .8 -4 -3 -3 4 -.5z"/><path d="M211 254 l2 4 4 .5 -3 3 .8 4 -3.8 -2 -3.8 2 .8 -4 -3 -3 4 -.5z"/></g>
+  <rect x="174" y="290" width="80" height="24" rx="12" fill="#00D4A3"/><text x="214" y="306" text-anchor="middle" font-size="9.5" font-weight="700" fill="#04342C">Add to cart</text>
+  <g class="L added1"><rect x="174" y="290" width="80" height="24" rx="12" fill="#F2F5F4"/><text x="214" y="306" text-anchor="middle" font-size="9.5" font-weight="700" fill="#04342C">Added ✓</text></g>
+  <!-- p2 -->
+  <rect x="276" y="194" width="178" height="132" rx="14" fill="#151D1A"/>
+  <rect x="286" y="204" width="68" height="112" rx="10" fill="#1B2421"/>
+  <g class="pdt" style="animation-delay:-1.5s"><circle cx="320" cy="258" r="22" fill="url(#gCoral)"/><circle cx="320" cy="258" r="8" fill="#1B2421"/></g>
+  <text x="364" y="224" font-size="10.5" font-weight="600" fill="#F2F5F4">Desk Lamp</text>
+  <text x="364" y="242" font-size="12" font-weight="700" fill="#5FF0C8">$89</text>
+  <rect x="364" y="252" width="56" height="12" rx="6" fill="#0F3D33"/><text x="392" y="261" text-anchor="middle" font-size="7.5" font-weight="700" fill="#5FF0C8">IN STOCK</text>
+  <rect x="364" y="290" width="80" height="24" rx="12" fill="#00D4A3"/><text x="404" y="306" text-anchor="middle" font-size="9.5" font-weight="700" fill="#04342C">Add to cart</text>
+  <!-- p3 -->
+  <rect x="86" y="338" width="178" height="132" rx="14" fill="#151D1A"/>
+  <rect x="96" y="348" width="68" height="112" rx="10" fill="#1B2421"/>
+  <g class="pdt" style="animation-delay:-3s"><path d="M104 420 q8 -22 30 -22 l16 0 q8 0 8 10 v12 z" fill="url(#gMint)"/><rect x="104" y="420" width="54" height="8" rx="3" fill="#F2F5F4"/></g>
+  <text x="174" y="368" font-size="10.5" font-weight="600" fill="#F2F5F4">Run Sneakers</text>
+  <text x="174" y="386" font-size="12" font-weight="700" fill="#5FF0C8">$129</text>
+  <rect x="174" y="396" width="34" height="12" rx="6" fill="#3A1F1A"/><text x="191" y="405" text-anchor="middle" font-size="7.5" font-weight="700" fill="#FF8A6B">-20%</text>
+  <rect x="174" y="434" width="80" height="24" rx="12" fill="#00D4A3"/><text x="214" y="450" text-anchor="middle" font-size="9.5" font-weight="700" fill="#04342C">Add to cart</text>
+  <g class="L added2"><rect x="174" y="434" width="80" height="24" rx="12" fill="#F2F5F4"/><text x="214" y="450" text-anchor="middle" font-size="9.5" font-weight="700" fill="#04342C">Added ✓</text></g>
+  <!-- p4 -->
+  <rect x="276" y="338" width="178" height="132" rx="14" fill="#151D1A"/>
+  <rect x="286" y="348" width="68" height="112" rx="10" fill="url(#gHero)"/>
+  <g class="pdt" style="animation-delay:-4s"><rect x="300" y="380" width="40" height="44" rx="6" fill="#F2F5F4"/><path d="M308 380 v-8 a12 12 0 0 1 24 0 v8" fill="none" stroke="#F2F5F4" stroke-width="3"/><rect x="300" y="394" width="40" height="8" fill="#00D4A3"/></g>
+  <text x="364" y="368" font-size="10.5" font-weight="600" fill="#F2F5F4">Tote Bag</text>
+  <text x="364" y="386" font-size="12" font-weight="700" fill="#5FF0C8">$35</text>
+  <rect x="364" y="434" width="80" height="24" rx="12" fill="#00D4A3"/><text x="404" y="450" text-anchor="middle" font-size="9.5" font-weight="700" fill="#04342C">Add to cart</text>
+
+  <!-- click ripples -->
+  <circle class="L rp1" cx="214" cy="302" r="12" fill="none" stroke="#5FF0C8" stroke-width="2"/>
+  <circle class="L rp2" cx="214" cy="446" r="12" fill="none" stroke="#5FF0C8" stroke-width="2"/>
+  <circle class="L rp3" cx="432" cy="164" r="12" fill="none" stroke="#5FF0C8" stroke-width="2"/>
+</g>
+
+<!-- flying products -->
+<g class="L fly1"><rect x="-12" y="-16" width="24" height="32" rx="7" fill="url(#gViolet)"/></g>
+<g class="L fly2"><path d="M-18 6 q5 -16 20 -16 l10 0 q6 0 6 8 v8 z" fill="url(#gMint)"/></g>
+
+<!-- cursor -->
+<g class="L cur"><path d="M0 0 L0 22 L6 17 L10 26 L14 24 L10 15 L18 15 Z" fill="#F2F5F4" stroke="#0A0A0A" stroke-width="1.6" stroke-linejoin="round"/></g>
+
+<!-- card: checkout -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="440" y="40" width="182" height="118" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="456" y="66" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">CHECKOUT</text>
+  <g transform="translate(470 96)">
+    <rect x="0" y="-2" width="128" height="4" rx="2" fill="#22302C"/>
+    <rect class="L prog" x="0" y="-2" width="128" height="4" rx="2" fill="#5FF0C8"/>
+    <circle r="11" fill="#00D4A3"/><path d="M-4 0 l3 3 6 -6" fill="none" stroke="#04342C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="64" r="11" fill="#151D1A" stroke="#3A4A46" stroke-width="2"/>
+    <g class="L st2"><circle cx="64" r="11" fill="#00D4A3"/><path d="M60 0 l3 3 6 -6" fill="none" stroke="#04342C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <circle cx="128" r="11" fill="#151D1A" stroke="#3A4A46" stroke-width="2"/>
+    <g class="L st3"><circle cx="128" r="11" fill="#00D4A3"/><path d="M124 0 l3 3 6 -6" fill="none" stroke="#04342C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g font-size="8.5" fill="#8FA39E" text-anchor="middle"><text y="26">Cart</text><text x="64" y="26">Shipping</text><text x="128" y="26">Payment</text></g>
+  </g>
+  <text x="456" y="146" font-size="9.5" fill="#8FA39E">2 items · <tspan fill="#F2F5F4" font-weight="700">$178.00</tspan></text>
+</g>
+
+<!-- card: payment -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="486" y="250" width="138" height="150" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="502" y="276" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">PAYMENT</text>
+  <rect x="502" y="288" width="106" height="66" rx="10" fill="url(#gViolet)"/>
+  <rect x="512" y="300" width="18" height="13" rx="3" fill="#FFC94D"/>
+  <text x="512" y="336" font-family="Consolas, monospace" font-size="9.5" font-weight="700" fill="#F2F5F4">•••• 4242</text>
+  <circle cx="586" cy="342" r="6" fill="#FF8A6B" fill-opacity=".9"/><circle cx="595" cy="342" r="6" fill="#FFC94D" fill-opacity=".9"/>
+  <g class="L okpop"><rect x="502" y="364" width="106" height="24" rx="12" fill="#0F3D33"/><text x="555" y="380" text-anchor="middle" font-size="10" font-weight="700" fill="#5FF0C8">Paid $178 ✓</text></g>
+</g>
+
+<!-- card: inventory -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="20" y="502" width="196" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="36" y="528" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">INVENTORY</text>
+  <g font-size="9" fill="#C9D6D2">
+    <text x="36" y="550">Serum</text><rect x="92" y="544" width="108" height="6" rx="3" fill="#22302C"/><rect class="stock" x="92" y="544" width="86" height="6" rx="3" fill="#B39BFF"/>
+    <text x="36" y="570">Sneakers</text><rect x="92" y="564" width="108" height="6" rx="3" fill="#22302C"/><rect class="stock sk2" x="92" y="564" width="40" height="6" rx="3" fill="#FF8A6B"/>
+    <text x="36" y="590">Lamp</text><rect x="92" y="584" width="108" height="6" rx="3" fill="#22302C"/><rect class="stock sk3" x="92" y="584" width="100" height="6" rx="3" fill="#5FF0C8"/>
+  </g>
+</g>
+
+<!-- badge -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="296" y="540" width="264" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <circle cx="322" cy="560" r="6" fill="#00D4A3"/>
+  <text x="336" y="564.5" font-size="12" font-weight="600" fill="#F2F5F4">Shopify · WooCommerce · Custom</text>
+</g>
+</svg>

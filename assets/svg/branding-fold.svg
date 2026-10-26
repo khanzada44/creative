@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FF0C8"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6B4FF"/><stop offset="1" stop-color="#8A68FF"/></linearGradient>
+  <linearGradient id="gCoral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC94D"/><stop offset="1" stop-color="#FF7A57"/></linearGradient>
+  <linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#03866F"/><stop offset=".55" stop-color="#004337"/><stop offset="1" stop-color="#00211B"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".5" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <clipPath id="bd"><rect x="110" y="110" width="420" height="380" rx="24"/></clipPath>
+  <clipPath id="tile"><rect x="134" y="160" width="190" height="190" rx="18"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+  <!-- the sample brand mark: two circles converging -->
+  <g id="mark">
+    <circle class="mA" cx="-14" cy="0" r="30" fill="#F2F5F4"/>
+    <circle class="mB" cx="14" cy="0" r="30" fill="none" stroke="#F2F5F4" stroke-width="8"/>
+  </g>
+</defs>
+<style>
+  .pop,.card,.grow,.strip,.flip{transform-box:fill-box}
+  .loop{animation-duration:9s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  .pop{transform-origin:50% 50%;animation-name:pop}
+  @keyframes pop{0%,6%{transform:scale(0);opacity:0}13%{transform:scale(1.06);opacity:1}16%,90%{transform:scale(1);opacity:1}97%,100%{transform:scale(.85);opacity:0}}
+  .d1{animation-delay:.2s}.d2{animation-delay:.45s}.d3{animation-delay:.7s}.d4{animation-delay:.95s}.d5{animation-delay:1.2s}
+  /* the two circles slide together = "converge" */
+  .cA{animation-name:cA}.cB{animation-name:cB}
+  @keyframes cA{0%,12%{transform:translateX(-34px);opacity:0}16%{opacity:1}28%,90%{transform:none;opacity:1}97%,100%{opacity:0}}
+  @keyframes cB{0%,12%{transform:translateX(34px);opacity:0}16%{opacity:1}28%,90%{transform:none;opacity:1}97%,100%{opacity:0}}
+  .strip{transform-origin:50% 100%;animation-name:strip}
+  @keyframes strip{0%,14%{transform:scaleY(0)}22%,90%{transform:scaleY(1)}97%,100%{transform:scaleY(0)}}
+  .s2{animation-delay:.15s}.s3{animation-delay:.3s}.s4{animation-delay:.45s}
+  .grow{transform-origin:0 50%;animation-name:grow}
+  @keyframes grow{0%,24%{transform:scaleX(0)}34%,90%{transform:scaleX(1)}97%,100%{transform:scaleX(0)}}
+  .g2{animation-delay:.3s}.g3{animation-delay:.6s}
+  .card{animation-name:card}
+  @keyframes card{0%,6%{opacity:0;transform:translateY(18px) scale(.94)}15%,90%{opacity:1;transform:none}97%,100%{opacity:0;transform:translateY(-8px)}}
+  .c2{animation-delay:.4s}.c3{animation-delay:.8s}.c4{animation-delay:1.2s}.c5{animation-delay:1.5s}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  /* positioning dot travels to the sweet spot */
+  .posdot{animation-name:pos}
+  @keyframes pos{0%,20%{transform:translate(-40px,30px);opacity:0}24%{opacity:1}44%,90%{transform:none;opacity:1}97%,100%{opacity:0}}
+  .halo{transform-box:fill-box;transform-origin:50% 50%;animation:halo 2s ease-out infinite}
+  @keyframes halo{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.6);opacity:0}}
+  /* business card flips: front and back */
+  .flip{transform-origin:50% 50%;animation:flip 9s ease-in-out infinite}
+  @keyframes flip{0%,40%{transform:scaleX(1)}45%{transform:scaleX(0)}50%,85%{transform:scaleX(1)}90%{transform:scaleX(0)}95%,100%{transform:scaleX(1)}}
+  .front{animation:front 9s steps(1,end) infinite}
+  .back{animation:back 9s steps(1,end) infinite}
+  @keyframes front{0%{opacity:1}45%{opacity:0}90%{opacity:1}}
+  @keyframes back{0%{opacity:0}45%{opacity:1}90%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.back{opacity:0}}
+</style>
+
+<circle cx="320" cy="300" r="300" fill="url(#gGlow)"/>
+
+<!-- brand guidelines board -->
+<g filter="url(#soft)"><rect x="110" y="110" width="420" height="380" rx="24" fill="url(#gBoard)" stroke="#22302C"/></g>
+<g clip-path="url(#bd)">
+  <rect x="110" y="110" width="420" height="36" fill="#0A0F0E"/>
+  <text x="200" y="133" font-size="11" font-weight="600" letter-spacing="1.5" fill="#F2F5F4">BRAND GUIDELINES</text>
+  <text x="506" y="133" text-anchor="end" font-size="10.5" font-weight="500" fill="#5D6E69">v2.0 · 2026</text>
+
+  <!-- primary logo tile -->
+  <g class="loop pop">
+    <rect x="134" y="160" width="190" height="190" rx="18" fill="url(#gHero)"/>
+    <g clip-path="url(#tile)"><circle cx="300" cy="180" r="70" fill="#5FF0C8" fill-opacity=".08"/></g>
+  </g>
+  <g transform="translate(229 245)">
+    <g class="loop cA"><circle cx="-14" cy="0" r="30" fill="#F2F5F4"/></g>
+    <g class="loop cB"><circle cx="14" cy="0" r="30" fill="none" stroke="#5FF0C8" stroke-width="8"/></g>
+  </g>
+  <text class="loop pop d2" x="229" y="320" text-anchor="middle" font-size="15" font-weight="700" letter-spacing=".5" fill="#F2F5F4">northbay<tspan fill="#5FF0C8">.</tspan></text>
+  <text x="146" y="342" font-size="9" font-weight="600" letter-spacing="1.5" fill="#5FF0C8" opacity=".8">PRIMARY LOGO</text>
+
+  <!-- colour strips -->
+  <g>
+    <rect class="loop strip" x="340" y="160" width="40" height="120" rx="10" fill="url(#gMint)"/>
+    <rect class="loop strip s2" x="386" y="160" width="40" height="120" rx="10" fill="#04342C" stroke="#22302C"/>
+    <rect class="loop strip s3" x="432" y="160" width="40" height="120" rx="10" fill="url(#gViolet)"/>
+    <rect class="loop strip s4" x="478" y="160" width="28" height="120" rx="10" fill="url(#gCoral)"/>
+  </g>
+  <text x="340" y="298" font-size="9" font-weight="600" letter-spacing="1.5" fill="#5FF0C8" opacity=".8">COLOUR SYSTEM</text>
+
+  <!-- type specimen -->
+  <g class="loop pop d3">
+    <rect x="340" y="310" width="166" height="40" rx="10" fill="#151D1A"/>
+    <text x="352" y="338" font-size="22" font-weight="700" fill="#F2F5F4">Aa</text>
+    <text x="388" y="328" font-size="10" font-weight="600" fill="#C9D6D2">Poppins</text>
+    <text x="388" y="341" font-size="9" fill="#5D6E69">Bold · Regular</text>
+  </g>
+
+  <!-- applications row -->
+  <text x="134" y="378" font-size="9" font-weight="600" letter-spacing="1.5" fill="#5FF0C8" opacity=".8">APPLICATIONS</text>
+  <!-- business card (flips) -->
+  <g class="loop pop d4"><g class="flip">
+    <g class="front">
+      <rect x="134" y="388" width="150" height="86" rx="10" fill="#F2F5F4"/>
+      <g transform="translate(160 431) scale(.42)"><circle cx="-14" r="30" fill="#04342C"/><circle cx="14" r="30" fill="none" stroke="#00B892" stroke-width="8"/></g>
+      <text x="184" y="428" font-size="11" font-weight="700" fill="#04342C">Sara Malik</text>
+      <text x="184" y="442" font-size="8.5" fill="#5D6E69">Founder</text>
+      <rect x="184" y="452" width="80" height="4" rx="2" fill="#C9D6D2"/>
+    </g>
+    <g class="back">
+      <rect x="134" y="388" width="150" height="86" rx="10" fill="url(#gHero)"/>
+      <g transform="translate(209 431) scale(.6)"><circle cx="-14" r="30" fill="#F2F5F4"/><circle cx="14" r="30" fill="none" stroke="#5FF0C8" stroke-width="8"/></g>
+    </g>
+  </g></g>
+  <!-- app icon -->
+  <g class="loop pop d5">
+    <rect x="296" y="388" width="86" height="86" rx="22" fill="url(#gMint)"/>
+    <g transform="translate(339 431) scale(.62)"><circle cx="-14" r="30" fill="#04342C"/><circle cx="14" r="30" fill="none" stroke="#F2F5F4" stroke-width="8"/></g>
+  </g>
+  <!-- social post -->
+  <g class="loop pop d5" style="animation-delay:1.4s">
+    <rect x="394" y="388" width="112" height="86" rx="12" fill="#151D1A"/>
+    <rect x="404" y="398" width="92" height="44" rx="8" fill="url(#gViolet)"/>
+    <text x="450" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#F2F5F4">Hello, world.</text>
+    <rect x="404" y="452" width="60" height="6" rx="3" fill="#3A4A46"/>
+  </g>
+</g>
+
+<!-- card: positioning map -->
+<g class="loop card"><g class="bob">
+  <g filter="url(#soft)"><rect x="20" y="40" width="168" height="150" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="36" y="66" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">POSITIONING</text>
+  <g transform="translate(104 124)">
+    <path d="M-60 0 H60 M0 -44 V44" stroke="#3A4A46" stroke-width="1.5"/>
+    <text x="58" y="-4" text-anchor="end" font-size="8" fill="#5D6E69">Premium</text>
+    <text x="-58" y="12" font-size="8" fill="#5D6E69">Classic</text>
+    <text x="4" y="-36" font-size="8" fill="#5D6E69">Bold</text>
+    <circle cx="-34" cy="18" r="5" fill="#3A4A46"/><circle cx="-14" cy="28" r="5" fill="#3A4A46"/><circle cx="20" cy="26" r="5" fill="#3A4A46"/>
+    <g transform="translate(32 -22)">
+      <circle class="halo" r="7" fill="none" stroke="#5FF0C8" stroke-width="2"/>
+      <g class="loop posdot"><circle r="7" fill="#5FF0C8"/></g>
+    </g>
+  </g>
+</g></g>
+
+<!-- card: tone of voice -->
+<g transform="translate(0 30)"><g class="loop card c3"><g class="bob2">
+  <g filter="url(#soft)"><rect x="456" y="456" width="168" height="134" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="472" y="482" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">TONE OF VOICE</text>
+  <g font-size="10" fill="#C9D6D2">
+    <text x="472" y="504">Friendly</text><rect x="472" y="510" width="136" height="6" rx="3" fill="#22302C"/><rect class="loop grow" x="472" y="510" width="112" height="6" rx="3" fill="#5FF0C8"/>
+    <text x="472" y="534">Confident</text><rect x="472" y="540" width="136" height="6" rx="3" fill="#22302C"/><rect class="loop grow g2" x="472" y="540" width="96" height="6" rx="3" fill="#B39BFF"/>
+    <text x="472" y="564">Clear</text><rect x="472" y="570" width="136" height="6" rx="3" fill="#22302C"/><rect class="loop grow g3" x="472" y="570" width="128" height="6" rx="3" fill="#FFC94D"/>
+  </g>
+</g></g></g>
+
+<!-- card: refresh before -> after -->
+<g class="loop card c2"><g class="bob2">
+  <g filter="url(#soft)"><rect x="456" y="30" width="168" height="94" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="472" y="56" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">REBRAND</text>
+  <rect x="472" y="68" width="40" height="40" rx="10" fill="#2A2F2E"/>
+  <text x="492" y="94" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#7C8A86">N</text>
+  <path d="M522 88 h20 m-6 -6 l6 6 -6 6" fill="none" stroke="#5FF0C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="552" y="68" width="40" height="40" rx="10" fill="url(#gMint)"/>
+  <g transform="translate(572 88) scale(.3)"><circle cx="-14" r="30" fill="#04342C"/><circle cx="14" r="30" fill="none" stroke="#F2F5F4" stroke-width="8"/></g>
+</g></g>
+
+<!-- badge -->
+<g class="loop card c4"><g class="bob">
+  <g filter="url(#soft)"><rect x="20" y="520" width="214" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <circle cx="42" cy="540" r="6" fill="#00D4A3"/>
+  <text x="56" y="544.5" font-size="12" font-weight="600" fill="#F2F5F4">Strategy · Identity · Voice</text>
+</g></g>
+</svg>

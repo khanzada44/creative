@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FF0C8"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6B4FF"/><stop offset="1" stop-color="#8A68FF"/></linearGradient>
+  <linearGradient id="gCoral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC94D"/><stop offset="1" stop-color="#FF7A57"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".5" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".28"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#5FF0C8" stroke-opacity=".06"/></pattern>
+  <clipPath id="boardClip"><rect x="110" y="90" width="420" height="420" rx="28"/></clipPath>
+  <path id="petal" d="M0 0 C 46 -28 62 -86 0 -124 C -62 -86 -46 -28 0 0 Z"/>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .petal,.core,.sw,.spin,.card,.word{transform-box:fill-box}
+  .loop{animation-duration:8s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  .draw{stroke-dasharray:1;stroke-dashoffset:1;animation-name:draw}
+  @keyframes draw{0%{stroke-dashoffset:1;opacity:1}14%{stroke-dashoffset:0;opacity:1}80%{stroke-dashoffset:0;opacity:1}92%,100%{stroke-dashoffset:0;opacity:0}}
+  .d2{animation-delay:.25s}.d3{animation-delay:.5s}.d4{animation-delay:.7s}
+  .petal{transform-origin:50% 100%;animation-name:pop}
+  @keyframes pop{0%,12%{transform:scale(0);opacity:0}20%{transform:scale(1.08);opacity:1}24%{transform:scale(1)}88%{transform:scale(1);opacity:1}96%,100%{transform:scale(.6);opacity:0}}
+  .p2{animation-delay:.35s}.p3{animation-delay:.7s}
+  .core{transform-origin:50% 50%;animation-name:core}
+  @keyframes core{0%,28%{transform:scale(0)}33%{transform:scale(1.25)}36%,88%{transform:scale(1)}96%,100%{transform:scale(0)}}
+  .anch{animation-name:anch}
+  @keyframes anch{0%,32%{opacity:0}36%,62%{opacity:1}68%,100%{opacity:0}}
+  .pen{animation-name:pen;offset-path:path("M320 280 C 366 252 382 194 320 156 C 258 194 274 252 320 280");offset-rotate:0deg}
+  @keyframes pen{0%,32%{offset-distance:0%;opacity:0}35%{opacity:1}60%{offset-distance:100%;opacity:1}66%,100%{offset-distance:100%;opacity:0}}
+  .word{animation-name:word}
+  @keyframes word{0%,40%{opacity:0;transform:translateY(14px)}48%,88%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+  .tag{animation-delay:.3s}
+  .card{animation-name:card}
+  @keyframes card{0%,10%{opacity:0;transform:translateY(18px) scale(.94)}20%,90%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(-8px)}}
+  .c2{animation-delay:.25s}.c3{animation-delay:.5s}.c4{animation-delay:.75s}
+  .bob{animation:bob 4s ease-in-out infinite}
+  .bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .spin{transform-origin:50% 50%;animation:spin 18s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .sw{transform-origin:50% 50%;animation-name:sw}
+  @keyframes sw{0%,18%{transform:scale(0)}24%,90%{transform:scale(1)}97%,100%{transform:scale(0)}}
+  .s2{animation-delay:.12s}.s3{animation-delay:.24s}.s4{animation-delay:.36s}
+  .blink{animation:blink 1.1s steps(2,end) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.draw{stroke-dashoffset:0}}
+</style>
+
+<!-- glow -->
+<circle cx="320" cy="300" r="300" fill="url(#gGlow)"/>
+
+<!-- artboard -->
+<g filter="url(#soft)">
+  <rect x="110" y="90" width="420" height="420" rx="28" fill="url(#gBoard)" stroke="#22302C"/>
+</g>
+<g clip-path="url(#boardClip)">
+  <rect x="110" y="90" width="420" height="420" fill="url(#grid)"/>
+  <!-- artboard top bar -->
+  <rect x="110" y="90" width="420" height="40" fill="#0A0F0E" opacity=".7"/>
+  <circle cx="136" cy="110" r="5" fill="#FF8A6B"/><circle cx="154" cy="110" r="5" fill="#FFC94D"/><circle cx="172" cy="110" r="5" fill="#00D4A3"/>
+  <text x="320" y="115" text-anchor="middle" font-size="12" font-weight="500" fill="#8FA39E">brand-mark.svg</text>
+
+  <!-- construction geometry -->
+  <g fill="none" stroke="#5FF0C8" stroke-width="1.2" stroke-opacity=".45">
+    <circle class="loop draw" pathLength="1" cx="320" cy="280" r="124"/>
+    <circle class="loop draw d2" pathLength="1" cx="320" cy="280" r="76"/>
+    <circle class="loop draw d3" pathLength="1" cx="320" cy="218" r="62"/>
+    <line class="loop draw d2" pathLength="1" x1="150" y1="280" x2="490" y2="280"/>
+    <line class="loop draw d3" pathLength="1" x1="320" y1="140" x2="320" y2="420"/>
+    <line class="loop draw d4" pathLength="1" x1="200" y1="160" x2="440" y2="400"/>
+    <line class="loop draw d4" pathLength="1" x1="440" y1="160" x2="200" y2="400"/>
+  </g>
+  <g class="spin" fill="none" stroke="#5FF0C8" stroke-opacity=".25" stroke-dasharray="3 7">
+    <circle cx="320" cy="280" r="150"/>
+  </g>
+
+  <!-- the mark: three petals -->
+  <g transform="translate(320 280)">
+    <g transform="rotate(0)"><use href="#petal" class="loop petal" fill="url(#gMint)"/></g>
+    <g transform="rotate(120)"><use href="#petal" class="loop petal p2" fill="url(#gViolet)" fill-opacity=".95"/></g>
+    <g transform="rotate(240)"><use href="#petal" class="loop petal p3" fill="url(#gCoral)" fill-opacity=".95"/></g>
+    <circle class="loop core" r="17" fill="#0A0A0A" stroke="#F2F5F4" stroke-width="5"/>
+  </g>
+
+  <!-- pen tool anchors + handles on the mint petal -->
+  <g class="loop anch">
+    <g stroke="#F2F5F4" stroke-width="1.2" fill="none">
+      <path d="M320 156 L382 194 M320 156 L258 194" stroke-opacity=".8"/>
+      <path d="M320 280 L366 252 M320 280 L274 252" stroke-opacity=".8"/>
+    </g>
+    <g fill="#0A0A0A" stroke="#F2F5F4" stroke-width="1.6">
+      <rect x="314" y="150" width="12" height="12"/>
+      <rect x="314" y="274" width="12" height="12"/>
+    </g>
+    <g fill="#F2F5F4"><circle cx="382" cy="194" r="4.5"/><circle cx="258" cy="194" r="4.5"/><circle cx="366" cy="252" r="4.5"/><circle cx="274" cy="252" r="4.5"/></g>
+  </g>
+  <g class="loop pen">
+    <g transform="translate(-4 -4)">
+      <path d="M0 0 L22 8 L14 12 L20 26 L14 29 L8 15 L2 20 Z" fill="#F2F5F4" stroke="#0A0A0A" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <g class="loop word">
+    <text x="320" y="470" text-anchor="middle" font-size="31" font-weight="700" letter-spacing="-.8" fill="#F2F5F4">Creative <tspan fill="#00D4A3">Converge</tspan><tspan fill="#5FF0C8">.</tspan></text>
+  </g>
+</g>
+
+<!-- floating card: colour palette -->
+<g class="loop card"><g class="bob">
+  <g filter="url(#soft)"><rect x="432" y="40" width="176" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="450" y="66" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">PALETTE</text>
+  <circle class="loop sw" cx="464" cy="96" r="14" fill="url(#gMint)"/>
+  <circle class="loop sw s2" cx="502" cy="96" r="14" fill="url(#gViolet)"/>
+  <circle class="loop sw s3" cx="540" cy="96" r="14" fill="url(#gCoral)"/>
+  <circle class="loop sw s4" cx="578" cy="96" r="14" fill="#F2F5F4"/>
+  <text x="450" y="130" font-size="10" fill="#8FA39E">#00D4A3  #9B7BFF  #FF8A6B</text>
+</g></g>
+
+<!-- floating card: typography -->
+<g class="loop card c2"><g class="bob2">
+  <g filter="url(#soft)"><rect x="24" y="300" width="142" height="128" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="42" y="326" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">TYPEFACE</text>
+  <text x="40" y="384" font-size="54" font-weight="700" fill="#F2F5F4">Aa<tspan font-size="54" fill="#5FF0C8">.</tspan></text>
+  <text x="42" y="410" font-size="11.5" font-weight="500" fill="#C9D6D2">Poppins Bold</text>
+  <rect class="blink" x="128" y="346" width="2.5" height="40" fill="#5FF0C8"/>
+</g></g>
+
+<!-- floating card: logo variations -->
+<g transform="translate(10 52)"><g class="loop card c3"><g class="bob">
+  <g filter="url(#soft)"><rect x="446" y="430" width="170" height="120" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="464" y="456" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">VARIATIONS</text>
+  <rect x="464" y="468" width="62" height="62" rx="12" fill="#00D4A3"/>
+  <g transform="translate(495 503) scale(.2)">
+    <use href="#petal" fill="#04342C"/><g transform="rotate(120)"><use href="#petal" fill="#04342C" fill-opacity=".75"/></g><g transform="rotate(240)"><use href="#petal" fill="#04342C" fill-opacity=".55"/></g>
+  </g>
+  <rect x="536" y="468" width="62" height="62" rx="12" fill="#F2F5F4"/>
+  <g transform="translate(567 503) scale(.2)">
+    <use href="#petal" fill="#0A0A0A"/><g transform="rotate(120)"><use href="#petal" fill="#0A0A0A" fill-opacity=".7"/></g><g transform="rotate(240)"><use href="#petal" fill="#0A0A0A" fill-opacity=".45"/></g>
+  </g>
+</g></g></g>
+
+<!-- floating badge -->
+<g class="loop card c4"><g class="bob2">
+  <g filter="url(#soft)"><rect x="24" y="196" width="132" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <circle cx="46" cy="216" r="6" fill="#00D4A3"/>
+  <text x="60" y="220.5" font-size="12" font-weight="600" fill="#F2F5F4">Vector · SVG</text>
+</g></g>
+</svg>

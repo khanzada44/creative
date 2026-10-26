@@ -3,7 +3,7 @@
 $contact = [
   'email'      => 'info@creativeconverge.com',
   'phone'      => '(855) 677-4898',
-  'phone_link' => '+19496205684',
+  'phone_link' => '(855) 677-4898',
   'address'    => 'USA: 1910 Pacific Ave Suite 2000 #2372, Dallas, TX 75201',
   'hours'      => 'Mon – Fri: 9 am – 6 pm',
   'hours_note' => 'Sat & Sun: closed',
@@ -22,7 +22,7 @@ $contactHero = [
 $contactImages = [
   'rocket'       => '2024/08/rocket-no-bg.png',
   'photo'        => '2024/08/contact-page.png',
-  'illustration' => '2024/08/contact-page-Illustration-Art.png',
+  'illustration' => '',
 ];
 
 $contactFaq = [
@@ -192,7 +192,6 @@ echo $cvgHead;
 
   <!-- ================= 3. CONTACT CARDS ================= -->
   <section class="cvg-ct-info">
-    <img src="<?= cvg_url('assets/img/contact-page-Illustration-Art.png') ?>" alt="" class="cvg-ct-illus" aria-hidden="true" loading="lazy">
     <div class="cvg-ct-wrap">
       <div class="cvg-ct-cards">
         <a class="cvg-ct-card cvg-ct-reveal" href="<?= cvg_e($mapLink) ?>" target="_blank" rel="noopener">
@@ -943,8 +942,8 @@ echo $cvgHead;
     text-align: center;
     gap: 6px;
     padding: 34px 22px;
-    border-radius: 24px;
-    background: rgba(10, 10, 10, .45);
+    border-radius: 8px;
+    /* background: rgba(10, 10, 10, .45); */
     border: 1px solid rgba(95, 240, 200, .22);
     backdrop-filter: blur(6px);
     color: var(--ct-text);
@@ -954,8 +953,6 @@ echo $cvgHead;
   .cvg-ct a.cvg-ct-card:hover {
     transform: translateY(-8px);
     background: rgba(10, 10, 10, .7);
-    border-color: var(--ct-mint-l);
-    box-shadow: 0 26px 60px rgba(0, 0, 0, .35)
   }
 
   .cvg-ct .cvg-ct-ic {

@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <title>Grow Your Brand with Creative Converge: Premier Dallas Digital Agency</title>
-    <meta name="description" content="Creative Converge is a premier digital agency in Dallas offering custom web design, development, branding, and digital marketing to grow your brand.">
+     <title>Pricing & Packages – Logo, Website, SEO | Creative Converge</title>
+    <meta name="description" content="Transparent pricing for every budget. Choose from logo, website, eCommerce, branding, SEO & animation packages with 100% satisfaction guarantee.">
  
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">

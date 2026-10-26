@@ -3,7 +3,7 @@ require_once __DIR__ . '/init.php';
 
 
 $srvEyebrow = 'Our services';
-$srvTitle   = 'What We Do <br>Best, <span>All Under One Roof</span>';   /* <span> = mint colour */
+$srvTitle   = 'What We Do <br>Best, <span>All Under One Roof</span>';
 $srvLead    = 'From brand identity and custom website design services to development and digital marketing, check out all our services that help in raise your business ideas into something real. As a website design agency, we offer custom web design services tailored to different business needs';
 
 $services = [
@@ -11,7 +11,6 @@ $services = [
   ['Web Design Solutions',    cvg_url('services/service-detail.php?slug=web-design-solutions'),   'web',          'Getting Visitors but No Customers? Your website could be the problem. Let’s book a call and redesign your site.'],
   ['Illustration Design',     cvg_url('services/service-detail.php?slug=illustration-design'),    'illustration', "When stock visuals all look alike, your message gets lost. Get our custom illustrations  which give your brand visuals competitors can't simply copy."],
   ['Branding',                cvg_url('services/service-detail.php?slug=branding'),               'branding',     'Growing Your Business but Still Looking Small? Build a strong brand identity with us that earns trust and skyrockets your business growth.'],
-  ['Advance Combo Packages',  cvg_url('services/service-detail.php?slug=advance-combo-packages'), 'combo',        'Posting Regularly but Not Generating Leads? We help you reach your target audience, boost your brand’s visibility, and accelerate business growth by 3x.'],
   ['Digital Marketing',       cvg_url('services/service-detail.php?slug=digital-marketing'),      'marketing',    'Losing Customers to Complicated Experiences? We design intuitive mobile apps that reduce friction, simplify everyday actions, and make repeat interactions easier.'],
   // ['Mobile Apps',             cvg_url('services/service-detail.php?slug=mobile-apps'),            'mobile',       'iOS and Android apps your users will love.'],
   ['Video Animations',        cvg_url('services/service-detail.php?slug=video-animation-services'), 'video',      "Great Products, but People Just Don't Get Them? Turn your product features  into easy-to-follow animations that demonstrate value and help people understand why they need what you offer."],
@@ -44,7 +43,7 @@ $srvTotal = count($services);
 ?>
 <section class="cvg-srv" id="services" aria-labelledby="cvg-srv-title" data-autoplay="<?= (int) $srvAutoplay ?>">
   <div class="cvg-srv-grid" aria-hidden="true"></div>
-  <div class="cvg-srv-word" aria-hidden="true">SERVICES</div>
+  <div class="abt-watermarks" aria-hidden="true">SERVICES</div>
 
   <div class="cvg-srv-wrap">
     <div class="cvg-srv-head">
@@ -65,18 +64,18 @@ $srvTotal = count($services);
   </div>
 
   <div class="cvg-srv-wrap cvg-srv-wrap--track">
-  <div class="cvg-srv-track" tabindex="0" aria-label="Our services">
-    <?php foreach ($services as $i => $s):
-      $icon = $srvIcons[$s[2]] ?? $srvIcons['code']; ?>
-      <a class="cvg-srv-card cvg-srv-reveal" href="<?= cvg_srv_e($s[1]) ?>" style="--d:<?= min($i, 4) * 0.08 ?>s" draggable="false">
-        <span class="cvg-srv-num"><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
-        <span class="cvg-srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><?= $icon ?></svg></span>
-        <h3><?= cvg_srv_e(strip_tags(str_replace('<br>', ' ', $s[0]))) ?></h3>
-        <p><?= cvg_srv_e($s[3] ?? '') ?></p>
-        <span class="cvg-srv-more"><i><?= $srvArrow ?></i>Read more</span>
-      </a>
-    <?php endforeach; ?>
-  </div>
+    <div class="cvg-srv-track" tabindex="0" aria-label="Our services">
+      <?php foreach ($services as $i => $s):
+        $icon = $srvIcons[$s[2]] ?? $srvIcons['code']; ?>
+        <a class="cvg-srv-card cvg-srv-reveal" href="<?= cvg_srv_e($s[1]) ?>" style="--d:<?= min($i, 4) * 0.08 ?>s" draggable="false">
+          <span class="cvg-srv-num"><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
+          <span class="cvg-srv-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><?= $icon ?></svg></span>
+          <h3><?= cvg_srv_e(strip_tags(str_replace('<br>', ' ', $s[0]))) ?></h3>
+          <p><?= cvg_srv_e($s[3] ?? '') ?></p>
+          <span class="cvg-srv-more"><i><?= $srvArrow ?></i>Read more</span>
+        </a>
+      <?php endforeach; ?>
+    </div>
   </div>
 
   <div class="cvg-srv-wrap">
@@ -89,13 +88,32 @@ $srvTotal = count($services);
 </section>
 
 <style>
+  .abt-watermarks {
+    position: absolute;
+    top: -16px !important;
+    left: 200px;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    font-size: 125px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: rgba(255, 255, 255, .05);
+    line-height: 1;
+  }
+
   .cvg-srv {
     --srv-mint: #00D4A3;
     --srv-mint-l: #5FF0C8;
     --srv-ink: #04342C;
     --srv-text: #F2F5F4;
     --srv-text-2: #C9D6D2;
-    --srv-grad: radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, .45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+    /* top-left glow + NEW bottom-right glow + base gradient */
+    --srv-grad:
+      radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, .45) 0%, rgba(28, 197, 169, 0) 60%),
+      radial-gradient(60% 75% at 92% 92%, rgba(28, 197, 169, .38) 0%, rgba(28, 197, 169, 0) 60%),
+      linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
     --srv-ease: cubic-bezier(.2, .9, .2, 1);
     --srv-gap: 22px;
     position: relative;
@@ -133,7 +151,7 @@ $srvTotal = count($services);
 
   .cvg-srv .cvg-srv-word {
     position: absolute;
-    right: max(-20px, calc((100% - 1200px) / 2));
+    right: max(-20px, calc((100% - 410px) / 2));
     top: -27px;
     font-size: 190px;
     font-weight: 700;
@@ -222,7 +240,7 @@ $srvTotal = count($services);
     display: grid;
     place-items: center;
     cursor: pointer;
-     
+
     transition: background .3s, border-color .3s, transform .3s
   }
 

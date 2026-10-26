@@ -95,7 +95,7 @@ if (!function_exists('cvg_nav_on')) {
       </div>
 
       <a href="<?= cvg_url('pricing/index.php') ?>" class="nav-link<?= cvg_nav_on('pricing', $cvgNavPath) ?>">Pricing</a>
-      <a href="<?= cvg_url('cases/index.php') ?>" class="nav-link<?= cvg_nav_on('cases', $cvgNavPath) ?>">Cases</a>
+      <!-- <a href="<?= cvg_url('cases/index.php') ?>" class="nav-link<?= cvg_nav_on('cases', $cvgNavPath) ?>">Cases</a> -->
       <a href="<?= cvg_url('about/index.php') ?>" class="nav-link<?= cvg_nav_on('about', $cvgNavPath) ?>">About</a>
       <a href="<?= cvg_url('contact-us/index.php') ?>" class="nav-link<?= cvg_nav_on('contact-us', $cvgNavPath) ?>">Contact</a>
     </nav>
@@ -342,6 +342,8 @@ if (!function_exists('cvg_nav_on')) {
     position: fixed;
     z-index: 50;
     top: 60px;
+    /* !important + ID: taake header.css ya koi aur file isay override na kare */
+    top: 60px !important;
     left: 0;
     right: 0;
     width: auto;
@@ -372,18 +374,6 @@ if (!function_exists('cvg_nav_on')) {
     transition: height .35s ease, background .35s ease, box-shadow .35s ease, border-color .35s ease;
   }
 
-  /* after scrolling: pill moves up */
-  .header.cvg-glass.is-scrolled {
-    top: 12px;
-  }
-
-  /* after scrolling: pill gets a bit smaller and darker */
-  .header.cvg-glass.is-scrolled .header-inner {
-    height: 60px;
-    background: rgba(8, 12, 11, .82);
-    border-color: rgba(95, 240, 200, .26);
-    box-shadow: 0 14px 40px rgba(0, 0, 0, .5);
-  }
 
   .header.cvg-glass .header-left {
     display: flex;
@@ -433,7 +423,7 @@ if (!function_exists('cvg_nav_on')) {
   .header.cvg-glass .desktop-nav .nav-link:hover,
   .header.cvg-glass .services-btn:hover,
   .header.cvg-glass .services-btn.open {
-    color: #fff;
+    color: #2ee6c0;
     background: rgba(242, 245, 244, .08);
   }
 
@@ -596,9 +586,6 @@ if (!function_exists('cvg_nav_on')) {
     transform: translate(2px, -2px);
   }
 
-  .header.cvg-glass.is-scrolled .cvg-glass-cta {
-    height: 44px;
-  }
 
   .header.cvg-glass .menu-btn {
     display: flex;
@@ -673,9 +660,7 @@ if (!function_exists('cvg_nav_on')) {
       gap: 10px;
     }
 
-    .header.cvg-glass.is-scrolled .header-inner {
-      height: 56px;
-    }
+
 
     .header.cvg-glass .cvg-alogo {
       --cvg-alogo-size: 16px;
@@ -978,12 +963,35 @@ if (!function_exists('cvg_nav_on')) {
     var panelDevBtn = document.getElementById("panelDevBtn");
     var panelDevList = document.getElementById("panelDevList");
 
-    /* ===== Scroll: sirf class lagti hai, koi inline style nahi ===== */
-    function onScroll() {
-      header.classList.toggle("is-scrolled", window.scrollY > 40);
+    /* ===== Scroll: sirf class lagti hai, koi inline style nahi =====
+       Kuch pages par body/html khud scroll hote hain (window nahi),
+       is liye har jagah ka scroll check karte hain. */
+    function getScrollTop() {
+      return Math.max(
+        window.pageYOffset || 0,
+        document.documentElement.scrollTop || 0,
+        document.body ? document.body.scrollTop || 0 : 0
+      );
     }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+
+    var byScroll = false,
+      bySentinel = false;
+
+
+
+    /* Backup: page ke sab se upar ek chhota invisible marker.
+       Jaise hi wo screen se bahar jaye, header upar chala jaye.
+       Ye smooth-scroll libraries (Lenis / Locomotive) ke saath bhi kaam karta hai. */
+    if ("IntersectionObserver" in window && document.body) {
+      var sentinel = document.createElement("div");
+      sentinel.setAttribute("aria-hidden", "true");
+      sentinel.style.cssText = "position:absolute;top:0;left:0;width:1px;height:40px;pointer-events:none;visibility:hidden";
+      document.body.insertBefore(sentinel, document.body.firstChild);
+      new IntersectionObserver(function(entries) {
+        bySentinel = !entries[0].isIntersecting;
+        apply();
+      }).observe(sentinel);
+    }
 
     /* Agar koi doosri script header par inline top / --g-top lagaye, to hata do */
     function cleanInline() {

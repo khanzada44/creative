@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FF0C8"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gPhp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A3A7E4"/><stop offset="1" stop-color="#777BB4"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".45" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <clipPath id="win"><rect x="80" y="112" width="400" height="360" rx="24"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .chk,.piece,.mod,.prog,.qb{transform-box:fill-box}
+  .L{animation-duration:8s;animation-iteration-count:infinite}
+  .tok{offset-path:path("M208 214 H 448");offset-rotate:0deg;animation:tok 8s cubic-bezier(.45,0,.55,1) infinite}
+  @keyframes tok{0%,4%{offset-distance:0%;opacity:0}6%{opacity:1}12%,16%{offset-distance:33.3%}24%,28%{offset-distance:66.6%}36%,40%{offset-distance:100%;opacity:1}46%,100%{offset-distance:100%;opacity:0}}
+  .chk{transform-origin:50% 50%;animation-timing-function:cubic-bezier(.3,1.6,.5,1)}
+  .k1{animation-name:k1}.k2{animation-name:k2}.k3{animation-name:k3}.k4{animation-name:k4}
+  @keyframes k1{0%,6%{transform:scale(0)}10%,92%{transform:scale(1)}98%,100%{transform:scale(0)}}
+  @keyframes k2{0%,14%{transform:scale(0)}18%,92%{transform:scale(1)}98%,100%{transform:scale(0)}}
+  @keyframes k3{0%,26%{transform:scale(0)}30%,92%{transform:scale(1)}98%,100%{transform:scale(0)}}
+  @keyframes k4{0%,38%{transform:scale(0)}42%,92%{transform:scale(1)}98%,100%{transform:scale(0)}}
+  .wire{stroke-dasharray:4 5;animation:flow 1s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-18}}
+  .pend{animation-timing-function:steps(1,end)}
+  .s1{animation-name:s1}.s2{animation-name:s2}.s3{animation-name:s3}
+  .a1{animation-name:a1}.a2{animation-name:a2}.a3{animation-name:a3}
+  @keyframes s1{0%{opacity:1}44%{opacity:0}96%{opacity:1}}
+  @keyframes a1{0%{opacity:0}44%{opacity:1}96%{opacity:0}}
+  @keyframes s2{0%{opacity:1}52%{opacity:0}96%{opacity:1}}
+  @keyframes a2{0%{opacity:0}52%{opacity:1}96%{opacity:0}}
+  @keyframes s3{0%{opacity:1}60%{opacity:0}96%{opacity:1}}
+  @keyframes a3{0%{opacity:0}60%{opacity:1}96%{opacity:0}}
+  .mod{transform-origin:0 50%;animation-name:mod;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes mod{0%,2%{transform:translateX(-14px);opacity:0}8%,94%{transform:none;opacity:1}100%{opacity:0}}
+  .m2{animation-delay:.15s}.m3{animation-delay:.3s}.m4{animation-delay:.45s}.m5{animation-delay:.6s}
+  .piece{animation:piece 4s cubic-bezier(.5,0,.3,1.3) infinite}
+  @keyframes piece{0%,15%{transform:translate(26px,-22px) rotate(18deg)}45%,85%{transform:none}100%{transform:translate(26px,-22px) rotate(18deg)}}
+  .glow{animation:glowp 4s ease-in-out infinite}
+  @keyframes glowp{0%,40%{opacity:0}50%,80%{opacity:1}95%,100%{opacity:0}}
+  .prog{transform-origin:0 50%;animation:prog 4s cubic-bezier(.3,.6,.4,1) infinite}
+  @keyframes prog{0%{transform:scaleX(0)}70%,100%{transform:scaleX(1)}}
+  .qb{transform-origin:0 50%;animation:qb 4s cubic-bezier(.2,.8,.2,1) infinite}
+  @keyframes qb{0%,35%{transform:scaleX(1)}60%,100%{transform:scaleX(.12)}}
+  .ms1{animation:ms1 4s steps(1,end) infinite}.ms2{animation:ms2 4s steps(1,end) infinite}
+  @keyframes ms1{0%{opacity:1}55%{opacity:0}}
+  @keyframes ms2{0%{opacity:0}55%{opacity:1}}
+  .scan{animation:scan 2.4s ease-in-out infinite}
+  @keyframes scan{0%,100%{transform:translateY(0)}50%{transform:translateY(30px)}}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.s1,.s2,.s3{opacity:0}}
+</style>
+
+<circle cx="290" cy="300" r="300" fill="url(#gGlow)"/>
+
+<!-- custom admin panel -->
+<g filter="url(#soft)"><rect x="80" y="112" width="400" height="360" rx="24" fill="url(#gBoard)" stroke="#22302C"/></g>
+<g clip-path="url(#win)">
+  <rect x="80" y="112" width="400" height="36" fill="#0A0F0E"/>
+  <circle cx="104" cy="130" r="5" fill="#FF8A6B"/><circle cx="122" cy="130" r="5" fill="#FFC94D"/><circle cx="140" cy="130" r="5" fill="#00D4A3"/>
+  <text x="300" y="134" text-anchor="middle" font-size="11" font-weight="500" fill="#8FA39E">admin.yourcompany.com</text>
+  <!-- sidebar -->
+  <rect x="80" y="148" width="104" height="324" fill="#0E1412"/>
+  <g font-size="10" font-weight="500">
+    <g class="L mod"><rect x="90" y="162" width="84" height="26" rx="8" fill="#0F3D33"/><rect x="98" y="170" width="10" height="10" rx="3" fill="#5FF0C8"/><text x="116" y="179" fill="#5FF0C8">Workflow</text></g>
+    <g class="L mod m2"><rect x="98" y="204" width="10" height="10" rx="3" fill="#B39BFF"/><text x="116" y="213" fill="#C9D6D2">Clients</text></g>
+    <g class="L mod m3"><rect x="98" y="232" width="10" height="10" rx="3" fill="#FFC94D"/><text x="116" y="241" fill="#C9D6D2">Quotes</text></g>
+    <g class="L mod m4"><rect x="98" y="260" width="10" height="10" rx="3" fill="#FF8A6B"/><text x="116" y="269" fill="#C9D6D2">Invoices</text></g>
+    <g class="L mod m5"><rect x="98" y="288" width="10" height="10" rx="3" fill="#C9D6D2"/><text x="116" y="297" fill="#C9D6D2">Reports</text></g>
+  </g>
+  <rect x="90" y="430" width="84" height="28" rx="8" fill="#151D1A"/><circle cx="104" cy="444" r="7" fill="url(#gPhp)"/><text x="116" y="448" font-size="9" fill="#8FA39E">Admin</text>
+
+  <!-- workflow pipeline -->
+  <text x="198" y="176" font-size="9.5" font-weight="700" letter-spacing="1.5" fill="#8FA39E">YOUR WORKFLOW, AUTOMATED</text>
+  <path class="wire" d="M208 214 H 448" stroke="#5FF0C8" stroke-opacity=".45" stroke-width="2"/>
+  <g font-size="8.5" fill="#C9D6D2" text-anchor="middle">
+    <circle cx="208" cy="214" r="18" fill="#151D1A" stroke="#5FF0C8" stroke-width="1.6"/><path d="M201 209 h14 v10 h-14z M201 209 l7 6 7 -6" fill="none" stroke="#5FF0C8" stroke-width="1.6"/><text x="208" y="246">Lead</text>
+    <circle cx="288" cy="214" r="18" fill="#151D1A" stroke="#FFC94D" stroke-width="1.6"/><path d="M282 207 h12 v14 h-12z M285 212 h6 M285 216 h6" fill="none" stroke="#FFC94D" stroke-width="1.6"/><text x="288" y="246">Quote</text>
+    <circle cx="368" cy="214" r="18" fill="#151D1A" stroke="#B39BFF" stroke-width="1.6"/><path d="M361 214 l5 5 9 -10" fill="none" stroke="#B39BFF" stroke-width="2" stroke-linecap="round"/><text x="368" y="246">Approve</text>
+    <circle cx="448" cy="214" r="18" fill="#151D1A" stroke="#FF8A6B" stroke-width="1.6"/><text x="448" y="219" font-size="13" font-weight="700" fill="#FF8A6B">$</text><text x="448" y="246">Invoice</text>
+  </g>
+  <g fill="#00D4A3">
+    <g class="L chk k1"><circle cx="222" cy="200" r="7"/><path d="M219 200 l2 2 4 -4" fill="none" stroke="#04342C" stroke-width="1.8"/></g>
+    <g class="L chk k2"><circle cx="302" cy="200" r="7"/><path d="M299 200 l2 2 4 -4" fill="none" stroke="#04342C" stroke-width="1.8"/></g>
+    <g class="L chk k3"><circle cx="382" cy="200" r="7"/><path d="M379 200 l2 2 4 -4" fill="none" stroke="#04342C" stroke-width="1.8"/></g>
+    <g class="L chk k4"><circle cx="462" cy="200" r="7"/><path d="M459 200 l2 2 4 -4" fill="none" stroke="#04342C" stroke-width="1.8"/></g>
+  </g>
+  <g class="tok"><circle r="6" fill="#F2F5F4"/><circle r="11" fill="#F2F5F4" fill-opacity=".15"/></g>
+
+  <!-- records table -->
+  <rect x="196" y="266" width="268" height="190" rx="12" fill="#111816"/>
+  <g font-size="8.5" font-weight="700" letter-spacing="1" fill="#5D6E69"><text x="210" y="286">CLIENT</text><text x="320" y="286">AMOUNT</text><text x="400" y="286">STATUS</text></g>
+  <g font-size="10" fill="#C9D6D2">
+    <rect x="204" y="296" width="252" height="34" rx="8" fill="#151D1A"/><text x="214" y="317">Atlas Interiors</text><text x="320" y="317">$2,400</text>
+    <g class="L pend s1"><rect x="396" y="304" width="52" height="18" rx="9" fill="#3A3215"/><text x="422" y="316.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#FFC94D">Pending</text></g>
+    <g class="L pend a1"><rect x="396" y="304" width="52" height="18" rx="9" fill="#0F3D33"/><text x="422" y="316.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#5FF0C8">Paid ✓</text></g>
+    <rect x="204" y="336" width="252" height="34" rx="8" fill="#151D1A"/><text x="214" y="357">Nova Clinic</text><text x="320" y="357">$1,150</text>
+    <g class="L pend s2"><rect x="396" y="344" width="52" height="18" rx="9" fill="#3A3215"/><text x="422" y="356.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#FFC94D">Pending</text></g>
+    <g class="L pend a2"><rect x="396" y="344" width="52" height="18" rx="9" fill="#0F3D33"/><text x="422" y="356.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#5FF0C8">Paid ✓</text></g>
+    <rect x="204" y="376" width="252" height="34" rx="8" fill="#151D1A"/><text x="214" y="397">Peak Logistics</text><text x="320" y="397">$5,780</text>
+    <g class="L pend s3"><rect x="396" y="384" width="52" height="18" rx="9" fill="#3A3215"/><text x="422" y="396.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#FFC94D">Pending</text></g>
+    <g class="L pend a3"><rect x="396" y="384" width="52" height="18" rx="9" fill="#0F3D33"/><text x="422" y="396.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#5FF0C8">Paid ✓</text></g>
+    <rect x="204" y="416" width="252" height="32" rx="8" fill="#151D1A" fill-opacity=".5"/><rect x="214" y="429" width="70" height="6" rx="3" fill="#2A3A36"/><rect x="320" y="429" width="40" height="6" rx="3" fill="#2A3A36"/>
+  </g>
+</g>
+
+<!-- card: made to fit (puzzle) -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="452" y="22" width="170" height="124" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="468" y="48" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">MADE TO FIT</text>
+  <g transform="translate(488 60)">
+    <path d="M0 0 H48 V24 a8 8 0 0 1 0 16 V72 H0 Z" fill="#151D1A" stroke="#2A3A36" stroke-width="1.5"/>
+    <path d="M48 0 H96 V72 H48 V40 a8 8 0 0 0 0 -16 Z" fill="none" stroke="#3A4A46" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <rect class="glow" x="-3" y="-3" width="102" height="78" rx="8" fill="none" stroke="#5FF0C8" stroke-width="2"/>
+    <g class="piece"><path d="M48 0 H96 V72 H48 V40 a8 8 0 0 0 0 -16 Z" fill="url(#gMint)"/></g>
+  </g>
+</g>
+
+<!-- card: upgrade -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="490" y="196" width="134" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="506" y="222" font-size="10.5" font-weight="600" letter-spacing="2" fill="#B39BFF">UPGRADE</text>
+  <text x="506" y="252" font-size="14" font-weight="700" fill="#8FA39E">7.4</text>
+  <path d="M538 247 h20 m-6 -6 l6 6 -6 6" fill="none" stroke="#5FF0C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="566" y="252" font-size="14" font-weight="700" fill="#F2F5F4">8.3</text>
+  <rect x="506" y="268" width="102" height="8" rx="4" fill="#22302C"/>
+  <rect class="prog" x="506" y="268" width="102" height="8" rx="4" fill="url(#gPhp)"/>
+  <text x="506" y="292" font-size="8.5" fill="#8FA39E">PHP version · features</text>
+</g>
+
+<!-- card: optimization -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="404" y="494" width="220" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="420" y="520" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">OPTIMIZED</text>
+  <text class="ms1" x="608" y="520" text-anchor="end" font-size="11" font-weight="700" fill="#FF8A6B">840ms</text>
+  <text class="ms2" x="608" y="520" text-anchor="end" font-size="11" font-weight="700" fill="#5FF0C8">95ms ⚡</text>
+  <text x="420" y="544" font-family="Consolas, monospace" font-size="9.5" fill="#C9D6D2">SELECT * FROM orders …</text>
+  <rect x="420" y="556" width="188" height="10" rx="5" fill="#22302C"/>
+  <rect class="qb" x="420" y="556" width="188" height="10" rx="5" fill="url(#gMint)"/>
+  <text x="420" y="588" font-size="9.5" fill="#8FA39E">Indexed queries · cleaner code</text>
+</g>
+
+<!-- card: security -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="16" y="494" width="200" height="104" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="32" y="520" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FFC94D">SECURITY SCAN</text>
+  <g transform="translate(52 556)">
+    <path d="M0 -22 l18 7 v12 c0 12 -9 19 -18 22 c-9 -3 -18 -10 -18 -22 v-12z" fill="#FFC94D" fill-opacity=".15" stroke="#FFC94D" stroke-width="1.8"/>
+    <path d="M-7 0 l5 5 9 -10" fill="none" stroke="#FFC94D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect class="scan" x="-22" y="-22" width="44" height="2" fill="#5FF0C8"/>
+  </g>
+  <g font-size="9.5" fill="#C9D6D2"><text x="86" y="544">SQL injection ✓</text><text x="86" y="562">XSS · CSRF ✓</text><text x="86" y="580">0 vulnerabilities</text></g>
+</g>
+
+<!-- badge -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="40" width="218" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <rect x="28" y="50" width="44" height="20" rx="10" fill="#777BB4"/><text x="50" y="64" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">PHP</text>
+  <text x="82" y="64.5" font-size="12" font-weight="600" fill="#F2F5F4">Tailored software</text>
+</g>
+</svg>

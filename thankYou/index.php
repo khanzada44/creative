@@ -2,7 +2,7 @@
 $contact = [
     'email'      => 'info@websdesignusa.com',
     'phone'      => '(949) 620-5684',
-    'phone_link' => '+19496205684',
+    'phone_link' => '(855) 677-4898',
 ];
 
 $tyHero = [

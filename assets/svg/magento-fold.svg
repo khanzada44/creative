@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00B892"/><stop offset="1" stop-color="#5FF0C8"/></linearGradient>
+  <linearGradient id="gMintV" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#00B892"/><stop offset="1" stop-color="#5FF0C8"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00D4A3" stop-opacity=".35"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></linearGradient>
+  <radialGradient id="gGlow" cx=".45" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <clipPath id="win"><rect x="44" y="70" width="400" height="312" rx="22"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .sb,.pb,.wb{transform-box:fill-box}
+  .A{animation-duration:8s;animation-iteration-count:infinite;animation-fill-mode:backwards}
+  .S{animation-duration:8s;animation-iteration-count:infinite;animation-timing-function:steps(1,end)}
+  /* catalog */
+  .sw{animation-name:sw;animation-timing-function:ease-in-out}
+  @keyframes sw{0%,6%{transform:translateY(0);opacity:0}9%{opacity:1}44%{transform:translateY(120px);opacity:1}48%,100%{transform:translateY(120px);opacity:0}}
+  .sb{transform-origin:0 50%;animation-name:sb;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes sb{0%,10%{transform:scaleX(var(--a))}30%,92%{transform:scaleX(var(--b))}100%{transform:scaleX(var(--a))}}
+  .s1{animation-delay:0s}.s2{animation-delay:.3s}.s3{animation-delay:.6s}.s4{animation-delay:.9s}.s5{animation-delay:1.2s}
+  .y1{animation-name:y1}.y2{animation-name:y2}
+  @keyframes y1{0%{opacity:1}52%{opacity:0}97%{opacity:1}}
+  @keyframes y2{0%{opacity:0}52%{opacity:1}97%{opacity:0}}
+  .imp{animation-name:imp;animation-timing-function:cubic-bezier(.3,1.4,.5,1)}
+  @keyframes imp{0%,54%{transform:translateY(-12px);opacity:0}60%,90%{transform:translateY(0);opacity:1}96%,100%{transform:translateY(-12px);opacity:0}}
+  .wb{transform-origin:0 50%;animation-name:wb;animation-timing-function:ease-in-out}
+  @keyframes wb{0%,20%{transform:scaleX(.45)}50%,90%{transform:scaleX(1)}100%{transform:scaleX(.45)}}
+  .w2{animation-delay:.4s}.w3{animation-delay:.8s}
+  /* traffic */
+  .ln{stroke-dasharray:260;animation:ln 8s ease-in-out infinite}
+  @keyframes ln{0%{stroke-dashoffset:260}45%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:260}}
+  .ar{animation-name:ar}
+  @keyframes ar{0%,20%{opacity:0}45%,90%{opacity:1}100%{opacity:0}}
+  .live{animation:live 1.4s ease-in-out infinite}
+  @keyframes live{0%,100%{opacity:1}50%{opacity:.25}}
+  /* performance */
+  .pb{transform-origin:0 50%;animation-name:pb;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes pb{0%,30%{transform:scaleX(.3)}55%,92%{transform:scaleX(1)}100%{transform:scaleX(.3)}}
+  .pb2{animation-delay:.3s}
+  .t1{animation-name:t1}.t2{animation-name:t2}
+  @keyframes t1{0%{opacity:1}50%{opacity:0}97%{opacity:1}}
+  @keyframes t2{0%{opacity:0}50%{opacity:1}97%{opacity:0}}
+  /* integrations */
+  .pk{offset-rotate:0deg;animation:pk 2.4s linear infinite}
+  @keyframes pk{0%{offset-distance:0%;opacity:0}12%{opacity:1}88%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  .q1{offset-path:path('M158 516 L72 456')}.q2{offset-path:path('M244 456 L158 516');animation-delay:-.6s}
+  .q3{offset-path:path('M158 516 L244 576');animation-delay:-1.2s}.q4{offset-path:path('M72 576 L158 516');animation-delay:-1.8s}
+  .hub{animation:hub 2.4s ease-in-out infinite}
+  @keyframes hub{0%,100%{opacity:.25}50%{opacity:.6}}
+  /* checkout */
+  .c1,.c2,.c3{animation-name:cc}
+  @keyframes cc{0%,10%{opacity:0}16%,92%{opacity:1}98%,100%{opacity:0}}
+  .c2{animation-delay:1s}.c3{animation-delay:2s}
+  .ok{animation-name:ok;animation-timing-function:cubic-bezier(.3,1.5,.5,1)}
+  @keyframes ok{0%,46%{opacity:0;transform:translateY(8px)}52%,92%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(8px)}}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.sw,.y1,.t1{opacity:0}.sb{transform:scaleX(var(--b))}.ln{stroke-dashoffset:0}.pk{opacity:0}}
+</style>
+
+<circle cx="300" cy="300" r="310" fill="url(#gGlow)"/>
+
+<!-- ===== catalog admin ===== -->
+<g filter="url(#soft)"><rect x="44" y="70" width="400" height="312" rx="22" fill="url(#gBoard)" stroke="#22302C"/></g>
+<g clip-path="url(#win)">
+  <rect x="44" y="70" width="400" height="38" fill="#0A0F0E"/>
+  <circle cx="66" cy="89" r="5" fill="#FF8A6B"/><circle cx="84" cy="89" r="5" fill="#FFC94D"/><circle cx="102" cy="89" r="5" fill="#00D4A3"/>
+  <text x="122" y="93" font-size="11" font-weight="600" fill="#C9D6D2">Catalog · Products</text>
+  <rect x="338" y="79" width="92" height="20" rx="10" fill="#0F3D33"/>
+  <text class="S y1" x="384" y="93" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5FF0C8">12,480 SKUs</text>
+  <text class="S y2" x="384" y="93" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5FF0C8">13,720 SKUs</text>
+  <!-- toolbar -->
+  <rect x="60" y="118" width="150" height="24" rx="8" fill="#151D1A" stroke="#22302C"/>
+  <circle cx="74" cy="130" r="4" fill="none" stroke="#5E716C" stroke-width="1.5"/><text x="86" y="133.5" font-size="9" fill="#5E716C">Search SKU, name…</text>
+  <rect x="218" y="118" width="74" height="24" rx="8" fill="#151D1A"/><text x="255" y="133.5" text-anchor="middle" font-size="9" font-weight="600" fill="#C9D6D2">All stores ▾</text>
+  <rect x="298" y="118" width="62" height="24" rx="8" fill="#151D1A"/><text x="329" y="133.5" text-anchor="middle" font-size="9" font-weight="600" fill="#C9D6D2">In stock</text>
+  <!-- import toast -->
+  <g class="A imp"><rect x="366" y="118" width="66" height="24" rx="8" fill="#00D4A3"/><text x="399" y="133.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#04342C">+1,240 ✓</text></g>
+  <!-- header -->
+  <g font-size="8" font-weight="600" letter-spacing="1" fill="#5E716C"><text x="62" y="162">SKU</text><text x="128" y="162">PRODUCT</text><text x="262" y="162">STOCK</text><text x="350" y="162">STORES</text></g>
+  <rect x="56" y="168" width="376" height="1" fill="#22302C"/>
+  <!-- scan highlight -->
+  <rect class="A sw" x="56" y="172" width="376" height="28" rx="8" fill="#00D4A3" fill-opacity=".1"/>
+  <g font-size="9.5" fill="#E6EEEB">
+    <g><text x="62" y="190" fill="#8FA39E" font-size="8.5">CC-1042</text><rect x="128" y="180" width="12" height="12" rx="3" fill="#00D4A3"/><text x="146" y="190">Runner Pro</text><text x="252" y="190" text-anchor="end" font-size="8" fill="#5E716C">12 var</text></g>
+    <g><text x="62" y="220" fill="#8FA39E" font-size="8.5">CC-2210</text><rect x="128" y="210" width="12" height="12" rx="3" fill="#9B7BFF"/><text x="146" y="220">Desk Lamp</text><text x="252" y="220" text-anchor="end" font-size="8" fill="#5E716C">4 var</text></g>
+    <g><text x="62" y="250" fill="#8FA39E" font-size="8.5">CC-3381</text><rect x="128" y="240" width="12" height="12" rx="3" fill="#FF8A6B"/><text x="146" y="250">Leather Tote</text><text x="252" y="250" text-anchor="end" font-size="8" fill="#5E716C">6 var</text></g>
+    <g><text x="62" y="280" fill="#8FA39E" font-size="8.5">CC-4075</text><rect x="128" y="270" width="12" height="12" rx="3" fill="#FFC94D"/><text x="146" y="280">Smart Watch</text><text x="252" y="280" text-anchor="end" font-size="8" fill="#5E716C">9 var</text></g>
+  </g>
+  <!-- stock bars -->
+  <g fill="#1C2623"><rect x="262" y="182" width="72" height="8" rx="4"/><rect x="262" y="212" width="72" height="8" rx="4"/><rect x="262" y="242" width="72" height="8" rx="4"/><rect x="262" y="272" width="72" height="8" rx="4"/></g>
+  <g fill="url(#gMint)">
+    <rect class="A sb s1" style="--a:.3;--b:.9" x="262" y="182" width="72" height="8" rx="4"/>
+    <rect class="A sb s2" style="--a:.6;--b:.75" x="262" y="212" width="72" height="8" rx="4"/>
+    <rect class="A sb s3" style="--a:.15;--b:.8" x="262" y="242" width="72" height="8" rx="4"/>
+    <rect class="A sb s4" style="--a:.45;--b:.95" x="262" y="272" width="72" height="8" rx="4"/>
+  </g>
+  <!-- stores -->
+  <g font-size="7.5" font-weight="700" text-anchor="middle">
+    <g fill="#0F3D33"><rect x="350" y="179" width="22" height="14" rx="7"/><rect x="376" y="179" width="22" height="14" rx="7"/><rect x="402" y="179" width="22" height="14" rx="7"/>
+      <rect x="350" y="209" width="22" height="14" rx="7"/><rect x="376" y="209" width="22" height="14" rx="7"/>
+      <rect x="350" y="239" width="22" height="14" rx="7"/><rect x="376" y="239" width="22" height="14" rx="7"/><rect x="402" y="239" width="22" height="14" rx="7"/>
+      <rect x="350" y="269" width="22" height="14" rx="7"/></g>
+    <g fill="#5FF0C8"><text x="361" y="189">US</text><text x="387" y="189">UK</text><text x="413" y="189">AE</text>
+      <text x="361" y="219">US</text><text x="387" y="219">PK</text>
+      <text x="361" y="249">UK</text><text x="387" y="249">AE</text><text x="413" y="249">PK</text>
+      <text x="361" y="279">US</text></g>
+  </g>
+  <!-- warehouses -->
+  <rect x="56" y="300" width="376" height="1" fill="#22302C"/>
+  <text x="62" y="320" font-size="8" font-weight="600" letter-spacing="1" fill="#5E716C">WAREHOUSES · SYNCED</text>
+  <g font-size="9" font-weight="600" fill="#C9D6D2">
+    <rect x="60" y="330" width="116" height="38" rx="10" fill="#151D1A"/><text x="72" y="346">Texas</text><rect x="72" y="354" width="92" height="5" rx="2.5" fill="#22302C"/><rect class="A wb" x="72" y="354" width="92" height="5" rx="2.5" fill="#00D4A3"/>
+    <rect x="186" y="330" width="116" height="38" rx="10" fill="#151D1A"/><text x="198" y="346">Dubai</text><rect x="198" y="354" width="92" height="5" rx="2.5" fill="#22302C"/><rect class="A wb w2" x="198" y="354" width="92" height="5" rx="2.5" fill="#9B7BFF"/>
+    <rect x="312" y="330" width="116" height="38" rx="10" fill="#151D1A"/><text x="324" y="346">London</text><rect x="324" y="354" width="92" height="5" rx="2.5" fill="#22302C"/><rect class="A wb w3" x="324" y="354" width="92" height="5" rx="2.5" fill="#FFC94D"/>
+  </g>
+</g>
+
+<!-- ===== traffic ===== -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="462" y="40" width="162" height="150" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="478" y="66" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">TRAFFIC</text>
+  <circle class="live" cx="606" cy="62" r="4" fill="#FF8A6B"/>
+  <text x="478" y="96" font-size="20" font-weight="700" fill="#F2F5F4">12.4k</text><text x="540" y="96" font-size="9" fill="#8FA39E">req/s</text>
+  <path class="A ar" d="M478 160 L498 150 L516 154 L534 136 L552 142 L570 124 L590 128 L608 112 L608 170 L478 170 Z" fill="url(#gArea)"/>
+  <path class="ln" d="M478 160 L498 150 L516 154 L534 136 L552 142 L570 124 L590 128 L608 112" fill="none" stroke="#00D4A3" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="478" y="182" font-size="8.5" fill="#8FA39E">Peak sale · 0 errors</text>
+</g>
+
+<!-- ===== performance ===== -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="462" y="210" width="162" height="160" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="478" y="236" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FFC94D">PERFORMANCE</text>
+  <text x="478" y="258" font-size="8.5" fill="#8FA39E">Server response</text>
+  <text class="S t1" x="478" y="284" font-size="20" font-weight="700" fill="#FF8A6B">1.8s</text>
+  <text class="S t2" x="478" y="284" font-size="20" font-weight="700" fill="#5FF0C8">0.4s</text>
+  <text class="S t2" x="608" y="282" text-anchor="end" font-size="9" font-weight="700" fill="#5FF0C8">▼ 78%</text>
+  <g font-size="8.5" fill="#C9D6D2"><text x="478" y="306">Full-page cache</text><text x="608" y="306" text-anchor="end" fill="#5FF0C8">98%</text>
+    <text x="478" y="340">Indexing &amp; search</text><text x="608" y="340" text-anchor="end" fill="#5FF0C8">fast</text></g>
+  <rect x="478" y="312" width="130" height="6" rx="3" fill="#22302C"/><rect class="A pb" x="478" y="312" width="130" height="6" rx="3" fill="url(#gMint)"/>
+  <rect x="478" y="346" width="130" height="6" rx="3" fill="#22302C"/><rect class="A pb pb2" x="478" y="346" width="118" height="6" rx="3" fill="url(#gMint)"/>
+</g>
+
+<!-- ===== integrations ===== -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="404" width="284" height="200" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="32" y="430" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">API &amp; INTEGRATIONS</text>
+  <g stroke="#22302C" stroke-width="2"><path d="M158 516 L72 456M158 516 L244 456M158 516 L244 576M158 516 L72 576"/></g>
+  <circle class="hub" cx="158" cy="516" r="34" fill="#00D4A3"/>
+  <circle cx="158" cy="516" r="24" fill="#04342C" stroke="#00D4A3" stroke-width="2"/>
+  <text x="158" y="519.5" text-anchor="middle" font-size="10" font-weight="700" fill="#5FF0C8">API</text>
+  <g font-size="9.5" font-weight="700" text-anchor="middle">
+    <rect x="38" y="443" width="68" height="26" rx="13" fill="#1A1630" stroke="#9B7BFF"/><text x="72" y="459.5" fill="#B39BFF">ERP</text>
+    <rect x="210" y="443" width="68" height="26" rx="13" fill="#2A1B18" stroke="#FF8A6B"/><text x="244" y="459.5" fill="#FF8A6B">CRM</text>
+    <rect x="210" y="563" width="68" height="26" rx="13" fill="#2A2410" stroke="#FFC94D"/><text x="244" y="579.5" fill="#FFC94D">Payments</text>
+    <rect x="38" y="563" width="68" height="26" rx="13" fill="#0F3D33" stroke="#00D4A3"/><text x="72" y="579.5" fill="#5FF0C8">Shipping</text>
+  </g>
+  <g fill="#F2F5F4"><circle class="pk q1" r="4"/><circle class="pk q2" r="4"/><circle class="pk q3" r="4"/><circle class="pk q4" r="4"/></g>
+</g>
+
+<!-- ===== secure checkout ===== -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="320" y="396" width="304" height="208" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="336" y="422" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FFC94D">SECURE CHECKOUT</text>
+  <!-- shield -->
+  <path d="M574 436 l24 9 v16 c0 15 -10 25 -24 31 c-14 -6 -24 -16 -24 -31 v-16 z" fill="#0F3D33" stroke="#00D4A3" stroke-width="2"/>
+  <path d="M565 464 l7 7 l13 -14" fill="none" stroke="#5FF0C8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="574" y="508" text-anchor="middle" font-size="8" font-weight="700" fill="#5FF0C8">PCI-ready</text>
+  <g font-size="10" fill="#C9D6D2">
+    <rect x="336" y="436" width="196" height="26" rx="9" fill="#151D1A"/><text x="350" y="453">Card tokenized</text>
+    <rect x="336" y="468" width="196" height="26" rx="9" fill="#151D1A"/><text x="350" y="485">Fraud check passed</text>
+    <rect x="336" y="500" width="196" height="26" rx="9" fill="#151D1A"/><text x="350" y="517">3-D Secure verified</text>
+  </g>
+  <g fill="#00D4A3"><circle class="A c1" cx="516" cy="449" r="6"/><circle class="A c2" cx="516" cy="481" r="6"/><circle class="A c3" cx="516" cy="513" r="6"/></g>
+  <g class="A ok"><rect x="336" y="540" width="272" height="44" rx="14" fill="#0F3D33" stroke="#00D4A3"/>
+    <text x="352" y="566.5" font-size="11" font-weight="700" fill="#5FF0C8">Transaction approved ✓</text>
+    <text x="594" y="566.5" text-anchor="end" font-size="13" font-weight="700" fill="#F2F5F4">$1,240</text></g>
+</g>
+
+<!-- ===== badge ===== -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="14" width="232" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <rect x="28" y="24" width="76" height="20" rx="10" fill="#EE672F"/><text x="66" y="38" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">Magento</text>
+  <text x="114" y="38.5" font-size="12" font-weight="600" fill="#F2F5F4">Enterprise ready</text>
+</g>
+</svg>

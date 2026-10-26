@@ -5,7 +5,11 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
   /* ---------- ABOUT / TEAM EXPERIENCE ---------- */
   .abt{
     position:relative; width:100%; overflow:hidden; color:#fff;
-    background:radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
+    /* top-left glow + NEW bottom-right glow + base gradient */
+    background:
+      radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%),
+      radial-gradient(60% 75% at 92% 92%, rgba(28, 197, 169, 0.38) 0%, rgba(28, 197, 169, 0) 60%),
+      linear-gradient(160deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
     font-family:'Poppins','Segoe UI',Arial,sans-serif;
     padding:72px 16px;
   }
@@ -142,7 +146,7 @@ $skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/
     <!-- ROW 2: 9 Years circle + skater left, working day text right -->
     <div class="abt-row" id="abtRow2">
       <div class="abt-circle-skater">
-        <div class="abt-circle-wrap" data-count="9" style="--hx:-160px;--spin-dir:reverse">
+        <div class="abt-circle-wrap" data-count="10" style="--hx:-160px;--spin-dir:reverse">
           <div class="abt-circle"><span class="abt-orbit" aria-hidden="true"><i></i></span><span class="abt-num">0</span><span class="abt-cap">Years Experience</span></div>
         </div>
         <img class="abt-skater" id="abtSkater" src="<?= htmlspecialchars($skater) ?>" alt="" aria-hidden="true">

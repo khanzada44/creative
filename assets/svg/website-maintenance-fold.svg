@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00B892"/><stop offset="1" stop-color="#5FF0C8"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".45" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .ab,.ring{transform-box:fill-box}
+  .A{animation-duration:8s;animation-iteration-count:infinite;animation-fill-mode:backwards}
+  .S{animation-duration:8s;animation-iteration-count:infinite;animation-timing-function:steps(1,end)}
+  @keyframes c0{0%,7.0%{opacity:0}7.6%,92%{opacity:1}97%,100%{opacity:0}}.c0{animation:c0 8s infinite}@keyframes c1{0%,18.1%{opacity:0}18.7%,92%{opacity:1}97%,100%{opacity:0}}.c1{animation:c1 8s infinite}@keyframes c2{0%,29.3%{opacity:0}29.9%,92%{opacity:1}97%,100%{opacity:0}}.c2{animation:c2 8s infinite}@keyframes c3{0%,40.4%{opacity:0}41.0%,92%{opacity:1}97%,100%{opacity:0}}.c3{animation:c3 8s infinite}@keyframes c4{0%,51.5%{opacity:0}52.1%,92%{opacity:1}97%,100%{opacity:0}}.c4{animation:c4 8s infinite}@keyframes c5{0%,62.7%{opacity:0}63.3%,92%{opacity:1}97%,100%{opacity:0}}.c5{animation:c5 8s infinite}@keyframes c6{0%,73.8%{opacity:0}74.4%,92%{opacity:1}97%,100%{opacity:0}}.c6{animation:c6 8s infinite}
+  .ph{animation:ph 8s linear infinite}
+  @keyframes ph{0%{transform:translateX(0);opacity:0}2%{opacity:1}80%{transform:translateX(266px);opacity:1}84%,100%{transform:translateX(266px);opacity:0}}
+  /* security */
+  .th{offset-rotate:0deg;animation:th 3.2s ease-in infinite}
+  @keyframes th{0%{offset-distance:0%;opacity:0}15%{opacity:1}85%{offset-distance:100%;opacity:1}100%{offset-distance:100%;opacity:0}}
+  .ring{transform-origin:50% 50%;animation:ring .8s ease-out infinite}
+  @keyframes ring{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1.35);opacity:0}}
+  .live{animation:live 1.4s ease-in-out infinite}
+  @keyframes live{0%,100%{opacity:1}50%{opacity:.25}}
+  /* updates */
+  .o1{animation-name:o1}.n1{animation-name:n1}.o2{animation-name:o2}.n2{animation-name:n2}.o3{animation-name:o3}.n3{animation-name:n3}
+  @keyframes o1{0%{opacity:1}6%{opacity:0}96%{opacity:1}}@keyframes n1{0%{opacity:0}6%{opacity:1}96%{opacity:0}}
+  @keyframes o2{0%{opacity:1}20%{opacity:0}96%{opacity:1}}@keyframes n2{0%{opacity:0}20%{opacity:1}96%{opacity:0}}
+  @keyframes o3{0%{opacity:1}42%{opacity:0}96%{opacity:1}}@keyframes n3{0%{opacity:0}42%{opacity:1}96%{opacity:0}}
+  /* audit */
+  .ab{transform-origin:0 50%;animation-name:ab;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes ab{0%,46%{transform:scaleX(var(--a))}60%,92%{transform:scaleX(1)}100%{transform:scaleX(var(--a))}}
+  .ab2{animation-delay:.2s}.ab3{animation-delay:.4s}
+  .sa{animation-name:sa}.sb{animation-name:sb}
+  @keyframes sa{0%{opacity:1}56%{opacity:0}97%{opacity:1}}@keyframes sb{0%{opacity:0}56%{opacity:1}97%{opacity:0}}
+  /* backups */
+  .nb{animation-name:nb;animation-timing-function:cubic-bezier(.3,1.4,.5,1)}
+  @keyframes nb{0%,26%{opacity:0;transform:translateY(-10px)}32%,92%{opacity:1;transform:none}98%,100%{opacity:0}}
+  .shift{animation-name:shift;animation-timing-function:cubic-bezier(.3,1.4,.5,1)}
+  @keyframes shift{0%,26%{transform:translateY(0)}32%,92%{transform:translateY(28px)}98%,100%{transform:translateY(0)}}
+  /* ticket */
+  .t1{animation-name:t1}.t2{animation-name:t2}.t3{animation-name:t3}
+  @keyframes t1{0%{opacity:1}24%{opacity:0}97%{opacity:1}}
+  @keyframes t2{0%{opacity:0}24%{opacity:1}54%{opacity:0}}
+  @keyframes t3{0%{opacity:0}54%{opacity:1}97%{opacity:0}}
+  .tp{animation-name:tp;animation-timing-function:ease-in-out}
+  @keyframes tp{0%,6%{stroke-dashoffset:100}54%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:100}}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.ph,.th,.o1,.o2,.o3,.sa,.t1,.t2{opacity:0}.ab{transform:none}.tp{stroke-dashoffset:0}}
+</style>
+
+<circle cx="300" cy="300" r="310" fill="url(#gGlow)"/>
+
+<!-- schedule board -->
+<g filter="url(#soft)"><rect x="16" y="66" width="394" height="200" rx="20" fill="url(#gBoard)" stroke="#22302C"/></g>
+<text x="32" y="92" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">CARE SCHEDULE</text>
+<g font-size="8.5" font-weight="600" fill="#5E716C"><text x="155.0" y="108" text-anchor="middle">Mon</text><text x="193.0" y="108" text-anchor="middle">Tue</text><text x="231.0" y="108" text-anchor="middle">Wed</text><text x="269.0" y="108" text-anchor="middle">Thu</text><text x="307.0" y="108" text-anchor="middle">Fri</text><text x="345.0" y="108" text-anchor="middle">Sat</text><text x="383.0" y="108" text-anchor="middle">Sun</text></g>
+<rect x="32" y="116" width="362" height="1" fill="#22302C"/>
+<g font-size="9.5" font-weight="600" fill="#C9D6D2"><text x="32" y="135.5">Updates</text><text x="32" y="171.5">Security scan</text><text x="32" y="207.5">Backup</text><text x="32" y="243.5">Perf. audit</text></g>
+<rect x="138.0" y="122" width="34" height="20" rx="7" fill="#1C2623"/><circle cx="193.0" cy="132" r="2" fill="#22302C"/><circle cx="231.0" cy="132" r="2" fill="#22302C"/><rect x="252.0" y="122" width="34" height="20" rx="7" fill="#1C2623"/><circle cx="307.0" cy="132" r="2" fill="#22302C"/><circle cx="345.0" cy="132" r="2" fill="#22302C"/><circle cx="383.0" cy="132" r="2" fill="#22302C"/><rect x="144.0" y="158" width="22" height="20" rx="7" fill="#1C2623"/><rect x="182.0" y="158" width="22" height="20" rx="7" fill="#1C2623"/><rect x="220.0" y="158" width="22" height="20" rx="7" fill="#1C2623"/><rect x="258.0" y="158" width="22" height="20" rx="7" fill="#1C2623"/><rect x="296.0" y="158" width="22" height="20" rx="7" fill="#1C2623"/><rect x="334.0" y="158" width="22" height="20" rx="7" fill="#1C2623"/><rect x="372.0" y="158" width="22" height="20" rx="7" fill="#1C2623"/><rect x="144.0" y="194" width="22" height="20" rx="7" fill="#1C2623"/><rect x="182.0" y="194" width="22" height="20" rx="7" fill="#1C2623"/><rect x="220.0" y="194" width="22" height="20" rx="7" fill="#1C2623"/><rect x="258.0" y="194" width="22" height="20" rx="7" fill="#1C2623"/><rect x="296.0" y="194" width="22" height="20" rx="7" fill="#1C2623"/><rect x="334.0" y="194" width="22" height="20" rx="7" fill="#1C2623"/><rect x="372.0" y="194" width="22" height="20" rx="7" fill="#1C2623"/><circle cx="155.0" cy="240" r="2" fill="#22302C"/><circle cx="193.0" cy="240" r="2" fill="#22302C"/><circle cx="231.0" cy="240" r="2" fill="#22302C"/><circle cx="269.0" cy="240" r="2" fill="#22302C"/><rect x="290.0" y="230" width="34" height="20" rx="7" fill="#1C2623"/><circle cx="345.0" cy="240" r="2" fill="#22302C"/><circle cx="383.0" cy="240" r="2" fill="#22302C"/>
+<g class="c0"><rect x="138.0" y="122" width="34" height="20" rx="7" fill="#9B7BFF" fill-opacity=".22" stroke="#9B7BFF"/><path d="M151.0 132 l3 3 l6 -6" fill="none" stroke="#9B7BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c3"><rect x="252.0" y="122" width="34" height="20" rx="7" fill="#9B7BFF" fill-opacity=".22" stroke="#9B7BFF"/><path d="M265.0 132 l3 3 l6 -6" fill="none" stroke="#9B7BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c0"><rect x="144.0" y="158" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M151.0 168 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c1"><rect x="182.0" y="158" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M189.0 168 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c2"><rect x="220.0" y="158" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M227.0 168 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c3"><rect x="258.0" y="158" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M265.0 168 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c4"><rect x="296.0" y="158" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M303.0 168 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c5"><rect x="334.0" y="158" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M341.0 168 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c6"><rect x="372.0" y="158" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M379.0 168 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c0"><rect x="144.0" y="194" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M151.0 204 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c1"><rect x="182.0" y="194" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M189.0 204 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c2"><rect x="220.0" y="194" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M227.0 204 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c3"><rect x="258.0" y="194" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M265.0 204 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c4"><rect x="296.0" y="194" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M303.0 204 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c5"><rect x="334.0" y="194" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M341.0 204 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c6"><rect x="372.0" y="194" width="22" height="20" rx="7" fill="#00D4A3" fill-opacity=".22" stroke="#00D4A3"/><path d="M379.0 204 l3 3 l6 -6" fill="none" stroke="#00D4A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><g class="c4"><rect x="290.0" y="230" width="34" height="20" rx="7" fill="#FFC94D" fill-opacity=".22" stroke="#FFC94D"/><path d="M303.0 240 l3 3 l6 -6" fill="none" stroke="#FFC94D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="ph"><rect x="136" y="112" width="2" height="142" rx="1" fill="#5FF0C8"/><circle cx="137" cy="112" r="4" fill="#5FF0C8"/></g>
+<text x="394" y="92" text-anchor="end" font-size="8.5" fill="#8FA39E">Runs automatically</text>
+
+<!-- updates -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="284" width="190" height="176" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="32" y="310" font-size="10.5" font-weight="600" letter-spacing="2" fill="#B39BFF">UPDATES</text>
+  <g font-size="9.5" fill="#C9D6D2">
+    <rect x="32" y="322" width="158" height="36" rx="10" fill="#151D1A"/><text x="44" y="337" font-size="8" fill="#8FA39E">Core</text>
+    <text class="S o1" x="44" y="351" font-weight="700" fill="#FF8A6B">v6.4 · outdated</text><text class="S n1" x="44" y="351" font-weight="700" fill="#5FF0C8">v6.6 · latest ✓</text>
+    <rect x="32" y="364" width="158" height="36" rx="10" fill="#151D1A"/><text x="44" y="379" font-size="8" fill="#8FA39E">PHP</text>
+    <text class="S o2" x="44" y="393" font-weight="700" fill="#FF8A6B">8.1 · end of life</text><text class="S n2" x="44" y="393" font-weight="700" fill="#5FF0C8">8.3 · supported ✓</text>
+    <rect x="32" y="406" width="158" height="36" rx="10" fill="#151D1A"/><text x="44" y="421" font-size="8" fill="#8FA39E">Plugins</text>
+    <text class="S o3" x="44" y="435" font-weight="700" fill="#FFC94D">12 pending</text><text class="S n3" x="44" y="435" font-weight="700" fill="#5FF0C8">All updated ✓</text>
+  </g>
+</g>
+
+<!-- audit -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="222" y="284" width="188" height="176" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="238" y="310" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FFC94D">PERF. AUDIT</text>
+  <text class="S sa" x="238" y="346" font-size="28" font-weight="700" fill="#FF8A6B">71</text>
+  <text class="S sb" x="238" y="346" font-size="28" font-weight="700" fill="#5FF0C8">97</text>
+  <text x="282" y="344" font-size="9" fill="#8FA39E">/ 100 score</text>
+  <g font-size="8.5" fill="#C9D6D2"><text x="238" y="372">Load speed</text><text x="238" y="402">Images</text><text x="238" y="432">Database</text></g>
+  <g fill="#22302C"><rect x="238" y="378" width="156" height="6" rx="3"/><rect x="238" y="408" width="156" height="6" rx="3"/><rect x="238" y="438" width="156" height="6" rx="3"/></g>
+  <g fill="url(#gMint)"><rect class="A ab" style="--a:.45" x="238" y="378" width="150" height="6" rx="3"/><rect class="A ab ab2" style="--a:.3" x="238" y="408" width="146" height="6" rx="3"/><rect class="A ab ab3" style="--a:.55" x="238" y="438" width="152" height="6" rx="3"/></g>
+</g>
+
+<!-- ticket -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="478" width="394" height="126" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="32" y="504" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FF8A6B">TROUBLESHOOTING</text>
+  <text x="32" y="530" font-size="8.5" fill="#8FA39E">Ticket #482</text>
+  <text x="32" y="548" font-size="12" font-weight="700" fill="#F2F5F4">Contact form not sending</text>
+  <g class="S t1"><rect x="300" y="522" width="94" height="26" rx="13" fill="#2A1B18"/><circle cx="316" cy="535" r="4" fill="#FF8A6B"/><text x="326" y="538.5" font-size="9.5" font-weight="700" fill="#FF8A6B">Reported</text></g>
+  <g class="S t2"><rect x="300" y="522" width="94" height="26" rx="13" fill="#2A2410"/><circle cx="316" cy="535" r="4" fill="#FFC94D"/><text x="326" y="538.5" font-size="9.5" font-weight="700" fill="#FFC94D">Fixing…</text></g>
+  <g class="S t3"><rect x="300" y="522" width="94" height="26" rx="13" fill="#0F3D33"/><circle cx="316" cy="535" r="4" fill="#5FF0C8"/><text x="326" y="538.5" font-size="9.5" font-weight="700" fill="#5FF0C8">Resolved ✓</text></g>
+  <path d="M32 574 H394" stroke="#22302C" stroke-width="5" stroke-linecap="round"/>
+  <path class="A tp" d="M32 574 H394" pathLength="100" stroke="#00D4A3" stroke-width="5" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g font-size="8" fill="#8FA39E"><text x="32" y="592">Diagnose</text><text x="190" y="592">Patch &amp; test</text><text x="394" y="592" text-anchor="end" fill="#5FF0C8">Fixed in 42 min</text></g>
+</g>
+
+<!-- security -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="426" y="40" width="198" height="214" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="442" y="66" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">SECURITY</text>
+  <circle class="live" cx="606" cy="62" r="4" fill="#5FF0C8"/>
+  <circle class="th" style="offset-path:path('M426 60 L500 128');animation-delay:0s" r="4" fill="#FF8A6B"/><circle class="th" style="offset-path:path('M624 90 L552 130');animation-delay:-0.8s" r="4" fill="#FF8A6B"/><circle class="th" style="offset-path:path('M430 240 L500 176');animation-delay:-1.6s" r="4" fill="#FF8A6B"/><circle class="th" style="offset-path:path('M624 230 L552 170');animation-delay:-2.4s" r="4" fill="#FF8A6B"/>
+  <circle class="ring" cx="525" cy="150" r="34" fill="none" stroke="#00D4A3" stroke-width="2"/>
+  <path d="M525 112 l30 11 v20 c0 19 -12 31 -30 39 c-18 -8 -30 -20 -30 -39 v-20 z" fill="#0F3D33" stroke="#00D4A3" stroke-width="2.4"/>
+  <path d="M513 148 l8 8 l16 -17" fill="none" stroke="#5FF0C8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="525" y="214" text-anchor="middle" font-size="16" font-weight="700" fill="#F2F5F4">1,284</text>
+  <text x="525" y="232" text-anchor="middle" font-size="8.5" fill="#8FA39E">threats blocked · patched</text>
+</g>
+
+<!-- backups -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="426" y="272" width="198" height="176" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="442" y="298" font-size="10.5" font-weight="600" letter-spacing="2" fill="#FFC94D">BACKUPS</text>
+  <svg x="434" y="306" width="182" height="104" viewBox="0 0 182 104" overflow="hidden">
+    <g class="A nb"><rect x="8" y="4" width="166" height="24" rx="8" fill="#0F3D33" stroke="#00D4A3"/><circle cx="20" cy="16" r="4" fill="#5FF0C8"/><text x="30" y="19.5" font-size="9.5" font-weight="700" fill="#5FF0C8">Today · 03:00</text><text x="166" y="19.5" text-anchor="end" font-size="9.5" fill="#5FF0C8">✓</text></g>
+    <g class="A shift" font-size="9.5" fill="#C9D6D2">
+      <rect x="8" y="4" width="166" height="24" rx="8" fill="#151D1A"/><circle cx="20" cy="16" r="4" fill="#00D4A3"/><text x="30" y="19.5">Yesterday · 03:00</text>
+      <rect x="8" y="32" width="166" height="24" rx="8" fill="#151D1A"/><circle cx="20" cy="44" r="4" fill="#00D4A3"/><text x="30" y="47.5">Oct 24 · 03:00</text>
+      <rect x="8" y="60" width="166" height="24" rx="8" fill="#151D1A"/><circle cx="20" cy="72" r="4" fill="#00D4A3"/><text x="30" y="75.5">Oct 23 · 03:00</text>
+      <rect x="8" y="88" width="166" height="24" rx="8" fill="#151D1A"/>
+    </g>
+  </svg>
+  <rect x="442" y="416" width="166" height="20" rx="10" fill="#151D1A"/>
+  <text x="525" y="429.5" text-anchor="middle" font-size="8.5" font-weight="600" fill="#C9D6D2">↺ Restore in one click</text>
+</g>
+
+<!-- uptime -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="426" y="466" width="198" height="138" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="442" y="492" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">UPTIME</text>
+  <text x="442" y="526" font-size="22" font-weight="700" fill="#F2F5F4">99.98%</text>
+  <text x="608" y="524" text-anchor="end" font-size="8.5" fill="#8FA39E">30 days</text>
+  <rect x="442.0" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="447.6" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="453.2" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="458.8" y="545" width="3.6" height="21" rx="1.8" fill="#00D4A3"/><rect x="464.4" y="546" width="3.6" height="20" rx="1.8" fill="#00D4A3"/><rect x="470.0" y="546" width="3.6" height="20" rx="1.8" fill="#00D4A3"/><rect x="475.6" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="481.2" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="486.8" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="492.4" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="498.0" y="546" width="3.6" height="20" rx="1.8" fill="#00D4A3"/><rect x="503.6" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="509.2" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="514.8" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="520.4" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="526.0" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="531.6" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="537.2" y="552" width="3.6" height="14" rx="1.8" fill="#FFC94D"/><rect x="542.8" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="548.4" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="554.0" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="559.6" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="565.2" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="570.8" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="576.4" y="545" width="3.6" height="21" rx="1.8" fill="#00D4A3"/><rect x="582.0" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="587.6" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="593.2" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="598.8" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/><rect x="604.4" y="544" width="3.6" height="22" rx="1.8" fill="#00D4A3"/>
+  <text x="442" y="588" font-size="8.5" fill="#8FA39E">Issues caught before visitors notice</text>
+</g>
+
+<!-- badge -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="16" y="12" width="232" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <rect x="28" y="22" width="76" height="20" rx="10" fill="#00D4A3"/><text x="66" y="36" text-anchor="middle" font-size="10.5" font-weight="700" fill="#04342C">Care plan</text>
+  <text x="114" y="36.5" font-size="12" font-weight="600" fill="#F2F5F4">Never set &amp; forget</text>
+</g>
+</svg>

@@ -527,15 +527,12 @@ $services = [
         ],
 
         "introImages" => [
-            "assets/img/logo-design-solutions-service-image.png",
+            "assets/svg/logo-design-fold.svg",
         ],
 
         "introTitle" => "Looking Good Is Easy. Looking Like You Is the Challenge.",
 
         "introText" => "Before a single word is read, your logo should convey who you are. Instead of creating pretty marks, our professional logo designers develop visual identities based on audience psychology, brand positioning, research, and long-term scalability. A logo can be stylish and still say nothing about the business behind it. We explore ideas, shapes, typography, and visual details to find the right balance between personality, purpose, and recognition. The result should work beautifully on your website, business cards, product labels, and even a small profile image. Looking for affordable logo design near you? Creative Converge delivers thoughtful, professional logo design solutions built around your brand.",
-        "introImages" => [
-            "assets/img/logo-design-solutions-service-image.png",
-        ],
         "portfolioLabel" => "Logo",
         "portfolio" => portfolioImgs('logo'),
         "plans" => [
@@ -648,7 +645,7 @@ $services = [
         "introTitle" => "Give Your Ideas a Look, a Personality, and a Life of Their Own.",
         "introText" => "Some ideas are easier to understand when you can see them. Our illustration work brings concepts, stories, and brand personalities to life through original visuals created with your audience and purpose in mind. From expressive characters to detailed editorial artwork, every illustration is designed to communicate something worth remembering.",
         "introImages" => [
-            "assets/gif/illustration-design-small.gif",
+            "assets/svg/illustration-fold.svg",
         ],
         "portfolio" => portfolioImgs('illustration'),
         "plans" => [
@@ -706,7 +703,7 @@ $services = [
         "introTitle" => "From First Click to Lasting Impression, We Design for the Way People Think and Browse.",
         "introText" => "A great website needs to do more than look good. It should make your business easy to understand, help visitors find what they need, and give them a reason to take the next step. We bring together visual design, user experience, and thoughtful layouts to create websites that feel right for your brand and work for your audience.",
         "introImages" => [
-            "assets/img/web-design.jpg",
+            "assets/svg/web-design-fold.svg",
         ],
         "portfolio" => portfolioImgs('webdesign'),
         "plans" => [
@@ -840,7 +837,7 @@ $services = [
             "Website Maintenance & Technical Support",
         ],
         "introImages" => [
-            "assets/gif/web-development.gif",
+            "assets/svg/web-development-fold.svg",
         ],
         "portfolio" => portfolioImgs('webdeveloper'),
         "plans" => [
@@ -980,7 +977,7 @@ $services = [
                     "Laravel Maintenance & Upgrades",
                 ],
 
-                "introImages" => "assets/gif/laravel-development.gif",
+                "introImages" => "assets/svg/laravel-fold.svg",
                 "portfolioLabel" => "Laravel",
                 "portfolio" => portfolioImgs('laravel'),
                 // "plans" => [
@@ -1040,7 +1037,7 @@ $services = [
         "Node.js Performance & Maintenance",
     ],
 
-                "introImages" => "assets/gif/why-nodejs.gif",
+                "introImages" => "assets/svg/nodejs-fold.svg",
                 "portfolioLabel" => "Node JS",
                 "portfolio" => portfolioImgs('nodejs'),
                 // "plans" => [
@@ -1100,7 +1097,7 @@ $services = [
         "PHP Code Optimization & Troubleshooting",
     ],
 
-                "introImages" => "assets/gif/laravel-development.gif",
+                "introImages" => "assets/svg/custom-php-fold.svg",
 
                 "portfolioLabel" => "Custom PHP",
                 "portfolio" => portfolioImgs('php'),
@@ -1162,7 +1159,7 @@ $services = [
         "Ongoing Improvements & Maintenance",
     ],
 
-                "introImages" => "assets/gif/why-nextjs.gif",
+                "introImages" => "assets/svg/nextjs-fold.svg",
                 "portfolioLabel" => "Next.js",
                 "portfolio" => portfolioImgs('nextjs'),
                 // "plans" => [
@@ -1220,7 +1217,7 @@ $services = [
         "Easy Backend Content Management",
         "Security & Performance Best Practices",
     ],
-                "introImages" => "assets/gif/why-wordpress.gif",
+                "introImages" => "assets/svg/wordpress-fold.svg",
                 "portfolioLabel" => "WordPress",
                 "portfolio" => portfolioImgs('wordpress'),
                 // "plans" => [
@@ -1278,7 +1275,7 @@ $services = [
         "Cart Abandonment Optimization",
         "Mobile-First Store Design",
     ],
-                "introImages" => "assets/gif/why-shopify.gif",
+                "introImages" => "assets/svg/shopify-fold.svg",
                 "portfolioLabel" => "Shopify",
                 "portfolio" => portfolioImgs('shopify'),
                 "plans" => [
@@ -1335,7 +1332,7 @@ $services = [
         "API & Third-Party Integrations",
         "Performance Optimization",
     ],
-                "introImages" => "assets/gif/why-magento.gif",
+                "introImages" => "assets/svg/magento-fold.svg",
                 "portfolioLabel" => "Magento",
                 "portfolio" => portfolioImgs('magento'),
                 // "plans" => [
@@ -1393,7 +1390,7 @@ $services = [
         "Product Catalog & Store Functionality",
         "WooCommerce Maintenance & Support",
     ],
-                "introImages" => "assets/gif/why-woocommerce.gif",
+                "introImages" => "assets/svg/woocommerce-fold.svg",
                 "portfolioLabel" => "WooCommerce",
                 "portfolio" => portfolioImgs('woocommerce'),
                 // "plans" => [
@@ -1451,7 +1448,7 @@ $services = [
         "Secure Database Structure",
     ],
 
-                "introImages" => "assets/gif/why-cms.gif",
+                "introImages" => "assets/svg/cms-fold.svg",
 
                 "portfolioLabel" => "CMS",
                 "portfolio" => portfolioImgs('cms'),
@@ -1509,7 +1506,7 @@ $services = [
         "Performance Audits",
         "Technical Troubleshooting",
     ],
-                "introImages" => "assets/gif/why-website-maintenance.gif",
+                "introImages" => "assets/svg/website-maintenance-fold.svg",
                 "portfolioLabel" => "Maintenance",
                 "portfolio" => portfolioImgs('maintenance'),
                 "plans" => [
@@ -1637,7 +1634,7 @@ $services = [
             "Modern Brand Identity Systems",
         ],
         "introImages" => [
-            "assets/img/branding-main.webp",
+            "assets/svg/branding-fold.svg",
         ],
         "portfolio" => portfolioImgs('branding'),
         "plans" => [
@@ -1693,7 +1690,7 @@ $services = [
             "Third-Party Integrations & Store Maintenance",
         ],
         "introImages" => [
-            "assets/gif/ecommerce-gif.gif",
+            "assets/svg/ecommerce-fold.svg",
         ],
         "portfolio" => portfolioImgs('ecommercewebsite'),
         "plans" => [
@@ -1826,7 +1823,7 @@ $services = [
         "Professional Animation Production",
     ],
         "introImages" => [
-            "assets/gif/animation-service-sideimg-gif.gif",
+            "assets/svg/video-animation-fold.svg",
         ],
         "portfolio" => portfolioImgs('stunningvideo'),
         "plans" => [
@@ -1946,7 +1943,7 @@ $services = [
         "Cross-Channel Marketing Campaigns",
     ],
         "introImages" => [
-            "assets/gif/branding-creative-gif.gif",
+            "assets/svg/digital-marketing-fold.svg",
         ],
         "portfolio" => portfolioImgs('digitalmarketing'),
         "plans" => [

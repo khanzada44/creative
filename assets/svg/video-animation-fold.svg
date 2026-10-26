@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FF0C8"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6B4FF"/><stop offset="1" stop-color="#8A68FF"/></linearGradient>
+  <linearGradient id="gCoral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC94D"/><stop offset="1" stop-color="#FF7A57"/></linearGradient>
+  <linearGradient id="gScene" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#03866F"/><stop offset=".55" stop-color="#004337"/><stop offset="1" stop-color="#00211B"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".5" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <clipPath id="app"><rect x="96" y="104" width="448" height="404" rx="24"/></clipPath>
+  <clipPath id="screen"><rect x="116" y="148" width="408" height="200" rx="14"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .card,.ball,.box,.cap,.wv,.cube{transform-box:fill-box}
+  .lin{animation-timing-function:linear;animation-iteration-count:infinite}
+  /* playhead + progress, 8s */
+  .head{animation:head 8s linear infinite}
+  @keyframes head{from{transform:translateX(0)}to{transform:translateX(400px)}}
+  .prog{transform-box:fill-box;transform-origin:0 50%;animation:prog 8s linear infinite}
+  @keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  /* scene: ball bounces across */
+  .ballX{animation:ballX 4s ease-in-out infinite}
+  @keyframes ballX{0%,100%{transform:translateX(0)}50%{transform:translateX(150px)}}
+  .ball{transform-origin:50% 100%;animation:ballY .8s cubic-bezier(.4,0,.6,1) infinite}
+  @keyframes ballY{0%,100%{transform:translateY(0) scale(1.18,.8)}12%{transform:translateY(-6px) scale(.92,1.08)}50%{transform:translateY(-70px) scale(1,1)}88%{transform:translateY(-6px) scale(.92,1.08)}}
+  .shadow{transform-box:fill-box;transform-origin:50% 50%;animation:shadow .8s cubic-bezier(.4,0,.6,1) infinite}
+  @keyframes shadow{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(.5);opacity:.15}}
+  .box{transform-origin:50% 50%;animation:spin 6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .star{transform-box:fill-box;transform-origin:50% 50%;animation:twinkle 2s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{transform:scale(.7);opacity:.5}50%{transform:scale(1.15);opacity:1}}
+  .cap{clip-path:inset(0 100% 0 0);animation:cap 8s steps(22,end) infinite}
+  @keyframes cap{0%,10%{clip-path:inset(0 100% 0 0);opacity:1}45%,92%{clip-path:inset(0 0 0 0);opacity:1}100%{clip-path:inset(0 0 0 0);opacity:0}}
+  /* audio waveform */
+  .wv{transform-origin:50% 50%;animation:wv 1s ease-in-out infinite}
+  @keyframes wv{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+  /* storyboard highlight steps through 3 panels */
+  .sb{animation:sb 8s steps(1,end) infinite}
+  @keyframes sb{0%{transform:translateX(0)}33.3%{transform:translateX(56px)}66.6%{transform:translateX(112px)}}
+  /* easing curve dot */
+  .ease{offset-path:path("M0 56 C 40 56 30 0 110 0");offset-rotate:0deg;animation:ease 2.4s cubic-bezier(.65,0,.35,1) infinite alternate}
+  @keyframes ease{from{offset-distance:0%}to{offset-distance:100%}}
+  /* export progress */
+  .exp{transform-box:fill-box;transform-origin:0 50%;animation:exp 8s cubic-bezier(.3,.6,.4,1) infinite}
+  @keyframes exp{0%{transform:scaleX(0)}75%,100%{transform:scaleX(1)}}
+  .pct1{animation:pct1 8s steps(1,end) infinite}.pct2{animation:pct2 8s steps(1,end) infinite}
+  @keyframes pct1{0%{opacity:1}75%{opacity:0}}
+  @keyframes pct2{0%{opacity:0}75%{opacity:1}}
+  /* 3D cube turns */
+  .cube{transform-origin:50% 50%;animation:cube 3s ease-in-out infinite}
+  @keyframes cube{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-6px) rotate(6deg)}}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.cap{clip-path:none}}
+</style>
+
+<circle cx="320" cy="300" r="300" fill="url(#gGlow)"/>
+
+<!-- editor app -->
+<g filter="url(#soft)"><rect x="96" y="104" width="448" height="404" rx="24" fill="url(#gBoard)" stroke="#22302C"/></g>
+<g clip-path="url(#app)">
+  <rect x="96" y="104" width="448" height="34" fill="#0A0F0E"/>
+  <circle cx="120" cy="121" r="5" fill="#FF8A6B"/><circle cx="138" cy="121" r="5" fill="#FFC94D"/><circle cx="156" cy="121" r="5" fill="#00D4A3"/>
+  <text x="320" y="125" text-anchor="middle" font-size="11" font-weight="500" fill="#8FA39E">brand-explainer.mp4</text>
+  <rect x="470" y="113" width="58" height="16" rx="8" fill="#3A1F1A"/><circle cx="482" cy="121" r="3.5" fill="#FF6B57"/><text x="490" y="125" font-size="9" font-weight="700" fill="#FF8A6B">REC</text>
+
+  <!-- preview screen -->
+  <rect x="116" y="148" width="408" height="200" rx="14" fill="url(#gScene)"/>
+  <g clip-path="url(#screen)">
+    <circle cx="470" cy="170" r="70" fill="#5FF0C8" fill-opacity=".07"/>
+    <rect x="116" y="300" width="408" height="48" fill="#00211B" opacity=".55"/>
+    <!-- bouncing ball -->
+    <g transform="translate(160 300)"><g class="ballX">
+      <ellipse class="shadow" cx="0" cy="2" rx="16" ry="4" fill="#000"/>
+      <g class="ball"><circle cx="0" cy="-16" r="16" fill="url(#gCoral)"/></g>
+    </g></g>
+    <!-- spinning product box -->
+    <g class="box"><rect x="408" y="206" width="56" height="56" rx="14" fill="url(#gViolet)"/><rect x="426" y="224" width="20" height="20" rx="6" fill="#F2F5F4" fill-opacity=".85"/></g>
+    <!-- stars -->
+    <path class="star" d="M370 180 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4z" fill="#FFC94D"/>
+    <path class="star" style="animation-delay:-1s" d="M480 288 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3z" fill="#5FF0C8"/>
+    <!-- caption -->
+    <text class="cap" x="136" y="186" font-size="20" font-weight="700" fill="#F2F5F4">Your idea, <tspan fill="#5FF0C8">explained.</tspan></text>
+    <text x="136" y="206" font-size="10.5" fill="#C9F5E8" fill-opacity=".7">Scene 02 · Product reveal</text>
+  </g>
+
+  <!-- player controls -->
+  <g transform="translate(116 356)">
+    <circle cx="10" cy="10" r="10" fill="#00D4A3"/><path d="M7 5 L15 10 L7 15 Z" fill="#04342C"/>
+    <rect x="30" y="8" width="300" height="4" rx="2" fill="#22302C"/>
+    <rect class="prog" x="30" y="8" width="300" height="4" rx="2" fill="#5FF0C8"/>
+    <text x="408" y="14" text-anchor="end" font-size="10" font-weight="500" fill="#8FA39E">00:30 · 4K</text>
+  </g>
+
+  <!-- timeline -->
+  <rect x="96" y="384" width="448" height="124" fill="#0A0F0E"/>
+  <g font-size="8.5" font-weight="600" fill="#5D6E69" letter-spacing="1">
+    <text x="108" y="410">VIDEO</text><text x="108" y="438">TEXT</text><text x="108" y="466">FX</text><text x="108" y="494">AUDIO</text>
+  </g>
+  <g>
+    <rect x="144" y="400" width="120" height="16" rx="5" fill="#00D4A3" fill-opacity=".85"/>
+    <rect x="268" y="400" width="150" height="16" rx="5" fill="#9B7BFF" fill-opacity=".85"/>
+    <rect x="422" y="400" width="104" height="16" rx="5" fill="#00D4A3" fill-opacity=".85"/>
+    <rect x="186" y="428" width="96" height="16" rx="5" fill="#FFC94D" fill-opacity=".85"/>
+    <rect x="352" y="428" width="80" height="16" rx="5" fill="#FFC94D" fill-opacity=".85"/>
+    <rect x="232" y="456" width="64" height="16" rx="5" fill="#FF8A6B" fill-opacity=".85"/>
+    <g fill="#F2F5F4"><path d="M248 464 l4 -4 4 4 -4 4z"/><path d="M268 464 l4 -4 4 4 -4 4z"/><path d="M286 464 l4 -4 4 4 -4 4z"/></g>
+    <rect x="394" y="456" width="56" height="16" rx="5" fill="#FF8A6B" fill-opacity=".85"/>
+  </g>
+  <!-- waveform -->
+  <g fill="#5FF0C8" fill-opacity=".75">
+    <rect class="wv" x="146" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.2s" x="153" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.4s" x="160" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.6s" x="167" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.8s" x="174" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.3s" x="181" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.5s" x="188" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.7s" x="195" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.1s" x="202" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.9s" x="209" y="482" width="3" height="16" rx="1.5"/>
+    <rect class="wv" style="animation-delay:-.35s" x="216" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.55s" x="223" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.75s" x="230" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.15s" x="237" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.45s" x="244" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.65s" x="251" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.85s" x="258" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.25s" x="265" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.05s" x="272" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.95s" x="279" y="482" width="3" height="16" rx="1.5"/>
+    <rect class="wv" style="animation-delay:-.4s" x="300" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.6s" x="307" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.2s" x="314" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.8s" x="321" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.3s" x="328" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.7s" x="335" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.5s" x="342" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.1s" x="349" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.9s" x="356" y="482" width="3" height="16" rx="1.5"/><rect class="wv" style="animation-delay:-.45s" x="363" y="482" width="3" height="16" rx="1.5"/>
+  </g>
+  <!-- playhead -->
+  <g class="head"><rect x="125" y="388" width="2" height="116" fill="#F2F5F4"/><path d="M120 386 h12 v6 l-6 6 -6 -6z" fill="#F2F5F4"/></g>
+</g>
+
+<!-- card: storyboard -->
+<g class="bob"><g>
+  <g filter="url(#soft)"><rect x="20" y="22" width="206" height="112" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="36" y="48" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">STORYBOARD</text>
+  <g transform="translate(36 60)">
+    <rect width="50" height="40" rx="6" fill="#151D1A"/><rect x="56" width="50" height="40" rx="6" fill="#151D1A"/><rect x="112" width="50" height="40" rx="6" fill="#151D1A"/>
+    <g fill="none" stroke="#C9D6D2" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="25" cy="15" r="5"/><path d="M25 20 v9 M19 24 h12 M25 29 l-5 6 M25 29 l5 6"/>
+      <path d="M68 20 h22 m-6 -6 l6 6 -6 6"/>
+      <path d="M137 8 l3 7 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1z"/>
+    </g>
+    <g class="sb"><rect x="-2" y="-2" width="54" height="44" rx="8" fill="none" stroke="#5FF0C8" stroke-width="2"/></g>
+    <g font-size="8.5" fill="#5D6E69"><text x="0" y="52">01</text><text x="56" y="52">02</text><text x="112" y="52">03</text></g>
+  </g>
+</g></g>
+
+<!-- card: motion easing -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="440" y="18" width="180" height="114" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="456" y="44" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">MOTION</text>
+  <text x="604" y="44" text-anchor="end" font-size="9" fill="#5D6E69">ease-in-out</text>
+  <g transform="translate(470 58)">
+    <path d="M0 56 H110 M0 56 V0" stroke="#22302C" stroke-width="1.5"/>
+    <path d="M0 56 C 40 56 30 0 110 0" fill="none" stroke="url(#gMint)" stroke-width="2.5"/>
+    <path d="M0 56 L40 56 M110 0 L30 0" stroke="#5D6E69" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="40" cy="56" r="3.5" fill="#B39BFF"/><circle cx="30" cy="0" r="3.5" fill="#B39BFF"/>
+    <circle class="ease" r="5.5" fill="#F2F5F4" stroke="#00D4A3" stroke-width="2"/>
+  </g>
+</g>
+
+<!-- card: 2D / 3D -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="530" y="210" width="96" height="120" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="578" y="236" text-anchor="middle" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">2D · 3D</text>
+  <g class="cube">
+    <path d="M578 252 L604 266 L578 280 L552 266 Z" fill="#5FF0C8"/>
+    <path d="M552 266 L578 280 L578 310 L552 296 Z" fill="#00A884"/>
+    <path d="M604 266 L578 280 L578 310 L604 296 Z" fill="#04342C" stroke="#00A884" stroke-width="1"/>
+  </g>
+</g>
+
+<!-- card: export -->
+<g class="bob2">
+  <g filter="url(#soft)"><rect x="420" y="520" width="200" height="88" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="436" y="546" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">EXPORT</text>
+  <text class="pct1" x="604" y="546" text-anchor="end" font-size="10" font-weight="600" fill="#C9D6D2">Rendering…</text>
+  <text class="pct2" x="604" y="546" text-anchor="end" font-size="10" font-weight="700" fill="#5FF0C8">Done ✓</text>
+  <rect x="436" y="560" width="168" height="8" rx="4" fill="#22302C"/>
+  <rect class="exp" x="436" y="560" width="168" height="8" rx="4" fill="url(#gMint)"/>
+  <text x="436" y="590" font-size="9.5" fill="#8FA39E">MP4 · 4K · Web &amp; Social</text>
+</g>
+
+<!-- badge -->
+<g class="bob">
+  <g filter="url(#soft)"><rect x="24" y="540" width="200" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <circle cx="46" cy="560" r="6" fill="#00D4A3"/>
+  <text x="60" y="564.5" font-size="12" font-weight="600" fill="#F2F5F4">Script · Story · Motion</text>
+</g>
+</svg>

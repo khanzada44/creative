@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="Poppins, 'Segoe UI', Arial, sans-serif">
+<defs>
+  <linearGradient id="gMint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FF0C8"/><stop offset="1" stop-color="#00B892"/></linearGradient>
+  <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131B18"/><stop offset="1" stop-color="#0C1110"/></linearGradient>
+  <radialGradient id="gGlow" cx=".45" cy=".45" r=".5"><stop offset="0" stop-color="#00D4A3" stop-opacity=".26"/><stop offset="1" stop-color="#00D4A3" stop-opacity="0"/></radialGradient>
+  <clipPath id="ed"><rect x="40" y="120" width="380" height="360" rx="22"/></clipPath>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<style>
+  .ln,.card,.pop{transform-box:fill-box}
+  .loop{animation-duration:9s;animation-iteration-count:infinite;animation-timing-function:linear}
+  .ln{clip-path:inset(0 100% 0 0);animation-name:type}
+  @keyframes type{0%{clip-path:inset(0 100% 0 0)}5%,90%{clip-path:inset(0 0 0 0);opacity:1}96%,100%{clip-path:inset(0 0 0 0);opacity:0}}
+  .l1{animation-delay:0s}.l2{animation-delay:.45s}.l3{animation-delay:.9s}.l4{animation-delay:1.35s}.l5{animation-delay:1.8s}.l6{animation-delay:2.25s}.l7{animation-delay:2.7s}.l8{animation-delay:3.15s}.l9{animation-delay:3.6s}
+  .caret{animation:blink 1s steps(2,end) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .ok{animation-name:ok;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes ok{0%,46%{opacity:0;transform:translateY(8px)}50%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+  .card{animation-name:card;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes card{0%,6%{opacity:0;transform:translateY(18px) scale(.94)}14%,90%{opacity:1;transform:none}97%,100%{opacity:0;transform:translateY(-8px)}}
+  .c1{animation-delay:.6s}.c2{animation-delay:1.6s}.c3{animation-delay:2.6s}.c4{animation-delay:.2s}
+  .bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 4s ease-in-out -2s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .wire{stroke-dasharray:4 6;animation:flow 1.1s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-20}}
+  .pkt1{offset-path:path("M420 190 C 450 190 450 120 476 120");animation:pkt 2.2s ease-in-out infinite}
+  .pkt2{offset-path:path("M420 300 C 450 300 452 300 488 300");animation:pkt 2.2s ease-in-out -.7s infinite}
+  .pkt3{offset-path:path("M420 410 C 450 410 450 480 476 480");animation:pkt 2.2s ease-in-out -1.4s infinite}
+  @keyframes pkt{0%{offset-distance:0%;opacity:0}15%{opacity:1}85%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  .row{transform-box:fill-box;transform-origin:0 50%;animation-name:row;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes row{0%,20%{transform:scaleX(0)}28%,90%{transform:scaleX(1)}97%,100%{transform:scaleX(0)}}
+  .r2{animation-delay:.3s}.r3{animation-delay:.6s}
+  .ring{stroke-dasharray:0 200;animation-name:ring;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  @keyframes ring{0%,32%{stroke-dasharray:0 200}44%,90%{stroke-dasharray:123 200}97%,100%{stroke-dasharray:0 200}}
+  .num{animation-name:num}
+  @keyframes num{0%,40%{opacity:0}44%,90%{opacity:1}97%,100%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.ln{clip-path:none}.ring{stroke-dasharray:123 200}}
+</style>
+
+<circle cx="290" cy="300" r="300" fill="url(#gGlow)"/>
+
+<!-- connection wires (behind) -->
+<g fill="none" stroke="#5FF0C8" stroke-opacity=".45" stroke-width="1.6">
+  <path class="wire" d="M420 190 C 450 190 450 120 476 120"/>
+  <path class="wire" d="M420 300 H 488"/>
+  <path class="wire" d="M420 410 C 450 410 450 480 476 480"/>
+</g>
+<circle class="pkt1" r="4" fill="#5FF0C8"/><circle class="pkt2" r="4" fill="#B39BFF"/><circle class="pkt3" r="4" fill="#FFC94D"/>
+
+<!-- code editor -->
+<g filter="url(#soft)"><rect x="40" y="120" width="380" height="360" rx="22" fill="url(#gBoard)" stroke="#22302C"/></g>
+<g clip-path="url(#ed)">
+  <rect x="40" y="120" width="380" height="40" fill="#0A0F0E"/>
+  <circle cx="64" cy="140" r="5" fill="#FF8A6B"/><circle cx="82" cy="140" r="5" fill="#FFC94D"/><circle cx="100" cy="140" r="5" fill="#00D4A3"/>
+  <rect x="124" y="128" width="84" height="32" rx="8" fill="#131B18"/><text x="140" y="148" font-size="11" font-weight="600" fill="#F2F5F4">index.php</text>
+  <text x="222" y="148" font-size="11" font-weight="500" fill="#5D6E69">api.js</text>
+  <text x="272" y="148" font-size="11" font-weight="500" fill="#5D6E69">style.css</text>
+  <rect x="124" y="158" width="84" height="2" fill="#00D4A3"/>
+
+  <g font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5">
+    <g fill="#3E504B" text-anchor="end">
+      <text x="72" y="196">1</text><text x="72" y="222">2</text><text x="72" y="248">3</text><text x="72" y="274">4</text><text x="72" y="300">5</text><text x="72" y="326">6</text><text x="72" y="352">7</text><text x="72" y="378">8</text><text x="72" y="404">9</text>
+    </g>
+    <text class="loop ln l1" x="88" y="196"><tspan fill="#B39BFF">&lt;?php</tspan></text>
+    <text class="loop ln l2" x="88" y="222"><tspan fill="#FF8A6B">$products</tspan><tspan fill="#C9D6D2"> = </tspan><tspan fill="#5FF0C8">Api</tspan><tspan fill="#C9D6D2">::</tspan><tspan fill="#5FF0C8">get</tspan><tspan fill="#C9D6D2">(</tspan><tspan fill="#FFC94D">'/products'</tspan><tspan fill="#C9D6D2">);</tspan></text>
+    <text class="loop ln l3" x="88" y="248"><tspan fill="#B39BFF">foreach</tspan><tspan fill="#C9D6D2"> (</tspan><tspan fill="#FF8A6B">$products</tspan><tspan fill="#B39BFF"> as </tspan><tspan fill="#FF8A6B">$item</tspan><tspan fill="#C9D6D2">) {</tspan></text>
+    <text class="loop ln l4" x="108" y="274"><tspan fill="#5FF0C8">render</tspan><tspan fill="#C9D6D2">(</tspan><tspan fill="#FFC94D">'card'</tspan><tspan fill="#C9D6D2">, </tspan><tspan fill="#FF8A6B">$item</tspan><tspan fill="#C9D6D2">);</tspan></text>
+    <text class="loop ln l5" x="88" y="300"><tspan fill="#C9D6D2">}</tspan></text>
+    <text class="loop ln l6" x="88" y="326"><tspan fill="#5D6E69">// save to database</tspan></text>
+    <text class="loop ln l7" x="88" y="352"><tspan fill="#5FF0C8">Order</tspan><tspan fill="#C9D6D2">::</tspan><tspan fill="#5FF0C8">create</tspan><tspan fill="#C9D6D2">(</tspan><tspan fill="#FF8A6B">$cart</tspan><tspan fill="#C9D6D2">)-&gt;</tspan><tspan fill="#5FF0C8">save</tspan><tspan fill="#C9D6D2">();</tspan></text>
+    <text class="loop ln l8" x="88" y="378"><tspan fill="#5FF0C8">cache</tspan><tspan fill="#C9D6D2">()-&gt;</tspan><tspan fill="#5FF0C8">remember</tspan><tspan fill="#C9D6D2">(</tspan><tspan fill="#FFC94D">'home'</tspan><tspan fill="#C9D6D2">);</tspan></text>
+    <text class="loop ln l9" x="88" y="404"><tspan fill="#B39BFF">return</tspan><tspan fill="#C9D6D2"> </tspan><tspan fill="#5FF0C8">view</tspan><tspan fill="#C9D6D2">(</tspan><tspan fill="#FFC94D">'shop'</tspan><tspan fill="#C9D6D2">);</tspan><tspan class="caret" fill="#5FF0C8"> ▌</tspan></text>
+  </g>
+
+  <!-- terminal strip -->
+  <rect x="40" y="428" width="380" height="52" fill="#0A0F0E"/>
+  <text x="60" y="459" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" fill="#5D6E69">$ deploy</text>
+  <g class="loop ok"><rect x="132" y="444" width="168" height="22" rx="11" fill="#0F3D33"/><circle cx="146" cy="455" r="4" fill="#5FF0C8"/><text x="156" y="459" font-size="11" font-weight="600" fill="#5FF0C8">Build passed · 1.2s</text></g>
+</g>
+
+<!-- card: API -->
+<g class="loop card c1"><g class="bob">
+  <g filter="url(#soft)"><rect x="476" y="56" width="148" height="128" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="492" y="82" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">API</text>
+  <rect x="566" y="70" width="44" height="18" rx="9" fill="#0F3D33"/><text x="588" y="83" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5FF0C8">200 OK</text>
+  <g font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5">
+    <text x="492" y="106"><tspan fill="#B39BFF">GET</tspan><tspan fill="#C9D6D2"> /products</tspan></text>
+    <text x="492" y="130" fill="#C9D6D2">{ <tspan fill="#FF8A6B">"id"</tspan>: <tspan fill="#FFC94D">12</tspan>,</text>
+    <text x="500" y="148" fill="#C9D6D2"><tspan fill="#FF8A6B">"name"</tspan>: <tspan fill="#5FF0C8">"Sofa"</tspan>,</text>
+    <text x="500" y="166" fill="#C9D6D2"><tspan fill="#FF8A6B">"price"</tspan>: <tspan fill="#FFC94D">299</tspan> }</text>
+  </g>
+</g></g>
+
+<!-- card: database -->
+<g class="loop card c2"><g class="bob2">
+  <g filter="url(#soft)"><rect x="488" y="244" width="136" height="116" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="504" y="270" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">DATABASE</text>
+  <g transform="translate(604 268) scale(.8)"><ellipse cx="0" cy="-4" rx="12" ry="4.5" fill="none" stroke="#B39BFF" stroke-width="2"/><path d="M-12 -4 V10 A12 4.5 0 0 0 12 10 V-4" fill="none" stroke="#B39BFF" stroke-width="2"/></g>
+  <rect class="loop row" x="504" y="290" width="104" height="14" rx="5" fill="#151D1A"/><rect class="loop row" x="508" y="294" width="40" height="6" rx="3" fill="#5FF0C8"/>
+  <rect class="loop row r2" x="504" y="310" width="104" height="14" rx="5" fill="#151D1A"/><rect class="loop row r2" x="508" y="314" width="56" height="6" rx="3" fill="#B39BFF"/>
+  <rect class="loop row r3" x="504" y="330" width="104" height="14" rx="5" fill="#151D1A"/><rect class="loop row r3" x="508" y="334" width="32" height="6" rx="3" fill="#FFC94D"/>
+</g></g>
+
+<!-- card: performance -->
+<g class="loop card c3"><g class="bob">
+  <g filter="url(#soft)"><rect x="476" y="420" width="148" height="128" rx="18" fill="#111614" stroke="#22302C"/></g>
+  <text x="492" y="446" font-size="10.5" font-weight="600" letter-spacing="2" fill="#5FF0C8">SPEED</text>
+  <g transform="translate(550 496)">
+    <circle r="20" fill="none" stroke="#22302C" stroke-width="6"/>
+    <circle class="loop ring" r="20" fill="none" stroke="url(#gMint)" stroke-width="6" stroke-linecap="round" transform="rotate(-90)"/>
+    <text class="loop num" y="5" text-anchor="middle" font-size="14" font-weight="700" fill="#F2F5F4">98</text>
+  </g>
+  <text x="550" y="536" text-anchor="middle" font-size="9.5" fill="#8FA39E">Fast · Responsive</text>
+</g></g>
+
+<!-- badge -->
+<g class="loop card c4"><g class="bob2">
+  <g filter="url(#soft)"><rect x="40" y="56" width="172" height="40" rx="20" fill="#111614" stroke="#22302C"/></g>
+  <circle cx="62" cy="76" r="6" fill="#00D4A3"/>
+  <text x="76" y="80.5" font-size="12" font-weight="600" fill="#F2F5F4">Clean · Fast · Secure</text>
+</g></g>
+
+<!-- badge bottom: stack -->
+<g class="loop card c3"><g class="bob2">
+  <g filter="url(#soft)"><rect x="60" y="512" width="300" height="44" rx="22" fill="#111614" stroke="#22302C"/></g>
+  <g font-size="11" font-weight="600">
+    <rect x="72" y="522" width="52" height="24" rx="12" fill="#151D1A"/><text x="98" y="538" text-anchor="middle" fill="#B39BFF">PHP</text>
+    <rect x="130" y="522" width="94" height="24" rx="12" fill="#151D1A"/><text x="177" y="538" text-anchor="middle" fill="#5FF0C8">WordPress</text>
+    <rect x="230" y="522" width="60" height="24" rx="12" fill="#151D1A"/><text x="260" y="538" text-anchor="middle" fill="#FF8A6B">CMS</text>
+    <rect x="296" y="522" width="52" height="24" rx="12" fill="#151D1A"/><text x="322" y="538" text-anchor="middle" fill="#FFC94D">API</text>
+  </g>
+</g></g>
+</svg>

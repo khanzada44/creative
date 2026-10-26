@@ -1,6 +1,6 @@
 <?php
 $abStats = [
-    ['9',   '+', 'Years of experience'],
+    ['10',   '+', 'Years of experience'],
     ['354', '',  'Projects delivered'],
     ['235', '',  'Satisfied clients'],
     ['15',  '',  'Awards won'],
@@ -29,13 +29,12 @@ $abLogos = [
     ['2024/07/car5.png', 'Handcrafted Studio'],
 ];
 
-/* ---------- Founder's note ---------- */
 $abFounder = [
     
     'quote' => 'When I started Creative Converge, I wanted to build a company that could take an idea and do something real with it. Not just make things look good, but think through the details, solve the problems, and build work that people can actually use. That’s still what drives us today, and it’s what I want Creative Converge to be known for.',
     'name'  => 'Founder',
     'role'  => 'Founder & Managing Director',
-    'photo' => '', // '' = shows "CC" circle
+    'photo' => 'assets/img/founder-picture.jpg', // '' = shows "CC" circle
 ];
 
 
@@ -990,8 +989,6 @@ echo $cvgHead;
             </ol>
         </div>
     </section>
-
-    <?php include __DIR__ . '/../includes/our-portfolio.php'; ?>
 
     <!-- ================= 7. CAREERS BANNER ================= -->
     <section class="cvg-ab-careers">

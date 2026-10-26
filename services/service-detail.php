@@ -272,7 +272,6 @@ $faqSchema = [
         .cvg-svc-intro {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            gap: 60px;
             align-items: center
         }
 
@@ -931,7 +930,8 @@ $faqSchema = [
                         <?php endif; ?>
                     </div>
                     <?php if (!empty($introImages)): ?>
-                        <div class="cvg-svc-intro-media">
+                        <!-- <div class="cvg-svc-intro-media"> -->
+                        <div class="">
                             <?php foreach ($introImages as $i => $img): ?>
                                 <img src="<?= h(cvg_url($img)) ?>" alt="<?= h($title) ?> <?= (int) $i + 1 ?>" loading="lazy">
                             <?php endforeach; ?>
@@ -940,6 +940,56 @@ $faqSchema = [
                 </div>
             </div>
         </section>
+        <style>
+            /* ===== Introduction section: spacing ===== */
+.cvg-svc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px !important;
+}
+
+.cvg-svc-h2 {
+  margin: 0 0 22px !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.02em;
+}
+
+.cvg-svc-text {
+  margin: 0 0 34px !important;
+  max-width: 600px;
+  font-size: 16px;
+  line-height: 1.85 !important;
+  color: #A9BAB5;
+}
+
+.cvg-svc-h3 {
+  margin: 0 0 18px !important;
+  padding-top: 26px;
+  font-size: 18px !important;
+  line-height: 1.4;
+}
+
+.cvg-svc-list {
+  display: grid;
+  gap: 14px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.cvg-svc-list li {
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .cvg-svc-h2   { margin-bottom: 16px !important; }
+  .cvg-svc-text { margin-bottom: 26px !important; font-size: 15px; line-height: 1.75 !important; }
+  .cvg-svc-h3   { padding-top: 22px; font-size: 17px !important; }
+  .cvg-svc-list { gap: 12px; }
+}
+        </style>
         <?php if (!empty($portfolio)): ?>
             <section class="cvg-svc-sec cvg-svc-sec-alt" id="svc-portfolio-sec">
                 <div class="cvg-svc-wrap">
