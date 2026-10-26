@@ -11,6 +11,44 @@ if (!function_exists('cvg_pp_e')) {
 $cvgPPFirst = array_key_first($cvgPricing);
 ?>
 <main class="cvg-pp" id="cvg-pricing-page">
+    <style>
+        /* ===== Big faded word behind section labels ===== */
+        .cvg-pp [data-wm] {
+            position: relative;
+            isolation: isolate;
+            padding-top: clamp(34px, 5vw, 70px) !important;
+        }
+
+        .cvg-pp [data-wm]::after {
+            content: attr(data-wm);
+            position: absolute;
+            left: -4px;
+            bottom: 4px;
+            z-index: -1;
+            font: 800 clamp(56px, 9vw, 130px)/.78 'Poppins', sans-serif;
+            letter-spacing: .02em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            color: transparent;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .09) 0%, rgba(255, 255, 255, .015) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* centered heading (Packages): big word starts from the LEFT edge */
+        .cvg-pp .cvg-pp-head[data-wm]::after {
+            left: 0;
+            top: -18px;
+            bottom: auto;
+        }
+
+        .cvg-pp .cvg-pp-packages,
+        .cvg-pp .cvg-pp-banner {
+            overflow-x: clip;
+        }
+    </style>
     <section class="cvg-pp-banner">
         <span class="cvg-pp-glow cvg-pp-glow--a" aria-hidden="true"></span>
         <span class="cvg-pp-glow cvg-pp-glow--b" aria-hidden="true"></span>
@@ -19,7 +57,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
 
         <div class="cvg-pp-wrap cvg-pp-banner-inner">
             <div class="cvg-pp-banner-copy">
-                <p class="cvg-pp-eyebrow cvg-pp-rv">Welcome to Creative Converge</p>
+                <p class="cvg-pp-eyebrow cvg-pp-rv" data-wm="Pricing">Welcome to Creative Converge</p>
                 <h1 class="cvg-pp-h1">
                     <span class="cvg-pp-line"><span>Have a Project in Mind? Let's</span></span>
                     <span class="cvg-pp-line"><span class="cvg-pp-mint">Talk Numbers.</span></span>
@@ -30,7 +68,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             </div>
 
             <!-- Set action="" to your form handler -->
-            <form class="cvg-pp-form cvg-pp-form--line cvg-pp-rv" style="--d:.25s" action="/mockups/email.php"method="post" novalidate>
+            <form class="cvg-pp-form cvg-pp-form--line cvg-pp-rv" style="--d:.25s" action="<?= cvg_url('email.php') ?>" method="post" novalidate>
                 <div class="cvg-pp-form-row">
                     <label class="cvg-pp-field"><span class="cvg-pp-sr">Name</span><input type="text" id="name" name="name" placeholder="Name" autocomplete="name" required></label>
                     <label class="cvg-pp-field"><span class="cvg-pp-sr">Phone</span><input type="tel" id="phone" name="phone" placeholder="Phone" autocomplete="tel"></label>
@@ -143,7 +181,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
     <!-- ================= 2. PACKAGES WITH TABS ================= -->
     <section class="cvg-pp-packages" id="cvg-pp-packages">
         <div class="cvg-pp-wrap">
-            <div class="cvg-pp-head">
+            <div class="cvg-pp-head" data-wm="Packages">
                 <p class="cvg-pp-eyebrow cvg-pp-rv">How much does it cost</p>
                 <h2 class="cvg-pp-h2 cvg-pp-rv" style="--d:.1s">Find the Right Fit for <span class="cvg-pp-mint"> Your Next Move.</span></h2>
                 <p class="cvg-pp-sub cvg-pp-rv" style="--d:.2s">Every business is at a different stage, and every project comes with its own priorities. Our web design packages in Dallas give you a clear starting point, so you can explore the options for the small </p>

@@ -58,7 +58,7 @@
     </div>
   </div>
   <div class="cvg-consult-right">
-    <img src="assets/img/contect-fome-image.webp" alt="Team discussing a project around a table" class="cvg-consult-photo" loading="lazy" draggable="false">
+    <img src="<?= cvg_url('assets/img/contect-fome-image.webp') ?>" alt="Team discussing a project around a table" class="cvg-consult-photo" loading="lazy" draggable="false">
   </div>
 
 </section>

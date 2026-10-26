@@ -120,7 +120,7 @@ echo $cvgHead;
     <div class="cvg-ct-hero-grid" aria-hidden="true"></div>
     <div class="cvg-ct-wrap cvg-ct-hero-inner">
       <div>
-        <p class="cvg-ct-eyebrow cvg-ct-light"><?= cvg_e($contactHero['eyebrow']) ?></p>
+        <p class="cvg-ct-eyebrow cvg-ct-light" data-wm="Contact"><?= cvg_e($contactHero['eyebrow']) ?></p>
         <h1 class="cvg-ct-hero-title"><?= cvg_e($contactHero['title']) ?><span>.</span></h1>
         <p class="cvg-ct-hero-lead"><?= cvg_e($contactHero['lead']) ?></p>
         <div class="cvg-ct-hero-quick">
@@ -143,7 +143,7 @@ echo $cvgHead;
     </svg>
     <div class="cvg-ct-wrap cvg-ct-form-grid">
       <div class="cvg-ct-form-text cvg-ct-reveal">
-        <p class="cvg-ct-eyebrow">Lets Get Started</p>
+        <p class="cvg-ct-eyebrow" data-wm="Let's Talk">Let's Get Started</p>
         <h2 class="cvg-ct-h2">Every Good Project Starts<br>Somewhere<span class="cvg-ct-mint">.</span></h2>
         <p class="cvg-ct-lead">Tell us what you're trying to achieve, what's getting in the way, or what you'd love to see happen. We'll get a feel for the bigger picture, ask the right questions, provide a website design quote near you, and explore how Creative Converge Dallas can bring your vision to life.</p>
       </div>
@@ -152,7 +152,7 @@ echo $cvgHead;
         <img src="<?= cvg_url('assets/img/contact-us-image.jpg') ?>" alt="Creative Converge support specialist with a headset" loading="lazy">
       </div>
 
-      <form class="cvg-ct-form cvg-ct-reveal" method="post" action="/mockups/email.php" novalidate style="--d:.16s">
+      <form class="cvg-ct-form cvg-ct-reveal" method="post" action="<?= cvg_url('email.php') ?>" novalidate style="--d:.16s">
         <input type="hidden" name="cvg_contact_form" value="1">
         <div class="cvg-ct-hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
@@ -1189,6 +1189,31 @@ echo $cvgHead;
     top: calc(100% + 10px);
     font-size: 13px;
     color: #D9F5EE
+  }
+
+  /* ===== Big faded word behind section labels ===== */
+  .cvg-ct [data-wm] {
+    position: relative;
+    isolation: isolate;
+    padding-top: clamp(34px, 5vw, 70px) !important;
+  }
+
+  .cvg-ct [data-wm]::after {
+    content: attr(data-wm);
+    position: absolute;
+    left: -4px;
+    bottom: 4px;
+    z-index: -1;
+    font: 800 clamp(56px, 9vw, 130px)/.78 'Poppins', sans-serif;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: transparent;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .09) 0%, rgba(255, 255, 255, .015) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    pointer-events: none;
+    user-select: none;
   }
 
   /* ===== Scroll reveal ===== */

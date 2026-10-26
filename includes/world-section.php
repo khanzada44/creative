@@ -2,7 +2,7 @@
 <section class="world-section">
 
     <!-- Background Image (fixed) -->
-    <div class="world-bg" aria-hidden="true"></div>
+    <div class="world-bg" aria-hidden="true" style="background-image:url('<?= cvg_url('assets/img/tabs-bg.png') ?>')"></div>
 
     <!-- Dark Overlays -->
     <div class="world-overlay world-overlay-black" aria-hidden="true"></div>
@@ -110,8 +110,9 @@
     </div>
 </section>
 <style>
-    /* ===== Base Reset ===== */
-    * {
+    /* ===== Base Reset (sirf is section ke andar) ===== */
+    .world-section,
+    .world-section * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -197,7 +198,6 @@
         z-index: -20;
         width: 100%;
         height: 100%;
-        background-image: url('assets/img/tabs-bg.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -215,7 +215,6 @@
     }
 
     .world-overlay-dark {
-        background-image: url(assets/img/tabs-bg.png);
         background: rgba(13, 17, 23, 0.65);
     }
 
@@ -384,14 +383,14 @@
         }
     }
 
-    .reveal>* {
+    .world-section .reveal>* {
         opacity: 0;
         transform: scale(0.85);
         transform-origin: center;
         transition: none;
     }
 
-    .reveal.in-view>* {
+    .world-section .reveal.in-view>* {
         opacity: 1;
         transform: scale(1);
         transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -400,7 +399,7 @@
 <script>
     (function () {
         "use strict";
-        const accordionItems = document.querySelectorAll(".accordion-item");
+        const accordionItems = document.querySelectorAll(".world-section .accordion-item");
 
         accordionItems.forEach(function (item) {
             const btn = item.querySelector(".accordion-btn");
@@ -429,7 +428,7 @@
         });
 
         // ===== Reveal on scroll =====
-        const revealEls = document.querySelectorAll("[data-reveal]");
+        const revealEls = document.querySelectorAll(".world-section [data-reveal]");
 
         if ("IntersectionObserver" in window) {
             const observer = new IntersectionObserver(
