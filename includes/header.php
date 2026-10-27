@@ -40,7 +40,7 @@ if (!function_exists('cvg_nav_on')) {
 
           <span class="cvg-alogo-text">
             <span class="cvg-alogo-w1"><span style="--i:0">C</span><span style="--i:1">r</span><span style="--i:2">e</span><span style="--i:3">a</span><span style="--i:4">t</span><span style="--i:5">i</span><span style="--i:6">v</span><span style="--i:7">e</span></span>
-            <span class="cvg-alogo-w2"><span style="--i:0">C</span><span style="--i:1">o</span><span style="--i:2">n</span><span style="--i:3">v</span><span style="--i:4">e</span><span style="--i:5">r</span><span style="--i:6">g</span><span style="--i:7">e</span><span style="--i:8" class="cvg-alogo-dotc">.</span></span>
+            <span class="cvg-alogo-w2"><span style="--i:0">C</span><span style="--i:1">o</span><span style="--i:2">n</span><span style="--i:3">v</span><span style="--i:4">e</span><span style="--i:5">r</span><span style="--i:6">g</span><span style="--i:7">e</span><span style="--i:8" class="cvg-alogo-dotc"></span></span>
           </span>
         </a>
       </div>
@@ -180,7 +180,7 @@ if (!function_exists('cvg_nav_on')) {
     </li>
 
     <li><a href="<?= cvg_url('pricing/index.php') ?>" class="panel-link">Pricing</a></li>
-    <li><a href="<?= cvg_url('cases/index.php') ?>" class="panel-link">Cases</a></li>
+    <!-- <li><a href="<?= cvg_url('cases/index.php') ?>" class="panel-link">Cases</a></li> -->
     <li><a href="<?= cvg_url('about/index.php') ?>" class="panel-link">About us</a></li>
     <li><a href="<?= cvg_url('contact-us/index.php') ?>" class="panel-link">Contact us</a></li>
   </ul>
@@ -201,6 +201,7 @@ if (!function_exists('cvg_nav_on')) {
 
 <style>
   .cvg-alogo {
+    margin-top: 6px;
     --cvg-alogo-size: 19px;
     display: inline-flex;
     align-items: center;

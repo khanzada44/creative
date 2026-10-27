@@ -9,43 +9,43 @@ $tabs = [
 $portfolio = [
 
   'web' => [
-    'assets/images/portfolio/laravel-1.webp',
+    'assets/images/portfolio/php-5.png',
     'assets/images/portfolio/ecommercewebsite-1.jpg',
-    'assets/images/portfolio/ecommercewebsite-1.webp',
-    'assets/images/portfolio/laravel-4.jpg',
-    'assets/images/portfolio/laravel-5.jpg',
-    'assets/images/portfolio/laravel-6.jpg',
-    'assets/images/portfolio/laravel-7.jpg',
-    'assets/images/portfolio/laravel-8.jpg',
+    'assets/images/portfolio/wordpress-1.png',
+    'assets/images/portfolio/wordpress-9.png',
+    'assets/images/portfolio/webdesign-9.jpg',
+    'assets/images/portfolio/web-design-3.webp',
+    'assets/images/portfolio/web-design-2.webp',
+    'assets/images/portfolio/web-design-1.webp',
     'assets/images/portfolio/ecommercewebsite-6.jpg',
     'assets/images/portfolio/ecommercewebsite-5.webp',
     'assets/images/portfolio/ecommercewebsite-3.jpg',
-    'assets/images/portfolio/ecommercewebsite-2.webp',
+    'assets/images/portfolio/web-design-4.webp',
     'assets/images/portfolio/laravel-13.jpg',
     'assets/images/portfolio/laravel-12.jpg',
   ],
 
   'logo' => [
-    'assets/img/portfolio/logo/37.png',
-    'assets/img/portfolio/logo/37.jpg',
-    'assets/img/portfolio/logo/38.png',
-    'assets/img/portfolio/logo/36.png',
-    'assets/img/portfolio/logo/32.jpg',
-    'assets/img/portfolio/logo/34.png',
-    'assets/img/portfolio/logo/31.jpg',
-    'assets/img/portfolio/logo/35.png',
-    'assets/img/portfolio/logo/29.jpg',
-    'assets/img/portfolio/logo/30.jpg',
-    'assets/img/portfolio/logo/28.jpg',
+    'assets/images/portfolio/logo-web-design-1.webp',
+    'assets/images/portfolio/logo-web-design-2.webp',
+    'assets/images/portfolio/logo-web-design-3.webp',
+    'assets/images/portfolio/logo-web-design-4.webp',
+    'assets/images/portfolio/logo-web-design-5.webp',
+    'assets/images/portfolio/logo-web-design-6.webp',
+    'assets/images/portfolio/logo-web-design-7.webp',
+    'assets/images/portfolio/logo-web-design-8.webp',
+    'assets/images/portfolio/logo-web-design-9.webp',
+    'assets/images/portfolio/logo-web-design-10.webp',
     'assets/img/portfolio/logo/26.jpg',
     'assets/img/portfolio/logo/27.jpg',
     'assets/img/portfolio/logo/20.png',
     'assets/img/portfolio/logo/17.png',
-    'assets/img/portfolio/logo/18.png',
-    'assets/img/portfolio/logo/19.png',
-    'assets/img/portfolio/logo/15.png',
-    'assets/img/portfolio/logo/16.png',
-    'assets/img/portfolio/logo/25.jpg',
+    'assets/images/portfolio/logo-web-design-11.jpg',
+    'assets/images/portfolio/logo-web-design-12.jpg',
+    'assets/images/portfolio/logo-web-design-13.jpg',
+    'assets/images/portfolio/logo-web-design-14.jpg',
+    'assets/images/portfolio/logo-web-design-15.jpg',
+    'assets/images/portfolio/logo-web-design-16.jpg',
   ],
   'branding' => [
     'assets/img/portfolio/branding/branding-06.jpg',
@@ -202,6 +202,34 @@ $playSvg   = '<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" /></svg>';
   </div>
 </section>
 <style>
+ .cvg-port-lb-stage {
+  overflow-y: auto;
+  scrollbar-color: #00D4A3 #152339;
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, Safari */
+.cvg-port-lb-stage::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cvg-port-lb-stage::-webkit-scrollbar-track {
+  background: #152339;
+}
+
+.cvg-port-lb-stage::-webkit-scrollbar-thumb {
+  background: #00D4A3;
+  border-radius: 10px;
+}
+
+.cvg-port-lb-stage::-webkit-scrollbar-thumb:hover {
+  background: #00b88d;
+}
+
+
+.cvg-port-lb-stage::-webkit-scrollbar {
+  display: none;
+}
   .cvg-port {
     --cvg-bg: #0E1412;
     --cvg-surface: #111614;
@@ -577,6 +605,7 @@ $playSvg   = '<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" /></svg>';
     overflow: auto;
     border-radius: 14px;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+
   }
 
   .cvg-port-lightbox .cvg-port-lb-img {
@@ -621,7 +650,7 @@ $playSvg   = '<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" /></svg>';
 
   .cvg-port-lightbox .cvg-port-lb-close {
     position: absolute;
-    top: 18px;
+    top: 45px;
     right: 18px;
   }
 

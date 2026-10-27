@@ -258,10 +258,10 @@
       <!-- ===== Custom package (no fixed price: client chooses what the website needs) ===== -->
       <article class="cvg-price-card cvg-price-card--custom">
         <div class="cvg-price-name-row">
-          <h3 class="cvg-price-name">Custom Package</h3>
+          <h3 class="cvg-price-name">Customized Package</h3>
           <span class="cvg-price-badge">Build your own</span>
         </div>
-        <p class="cvg-price-amount cvg-price-amount--quote">Custom<span class="cvg-price-dot">.</span></p>
+        <p class="cvg-price-amount cvg-price-amount--quote">Customized<span class="cvg-price-dot">.</span></p>
         <p class="cvg-price-sub">Price based on what you need</p>
         <div class="cvg-price-scroll">
           <ul class="cvg-price-list" tabindex="0" aria-label="Custom package options">
@@ -1242,7 +1242,7 @@
 
   /* "Custom." in place of the price (same height as a price, so the lists line up) */
   .cvg-price .cvg-price-amount--quote {
-    font-size: 56px;
+    font-size: 48px;
     line-height: 76px;
     letter-spacing: -0.035em;
     background: linear-gradient(90deg, #F2F5F4 0%, #5FF0C8 100%);

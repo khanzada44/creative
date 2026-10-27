@@ -1,12 +1,1 @@
-// Hero video popup
-(function () {
-  var dlg = document.getElementById('videoDialog');
-  var open = document.getElementById('playBtn');
-  if (!dlg || !open) return;
-  var vid = dlg.querySelector('video');
-  open.addEventListener('click', function () { dlg.showModal(); vid.play(); });
-  function close() { vid.pause(); dlg.close(); }
-  dlg.querySelector('.video-close').addEventListener('click', close);
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
-  dlg.addEventListener('close', function () { vid.pause(); });
-})();
+!function(){var e=document.getElementById("videoDialog"),t=document.getElementById("playBtn");if(e&&t){var n=e.querySelector("video");t.addEventListener("click",function(){e.showModal(),n.play()}),e.querySelector(".video-close").addEventListener("click",c),e.addEventListener("click",function(t){t.target===e&&c()}),e.addEventListener("close",function(){n.pause()})}function c(){n.pause(),e.close()}}();

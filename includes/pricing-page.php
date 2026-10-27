@@ -10,45 +10,9 @@ if (!function_exists('cvg_pp_e')) {
 
 $cvgPPFirst = array_key_first($cvgPricing);
 ?>
+<link rel="stylesheet" href="<?= cvg_url('assets/css/pricing-page.css') ?>"></main>
 <main class="cvg-pp" id="cvg-pricing-page">
-    <style>
-        /* ===== Big faded word behind section labels ===== */
-        .cvg-pp [data-wm] {
-            position: relative;
-            isolation: isolate;
-            padding-top: clamp(34px, 5vw, 70px) !important;
-        }
 
-        .cvg-pp [data-wm]::after {
-            content: attr(data-wm);
-            position: absolute;
-            left: -4px;
-            bottom: 4px;
-            z-index: -1;
-            font: 800 clamp(56px, 9vw, 130px)/.78 'Poppins', sans-serif;
-            letter-spacing: .02em;
-            text-transform: uppercase;
-            white-space: nowrap;
-            color: transparent;
-            background: linear-gradient(180deg, rgba(255, 255, 255, .09) 0%, rgba(255, 255, 255, .015) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            pointer-events: none;
-            user-select: none;
-        }
-
-        /* centered heading (Packages): big word starts from the LEFT edge */
-        .cvg-pp .cvg-pp-head[data-wm]::after {
-            left: 0;
-            top: -18px;
-            bottom: auto;
-        }
-
-        .cvg-pp .cvg-pp-packages,
-        .cvg-pp .cvg-pp-banner {
-            overflow-x: clip;
-        }
-    </style>
     <section class="cvg-pp-banner">
         <span class="cvg-pp-glow cvg-pp-glow--a" aria-hidden="true"></span>
         <span class="cvg-pp-glow cvg-pp-glow--b" aria-hidden="true"></span>
@@ -80,103 +44,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
             </form>
         </div>
     </section>
-    <style>
-        /* ===== Underline-style form (like the screenshot) ===== */
-        .cvg-pp .cvg-pp-form--line {
-            gap: 34px;
-            padding: 0;
-            background: none;
-            border: 0;
-            border-radius: 0;
 
-            -webkit-backdrop-filter: none;
-            backdrop-filter: none;
-        }
-
-        .cvg-pp .cvg-pp-form--line .cvg-pp-form-row {
-            gap: 14px;
-        }
-
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field {
-            position: relative;
-        }
-
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field input,
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field textarea {
-            height: 48px;
-            padding: 0 16px;
-            border: 0;
-            border-bottom: 1.5px solid rgba(242, 245, 244, .35);
-            border-radius: 0;
-            background: transparent;
-
-            font-size: 17px;
-            color: #F2F5F4;
-        }
-
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field textarea {
-            height: 110px;
-            padding-top: 10px;
-        }
-
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field input::placeholder,
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field textarea::placeholder {
-            color: #A7B4B0;
-        }
-
-        /* Mint line that grows from the left when a field is active */
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 2px;
-            background: #00D4A3;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform .45s cubic-bezier(.2, .9, .2, 1);
-            pointer-events: none;
-        }
-
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field:focus-within::after {
-            transform: scaleX(1);
-        }
-
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field input:focus,
-        .cvg-pp .cvg-pp-form--line .cvg-pp-field textarea:focus {
-            border-bottom-color: transparent;
-
-        }
-
-        /* Outline "Send" button */
-        .cvg-pp .cvg-pp-btn--outline {
-            justify-self: start;
-            height: 46px;
-            margin-top: 10px;
-            padding: 0 30px;
-            border: 2px solid #00A884;
-            background: transparent;
-            color: #00D4A3;
-            font-size: 16px;
-            font-weight: 500;
-
-        }
-
-        .cvg-pp .cvg-pp-btn--outline:hover {
-            background: #00D4A3;
-            border-color: #00D4A3;
-            color: #04342C;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 212, 163, .3);
-        }
-
-        @media (max-width: 640px) {
-            .cvg-pp .cvg-pp-form--line {
-                gap: 26px;
-            }
-        }
-    </style>
 
     <!-- ================= 2. PACKAGES WITH TABS ================= -->
     <section class="cvg-pp-packages" id="cvg-pp-packages">
@@ -231,135 +99,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
         </div>
     </section>
 
-    <style>
-        /* ===== TABS: center + wrap (jo fit na hon neeche aa kar center mein) + underline ===== */
-        .cvg-pp .cvg-pp-tabs-wrap {
-            overflow: visible;
-        }
 
-        .cvg-pp .cvg-pp-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 8px 36px;
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow: visible;
-        }
-
-        .cvg-pp .cvg-pp-tab {
-            position: relative;
-            flex: 0 0 auto;
-            padding: 10px 4px 12px;
-            border: 0;
-            border-radius: 0;
-            background: transparent;
-
-            color: #c9d6d2;
-            font: inherit;
-            font-size: 17px;
-            font-weight: 500;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: color .25s ease;
-        }
-
-        /* underline */
-        .cvg-pp .cvg-pp-tab::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 2px;
-            background: #00D4A3;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform .4s cubic-bezier(.2, .9, .2, 1);
-        }
-
-        .cvg-pp .cvg-pp-tab:hover {
-            color: #fff;
-        }
-
-        .cvg-pp .cvg-pp-tab:hover::after {
-            transform: scaleX(.5);
-        }
-
-        .cvg-pp .cvg-pp-tab.is-active {
-            color: #00D4A3;
-        }
-
-        .cvg-pp .cvg-pp-tab.is-active::after {
-            transform: scaleX(1);
-        }
-
-        .cvg-pp .cvg-pp-tab:focus-visible {
-            outline: 2px solid #00D4A3;
-            outline-offset: 4px;
-        }
-
-        /* ===== CARDS: features list ke andar scroll ===== */
-        .cvg-pp .cvg-pp-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cvg-pp .cvg-pp-list {
-            flex: 1 1 auto;
-            height: 300px;
-            max-height: 300px;
-            min-height: 0;
-            overflow-y: auto;
-            overscroll-behavior: contain;
-            padding-right: 10px;
-            margin-bottom: 28px;
-            scrollbar-width: thin;
-            scrollbar-color: #00D4A3 transparent;
-        }
-
-        .cvg-pp .cvg-pp-list::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .cvg-pp .cvg-pp-list::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .cvg-pp .cvg-pp-list::-webkit-scrollbar-thumb {
-            background: #00D4A3;
-            border-radius: 10px;
-        }
-
-        .cvg-pp .cvg-pp-buy {
-            margin-top: auto;
-        }
-
-        @media (max-width: 640px) {
-            .cvg-pp .cvg-pp-tabs {
-                gap: 4px 22px;
-            }
-
-            .cvg-pp .cvg-pp-tab {
-                font-size: 15px;
-            }
-
-            .cvg-pp .cvg-pp-list {
-                height: 260px;
-                max-height: 260px;
-            }
-        }
-
-        .cvg-pp,
-        .cvg-pp .cvg-pp-panel {
-            overflow-anchor: none;
-        }
-
-        .cvg-pp .cvg-pp-tab {
-            scroll-margin: 0;
-        }
-    </style>
 
     <script>
         (function() {
@@ -371,7 +111,7 @@ $cvgPPFirst = array_key_first($cvgPricing);
 
             tabs.forEach(function(tab) {
                 tab.scrollIntoView = function() {};
-                tab.focus = function(opts) { 
+                tab.focus = function(opts) {
                     nativeFocus.call(this, Object.assign({}, opts, {
                         preventScroll: true
                     }));

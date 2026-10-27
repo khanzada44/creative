@@ -1,11 +1,10 @@
-<?php /* about.php - use: <?php include __DIR__ . '/includes/about.php'; ?> */
-$skater = 'assets/img/team-skater.png'; // image yahan rakhein: creative/assets/img/team-skater.png
+<?php 
+$skater = 'assets/img/team-skater.png'; 
 ?>
 <style>
-  /* ---------- ABOUT / TEAM EXPERIENCE ---------- */
+
   .abt{
     position:relative; width:100%; overflow:hidden; color:#fff;
-    /* top-left glow + NEW bottom-right glow + base gradient */
     background:
       radial-gradient(70% 90% at 12% 10%, rgba(28, 197, 169, 0.45) 0%, rgba(28, 197, 169, 0) 60%),
       radial-gradient(60% 75% at 92% 92%, rgba(28, 197, 169, 0.38) 0%, rgba(28, 197, 169, 0) 60%),
