@@ -148,6 +148,133 @@ $faqSchema = [
         .faq {
             overflow: clip;
         }
+
+        /* ===== Mobile responsive ===== */
+        /* intro image (fold visual) never wider than its column */
+        .cvg-svc-intro img {
+            display: block;
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .cvg-svc-intro {
+                gap: 36px;
+            }
+
+            /* contact label wraps to 2 lines here: keep the big word above it */
+            .cvg-consult [data-wm] {
+                padding-top: 52px;
+            }
+
+            .cvg-consult [data-wm]::after {
+                top: 0;
+                bottom: auto;
+                font-size: clamp(40px, 7vw, 64px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .cvg-svc-wrap {
+                padding: 0 18px;
+            }
+
+            /* hero */
+            .cvg-svc-hero {
+                padding: 64px 0 72px;
+            }
+
+            .cvg-svc-h1 {
+                font-size: clamp(28px, 8.6vw, 34px);
+                hyphens: auto;
+            }
+
+            .cvg-svc-sub {
+                font-size: 15px;
+            }
+
+            /* intro: image under the text, a little smaller */
+            .cvg-svc-intro img {
+                max-width: 440px;
+            }
+
+            /* big faded word: smaller, and sits above the label (never on top of it) */
+            [data-wm] {
+                padding-top: 44px !important;
+            }
+
+            [data-wm]::after,
+            .cvg-consult [data-wm]::after {
+                top: 0;
+                bottom: auto;
+                font-size: clamp(40px, 13vw, 56px);
+            }
+
+            .cvg-center[data-wm]::after,
+            .faq-eyebrow[data-wm]::after {
+                top: -6px;
+            }
+
+            .cvg-consult [data-wm] {
+                padding-top: 44px;
+            }
+
+            /* pricing cards */
+            .pricing-card {
+                padding: 28px 22px 30px;
+                border-radius: 22px;
+            }
+
+            .pricing-card .card-title {
+                padding-right: 0;
+                font-size: 19px;
+            }
+
+            .badge-popular {
+                position: static;
+                align-self: flex-start;
+                margin-bottom: 14px;
+            }
+
+            .pricing-card .amount {
+                font-size: 64px;
+            }
+
+            .pricing-card .currency {
+                margin-top: 10px;
+                font-size: 24px;
+            }
+
+            .pricing-card .decimals {
+                margin-top: 22px;
+                font-size: 22px;
+            }
+
+            .pricing-card .feature-list li {
+                font-size: 15px;
+            }
+
+            .pricing-card .btn-buy {
+                min-height: 56px;
+                font-size: 16px;
+            }
+
+            .pricing-head {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .pricing-card .amount {
+                font-size: 56px;
+            }
+
+            .cvg-svc-portfolio {
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 

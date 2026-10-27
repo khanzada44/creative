@@ -202,7 +202,7 @@
       </article>
       <!-- ===== Side card: custom package ===== -->
 
-      <!-- <article class="cvg-price-card">
+      <article class="cvg-price-card">
         <h3 class="cvg-price-name">Business Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>3499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
@@ -253,7 +253,39 @@
 
         </div>
         <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
-      </article> -->
+      </article>
+
+      <!-- ===== Custom package (no fixed price: client chooses what the website needs) ===== -->
+      <article class="cvg-price-card cvg-price-card--custom">
+        <div class="cvg-price-name-row">
+          <h3 class="cvg-price-name">Custom Package</h3>
+          <span class="cvg-price-badge">Build your own</span>
+        </div>
+        <p class="cvg-price-amount cvg-price-amount--quote">Custom<span class="cvg-price-dot">.</span></p>
+        <p class="cvg-price-sub">Price based on what you need</p>
+        <div class="cvg-price-scroll">
+          <ul class="cvg-price-list" tabindex="0" aria-label="Custom package options">
+            <li class="cvg-price-group">You choose</li>
+            <li class="cvg-price-li">As many pages as your project needs</li>
+            <li class="cvg-price-li">Your platform: WordPress, Shopify, WooCommerce, Laravel or Custom PHP</li>
+            <li class="cvg-price-li">Custom design made from scratch for your brand</li>
+            <li class="cvg-price-li">Only the features you need, nothing extra</li>
+            <li class="cvg-price-li">Online store, booking or payment system (if needed)</li>
+            <li class="cvg-price-li">Custom forms, dashboards &amp; admin panel</li>
+            <li class="cvg-price-li">3rd Party API Integrations</li>
+            <li class="cvg-price-li">SEO, speed &amp; mobile responsive setup</li>
+            <li class="cvg-price-li">Add logo, branding, video or marketing</li>
+            <li class="cvg-price-group cvg-price-extra">How it works</li>
+            <li class="cvg-price-li cvg-price-extra">Free consultation call</li>
+            <li class="cvg-price-li cvg-price-extra">Clear quote before we start</li>
+            <li class="cvg-price-li cvg-price-extra">Timeline that fits your launch date</li>
+            <li class="cvg-price-li cvg-price-extra">Dedicated Project Manager</li>
+            <li class="cvg-price-li cvg-price-extra">100% Ownership Rights</li>
+            <li class="cvg-price-li cvg-price-extra">100% Satisfaction Guarantee</li>
+          </ul>
+        </div>
+        <a href="<?= cvg_url('contact-us/index.php#cvg-ct-form') ?>" class="cvg-price-btn cvg-price-btn-mint">Get a custom quote</a>
+      </article>
 
     </div>
 
@@ -1176,6 +1208,84 @@
     .cvg-price .cvg-price-btn,
     .cvg-price .cvg-price-more-ic {
       transition: none;
+    }
+  }
+  /* ---------- Custom package (no fixed price) ---------- */
+  .cvg-price .cvg-price-card--custom {
+    border: 1px dashed rgba(0, 212, 163, .55);
+    background:
+      radial-gradient(90% 60% at 100% 0%, rgba(0, 212, 163, .14) 0%, rgba(0, 212, 163, 0) 60%),
+      var(--cvg-surface);
+  }
+
+  .cvg-price .cvg-price-card--custom::after {
+    content: "";
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px dashed rgba(95, 240, 200, .35);
+    animation: cvgPriceSpin 30s linear infinite;
+    pointer-events: none;
+  }
+
+  .cvg-price .cvg-price-card--custom .cvg-price-name-row {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cvg-price .cvg-price-card--custom .cvg-price-name {
+    color: var(--cvg-text);
+  }
+
+  /* "Custom." in place of the price (same height as a price, so the lists line up) */
+  .cvg-price .cvg-price-amount--quote {
+    font-size: 56px;
+    line-height: 76px;
+    letter-spacing: -0.035em;
+    background: linear-gradient(90deg, #F2F5F4 0%, #5FF0C8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .cvg-price .cvg-price-dot {
+    -webkit-text-fill-color: var(--cvg-mint);
+    color: var(--cvg-mint);
+  }
+
+  .cvg-price .cvg-price-btn-mint {
+    border: 0;
+    background: var(--cvg-mint);
+    color: var(--cvg-ink);
+  }
+
+  .cvg-price .cvg-price-btn-mint:hover {
+    background: var(--cvg-mint-light);
+    color: var(--cvg-ink);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 1024px) {
+    .cvg-price .cvg-price-amount--quote {
+      font-size: 46px;
+      line-height: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cvg-price .cvg-price-amount--quote {
+      font-size: 44px;
+      line-height: 56px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cvg-price .cvg-price-card--custom::after {
+      animation: none;
     }
   }
 </style>

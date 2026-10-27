@@ -351,7 +351,6 @@ $cvgPPFirst = array_key_first($cvgPricing);
             }
         }
 
-        /* tab click par page ka scroll anchor na ho */
         .cvg-pp,
         .cvg-pp .cvg-pp-panel {
             overflow-anchor: none;
@@ -363,10 +362,6 @@ $cvgPPFirst = array_key_first($cvgPricing);
     </style>
 
     <script>
-        /* ===== Tab click par page idhar-udhar jump na kare =====
-           Purani tabs script tab ko scrollIntoView / focus se "center" karti hai,
-           jis se poora page side/upar-neeche chala jata hai. Yahan us ko tab buttons
-           ke liye band kar diya hai (tabs ab wrap ho kar already center mein hain). */
         (function() {
             var root = document.getElementById('cvg-pricing-page');
             if (!root) return;
@@ -375,15 +370,13 @@ $cvgPPFirst = array_key_first($cvgPricing);
             var nativeFocus = HTMLElement.prototype.focus;
 
             tabs.forEach(function(tab) {
-                tab.scrollIntoView = function() {}; // no-op
-                tab.focus = function(opts) { // focus bina scroll ke
+                tab.scrollIntoView = function() {};
+                tab.focus = function(opts) { 
                     nativeFocus.call(this, Object.assign({}, opts, {
                         preventScroll: true
                     }));
                 };
             });
-
-            /* Safety: panel badalne se height change ho to scroll position wapas wahi rakho */
             root.addEventListener('click', function(e) {
                 if (!e.target.closest('.cvg-pp-tab')) return;
                 var x = window.pageXOffset,
