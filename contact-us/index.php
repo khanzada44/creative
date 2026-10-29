@@ -3,7 +3,7 @@
 $contact = [
   'email'      => 'info@creativeconverge.com',
   'phone'      => '(855) 677-4898',
-  'phone_link' => '(855) 677-4898',
+  'phone_link' => '+18556774898',
   'address'    => 'USA: 1910 Pacific Ave Suite 2000 #2372, Dallas, TX 75201',
   'hours'      => 'Mon – Fri: 9 am – 6 pm',
   'hours_note' => 'Sat & Sun: closed',
@@ -63,8 +63,18 @@ $cfErrors = [];
 $cfStatus = ''; 
 if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['cvg_contact_form'])) {
   foreach ($cf as $k => $v) $cf[$k] = trim((string) ($_POST[$k] ?? ''));
+  if ($cf['message'] === '') $cf['message'] = trim((string) ($_POST['msg_subject'] ?? ''));   /* form ka message field "msg_subject" hai */
   $honeypot = trim((string) ($_POST['website'] ?? ''));   /* bots fill this hidden field */
   if ($cf['name'] === '')    $cfErrors['name']    = 'Enter your name';
+
+  /* Phone: 10-15 digits, sirf digits / + / space / - / ( ) */
+  $pd = preg_replace('/\D/', '', $cf['phone']);
+  if ($cf['phone'] === '')                                     $cfErrors['phone'] = 'Phone number is required';
+  elseif (!preg_match('/^\+?[\d\s()\-]+$/', $cf['phone']))     $cfErrors['phone'] = 'Phone number can only contain digits';
+  elseif (strlen($pd) < 10)                                    $cfErrors['phone'] = 'Phone number must be at least 10 digits';
+  elseif (strlen($pd) > 15)                                    $cfErrors['phone'] = 'Phone number cannot be more than 15 digits';
+  elseif (preg_match('/^(\d)\1+$/', $pd))                      $cfErrors['phone'] = 'Enter a valid phone number';
+
   if (!filter_var($cf['email'], FILTER_VALIDATE_EMAIL)) $cfErrors['email'] = 'Enter a valid email address';
   if ($cf['message'] === '') $cfErrors['message'] = 'Tell us a little about your project';
   if (!$cfErrors && $honeypot === '') {
@@ -162,25 +172,26 @@ echo $cvgHead;
 
         <div class="cvg-ct-field<?= isset($cfErrors['name']) ? ' cvg-ct-field--err' : '' ?>">
           <input id="name" name="name" type="text" placeholder=" " required autocomplete="name" value="<?= cvg_e($cf['name']) ?>">
-          <label for="cvg-ct-name">Name</label><i aria-hidden="true"></i>
+          <label for="name">Name</label><i aria-hidden="true"></i>
           <small class="cvg-ct-err"><?= cvg_e($cfErrors['name'] ?? 'Enter your name') ?></small>
         </div>
-        <div class="cvg-ct-field">
-          <input id="phone" name="phone" type="tel" placeholder=" " autocomplete="tel" value="<?= cvg_e($cf['phone']) ?>">
-          <label for="cvg-ct-phone">Phone</label><i aria-hidden="true"></i>
+        <div class="cvg-ct-field<?= isset($cfErrors['phone']) ? ' cvg-ct-field--err' : '' ?>">
+          <input id="phone" name="phone" type="tel" placeholder=" " data-required="1" aria-required="true" autocomplete="tel" inputmode="tel" maxlength="20" value="<?= cvg_e($cf['phone']) ?>">
+          <label for="phone">Phone</label><i aria-hidden="true"></i>
+          <small class="cvg-ct-err" aria-live="polite"><?= cvg_e($cfErrors['phone'] ?? 'Enter a valid phone number') ?></small>
         </div>
         <div class="cvg-ct-field<?= isset($cfErrors['email']) ? ' cvg-ct-field--err' : '' ?>">
           <input id="email" name="email" type="email" placeholder=" " required autocomplete="email" value="<?= cvg_e($cf['email']) ?>">
-          <label for="cvg-ct-email">Email</label><i aria-hidden="true"></i>
+          <label for="email">Email</label><i aria-hidden="true"></i>
           <small class="cvg-ct-err"><?= cvg_e($cfErrors['email'] ?? 'Enter a valid email address') ?></small>
         </div>
         <div class="cvg-ct-field">
-          <textarea id="msg_subject" name="msg_subject" rows="1" placeholder=" "><?= cvg_e($cf['subject']) ?></textarea>
-          <label for="cvg-ct-subject">Subject</label><i aria-hidden="true"></i>
+          <textarea id="subject" name="subject" rows="1" placeholder=" "><?= cvg_e($cf['subject']) ?></textarea>
+          <label for="subject">Subject</label><i aria-hidden="true"></i>
         </div>
         <div class="cvg-ct-field<?= isset($cfErrors['message']) ? ' cvg-ct-field--err' : '' ?>">
           <textarea id="msg_subject" name="msg_subject" rows="3" placeholder=" " required><?= cvg_e($cf['message']) ?></textarea>
-          <label for="cvg-ct-message">Message</label><i aria-hidden="true"></i>
+          <label for="msg_subject">Message</label><i aria-hidden="true"></i>
           <small class="cvg-ct-err"><?= cvg_e($cfErrors['message'] ?? 'Tell us a little about your project') ?></small>
         </div>
         <button type="submit" class="cvg-ct-send">Send Message <?= $cvgArrow ?></button>
@@ -225,4 +236,55 @@ echo $cvgHead;
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
 <script src="<?= cvg_url('assets/js/contact-us.js') ?>"></script>
+<script>
+/* ---------- Phone validation (contact form) ---------- */
+(function () {
+  var form = document.querySelector('#cvg-contact-page .cvg-ct-form');
+  if (!form) return;
+  var phone = form.querySelector('input[name="phone"]');
+  if (!phone) return;
+  var field = phone.closest('.cvg-ct-field');
+  var small = field ? field.querySelector('.cvg-ct-err') : null;
+
+  /* Sirf digits, +, space, -, ( ) - "+" sirf shuru mein */
+  function cleanPhone(v) {
+    return v.replace(/[^\d+\s()-]/g, '').replace(/(?!^)\+/g, '').slice(0, 20);
+  }
+  function phoneError(v) {
+    v = (v || '').trim();
+    if (!v) return 'Phone number is required';
+    var c = v.replace(/[\s()-]/g, '');
+    if (!/^\+?\d+$/.test(c)) return 'Phone number can only contain digits';
+    var d = c.replace(/\D/g, '');
+    if (d.length < 10) return 'Phone number must be at least 10 digits';
+    if (d.length > 15) return 'Phone number cannot be more than 15 digits';
+    if (/^(\d)\1+$/.test(d)) return 'Enter a valid phone number';
+    return '';
+  }
+  function show(msg) {
+    if (small && msg) small.textContent = msg;
+    if (field) field.classList.toggle('cvg-ct-field--err', !!msg);
+    phone.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    return !msg;
+  }
+
+  phone.addEventListener('input', function () {
+    var c = cleanPhone(phone.value);
+    if (c !== phone.value) phone.value = c;
+    if (field && field.classList.contains('cvg-ct-field--err')) show(phoneError(phone.value));
+  });
+  phone.addEventListener('blur', function () {
+    if (phone.value) show(phoneError(phone.value));
+  });
+  form.addEventListener('submit', function (e) {
+    if (!show(phoneError(phone.value))) {
+      e.preventDefault();
+      var first = form.querySelector('.cvg-ct-field--err input, .cvg-ct-field--err textarea');
+      (first || phone).focus();
+      return;
+    }
+    phone.value = phone.value.replace(/[\s()-]/g, '');   /* server ko +18669788570 */
+  });
+})();
+</script>
 <script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>

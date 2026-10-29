@@ -322,7 +322,6 @@
   <img class="cvg-about-rocket" data-reveal="rocket" src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/08/rocket-no-bg.png" alt="" aria-hidden="true">
 </section>
 
-<!-- ============ ABOUT: scroll reveal JS ============ -->
 <script>
 (function () {
   document.documentElement.classList.add('cvg-js');

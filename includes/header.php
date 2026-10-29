@@ -50,6 +50,8 @@ if (!function_exists('cvg_nav_on')) {
     <nav class="desktop-nav" aria-label="Main">
 
       <!-- Services dropdown -->
+      <a href="<?= cvg_url('about/index.php') ?>" class="nav-link<?= cvg_nav_on('about', $cvgNavPath) ?>">About</a>
+
       <div class="services-dropdown" id="servicesDropdown">
         <button class="services-btn<?= cvg_nav_on('services', $cvgNavPath) ?>" id="servicesBtn" aria-haspopup="true" aria-expanded="false">
           <a href="<?= cvg_url('services/services.php') ?>" class="panel-link">Services</a>
@@ -94,9 +96,9 @@ if (!function_exists('cvg_nav_on')) {
         </div>
       </div>
 
-      <a href="<?= cvg_url('pricing/index.php') ?>" class="nav-link<?= cvg_nav_on('pricing', $cvgNavPath) ?>">Pricing</a>
+
       <!-- <a href="<?= cvg_url('cases/index.php') ?>" class="nav-link<?= cvg_nav_on('cases', $cvgNavPath) ?>">Cases</a> -->
-      <a href="<?= cvg_url('about/index.php') ?>" class="nav-link<?= cvg_nav_on('about', $cvgNavPath) ?>">About</a>
+      <a href="<?= cvg_url('pricing/index.php') ?>" class="nav-link<?= cvg_nav_on('pricing', $cvgNavPath) ?>">Pricing</a>
       <a href="<?= cvg_url('contact-us/index.php') ?>" class="nav-link<?= cvg_nav_on('contact-us', $cvgNavPath) ?>">Contact</a>
     </nav>
 
@@ -295,43 +297,92 @@ if (!function_exists('cvg_nav_on')) {
   }
 
   @keyframes cvgAlogoDraw {
-    from { stroke-dashoffset: 1; }
-    to { stroke-dashoffset: 0; }
+    from {
+      stroke-dashoffset: 1;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 
   @keyframes cvgAlogoDrawRev {
-    from { stroke-dashoffset: -1; }
-    to { stroke-dashoffset: 0; }
+    from {
+      stroke-dashoffset: -1;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 
   @keyframes cvgAlogoPop {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
+    from {
+      transform: scale(0);
+    }
+
+    to {
+      transform: scale(1);
+    }
   }
 
   @keyframes cvgAlogoPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.18); }
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.18);
+    }
   }
 
   @keyframes cvgAlogoHalo {
-    0% { transform: scale(1); opacity: .55; }
-    100% { transform: scale(2.6); opacity: 0; }
+    0% {
+      transform: scale(1);
+      opacity: .55;
+    }
+
+    100% {
+      transform: scale(2.6);
+      opacity: 0;
+    }
   }
 
   @keyframes cvgAlogoRise {
-    from { transform: translateY(110%); }
-    to { transform: none; }
+    from {
+      transform: translateY(110%);
+    }
+
+    to {
+      transform: none;
+    }
   }
 
   @keyframes cvgAlogoSlide {
-    from { transform: translateX(-0.8em); opacity: 0; }
-    to { transform: none; opacity: 1; }
+    from {
+      transform: translateX(-0.8em);
+      opacity: 0;
+    }
+
+    to {
+      transform: none;
+      opacity: 1;
+    }
   }
 
   @keyframes cvgAlogoShine {
-    0%, 24%, 100% { filter: brightness(1) drop-shadow(0 0 0 rgba(95, 240, 200, 0)); }
-    10% { filter: brightness(1.5) drop-shadow(0 0 6px rgba(95, 240, 200, .9)); }
+
+    0%,
+    24%,
+    100% {
+      filter: brightness(1) drop-shadow(0 0 0 rgba(95, 240, 200, 0));
+    }
+
+    10% {
+      filter: brightness(1.5) drop-shadow(0 0 6px rgba(95, 240, 200, .9));
+    }
   }
 
   /* =========================================================
@@ -921,6 +972,7 @@ if (!function_exists('cvg_nav_on')) {
 
   /* the panel is only for small screens */
   @media (min-width: 992px) {
+
     .side-panel,
     .overlay {
       display: none !important;
@@ -928,6 +980,7 @@ if (!function_exists('cvg_nav_on')) {
   }
 
   @media (prefers-reduced-motion: reduce) {
+
     .cvg-alogo .cvg-alogo-ring,
     .cvg-alogo .cvg-alogo-ring2,
     .cvg-alogo .cvg-alogo-dot,

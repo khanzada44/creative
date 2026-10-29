@@ -28,7 +28,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'STARTUP Website Package',
-                'price'    => '799',
+                'price'    => '999',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => true,
@@ -51,7 +51,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'PROFESSIONAL Website Package',
-                'price'    => '1199',
+                'price'    => '1499',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,
@@ -139,7 +139,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'CORPORATE Website Package',
-                'price'    => '3899',
+                'price'    => '3499',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,
@@ -174,6 +174,56 @@ $cvgPricing = [
                     '100% Money Back *NO MONTHLY OR ANY HIDDEN FEE*',
                 ],
             ],
+            [
+    'name'     => 'Customized Web Portal Professional Combo',
+    'price'    => '7999',
+    'cents'    => '00',
+    'note'     => 'Add on: $50 for expedited services',
+    'popular'  => false,
+    'link'     => 'contact-us/',
+    'features' => [
+        '## WEBSITE',
+
+        'Complete Custom Design & Development',
+        'Dating Portal, Job Portal, Professional Network Portal, Social Network Portal, Restaurant Portal, Medical Portal, Enterprise Portal (Any One)',
+        'Unique, User Friendly, Interactive, Dynamic, High End UI Design',
+        'Unlimited Banner Designs',
+        'Interactive Sliding Banners',
+        'Special Hover Effects',
+        'Unlimited Stock Assets/Images',
+        'User Signup Area',
+        'Client/User Dashboard Area',
+        'Custom Coding and Development',
+        'Content Management System (Custom)',
+
+        'Online Appointment/Scheduling/Online Ordering Integration (Optional)',
+        'Online Payment Integration (Optional)',
+        'Multi Lingual (Optional)',
+        'Custom Dynamic Forms (Optional)',
+        'Shopping Cart Integration (Optional)',
+        'Complete Database Creation',
+        'Signup Automated Email Authentication',
+        'Web Traffic Analytics Integration',
+        '3rd Party API Integrations',
+        'Signup Area (For Newsletters, Offers etc.)',
+        'Search Bar for Easy Search',
+        'Live Feeds of Social Networks Integration (Optional)',
+
+        'Search Engine Submission',
+        'Module-wise Architecture',
+        'Extensive Admin Panel',
+        'Award Winning Team of Expert Designers and Developers',
+        'Complete Deployment',
+
+        '## VALUE ADDED SERVICES',
+
+        'Complete Source Files',
+        'Dedicated Project Manager',
+        '100% Ownership Rights',
+        '100% Satisfaction Guarantee',
+        '100% Money Back Guarantee',
+    ],
+],
         ],
     ],
     'logo' => [
@@ -181,7 +231,7 @@ $cvgPricing = [
         'packages' => [
             [
                 'name'     => 'Basic Logo',
-                'price'    => '45',
+                'price'    => '25',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,
@@ -198,7 +248,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'Startup Logo',
-                'price'    => '80',
+                'price'    => '60',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => true,
@@ -215,7 +265,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'Professional Logo',
-                'price'    => '125',
+                'price'    => '85',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,
@@ -532,7 +582,7 @@ $cvgPricing = [
         'packages' => [
             [
                 'name'     => 'SEO Basic',
-                'price'    => '3500',
+                'price'    => '350',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,
@@ -568,7 +618,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'SEO Premium',
-                'price'    => '5000',
+                'price'    => '700',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => true,
@@ -607,7 +657,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'SEO Platinum Package',
-                'price'    => '6500',
+                'price'    => '1200',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,
@@ -689,7 +739,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'Startup E-Commerce Package',
-                'price'    => '899',
+                'price'    => '1299',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => true,
@@ -729,7 +779,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'Professional E-Commerce Package',
-                'price'    => '1199',
+                'price'    => '1999',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,
@@ -776,7 +826,7 @@ $cvgPricing = [
             ],
             [
                 'name'     => 'Identity E-Commerce Package',
-                'price'    => '1699',
+                'price'    => '2199',
                 'cents'    => '00',
                 'note'     => 'Add on: $50 for expedited services',
                 'popular'  => false,

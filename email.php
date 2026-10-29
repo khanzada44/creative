@@ -18,7 +18,7 @@ $name       = isset($_POST['name']) ? trim($_POST['name']) : '';
 
 $email      = isset($_POST['email']) ? trim($_POST['email']) : '';
 
-$number     = isset($_POST['number']) ? trim($_POST['number']) : '';
+$number     = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 
 $site_url   = isset($_POST['site_url']) ? trim($_POST['site_url']) : '';
 

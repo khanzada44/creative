@@ -21,30 +21,35 @@
 
 
       <form class="cvg-consult-form"
-        action="email.php"
-        method="post">
+        action="<?= cvg_url('email.php') ?>"
+        method="post"
+        novalidate>
 
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"
           style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
         <div class="cvg-consult-row">
           <div class="cvg-consult-field">
-            <label for="cvg-consult-name" class="cvg-consult-sr">Name</label>
+            <label for="name" class="cvg-consult-sr">Name</label>
             <input type="text" id="name" name="name" class="cvg-consult-input" placeholder="Name" autocomplete="name" required maxlength="100">
           </div>
           <div class="cvg-consult-field">
-            <label for="cvg-consult-email" class="cvg-consult-sr">Email</label>
+            <label for="email" class="cvg-consult-sr">Email</label>
             <input type="email" id="email" name="email" class="cvg-consult-input" placeholder="Email" autocomplete="email" required>
           </div>
         </div>
 
         <div class="cvg-consult-field">
-          <label for="cvg-consult-phone" class="cvg-consult-sr">Phone</label>
-          <input type="tel" id="phone" name="phone" class="cvg-consult-input" placeholder="Phone" autocomplete="tel" maxlength="40">
+          <label for="phone" class="cvg-consult-sr">Phone</label>
+          <input type="tel" id="phone" name="phone" class="cvg-consult-input"
+            placeholder="Phone"
+            autocomplete="tel" inputmode="tel" maxlength="20" required
+            aria-describedby="cvg-phone-error">
+          <span id="cvg-phone-error" class="cvg-consult-error" aria-live="polite"></span>
         </div>
 
         <div class="cvg-consult-field">
-          <label for="cvg-consult-message" class="cvg-consult-sr">Message</label>
+          <label for="msg_subject" class="cvg-consult-sr">Message</label>
           <textarea id="msg_subject" name="msg_subject" rows="4" class="cvg-consult-input cvg-consult-textarea" placeholder="Message" maxlength="5000"></textarea>
         </div>
 
@@ -55,6 +60,88 @@
           </svg>
         </button>
       </form>
+
+      <style>
+        .cvg-consult-error {
+          display: block;
+          min-height: 0;
+          margin-top: 6px;
+          font-size: 12.5px;
+          line-height: 1.3;
+          color: #ff6b6b
+        }
+
+        .cvg-consult-error:empty {
+          display: none
+        }
+
+        .cvg-consult-input.is-invalid {
+          border-color: #ff6b6b !important;
+          box-shadow: 0 0 0 1px rgba(255, 107, 107, .35)
+        }
+      </style>
+
+      <script>
+        (function() {
+          var form = document.querySelector('.cvg-consult-form');
+          if (!form) return;
+          var phone = form.querySelector('#phone');
+          var errorEl = form.querySelector('#cvg-phone-error');
+
+          // Sirf digits, +, space, -, ( ) allowed. "+" sirf shuru mein.
+          function sanitize(v) {
+            v = v.replace(/[^\d+\s()-]/g, '');
+            v = v.replace(/(?!^)\+/g, '');
+            return v.slice(0, 20);
+          }
+
+          function getPhoneError(v) {
+            v = (v || '').trim();
+            if (!v) return 'Phone number is required';
+            var cleaned = v.replace(/[\s()-]/g, '');
+            if (!/^\+?\d+$/.test(cleaned)) return 'Phone number can only contain digits';
+            var digits = cleaned.replace(/\D/g, '');
+            if (digits.length < 10) return 'Phone number must be at least 10 digits';
+            if (digits.length > 15) return 'Phone number cannot be more than 15 digits';
+            if (/^(\d)\1+$/.test(digits)) return 'Enter a valid phone number';
+            return '';
+          }
+
+          function showError(msg) {
+            errorEl.textContent = msg;
+            phone.classList.toggle('is-invalid', !!msg);
+            phone.setAttribute('aria-invalid', msg ? 'true' : 'false');
+          }
+
+          phone.addEventListener('input', function() {
+            var clean = sanitize(phone.value);
+            if (clean !== phone.value) phone.value = clean;
+            if (errorEl.textContent) showError('');
+          });
+
+          phone.addEventListener('blur', function() {
+            if (phone.value) showError(getPhoneError(phone.value));
+          });
+
+          form.addEventListener('submit', function(e) {
+            var msg = getPhoneError(phone.value);
+            showError(msg);
+
+            // Name / email ke liye browser ka built-in check
+            if (msg || !form.checkValidity()) {
+              e.preventDefault();
+              if (msg) {
+                phone.focus();
+                return;
+              }
+              form.reportValidity();
+              return;
+            }
+            // Server ko saaf number bhejo: +18669788570
+            phone.value = phone.value.replace(/[\s()-]/g, '');
+          });
+        })();
+      </script>
     </div>
   </div>
   <div class="cvg-consult-right">

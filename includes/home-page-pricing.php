@@ -39,7 +39,7 @@
           <h3 class="cvg-price-name">Silver Package</h3>
           <span class="cvg-price-badge">Most popular</span>
         </div>
-        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>799<span class="cvg-price-cents">.00</span></p>
+        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>999<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
           <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
@@ -122,51 +122,6 @@
         <div class="cvg-price-scroll">
 
           <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
-            <li class="cvg-price-li">15 to 20 Pages Website</li>
-            <li class="cvg-price-li">Custom Made, Interactive, Dynamic &amp; High End Design</li>
-            <li class="cvg-price-li">Custom WP (or) Custom PHP Development</li>
-            <li class="cvg-price-li">1 jQuery Slider Banner</li>
-            <li class="cvg-price-li">Up to 10 Custom Made Banner Designs</li>
-            <li class="cvg-price-li">10 Stock assets/images</li>
-            <li class="cvg-price-li">Unlimited Revisions</li>
-            <li class="cvg-price-li">Special Hoover Effects</li>
-            <li class="cvg-price-li">Content Management System (CMS)</li>
-            <li class="cvg-price-li">Online Appointment/Scheduling/Online Ordering Integration (Optional)</li>
-            <li class="cvg-price-li">Online Payment Integration (Optional)</li>
-            <li class="cvg-price-li">Multi Lingual (Optional)</li>
-            <li class="cvg-price-li">Custom Dynamic Forms (Optional)</li>
-            <li class="cvg-price-li">Signup Area (For Newsletters, Offers etc.)</li>
-            <li class="cvg-price-li">Search Bar</li>
-            <li class="cvg-price-li">Live Feeds of Social Networks Integration (Optional)</li>
-            <li class="cvg-price-li">Mobile Responsive</li>
-            <li class="cvg-price-li">FREE 5 Years Domain Name</li>
-            <li class="cvg-price-li">Free Google Friendly Sitemap</li>
-            <li class="cvg-price-li">Search Engine Submission</li>
-            <li class="cvg-price-li">Complete W3C Certified HTML</li>
-            <li class="cvg-price-li">Industry Specified Team of Expert Designers and Developers</li>
-            <li class="cvg-price-li">Complete Deployment</li>
-            <li class="cvg-price-li">Dedicated Accounts Manager</li>
-            <li class="cvg-price-li">100% Ownership Rights</li>
-            <li class="cvg-price-li">100% Satisfaction Guarantee</li>
-            <li class="cvg-price-li">100% Unique Design Guarantee</li>
-            <li class="cvg-price-li">100% Money Back Guarantee</li>
-          </ul>
-
-        </div>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
-      </article>
-      <article class="cvg-price-card">
-        <h3 class="cvg-price-name">Business Package</h3>
-        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>3499<span class="cvg-price-cents">.00</span></p>
-        <p class="cvg-price-sub">Package includes</p>
-        <div class="cvg-price-scroll">
-
-          <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
-            <li class="cvg-price-li">15 Seconds 2D Explainer Video</li>
-            <li class="cvg-price-li">Voice - Over &amp; Sound Effects</li>
-            <li class="cvg-price-li">Professional Script Writing</li>
-            <li class="cvg-price-li">Storyboard</li>
-            <li class="cvg-price-li">SEO Meta Tags</li>
             <li class="cvg-price-li">15 to 20 Pages Website</li>
             <li class="cvg-price-li">Custom Made, Interactive, Dynamic &amp; High End Design</li>
             <li class="cvg-price-li">Custom WP (or) Custom PHP Development</li>
