@@ -5,7 +5,7 @@
  * Automatically detects the site root path on any server (localhost, subfolder, live domain root)
  * so that links and assets work seamlessly without hardcoding folder names.
  */
-
+require_once __DIR__ . '/canonical.php';
 if (!function_exists('cvg_base_url')) {
     function cvg_base_url() {
         static $base = null;

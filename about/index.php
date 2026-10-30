@@ -80,6 +80,7 @@ echo $cvgHead;
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap">
+
 <title>Driven by Design, Powered by Tech: Meet the Creative Converge Dallas Team</title>
 <meta name="description" content="Meet the creative team behind Creative Converge. We combine design thinking and technology to deliver memorable digital experiences in Dallas.">
 
