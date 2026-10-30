@@ -11,13 +11,13 @@
 
     <div class="cvg-price-grid">
 
-      <!-- ===== Bronze ===== -->
+<!-- ===== Bronze ===== -->
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Bronze Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>799<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
-          <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
+          <ul class="cvg-price-list" tabindex="0" aria-label="Bronze Package features">
             <li class="cvg-price-li">2 Stock Images</li>
             <li class="cvg-price-li">3 Page Website</li>
             <li class="cvg-price-li">1 jQuery Slider Banner</li>
@@ -27,12 +27,13 @@
             <li class="cvg-price-li cvg-price-extra">Complete Deployment</li>
             <li class="cvg-price-li cvg-price-extra">100% Satisfaction Guarantee</li>
             <li class="cvg-price-li cvg-price-extra">100% Unique Design Guarantee</li>
-            <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee</li>
+            <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee *</li>
           </ul>
         </div>
         <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
 
+<!-- ===== Silver ===== -->
       <article class="cvg-price-card cvg-price-card--featured">
         <span class="cvg-price-shine" aria-hidden="true"></span>
         <div class="cvg-price-name-row">
@@ -42,10 +43,10 @@
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>1499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
-          <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
+          <ul class="cvg-price-list" tabindex="0" aria-label="Silver Package features">
             <li class="cvg-price-li">5 Stock Photos</li>
             <li class="cvg-price-li">5 Page Website</li>
-            <li class="cvg-price-li">3 Banner Design</li>
+            <li class="cvg-price-li">3 Banner Designs</li>
             <li class="cvg-price-li">1 jQuery Slider Banner</li>
             <li class="cvg-price-li">FREE Google Friendly Sitemap</li>
             <li class="cvg-price-li">Complete W3C Certified HTML</li>
@@ -60,13 +61,13 @@
         <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-dark">Buy now</a>
       </article>
 
-      <!-- ===== Gold ===== -->
+<!-- ===== Gold ===== -->
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Gold Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>1499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
-          <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
+          <ul class="cvg-price-list" tabindex="0" aria-label="Gold Package features">
             <li class="cvg-price-li">10 Unique Pages Website</li>
             <li class="cvg-price-li">CMS / Admin Panel Support</li>
             <li class="cvg-price-li">8 Stock Images</li>
@@ -76,7 +77,6 @@
             <li class="cvg-price-li cvg-price-extra">Complete W3C Certified HTML</li>
             <li class="cvg-price-li cvg-price-extra">48 to 72 hours TAT</li>
             <li class="cvg-price-li cvg-price-extra">Complete Deployment</li>
-            <li class="cvg-price-group cvg-price-extra">Value Added Services</li>
             <li class="cvg-price-li cvg-price-extra">100% Satisfaction Guarantee</li>
             <li class="cvg-price-li cvg-price-extra">100% Unique Design Guarantee</li>
             <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee *</li>
@@ -85,13 +85,15 @@
         </div>
         <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
+
+<!-- ===== Platinum ===== -->
       <article class="cvg-price-card">
-        <h3 class="cvg-price-name">Platinum </h3>
+        <h3 class="cvg-price-name">Platinum Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>2499<span class="cvg-price-cents">.00</span></p>
-        <p class="cvg-price-sub"> Package</p>
+        <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
-          <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
-            <li class="cvg-price-li">Upto 15 Unique Pages Website</li>
+          <ul class="cvg-price-list" tabindex="0" aria-label="Platinum Package features">
+            <li class="cvg-price-li">Up to 15 Unique Pages Website</li>
             <li class="cvg-price-li">Conceptual and Dynamic Website</li>
             <li class="cvg-price-li">Mobile Responsive</li>
             <li class="cvg-price-li">Online Reservation/Appointment Tool (Optional)</li>
@@ -100,116 +102,109 @@
             <li class="cvg-price-li cvg-price-extra">Lead Capturing Forms (Optional)</li>
             <li class="cvg-price-li cvg-price-extra">Striking Hover Effects</li>
             <li class="cvg-price-li cvg-price-extra">Newsletter Subscription (Optional)</li>
-            <li class="cvg-price-group cvg-price-extra">Newsfeed Integration</li>
+            <li class="cvg-price-li cvg-price-extra">Newsfeed Integration</li>
             <li class="cvg-price-li cvg-price-extra">Social Media Integration</li>
+            <li class="cvg-price-li cvg-price-extra">Search Engine Submission</li>
             <li class="cvg-price-li cvg-price-extra">5 Stock Photos</li>
-            <li class="cvg-price-li cvg-price-extra">3 Unique Banner Design</li>
+            <li class="cvg-price-li cvg-price-extra">3 Unique Banner Designs</li>
             <li class="cvg-price-li cvg-price-extra">1 jQuery Slider Banner</li>
             <li class="cvg-price-li cvg-price-extra">Complete W3C Certified HTML</li>
             <li class="cvg-price-li cvg-price-extra">48 to 72 hours TAT</li>
             <li class="cvg-price-li cvg-price-extra">Complete Deployment</li>
             <li class="cvg-price-li cvg-price-extra">100% Satisfaction Guarantee</li>
             <li class="cvg-price-li cvg-price-extra">100% Unique Design Guarantee</li>
-            <li class="cvg-price-li cvg-price-addon cvg-price-extra">100% Money Back Guarantee *</li>
+            <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee *</li>
           </ul>
         </div>
         <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
+
+<!-- ===== Titanium ===== -->
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Titanium Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>3499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
-
-          <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
+          <ul class="cvg-price-list" tabindex="0" aria-label="Titanium Package features">
             <li class="cvg-price-li">15 to 20 Pages Website</li>
             <li class="cvg-price-li">Custom Made, Interactive, Dynamic &amp; High End Design</li>
             <li class="cvg-price-li">Custom WP (or) Custom PHP Development</li>
             <li class="cvg-price-li">1 jQuery Slider Banner</li>
             <li class="cvg-price-li">Up to 10 Custom Made Banner Designs</li>
-            <li class="cvg-price-li">10 Stock assets/images</li>
-            <li class="cvg-price-li">Unlimited Revisions</li>
-            <li class="cvg-price-li">Special Hoover Effects</li>
-            <li class="cvg-price-li">Content Management System (CMS)</li>
-            <li class="cvg-price-li">Online Appointment/Scheduling/Online Ordering Integration (Optional)</li>
-            <li class="cvg-price-li">Online Payment Integration (Optional)</li>
-            <li class="cvg-price-li">Multi Lingual (Optional)</li>
-            <li class="cvg-price-li">Custom Dynamic Forms (Optional)</li>
-            <li class="cvg-price-li">Signup Area (For Newsletters, Offers etc.)</li>
-            <li class="cvg-price-li">Search Bar</li>
-            <li class="cvg-price-li">Live Feeds of Social Networks Integration (Optional)</li>
-            <li class="cvg-price-li">Mobile Responsive</li>
-            <li class="cvg-price-li">FREE 5 Years Domain Name</li>
-            <li class="cvg-price-li">Free Google Friendly Sitemap</li>
-            <li class="cvg-price-li">Search Engine Submission</li>
-            <li class="cvg-price-li">Complete W3C Certified HTML</li>
-            <li class="cvg-price-li">Industry Specified Team of Expert Designers and Developers</li>
-            <li class="cvg-price-li">Complete Deployment</li>
-            <li class="cvg-price-li">Dedicated Accounts Manager</li>
-            <li class="cvg-price-li">100% Ownership Rights</li>
-            <li class="cvg-price-li">100% Satisfaction Guarantee</li>
-            <li class="cvg-price-li">100% Unique Design Guarantee</li>
-            <li class="cvg-price-li">100% Money Back Guarantee</li>
+            <li class="cvg-price-li">10 Stock Images</li>
+            <li class="cvg-price-li cvg-price-extra">Unlimited Revisions</li>
+            <li class="cvg-price-li cvg-price-extra">Special Hover Effects</li>
+            <li class="cvg-price-li cvg-price-extra">Content Management System (CMS)</li>
+            <li class="cvg-price-li cvg-price-extra">Online Appointment/Scheduling/Online Ordering Integration (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Online Payment Integration (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Multilingual (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Custom Dynamic Forms (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Signup Area (For Newsletters, Offers etc.)</li>
+            <li class="cvg-price-li cvg-price-extra">Search Bar</li>
+            <li class="cvg-price-li cvg-price-extra">Live Feeds of Social Networks Integration (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Mobile Responsive</li>
+            <li class="cvg-price-li cvg-price-extra">FREE 5 Years Domain Name</li>
+            <li class="cvg-price-li cvg-price-extra">FREE Google Friendly Sitemap</li>
+            <li class="cvg-price-li cvg-price-extra">Search Engine Submission</li>
+            <li class="cvg-price-li cvg-price-extra">Complete W3C Certified HTML</li>
+            <li class="cvg-price-li cvg-price-extra">Industry Specific Team of Expert Designers and Developers</li>
+            <li class="cvg-price-li cvg-price-extra">Complete Deployment</li>
+            <li class="cvg-price-li cvg-price-extra">Dedicated Account Manager</li>
+            <li class="cvg-price-li cvg-price-extra">100% Ownership Rights</li>
+            <li class="cvg-price-li cvg-price-extra">100% Satisfaction Guarantee</li>
+            <li class="cvg-price-li cvg-price-extra">100% Unique Design Guarantee</li>
+            <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee</li>
           </ul>
-
         </div>
         <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
-      <!-- ===== Side card: custom package ===== -->
 
+<!-- ===== Business ===== -->
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Business Package</h3>
         <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>5499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
-
-
-          <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
-
-            <li class="cvg-price-group">WEBSITE</li>
-            <li class="cvg-price-li">Complete Custom Design &amp; Development</li>
-            <li class="cvg-price-li">Dating Portal, Job Portal, Professional Network Portal, Social Network Portal, Restaurant Portal, Medical Portal, Enterprise Portal (Any One)</li>
-            <li class="cvg-price-li">Unique, User Friendly, Interactive, Dynamic, High End UI Design</li>
-            <li class="cvg-price-li">Unlimited Banner Designs</li>
-            <li class="cvg-price-li">Interactive Sliding Banners</li>
-            <li class="cvg-price-li">Special Hover Effects</li>
-            <li class="cvg-price-li">Unlimited Stock assets/images</li>
-            <li class="cvg-price-li">User Signup Area</li>
-            <li class="cvg-price-li">Client/User Dashboard Area</li>
-            <li class="cvg-price-li">Custom Coding and Development</li>
-            <li class="cvg-price-li">Content Management System (Custom)</li>
-            <li class="cvg-price-li">Online Appointment/Scheduling/Online Ordering Integration (Optional)</li>
-            <li class="cvg-price-li">Online Payment Integration (Optional)</li>
-            <li class="cvg-price-li">Multi Lingual (Optional)</li>
-            <li class="cvg-price-li">Custom Dynamic Forms (Optional)</li>
-            <li class="cvg-price-li">Shopping Cart Integration (Optional)</li>
-            <li class="cvg-price-li">Complete Database Creation</li>
-            <li class="cvg-price-li">Signup Automated Email Authentication</li>
-            <li class="cvg-price-li">Web Traffic Analytics Integration</li>
-            <li class="cvg-price-li">3rd Party API Integrations</li>
-            <li class="cvg-price-li">Signup Area (For Newsletters, Offers etc.)</li>
-            <li class="cvg-price-li">Search Bar for Easy Search</li>
-            <li class="cvg-price-li">Live Feeds of Social Networks Integration (Optional)</li>
-            <li class="cvg-price-li">Search Engine Submission</li>
-            <li class="cvg-price-li">Module-wise Architecture</li>
-            <li class="cvg-price-li">Extensive Admin Panel</li>
-            <li class="cvg-price-li">Award Winning Team of Expert Designers and Developers</li>
-            <li class="cvg-price-li">Complete Deployment</li>
-
-            <li class="cvg-price-group cvg-price-extra">VALUE ADDED SERVICES</li>
-            <li class="cvg-price-li cvg-price-extra">Complete Source Files</li>
-            <li class="cvg-price-li cvg-price-extra">Dedicated Project Manager</li>
+          <ul class="cvg-price-list" tabindex="0" aria-label="Business Package features">
+            <li class="cvg-price-group">Video</li>
+            <li class="cvg-price-li">15 Seconds 2D Explainer Video</li>
+            <li class="cvg-price-li">Voice-Over &amp; Sound Effects</li>
+            <li class="cvg-price-li">Professional Script Writing</li>
+            <li class="cvg-price-li">Storyboard</li>
+            <li class="cvg-price-group">Website</li>
+            <li class="cvg-price-li cvg-price-extra">SEO Meta Tags</li>
+            <li class="cvg-price-li cvg-price-extra">15 to 20 Pages Website</li>
+            <li class="cvg-price-li cvg-price-extra">Custom Made, Interactive, Dynamic &amp; High End Design</li>
+            <li class="cvg-price-li cvg-price-extra">Custom WP (or) Custom PHP Development</li>
+            <li class="cvg-price-li cvg-price-extra">1 jQuery Slider Banner</li>
+            <li class="cvg-price-li cvg-price-extra">Up to 10 Custom Made Banner Designs</li>
+            <li class="cvg-price-li cvg-price-extra">10 Stock Images</li>
+            <li class="cvg-price-li cvg-price-extra">Unlimited Revisions</li>
+            <li class="cvg-price-li cvg-price-extra">Special Hover Effects</li>
+            <li class="cvg-price-li cvg-price-extra">Content Management System (CMS)</li>
+            <li class="cvg-price-li cvg-price-extra">Online Appointment/Scheduling/Online Ordering Integration (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Online Payment Integration (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Multilingual (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Custom Dynamic Forms (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Signup Area (For Newsletters, Offers etc.)</li>
+            <li class="cvg-price-li cvg-price-extra">Search Bar</li>
+            <li class="cvg-price-li cvg-price-extra">Live Feeds of Social Networks Integration (Optional)</li>
+            <li class="cvg-price-li cvg-price-extra">Mobile Responsive</li>
+            <li class="cvg-price-li cvg-price-extra">FREE 5 Years Domain Name</li>
+            <li class="cvg-price-li cvg-price-extra">FREE Google Friendly Sitemap</li>
+            <li class="cvg-price-li cvg-price-extra">Search Engine Submission</li>
+            <li class="cvg-price-li cvg-price-extra">Complete W3C Certified HTML</li>
+            <li class="cvg-price-li cvg-price-extra">Industry Specific Team of Expert Designers and Developers</li>
+            <li class="cvg-price-li cvg-price-extra">Complete Deployment</li>
+            <li class="cvg-price-li cvg-price-extra">Dedicated Account Manager</li>
             <li class="cvg-price-li cvg-price-extra">100% Ownership Rights</li>
             <li class="cvg-price-li cvg-price-extra">100% Satisfaction Guarantee</li>
+            <li class="cvg-price-li cvg-price-extra">100% Unique Design Guarantee</li>
             <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee</li>
-
           </ul>
-
-
         </div>
         <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
-
       <!-- ===== Custom package (no fixed price: client chooses what the website needs) ===== -->
       <article class="cvg-price-card cvg-price-card--custom">
         <div class="cvg-price-name-row">

@@ -244,8 +244,7 @@
           }
         </style>
         <p class="footer-about">
-          Our digital company of professionals has been developing products for 15 years.
-          We’ve got a lot of awards for our work and develop applications that became popular in the world.
+          A Dallas-based digital agency that designs logos, builds websites and grows brands for startups, eCommerce stores and service businesses across the USA. 354+ projects delivered for 235+ happy clients.
         </p>
       </div>
 

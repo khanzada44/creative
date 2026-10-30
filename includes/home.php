@@ -225,7 +225,7 @@
     <div class="hero-content">
       <h1 class="hero-title"><span>Welcome to</span>Creative Converge</h1>
       <h3 class="hero-sub">From Concept to Click, a premium web design company in Dallas!</h3>
-      <p class="hero-text">Every great vision needs professional prosecution. Let Creative Converge, one of the best web design companies in Dallas, bring your idea to life with perfection.</p>
+      <p class="hero-text">Every great vision needs professional execution. Let Creative Converge, one of the best web design companies in Dallas, bring your idea to life with perfection.</p>
     </div>
   </div>
  </div>
@@ -300,7 +300,7 @@
         With nearly a decade of experience in custom web <strong class="cvg-about-strong">DESIGN SERVICES</strong> . We’re more than just a digital agency. We’re problem solvers to help you stand out in the competitive digital world. 
       </p>
       <p class="cvg-about-text" data-reveal="up" style="--d:.5s">
-       At Creative Converge, we make sure that every business has a unique story, which is why we promise that your story connects and makes a memorable impact. We provoke ourselves 24/7 to face all the complications while dealing with clients or rather than projects. If you’re at the initial stage or have a big vision to be very honest you’re just one quick call away. 
+       At Creative Converge, we make sure that every business has a unique story, which is why we promise that your story connects and makes a memorable impact. We push ourselves 24/7 to face all the complications while dealing with clients or rather than projects. If you’re at the initial stage or have a big vision to be very honest you’re just one quick call away. 
         <!-- <ul class="cvg-about-text">
         <li>24/7 support </li>
         <li>Meet deadlines every time </li>

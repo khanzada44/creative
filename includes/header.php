@@ -62,13 +62,13 @@ if (!function_exists('cvg_nav_on')) {
         <div class="services-menu" id="servicesMenu">
           <ul>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>">Logo Design</a></li>
-            <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>">Illustration Design</a></li>
+            <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>">Illustration Design</a></li> -->
             <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>">Web Design</a></li> -->
 
             <!-- Web Developer + flyout -->
             <li class="has-sub">
               <a href="<?= cvg_url('services/service-detail.php?slug=web-developer-solutions') ?>" class="sub-trigger" aria-haspopup="true">
-                Web Developer & Web Design
+                Web Development & Design
                 <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="9 6 15 12 9 18"></polyline>
                 </svg>
@@ -92,6 +92,7 @@ if (!function_exists('cvg_nav_on')) {
             <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>">Video Animation</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">Digital Marketing</a></li>
             <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>">Advance Combo Packages</a></li> -->
+            <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps') ?>">Mobile App</a></li> -->
           </ul>
         </div>
       </div>
@@ -148,7 +149,7 @@ if (!function_exists('cvg_nav_on')) {
       <ul class="panel-services-list" id="panelServicesList">
         <li><a href="<?= cvg_url('services') ?>" class="panel-sub-link">All services</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>" class="panel-sub-link">Logo Design</a></li>
-        <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>" class="panel-sub-link">Illustration Design</a></li>
+        <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>" class="panel-sub-link">Illustration Design</a></li> -->
         <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>" class="panel-sub-link">Web Design</a></li>
 
         <!-- Web Developer (nested accordion) -->

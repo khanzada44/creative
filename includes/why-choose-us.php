@@ -43,7 +43,7 @@
             <div class="wcu-card">
               <div class="wcu-num"><span class="wcu-count" data-to="15">0</span></div>
               <span class="wcu-line"></span>
-              <div class="wcu-label">Awards Winning</div>
+              <div class="wcu-label">Award-Winning</div>
             </div>
           </div>
         </div>

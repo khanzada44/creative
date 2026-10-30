@@ -123,7 +123,7 @@ $skater = 'assets/img/team-skater.png';
       <div class="abt-col">
         <div class="abt-rv" style="--from:.9"><div class="abt-rv-in">
           <div class="abt-label"><span>OUR STORY</span></div>
-          <h2>Built Around the Power of &amp; Creative Convergence</h2>
+          <h2>Built Around the Power of Creative Convergence</h2>
         </div></div>
 
         <div class="abt-rv" style="--from:.4;--delay:150ms"><div class="abt-rv-in">
@@ -137,7 +137,7 @@ $skater = 'assets/img/team-skater.png';
 
       <div class="abt-circle-col">
         <div class="abt-circle-wrap" data-count="15">
-          <div class="abt-circle"><span class="abt-orbit" aria-hidden="true"><i></i></span><span class="abt-num">0</span><span class="abt-cap">Awards Winning</span></div>
+          <div class="abt-circle"><span class="abt-orbit" aria-hidden="true"><i></i></span><span class="abt-num">0</span><span class="abt-cap">Award-Winning</span></div>
         </div>
       </div>
     </div>
