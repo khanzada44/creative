@@ -29,7 +29,7 @@ $spCta = [
     'title' => 'Got an idea but not a plan?',
     'text'  => "That's a good place to start. Share what's on your mind, and we'll help you turn the possibilities into a clear direction for your project.",
     'btn'   => 'Get a free consultation',
-    'link'  => 'contact-us/index.php',
+    'link'  => 'contact-us',
 ];
 
 
@@ -104,8 +104,8 @@ echo $cvgHead;
       <h1 class="cvg-sp-title cvg-sp-reveal" style="--d:.06s"><?= cvg_h($spHero['title']) ?><span>.</span></h1>
       <p class="cvg-sp-lead cvg-sp-reveal" style="--d:.12s"><?= cvg_h($spHero['lead']) ?></p>
       <div class="cvg-sp-actions cvg-sp-reveal" style="--d:.18s">
-        <a class="cvg-sp-btn cvg-sp-btn--mint" href="<?= cvg_url('contact-us/index.php') ?>">Get a free quote <?= $spArrow ?></a>
-        <a class="cvg-sp-btn cvg-sp-btn--ghost" href="<?= cvg_url('pricing/index.php') ?>">View pricing</a>
+        <a class="cvg-sp-btn cvg-sp-btn--mint" href="<?= cvg_url('contact-us') ?>">Get a free quote <?= $spArrow ?></a>
+        <a class="cvg-sp-btn cvg-sp-btn--ghost" href="<?= cvg_url('pricing') ?>">View pricing</a>
       </div>
     </div>
   </section>
@@ -153,7 +153,7 @@ echo $cvgHead;
 
         <!-- last tile: help choosing -->
         <article class="cvg-sp-card cvg-sp-card--help cvg-sp-reveal">
-          <a class="cvg-sp-cover" href="<?= cvg_url('contact-us/index.php') ?>" aria-label="Talk to us"></a>
+          <a class="cvg-sp-cover" href="<?= cvg_url('contact-us') ?>" aria-label="Talk to us"></a>
           <div class="cvg-sp-card-top">
             <span class="cvg-sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z" />
@@ -235,7 +235,47 @@ echo $cvgHead;
 
 <?php include dirname(__DIR__) . '/includes/footer.php'; ?>
 
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8777e637-9ac3-4499-ae88-6312dcdd69a3"></script>
+    <script>
+        // 1. Official Zendesk event hooks
+        if (typeof zE === 'function') {
+            zE('webWidget:on', 'ready', function() {
+                zE('webWidget', 'open');
+            });
+            zE('webWidget:on', 'close', function() {
+                // If user closes it, reopen after 8 seconds for eye-catching attention
+                setTimeout(function() {
+                    try { zE('webWidget', 'open'); } catch(e) {}
+                }, 8000);
+            });
+        }
 
+        // 2. Retry loop: continuously attempts to open Zendesk until it is ready and open
+        var zendeskOpenInterval = setInterval(function() {
+            if (typeof zE === 'function') {
+                try {
+                    zE('webWidget', 'open');
+                } catch(e) {}
+            }
+        }, 500);
+
+        // Once window is fully loaded, ensure it opens and ease the polling
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof zE === 'function') {
+                    try { zE('webWidget', 'open'); } catch(e) {}
+                }
+                clearInterval(zendeskOpenInterval);
+            }, 5000);
+        });
+
+        // 3. Manual trigger for "Chat Now" buttons
+        function openLiveChat() {
+            if (typeof zE !== 'undefined') {
+                zE('webWidget', 'open');
+            }
+        }
+    </script>
 
 <script>
   (function() {

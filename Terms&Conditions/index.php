@@ -399,3 +399,19 @@ $phoneLink = '+1' . preg_replace('~\D~', '', $company['phone']);
 
 <script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
+<!-- Start of velotix Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"> </script>
+<!-- End of velotix Zendesk Widget script -->
+
+<script>
+  // Page load/reload par chat window band rahe, sirf icon nazar aaye
+  (function closeZendeskOnLoad(tries) {
+    if (typeof window.zE === "function") {
+      try { zE("messenger", "close"); } catch (e) {}  // naya Zendesk Messaging
+      try { zE("webWidget", "close"); } catch (e) {}  // purana Classic Web Widget
+      return;
+    }
+    // Script abhi load ho rahi hai — 20 dafa tak (10 sec) intezar
+    if (tries < 20) setTimeout(function () { closeZendeskOnLoad(tries + 1); }, 500);
+  })(0);
+</script>

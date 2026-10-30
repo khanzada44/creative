@@ -15,7 +15,7 @@ if (!function_exists('cvg_nav_on')) {
   <div class="header-inner">
     <div class="header-left">
       <div class="logo">
-        <a href="<?= cvg_url('index.php') ?>" class="cvg-alogo" aria-label="Creative Converge home">
+        <a href="<?= cvg_url('/') ?>" class="cvg-alogo" aria-label="Creative Converge home">
           <svg class="cvg-alogo-mark" viewBox="-70 -70 140 140" aria-hidden="true">
             <defs>
               <linearGradient id="cvgAlogoGrad" x1="0" y1="0" x2="1" y2="1">
@@ -50,11 +50,11 @@ if (!function_exists('cvg_nav_on')) {
     <nav class="desktop-nav" aria-label="Main">
 
       <!-- Services dropdown -->
-      <a href="<?= cvg_url('about/index.php') ?>" class="nav-link<?= cvg_nav_on('about', $cvgNavPath) ?>">About</a>
+      <a href="<?= cvg_url('about') ?>" class="nav-link<?= cvg_nav_on('about', $cvgNavPath) ?>">About</a>
 
       <div class="services-dropdown" id="servicesDropdown">
         <button class="services-btn<?= cvg_nav_on('services', $cvgNavPath) ?>" id="servicesBtn" aria-haspopup="true" aria-expanded="false">
-          <a href="<?= cvg_url('services/services.php') ?>" class="panel-link">Services</a>
+          <a href="<?= cvg_url('services') ?>" class="panel-link">Services</a>
           <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
@@ -63,12 +63,12 @@ if (!function_exists('cvg_nav_on')) {
           <ul>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>">Logo Design</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>">Illustration Design</a></li>
-            <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>">Web Design</a></li>
+            <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>">Web Design</a></li> -->
 
             <!-- Web Developer + flyout -->
             <li class="has-sub">
               <a href="<?= cvg_url('services/service-detail.php?slug=web-developer-solutions') ?>" class="sub-trigger" aria-haspopup="true">
-                Web Developer
+                Web Developer & Web Design
                 <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="9 6 15 12 9 18"></polyline>
                 </svg>
@@ -97,14 +97,14 @@ if (!function_exists('cvg_nav_on')) {
       </div>
 
 
-      <!-- <a href="<?= cvg_url('cases/index.php') ?>" class="nav-link<?= cvg_nav_on('cases', $cvgNavPath) ?>">Cases</a> -->
-      <a href="<?= cvg_url('pricing/index.php') ?>" class="nav-link<?= cvg_nav_on('pricing', $cvgNavPath) ?>">Pricing</a>
-      <a href="<?= cvg_url('contact-us/index.php') ?>" class="nav-link<?= cvg_nav_on('contact-us', $cvgNavPath) ?>">Contact</a>
+      <!-- <a href="<?= cvg_url('cases') ?>" class="nav-link<?= cvg_nav_on('cases', $cvgNavPath) ?>">Cases</a> -->
+      <a href="<?= cvg_url('pricing') ?>" class="nav-link<?= cvg_nav_on('pricing', $cvgNavPath) ?>">Pricing</a>
+      <a href="<?= cvg_url('contact-us') ?>" class="nav-link<?= cvg_nav_on('contact-us', $cvgNavPath) ?>">Contact</a>
     </nav>
 
     <!-- RIGHT: quote button + mobile menu button -->
     <div class="cvg-glass-right">
-      <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-glass-cta">
+      <a href="<?= cvg_url('contact-us') ?>" class="cvg-glass-cta">
         Get a quote
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M7 17L17 7M8 7h9v9" />
@@ -146,7 +146,7 @@ if (!function_exists('cvg_nav_on')) {
       </button>
 
       <ul class="panel-services-list" id="panelServicesList">
-        <li><a href="<?= cvg_url('services/services.php') ?>" class="panel-sub-link">All services</a></li>
+        <li><a href="<?= cvg_url('services') ?>" class="panel-sub-link">All services</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>" class="panel-sub-link">Logo Design</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>" class="panel-sub-link">Illustration Design</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>" class="panel-sub-link">Web Design</a></li>
@@ -181,14 +181,14 @@ if (!function_exists('cvg_nav_on')) {
       </ul>
     </li>
 
-    <li><a href="<?= cvg_url('pricing/index.php') ?>" class="panel-link">Pricing</a></li>
+    <li><a href="<?= cvg_url('pricing') ?>" class="panel-link">Pricing</a></li>
     <!-- <li><a href="<?= cvg_url('cases/index.php') ?>" class="panel-link">Cases</a></li> -->
-    <li><a href="<?= cvg_url('about/index.php') ?>" class="panel-link">About us</a></li>
-    <li><a href="<?= cvg_url('contact-us/index.php') ?>" class="panel-link">Contact us</a></li>
+    <li><a href="<?= cvg_url('about') ?>" class="panel-link">About us</a></li>
+    <li><a href="<?= cvg_url('contact-us') ?>" class="panel-link">Contact us</a></li>
   </ul>
 
   <div class="panel-foot">
-    <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-glass-cta cvg-glass-cta--block">Get a quote
+    <a href="<?= cvg_url('contact-us') ?>" class="cvg-glass-cta cvg-glass-cta--block">Get a quote
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 17L17 7M8 7h9v9" />
       </svg>

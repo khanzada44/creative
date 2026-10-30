@@ -134,16 +134,14 @@ try {
     // $mail->addCC('rafayshah2006@gmail.com');
 
     $mail->addCC('frontend4404@gmail.com');
+    $mail->addCC('basharshah0@gmail.com');
+    $mail->addCC('rafayshah2006@gmail.com');
+    $mail->addCC('junior.murray@stateofauthors.com');
+    $mail->addCC('jamesrobertllc706@gmail.com');
+    $mail->addCC('sean.stewart@creativeconverge.com');
+    $mail->addCC('george.valentino@creativeconverge.com');
+    $mail->addCC('jamesrobert21922@gmail.com');
 
-    // $mail->addCC('junior.murray@stateofauthors.com');
-
-    // $mail->addCC('sean.stewaro@creativeconverge.com');
-
-    // $mail->addCC('george.valentino@creativeconverge.com');
-
-    // $mail->addCC('junior.murray@kdpusapublishers.com');
-
-    // $mail->addCC('alan.mendis@bookpublishinglegacy.co');
  
     $mail->isHTML(true);
 

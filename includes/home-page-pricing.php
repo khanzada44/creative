@@ -14,7 +14,7 @@
       <!-- ===== Bronze ===== -->
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Bronze Package</h3>
-        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>499<span class="cvg-price-cents">.00</span></p>
+        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>799<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
           <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
@@ -30,7 +30,7 @@
             <li class="cvg-price-li cvg-price-extra">100% Money Back Guarantee</li>
           </ul>
         </div>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
+        <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
 
       <article class="cvg-price-card cvg-price-card--featured">
@@ -39,7 +39,7 @@
           <h3 class="cvg-price-name">Silver Package</h3>
           <span class="cvg-price-badge">Most popular</span>
         </div>
-        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>999<span class="cvg-price-cents">.00</span></p>
+        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>1499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
           <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
@@ -57,7 +57,7 @@
             <li class="cvg-price-li cvg-price-addon cvg-price-extra">CMS: additional $250 *</li>
           </ul>
         </div>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-dark">Buy now</a>
+        <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-dark">Buy now</a>
       </article>
 
       <!-- ===== Gold ===== -->
@@ -83,11 +83,11 @@
             <li class="cvg-price-li cvg-price-addon cvg-price-extra">Mobile Responsive: additional $200 *</li>
           </ul>
         </div>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
+        <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Platinum </h3>
-        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>1999<span class="cvg-price-cents">.00</span></p>
+        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>2499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub"> Package</p>
         <div class="cvg-price-scroll">
           <ul class="cvg-price-list" tabindex="0" aria-label="Package features">
@@ -113,11 +113,11 @@
             <li class="cvg-price-li cvg-price-addon cvg-price-extra">100% Money Back Guarantee *</li>
           </ul>
         </div>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
+        <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Titanium Package</h3>
-        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>2499<span class="cvg-price-cents">.00</span></p>
+        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>3499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
 
@@ -153,13 +153,13 @@
           </ul>
 
         </div>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
+        <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
       <!-- ===== Side card: custom package ===== -->
 
       <article class="cvg-price-card">
         <h3 class="cvg-price-name">Business Package</h3>
-        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>3499<span class="cvg-price-cents">.00</span></p>
+        <p class="cvg-price-amount"><span class="cvg-price-cur">$</span>5499<span class="cvg-price-cents">.00</span></p>
         <p class="cvg-price-sub">Package includes</p>
         <div class="cvg-price-scroll">
 
@@ -207,7 +207,7 @@
 
 
         </div>
-        <a href="<?= cvg_url('contact-us/index.php') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
+        <a href="<?= cvg_url('contact-us') ?>" class="cvg-price-btn cvg-price-btn-ghost">Buy now</a>
       </article>
 
       <!-- ===== Custom package (no fixed price: client chooses what the website needs) ===== -->
@@ -239,7 +239,7 @@
             <li class="cvg-price-li cvg-price-extra">100% Satisfaction Guarantee</li>
           </ul>
         </div>
-        <a href="<?= cvg_url('contact-us/index.php#cvg-ct-form') ?>" class="cvg-price-btn cvg-price-btn-mint">Get a custom quote</a>
+        <a href="<?= cvg_url('contact-us#cvg-ct-form') ?>" class="cvg-price-btn cvg-price-btn-mint">Get a custom quote</a>
       </article>
 
     </div>
