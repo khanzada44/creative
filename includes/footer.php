@@ -274,22 +274,22 @@
       <div class="footer-col">
         <h4>Support</h4>
         <ul>
-          <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Terms &amp; Conditions</a></li>
-          <li><a href="<?= cvg_url('privacy-policy/index.php') ?>">Privacy Policy</a></li>
-          <li><a href="<?= cvg_url('pricing/index.php') ?>">Payments</a></li>
-          <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Refund</a></li>
-          <li><a href="<?= cvg_url('Terms&Conditions/index.php') ?>">Installation</a></li>
+          <li><a href="<?= cvg_url('Terms&Conditions') ?>">Terms &amp; Conditions</a></li>
+          <li><a href="<?= cvg_url('privacy-policy') ?>">Privacy Policy</a></li>
+          <li><a href="<?= cvg_url('pricing') ?>">Payments</a></li>
+          <li><a href="<?= cvg_url('Terms&Conditions') ?>">Refund</a></li>
+          <li><a href="<?= cvg_url('Terms&Conditions') ?>">Installation</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="<?= cvg_url('about/index.php') ?>">About Us</a></li>
-          <li><a href="<?= cvg_url('contact-us/index.php') ?>">Contact</a></li>
-          <li><a href="<?= cvg_url('services/services.php') ?>">Services</a></li>
-          <li><a href="<?= cvg_url('pricing/index.php') ?>">Pricing</a></li>
-          <!-- <li><a href="<?= cvg_url('cases/index.php') ?>">Cases</a></li> -->
+          <li><a href="<?= cvg_url('about') ?>">About Us</a></li>
+          <li><a href="<?= cvg_url('contact-us') ?>">Contact</a></li>
+          <li><a href="<?= cvg_url('services') ?>">Services</a></li>
+          <li><a href="<?= cvg_url('pricing') ?>">Pricing</a></li>
+          <!-- <li><a href="<?= cvg_url('cases') ?>">Cases</a></li> -->
         </ul>
       </div>
     </div>

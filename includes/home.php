@@ -314,7 +314,7 @@
           Read more
           <svg class="cvg-about-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
         </a>
-        <a href="<?= cvg_url('services/services.php') ?>" class="cvg-about-btn cvg-about-btn-ghost">Our services</a>
+        <a href="<?= cvg_url('services') ?>" class="cvg-about-btn cvg-about-btn-ghost">Our services</a>
       </div>
     </div>
   </div>

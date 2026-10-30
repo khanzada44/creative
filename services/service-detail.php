@@ -59,7 +59,7 @@ $faqSubtitle   = $service['faqSubtitle'] ?? '';
 $faqItems      = $service['faqItems'] ?? [];
 $faqCtaText    = $service['faqCtaText'] ?? 'Still have a question?';
 $faqButtonText = $service['faqButtonText'] ?? 'Get a quote';
-$faqButtonUrl  = $service['faqButtonUrl'] ?? cvg_url('contact-us/index.php');
+$faqButtonUrl  = $service['faqButtonUrl'] ?? cvg_url('contact-us');
 
 $faqSchema = [
     "@context" => "https://schema.org",
@@ -90,6 +90,27 @@ $faqSchema = [
     <link rel="stylesheet" href="<?= cvg_url('assets/css/service-detail.css') ?>">
     <script>
         document.documentElement.classList.add('js');
+    </script>
+    <!-- Start of velotix Zendesk Widget script (sirf EK baar, poore page par) -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"></script>
+    <!-- End of velotix Zendesk Widget script -->
+    <script>
+        // Page load/reload par chat window band rahe, sirf icon nazar aaye
+        (function closeZendeskOnLoad(tries) {
+            if (typeof window.zE === "function") {
+                try { zE("messenger", "close"); } catch (e) {} // naya Zendesk Messaging
+                try { zE("webWidget", "close"); } catch (e) {} // purana Classic Web Widget
+                return;
+            }
+            if (tries < 20) setTimeout(function () { closeZendeskOnLoad(tries + 1); }, 500);
+        })(0);
+
+        // "Chat Now" buttons ke liye — user click kare tab khule
+        function openLiveChat() {
+            if (typeof window.zE !== "function") return;
+            try { zE("messenger", "open"); } catch (e) {}
+            try { zE("webWidget", "open"); } catch (e) {}
+        }
     </script>
 </head>
 
@@ -161,7 +182,6 @@ $faqSchema = [
                     <span class="cvg-svcx-lb-count" aria-live="polite"></span>
                 </div>
             </section>
-
 
 
             <script>
@@ -285,7 +305,10 @@ $faqSchema = [
 
                 <div class="pricing-container" id="pricing-container">
                     <?php foreach ($plans as $plan):
-                        $price    = (float) ($plan['price'] ?? 0);
+                        $rawPrice = trim((string) ($plan['price'] ?? ''));
+                        // Price khaali ya number nahi (jaise "Customized") = custom quote, $0.00 nahi
+                        $isCustom = $rawPrice === '' || !is_numeric($rawPrice) || (float) $rawPrice <= 0;
+                        $price    = $isCustom ? 0 : (float) $rawPrice;
                         $whole    = (int) floor($price);
                         $cents    = str_pad((string) round(($price - $whole) * 100), 2, '0', STR_PAD_LEFT);
                         $featured = !empty($plan['featured']);
@@ -296,13 +319,20 @@ $faqSchema = [
                                 <div class="badge-popular"><?= h($plan['badge']) ?></div>
                             <?php endif; ?>
 
-                            <h3 class="card-title"><?= h($plan['name'] ?? 'Package') ?></h3>
+                            <h3 class="card-title"><?= h(trim($plan['name'] ?? 'Package')) ?></h3>
 
-                            <div class="price-tag">
-                                <span class="currency">$</span>
-                                <span class="amount"><?= h($whole) ?></span>
-                                <span class="decimals">.<?= h($cents) ?></span>
-                            </div>
+                            <?php if ($isCustom): ?>
+                                <div class="price-tag price-tag--custom">
+                                    <span class="amount">Custom Quote</span>
+                                </div>
+                                <p class="price-note">Pricing based on your requirements</p>
+                            <?php else: ?>
+                                <div class="price-tag">
+                                    <span class="currency">$</span>
+                                    <span class="amount"><?= h($whole) ?></span>
+                                    <span class="decimals">.<?= h($cents) ?></span>
+                                </div>
+                            <?php endif; ?>
 
                             <p class="package-includes">Package includes</p>
 
@@ -315,8 +345,8 @@ $faqSchema = [
                                 <?php endforeach; ?>
                             </ul>
 
-                            <a href="<?= h(cvg_url($plan['link'] ?? 'contact-us/index.php')) ?>"
-                                class="btn-buy <?= $featured ? 'featured-btn' : '' ?>">Buy now</a>
+                            <a href="<?= h(cvg_url($plan['link'] ?? 'contact-us')) ?>"
+                                class="btn-buy <?= $featured ? 'featured-btn' : '' ?>"><?= $isCustom ? 'Get a Quote' : 'Buy now' ?></a>
                         </div>
                     <?php endforeach; ?>
                 </div>

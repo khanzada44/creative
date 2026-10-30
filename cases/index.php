@@ -108,7 +108,7 @@ $portfolioLabels = [
 ];
 
 /* ---------- Bottom call to action ---------- */
-$casesCtaLink = 'contact-us/index.php';   /* relative to your site root */
+$casesCtaLink = 'contact-us';   /* relative to your site root */
 
 require_once dirname(__DIR__) . '/includes/init.php';
 $siteUrl = cvg_url('');
@@ -1514,3 +1514,19 @@ echo $cvgHead;
   })();
 </script>
 <script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>
+<!-- Start of velotix Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"> </script>
+<!-- End of velotix Zendesk Widget script -->
+
+<script>
+
+  (function closeZendeskOnLoad(tries) {
+    if (typeof window.zE === "function") {
+      try { zE("messenger", "close"); } catch (e) {} 
+      try { zE("webWidget", "close"); } catch (e) {} 
+      return;
+    }
+    // Script abhi load ho rahi hai — 20 dafa tak (10 sec) intezar
+    if (tries < 20) setTimeout(function () { closeZendeskOnLoad(tries + 1); }, 500);
+  })(0);
+</script>

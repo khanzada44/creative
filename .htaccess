@@ -5,3 +5,62 @@ DirectoryIndex index.php services.php index.html
 # Service detail clean URL routing (works seamlessly anywhere without RewriteBase)
 RewriteRule ^services/service-detail/([a-zA-Z0-9-]+)/?$ services/service-detail.php?slug=$1 [L,QSA]
 RewriteRule ^service-detail/([a-zA-Z0-9-]+)/?$ services/service-detail.php?slug=$1 [L,QSA]
+
+
+
+RewriteEngine On
+ 
+# Hide index.php from homepage
+
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+
+RewriteRule ^index\.php$ / [R=301,L]
+ 
+# Remove .php extension from URLs
+
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+
+RewriteRule ^(.+?)\.php$ /%1 [R=301,L]
+ 
+# Internally load .php files without showing extension
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+RewriteRule ^(.+?)/?$ $1.php [L]
+ 
+# Prevent directory listing
+
+Options -Indexes
+
+ 
+
+
+RewriteEngine On
+ 
+# Redirect index.php and index to homepage
+
+RewriteCond %{THE_REQUEST} \s/+index(?:\.php)?[\s?] [NC]
+
+RewriteRule ^index(?:\.php)?$ https://creativeconverge.com/ [R=301,L]
+ 
+# Redirect all .php URLs to clean URLs
+
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+
+RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+ 
+# Internally load PHP files without extension
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+RewriteRule ^(.+?)/?$ $1.php [L]
+ 
+# Disable directory listing
+
+Options -Indexes
+
+ 

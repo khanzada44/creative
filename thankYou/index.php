@@ -88,7 +88,19 @@ echo $cvgHead;
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17742584929"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'AW-17742584929');
+
+  // Google Ads Conversion Event with Label
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17742584929/trbcCJymm88cEOG4qYxC'
+  });
+</script>
 <style>
     html,
     body {
