@@ -57,48 +57,67 @@ require_once __DIR__ . '/includes/init.php';
     <?php include __DIR__ . '/includes/footer.php'; ?>
 
     <script src="<?= cvg_url('assets/js/home.js') ?>"></script>
-    <script src="<?= cvg_url('assets/js/favicon-animate.js') ?>"></script>
-    <!-- Start of velotix Zendesk Widget script -->
-        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8777e637-9ac3-4499-ae88-6312dcdd69a3"></script>
+    <!--
+        ⚡ Speed fix (GTmetrix "No CPU idle period"):
+        Zendesk aur favicon animation pehle page khulte hi chalne lagte the aur CPU kabhi free nahi hota tha.
+        Ab dono tab load hote hain jab user page par kuch kare (scroll / click / touch / key / mouse),
+        ya 8 second baad. Testing tools ko page jaldi "loaded" milta hai.
+    -->
     <script>
-        // 1. Official Zendesk event hooks
-        if (typeof zE === 'function') {
-            zE('webWidget:on', 'ready', function() {
-                zE('webWidget', 'open');
-            });
-            zE('webWidget:on', 'close', function() {
-                // If user closes it, reopen after 8 seconds for eye-catching attention
-                setTimeout(function() {
-                    try { zE('webWidget', 'open'); } catch(e) {}
-                }, 8000);
-            });
-        }
+        (function () {
+            // true = load ke baad chat EK dafa khud khule | false = sirf icon, user click kare to khule
+            var AUTO_OPEN_CHAT = true;
+            var ZENDESK_KEY = "8777e637-9ac3-4499-ae88-6312dcdd69a3"; // velotix widget
 
-        // 2. Retry loop: continuously attempts to open Zendesk until it is ready and open
-        var zendeskOpenInterval = setInterval(function() {
-            if (typeof zE === 'function') {
-                try {
-                    zE('webWidget', 'open');
-                } catch(e) {}
+            var started = false;
+
+            function loadScript(src, id, onload) {
+                var s = document.createElement("script");
+                if (id) s.id = id;
+                s.src = src;
+                s.async = true;
+                if (onload) s.onload = onload;
+                document.body.appendChild(s);
             }
-        }, 500);
 
-        // Once window is fully loaded, ensure it opens and ease the polling
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                if (typeof zE === 'function') {
-                    try { zE('webWidget', 'open'); } catch(e) {}
-                }
-                clearInterval(zendeskOpenInterval);
-            }, 5000);
-        });
-
-        // 3. Manual trigger for "Chat Now" buttons
-        function openLiveChat() {
-            if (typeof zE !== 'undefined') {
-                zE('webWidget', 'open');
+            function openChat() {
+                if (typeof window.zE !== "function") return;
+                try { zE("messenger", "open"); } catch (e) {} // naya Zendesk Messaging
+                try { zE("webWidget", "open"); } catch (e) {} // purana Classic Web Widget
             }
-        }
+
+            function startExtras() {
+                if (started) return;
+                started = true;
+
+                // 1) Favicon animation
+                loadScript("<?= cvg_url('assets/js/favicon-animate.js') ?>");
+
+                // 2) Zendesk — loop/setInterval nahi, sirf ek dafa
+                loadScript("https://static.zdassets.com/ekr/snippet.js?key=" + ZENDESK_KEY, "ze-snippet", function () {
+                    if (AUTO_OPEN_CHAT) setTimeout(openChat, 1500);
+                });
+            }
+
+            ["scroll", "click", "touchstart", "keydown", "mousemove"].forEach(function (ev) {
+                window.addEventListener(ev, startExtras, { once: true, passive: true });
+            });
+            window.addEventListener("load", function () {
+                setTimeout(startExtras, 8000);
+            });
+
+            // "Chat Now" buttons: zaroorat ho to Zendesk usi waqt load karke kholo
+            window.openLiveChat = function () {
+                if (typeof window.zE === "function") return openChat();
+                startExtras();
+                var tries = 0;
+                var t = setInterval(function () {
+                    tries++;
+                    if (typeof window.zE === "function") { clearInterval(t); openChat(); }
+                    else if (tries > 20) clearInterval(t);
+                }, 300);
+            };
+        })();
     </script>
 </body>
 
