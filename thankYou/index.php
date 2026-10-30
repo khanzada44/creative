@@ -1,9 +1,12 @@
 <?php
 $contact = [
-    'email'      => 'info@websdesignusa.com',
-    'phone'      => '(949) 620-5684',
-    'phone_link' => '(855) 677-4898',
+    'email'      => 'info@creativeconverge.com',   // pehle doosri company ka email tha (websdesignusa.com)
+    'phone'      => '(855) 677-4898',              // dikhne wala aur call hone wala number ab ek hi
+    'phone_link' => '+18556774898',                // tel: link ke liye sirf digits
 ];
+
+/* Zendesk chat — wahi key jo homepage par hai (har page par ek hi rakhein) */
+$zendeskKey = '8777e637-9ac3-4499-ae88-6312dcdd69a3';
 
 $tyHero = [
     'eyebrow' => 'Message received',
@@ -1015,7 +1018,7 @@ echo $cvgHead;
 
 <script>
     (function() {
-        var root = document.getElementById('cvg-thank-you');
+        var root = document.getElementById('cvg-thank-you'); // id main tag se match (pehle 'cvg-thankYou' tha, script chalti hi nahi thi)
         if (!root) return;
 
         /* countdown (only when redirect is on) */
@@ -1047,4 +1050,51 @@ echo $cvgHead;
     })();
 </script>
 
+<!-- Zendesk chat — thank you page par bhi (page load ke baad, speed par asar nahi) -->
+<script>
+    (function () {
+        var KEY = <?= json_encode($zendeskKey) ?>;
+        var started = false;
+        function loadZendesk() {
+            if (started || document.getElementById('ze-snippet')) return;
+            started = true;
+            var s = document.createElement('script');
+            s.id = 'ze-snippet';
+            s.async = true;
+            s.src = 'https://static.zdassets.com/ekr/snippet.js?key=' + KEY;
+            document.body.appendChild(s);
+        }
+        ['scroll', 'click', 'touchstart', 'keydown', 'mousemove'].forEach(function (ev) {
+            window.addEventListener(ev, loadZendesk, { once: true, passive: true });
+        });
+        window.addEventListener('load', function () { setTimeout(loadZendesk, 3000); });
+
+        // "Chat Now" buttons ke liye
+        window.openLiveChat = function () {
+            loadZendesk();
+            var tries = 0, t = setInterval(function () {
+                if (typeof window.zE === 'function') {
+                    clearInterval(t);
+                    try { zE('messenger', 'open'); } catch (e) {}
+                    try { zE('webWidget', 'open'); } catch (e) {}
+                } else if (++tries > 20) clearInterval(t);
+            }, 300);
+        };
+    })();
+</script>
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"> </script>
+<!-- End of velotix Zendesk Widget script -->
+
+<script>
+  // Page load/reload par chat window band rahe, sirf icon nazar aaye
+  (function closeZendeskOnLoad(tries) {
+    if (typeof window.zE === "function") {
+      try { zE("messenger", "close"); } catch (e) {}  // naya Zendesk Messaging
+      try { zE("webWidget", "close"); } catch (e) {}  // purana Classic Web Widget
+      return;
+    }
+    // Script abhi load ho rahi hai — 20 dafa tak (10 sec) intezar
+    if (tries < 20) setTimeout(function () { closeZendeskOnLoad(tries + 1); }, 500);
+  })(0);
+</script>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
