@@ -92,7 +92,7 @@ if (!function_exists('cvg_nav_on')) {
             <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>">Video Animation</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">Digital Marketing</a></li>
             <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>">Advance Combo Packages</a></li> -->
-            <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps-development') ?>">Mobile App</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps-development') ?>">Mobile App Development</a></li>
           </ul>
         </div>
       </div>
