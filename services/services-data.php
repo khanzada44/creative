@@ -131,7 +131,7 @@ function serviceFaqs($slug)
         ],
 
 
-        'web-developer-solutions' => [
+        'web-design-development' => [
             [
                 "question" => 'How can Creative Converge help if my business needs more than a basic website?',
                 "answer" => "Creative Converge can help plan and develop more specialized digital solutions, such as custom functionality, customer portals, dashboards, and web applications, depending on the project requirements. The starting point is understanding what your business needs the website or application to accomplish."
@@ -868,14 +868,14 @@ $services = [
         "faqItems" => serviceFaqs(''),
     ],
     [
-        "title" => "Web Development & Web Design",
-        "mata-title" => "Web Development Services Behind the Experience",
-        "mata-description" => "Power your online presence with professional web development services. We build secure, scalable digital experiences tailored to your business workflow.",
-        "slug" => "web-developer-solutions",
+        "title" => "Web Design & Development",
+        "meta-title" => "Web Development Services Behind the Experience",
+        "meta-description" => "Power your online presence with professional web development services. We build secure, scalable digital experiences tailored to your business workflow.",
+        "slug" => "web-design-development",
         "description" => "From business websites to complex digital platforms, Creative Converge turns ideas and designs into meaningful digital experiences. We bring brand strategy, visual direction, and user experience together to create websites that tell your story, capture attention, and guide visitors toward action. With clean implementation, practical functionality, responsive performance, and the right features for your business, we build digital experiences that work seamlessly and support your business goals.",
         "image" => "web-development.jpg",
         "bannerImage" => "assets/img/banner-web-development.webp",
-        "listTitle" => "Our Logo Design Services include:",
+        "listTitle" => "Our Web Design & Development Services include:",
         "list" => [
             "Custom Website Development",
             "eCommerce Development",
@@ -1013,7 +1013,7 @@ $services = [
                 "Content Management System (Custom)",
             ]),
         ],
-        "faqItems" => serviceFaqs('web-developer-solutions'),
+        "faqItems" => serviceFaqs('web-design-development'),
 
         "sub_services" => [
 

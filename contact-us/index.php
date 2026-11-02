@@ -252,48 +252,51 @@ echo $cvgHead;
 </main>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-<!-- Start of velotix Zendesk Widget script -->
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8777e637-9ac3-4499-ae88-6312dcdd69a3"></script>
-    <script>
-        // 1. Official Zendesk event hooks
-        if (typeof zE === 'function') {
-            zE('webWidget:on', 'ready', function() {
-                zE('webWidget', 'open');
-            });
-            zE('webWidget:on', 'close', function() {
-                // If user closes it, reopen after 8 seconds for eye-catching attention
-                setTimeout(function() {
-                    try { zE('webWidget', 'open'); } catch(e) {}
-                }, 8000);
-            });
-        }
+<!-- Zendesk chat — sirf EK baar load, sirf EK baar khule -->
+<script>
+  (function () {
+    var KEY = '8777e637-9ac3-4499-ae88-6312dcdd69a3';
+    var AUTO_OPEN = true;   // false = khud na khule, sirf icon dikhe
 
-        // 2. Retry loop: continuously attempts to open Zendesk until it is ready and open
-        var zendeskOpenInterval = setInterval(function() {
-            if (typeof zE === 'function') {
-                try {
-                    zE('webWidget', 'open');
-                } catch(e) {}
-            }
-        }, 500);
+    // Page par Zendesk pehle se lagi ho (header/footer se) to dobara mat lagao
+    if (window.__cvgZendesk) return;
+    window.__cvgZendesk = true;
 
-        // Once window is fully loaded, ensure it opens and ease the polling
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                if (typeof zE === 'function') {
-                    try { zE('webWidget', 'open'); } catch(e) {}
-                }
-                clearInterval(zendeskOpenInterval);
-            }, 5000);
-        });
+    var opened = false;
 
-        // 3. Manual trigger for "Chat Now" buttons
-        function openLiveChat() {
-            if (typeof zE !== 'undefined') {
-                zE('webWidget', 'open');
-            }
-        }
-    </script>
+    function openChat() {
+      if (typeof window.zE !== 'function') return false;
+      try { zE('messenger', 'open'); } catch (e) {}   // naya Zendesk Messaging
+      try { zE('webWidget', 'open'); } catch (e) {}   // purana Classic widget
+      return true;
+    }
+
+    // Zendesk ready hone tak intezar, phir sirf EK dafa kholo
+    function openOnce() {
+      if (opened || !AUTO_OPEN) return;
+      var tries = 0;
+      var t = setInterval(function () {
+        tries++;
+        if (openChat()) { opened = true; clearInterval(t); }
+        else if (tries > 20) clearInterval(t);
+      }, 500);
+    }
+
+    if (!document.getElementById('ze-snippet')) {
+      var s = document.createElement('script');
+      s.id = 'ze-snippet';
+      s.async = true;
+      s.src = 'https://static.zdassets.com/ekr/snippet.js?key=' + KEY;
+      s.onload = function () { setTimeout(openOnce, 1500); };
+      document.head.appendChild(s);
+    } else {
+      setTimeout(openOnce, 1500);
+    }
+
+    // "Chat Now" buttons ke liye
+    window.openLiveChat = function () { openChat(); };
+  })();
+</script>
 <script src="<?= cvg_url('assets/js/contact-us.js') ?>"></script>
 <script>
 /* ---------- Phone validation (contact form) ---------- */

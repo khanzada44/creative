@@ -88,6 +88,38 @@ $faqSchema = [
     <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
     <link rel="stylesheet" href="<?= cvg_url('assets/css/home-page-fome.css') ?>">
     <link rel="stylesheet" href="<?= cvg_url('assets/css/service-detail.css') ?>">
+    <style>
+        /* Pricing cards: aakhri line ke cards (jaise Customized) center mein aayein */
+        #svc-pricing-sec .pricing-container {
+            --pc-gap: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: var(--pc-gap);
+        }
+
+        #svc-pricing-sec .pricing-container > .pricing-card {
+            flex: 0 1 calc((100% - 2 * var(--pc-gap)) / 3);
+            min-width: 0;
+            box-sizing: border-box;
+            max-width: calc((100% - 2 * var(--pc-gap)) / 3);
+        }
+
+        @media (max-width: 900px) {
+            #svc-pricing-sec .pricing-container > .pricing-card {
+                flex-basis: calc((100% - var(--pc-gap)) / 2);
+                max-width: calc((100% - var(--pc-gap)) / 2);
+            }
+        }
+
+        @media (max-width: 600px) {
+            #svc-pricing-sec .pricing-container > .pricing-card {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
     <script>
         document.documentElement.classList.add('js');
     </script>

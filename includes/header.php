@@ -67,8 +67,8 @@ if (!function_exists('cvg_nav_on')) {
 
             <!-- Web Developer + flyout -->
             <li class="has-sub">
-              <a href="<?= cvg_url('services/service-detail.php?slug=web-developer-solutions') ?>" class="sub-trigger" aria-haspopup="true">
-                Web Development & Design
+              <a href="<?= cvg_url('services/service-detail.php?slug=web-design-development') ?>" class="sub-trigger" aria-haspopup="true">
+                Web Design & Development
                 <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="9 6 15 12 9 18"></polyline>
                 </svg>
@@ -150,12 +150,12 @@ if (!function_exists('cvg_nav_on')) {
         <li><a href="<?= cvg_url('services') ?>" class="panel-sub-link">All services</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=logo-design-solutions') ?>" class="panel-sub-link">Logo Design</a></li>
         <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>" class="panel-sub-link">Illustration Design</a></li> -->
-        <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>" class="panel-sub-link">Web Design</a></li>
+        <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>" class="panel-sub-link">Web Design</a></li> -->
 
         <!-- Web Developer (nested accordion) -->
         <li>
           <button type="button" class="panel-sub-btn panel-sub-link" id="panelDevBtn" aria-expanded="false">
-            Web Developer
+            Web Design & Development
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
