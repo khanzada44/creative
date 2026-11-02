@@ -84,7 +84,7 @@
         <div class="wcu-reveal-in">
           <div class="wcu-sub">
             <span class="wcu-sub-line"></span>
-            <span class="wcu-sub-text">a few words</span>
+            <span class="wcu-sub-text">A Few Words</span>
           </div>
         </div>
       </div>
