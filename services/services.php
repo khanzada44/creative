@@ -92,9 +92,8 @@ echo $cvgHead;
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-
-
-
+<title>Design, Web & Marketing Services in Dallas | Creative Converge</title>
+<meta name="description" content="Logo design, branding, websites, eCommerce, mobile apps, video animation and digital marketing from one Dallas agency. Plans start at $25. Get a free quote.">
 <main class="cvg-sp" id="cvg-services-page">
   <section class="cvg-sp-hero">
     <div class="cvg-sp-grid-bg" aria-hidden="true"></div>

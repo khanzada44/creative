@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 557 435" width="557" height="435" role="img" aria-labelledby="t">
+<title id="t">Mobile app design and development by Creative Converge</title>
+<defs>
+  <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+    <stop offset="0" stop-color="#125a48" stop-opacity=".55"/><stop offset=".55" stop-color="#0a2822" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#121c1a"/><stop offset="1" stop-color="#0b1211"/></linearGradient>
+  <linearGradient id="phoneBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b4745"/><stop offset="1" stop-color="#141b1a"/></linearGradient>
+  <linearGradient id="scr" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#13806c"/><stop offset="1" stop-color="#0a4b40"/></linearGradient>
+  <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a18cf6"/><stop offset="1" stop-color="#6a4fc4"/></linearGradient>
+  <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb48a"/><stop offset="1" stop-color="#e9763f"/></linearGradient>
+  <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff7df"/><stop offset="1" stop-color="#17b998"/></linearGradient>
+  <linearGradient id="yellow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e27a"/><stop offset="1" stop-color="#c9b42c"/></linearGradient>
+  <linearGradient id="btnO" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff9c66"/><stop offset="1" stop-color="#f07a45"/></linearGradient>
+  <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#2ee6c3" stroke-opacity=".06"/></pattern>
+  <filter id="sh" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter>
+  <clipPath id="winClip"><rect x="88" y="72" width="295" height="292" rx="18"/></clipPath>
+  <clipPath id="scrClip"><rect x="190" y="124" width="100" height="210" rx="17"/></clipPath>
+  <clipPath id="btnClip"><rect x="199" y="298" width="82" height="16" rx="8"/></clipPath>
+  <style>
+    text{font-family:Poppins,"Segoe UI","Helvetica Neue",Arial,sans-serif}
+    .lbl{font-size:7.5px;font-weight:700;letter-spacing:1.6px;fill:#2ee6c3}
+    .f1{animation:fl 6s ease-in-out infinite}
+    .f2{animation:fl 7s ease-in-out -2s infinite}
+    .f3{animation:fl 6.5s ease-in-out -4s infinite}
+    .f4{animation:fl 7.5s ease-in-out -1s infinite}
+    .ph{animation:fl2 8s ease-in-out infinite}
+    @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes fl2{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    .spin{transform-origin:236px 230px;animation:spin 40s linear infinite}
+    .spinR{transform-origin:236px 230px;animation:spin 60s linear infinite reverse}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .knob{animation:knob 4s ease-in-out infinite}
+    @keyframes knob{0%,40%{transform:translateX(0)}50%,90%{transform:translateX(-14px)}100%{transform:translateX(0)}}
+    .track{animation:track 4s ease-in-out infinite}
+    @keyframes track{0%,40%{fill:#1fd1b0}50%,90%{fill:#35423f}100%{fill:#1fd1b0}}
+    .dot{transform-origin:41px 160px;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(1.35)}}
+    .tile{animation:tile 4s ease-in-out infinite}
+    .t2{animation-delay:1s}.t3{animation-delay:2s}.t4{animation-delay:3s}
+    @keyframes tile{0%,20%,100%{opacity:1}10%{opacity:.55}}
+    .shine{animation:shine 3.2s ease-in-out infinite}
+    @keyframes shine{0%{transform:translateX(-50px)}60%,100%{transform:translateX(110px)}}
+    .arrow{stroke-dasharray:3 3;animation:dash 1s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-6}}
+    .m1,.m2,.m3{animation:mini 3s ease-in-out infinite}
+    .m2{animation-delay:1s}.m3{animation-delay:2s}
+    @keyframes mini{0%,30%,100%{stroke:#ffffff;stroke-opacity:.12}10%,20%{stroke:#2ee6c3;stroke-opacity:.9}}
+    .scan{animation:scan 5s ease-in-out infinite}
+    @keyframes scan{0%{transform:translateY(0);opacity:0}10%{opacity:.5}80%{opacity:.5}100%{transform:translateY(200px);opacity:0}}
+    .typing{animation:typing 3s ease-in-out infinite}
+    @keyframes typing{0%{transform:scaleX(.2)}40%,80%{transform:scaleX(1)}100%{transform:scaleX(.2)}}
+    .typing{transform-origin:218px 147px;transform-box:view-box}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+  </style>
+</defs>
+
+<circle cx="260" cy="220" r="230" fill="url(#glow)"/>
+
+<!-- ===== main window ===== -->
+<g class="ph">
+<g filter="url(#sh)">
+  <rect x="88" y="72" width="295" height="292" rx="18" fill="#0d1513" stroke="#fff" stroke-opacity=".07"/>
+</g>
+<g clip-path="url(#winClip)">
+  <rect x="88" y="102" width="295" height="262" fill="url(#grid)"/>
+  <rect x="88" y="72" width="295" height="30" fill="#111a18"/>
+  <line x1="88" y1="102" x2="383" y2="102" stroke="#fff" stroke-opacity=".05"/>
+</g>
+<circle cx="100" cy="87" r="3" fill="#ff7b6b"/><circle cx="111" cy="87" r="3" fill="#ffcf5c"/><circle cx="122" cy="87" r="3" fill="#2ee6c3"/>
+<text x="236" y="90" text-anchor="middle" font-size="7.5" font-weight="600" fill="#7f918d">app-prototype.fig</text>
+
+<!-- construction lines + rings -->
+<g stroke="#2ee6c3" stroke-opacity=".25" fill="none">
+  <line x1="108" y1="230" x2="363" y2="230"/><line x1="236" y1="108" x2="236" y2="358"/>
+  <line x1="148" y1="142" x2="324" y2="318"/><line x1="324" y1="142" x2="148" y2="318"/>
+</g>
+<circle class="spin" cx="236" cy="230" r="106" fill="none" stroke="#2ee6c3" stroke-opacity=".3" stroke-dasharray="3 5"/>
+<g class="spinR">
+  <circle cx="236" cy="230" r="76" fill="none" stroke="#2ee6c3" stroke-opacity=".28"/>
+  <circle cx="312" cy="230" r="2.5" fill="#2ee6c3"/>
+</g>
+
+<!-- phone -->
+<g filter="url(#sh)"><rect x="184" y="118" width="112" height="222" rx="22" fill="url(#phoneBody)"/></g>
+<rect x="190" y="124" width="100" height="210" rx="17" fill="url(#scr)"/>
+<g clip-path="url(#scrClip)">
+  <rect x="228" y="130" width="24" height="6" rx="3" fill="#0a100f"/>
+  <circle cx="206" cy="149" r="7" fill="url(#mint)"/>
+  <rect class="typing" x="218" y="145" width="44" height="4" rx="2" fill="#e6f5f1"/>
+  <rect x="218" y="152" width="28" height="4" rx="2" fill="#e6f5f1" opacity=".5"/>
+  <rect x="199" y="165" width="82" height="44" rx="10" fill="url(#purple)"/>
+  <rect x="207" y="173" width="40" height="4" rx="2" fill="#fff"/>
+  <rect x="207" y="181" width="58" height="4" rx="2" fill="#fff" opacity=".6"/>
+  <rect x="207" y="191" width="30" height="9" rx="4.5" fill="#fff" opacity=".9"/>
+  <rect class="tile" x="199" y="216" width="38" height="34" rx="9" fill="url(#orange)"/>
+  <rect class="tile t2" x="243" y="216" width="38" height="34" rx="9" fill="url(#mint)"/>
+  <rect class="tile t3" x="199" y="256" width="38" height="34" rx="9" fill="url(#yellow)"/>
+  <rect class="tile t4" x="243" y="256" width="38" height="34" rx="9" fill="#0a3a32" stroke="#fff" stroke-opacity=".12"/>
+  <path d="M212 226l7 7-7 7" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="262" cy="233" r="7" fill="none" stroke="#fff" stroke-width="3"/>
+  <rect x="207" y="268" width="18" height="3.5" rx="1.75" fill="#6b5e0a"/><rect x="207" y="275" width="12" height="3.5" rx="1.75" fill="#6b5e0a"/>
+  <path d="M255 273l5 5 10-10" stroke="#2ee6c3" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="199" y="298" width="82" height="16" rx="8" fill="#2ee6c3"/>
+  <g clip-path="url(#btnClip)"><rect class="shine" x="199" y="298" width="30" height="16" fill="url(#shine)"/></g>
+  <text x="240" y="308.5" text-anchor="middle" font-size="6" font-weight="700" fill="#06302a">Get Started</text>
+  <rect x="228" y="327" width="24" height="3" rx="1.5" fill="#fff" opacity=".55"/>
+  <rect class="scan" x="190" y="124" width="100" height="2" fill="#7ff7df" opacity=".5"/>
+</g>
+</g>
+
+<!-- ===== chip ===== -->
+<g class="f2">
+  <g filter="url(#sh)"><rect x="26" y="146" width="105" height="28" rx="14" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g>
+  <circle cx="41" cy="160" r="6" fill="#1fd1b0" opacity=".25" class="dot"/>
+  <circle cx="41" cy="160" r="3.5" fill="#1fd1b0"/>
+  <text x="52" y="163" font-size="8" font-weight="600" fill="#e7efed">iOS · Android</text>
+</g>
+
+<!-- ===== UI kit ===== -->
+<g class="f3">
+  <g filter="url(#sh)"><rect x="26" y="216" width="100" height="98" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g>
+  <text x="38" y="236" class="lbl">UI KIT</text>
+  <rect class="track" x="38" y="246" width="30" height="16" rx="8" fill="#1fd1b0"/>
+  <circle class="knob" cx="60" cy="254" r="6" fill="#fff"/>
+  <rect x="38" y="272" width="72" height="15" rx="7.5" fill="url(#btnO)"/>
+  <text x="74" y="281.8" text-anchor="middle" font-size="6.5" font-weight="700" fill="#fff">Book Now</text>
+  <text x="38" y="302" font-size="6.5" font-weight="600" fill="#d9e3e1">Touch-friendly UI</text>
+</g>
+
+<!-- ===== user flow ===== -->
+<g class="f1">
+  <g filter="url(#sh)"><rect x="313" y="30" width="123" height="72" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g>
+  <text x="325" y="50" class="lbl">USER FLOW</text>
+  <g>
+    <rect class="m1" x="325" y="60" width="20" height="32" rx="5" fill="none" stroke="#fff" stroke-opacity=".12"/>
+    <rect x="329" y="64" width="9" height="3" rx="1.5" fill="#2ee6c3"/><rect x="329" y="70" width="12" height="3" rx="1.5" fill="#3a4a47"/><rect x="329" y="76" width="7" height="3" rx="1.5" fill="#3a4a47"/>
+    <line class="arrow" x1="349" y1="76" x2="360" y2="76" stroke="#4c6a64" stroke-width="1"/><path d="M359 73.5l3 2.5-3 2.5z" fill="#4c6a64"/>
+    <rect class="m2" x="364" y="60" width="20" height="32" rx="5" fill="none" stroke="#fff" stroke-opacity=".12"/>
+    <rect x="368" y="64" width="9" height="3" rx="1.5" fill="#9b7bff"/><rect x="368" y="70" width="12" height="3" rx="1.5" fill="#3a4a47"/><rect x="368" y="76" width="7" height="3" rx="1.5" fill="#3a4a47"/>
+    <line class="arrow" x1="388" y1="76" x2="399" y2="76" stroke="#4c6a64" stroke-width="1"/><path d="M398 73.5l3 2.5-3 2.5z" fill="#4c6a64"/>
+    <rect class="m3" x="403" y="60" width="20" height="32" rx="5" fill="none" stroke="#fff" stroke-opacity=".12"/>
+    <rect x="407" y="64" width="9" height="3" rx="1.5" fill="#ff8a5b"/><rect x="407" y="70" width="12" height="3" rx="1.5" fill="#3a4a47"/><rect x="407" y="76" width="7" height="3" rx="1.5" fill="#3a4a47"/>
+  </g>
+</g>
+
+<!-- ===== platforms ===== -->
+<g class="f4">
+  <g filter="url(#sh)"><rect x="330" y="341" width="118" height="86" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g>
+  <text x="342" y="361" class="lbl">PLATFORMS</text>
+  <rect x="342" y="370" width="42" height="42" rx="7" fill="#00d4a3"/>
+  <rect x="358" y="376" width="10" height="17" rx="2.5" fill="none" stroke="#05332a" stroke-width="1.8"/><line x1="361.5" y1="389.5" x2="364.5" y2="389.5" stroke="#05332a" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="363" y="404" text-anchor="middle" font-size="6.5" font-weight="700" fill="#05332a">iOS</text>
+  <rect x="392" y="370" width="42" height="42" rx="7" fill="#eef1f0"/>
+  <rect x="408" y="376" width="10" height="17" rx="2.5" fill="none" stroke="#1b2322" stroke-width="1.8"/><line x1="411.5" y1="389.5" x2="414.5" y2="389.5" stroke="#1b2322" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="413" y="404" text-anchor="middle" font-size="6.5" font-weight="700" fill="#1b2322">Android</text>
+</g>
+</svg>

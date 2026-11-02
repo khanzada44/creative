@@ -32,8 +32,8 @@ function h($value)
 
 $title            = $service['title'] ?? 'Our Services';
 $description      = $service['description'] ?? '';
-$matatitle        = $service['mata-title'] ?? 'Our Services';
-$matadescription  = $service['mata-description'] ?? '';
+$matatitle        = $service['meta-title'] ?? $service['mata-title'] ?? ($title . ' | Creative Converge');
+$matadescription  = $service['meta-description'] ?? $service['mata-description'] ?? $description;
 $subtitle         = $service['subtitle'] ?? $description;
 $introTitle       = $service['introTitle'] ?? $title;
 $introText        = $service['introText'] ?? $description;
