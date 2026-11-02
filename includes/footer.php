@@ -273,11 +273,11 @@
       <div class="footer-col">
         <h4>Support</h4>
         <ul>
-          <li><a href="<?= cvg_url('Terms&Conditions') ?>">Terms &amp; Conditions</a></li>
+          <li><a href="<?= cvg_url('terms-conditions') ?>">Terms &amp; Conditions</a></li>
           <li><a href="<?= cvg_url('privacy-policy') ?>">Privacy Policy</a></li>
           <li><a href="<?= cvg_url('pricing') ?>">Payments</a></li>
-          <li><a href="<?= cvg_url('Terms&Conditions') ?>">Refund</a></li>
-          <li><a href="<?= cvg_url('Terms&Conditions') ?>">Installation</a></li>
+          <li><a href="<?= cvg_url('terms-conditions') ?>">Refund</a></li>
+          <li><a href="<?= cvg_url('terms-conditions') ?>">Installation</a></li>
         </ul>
       </div>
 
@@ -335,6 +335,7 @@
         <h4>Hit us up:</h4>
         <ul>
           <li><a href="mailto:info@creativeconverge.com">info@creativeconverge.com</a></li>
+          <li><a href="tel:(855) 677-4898">(855) 677-4898</a></li>
         </ul>
       </div>
     </div>

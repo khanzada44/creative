@@ -77,6 +77,53 @@ echo $cvgHead;
 <link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
 <link rel="stylesheet" href="<?= cvg_url('assets/css/footer.css') ?>">
 <link rel="stylesheet" href="<?= cvg_url('assets/css/about-page.css') ?>">
+<style>
+    /* Ribbon (lehrati line) hamesha content ke PEECHE rahe, text ke upar nahi */
+    #cvg-about-page {
+        position: relative;
+        isolation: isolate;
+    }
+
+    #cvg-about-page .abx-ribbon {
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+
+    /* Har section ka text/content line se upar */
+    #cvg-about-page .abx-wrap {
+        position: relative;
+        z-index: 2;
+    }
+
+    #cvg-about-page .abx-tunnel-stage {
+        z-index: 2;
+    }
+
+    #cvg-about-page .abx-video-toggle {
+        z-index: 3;
+    }
+
+    /* Mint text jab mint line ke upar aaye to gayab na ho:
+       letters ke gird dark outline (black background par nazar nahi aata) */
+    #cvg-about-page .abx-mint,
+    #cvg-about-page .abx-serif,
+    #cvg-about-page .abx-h2 span,
+    #cvg-about-page .abx-skills-statement span,
+    #cvg-about-page .abx-cta-title span {
+        -webkit-text-stroke: 4px #0A0A0A;
+        paint-order: stroke fill;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, .55);
+    }
+
+    /* Safed headings bhi halki light line par saaf parhi jayein */
+    #cvg-about-page .abx-h2,
+    #cvg-about-page .abx-hero-title,
+    #cvg-about-page .abx-skills-statement,
+    #cvg-about-page .abx-statement,
+    #cvg-about-page .abx-cta-title {
+        text-shadow: 0 2px 18px rgba(0, 0, 0, .5);
+    }
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap">

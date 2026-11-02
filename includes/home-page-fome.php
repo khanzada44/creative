@@ -183,20 +183,20 @@
     box-sizing: border-box;
   }
 
-  /* ---------- Left side ---------- */
+  /* ---------- Form side (ab RIGHT par) ---------- */
   .cvg-consult .cvg-consult-left {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 110px 70px 100px 40px;
+    justify-content: flex-start;
+    padding: 110px 40px 100px 70px;
   }
 
   .cvg-consult .cvg-consult-glow {
     position: absolute;
     width: 420px;
     height: 420px;
-    left: 10%;
+    right: 10%;
     top: 20%;
     border-radius: 50%;
     background: var(--cvg-mint);
@@ -374,8 +374,9 @@
     transform: translate(3px, -3px);
   }
 
-  /* ---------- Right side: photo ---------- */
+  /* ---------- Photo side (ab LEFT par) ---------- */
   .cvg-consult .cvg-consult-right {
+    order: -1;
     position: relative;
     min-height: 640px;
     overflow: hidden;
@@ -399,13 +400,13 @@
     user-select: none;
   }
 
-  /* Fades the photo into the black on the left, plus a soft green tint at the bottom */
+  /* Photo ko RIGHT side ke black mein fade karta hai, neeche halka green tint */
   .cvg-consult .cvg-consult-right::after {
     content: "";
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(90deg, #0A0A0A 0%, rgba(10, 10, 10, 0) 30%),
+      linear-gradient(270deg, #0A0A0A 0%, rgba(10, 10, 10, 0) 30%),
       linear-gradient(0deg, rgba(0, 33, 27, 0.55) 0%, rgba(0, 33, 27, 0) 50%);
     pointer-events: none;
   }
@@ -413,7 +414,7 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 1024px) {
     .cvg-consult .cvg-consult-left {
-      padding: 90px 40px 80px 24px;
+      padding: 90px 24px 80px 40px;
     }
 
     .cvg-consult .cvg-consult-title {

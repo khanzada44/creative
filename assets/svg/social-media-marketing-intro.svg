@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 557 435" width="557" height="435" role="img" aria-labelledby="t">
+<title id="t">Social media marketing by Creative Converge</title>
+<defs>
+<radialGradient id="glow" cx="50%" cy="45%" r="50%"><stop offset="0" stop-color="#125a48" stop-opacity=".55"/><stop offset=".55" stop-color="#0a2822" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#121c1a"/><stop offset="1" stop-color="#0b1211"/></linearGradient>
+<linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a18cf6"/><stop offset="1" stop-color="#6a4fc4"/></linearGradient>
+<linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb48a"/><stop offset="1" stop-color="#e9763f"/></linearGradient>
+<linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff7df"/><stop offset="1" stop-color="#17b998"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe58a"/><stop offset="1" stop-color="#c98a12"/></linearGradient>
+<pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#2ee6c3" stroke-opacity=".06"/></pattern>
+<filter id="sh" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter>
+<clipPath id="winClip"><rect x="88" y="72" width="295" height="292" rx="18"/></clipPath>
+
+<style>
+text{font-family:Poppins,"Segoe UI","Helvetica Neue",Arial,sans-serif}
+.lbl{font-size:7.5px;font-weight:700;letter-spacing:1.6px;fill:#2ee6c3}
+.f1{animation:fl 6s ease-in-out infinite}.f2{animation:fl 7s ease-in-out -2s infinite}.f3{animation:fl 6.5s ease-in-out -4s infinite}.f4{animation:fl 7.5s ease-in-out -1s infinite}
+.ph{animation:fl2 8s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes fl2{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.dot{animation:pulse 2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.grow{transform-box:fill-box;transform-origin:bottom;animation:grow 3s ease-in-out infinite}
+.g2{animation-delay:.2s}.g3{animation-delay:.4s}.g4{animation-delay:.6s}.g5{animation-delay:.8s}
+@keyframes grow{0%{transform:scaleY(.25)}35%,80%{transform:scaleY(1)}100%{transform:scaleY(.25)}}
+
+.beat{transform-box:fill-box;transform-origin:center;animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.3)}30%{transform:scale(1)}}
+.hf{animation:hf 3s ease-out infinite;opacity:0}.hf2{animation-delay:1s}.hf3{animation-delay:2s}
+@keyframes hf{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(var(--dx),-70px);opacity:0}}
+.cal{animation:cal 4.8s linear infinite;fill:#22302c}
+@keyframes cal{0%,8%{fill:#2ee6c3}12%,100%{fill:#22302c}}
+.av{transform-box:fill-box;transform-origin:center;animation:pop 4s ease-in-out infinite}
+.av2{animation-delay:.25s}.av3{animation-delay:.5s}
+@keyframes pop{0%,10%{transform:scale(0)}20%,85%{transform:scale(1)}95%,100%{transform:scale(0)}}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+</defs>
+<circle cx="260" cy="220" r="230" fill="url(#glow)"/>
+<g class="ph"><g filter="url(#sh)"><rect x="88" y="72" width="295" height="292" rx="18" fill="#0d1513" stroke="#fff" stroke-opacity=".07"/></g>
+<g clip-path="url(#winClip)"><rect x="88" y="102" width="295" height="262" fill="url(#grid)"/><rect x="88" y="72" width="295" height="30" fill="#111a18"/><line x1="88" y1="102" x2="383" y2="102" stroke="#fff" stroke-opacity=".05"/>
+<rect x="150" y="114" width="172" height="236" rx="16" fill="#12201d" stroke="#fff" stroke-opacity=".08"/>
+<circle cx="168" cy="132" r="9" fill="url(#mint)"/><rect x="182" y="127" width="56" height="5" rx="2.5" fill="#e6f5f1"/><rect x="182" y="135" width="34" height="4" rx="2" fill="#7f918d"/>
+<circle cx="302" cy="132" r="1.6" fill="#7f918d"/><circle cx="296" cy="132" r="1.6" fill="#7f918d"/><circle cx="308" cy="132" r="1.6" fill="#7f918d"/>
+<rect x="160" y="150" width="152" height="118" rx="10" fill="url(#purple)"/>
+<circle cx="200" cy="185" r="14" fill="#fff" opacity=".45"/><path d="M160 250l40-36 26 22 28-32 58 50v4a10 10 0 01-10 10H170a10 10 0 01-10-10z" fill="#fff" opacity=".3"/>
+<g transform="translate(166 280)"><path class="beat" d="M8 14S0 9 0 4a4 4 0 018-1 4 4 0 018 1c0 5-8 10-8 10z" fill="#ff6b81"/></g>
+<path d="M190 281h14a3 3 0 013 3v6a3 3 0 01-3 3h-8l-4 3v-3h-2a3 3 0 01-3-3v-6a3 3 0 013-3z" fill="none" stroke="#cfe0dc" stroke-width="1.6"/>
+<g fill="none" stroke="#cfe0dc" stroke-width="1.6"><circle cx="220" cy="287" r="2.5"/><circle cx="230" cy="282" r="2.5"/><circle cx="230" cy="292" r="2.5"/><path d="M222 286l6-3M222 288l6 3"/></g>
+<text x="310" y="291" text-anchor="end" font-size="7" font-weight="700" fill="#e6f5f1">1.2k</text>
+<rect x="166" y="304" width="130" height="5" rx="2.5" fill="#cfe0dc" opacity=".8"/><rect x="166" y="314" width="96" height="5" rx="2.5" fill="#7f918d"/>
+<rect x="166" y="328" width="60" height="12" rx="6" fill="#2ee6c3" opacity=".9"/><text x="196" y="336.5" text-anchor="middle" font-size="6" font-weight="700" fill="#06302a">#YourBrand</text>
+<g class="hf " style="--dx:-14px"><path transform="translate(168 270)" d="M6 11S0 7 0 3a3 3 0 016-1 3 3 0 016 1c0 4-6 8-6 8z" fill="#ff6b81"/></g><g class="hf hf2" style="--dx:10px"><path transform="translate(176 270)" d="M6 11S0 7 0 3a3 3 0 016-1 3 3 0 016 1c0 4-6 8-6 8z" fill="#ff9b5c"/></g><g class="hf hf3" style="--dx:-4px"><path transform="translate(170 270)" d="M6 11S0 7 0 3a3 3 0 016-1 3 3 0 016 1c0 4-6 8-6 8z" fill="#ff6b81"/></g></g>
+<circle cx="100" cy="87" r="3" fill="#ff7b6b"/><circle cx="111" cy="87" r="3" fill="#ffcf5c"/><circle cx="122" cy="87" r="3" fill="#2ee6c3"/>
+<text x="236" y="90" text-anchor="middle" font-size="7.5" font-weight="600" fill="#7f918d">content-calendar.fig</text></g><g class="f2"><g filter="url(#sh)"><rect x="26" y="146" width="110" height="28" rx="14" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><circle class="dot" cx="41" cy="160" r="5" fill="#1fd1b0" opacity=".3"/><circle cx="41" cy="160" r="3.5" fill="#1fd1b0"/><text x="52" y="163" font-size="8" font-weight="600" fill="#e7efed">Post scheduled ✓</text></g><g class="f3"><g filter="url(#sh)"><rect x="26" y="216" width="100" height="98" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><text x="38" y="236" class="lbl">CALENDAR</text><rect class="cal" style="animation-delay:0.0s" x="38" y="246" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:0.4s" x="57" y="246" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:0.8s" x="76" y="246" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:1.2000000000000002s" x="95" y="246" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:1.6s" x="38" y="262" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:2.0s" x="57" y="262" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:2.4000000000000004s" x="76" y="262" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:2.8000000000000003s" x="95" y="262" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:3.2s" x="38" y="278" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:3.6s" x="57" y="278" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:4.0s" x="76" y="278" width="14" height="11" rx="3"/><rect class="cal" style="animation-delay:4.4s" x="95" y="278" width="14" height="11" rx="3"/><text x="38" y="306" font-size="6.5" font-weight="600" fill="#d9e3e1">12 posts planned</text></g><g class="f1"><g filter="url(#sh)"><rect x="313" y="30" width="123" height="72" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><text x="325" y="50" class="lbl">ENGAGEMENT</text><text x="424" y="50" text-anchor="end" font-size="8" font-weight="800" fill="#2ee6c3">+24%</text><rect class="grow g1" x="327" y="76" width="11" height="14" rx="3" fill="#2ee6c3"/><rect class="grow g2" x="346" y="68" width="11" height="22" rx="3" fill="#9b7bff"/><rect class="grow g3" x="365" y="72" width="11" height="18" rx="3" fill="#ff9b5c"/><rect class="grow g4" x="384" y="62" width="11" height="28" rx="3" fill="#2ee6c3"/><rect class="grow g5" x="403" y="56" width="11" height="34" rx="3" fill="#2ee6c3"/></g><g class="f4"><g filter="url(#sh)"><rect x="330" y="341" width="118" height="86" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><text x="342" y="361" class="lbl">NEW FOLLOWERS</text><g class="av "><circle cx="354" cy="389" r="12" fill="url(#mint)" stroke="#0b1211" stroke-width="2"/><circle cx="354" cy="386" r="4" fill="#fff" opacity=".9"/><path d="M348 395a6 5 0 0112 0" fill="#fff" opacity=".9"/></g><g class="av av2"><circle cx="372" cy="389" r="12" fill="url(#orange)" stroke="#0b1211" stroke-width="2"/><circle cx="372" cy="386" r="4" fill="#fff" opacity=".9"/><path d="M366 395a6 5 0 0112 0" fill="#fff" opacity=".9"/></g><g class="av av3"><circle cx="390" cy="389" r="12" fill="url(#purple)" stroke="#0b1211" stroke-width="2"/><circle cx="390" cy="386" r="4" fill="#fff" opacity=".9"/><path d="M384 395a6 5 0 0112 0" fill="#fff" opacity=".9"/></g><text x="408" y="392" font-size="9" font-weight="800" fill="#e6f5f1">+2.4k</text><text x="342" y="416" font-size="6" fill="#7f918d">this month</text></g></svg>

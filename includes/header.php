@@ -86,11 +86,23 @@ if (!function_exists('cvg_nav_on')) {
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=website-maintenance') ?>">Website Maintenance</a></li>
               </ul>
             </li>
+            <li class="has-sub">
+              <a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>" class="sub-trigger" aria-haspopup="true">
+                Digital Marketing
+                <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+              </a>
+              <ul class="services-submenu">
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=social-media-marketing') ?>">Social Media Marketing</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-marketing') ?>">Search Engine Marketing</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=pay-per-click') ?>">Pay Per Click (PPC)</a></li>
+              </ul>
+            </li>
 
             <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>">Branding</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>">Ecommerce Website</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>">Video Animation</a></li>
-            <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">Digital Marketing</a></li>
             <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>">Advance Combo Packages</a></li> -->
             <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps-development') ?>">Mobile App Development</a></li>
           </ul>
@@ -173,11 +185,22 @@ if (!function_exists('cvg_nav_on')) {
             <li><a href="<?= cvg_url('services/service-detail.php?slug=website-maintenance') ?>">Website Maintenance</a></li>
           </ul>
         </li>
-
+            <li class="has-sub">
+              <a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>" class="sub-trigger" aria-haspopup="true">
+                Digital Marketing
+                <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+              </a>
+              <ul class="services-submenu">
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=social-media-marketing') ?>">Social Media Marketing</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-marketing') ?>">Search Engine Marketing</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=pay-per-click') ?>">Pay Per Click (PPC)</a></li>
+              </ul>
+            </li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>" class="panel-sub-link">Branding</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>" class="panel-sub-link">Video Animation</a></li>
-        <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>" class="panel-sub-link">Digital Marketing</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>" class="panel-sub-link">Advance Combo Packages</a></li>
       </ul>
     </li>

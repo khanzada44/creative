@@ -12,7 +12,7 @@ $services = [
   ['Illustration Design',     cvg_url('services/service-detail.php?slug=illustration-design'),    'illustration', "When stock visuals all look alike, your message gets lost. Get our custom illustrations  which give your brand visuals competitors can't simply copy."],
   ['Branding',                cvg_url('services/service-detail.php?slug=branding'),               'branding',     'Growing Your Business but Still Looking Small? Build a strong brand identity with us that earns trust and skyrockets your business growth.'],
   ['Digital Marketing',       cvg_url('services/service-detail.php?slug=digital-marketing'),      'marketing',    'Losing Customers to Complicated Experiences? We design intuitive mobile apps that reduce friction, simplify everyday actions, and make repeat interactions easier.'],
-  // ['Mobile Apps',             cvg_url('services/service-detail.php?slug=mobile-apps'),            'mobile',       'iOS and Android apps your users will love.'],
+  ['Mobile Apps Development',             cvg_url('services/service-detail.php?slug=mobile-apps-development'),            'mobile',       "An app shouldn't create another problem for people to figure out. It should make something easier, faster, or more useful than it was before. That's why we look beyond the screen"],
   ['Video Animations',        cvg_url('services/service-detail.php?slug=video-animation-services'), 'video',      "Great Products, but People Just Don't Get Them? Turn your product features  into easy-to-follow animations that demonstrate value and help people understand why they need what you offer."],
 ];
 

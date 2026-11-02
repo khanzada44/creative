@@ -1,22 +1,36 @@
 <?php
+/* ================= Ticker messages =================
+   [ text, link, icon, highlight ]
+   icon options: tag, spark, trophy, gift, layers, shield, phone, star
+   highlight = true  → gold rang mein (offer ke liye)                 */
 $tbMessages = [
-    ['White-label web design for agencies, under your brand', 'contact-us/'],
-    ['Free consultation: we reply within one business day',  'contact-us/'],
-    ['Logo design from $99',                                   'pricing/'],
-    ['Websites from $299',                                     'pricing/'],
-    ['354+ projects delivered for 235+ happy clients',         'cases/'],
+    ['Black Friday: 25% off all packages, ends Nov 30',      'pricing/',          'tag',    true],
+    ['From concept to click',                                 'services/',         'spark',  false],
+    ['354+ projects. 235+ happy clients.',                    'cases/',            'trophy', false],
+    ['Free logo with every website package',                  'pricing/',          'gift',   false],
+    ['Design, development, and marketing under one roof',     'services/',         'layers', false],
+    ['You own every pixel. No hidden fees.',                  'pricing/',          'shield', false],
+    ["Got an idea? Let's talk today at (855) 677-4898",      'tel:+18556774898',  'phone',  false],
 ];
 
+/* ---------- Black Friday offer ----------
+   Is date ke baad offer wali line, badge aur countdown khud hat jayenge */
+$tbOfferEnds  = '2026-11-30 23:59:59';
+$tbOfferZone  = 'America/Chicago';      /* Dallas time */
+$tbOfferBadge = 'Black Friday';
+$tbOfferCta   = ['Get 25% off', 'pricing/'];
+
 /* ---------- Right side ---------- */
+$tbPhone      = ['(855) 677-4898', 'tel:+18556774898'];
 
 /* Scroll speed in seconds for one full loop (bigger = slower) */
-$tbSpeed = 40;
+$tbSpeed = 60;
 
 /* Keep the bar fixed at the top of the screen while scrolling (true / false) */
 $tbSticky = true;
 
 /* Pause the moving text when the mouse is over it (true / false) */
-$tbPauseOnHover = false;
+$tbPauseOnHover = true;
 
 /* Show a close (×) button. Once closed, the bar stays hidden for this visitor for 1 day */
 $tbClosable = false;
@@ -48,27 +62,81 @@ $tbUrl = function ($p) use ($siteUrl) {
     return rtrim($siteUrl, '/') . '/' . ltrim($p, '/');
 };
 
+/* Offer abhi chal raha hai? (server time se) */
+$tbOfferEndTs = 0;
+try {
+    $tbOfferEndTs = (new DateTime($tbOfferEnds, new DateTimeZone($tbOfferZone)))->getTimestamp();
+} catch (Exception $e) {
+}
+$tbOfferLive = $tbOfferEndTs > time();
+if (!$tbOfferLive) {
+    $tbMessages = array_values(array_filter($tbMessages, function ($m) {
+        return empty($m[3]);
+    }));
+}
+
+$tbIcons = [
+    'tag'    => '<path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
+    'spark'  => '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+    'trophy' => '<path d="M8 4h8v5a4 4 0 01-8 0z"/><path d="M8 6H5a3 3 0 003 4M16 6h3a3 3 0 01-3 4M12 13v4M8 21h8M10 17h4v4h-4z"/>',
+    'gift'   => '<rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v8h14v-8M12 8v13M12 8S10.5 3 8 3.5 7 8 12 8zM12 8s1.5-5 4-4.5S17 8 12 8z"/>',
+    'layers' => '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5"/>',
+    'shield' => '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+    'phone'  => '<path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/>',
+    'star'   => '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+];
+$tbIcon = function ($name, $cls = 'cvg-tb-ic') use ($tbIcons) {
+    $p = $tbIcons[$name] ?? $tbIcons['star'];
+    return '<svg class="' . $cls . '" viewBox="0 0 24 24" aria-hidden="true">' . $p . '</svg>';
+};
 ?>
 <?php if ($tbSticky): ?><div class="cvg-tb-spacer" id="cvg-topbar-spacer" aria-hidden="true"></div><?php endif; ?>
 <div class="cvg-tb<?= $tbSticky ? ' cvg-tb--sticky' : '' ?><?= $tbPauseOnHover ? ' cvg-tb--pause' : '' ?>" id="cvg-topbar" role="region" aria-label="Announcements" style="--tb-speed:<?= (int) $tbSpeed ?>s">
+
+    <?php if ($tbOfferLive): ?>
+        <a class="cvg-tb-badge" href="<?= cvg_tb_e($tbUrl($tbOfferCta[1])) ?>" data-tb-ends="<?= (int) $tbOfferEndTs ?>">
+        
+            <?= cvg_tb_e($tbOfferBadge) ?>
+            <span class="cvg-tb-count" data-tb-count aria-label="Offer ends in"></span>
+        </a>
+    <?php endif; ?>
 
     <div class="cvg-tb-marquee">
         <div class="cvg-tb-track">
             <?php for ($copy = 0; $copy < 2; $copy++): ?>
                 <ul class="cvg-tb-set" <?= $copy ? ' aria-hidden="true"' : '' ?>>
-                    <?php foreach ($tbMessages as $m): $href = $tbUrl($m[1] ?? ''); ?>
-                        <li>
-
+                    <?php foreach ($tbMessages as $m):
+                        $href = $tbUrl($m[1] ?? '');
+                        $hot  = !empty($m[3]);
+                        $inner = $tbIcon($m[2] ?? 'star') . '<span class="cvg-tb-txt">' . cvg_tb_e($m[0]) . '</span>';
+                    ?>
+                        <li class="<?= $hot ? 'cvg-tb-hot' : '' ?>">
                             <?php if ($href !== ''): ?>
-                                <a href="<?= cvg_tb_e($href) ?>" <?= $copy ? ' tabindex="-1"' : '' ?>><?= cvg_tb_e($m[0]) ?></a>
+                                <a href="<?= cvg_tb_e($href) ?>" <?= $copy ? ' tabindex="-1"' : '' ?>><?= $inner ?></a>
                             <?php else: ?>
-                                <span><?= cvg_tb_e($m[0]) ?></span>
+                                <span class="cvg-tb-item"><?= $inner ?></span>
                             <?php endif; ?>
+                            <span class="cvg-tb-sep" aria-hidden="true">✦</span>
                         </li>
                     <?php endforeach; ?>
                 </ul>
             <?php endfor; ?>
         </div>
+    </div>
+
+    <div class="cvg-tb-side">
+        <a class="cvg-tb-phone" href="<?= cvg_tb_e($tbPhone[1]) ?>">
+            <?= $tbIcon('phone', '') ?><?= cvg_tb_e($tbPhone[0]) ?>
+        </a>
+        <?php if ($tbOfferLive): ?>
+            <a class="cvg-tb-cta" href="<?= cvg_tb_e($tbUrl($tbOfferCta[1])) ?>">
+                <?= cvg_tb_e($tbOfferCta[0]) ?>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
+            </a>
+        <?php endif; ?>
+        <?php if ($tbClosable): ?>
+            <button type="button" class="cvg-tb-close" aria-label="Close announcement">×</button>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -78,13 +146,14 @@ $tbUrl = function ($p) use ($siteUrl) {
         --tb-mint-l: #5FF0C8;
         --tb-ink: #04342C;
         --tb-text: #F2F5F4;
+        --tb-gold: #FFC94D;
         position: relative;
         z-index: 1001;
         display: flex;
         align-items: center;
-        gap: 18px;
+        gap: 16px;
         height: 42px;
-        padding: 0 18px 0 16px;
+        padding: 0 16px;
         overflow: hidden;
         box-sizing: border-box;
         background: radial-gradient(70% 300% at 12% 10%, rgba(28, 197, 169, .45) 0%, rgba(28, 197, 169, 0) 60%), linear-gradient(100deg, rgb(3, 134, 111) 0%, rgb(0, 67, 55) 48%, rgb(0, 33, 27) 100%);
@@ -112,84 +181,91 @@ $tbUrl = function ($p) use ($siteUrl) {
         text-decoration: none
     }
 
-    /* "New" pill */
+    /* ---------- Black Friday badge (left) ---------- */
     .cvg-tb .cvg-tb-badge {
         flex: none;
         display: inline-flex;
         align-items: center;
-        gap: 7px;
-        height: 24px;
-        padding: 0 11px;
+        gap: 8px;
+        height: 26px;
+        padding: 0 12px 0 10px;
         border-radius: 999px;
         background: #0A0A0A;
-        color: var(--tb-mint-l);
+        border: 1px solid rgba(255, 201, 77, .35);
+        color: var(--tb-gold);
         font-size: 11px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: .12em;
-        text-transform: uppercase
+        text-transform: uppercase;
+        transition: border-color .25s, transform .25s
+    }
+
+    .cvg-tb .cvg-tb-badge:hover {
+        border-color: var(--tb-gold);
+        transform: translateY(-1px)
     }
 
     .cvg-tb .cvg-tb-dot {
+        position: relative;
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: var(--tb-mint);
+        background: var(--tb-gold)
+    }
+
+    .cvg-tb .cvg-tb-dot::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: var(--tb-gold);
         animation: cvgTbPulse 1.8s ease-out infinite
     }
 
     @keyframes cvgTbPulse {
         0% {
-            
+            transform: scale(1);
+            opacity: .8
         }
 
         100% {
-            
+            transform: scale(3);
+            opacity: 0
         }
     }
 
-    /* Moving text */
+    .cvg-tb .cvg-tb-count {
+        padding-left: 8px;
+        border-left: 1px solid rgba(255, 255, 255, .18);
+        color: #E6FBF5;
+        font-weight: 600;
+        letter-spacing: .04em;
+        text-transform: none;
+        font-variant-numeric: tabular-nums
+    }
+
+    .cvg-tb .cvg-tb-count:empty {
+        display: none
+    }
+
+    /* ---------- Moving text ---------- */
     .cvg-tb .cvg-tb-marquee {
         flex: 1;
         min-width: 0;
         overflow: hidden;
-        -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-        mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)
     }
 
     .cvg-tb .cvg-tb-track {
         display: flex;
         width: max-content;
-        animation: cvgTbMove var(--tb-speed, 40s) linear infinite
+        animation: cvgTbMove var(--tb-speed, 60s) linear infinite
     }
 
     .cvg-tb.cvg-tb--pause:hover .cvg-tb-track,
     .cvg-tb.cvg-tb--pause:focus-within .cvg-tb-track {
         animation-play-state: paused
-    }
-
-    /* Always on top while scrolling */
-    .cvg-tb.cvg-tb--sticky {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 2147483000 !important;
-        transform: none !important
-    }
-
-    /* Keep it fixed even if the theme sets a position on it */
-    #cvg-topbar.cvg-tb--sticky {
-        position: fixed !important;
-        top: 0 !important
-    }
-
-    .cvg-tb-spacer {
-        height: 42px;
-        transition: height .35s ease
-    }
-
-    .cvg-tb-spacer.cvg-tb--closed {
-        height: 0
     }
 
     @keyframes cvgTbMove {
@@ -209,9 +285,9 @@ $tbUrl = function ($p) use ($siteUrl) {
     .cvg-tb .cvg-tb-set li {
         display: inline-flex;
         align-items: center;
-        gap: 14px;
+        gap: 22px;
         margin: 0;
-        padding: 0 14px;
+        padding: 0 0 0 22px;
         white-space: nowrap
     }
 
@@ -220,25 +296,98 @@ $tbUrl = function ($p) use ($siteUrl) {
     }
 
     .cvg-tb .cvg-tb-set a,
-    .cvg-tb .cvg-tb-set span {
+    .cvg-tb .cvg-tb-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         color: #E6FBF5;
         transition: color .25s
     }
 
     .cvg-tb .cvg-tb-set a:hover {
-        color: var(--tb-mint-l);
+        color: var(--tb-mint-l)
+    }
+
+    .cvg-tb .cvg-tb-set a:hover .cvg-tb-txt {
         text-decoration: underline;
         text-underline-offset: 3px
     }
 
-    .cvg-tb .cvg-tb-star {
+    .cvg-tb .cvg-tb-ic {
         flex: none;
-        width: 11px;
-        height: 11px;
-        fill: var(--tb-mint-l)
+        width: 15px;
+        height: 15px;
+        fill: none;
+        stroke: var(--tb-mint-l);
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round
     }
 
-    /* Right side */
+    .cvg-tb .cvg-tb-sep {
+        color: var(--tb-mint);
+        font-size: 11px;
+        opacity: .8
+    }
+
+    /* Offer line: gold + halki chamak */
+    .cvg-tb .cvg-tb-hot a,
+    .cvg-tb .cvg-tb-hot .cvg-tb-item {
+        color: var(--tb-gold);
+        font-weight: 700
+    }
+
+    .cvg-tb .cvg-tb-hot .cvg-tb-ic {
+        stroke: var(--tb-gold);
+        animation: cvgTbWiggle 2.4s ease-in-out infinite
+    }
+
+    @keyframes cvgTbWiggle {
+
+        0%,
+        70%,
+        100% {
+            transform: rotate(0)
+        }
+
+        78% {
+            transform: rotate(-14deg)
+        }
+
+        86% {
+            transform: rotate(12deg)
+        }
+
+        94% {
+            transform: rotate(-6deg)
+        }
+    }
+
+    /* Always on top while scrolling */
+    .cvg-tb.cvg-tb--sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2147483000 !important;
+        transform: none !important
+    }
+
+    #cvg-topbar.cvg-tb--sticky {
+        position: fixed !important;
+        top: 0 !important
+    }
+
+    .cvg-tb-spacer {
+        height: 42px;
+        transition: height .35s ease
+    }
+
+    .cvg-tb-spacer.cvg-tb--closed {
+        height: 0
+    }
+
+    /* ---------- Right side ---------- */
     .cvg-tb .cvg-tb-side {
         flex: none;
         display: flex;
@@ -251,6 +400,7 @@ $tbUrl = function ($p) use ($siteUrl) {
         align-items: center;
         gap: 7px;
         color: #E6FBF5;
+        font-weight: 600;
         transition: color .25s
     }
 
@@ -269,22 +419,41 @@ $tbUrl = function ($p) use ($siteUrl) {
     }
 
     .cvg-tb .cvg-tb-cta {
+        position: relative;
+        overflow: hidden;
         display: inline-flex;
         align-items: center;
         gap: 6px;
         height: 28px;
-        padding: 0 13px;
+        padding: 0 14px;
         border-radius: 999px;
-        background: var(--tb-mint);
-        color: var(--tb-ink);
+        background: var(--tb-gold);
+        color: #2B1D00;
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 700;
         transition: background .25s, transform .25s
     }
 
+    .cvg-tb .cvg-tb-cta::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .55) 50%, transparent 70%);
+        transform: translateX(-100%);
+        animation: cvgTbShine 3.2s ease-in-out 1s infinite
+    }
+
+    @keyframes cvgTbShine {
+
+        60%,
+        100% {
+            transform: translateX(100%)
+        }
+    }
+
     .cvg-tb .cvg-tb-cta:hover {
-        background: var(--tb-mint-l);
-        color: var(--tb-ink);
+        background: #FFD873;
+        color: #2B1D00;
         transform: translateY(-1px)
     }
 
@@ -325,6 +494,12 @@ $tbUrl = function ($p) use ($siteUrl) {
         outline-offset: 2px
     }
 
+    @media (max-width:1024px) {
+        .cvg-tb .cvg-tb-count {
+            display: none
+        }
+    }
+
     @media (max-width:860px) {
         .cvg-tb .cvg-tb-phone {
             display: none
@@ -356,7 +531,9 @@ $tbUrl = function ($p) use ($siteUrl) {
     @media (prefers-reduced-motion:reduce) {
 
         .cvg-tb .cvg-tb-track,
-        .cvg-tb .cvg-tb-dot {
+        .cvg-tb .cvg-tb-dot::after,
+        .cvg-tb .cvg-tb-hot .cvg-tb-ic,
+        .cvg-tb .cvg-tb-cta::after {
             animation: none
         }
 
@@ -379,6 +556,35 @@ $tbUrl = function ($p) use ($siteUrl) {
         if (sticky && document.body && bar.parentNode !== document.body) {
             document.body.insertBefore(bar, document.body.firstChild);
             if (spacer) document.body.insertBefore(spacer, bar);
+        }
+
+        /* Black Friday countdown: "4d 06h 12m" — offer khatam ho to badge, CTA aur offer line hat jayein */
+        var badge = bar.querySelector('[data-tb-ends]');
+        if (badge) {
+            var ends = parseInt(badge.getAttribute('data-tb-ends'), 10) * 1000;
+            var out = badge.querySelector('[data-tb-count]');
+            var pad = function(n) {
+                return (n < 10 ? '0' : '') + n;
+            };
+            var tick = function() {
+                var ms = ends - Date.now();
+                if (ms <= 0) {
+                    badge.remove();
+                    var cta = bar.querySelector('.cvg-tb-cta');
+                    if (cta) cta.remove();
+                    bar.querySelectorAll('.cvg-tb-hot').forEach(function(li) {
+                        li.remove();
+                    });
+                    clearInterval(timer);
+                    return;
+                }
+                var d = Math.floor(ms / 864e5),
+                    h = Math.floor(ms % 864e5 / 36e5),
+                    m = Math.floor(ms % 36e5 / 6e4);
+                if (out) out.textContent = (d ? d + 'd ' : '') + pad(h) + 'h ' + pad(m) + 'm';
+            };
+            var timer = setInterval(tick, 30000);
+            tick();
         }
 
         /* Stay hidden for 1 day after the visitor closes it */
@@ -412,9 +618,9 @@ $tbUrl = function ($p) use ($siteUrl) {
             var h = bar.classList.contains('cvg-tb--closed') ? 0 : bar.offsetHeight;
             var pos = getComputedStyle(nav).position;
             var top;
-            if (sticky || pos === 'absolute') top = h;                 /* navbar always sits right below the bar */
-            else top = Math.max(0, h - window.scrollY);                /* bar not sticky: navbar slides up as you scroll */
-            nav.style.setProperty('top', top + 'px', 'important');     /* 'important' so header.css can't override it */
+            if (sticky || pos === 'absolute') top = h;
+            else top = Math.max(0, h - window.scrollY);
+            nav.style.setProperty('top', top + 'px', 'important');
         }
 
         function init() {

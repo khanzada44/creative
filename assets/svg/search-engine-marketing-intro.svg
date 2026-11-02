@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 557 435" width="557" height="435" role="img" aria-labelledby="t">
+<title id="t">Search engine marketing and SEO by Creative Converge</title>
+<defs>
+<radialGradient id="glow" cx="50%" cy="45%" r="50%"><stop offset="0" stop-color="#125a48" stop-opacity=".55"/><stop offset=".55" stop-color="#0a2822" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#121c1a"/><stop offset="1" stop-color="#0b1211"/></linearGradient>
+<linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a18cf6"/><stop offset="1" stop-color="#6a4fc4"/></linearGradient>
+<linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb48a"/><stop offset="1" stop-color="#e9763f"/></linearGradient>
+<linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff7df"/><stop offset="1" stop-color="#17b998"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe58a"/><stop offset="1" stop-color="#c98a12"/></linearGradient>
+<pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#2ee6c3" stroke-opacity=".06"/></pattern>
+<filter id="sh" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter>
+<clipPath id="winClip"><rect x="88" y="72" width="295" height="292" rx="18"/></clipPath>
+<clipPath id="typeClip"><rect class="type" x="178" y="118" width="0" height="16"/></clipPath>
+<style>
+text{font-family:Poppins,"Segoe UI","Helvetica Neue",Arial,sans-serif}
+.lbl{font-size:7.5px;font-weight:700;letter-spacing:1.6px;fill:#2ee6c3}
+.f1{animation:fl 6s ease-in-out infinite}.f2{animation:fl 7s ease-in-out -2s infinite}.f3{animation:fl 6.5s ease-in-out -4s infinite}.f4{animation:fl 7.5s ease-in-out -1s infinite}
+.ph{animation:fl2 8s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes fl2{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.dot{animation:pulse 2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.grow{transform-box:fill-box;transform-origin:bottom;animation:grow 3s ease-in-out infinite}
+.g2{animation-delay:.2s}.g3{animation-delay:.4s}.g4{animation-delay:.6s}.g5{animation-delay:.8s}
+@keyframes grow{0%{transform:scaleY(.25)}35%,80%{transform:scaleY(1)}100%{transform:scaleY(.25)}}
+
+.type{animation:type 5s steps(20) infinite}
+@keyframes type{0%{width:0}50%,85%{width:108px}100%{width:0}}
+.caret{animation:caret 5s steps(20) infinite, blink .8s step-end infinite}
+@keyframes caret{0%{transform:translateX(0)}50%,85%{transform:translateX(108px)}100%{transform:translateX(0)}}
+@keyframes blink{50%{opacity:0}}
+.top{animation:top 2.4s ease-in-out infinite}
+@keyframes top{0%,100%{stroke-opacity:.2}50%{stroke-opacity:1}}
+.mag{animation:mag 6s ease-in-out infinite}
+@keyframes mag{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,30px)}}
+.line{stroke-dasharray:160;stroke-dashoffset:160;animation:draw 4s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:160}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:160}}
+.up{animation:up 1.6s ease-in-out infinite}
+@keyframes up{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.pill{transform-box:fill-box;transform-origin:left center;animation:pill 4.5s ease-in-out infinite}
+.p2{animation-delay:.3s}.p3{animation-delay:.6s}
+@keyframes pill{0%,8%{transform:scaleX(0);opacity:0}18%,85%{transform:scaleX(1);opacity:1}95%,100%{transform:scaleX(0);opacity:0}}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+</defs>
+<circle cx="260" cy="220" r="230" fill="url(#glow)"/>
+<g class="ph"><g filter="url(#sh)"><rect x="88" y="72" width="295" height="292" rx="18" fill="#0d1513" stroke="#fff" stroke-opacity=".07"/></g>
+<g clip-path="url(#winClip)"><rect x="88" y="102" width="295" height="262" fill="url(#grid)"/><rect x="88" y="72" width="295" height="30" fill="#111a18"/><line x1="88" y1="102" x2="383" y2="102" stroke="#fff" stroke-opacity=".05"/>
+<rect x="140" y="114" width="192" height="24" rx="12" fill="#e6f5f1"/>
+<circle cx="156" cy="126" r="5" fill="none" stroke="#0a4f44" stroke-width="2"/><path d="M160 130l4 4" stroke="#0a4f44" stroke-width="2" stroke-linecap="round"/>
+<g clip-path="url(#typeClip)"><text x="178" y="129.5" font-size="8" font-weight="600" fill="#0a4f44">web design in dallas</text></g>
+<rect class="caret" x="178" y="120" width="1.4" height="12" fill="#0a4f44"/>
+<rect x="140" y="150" width="192" height="48" rx="12" fill="#11302a" stroke="#2ee6c3" stroke-width="1.5" class="top"/>
+<rect x="150" y="160" width="26" height="28" rx="7" fill="url(#mint)"/><text x="163" y="178" text-anchor="middle" font-size="10" font-weight="900" fill="#06302a">#1</text>
+<text x="184" y="168" font-size="7.5" font-weight="700" fill="#e6f5f1">Your Business</text><rect x="184" y="174" width="120" height="4.5" rx="2.25" fill="#7f918d"/><rect x="184" y="182" width="90" height="4.5" rx="2.25" fill="#7f918d" opacity=".6"/>
+<rect x="150" y="212" width="140" height="6" rx="3" fill="#cfe0dc"/><rect x="150" y="222" width="112.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".8"/><rect x="150" y="230" width="84.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".5"/><rect x="150" y="250" width="120" height="6" rx="3" fill="#cfe0dc"/><rect x="150" y="260" width="96.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".8"/><rect x="150" y="268" width="72.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".5"/><rect x="150" y="288" width="150" height="6" rx="3" fill="#cfe0dc"/><rect x="150" y="298" width="120.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".8"/><rect x="150" y="306" width="90.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".5"/><rect x="150" y="326" width="110" height="6" rx="3" fill="#cfe0dc"/><rect x="150" y="336" width="88.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".8"/><rect x="150" y="344" width="66.0" height="4.5" rx="2.25" fill="#7f918d" opacity=".5"/>
+<g class="mag"><circle cx="310" cy="250" r="20" fill="#0d1513" fill-opacity=".35" stroke="#2ee6c3" stroke-width="4"/><path d="M324 264l14 14" stroke="#2ee6c3" stroke-width="6" stroke-linecap="round"/><path d="M299 242a13 13 0 019-6" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/></g>
+</g>
+<circle cx="100" cy="87" r="3" fill="#ff7b6b"/><circle cx="111" cy="87" r="3" fill="#ffcf5c"/><circle cx="122" cy="87" r="3" fill="#2ee6c3"/>
+<text x="236" y="90" text-anchor="middle" font-size="7.5" font-weight="600" fill="#7f918d">search-results</text></g><g class="f2"><g filter="url(#sh)"><rect x="26" y="146" width="100" height="28" rx="14" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><circle class="dot" cx="41" cy="160" r="5" fill="#1fd1b0" opacity=".3"/><circle cx="41" cy="160" r="3.5" fill="#1fd1b0"/><text x="52" y="163" font-size="8" font-weight="600" fill="#e7efed">On-page SEO ✓</text></g><g class="f3"><g filter="url(#sh)"><rect x="26" y="216" width="100" height="98" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><text x="38" y="236" class="lbl">KEYWORDS</text><g class="pill "><rect x="38" y="246" width="70" height="13" rx="6.5" fill="#2ee6c3"/><text x="73.0" y="255" text-anchor="middle" font-size="6" font-weight="700" fill="#06302a">web design</text></g><g class="pill p2"><rect x="38" y="264" width="58" height="13" rx="6.5" fill="#b6abff"/><text x="67.0" y="273" text-anchor="middle" font-size="6" font-weight="700" fill="#06302a">seo agency</text></g><g class="pill p3"><rect x="38" y="282" width="64" height="13" rx="6.5" fill="#ff9b5c"/><text x="70.0" y="291" text-anchor="middle" font-size="6" font-weight="700" fill="#06302a">local seo</text></g><text x="38" y="306" font-size="6.5" font-weight="600" fill="#d9e3e1">Researched &amp; mapped</text></g><g class="f1"><g filter="url(#sh)"><rect x="313" y="30" width="123" height="72" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><text x="325" y="50" class="lbl">RANKING</text><path class="line" d="M327 90l18-6 16 4 18-14 18-6 20-14" fill="none" stroke="#2ee6c3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="417" cy="54" r="3" fill="#fff"/></g><g class="f4"><g filter="url(#sh)"><rect x="330" y="341" width="118" height="86" rx="12" fill="url(#cardBg)" stroke="#2ee6c3" stroke-opacity=".14"/></g><text x="342" y="361" class="lbl">ORGANIC TRAFFIC</text><text x="342" y="397" font-size="22" font-weight="800" fill="#e6f5f1">+64%</text><g class="up"><path d="M420 400v-22M412 386l8-8 8 8" stroke="#2ee6c3" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="342" y="414" font-size="6" fill="#7f918d">from search</text></g></svg>
