@@ -2551,12 +2551,12 @@ $services = [
        1) services-data.php  →  Search Engine Marketing block
        ============================================================ */
     [
-        "title" => "Search Engine Marketing",
-        "mata-title" => "Search Engine Marketing & SEO Services in Dallas | Creative Converge",
+        "title" => "Search Engine Optimization",
+        "mata-title" => "Search Engine Optimization Services in Dallas | Creative Converge",
         "mata-description" => "Get found on Google. Keyword research, on-page SEO, link building, local listings and Google Ads that bring organic and paid visitors ready to buy.",
-        "slug" => "search-engine-marketing",
+        "slug" => "search-engine-optimization",
         "description" => "When people search for what you sell, your business should be the one they find. Creative Converge combines SEO and search advertising to bring more of your ideal customers to your website.",
-        "subtitle" => "Search Engine Marketing That Drives Organic and Paid Visitors",
+        "subtitle" => "Search Engine Optimization That Drives Organic and Paid Visitors",
         "image" => "digital-marketing.jpg",
         "bannerImage" => "assets/img/banner-search-engine-marketing.webp",
         "sub_services" => [],

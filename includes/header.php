@@ -95,7 +95,7 @@ if (!function_exists('cvg_nav_on')) {
               </a>
               <ul class="services-submenu">
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=social-media-marketing') ?>">Social Media Marketing</a></li>
-                <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-marketing') ?>">Search Engine Marketing</a></li>
+                <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-optimization') ?>">Search Engine Optimization</a></li>
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=pay-per-click') ?>">Pay Per Click (PPC)</a></li>
               </ul>
             </li>
@@ -198,7 +198,7 @@ if (!function_exists('cvg_nav_on')) {
           <ul class="panel-sub-list" id="panelDmList">
             <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">All Digital Marketing</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=social-media-marketing') ?>">Social Media Marketing</a></li>
-            <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-marketing') ?>">Search Engine Marketing</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-optimization') ?>">Search Engine Optimization</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=pay-per-click') ?>">Pay Per Click (PPC)</a></li>
           </ul>
         </li>
