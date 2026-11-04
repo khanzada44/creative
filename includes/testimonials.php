@@ -15,8 +15,8 @@ $tmReviews = [
 ];
 
 $tmVideos = [
-    ['video' => 'assets/videos/Review_1.mp4', 'poster' => '', 'photo' => '', 'name' => 'Client name', 'role' => 'Video review', 'text' => ''],
-    ['video' => 'assets/videos/Review_2.mp4', 'poster' => '', 'photo' => '', 'name' => 'Client name', 'role' => 'Video review', 'text' => ''],
+    ['video' => 'assets/videos/Review_1.mp4', 'poster' => '', 'photo' => '', 'name' => 'Tony Scaturro', 'role' => 'Video review', 'text' => ''],
+    ['video' => 'assets/videos/Review_2.mp4', 'poster' => '', 'photo' => '', 'name' => 'Wilma Wilmer ', 'role' => 'Video review', 'text' => ''],
 ];
 $tmVideoTitle = 'Hear it from them';
 
