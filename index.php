@@ -52,17 +52,12 @@ require_once __DIR__ . '/includes/init.php';
         <?php include __DIR__ . '/includes/home-page-pricing.php'; ?>
         <?php include __DIR__ . '/includes/testimonials.php'; ?>
         <?php include __DIR__ . '/includes/home-page-fome.php'; ?>
+        <?php include __DIR__ . '/includes/faq-section.php'; ?>
     </main>
 
     <?php include __DIR__ . '/includes/footer.php'; ?>
 
     <script src="<?= cvg_url('assets/js/home.js') ?>"></script>
-    <!--
-        ⚡ Speed fix (GTmetrix "No CPU idle period"):
-        Zendesk aur favicon animation pehle page khulte hi chalne lagte the aur CPU kabhi free nahi hota tha.
-        Ab dono tab load hote hain jab user page par kuch kare (scroll / click / touch / key / mouse),
-        ya 8 second baad. Testing tools ko page jaldi "loaded" milta hai.
-    -->
     <script>
         (function () {
             // true = load ke baad chat EK dafa khud khule | false = sirf icon, user click kare to khule

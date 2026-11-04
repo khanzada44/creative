@@ -164,15 +164,16 @@ if (!function_exists('cvg_nav_on')) {
         <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=illustration-design') ?>" class="panel-sub-link">Illustration Design</a></li> -->
         <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-solutions') ?>" class="panel-sub-link">Web Design</a></li> -->
 
-        <!-- Web Developer (nested accordion) -->
+        <!-- Web Design & Development (nested accordion) -->
         <li>
-          <button type="button" class="panel-sub-btn panel-sub-link" id="panelDevBtn" aria-expanded="false">
+          <button type="button" class="panel-sub-btn panel-sub-link" aria-expanded="false" aria-controls="panelDevList">
             Web Design & Development
-            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
           <ul class="panel-sub-list" id="panelDevList">
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=web-design-development') ?>">All Web Design & Development</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=laravel') ?>">Laravel</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=node-js') ?>">Node Js</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=custom-php-development') ?>">Custom PHP Development</a></li>
@@ -185,23 +186,28 @@ if (!function_exists('cvg_nav_on')) {
             <li><a href="<?= cvg_url('services/service-detail.php?slug=website-maintenance') ?>">Website Maintenance</a></li>
           </ul>
         </li>
-            <li class="has-sub">
-              <a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>" class="sub-trigger" aria-haspopup="true">
-                Digital Marketing
-                <svg class="sub-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="9 6 15 12 9 18"></polyline>
-                </svg>
-              </a>
-              <ul class="services-submenu">
-                <li><a href="<?= cvg_url('services/service-detail.php?slug=social-media-marketing') ?>">Social Media Marketing</a></li>
-                <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-marketing') ?>">Search Engine Marketing</a></li>
-                <li><a href="<?= cvg_url('services/service-detail.php?slug=pay-per-click') ?>">Pay Per Click (PPC)</a></li>
-              </ul>
-            </li>
+
+        <!-- Digital Marketing (nested accordion — pehle desktop wala markup tha, is liye bara arrow aa raha tha) -->
+        <li>
+          <button type="button" class="panel-sub-btn panel-sub-link" aria-expanded="false" aria-controls="panelDmList">
+            Digital Marketing
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <ul class="panel-sub-list" id="panelDmList">
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=digital-marketing') ?>">All Digital Marketing</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=social-media-marketing') ?>">Social Media Marketing</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=search-engine-marketing') ?>">Search Engine Marketing</a></li>
+            <li><a href="<?= cvg_url('services/service-detail.php?slug=pay-per-click') ?>">Pay Per Click (PPC)</a></li>
+          </ul>
+        </li>
+
         <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>" class="panel-sub-link">Branding</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>" class="panel-sub-link">Video Animation</a></li>
-        <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>" class="panel-sub-link">Advance Combo Packages</a></li>
+        <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps-development') ?>" class="panel-sub-link">Mobile App Development</a></li>
+        <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>" class="panel-sub-link">Advance Combo Packages</a></li> -->
       </ul>
     </li>
 
@@ -940,7 +946,7 @@ if (!function_exists('cvg_nav_on')) {
   }
 
   .side-panel .panel-sub-list.open {
-    max-height: 600px;
+    max-height: 700px;
   }
 
   .side-panel .panel-sub-list a {
@@ -1038,8 +1044,8 @@ if (!function_exists('cvg_nav_on')) {
 
     var panelServicesBtn = document.getElementById("panelServicesBtn");
     var panelServicesList = document.getElementById("panelServicesList");
-    var panelDevBtn = document.getElementById("panelDevBtn");
-    var panelDevList = document.getElementById("panelDevList");
+    // Mobile ke andar wale accordions (Web Design & Development, Digital Marketing)
+    var panelSubBtns = sidePanel.querySelectorAll(".panel-sub-btn");
 
     /* ===== Scroll: sirf class lagti hai, koi inline style nahi =====
        Kuch pages par body/html khud scroll hote hain (window nahi),
@@ -1054,6 +1060,15 @@ if (!function_exists('cvg_nav_on')) {
 
     var byScroll = false,
       bySentinel = false;
+
+    /* "apply is not defined" error yahi se aata tha — function hi missing tha */
+    function apply() {
+      header.classList.toggle("is-scrolled", byScroll || bySentinel);
+    }
+    window.addEventListener("scroll", function() {
+      byScroll = getScrollTop() > 40;
+      apply();
+    }, { passive: true });
 
 
 
@@ -1102,9 +1117,12 @@ if (!function_exists('cvg_nav_on')) {
       document.documentElement.style.overflow = "";
       panelServicesList.classList.remove("open");
       panelServicesBtn.classList.remove("open");
-      panelDevList.classList.remove("open");
-      panelDevBtn.classList.remove("open");
-      panelDevBtn.setAttribute("aria-expanded", "false");
+      panelSubBtns.forEach(function(btn) {
+        btn.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        var list = document.getElementById(btn.getAttribute("aria-controls"));
+        if (list) list.classList.remove("open");
+      });
     }
 
     menuBtn.addEventListener("click", function() {
@@ -1165,10 +1183,24 @@ if (!function_exists('cvg_nav_on')) {
       panelServicesBtn.classList.toggle("open", isOpen);
     });
 
-    panelDevBtn.addEventListener("click", function() {
-      var isOpen = panelDevList.classList.toggle("open");
-      panelDevBtn.classList.toggle("open", isOpen);
-      panelDevBtn.setAttribute("aria-expanded", String(isOpen));
+    // Ek waqt mein ek hi andar wala accordion khula rahe
+    panelSubBtns.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var list = document.getElementById(btn.getAttribute("aria-controls"));
+        if (!list) return;
+        var willOpen = !list.classList.contains("open");
+        panelSubBtns.forEach(function(other) {
+          var l = document.getElementById(other.getAttribute("aria-controls"));
+          other.classList.remove("open");
+          other.setAttribute("aria-expanded", "false");
+          if (l) l.classList.remove("open");
+        });
+        if (willOpen) {
+          list.classList.add("open");
+          btn.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
     });
   })();
 </script>
