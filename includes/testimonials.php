@@ -25,7 +25,7 @@ $tmSpeed = 45;
 $uploads = $uploads ?? 'https://creativeconverge.com/mockups/creativemock/wp-content/uploads/';
 $siteUrl = $siteUrl ?? '';  
 
-/* ================= Nothing to change below this line ================= */
+
 if (!function_exists('cvg_tm_e')) {
     function cvg_tm_e($s)
     {
