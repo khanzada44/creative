@@ -12,6 +12,7 @@
   transform: translateY(-45%);
   pointer-events: none;
   margin: 0 !important;
+  contain: layout paint;      /* andar ki animation baqi page ko repaint na karaye */
 }
 /* glow peeche */
 .cc-h3d::before {
@@ -19,9 +20,10 @@
   position: absolute;
   inset: 18% 14% 10%;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(0,212,163,.32), rgba(0,212,163,0));
-  filter: blur(30px);
+  /* blur() filter hata diya — har frame repaint hota tha (scroll atakta tha) */
+  background: radial-gradient(closest-side, rgba(0,212,163,.30), rgba(0,212,163,.12) 55%, rgba(0,212,163,0));
   animation: cc-h3d-glow 6s ease-in-out infinite;
+  will-change: opacity;
 }
 .cc-h3d .cc-h3d-part {
   position: absolute !important;
@@ -32,9 +34,10 @@
     calc(var(--my) * var(--dp) * 1px + var(--sp) * var(--sy) * 1px);
   opacity: 0;
   scale: .6;
+  will-change: translate;
   transition:
-    opacity .9s ease calc(var(--i) * .12s),
-    scale 1.2s cubic-bezier(.2,1.4,.3,1) calc(var(--i) * .12s);
+    opacity .6s ease calc(var(--i) * .07s),
+    scale .8s cubic-bezier(.2,1.4,.3,1) calc(var(--i) * .07s);
 }
 .cc-h3d--in .cc-h3d-part { opacity: 1; scale: 1; }
 .cc-h3d .cc-h3d-part img {
@@ -45,7 +48,7 @@
   margin: 0;
   border-radius: 0;
   box-shadow: none;
-  will-change: transform;
+  will-change: rotate;
 }
 
 /* positions (asli image ke hisaab se) */
@@ -58,14 +61,29 @@
 
 /* har shape: apni jagah par lagatar ghoomti hai (spin) + halka gol chakkar (orbit)
    --spin = ek chakkar ka time, chhota = tez */
+/* Sirf ek animation (spin). Orbit wali doosri animation hata di — har image par
+   do animations + var() wale keyframes scroll ke dauran bhaari padte the */
 .cc-h3d-part img {
-  animation:
-    cc-h3d-spin-self var(--spin, 20s) linear infinite var(--dir, normal),
-    cc-h3d-round var(--orb, 10s) linear infinite;
+  backface-visibility: hidden;
+}
+/* Spin tab shuru ho jab images decode ho chuki hon aur entrance khatam ho
+   (reload ke baad pehle scroll ka atkaav isi se aata tha) */
+.cc-h3d--run .cc-h3d-part img {
+  animation: cc-h3d-spin-self var(--spin, 20s) linear infinite var(--dir, normal);
 }
 .cc-h3d--torus img  { --spin: 40s; --dir: reverse; --r: 6px;  --orb: 14s; --tilt: 0deg; }
-.cc-h3d--big img    { --spin: 22s; --dir: normal;  --r: 10px; --orb: 8s;  --tilt: 0deg;
-                      filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
+.cc-h3d--big img    { --spin: 22s; --dir: normal;  --r: 10px; --orb: 8s;  --tilt: 0deg; }
+/* drop-shadow ghoomti image par bahut bhari thi — ab neeche ek static saya */
+.cc-h3d--big::after {
+  content: "";
+  position: absolute;
+  left: 12%; right: 12%; bottom: -14%;
+  height: 18%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0,0,0,.45), rgba(0,0,0,0));
+  z-index: -1;
+  pointer-events: none;
+}
 .cc-h3d--dark img   { --spin: 12s; --dir: normal;  --r: 22px; --orb: 9s;  --tilt: 0deg; }
 .cc-h3d--captop img { --spin: 14s; --dir: reverse; --r: 18px; --orb: 12s; --tilt: 0deg; }
 .cc-h3d--capbot img { --spin: 16s; --dir: normal;  --r: 20px; --orb: 11s; --tilt: 0deg; }
@@ -77,20 +95,9 @@
   to   { rotate: 360deg; }
 }
 
-@keyframes cc-h3d-torus {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50%      { transform: translateY(-14px) rotate(-3deg); }
-}
-@keyframes cc-h3d-big {            /* ring ke andar upar neeche */
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%      { transform: translateY(-34px) scale(1.02); }
-}
-/* gol chakkar: shape seedhi rehti hai, sirf circle mein ghoomti hai */
-@keyframes cc-h3d-round {
-  0%   { transform: rotate(0deg)   translateX(var(--r)) rotate(0deg)    rotate(var(--tilt)); }
-  50%  { transform: rotate(180deg) translateX(var(--r)) rotate(-180deg) rotate(calc(var(--tilt) * -1)); }
-  100% { transform: rotate(360deg) translateX(var(--r)) rotate(-360deg) rotate(var(--tilt)); }
-}
+
+
+
 
 /* ghoomte orbit rings (dashed circle + chamakta dot) */
 .cc-h3d-ring {
@@ -122,8 +129,25 @@
 @keyframes cc-h3d-spin { to { rotate: 360deg; } }
 
 @keyframes cc-h3d-glow {
-  0%, 100% { opacity: .6; transform: scale(1); }
-  50%      { opacity: 1;  transform: scale(1.08); }
+  0%, 100% { opacity: .6; }
+  50%      { opacity: 1; }
+}
+
+/* hero screen se bahar ho to saari animation ruk jaye (scroll smooth rehta hai) */
+.cc-h3d--paused::before,
+.cc-h3d--paused .cc-h3d-part img,
+.cc-h3d--paused .cc-h3d-ring,
+.cc-scrolling .cc-h3d::before,
+.cc-scrolling .cc-h3d-part img,
+.cc-scrolling .cc-h3d-ring { animation-play-state: paused; }
+/* rocket ko apni GPU layer — scroll ke saath hilta hai */
+.cvg-about-rocket { will-change: transform; }
+
+/* Phone / tablet: halki version — torus aur rings nahi ghoomte, glow static */
+@media (max-width: 1024px), (hover: none) {
+  .cc-h3d::before { animation: none; opacity: .8; }
+  .cc-h3d--torus img { animation: none; }
+  .cc-h3d-ring--2 { animation: none; }
 }
 
 @media (max-width: 1024px) {
@@ -213,12 +237,12 @@
     <!-- ghoomte hue gol orbit rings -->
     <i class="cc-h3d-ring cc-h3d-ring--1"><b></b></i>
     <i class="cc-h3d-ring cc-h3d-ring--2"><b></b></i>
-    <span class="cc-h3d-part cc-h3d--torus"    style="--dp:.35;--sx:-60;--sy:40;--i:0"><img src="assets/img/cropped/torus.png" alt=""></span>
-    <span class="cc-h3d-part cc-h3d--big"      style="--dp:.7; --sx:0;  --sy:-90;--i:1"><img src="assets/img/cropped/sphere-big.png" alt=""></span>
-    <span class="cc-h3d-part cc-h3d--dark"     style="--dp:1.3;--sx:-120;--sy:-80;--i:2"><img src="assets/img/cropped/sphere-dark.png" alt=""></span>
-    <span class="cc-h3d-part cc-h3d--captop"   style="--dp:1;  --sx:120;--sy:-90;--i:3"><img src="assets/img/cropped/capsule-top.png" alt=""></span>
-    <span class="cc-h3d-part cc-h3d--capbot"   style="--dp:1.5;--sx:-140;--sy:90;--i:4"><img src="assets/img/cropped/capsule-bottom.png" alt=""></span>
-    <span class="cc-h3d-part cc-h3d--small"    style="--dp:1.8;--sx:130;--sy:100;--i:5"><img src="assets/img/cropped/sphere-small.png" alt=""></span>
+    <span class="cc-h3d-part cc-h3d--torus"    style="--dp:.35;--sx:-60;--sy:40;--i:0"><img decoding="async" fetchpriority="low" src="assets/img/cropped/torus.webp" alt=""></span>
+    <span class="cc-h3d-part cc-h3d--big"      style="--dp:.7; --sx:0;  --sy:-90;--i:1"><img decoding="async" src="assets/img/cropped/sphere-big.webp" alt=""></span>
+    <span class="cc-h3d-part cc-h3d--dark"     style="--dp:1.3;--sx:-120;--sy:-80;--i:2"><img decoding="async" fetchpriority="low" src="assets/img/cropped/sphere-dark.webp" alt=""></span>
+    <span class="cc-h3d-part cc-h3d--captop"   style="--dp:1;  --sx:120;--sy:-90;--i:3"><img decoding="async" fetchpriority="low" src="assets/img/cropped/capsule-top.webp" alt=""></span>
+    <span class="cc-h3d-part cc-h3d--capbot"   style="--dp:1.5;--sx:-140;--sy:90;--i:4"><img decoding="async" fetchpriority="low" src="assets/img/cropped/capsule-bottom.webp" alt=""></span>
+    <span class="cc-h3d-part cc-h3d--small"    style="--dp:1.8;--sx:130;--sy:100;--i:5"><img decoding="async" fetchpriority="low" src="assets/img/cropped/sphere-small.webp" alt=""></span>
   </div>
 
   <div class="hero-inner">
@@ -228,7 +252,7 @@
       <p class="hero-text">Every great vision needs professional execution. Let Creative Converge, one of the best web design companies in Dallas, bring your idea to life with perfection.</p>
     </div>
   </div>
- </div>
+ </div><!-- /.abt-inner (ye band nahi tha) -->
 
 </section>
 
@@ -240,41 +264,70 @@
   var hero = scene.closest('.hero') || scene.parentNode;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // entrance
-  requestAnimationFrame(function () { scene.classList.add('cc-h3d--in'); });
+  // entrance: pehle saari images decode, phir dikhao, phir ghumao
+  var imgs = Array.prototype.slice.call(scene.querySelectorAll('img'));
+  Promise.all(imgs.map(function (im) {
+    return im.decode ? im.decode().catch(function () {}) : Promise.resolve();
+  })).then(function () {
+    requestAnimationFrame(function () { scene.classList.add('cc-h3d--in'); });
+    if (!reduce) setTimeout(function () { scene.classList.add('cc-h3d--run'); }, 1000);
+  });
   if (reduce) return;
 
-  var tx = 0, ty = 0, cx = 0, cy = 0, sp = 0, raf = null;
-  function loop() {
-    cx += (tx - cx) * 0.06;
-    cy += (ty - cy) * 0.06;
-    scene.style.setProperty('--mx', cx.toFixed(2));
-    scene.style.setProperty('--my', cy.toFixed(2));
-    scene.style.setProperty('--sp', sp.toFixed(3));
-    if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) raf = requestAnimationFrame(loop);
-    else raf = null;
+  var tx = 0, ty = 0, cx = 0, cy = 0, sp = 0, lastSp = -1, raf = null, visible = true;
+
+  // Ek hi frame loop: mouse + scroll dono yahin (pehle scroll har event par style likhta tha)
+  function frame() {
+    raf = null;
+    cx += (tx - cx) * 0.08;
+    cy += (ty - cy) * 0.08;
+    scene.style.setProperty('--mx', cx.toFixed(1));
+    scene.style.setProperty('--my', cy.toFixed(1));
+    if (sp !== lastSp) { scene.style.setProperty('--sp', sp.toFixed(3)); lastSp = sp; }
+    if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) kick();
   }
-  function kick() { if (!raf) raf = requestAnimationFrame(loop); }
+  function kick() { if (!raf && visible) raf = requestAnimationFrame(frame); }
 
   // mouse (sirf desktop)
   if (window.matchMedia('(hover: hover)').matches) {
     hero.addEventListener('mousemove', function (e) {
       var r = hero.getBoundingClientRect();
-      tx = ((e.clientX - r.left) / r.width - 0.5) * 40;   // max ±20px * depth
+      tx = ((e.clientX - r.left) / r.width - 0.5) * 40;
       ty = ((e.clientY - r.top) / r.height - 0.5) * 40;
       kick();
-    });
+    }, { passive: true });
     hero.addEventListener('mouseleave', function () { tx = 0; ty = 0; kick(); });
   }
 
-  // scroll: shapes thoda bikharte hain
-  function onScroll() {
-    var r = hero.getBoundingClientRect();
-    sp = Math.min(1, Math.max(0, -r.top / r.height));
-    scene.style.setProperty('--sp', sp.toFixed(3));
+  // scroll: sirf frame mein ek dafa, sirf jab hero dikh raha ho, aur sirf desktop par
+  // (phone par scroll ke saath shapes hilana scroll ko bhaari karta tha)
+  var desktop = window.matchMedia('(min-width: 1025px) and (hover: hover)').matches;
+  var heroH = hero.offsetHeight || 1;
+  window.addEventListener('resize', function () { heroH = hero.offsetHeight || 1; }, { passive: true });
+  if (desktop) window.addEventListener('scroll', function () {
+    if (!visible) return;
+    var top = hero.getBoundingClientRect().top;
+    sp = Math.round(Math.min(1, Math.max(0, -top / heroH)) * 100) / 100;
+    kick();
+  }, { passive: true });
+
+  // Scroll ke dauran saari ghoomti animations ruk jati hain (browser ka poora zor scroll par),
+  // scroll rukte hi 150ms baad wapas chal padti hain — aankh ko farq mehsoos nahi hota
+  var root = document.documentElement, stopT = null;
+  window.addEventListener('scroll', function () {
+    if (!stopT) root.classList.add('cc-scrolling');
+    clearTimeout(stopT);
+    stopT = setTimeout(function () { root.classList.remove('cc-scrolling'); stopT = null; }, 150);
+  }, { passive: true });
+
+  // hero screen se bahar → animations pause, wapas aaye → chalu
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      scene.classList.toggle('cc-h3d--paused', !visible);
+      if (visible) kick();
+    }).observe(hero);
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 })();
 </script>
 
@@ -283,7 +336,7 @@
   <div class="cvg-about-inner">
 
     <figure class="cvg-about-media" data-reveal="media">
-      <img class="cvg-about-photo" loading="lazy"
+      <img class="cvg-about-photo" loading="eager" decoding="async" fetchpriority="low"
            src="assets/img/home-about-section.webp"
            alt="Designer looking at a city skyline with floating digital screens">
     </figure>
@@ -319,7 +372,7 @@
     </div>
   </div>
 
-  <img class="cvg-about-rocket" data-reveal="rocket" src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/08/rocket-no-bg.png" alt="" aria-hidden="true">
+  <img class="cvg-about-rocket" data-reveal="rocket" decoding="async" src="https://creativeconverge.com/mockups/creativemock/wp-content/uploads/2024/08/rocket-no-bg.png" alt="" aria-hidden="true">
 </section>
 
 <script>
@@ -328,6 +381,17 @@
   var section = document.getElementById('cvg-about');
   if (!section) return;
   var els = section.querySelectorAll('[data-reveal]:not(.cvg-about-rocket)');
+
+  /* Page load ke baad, khaali waqt mein, neeche wali images pehle se decode kar lo —
+     taa ke pehli dafa scroll karte waqt browser ko decode na karna pade */
+  var predecode = function () {
+    section.querySelectorAll('img').forEach(function (im) {
+      if (im.decode) im.decode().catch(function () {});
+    });
+  };
+  window.addEventListener('load', function () {
+    (window.requestIdleCallback || function (f) { setTimeout(f, 300); })(predecode);
+  });
   var rocket = section.querySelector('.cvg-about-rocket');
 
   /* ---- Rocket: scroll ke saath neeche se upar ---- */
@@ -341,11 +405,17 @@
       var range = window.innerWidth < 768 ? 260 : 700;  // kitna upar jaye (px) - badal sakte ho
       rocket.style.setProperty('--ry', ((0.5 - p) * range).toFixed(1) + 'px');
     };
+    var near = true;
     var onScroll = function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(updateRocket); }
+      if (near && !ticking) { ticking = true; requestAnimationFrame(updateRocket); }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    window.addEventListener('resize', onScroll, { passive: true });
+    // Section screen se door ho to rocket ka hisaab hi na lagao
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { near = en[0].isIntersecting; if (near) onScroll(); },
+        { rootMargin: '200px 0px' }).observe(section);
+    }
     updateRocket();
   }
 
@@ -354,10 +424,13 @@
     els.forEach(function (el) { el.classList.add('is-in'); });
     return;
   }
+  // Ek dafa reveal (pehle har scroll up/down par dobara animate hota tha — scroll bhaari)
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting && e.intersectionRatio >= 0.15) e.target.classList.add('is-in');
-      else if (!e.isIntersecting) e.target.classList.remove('is-in');
+      if (e.isIntersecting && e.intersectionRatio >= 0.15) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
     });
   }, { threshold: [0, 0.15], rootMargin: '0px 0px -6% 0px' });
   els.forEach(function (el) { io.observe(el); });
