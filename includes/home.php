@@ -12,7 +12,7 @@
   transform: translateY(-45%);
   pointer-events: none;
   margin: 0 !important;
-  contain: layout paint;      /* andar ki animation baqi page ko repaint na karaye */
+  contain: layout paint;      
 }
 /* glow peeche */
 .cc-h3d::before {
