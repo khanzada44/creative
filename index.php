@@ -40,6 +40,7 @@ require_once __DIR__ . '/includes/init.php';
     <?php include __DIR__ . '/includes/header.php'; ?>
 
     <main>
+        <?php include __DIR__ . '/includes/day-widget.php'; ?>
         <?php include __DIR__ . '/includes/home.php'; ?>
         <?php include __DIR__ . '/includes/services.php'; ?>
         <?php include __DIR__ . '/includes/slide-bar.php'; ?>
