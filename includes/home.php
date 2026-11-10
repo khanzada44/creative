@@ -12,7 +12,9 @@
   transform: translateY(-45%);
   pointer-events: none;
   margin: 0 !important;
-  contain: layout paint;      
+  /* 'paint' hata diya — wo box ke bahar sab kaat deta tha (ghoomte capsule/torus kat rahe the) */
+  contain: layout;
+  overflow: visible !important;
 }
 /* glow peeche */
 .cc-h3d::before {
@@ -42,6 +44,7 @@
 .cc-h3d--in .cc-h3d-part { opacity: 1; scale: 1; }
 .cc-h3d .cc-h3d-part img {
   display: block;
+  overflow: visible;
   width: 100% !important;
   height: auto;
   max-width: none;
