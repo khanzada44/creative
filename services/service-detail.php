@@ -43,6 +43,24 @@ $introImages      = (array) ($service['introImages'] ?? []);
 $portfolio        = $service['portfolio'] ?? [];
 $portfolioLabel   = $service['portfolioLabel'] ?? '';
 $plans            = $service['plans'] ?? [];
+
+if ($slug === 'web-design-development' || ($service['slug'] ?? '') === 'web-design-development') {
+    require_once dirname(__DIR__) . '/includes/pricing-data.php';
+    if (!empty($cvgPricing['web']['packages'])) {
+        $plans = array_map(function ($p) {
+            return [
+                'name'     => $p['name'] ?? 'Package',
+                'price'    => $p['price'] ?? '',
+                'featured' => !empty($p['popular']),
+                'badge'    => !empty($p['popular']) ? 'Most popular' : '',
+                'link'     => $p['link'] ?? 'contact-us',
+                'features' => array_map(function ($f) {
+                    return (strpos($f, '## ') === 0) ? substr($f, 3) : $f;
+                }, $p['features'] ?? []),
+            ];
+        }, $cvgPricing['web']['packages']);
+    }
+}
 $heroImage        = $service['bannerImage'] ?? '';
 
 $heroImageUrl = '';

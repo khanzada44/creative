@@ -1,10 +1,18 @@
 <?php
 /* ================= Ticker messages =================
-   [ text, link, icon, highlight ]
-   icon options: tag, spark, trophy, gift, layers, shield, phone, star
-   highlight = true  → gold rang mein (offer ke liye)                 */
+   [ text, link, icon, offer ]
+   icon options: tag, spark, trophy, gift, layers, shield, phone, star, flag
+   offer = 'vd' / 'bf' → gold rang mein, aur SIRF tab dikhegi jab wo offer chal raha ho
+   offer = false       → hamesha dikhegi                                              */
 $tbMessages = [
-    ['Black Friday: 25% off all packages, ends Nov 30',      'pricing/',          'tag',    true],
+    /* ---- Veterans Day (11 Nov tak) ---- */
+    ['Limited Time. Maximum Impact. Lock In 40% Off Premium Execution.',                 'contact-us/', 'flag',   'vd'],
+    ["Pretty designs don't pay the bills. Systems built to convert do.",                 'services/',   'spark',  'vd'],
+    ['This Veterans Day: up to 40% OFF custom web, app development & growth marketing', 'contact-us/', 'tag',    'vd'],
+    ['Enterprise-grade quality without the standard retainers',                          'contact-us/', 'shield', 'vd'],
+    /* ---- Black Friday (12 Nov se 30 Nov tak) ---- */
+    ['Black Friday: 25% off all packages, ends Nov 30',      'pricing/',          'tag',    'bf'],
+    /* ---- Hamesha ---- */
     ['From concept to click',                                 'services/',         'spark',  false],
     ['354+ projects. 235+ happy clients.',                    'cases/',            'trophy', false],
     ['Free logo with every website package',                  'pricing/',          'gift',   false],
@@ -13,12 +21,26 @@ $tbMessages = [
     ["Got an idea? Let's talk today at (855) 677-4898",      'tel:+18556774898',  'phone',  false],
 ];
 
-/* ---------- Black Friday offer ----------
-   Is date ke baad offer wali line, badge aur countdown khud hat jayenge */
-$tbOfferEnds  = '2026-11-30 23:59:59';
-$tbOfferZone  = 'America/Chicago';      /* Dallas time */
-$tbOfferBadge = 'Black Friday';
-$tbOfferCta   = ['Get 25% off', 'pricing/'];
+/* ---------- Offers (upar wala pehle) ----------
+   Jo offer abhi chal raha hai (pehla jiski date nahi guzri) wahi badge, countdown,
+   button aur gold lines dikhata hai. Veterans Day khatam → Black Friday khud aa jayega. */
+$tbOfferZone = 'America/Chicago';      /* Dallas time */
+$tbOffers = [
+    'vd' => [
+        'ends'  => '2026-11-11 23:59:59',
+        'badge' => 'Veterans Day',
+        'cta'   => ['Claim Your 40% Growth Discount', 'contact-us/'],
+        'short' => 'Claim 40% Off',          /* chhoti screen par button ka text */
+        'style' => 'vd',                     /* laal-safed-neela badge */
+    ],
+    'bf' => [
+        'ends'  => '2026-11-30 23:59:59',
+        'badge' => 'Black Friday',
+        'cta'   => ['Get 25% off', 'pricing/'],
+        'short' => 'Get 25% off',
+        'style' => '',
+    ],
+];
 
 /* ---------- Right side ---------- */
 $tbPhone      = ['(855) 677-4898', 'tel:+18556774898'];
@@ -62,18 +84,25 @@ $tbUrl = function ($p) use ($siteUrl) {
     return rtrim($siteUrl, '/') . '/' . ltrim($p, '/');
 };
 
-/* Offer abhi chal raha hai? (server time se) */
-$tbOfferEndTs = 0;
-try {
-    $tbOfferEndTs = (new DateTime($tbOfferEnds, new DateTimeZone($tbOfferZone)))->getTimestamp();
-} catch (Exception $e) {
+/* Abhi kaunsa offer chal raha hai? (server time se) */
+$tbActive = null; $tbOfferEndTs = 0;
+foreach ($tbOffers as $tbKey => $tbO) {
+    try {
+        $ts = (new DateTime($tbO['ends'], new DateTimeZone($tbOfferZone)))->getTimestamp();
+    } catch (Exception $e) {
+        continue;
+    }
+    if ($ts > time()) { $tbActive = $tbKey; $tbOfferEndTs = $ts; break; }
 }
-$tbOfferLive = $tbOfferEndTs > time();
-if (!$tbOfferLive) {
-    $tbMessages = array_values(array_filter($tbMessages, function ($m) {
-        return empty($m[3]);
-    }));
-}
+$tbOfferLive  = $tbActive !== null;
+$tbOfferBadge = $tbOfferLive ? $tbOffers[$tbActive]['badge'] : '';
+$tbOfferCta   = $tbOfferLive ? $tbOffers[$tbActive]['cta'] : ['', ''];
+$tbOfferShort = $tbOfferLive ? ($tbOffers[$tbActive]['short'] ?? $tbOfferCta[0]) : '';
+$tbOfferStyle = $tbOfferLive ? ($tbOffers[$tbActive]['style'] ?? '') : '';
+/* Sirf chalte offer ki lines rakho (doosre offer ki aur khatam ho chuki lines hata do) */
+$tbMessages = array_values(array_filter($tbMessages, function ($m) use ($tbActive) {
+    return empty($m[3]) || $m[3] === $tbActive;
+}));
 
 $tbIcons = [
     'tag'    => '<path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
@@ -84,6 +113,7 @@ $tbIcons = [
     'shield' => '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
     'phone'  => '<path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/>',
     'star'   => '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+    'flag'   => '<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
 ];
 $tbIcon = function ($name, $cls = 'cvg-tb-ic') use ($tbIcons) {
     $p = $tbIcons[$name] ?? $tbIcons['star'];
@@ -94,8 +124,8 @@ $tbIcon = function ($name, $cls = 'cvg-tb-ic') use ($tbIcons) {
 <div class="cvg-tb<?= $tbSticky ? ' cvg-tb--sticky' : '' ?><?= $tbPauseOnHover ? ' cvg-tb--pause' : '' ?>" id="cvg-topbar" role="region" aria-label="Announcements" style="--tb-speed:<?= (int) $tbSpeed ?>s">
 
     <?php if ($tbOfferLive): ?>
-        <a class="cvg-tb-badge" href="<?= cvg_tb_e($tbUrl($tbOfferCta[1])) ?>" data-tb-ends="<?= (int) $tbOfferEndTs ?>">
-        
+        <a class="cvg-tb-badge<?= $tbOfferStyle ? ' cvg-tb-badge--' . cvg_tb_e($tbOfferStyle) : '' ?>" href="<?= cvg_tb_e($tbUrl($tbOfferCta[1])) ?>" data-tb-ends="<?= (int) $tbOfferEndTs ?>">
+            <?php if ($tbOfferStyle === 'vd'): ?><?= $tbIcon('star', 'cvg-tb-star') ?><?php else: ?><span class="cvg-tb-dot" aria-hidden="true"></span><?php endif; ?>
             <?= cvg_tb_e($tbOfferBadge) ?>
             <span class="cvg-tb-count" data-tb-count aria-label="Offer ends in"></span>
         </a>
@@ -130,7 +160,7 @@ $tbIcon = function ($name, $cls = 'cvg-tb-ic') use ($tbIcons) {
         </a>
         <?php if ($tbOfferLive): ?>
             <a class="cvg-tb-cta" href="<?= cvg_tb_e($tbUrl($tbOfferCta[1])) ?>">
-                <?= cvg_tb_e($tbOfferCta[0]) ?>
+                <span class="cvg-tb-cta-long"><?= cvg_tb_e($tbOfferCta[0]) ?></span><span class="cvg-tb-cta-short"><?= cvg_tb_e($tbOfferShort) ?></span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>
             </a>
         <?php endif; ?>
@@ -198,6 +228,39 @@ $tbIcon = function ($name, $cls = 'cvg-tb-ic') use ($tbIcons) {
         letter-spacing: .12em;
         text-transform: uppercase;
         transition: border-color .25s, transform .25s
+    }
+
+    /* Veterans Day badge: neela + laal border + chamakta sitara */
+    .cvg-tb .cvg-tb-badge--vd {
+        background: linear-gradient(90deg, #0b1f4d, #13306f);
+        color: #fff
+    }
+
+    .cvg-tb .cvg-tb-badge--vd:hover {
+        border-color: #ff3b4e
+    }
+
+    .cvg-tb .cvg-tb-star {
+        width: 13px;
+        height: 13px;
+        fill: var(--tb-gold);
+        stroke: var(--tb-gold);
+        stroke-width: 1;
+        animation: cvgTbStar 2s ease-in-out infinite
+    }
+
+    @keyframes cvgTbStar {
+        0%, 100% { transform: scale(1) rotate(0) }
+        50% { transform: scale(1.25) rotate(18deg) }
+    }
+
+    .cvg-tb .cvg-tb-cta-short {
+        display: none
+    }
+
+    @media (max-width:1280px) {
+        .cvg-tb .cvg-tb-cta-long { display: none }
+        .cvg-tb .cvg-tb-cta-short { display: inline }
     }
 
     .cvg-tb .cvg-tb-badge:hover {
@@ -533,7 +596,8 @@ $tbIcon = function ($name, $cls = 'cvg-tb-ic') use ($tbIcons) {
         .cvg-tb .cvg-tb-track,
         .cvg-tb .cvg-tb-dot::after,
         .cvg-tb .cvg-tb-hot .cvg-tb-ic,
-        .cvg-tb .cvg-tb-cta::after {
+        .cvg-tb .cvg-tb-cta::after,
+        .cvg-tb .cvg-tb-star {
             animation: none
         }
 
@@ -558,7 +622,7 @@ $tbIcon = function ($name, $cls = 'cvg-tb-ic') use ($tbIcons) {
             if (spacer) document.body.insertBefore(spacer, bar);
         }
 
-        /* Black Friday countdown: "4d 06h 12m" — offer khatam ho to badge, CTA aur offer line hat jayein */
+        /* Offer countdown: "4d 06h 12m" — offer khatam ho to badge, CTA aur offer line hat jayein */
         var badge = bar.querySelector('[data-tb-ends]');
         if (badge) {
             var ends = parseInt(badge.getAttribute('data-tb-ends'), 10) * 1000;

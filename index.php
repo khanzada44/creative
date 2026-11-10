@@ -10,7 +10,7 @@ require_once __DIR__ . '/includes/init.php';
     <title>Grow Your Brand with Creative Converge: Premier Dallas Digital Agency</title>
     <meta name="description" content="Creative Converge is a premier digital agency in Dallas offering custom web design, development, branding, and digital marketing to grow your brand.">
     <base href="<?= htmlspecialchars(cvg_url('')) ?>">
-
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= cvg_url('assets/css/global.css') ?>">
     <link rel="stylesheet" href="<?= cvg_url('assets/css/header.css') ?>">
