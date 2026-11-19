@@ -490,7 +490,7 @@ $cc_phone_link = '+18556774898';
           <div class="cc-bp-right" aria-live="polite">
             <p class="cc-bp-label">Recommended for your budget</p>
             <h3 class="cc-bp-name" data-bp-name>Essential-Commerce Package</h3>
-            <p class="cc-bp-price"><s data-bp-was>$999.00</s><span class="cc-bp-now">$<b data-bp-now>999</b><small data-bp-cents>.15</small></span><span class="cc-bp-save" data-bp-save>Save $149.85</span></p>
+            <p class="cc-bp-price"><s data-bp-was>$1148.00</s><span class="cc-bp-now">$<b data-bp-now>999</b><small data-bp-cents>.15</small></span><span class="cc-bp-save" data-bp-save>Save $149.85</span></p>
             <div class="cc-bp-cols">
               <div>
                 <p class="cc-bp-h"><span class="cc-hp-ic cc-hp-ic--a" aria-hidden="true"><svg viewBox="0 0 24 24">
