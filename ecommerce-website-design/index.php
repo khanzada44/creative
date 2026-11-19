@@ -166,7 +166,7 @@ $cc_phone_link = '+18556774898';
 
             <label for="phone" style="display: block; min-width: 0">
               <span class="cc-sr">Your phone number</span>
-              <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="Phone number" required
+              <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="11" placeholder="Phone number" required
                 pattern="[0-9+()\-\s]{7,20}" title="Please enter a valid phone number"
                 aria-describedby="cvg-phone-error"
                 style="width: 100%; min-height: 50px; padding: 0 18px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; background: rgba(255,255,255,0.05); color: #ffffff; font: inherit; font-size: 16px; outline: none">
@@ -2024,7 +2024,7 @@ $cc_phone_link = '+18556774898';
               id="phone"
               autocomplete="tel"
               inputmode="numeric"
-              placeholder="03001234567"
+              placeholder="+1234567890"
               required
               maxlength="11"
               pattern="[0-9]{11}"
