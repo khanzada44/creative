@@ -1580,7 +1580,7 @@ $cc_phone_link = '+18556774898';
               </div>
               <span class="cvg-pp-badge">Most popular</span>
             </div>
-            <p class="cvg-pp-was"><s>$999.00</s><span class="cvg-pp-save">Save $149.85</span></p>
+            <p class="cvg-pp-was"><s>$1148.00</s><span class="cvg-pp-save">Save $149.85</span></p>
             <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>999<span class="cvg-pp-cents">.15</span></p>
             <p class="cvg-pp-after">this week with 15% off</p>
             <p class="cvg-pp-count">21 features included</p>
