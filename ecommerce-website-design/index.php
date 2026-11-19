@@ -1581,7 +1581,7 @@ $cc_phone_link = '+18556774898';
               <span class="cvg-pp-badge">Most popular</span>
             </div>
             <p class="cvg-pp-was"><s>$999.00</s><span class="cvg-pp-save">Save $149.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>849<span class="cvg-pp-cents">.15</span></p>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>999<span class="cvg-pp-cents">.15</span></p>
             <p class="cvg-pp-after">this week with 15% off</p>
             <p class="cvg-pp-count">21 features included</p>
             <ul class="cvg-pp-list" tabindex="0" aria-label="Essential-Commerce Package features">
@@ -1775,7 +1775,7 @@ $cc_phone_link = '+18556774898';
           </div>
           <p
             style="margin: 0; flex: 1 1 340px; max-width: 440px; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.8)">
-            </p>
+          </p>
         </div>
         <div
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-bottom: 18px">
@@ -2023,12 +2023,12 @@ $cc_phone_link = '+18556774898';
               name="phone"
               id="phone"
               autocomplete="tel"
-              inputmode="tel"
-              placeholder="+1 555 000 0000"
+              inputmode="numeric"
+              placeholder="03001234567"
               required
-              maxlength="20"
-              pattern="[0-9+()\- ]{7,20}"
-              title="Please enter a valid phone number"
+              maxlength="11"
+              pattern="[0-9]{11}"
+              title="Please enter exactly 11 digits"
               style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.05); color: #ffffff; font: inherit; font-weight: 600; font-size: 15px">
           </label>
 
@@ -2040,9 +2040,9 @@ $cc_phone_link = '+18556774898';
               style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.18); background: #0b0f12; color: #ffffff; font: inherit; font-weight: 600; font-size: 15px">
               <option value="Not selling yet">Not selling yet</option>
               <option value="Under $10k">Under $1K</option>
-              <option value="$10k - $50k">$1K - $25K</option>
-              <option value="$50k - $250k">$25K - $50K</option>
-              <option value="$250k+">$50K+</option>
+              <option value="$10k - $50k">$1K - $2.5K</option>
+              <option value="$50k - $250k">$2.5K - $5K</option>
+              <option value="$250k+">$5K+</option>
             </select>
           </label>
 
