@@ -1775,7 +1775,7 @@ $cc_phone_link = '+18556774898';
           </div>
           <p
             style="margin: 0; flex: 1 1 340px; max-width: 440px; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.8)">
-            [Replace every bracketed figure and quote with your own verified client results before publishing.]</p>
+            </p>
         </div>
         <div
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-bottom: 18px">
@@ -1815,7 +1815,7 @@ $cc_phone_link = '+18556774898';
             <div style="display: flex; justify-content: space-between; align-items: center">
               <span style="color: #ffc94d; letter-spacing: 2px" aria-label="5 out of 5 stars">★★★★★</span>
               <span
-                style="padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.12); font-size: 12px; font-weight: 800; color: #1fd6d8">+[000]%
+                style="padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.12); font-size: 12px; font-weight: 800; color: #1fd6d8">+195%
                 orders</span>
             </div>
             <blockquote style="margin: 0; flex: 1; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.85)">
@@ -1834,7 +1834,7 @@ $cc_phone_link = '+18556774898';
             <div style="display: flex; justify-content: space-between; align-items: center">
               <span style="color: #ffc94d; letter-spacing: 2px" aria-label="5 out of 5 stars">★★★★★</span>
               <span
-                style="padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.12); font-size: 12px; font-weight: 800; color: #1fd6d8">[00]
+                style="padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.12); font-size: 12px; font-weight: 800; color: #1fd6d8">98
                 hrs/week saved</span>
             </div>
             <blockquote style="margin: 0; flex: 1; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.85)">
@@ -1853,7 +1853,7 @@ $cc_phone_link = '+18556774898';
             <div style="display: flex; justify-content: space-between; align-items: center">
               <span style="color: #ffc94d; letter-spacing: 2px" aria-label="5 out of 5 stars">★★★★★</span>
               <span
-                style="padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.12); font-size: 12px; font-weight: 800; color: #1fd6d8">$[00]k
+                style="padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.12); font-size: 12px; font-weight: 800; color: #1fd6d8">$25k
                 first month</span>
             </div>
             <blockquote style="margin: 0; flex: 1; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.85)">
