@@ -490,7 +490,7 @@ $cc_phone_link = '+18556774898';
           <div class="cc-bp-right" aria-live="polite">
             <p class="cc-bp-label">Recommended for your budget</p>
             <h3 class="cc-bp-name" data-bp-name>Essential-Commerce Package</h3>
-            <p class="cc-bp-price"><s data-bp-was>$999.00</s><span class="cc-bp-now">$<b data-bp-now>849</b><small data-bp-cents>.15</small></span><span class="cc-bp-save" data-bp-save>Save $149.85</span></p>
+            <p class="cc-bp-price"><s data-bp-was>$999.00</s><span class="cc-bp-now">$<b data-bp-now>999</b><small data-bp-cents>.15</small></span><span class="cc-bp-save" data-bp-save>Save $149.85</span></p>
             <div class="cc-bp-cols">
               <div>
                 <p class="cc-bp-h"><span class="cc-hp-ic cc-hp-ic--a" aria-hidden="true"><svg viewBox="0 0 24 24">
@@ -1624,7 +1624,7 @@ $cc_phone_link = '+18556774898';
 
             </div>
             <p class="cvg-pp-was"><s>$2,499.00</s><span class="cvg-pp-save">Save $374.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>2,124<span class="cvg-pp-cents">.15</span></p>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>1,999<span class="cvg-pp-cents">.15</span></p>
             <p class="cvg-pp-after">this week with 15% off</p>
             <p class="cvg-pp-count">24 features included</p>
             <ul class="cvg-pp-list" tabindex="0" aria-label="Premium-Store Package features">
@@ -1670,7 +1670,7 @@ $cc_phone_link = '+18556774898';
 
             </div>
             <p class="cvg-pp-was"><s>$4,999.00</s><span class="cvg-pp-save">Save $749.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>4,249<span class="cvg-pp-cents">.15</span></p>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>2,999<span class="cvg-pp-cents">.15</span></p>
             <p class="cvg-pp-after">this week with 15% off</p>
             <p class="cvg-pp-count">27 features included</p>
             <ul class="cvg-pp-list" tabindex="0" aria-label="Elite-Market Package features">
@@ -1719,7 +1719,7 @@ $cc_phone_link = '+18556774898';
 
             </div>
             <p class="cvg-pp-was"><s>$7,999.00</s><span class="cvg-pp-save">Save $1,199.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>6,799<span class="cvg-pp-cents">.15</span></p>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>4,999<span class="cvg-pp-cents">.15</span></p>
             <p class="cvg-pp-after">this week with 15% off</p>
             <p class="cvg-pp-count">21 features included</p>
             <ul class="cvg-pp-list" tabindex="0" aria-label="Ultimate-Emporium Package features">
@@ -1967,7 +1967,6 @@ $cc_phone_link = '+18556774898';
 
 
         <form class="cc-form"
-          data-cc-form
           aria-label="Free store audit request"
           action="email.php"
           method="post"
@@ -2040,10 +2039,10 @@ $cc_phone_link = '+18556774898';
               required
               style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.18); background: #0b0f12; color: #ffffff; font: inherit; font-weight: 600; font-size: 15px">
               <option value="Not selling yet">Not selling yet</option>
-              <option value="Under $10k">Under $10k</option>
-              <option value="$10k - $50k">$10k – $50k</option>
-              <option value="$50k - $250k">$50k – $250k</option>
-              <option value="$250k+">$250k+</option>
+              <option value="Under $10k">Under $1K</option>
+              <option value="$10k - $50k">$1K - $25K</option>
+              <option value="$50k - $250k">$25K - $50K</option>
+              <option value="$250k+">$50K+</option>
             </select>
           </label>
 
@@ -2060,7 +2059,7 @@ $cc_phone_link = '+18556774898';
           <fieldset style="grid-column: 1 / -1; margin: 0; padding: 0; border: 0">
 
             <legend style="margin-bottom: 10px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.82)">
-              Where do you sell?
+              Where do you sell? (optional)
             </legend>
 
             <div style="display: flex; flex-wrap: wrap; gap: 8px">
