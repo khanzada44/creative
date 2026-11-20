@@ -245,31 +245,29 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-chat]'), function 
   var box = document.querySelector('[data-bp]');
   if (!box) return;
   var plans = [
-    { name: 'Starter-Shop Package', price: 799,
+    { name: 'AI Automation Starter', price: 499,
       p: 'A short list of products a starter budget can stock, checked for demand and margin.',
       s: 'Starter website pages, up to 50 products, secure checkout and payment gateway.',
       a: 'Shopping cart, product search and order flow ready from launch.' },
-    { name: 'Essential-Commerce Package', price: 999,
+    { name: 'AI Store Launch', price: 999,
       p: 'Product picks checked for demand, competition and margin, sized to your budget.',
       s: 'Product pages, responsive design, secure checkout, SEO-friendly URLs and SSL.',
       a: 'Inventory management system and basic website analytics.' },
-    { name: 'Premium-Store Package', price: 2499,
+    { name: 'AI Business Pro', price: 2499,
       p: 'A wider product range planned around your budget and your best-selling category.',
       s: 'Up to 200 product pages, multiple payment options and advanced SEO.',
       a: 'Robust inventory management, email marketing and live chat integration.' },
-    { name: 'Elite-Market Package', price: 4999,
+    { name: 'AI Fully Autopilot Empire ', price: 4999,
       p: 'A full catalogue plan with products chosen for demand, margin and repeat buyers.',
       s: 'Up to 300 product pages, fully custom responsive design and AI-powered search.',
       a: 'Email marketing automation, an advanced analytics dashboard and VIP support.' },
-    { name: 'Ultimate-Emporium Package', price: 7999,
-      p: 'A product range strategy across channels, built to scale with your brand.',
-      s: 'A bespoke design and site architecture built for conversion.',
-      a: 'Omni-channel marketing, predictive analytics and 24/7 support.' }
+  
   ];
   var right = box.querySelector('.cc-bp-right');
   var $ = function (sel) { return box.querySelector(sel); };
-  var money = function (n) { return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
-  var nowEl = $('[data-bp-now]'), current = 849;
+  var nowEl = $('[data-bp-now]'), current = 999;   // matches the price shown in the HTML
+
+  // price counts up/down to the new figure
   function countTo(target) {
     var start = current, t0 = performance.now(), dur = 600;
     function step(t) {
@@ -279,21 +277,20 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-chat]'), function 
     }
     requestAnimationFrame(step);
   }
+
   function pick(i) {
-    var plan = plans[i], now = plan.price * 0.85, whole = Math.floor(now);
+    var plan = plans[i];
     Array.prototype.forEach.call(box.querySelectorAll('[data-bp-key]'), function (b) {
       b.setAttribute('aria-checked', String(+b.getAttribute('data-bp-key') === i));
     });
     $('[data-bp-name]').textContent = plan.name;
-    $('[data-bp-was]').textContent = '$' + money(plan.price);
-    $('[data-bp-cents]').textContent = '.' + String(Math.round((now - whole) * 100)).padStart(2, '0');
-    $('[data-bp-save]').textContent = 'Save $' + money(plan.price - now);
     $('[data-bp-p]').textContent = plan.p;
     $('[data-bp-s]').textContent = plan.s;
     $('[data-bp-a]').textContent = plan.a;
-    countTo(whole);
+    countTo(plan.price);                             // the plan's full price, no discount
     right.classList.remove('is-swap'); void right.offsetWidth; right.classList.add('is-swap');
   }
+
   var chips = Array.prototype.slice.call(box.querySelectorAll('[data-bp-key]'));
   chips.forEach(function (b, i) {
     b.addEventListener('click', function () { pick(i); });
