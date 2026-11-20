@@ -479,18 +479,16 @@ $cc_phone_link = '+18556774898';
           <div class="cc-bp-left">
             <p class="cc-bp-q" id="cc-bp-q">What's your budget?</p>
             <div class="cc-bp-chips" role="radiogroup" aria-labelledby="cc-bp-q">
-              <button type="button" role="radio" aria-checked="false" data-bp-key="0">Under $800</button>
-              <button type="button" role="radio" aria-checked="true" data-bp-key="1">$800 – $1,500</button>
-              <button type="button" role="radio" aria-checked="false" data-bp-key="2">$1,500 – $3,000</button>
-              <button type="button" role="radio" aria-checked="false" data-bp-key="3">$3,000 – $6,000</button>
-              <button type="button" role="radio" aria-checked="false" data-bp-key="4">$6,000+</button>
+              <button type="button" role="radio" aria-checked="false" data-bp-key="0">Under $499</button>
+              <button type="button" role="radio" aria-checked="true" data-bp-key="1">$499 – $999</button>
+              <button type="button" role="radio" aria-checked="false" data-bp-key="2">$999 – $2,499</button>
+              <button type="button" role="radio" aria-checked="false" data-bp-key="4">$4,999+</button>
             </div>
-            <p class="cc-bp-offer"><span class="cc-bp-offer-badge">-15%</span>This week's price. Offer ends in <b data-cd-short>—</b></p>
           </div>
           <div class="cc-bp-right" aria-live="polite">
             <p class="cc-bp-label">Recommended for your budget</p>
-            <h3 class="cc-bp-name" data-bp-name>Essential-Commerce Package</h3>
-            <p class="cc-bp-price"><s data-bp-was>$1148.00</s><span class="cc-bp-now">$<b data-bp-now>999</b><small data-bp-cents>.15</small></span><span class="cc-bp-save" data-bp-save>Save $149.85</span></p>
+            <h3 class="cc-bp-name" data-bp-name>AI Store Launch</h3>
+            <p class="cc-bp-price"><span class="cc-bp-now">$<b data-bp-now>999</b><small>.00</small></span></p>
             <div class="cc-bp-cols">
               <div>
                 <p class="cc-bp-h"><span class="cc-hp-ic cc-hp-ic--a" aria-hidden="true"><svg viewBox="0 0 24 24">
@@ -519,92 +517,439 @@ $cc_phone_link = '+18556774898';
         </div>
       </div>
     </section>
-    <!-- ===== PAIN POINTS ===== -->
-    <section class="cc-light cc-light--warm" style="padding: 120px 24px 90px; background: #fff5ef; color: #0b0f12">
+    <!-- ===== SERVICES (teal) ===== -->
+    <section id="services"
+      style="position: relative; padding: 110px 24px; background: linear-gradient(125deg, rgba(6,74,77,0.94) 0%, rgba(21,94,156,0.9) 50%, rgba(91,63,214,0.92) 100%), url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1800&q=70') center/cover; overflow: hidden">
+      <div aria-hidden="true"
+        style="position: absolute; top: 40px; right: 40px; width: 300px; height: 180px;">
+      </div>
+      <div aria-hidden="true"
+        style="position: absolute; bottom: -40px; left: -20px; font-family: Poppins, sans-serif; font-weight: 900; font-size: 240px; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.12)">
+        CC.</div>
+      <div class="cc-reveal" style="position: relative; max-width: 1240px; margin: 0 auto">
+        <p
+          style="margin: 0 0 14px; display: flex; align-items: center; gap: 14px; font-family: Poppins, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.9)">
+          <span style="display: inline-block; width: 48px; height: 2px; background: #ffffff"></span>our services
+        </p>
+        <h2
+          style="margin: 0 0 16px; font-family: Poppins, sans-serif; font-weight: 800; font-size: clamp(2.2rem, 1.5rem + 2.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em">
+          We do everything<span style="color: #7ef0f1">.</span></h2>
+        <p
+          style="margin: 0 0 56px; max-width: 620px; font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.86)">
+          Pick one service or hand us the whole store. Every service comes with a dedicated manager and weekly reports.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px">
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Amazon Wholesale
+              FBA</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">
+              Brand-approved sourcing, FBA shipments, restock planning and account health, end to end.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with Amazon Wholesale FBA</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 12l-8 8-9-9V3h8l9 9zM7.5 7.5h.01"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Amazon Private
+              Label</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Research,
+              suppliers, branding, packaging and a launch plan for a brand you own.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with Amazon Private Label</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 10h16l-1.5 10h-13L4 10zM8 10V7a4 4 0 0 1 8 0v3"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Walmart
+              Marketplace</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Approval,
+              listings, order flow and Walmart Fulfillment Services set up right.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with Walmart Marketplace</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3l2.6 5.6L20 9.5l-4 4 1 5.5-5-2.8L7 19l1-5.5-4-4 5.4-.9L12 3z"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Etsy Shop
+              Management</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Etsy SEO,
+              print-on-demand, orders and customer care for creative brands.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with Etsy Shop Management</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 18a3 3 0 1 1 0-6M9 18V4c1 2.5 3 4 6 4"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">TikTok Shop
+              Growth</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Shop setup,
+              creator partnerships and videos that turn views into orders.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with TikTok Shop Growth</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 6h16v12H4zM4 10h16M8 15h3"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">eBay Store
+              Management</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Listings,
+              pricing, buyer messages and fast dispatch for a top seller rating.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with eBay Store Management</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 11l15-6v14L3 13zM7 13v5a2 2 0 0 0 4 0v-4"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Marketplace
+              Advertising</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Sponsored
+              ads on Amazon and Walmart, planned around margin and tuned weekly.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with Marketplace Advertising</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+          <article class="cc-lift"
+            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
+            <span
+              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"></path>
+              </svg>
+            </span>
+            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Ecommerce Virtual
+              Assistants</h3>
+            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Trained VAs
+              for research, listings, orders and support, on your hours.</p>
+            <a href="#audit"
+              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
+              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+                with Ecommerce Virtual Assistants</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ===== PRICING ===== -->
+    <section class="cvg-pp cvg-pp-packages" id="cvg-pp-packages" aria-labelledby="cvg-pp-title">
+      <span class="cvg-pp-glow cvg-pp-glow--a" aria-hidden="true"></span>
+      <span class="cvg-pp-glow cvg-pp-glow--b" aria-hidden="true"></span>
+      <span class="cvg-pp-gridbg" aria-hidden="true"></span>
+      <div class="cvg-pp-wrap">
+        <div class="cvg-pp-head" data-wm="Pricing">
+          <p class="cvg-pp-eyebrow cvg-pp-rv">How much does it cost</p>
+          <h2 class="cvg-pp-h2 cvg-pp-rv" id="cvg-pp-title" style="--d:.1s">Find the Right Fit for <span class="cvg-pp-mint">Your Next Move.</span></h2>
+          <p class="cvg-pp-sub cvg-pp-rv" style="--d:.2s">Every business is at a different stage, and every store comes with its own priorities. Our ecommerce website packages give you a clear starting point, so you can compare the options and pick the one that fits your store today.</p>
+        </div>
+
+        <div class="cvg-pp-controls">
+          <button type="button" class="cvg-pp-arrow" data-pp-prev aria-label="Previous packages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6"></path>
+            </svg></button>
+          <button type="button" class="cvg-pp-arrow" data-pp-next aria-label="Next packages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 6l6 6-6 6"></path>
+            </svg></button>
+        </div>
+
+        <div class="cvg-pp-cards" data-pp-track>
+          <article class="cvg-pp-card" style="--i:0" aria-labelledby="cvg-pp-name-0">
+            <div class="cvg-pp-card-top">
+              <div>
+                <h3 class="cvg-pp-name" id="cvg-pp-name-0">AI Automation Starter</h3>
+                <p class="cvg-pp-tier">Starter</p>
+              </div>
+            </div>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>499<span class="cvg-pp-cents">.00</span></p>
+            <p class="cvg-pp-desc">Already have an online store? Turn it into an AI-powered business.</p>
+            <p class="cvg-pp-count">9 features included</p>
+            <ul class="cvg-pp-list" tabindex="0" aria-label="AI Automation Starter features">
+              <li class="cvg-pp-li">AI-powered customer support chatbot</li>
+              <li class="cvg-pp-li">AI-powered product description optimization</li>
+              <li class="cvg-pp-li">Basic SEO automation</li>
+              <li class="cvg-pp-li">Automated customer email responses</li>
+              <li class="cvg-pp-li">Abandoned-cart email automation</li>
+              <li class="cvg-pp-li">Automated order confirmation emails</li>
+              <li class="cvg-pp-li">Basic customer follow-up workflows</li>
+              <li class="cvg-pp-li">AI integration with your existing store</li>
+              <li class="cvg-pp-li">Automation testing and configuration</li>
+            </ul>
+            <p class="cvg-pp-ideal"><b>Ideal for:</b> Existing Shopify and eCommerce store owners.</p>
+            <div class="cvg-pp-ctas">
+              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
+              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
+            </div>
+          </article>
+          <article class="cvg-pp-card" style="--i:1" aria-labelledby="cvg-pp-name-1">
+            <div class="cvg-pp-card-top">
+              <div>
+                <h3 class="cvg-pp-name" id="cvg-pp-name-1">AI Store Launch</h3>
+                <p class="cvg-pp-tier">Launch</p>
+              </div>
+            </div>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>999<span class="cvg-pp-cents">.00</span></p>
+            <p class="cvg-pp-desc">Get your online store built and equipped with essential AI automation.</p>
+            <p class="cvg-pp-count">12 features included</p>
+            <ul class="cvg-pp-list" tabindex="0" aria-label="AI Store Launch features">
+              <li class="cvg-pp-li">Professional Shopify store development</li>
+              <li class="cvg-pp-li">Mobile-responsive store design</li>
+              <li class="cvg-pp-li">Up to 25 product listings</li>
+              <li class="cvg-pp-li">Dropshipping supplier integration</li>
+              <li class="cvg-pp-li">AI customer support assistant</li>
+              <li class="cvg-pp-li">AI-generated product descriptions</li>
+              <li class="cvg-pp-li">Basic SEO optimization</li>
+              <li class="cvg-pp-li">Automated order notifications</li>
+              <li class="cvg-pp-li">Automated customer emails</li>
+              <li class="cvg-pp-li">Abandoned-cart recovery setup</li>
+              <li class="cvg-pp-li">Payment and shipping configuration</li>
+              <li class="cvg-pp-li">Essential automation testing</li>
+            </ul>
+            <p class="cvg-pp-ideal"><b>Ideal for:</b> Beginners launching their first dropshipping business.</p>
+            <div class="cvg-pp-ctas">
+              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
+              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
+            </div>
+          </article>
+          <article class="cvg-pp-card cvg-pp-card--featured" style="--i:2" aria-labelledby="cvg-pp-name-2">
+            <span class="cvg-pp-shine" aria-hidden="true"></span>
+            <div class="cvg-pp-card-top">
+              <div>
+                <h3 class="cvg-pp-name" id="cvg-pp-name-2">AI Business Pro</h3>
+                <p class="cvg-pp-tier">Popular choice</p>
+              </div>
+              <span class="cvg-pp-badge">Popular choice</span>
+            </div>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>2,499<span class="cvg-pp-cents">.00</span></p>
+            <p class="cvg-pp-desc">A professionally customized eCommerce store with advanced AI-powered sales and operational automation.</p>
+            <p class="cvg-pp-count">16 features included</p>
+            <ul class="cvg-pp-list" tabindex="0" aria-label="AI Business Pro features">
+              <li class="cvg-pp-li">Everything in AI Store Launch</li>
+              <li class="cvg-pp-li">Fully customized storefront design</li>
+              <li class="cvg-pp-li">Up to 100 product listings</li>
+              <li class="cvg-pp-li">Advanced product and supplier research</li>
+              <li class="cvg-pp-li">Multiple supplier integrations</li>
+              <li class="cvg-pp-li">Advanced AI sales agent</li>
+              <li class="cvg-pp-li">24/7 AI customer support configuration</li>
+              <li class="cvg-pp-li">AI-powered SEO content workflows</li>
+              <li class="cvg-pp-li">Advanced email marketing automation</li>
+              <li class="cvg-pp-li">Automated supplier order forwarding</li>
+              <li class="cvg-pp-li">Inventory synchronization</li>
+              <li class="cvg-pp-li">Automated shipping and tracking updates</li>
+              <li class="cvg-pp-li">Upselling and cross-selling automation</li>
+              <li class="cvg-pp-li">Customer review request automation</li>
+              <li class="cvg-pp-li">Sales analytics dashboard</li>
+              <li class="cvg-pp-li">60-day technical support</li>
+            </ul>
+            <p class="cvg-pp-ideal"><b>Ideal for:</b> Entrepreneurs building a serious eCommerce brand.</p>
+            <div class="cvg-pp-ctas">
+              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
+              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
+            </div>
+          </article>
+          <article class="cvg-pp-card" style="--i:3" aria-labelledby="cvg-pp-name-3">
+            <div class="cvg-pp-card-top">
+              <div>
+                <h3 class="cvg-pp-name" id="cvg-pp-name-3">AI Fully Autopilot Empire</h3>
+                <p class="cvg-pp-tier">Autopilot</p>
+              </div>
+            </div>
+            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>4,999<span class="cvg-pp-cents">.00</span></p>
+            <p class="cvg-pp-desc">A comprehensive AI-powered eCommerce ecosystem designed to automate your store's everyday operations.</p>
+            <p class="cvg-pp-count">18 features included</p>
+            <ul class="cvg-pp-list" tabindex="0" aria-label="AI Fully Autopilot Empire features">
+              <li class="cvg-pp-li">Everything in AI Business Pro</li>
+              <li class="cvg-pp-li">Up to 250 product listings</li>
+              <li class="cvg-pp-li">Premium custom-designed storefront</li>
+              <li class="cvg-pp-li">Advanced custom AI agents</li>
+              <li class="cvg-pp-li">Intelligent AI sales and product recommendation system</li>
+              <li class="cvg-pp-li">Advanced AI customer service workflows</li>
+              <li class="cvg-pp-li">Automated order processing and supplier routing</li>
+              <li class="cvg-pp-li">Advanced inventory and fulfillment synchronization</li>
+              <li class="cvg-pp-li">Automated tracking and delivery communications</li>
+              <li class="cvg-pp-li">Advanced email marketing ecosystem</li>
+              <li class="cvg-pp-li">Customer segmentation and retention automation</li>
+              <li class="cvg-pp-li">Multi-channel sales integration</li>
+              <li class="cvg-pp-li">CRM integration</li>
+              <li class="cvg-pp-li">Advanced SEO automation workflows</li>
+              <li class="cvg-pp-li">AI-powered sales and business reporting</li>
+              <li class="cvg-pp-li">Custom API integrations (as scoped)</li>
+              <li class="cvg-pp-li">Dedicated account manager</li>
+              <li class="cvg-pp-li">90-day technical support</li>
+            </ul>
+            <div class="cvg-pp-ctas">
+              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
+              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="cvg-pp-dots"><button type="button" class="cvg-pp-dot" data-pp-dot="0" aria-label="Go to AI Automation Starter"></button><button type="button" class="cvg-pp-dot" data-pp-dot="1" aria-label="Go to AI Store Launch"></button><button type="button" class="cvg-pp-dot" data-pp-dot="2" aria-label="Go to AI Business Pro"></button><button type="button" class="cvg-pp-dot" data-pp-dot="3" aria-label="Go to AI Fully Autopilot Empire"></button></div>
+        <p class="cvg-pp-foot">Need something custom? <a href="#audit">Tell us about your store</a> or call <a href="tel:<?= $cc_phone_link ?>"><?= $cc_phone ?></a>.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ===== PROCESS ===== -->
+    <section class="cc-light cc-light--cool" id="process" style="padding: 120px 24px; background: #effafa; color: #0b0f12">
       <div class="cc-reveal" style="max-width: 1240px; margin: 0 auto">
-        <div style="text-align: center; max-width: 780px; margin: 0 auto 60px">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 64px">
           <p
             style="margin: 0 0 14px; display: inline-flex; align-items: center; gap: 14px; font-family: Poppins, sans-serif; font-weight: 500; font-size: 14px; color: rgba(11,15,18,0.85)">
-            <span style="display: inline-block; width: 48px; height: 2px; background: #ff5e5b"></span>sound
-            familiar?<span style="display: inline-block; width: 48px; height: 2px; background: #ff5e5b"></span>
+            <span style="display: inline-block; width: 48px; height: 2px; background: #ff5e5b"></span>how it works<span
+              style="display: inline-block; width: 48px; height: 2px; background: #ff5e5b"></span>
           </p>
           <h2
-            style="margin: 0; font-family: Poppins, sans-serif; font-weight: 800; font-size: clamp(2.2rem, 1.5rem + 2.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em">
-            Running a store shouldn't<br>run your whole life<span style="color: #0a8a8d">.</span></h2>
+            style="margin: 0 0 16px; font-family: Poppins, sans-serif; font-weight: 800; font-size: clamp(2.2rem, 1.5rem + 2.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em">
+            From audit to autopilot in <span class="cc-shine">4 steps</span>.</h2>
+          <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(11,15,18,0.7)">A clear path, with a
+            named person responsible at every step.</p>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px">
-          <article class="cc-lift"
-            style="position: relative; padding: 34px 30px; border-radius: 22px; background: #ffffff; box-shadow: 0 24px 50px -32px rgba(11,15,18,0.35); border: 1px solid rgba(11,15,18,0.1); overflow: hidden">
-            <span
-              style="position: absolute; right: 18px; top: 8px; font-family: Poppins, sans-serif; font-weight: 900; font-size: 90px; color: rgba(11,15,18,0.04); line-height: 1"
-              aria-hidden="true">01</span>
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: rgba(254,90,90,0.12); color: #e5484d; margin-bottom: 22px">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 20px">Orders eat
-              your day</h3>
-            <p style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.6; color: rgba(11,15,18,0.66)">Packing
-              slips, tracking numbers and returns leave no time for growth.</p>
-            <p
-              style="margin: 0; padding-top: 16px; border-top: 1px solid rgba(11,15,18,0.08); display: flex; gap: 10px; font-size: 15px; font-weight: 700; color: #0b7d80">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px">
-                <path d="M5 12.5l4.5 4.5L19 7.5"></path>
-              </svg>We process every order, every day.
-            </p>
-          </article>
-          <article class="cc-lift"
-            style="position: relative; padding: 34px 30px; border-radius: 22px; background: #ffffff; box-shadow: 0 24px 50px -32px rgba(11,15,18,0.35); border: 1px solid rgba(11,15,18,0.1); overflow: hidden">
-            <span
-              style="position: absolute; right: 18px; top: 8px; font-family: Poppins, sans-serif; font-weight: 900; font-size: 90px; color: rgba(11,15,18,0.04); line-height: 1"
-              aria-hidden="true">02</span>
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: rgba(254,90,90,0.12); color: #e5484d; margin-bottom: 22px">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 3v18h18M7 14l4-4 3 3 5-6"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 20px">Listings
-              that don’t sell</h3>
-            <p style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.6; color: rgba(11,15,18,0.66)">Weak titles
-              and photos bury your products on page five.</p>
-            <p
-              style="margin: 0; padding-top: 16px; border-top: 1px solid rgba(11,15,18,0.08); display: flex; gap: 10px; font-size: 15px; font-weight: 700; color: #0b7d80">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px">
-                <path d="M5 12.5l4.5 4.5L19 7.5"></path>
-              </svg>We rewrite listings that rank and convert.
-            </p>
-          </article>
-          <article class="cc-lift"
-            style="position: relative; padding: 34px 30px; border-radius: 22px; background: #ffffff; box-shadow: 0 24px 50px -32px rgba(11,15,18,0.35); border: 1px solid rgba(11,15,18,0.1); overflow: hidden">
-            <span
-              style="position: absolute; right: 18px; top: 8px; font-family: Poppins, sans-serif; font-weight: 900; font-size: 90px; color: rgba(11,15,18,0.04); line-height: 1"
-              aria-hidden="true">03</span>
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: rgba(254,90,90,0.12); color: #e5484d; margin-bottom: 22px">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 2c1 4 6 5 6 11a6 6 0 0 1-12 0c0-3 2-4 2-7 2 1 3 3 3 5 1-2 1-6 1-9z"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 20px">Ads
-              burning cash</h3>
-            <p style="margin: 0 0 20px; font-size: 15.5px; line-height: 1.6; color: rgba(11,15,18,0.66)">Clicks go
-              up, sales don’t, and you can’t tell which campaign works.</p>
-            <p
-              style="margin: 0; padding-top: 16px; border-top: 1px solid rgba(11,15,18,0.08); display: flex; gap: 10px; font-size: 15px; font-weight: 700; color: #0b7d80">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px">
-                <path d="M5 12.5l4.5 4.5L19 7.5"></path>
-              </svg>We run ads around profit, not clicks.
-            </p>
-          </article>
+        <div style="position: relative">
+          <div class="cc-line cc-hide-sm" aria-hidden="true"
+            style="position: absolute; top: 34px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, #1fd6d8, #0b7d80, #1fd6d8)">
+          </div>
+          <ol
+            style="position: relative; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px">
+            <li style="text-align: center; padding: 0 10px">
+              <span class="cc-pulse"
+                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">1</span>
+              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Free
+                store audit</h3>
+              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">We review
+                your store, products and competitors and send a written plan.</p>
+              <span
+                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Day
+                1–2</span>
+            </li>
+            <li style="text-align: center; padding: 0 10px">
+              <span class="cc-pulse"
+                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">2</span>
+              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Strategy
+                call</h3>
+              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">We agree
+                goals, channels and budget with you, in plain language.</p>
+              <span
+                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Week
+                1</span>
+            </li>
+            <li style="text-align: center; padding: 0 10px">
+              <span class="cc-pulse"
+                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">3</span>
+              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Setup
+                &amp; fixes</h3>
+              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">Listings,
+                inventory, ads and processes are rebuilt the right way.</p>
+              <span
+                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Weeks
+                2–4</span>
+            </li>
+            <li style="text-align: center; padding: 0 10px">
+              <span class="cc-pulse"
+                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">4</span>
+              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">
+                Autopilot &amp; growth</h3>
+              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">We run the
+                store daily and push growth with weekly reports.</p>
+              <span
+                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Ongoing</span>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -1119,643 +1464,6 @@ $cc_phone_link = '+18556774898';
         </div>
       </div>
     </section>
-    <!-- ===== SERVICES (teal) ===== -->
-    <section id="services"
-      style="position: relative; padding: 110px 24px; background: linear-gradient(125deg, rgba(6,74,77,0.94) 0%, rgba(21,94,156,0.9) 50%, rgba(91,63,214,0.92) 100%), url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1800&q=70') center/cover; overflow: hidden">
-      <div aria-hidden="true"
-        style="position: absolute; top: 40px; right: 40px; width: 300px; height: 180px;">
-      </div>
-      <div aria-hidden="true"
-        style="position: absolute; bottom: -40px; left: -20px; font-family: Poppins, sans-serif; font-weight: 900; font-size: 240px; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.12)">
-        CC.</div>
-      <div class="cc-reveal" style="position: relative; max-width: 1240px; margin: 0 auto">
-        <p
-          style="margin: 0 0 14px; display: flex; align-items: center; gap: 14px; font-family: Poppins, sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,0.9)">
-          <span style="display: inline-block; width: 48px; height: 2px; background: #ffffff"></span>our services
-        </p>
-        <h2
-          style="margin: 0 0 16px; font-family: Poppins, sans-serif; font-weight: 800; font-size: clamp(2.2rem, 1.5rem + 2.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em">
-          We do everything<span style="color: #7ef0f1">.</span></h2>
-        <p
-          style="margin: 0 0 56px; max-width: 620px; font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.86)">
-          Pick one service or hand us the whole store. Every service comes with a dedicated manager and weekly reports.
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px">
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Amazon Wholesale
-              FBA</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">
-              Brand-approved sourcing, FBA shipments, restock planning and account health, end to end.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with Amazon Wholesale FBA</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20 12l-8 8-9-9V3h8l9 9zM7.5 7.5h.01"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Amazon Private
-              Label</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Research,
-              suppliers, branding, packaging and a launch plan for a brand you own.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with Amazon Private Label</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 10h16l-1.5 10h-13L4 10zM8 10V7a4 4 0 0 1 8 0v3"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Walmart
-              Marketplace</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Approval,
-              listings, order flow and Walmart Fulfillment Services set up right.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with Walmart Marketplace</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 3l2.6 5.6L20 9.5l-4 4 1 5.5-5-2.8L7 19l1-5.5-4-4 5.4-.9L12 3z"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Etsy Shop
-              Management</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Etsy SEO,
-              print-on-demand, orders and customer care for creative brands.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with Etsy Shop Management</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M9 18a3 3 0 1 1 0-6M9 18V4c1 2.5 3 4 6 4"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">TikTok Shop
-              Growth</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Shop setup,
-              creator partnerships and videos that turn views into orders.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with TikTok Shop Growth</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 6h16v12H4zM4 10h16M8 15h3"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">eBay Store
-              Management</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Listings,
-              pricing, buyer messages and fast dispatch for a top seller rating.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with eBay Store Management</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 11l15-6v14L3 13zM7 13v5a2 2 0 0 0 4 0v-4"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Marketplace
-              Advertising</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Sponsored
-              ads on Amazon and Walmart, planned around margin and tuned weekly.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with Marketplace Advertising</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-          <article class="cc-lift"
-            style="display: flex; flex-direction: column; gap: 14px; padding: 30px 26px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.14)">
-            <span
-              style="display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(126,240,241,0.25), rgba(255,255,255,0.05)); color: #7ef0f1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"></path>
-              </svg>
-            </span>
-            <h3 style="margin: 0; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Ecommerce Virtual
-              Assistants</h3>
-            <p style="margin: 0; flex: 1; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.82)">Trained VAs
-              for research, listings, orders and support, on your hours.</p>
-            <a href="#audit"
-              style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; font-size: 14px; color: #7ef0f1">Get
-              started<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
-                with Ecommerce Virtual Assistants</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"></path>
-              </svg>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-    <!-- ===== PROCESS ===== -->
-    <section class="cc-light cc-light--cool" id="process" style="padding: 120px 24px; background: #effafa; color: #0b0f12">
-      <div class="cc-reveal" style="max-width: 1240px; margin: 0 auto">
-        <div style="text-align: center; max-width: 760px; margin: 0 auto 64px">
-          <p
-            style="margin: 0 0 14px; display: inline-flex; align-items: center; gap: 14px; font-family: Poppins, sans-serif; font-weight: 500; font-size: 14px; color: rgba(11,15,18,0.85)">
-            <span style="display: inline-block; width: 48px; height: 2px; background: #ff5e5b"></span>how it works<span
-              style="display: inline-block; width: 48px; height: 2px; background: #ff5e5b"></span>
-          </p>
-          <h2
-            style="margin: 0 0 16px; font-family: Poppins, sans-serif; font-weight: 800; font-size: clamp(2.2rem, 1.5rem + 2.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em">
-            From audit to autopilot in <span class="cc-shine">4 steps</span>.</h2>
-          <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(11,15,18,0.7)">A clear path, with a
-            named person responsible at every step.</p>
-        </div>
-        <div style="position: relative">
-          <div class="cc-line cc-hide-sm" aria-hidden="true"
-            style="position: absolute; top: 34px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, #1fd6d8, #0b7d80, #1fd6d8)">
-          </div>
-          <ol
-            style="position: relative; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px">
-            <li style="text-align: center; padding: 0 10px">
-              <span class="cc-pulse"
-                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">1</span>
-              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Free
-                store audit</h3>
-              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">We review
-                your store, products and competitors and send a written plan.</p>
-              <span
-                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Day
-                1–2</span>
-            </li>
-            <li style="text-align: center; padding: 0 10px">
-              <span class="cc-pulse"
-                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">2</span>
-              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Strategy
-                call</h3>
-              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">We agree
-                goals, channels and budget with you, in plain language.</p>
-              <span
-                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Week
-                1</span>
-            </li>
-            <li style="text-align: center; padding: 0 10px">
-              <span class="cc-pulse"
-                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">3</span>
-              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">Setup
-                &amp; fixes</h3>
-              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">Listings,
-                inventory, ads and processes are rebuilt the right way.</p>
-              <span
-                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Weeks
-                2–4</span>
-            </li>
-            <li style="text-align: center; padding: 0 10px">
-              <span class="cc-pulse"
-                style="display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 22px; border-radius: 50%; background: #ffffff; border: 2px solid #1fd6d8; font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px; color: #0a8a8d">4</span>
-              <h3 style="margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 19px">
-                Autopilot &amp; growth</h3>
-              <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: rgba(11,15,18,0.66)">We run the
-                store daily and push growth with weekly reports.</p>
-              <span
-                style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(31,214,216,0.1); font-size: 12px; font-weight: 800; color: #0b7d80">Ongoing</span>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-    <!-- ===== COMPARISON ===== -->
-    <section class="cc-light cc-light--cool" style="padding: 20px 24px 120px; background: #effafa; color: #0b0f12">
-      <div class="cc-reveal" style="max-width: 1000px; margin: 0 auto">
-        <div style="text-align: center; margin-bottom: 44px">
-          <h2
-            style="margin: 0 0 12px; font-family: Poppins, sans-serif; font-weight: 800; font-size: clamp(2rem, 1.4rem + 2vw, 3rem); line-height: 1.1; letter-spacing: -0.025em">
-            Doing it yourself vs. <span style="color: #0a8a8d">Creative Converge</span></h2>
-          <p style="margin: 0; font-size: 16.5px; color: rgba(11,15,18,0.65)">Same store. Very different week.</p>
-        </div>
-        <div style="overflow-x: auto; border-radius: 24px; border: 1px solid rgba(11,15,18,0.1)">
-          <table style="width: 100%; min-width: 620px; border-collapse: collapse; font-size: 15.5px">
-            <thead>
-              <tr>
-                <th scope="col"
-                  style="text-align: left; padding: 22px 26px; background: rgba(11,15,18,0.03); font-family: Poppins, sans-serif; font-size: 14px; color: rgba(11,15,18,0.6)">
-                  The work</th>
-                <th scope="col"
-                  style="text-align: left; padding: 22px 26px; background: rgba(11,15,18,0.03); font-family: Poppins, sans-serif; font-size: 15px">
-                  On your own</th>
-                <th scope="col"
-                  style="text-align: left; padding: 22px 26px; background: linear-gradient(120deg, #0a6466, #0b7d80); color: #ffffff; font-family: Poppins, sans-serif; font-size: 15px">
-                  With Creative Converge</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"
-                  style="text-align: left; padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); font-weight: 700">
-                  Daily order processing</th>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); color: rgba(11,15,18,0.6)">
-                  <span style="color: #e5484d; font-weight: 800; margin-right: 8px" aria-hidden="true">✕</span>Hours of
-                  your time
-                </td>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); background: rgba(31,214,216,0.06); font-weight: 600">
-                  <span style="color: #0a8a8d; font-weight: 800; margin-right: 8px" aria-hidden="true">✓</span>Handled
-                  by our team
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"
-                  style="text-align: left; padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); font-weight: 700">
-                  Listings &amp; SEO</th>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); color: rgba(11,15,18,0.6)">
-                  <span style="color: #e5484d; font-weight: 800; margin-right: 8px" aria-hidden="true">✕</span>Guesswork
-                </td>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); background: rgba(31,214,216,0.06); font-weight: 600">
-                  <span style="color: #0a8a8d; font-weight: 800; margin-right: 8px"
-                    aria-hidden="true">✓</span>Researched and tested
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"
-                  style="text-align: left; padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); font-weight: 700">
-                  Inventory &amp; restocks</th>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); color: rgba(11,15,18,0.6)">
-                  <span style="color: #e5484d; font-weight: 800; margin-right: 8px"
-                    aria-hidden="true">✕</span>Stock-outs and overstock
-                </td>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); background: rgba(31,214,216,0.06); font-weight: 600">
-                  <span style="color: #0a8a8d; font-weight: 800; margin-right: 8px" aria-hidden="true">✓</span>Planned
-                  weeks ahead
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"
-                  style="text-align: left; padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); font-weight: 700">
-                  Advertising</th>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); color: rgba(11,15,18,0.6)">
-                  <span style="color: #e5484d; font-weight: 800; margin-right: 8px" aria-hidden="true">✕</span>Wasted ad
-                  spend
-                </td>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); background: rgba(31,214,216,0.06); font-weight: 600">
-                  <span style="color: #0a8a8d; font-weight: 800; margin-right: 8px" aria-hidden="true">✓</span>Managed
-                  for profit
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"
-                  style="text-align: left; padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); font-weight: 700">
-                  Customer messages &amp; reviews</th>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); color: rgba(11,15,18,0.6)">
-                  <span style="color: #e5484d; font-weight: 800; margin-right: 8px" aria-hidden="true">✕</span>Slow
-                  replies
-                </td>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); background: rgba(31,214,216,0.06); font-weight: 600">
-                  <span style="color: #0a8a8d; font-weight: 800; margin-right: 8px" aria-hidden="true">✓</span>Answered
-                  fast, every day
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"
-                  style="text-align: left; padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); font-weight: 700">
-                  New marketplaces</th>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); color: rgba(11,15,18,0.6)">
-                  <span style="color: #e5484d; font-weight: 800; margin-right: 8px" aria-hidden="true">✕</span>Too risky
-                  to try
-                </td>
-                <td
-                  style="padding: 18px 26px; border-top: 1px solid rgba(11,15,18,0.08); background: rgba(31,214,216,0.06); font-weight: 600">
-                  <span style="color: #0a8a8d; font-weight: 800; margin-right: 8px" aria-hidden="true">✓</span>Launched
-                  with a plan
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PRICING ===== -->
-    <section class="cvg-pp cvg-pp-packages" id="cvg-pp-packages" aria-labelledby="cvg-pp-title">
-      <span class="cvg-pp-glow cvg-pp-glow--a" aria-hidden="true"></span>
-      <span class="cvg-pp-glow cvg-pp-glow--b" aria-hidden="true"></span>
-      <span class="cvg-pp-gridbg" aria-hidden="true"></span>
-      <div class="cvg-pp-wrap">
-        <div class="cvg-pp-head" data-wm="Pricing">
-          <p class="cvg-pp-eyebrow cvg-pp-rv">How much does it cost</p>
-          <h2 class="cvg-pp-h2 cvg-pp-rv" id="cvg-pp-title" style="--d:.1s">Find the Right Fit for <span class="cvg-pp-mint">Your Next Move.</span></h2>
-          <p class="cvg-pp-sub cvg-pp-rv" style="--d:.2s">Every business is at a different stage, and every store comes with its own priorities. Our ecommerce website packages give you a clear starting point, so you can compare the options and pick the one that fits your store today.</p>
-        </div>
-
-        <div class="cvg-pp-controls">
-          <button type="button" class="cvg-pp-arrow" data-pp-prev aria-label="Previous packages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M15 6l-6 6 6 6"></path>
-            </svg></button>
-          <button type="button" class="cvg-pp-arrow" data-pp-next aria-label="Next packages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 6l6 6-6 6"></path>
-            </svg></button>
-        </div>
-
-        <div class="cvg-pp-cards" data-pp-track>
-          <article class="cvg-pp-card" style="--i:0" aria-labelledby="cvg-pp-name-0">
-
-
-            <p class="cvg-pp-timer">Ends in <b data-cd-short>—</b></p>
-            <div class="cvg-pp-card-top">
-              <div>
-                <h3 class="cvg-pp-name" id="cvg-pp-name-0">Starter-Shop Package</h3>
-                <p class="cvg-pp-tier">Starter</p>
-              </div>
-
-            </div>
-            <p class="cvg-pp-was"><s>$799.00</s><span class="cvg-pp-save">Save $119.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>499<span class="cvg-pp-cents">.00</span></p>
-            <p class="cvg-pp-after">this week with 15% off</p>
-            <p class="cvg-pp-count">9 features included</p>
-            <ul class="cvg-pp-list" tabindex="0" aria-label="Starter-Shop Package features">
-              <li class="cvg-pp-li">Starter website pages</li>
-              <li class="cvg-pp-li">Up to 50 products</li>
-              <li class="cvg-pp-li">Shopping cart functionality</li>
-              <li class="cvg-pp-li">Secure checkout process</li>
-              <li class="cvg-pp-li">Payment gateway integration</li>
-              <li class="cvg-pp-li">Product search feature</li>
-              <li class="cvg-pp-li">Revisions included</li>
-              <li class="cvg-pp-li">Home page</li>
-              <li class="cvg-pp-li">About Us page</li>
-            </ul>
-            <div class="cvg-pp-ctas">
-              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
-              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
-            </div>
-          </article>
-          <article class="cvg-pp-card cvg-pp-card--featured" style="--i:1" aria-labelledby="cvg-pp-name-1">
-            <span class="cvg-pp-shine" aria-hidden="true"></span>
-
-            <p class="cvg-pp-timer">Ends in <b data-cd-short>—</b></p>
-            <div class="cvg-pp-card-top">
-              <div>
-                <h3 class="cvg-pp-name" id="cvg-pp-name-1">Essential-Commerce Package</h3>
-                <p class="cvg-pp-tier">Most popular</p>
-              </div>
-              <span class="cvg-pp-badge">Most popular</span>
-            </div>
-            <p class="cvg-pp-was"><s>$1148.00</s><span class="cvg-pp-save">Save $149.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>999<span class="cvg-pp-cents">.15</span></p>
-            <p class="cvg-pp-after">this week with 15% off</p>
-            <p class="cvg-pp-count">21 features included</p>
-            <ul class="cvg-pp-list" tabindex="0" aria-label="Essential-Commerce Package features">
-              <li class="cvg-pp-li">Home page</li>
-              <li class="cvg-pp-li">About Us page</li>
-              <li class="cvg-pp-li">Product pages</li>
-              <li class="cvg-pp-li">Basic content structure</li>
-              <li class="cvg-pp-li">Shopping cart functionality</li>
-              <li class="cvg-pp-li">Secure checkout process</li>
-              <li class="cvg-pp-li">Payment gateway integration</li>
-              <li class="cvg-pp-li">Product search feature</li>
-              <li class="cvg-pp-li">Responsive design</li>
-              <li class="cvg-pp-li">User-friendly navigation</li>
-              <li class="cvg-pp-li">Basic branding</li>
-              <li class="cvg-pp-li">Inventory management system</li>
-              <li class="cvg-pp-li">Detailed product descriptions</li>
-              <li class="cvg-pp-li">High-quality product images</li>
-              <li class="cvg-pp-li">Meta titles and descriptions</li>
-              <li class="cvg-pp-li">SEO-friendly URLs</li>
-              <li class="cvg-pp-li">Extended training for website management</li>
-              <li class="cvg-pp-li">Email and chat support</li>
-              <li class="cvg-pp-li">SSL certificate for secure data encryption</li>
-              <li class="cvg-pp-li">Enhanced security features</li>
-              <li class="cvg-pp-li">Basic website analytics</li>
-            </ul>
-            <div class="cvg-pp-ctas">
-              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
-              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
-            </div>
-          </article>
-          <article class="cvg-pp-card" style="--i:2" aria-labelledby="cvg-pp-name-2">
-
-
-            <p class="cvg-pp-timer">Ends in <b data-cd-short>—</b></p>
-            <div class="cvg-pp-card-top">
-              <div>
-                <h3 class="cvg-pp-name" id="cvg-pp-name-2">Premium-Store Package</h3>
-                <p class="cvg-pp-tier">Enterprise</p>
-              </div>
-
-            </div>
-            <p class="cvg-pp-was"><s>$2,499.00</s><span class="cvg-pp-save">Save $374.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>1,999<span class="cvg-pp-cents">.15</span></p>
-            <p class="cvg-pp-after">this week with 15% off</p>
-            <p class="cvg-pp-count">24 features included</p>
-            <ul class="cvg-pp-list" tabindex="0" aria-label="Premium-Store Package features">
-              <li class="cvg-pp-li">Home page</li>
-              <li class="cvg-pp-li">About Us page</li>
-              <li class="cvg-pp-li">Up to 200 product pages</li>
-              <li class="cvg-pp-li">Rich multimedia content</li>
-              <li class="cvg-pp-li">Advanced shopping cart</li>
-              <li class="cvg-pp-li">Seamless checkout experience</li>
-              <li class="cvg-pp-li">Multiple payment options</li>
-              <li class="cvg-pp-li">Intuitive navigation</li>
-              <li class="cvg-pp-li">Extended branding integration</li>
-              <li class="cvg-pp-li">Product management system</li>
-              <li class="cvg-pp-li">Robust inventory management</li>
-              <li class="cvg-pp-li">Enhanced product descriptions</li>
-              <li class="cvg-pp-li">High-quality product images</li>
-              <li class="cvg-pp-li">SEO optimization</li>
-              <li class="cvg-pp-li">Advanced SEO strategies</li>
-              <li class="cvg-pp-li">SEO-friendly URLs</li>
-              <li class="cvg-pp-li">Customer support features</li>
-              <li class="cvg-pp-li">Live chat integration</li>
-              <li class="cvg-pp-li">Security measures with enhanced protection</li>
-              <li class="cvg-pp-li">Social media integration for marketing and engagement</li>
-              <li class="cvg-pp-li">Email marketing integration</li>
-              <li class="cvg-pp-li">Loyalty program integration</li>
-              <li class="cvg-pp-li">Advanced analytics and reporting tools</li>
-              <li class="cvg-pp-li">Advanced customization options</li>
-            </ul>
-            <div class="cvg-pp-ctas">
-              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
-              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
-            </div>
-          </article>
-          <article class="cvg-pp-card" style="--i:3" aria-labelledby="cvg-pp-name-3">
-
-
-            <p class="cvg-pp-timer">Ends in <b data-cd-short>—</b></p>
-            <div class="cvg-pp-card-top">
-              <div>
-                <h3 class="cvg-pp-name" id="cvg-pp-name-3">Elite-Market Package</h3>
-                <p class="cvg-pp-tier">Elite</p>
-              </div>
-
-            </div>
-            <p class="cvg-pp-was"><s>$4,999.00</s><span class="cvg-pp-save">Save $749.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>2,999<span class="cvg-pp-cents">.15</span></p>
-            <p class="cvg-pp-after">this week with 15% off</p>
-            <p class="cvg-pp-count">27 features included</p>
-            <ul class="cvg-pp-list" tabindex="0" aria-label="Elite-Market Package features">
-              <li class="cvg-pp-li">Custom home page</li>
-              <li class="cvg-pp-li">Advanced About Us page</li>
-              <li class="cvg-pp-li">Up to 300 product pages</li>
-              <li class="cvg-pp-li">Immersive multimedia content</li>
-              <li class="cvg-pp-li">Advanced shopping cart functionality</li>
-              <li class="cvg-pp-li">Seamless checkout experience</li>
-              <li class="cvg-pp-li">Multiple payment options</li>
-              <li class="cvg-pp-li">AI-powered product search</li>
-              <li class="cvg-pp-li">Fully custom responsive design</li>
-              <li class="cvg-pp-li">Interactive navigation</li>
-              <li class="cvg-pp-li">Advanced branding integration</li>
-              <li class="cvg-pp-li">Comprehensive product management</li>
-              <li class="cvg-pp-li">Advanced inventory management system</li>
-              <li class="cvg-pp-li">Immersive product descriptions</li>
-              <li class="cvg-pp-li">High-quality product visuals</li>
-              <li class="cvg-pp-li">Comprehensive SEO strategies</li>
-              <li class="cvg-pp-li">SEO-friendly URLs</li>
-              <li class="cvg-pp-li">Customer support features</li>
-              <li class="cvg-pp-li">VIP support for priority assistance</li>
-              <li class="cvg-pp-li">State-of-the-art security features</li>
-              <li class="cvg-pp-li">Marketing and engagement tools</li>
-              <li class="cvg-pp-li">Social media integration</li>
-              <li class="cvg-pp-li">Email marketing automation</li>
-              <li class="cvg-pp-li">VIP customer loyalty program</li>
-              <li class="cvg-pp-li">Analytics and reporting tools</li>
-              <li class="cvg-pp-li">Advanced analytics dashboard</li>
-              <li class="cvg-pp-li">Unlimited customization options</li>
-            </ul>
-            <div class="cvg-pp-ctas">
-              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
-              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
-            </div>
-          </article>
-          <article class="cvg-pp-card" style="--i:4" aria-labelledby="cvg-pp-name-4">
-
-
-            <p class="cvg-pp-timer">Ends in <b data-cd-short>—</b></p>
-            <div class="cvg-pp-card-top">
-              <div>
-                <h3 class="cvg-pp-name" id="cvg-pp-name-4">Ultimate-Emporium Package</h3>
-                <p class="cvg-pp-tier">Ultimate</p>
-              </div>
-
-            </div>
-            <p class="cvg-pp-was"><s>$7,999.00</s><span class="cvg-pp-save">Save $1,199.85</span></p>
-            <p class="cvg-pp-price"><span class="cvg-pp-cur">$</span>4,999<span class="cvg-pp-cents">.15</span></p>
-            <p class="cvg-pp-after">this week with 15% off</p>
-            <p class="cvg-pp-count">21 features included</p>
-            <ul class="cvg-pp-list" tabindex="0" aria-label="Ultimate-Emporium Package features">
-              <li class="cvg-pp-li">Custom website architecture for optimal user experience and conversion</li>
-              <li class="cvg-pp-li">Completely bespoke website design reflecting the client&#x27;s brand identity and values</li>
-              <li class="cvg-pp-li">Custom graphics, animations, and interactive elements for a visually stunning experience</li>
-              <li class="cvg-pp-li">Cutting-edge e-commerce functionality</li>
-              <li class="cvg-pp-li">Seamless and intuitive shopping cart</li>
-              <li class="cvg-pp-li">Intuitive and streamlined checkout process</li>
-              <li class="cvg-pp-li">Multiple payment options for flexibility</li>
-              <li class="cvg-pp-li">Product management system</li>
-              <li class="cvg-pp-li">Interactive and immersive product descriptions</li>
-              <li class="cvg-pp-li">High-quality visuals for products</li>
-              <li class="cvg-pp-li">Comprehensive SEO strategies for better visibility</li>
-              <li class="cvg-pp-li">SEO-friendly URLs for enhanced search engine ranking</li>
-              <li class="cvg-pp-li">Customer engagement with personalized user journeys</li>
-              <li class="cvg-pp-li">24/7 support for customer assistance</li>
-              <li class="cvg-pp-li">State-of-the-art security measures for data protection</li>
-              <li class="cvg-pp-li">Omni-channel marketing integration for a seamless customer experience</li>
-              <li class="cvg-pp-li">Predictive analytics for marketing insights</li>
-              <li class="cvg-pp-li">Exclusive VIP loyalty program to retain customers</li>
-              <li class="cvg-pp-li">Advanced analytics and reporting tools for deeper insights</li>
-              <li class="cvg-pp-li">Custom analytics dashboard for personalized reporting</li>
-              <li class="cvg-pp-li">Unlimited customization options to meet specific business needs</li>
-            </ul>
-            <div class="cvg-pp-ctas">
-              <button type="button" class="cvg-pp-btn cvg-pp-btn--mint cvg-pp-btn--block" data-chat>Chat Now To Learn More</button>
-              <a href="tel:<?= $cc_phone_link ?>" class="cvg-pp-btn cvg-pp-btn--ghost cvg-pp-btn--block">Call To Get Started</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="cvg-pp-dots"><button type="button" class="cvg-pp-dot" data-pp-dot="0" aria-label="Go to Starter-Shop Package"></button><button type="button" class="cvg-pp-dot" data-pp-dot="1" aria-label="Go to Essential-Commerce Package"></button><button type="button" class="cvg-pp-dot" data-pp-dot="2" aria-label="Go to Premium-Store Package"></button><button type="button" class="cvg-pp-dot" data-pp-dot="3" aria-label="Go to Elite-Market Package"></button><button type="button" class="cvg-pp-dot" data-pp-dot="4" aria-label="Go to Ultimate-Emporium Package"></button></div>
-        <p class="cvg-pp-foot">Need something custom? <a href="#audit">Tell us about your store</a> or call <a href="tel:<?= $cc_phone_link ?>"><?= $cc_phone ?></a>.</p>
-      </div>
-    </section>
 
     <!-- ===== RESULTS + TESTIMONIALS (teal) ===== -->
     <section id="results"
@@ -2170,7 +1878,7 @@ $cc_phone_link = '+18556774898';
     </section>
     <!-- ===== FOOTER ===== -->
     <footer
-      style="position: relative; padding: 70px 24px 34px; background: linear-gradient(180deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.93) 100%), url('images/footer-image.webp') center / cover no-repeat, #000000">
+      style="position: relative; padding: 70px 24px 34px; background: linear-gradient(180deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.93) 100%), url('images/footer-image.png') center / cover no-repeat, #000000">
       <div style="max-width: 1240px; margin: 0 auto">
         <div
           style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.08)">
