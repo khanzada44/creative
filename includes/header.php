@@ -79,6 +79,7 @@ if (!function_exists('cvg_nav_on')) {
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=custom-php-development') ?>">Custom PHP Development</a></li>
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=next-js') ?>">Next.js</a></li>
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=wordpress-development') ?>">WordPress Development</a></li>
+                 <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website</a></li>
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=shopify') ?>">Shopify</a></li>
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=magento') ?>">Magento</a></li>
                 <li><a href="<?= cvg_url('services/service-detail.php?slug=woocommerce') ?>">WooCommerce</a></li>
@@ -101,7 +102,7 @@ if (!function_exists('cvg_nav_on')) {
             </li>
 
             <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>">Branding</a></li>
-            <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>">Ecommerce Website</a></li>
+            <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>">Ecommerce Website</a></li> -->
             <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>">Video Animation</a></li>
             <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>">Advance Combo Packages</a></li> -->
             <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps-development') ?>">Mobile App Development</a></li>
@@ -179,6 +180,7 @@ if (!function_exists('cvg_nav_on')) {
             <li><a href="<?= cvg_url('services/service-detail.php?slug=custom-php-development') ?>">Custom PHP Development</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=next-js') ?>">Next.js</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=wordpress-development') ?>">WordPress Development</a></li>
+             <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=shopify') ?>">Shopify</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=magento') ?>">Magento</a></li>
             <li><a href="<?= cvg_url('services/service-detail.php?slug=woocommerce') ?>">WooCommerce</a></li>
@@ -204,7 +206,7 @@ if (!function_exists('cvg_nav_on')) {
         </li>
 
         <li><a href="<?= cvg_url('services/service-detail.php?slug=branding') ?>" class="panel-sub-link">Branding</a></li>
-        <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website</a></li>
+        <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=ecommerce-website-solutions') ?>" class="panel-sub-link">Ecommerce Website</a></li> -->
         <li><a href="<?= cvg_url('services/service-detail.php?slug=video-animation-services') ?>" class="panel-sub-link">Video Animation</a></li>
         <li><a href="<?= cvg_url('services/service-detail.php?slug=mobile-apps-development') ?>" class="panel-sub-link">Mobile App Development</a></li>
         <!-- <li><a href="<?= cvg_url('services/service-detail.php?slug=advance-combo-packages') ?>" class="panel-sub-link">Advance Combo Packages</a></li> -->
